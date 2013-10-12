@@ -2,8 +2,8 @@ SAMSARA CHANGES
 - Chex Zorches custom enemies, of course.
 - Duke taunts on custom enemies, because I would feel bad if people complained about it.
 - Duke's Freezethrower and Parias' Frost shards do extra damage against fire-based enemies, as a benefit to those who read the README, and to make them usable (since freezethrower is pretty terrible for a slot 6).
-- The weapon powerup device now spreads four specials and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.
-- 4 Uniques item has a max of 3, rather than 1, since it's not that powerful.
+- The weapon powerup device now spreads three specials and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.
+- 3 Uniques item has a max of 3, rather than 1, since it's not that powerful.
 - Fuel for flamer replaced by various heretic/hexen utilities. No, I'm not telling what.
 ^- Landmines give a slot one. Ammo for landmines replaced with strife ammo boxes (12 shells, 4 rockets, OR the strife everything ammo pickups)
 ^- Autoshotgun is a slot 2+3
