@@ -415,7 +415,9 @@ actor QuakeSLNail: QuakeLavaNail
 
 actor QuakeSLNailCoop: QuakeSLNail
 {
+    +FOILINVUL
     +THRUSPECIES
+    -THRUGHOST
     Species "Player"
     Damage (26)
 }

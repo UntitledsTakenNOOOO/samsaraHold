@@ -317,7 +317,7 @@ actor QuakeGrenade
     
     Projectile
     -NOGRAVITY
-    DamageType "Explosive"
+    DamageType "NotQuadded"
     Gravity 0.6
     Scale 0.2
     BounceFactor 0.3
@@ -404,8 +404,7 @@ actor QuakeGrenade
         loop
         
       Death:
-        MISL B 0 A_Explode(64, 128, 0)
-        MISL B 0 A_Explode(64, 128)
+        MISL B 0 A_Explode(128, 128)
         TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
         stop
     }
@@ -415,18 +414,17 @@ actor QuakeGrenadeCoop: QuakeGrenade
 {
     +THRUSPECIES
     Species "Player"
-	Damage (20)
+	Damage (25)
 }
 
 actor QuakeGrenadeQuad: QuakeGrenade
 {
     DamageType "NotQuadded"
-    
+
     States
     {
       Death:
-        DMSL B 0 A_Explode(256, 128, 0)
-        DMSL B 0 A_Explode(256, 128)
+        DMSL B 0 A_Explode(512, 128)
         TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
         stop
     }
@@ -439,7 +437,8 @@ actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
     
     Radius 4
     Height 4
-	Damage (80)
+    
+    Damage (100)
 }
 
 actor SpectralGrenade: QuakeGrenadeCoopQuad { DamageType "SpectralNoQuad" }
@@ -468,7 +467,11 @@ actor QuakeClusterGrnCoop: QuakeClusterGrenade
 {
     +THRUSPECIES
     Species "Player"
-	Damage (20)
+    
+    Damage (25)
+    
+    Radius 4
+    Height 4
     
     States
     {
@@ -506,7 +509,10 @@ actor QuadClusterGrnCoop: QuadClusterGrenade
     Species "Player"
     
     DamageType "NotQuadded"
-	Damage (80)
+    Damage (100)
+    
+    Radius 4
+    Height 4
     
     States
     {
@@ -527,8 +533,8 @@ actor QuakeTinyGrenade: QuakeGrenade
     Scale 0.1625
     ReactionTime 46
     
-    Radius 2
-    Height 2
+    Radius 8
+    Height 8
     
     SeeSound "quakeweps/grenadebounce_quiet"
     
@@ -552,8 +558,7 @@ actor QuakeTinyGrenade: QuakeGrenade
         loop
         
       Death:
-        MISL B 0 A_Explode(20, 91, 0)
-        MISL B 0 A_Explode(19, 91)
+        MISL B 0 A_Explode(38, 91)
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }
@@ -564,9 +569,10 @@ actor QuakeTinyGrnCoop: QuakeTinyGrenade
     +THRUSPECIES
     Species "Player"
     
-    Radius 2
-    Height 2
-	Damage (4)
+    Radius 4
+    Height 4
+    
+    Damage (5)
 }
 
 actor QuadTinyGrenade: QuakeTinyGrenade
@@ -576,8 +582,7 @@ actor QuadTinyGrenade: QuakeTinyGrenade
     States
     {
       Death:
-        MISL B 0 A_Explode(77, 91, 0)
-        MISL B 0 A_Explode(76, 91)
+        MISL B 0 A_Explode(152, 91)
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }
@@ -587,7 +592,8 @@ actor QuadTinyGrnCoop: QuadTinyGrenade
 {
     +THRUSPECIES
     Species "Player"
-	Damage (16)
+    
+    Damage (20)
 }
 
 actor SpectralClusterGrenade: QuadClusterGrnCoop

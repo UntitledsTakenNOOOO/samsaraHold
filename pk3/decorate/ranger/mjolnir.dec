@@ -142,6 +142,7 @@ actor MjolnirPuff: BulletPuff
     AttackSound "quakeweps/mjolnirwall"
     ActiveSound "quakeweps/mjolnirmiss"
 
+    DamageType "FaithInHumanity"
 
     States
     {
@@ -490,7 +491,7 @@ actor MJTrail: BulletPuff
 actor MJBeam: FastProjectile
 {
     Speed 192
-    Damage (15)
+    Damage (30)
 
     Radius 4
     Height 4
@@ -502,6 +503,9 @@ actor MJBeam: FastProjectile
     Alpha 0.65
 
     +NODAMAGETHRUST
+    +THRUSPECIES
+
+    Species "Player"
 
     Obituary "%k \csshocked\c- %o \cswith a purple wand.\c-"
 
@@ -525,7 +529,7 @@ actor MjBeamDM: MJBeam
 
 actor MjBeamWeak: MJBeam
 {
-    Damage (8)
+    Damage (30)
 }
 
 actor MJBeamSpectral: MJBeam
