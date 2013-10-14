@@ -94,6 +94,7 @@ actor SpearBolt
     Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     PROJECTILE
     +DONTREFLECT
+    +FORCERADIUSDMG
     DamageType "BJSpear"
     Scale 0.80
     RENDERSTYLE ADD
@@ -149,6 +150,9 @@ actor SpearShotMini
     +SKYEXPLODE
     +CANBOUNCEWATER
     +DONTREFLECT
+    +THRUSPECIES
+    +FORCERADIUSDMG
+    Species "Player"
     DamageType "BJSpear"
     SeeSound "wolfen/spearbounce"
     DeathSound "wolfen/spearexplode2"
@@ -207,6 +211,8 @@ actor SpearShotMini2
     +SKYEXPLODE
     +CANBOUNCEWATER
     +DONTREFLECT
+    +THRUSPECIES
+    Species "Player"
     DamageType "BJSpear"
     SeeSound "wolfen/spearbounce"
     DeathSound "wolfen/spearexplode2"

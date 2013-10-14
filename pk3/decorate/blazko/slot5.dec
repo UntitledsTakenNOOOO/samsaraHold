@@ -64,6 +64,7 @@ actor WolfRocket
     +NOBOSSRIP
     SeeSound "wolfen/missilefire"
     DeathSound "wolfen/missilexplod"
+    DamageType "Explosive"
     Obituary "%k \cjtore through\c- %o \cjwith the Rocket Launcher.\c-"
     States
     {
@@ -72,7 +73,7 @@ actor WolfRocket
         Loop
 
       Death:
-        WFLB C 8 Bright A_Explode(128,32,0)
+        WFLB C 8 Bright A_Explode(128,64,0)
         WFLB D 6 Bright
         WFLB E 4 Bright
         Stop

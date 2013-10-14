@@ -54,7 +54,7 @@ actor WolfenFire
     Radius 12
     Height 8
     Speed 25
-    Damage (random(10,50)) // Typical Plasma Rifle damage is 5-40
+    Damage (Random(1,5)*10) // Typical Plasma Rifle damage is 5-40
     Projectile
     +RANDOMIZE
     +BRIGHT
