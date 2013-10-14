@@ -4,7 +4,7 @@ actor StrifeBeaconItem: CustomInventory replaces TeleporterBeacon
     Height 16
     ConversationID 166
 
-    Inventory.MaxAmount 3
+    Inventory.MaxAmount 5
     Inventory.PickupMessage "You got a teleporter beacon!"
 
     Inventory.Icon "I_BEAC"
@@ -192,6 +192,202 @@ actor StrifeBeaconMarathon: StrifeBeaconSpawner
 }
 
 actor StrifeBeaconQuake: StrifeBeaconSpawner
+{
+    States
+    {
+      Spawn:
+        BEAC K 0
+        goto SpawnLoop
+    }
+}
+
+//SUPER BEACON
+
+actor SuperStrifeBeaconItem: CustomInventory
+{
+    Inventory.MaxAmount 2
+    Inventory.PickupMessage "You got a super teleporter beacon!"
+
+    Inventory.Icon "I_BEAC"
+    +INVBAR
+
+    States
+    {
+      Spawn:
+        BEAC A -1
+        stop
+
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DoomguyClass",  1, "UseDoom")
+        TNT1 A 0 A_JumpIfInventory("ChexClass",     1, "UseChex")
+        TNT1 A 0 A_JumpIfInventory("CorvusClass",   1, "UseHeretic")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",   1, "UseWolf")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",    1, "UseHexen")
+        TNT1 A 0 A_JumpIfInventory("DukeClass",     1, "UseDuke")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "UseMarathon")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass",    1, "UseQuake")
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconSpawner2", 0, 0)
+        stop
+
+      UseDoom:
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconDoom2", 0, 0)
+        stop
+
+      UseChex:
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconChex2", 0, 0)
+        stop
+
+      UseHeretic:
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconHeretic2", 0, 0)
+        stop
+
+      UseWolf:
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconWolf2", 0, 0)
+        stop
+
+      UseHexen:
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconHexen2", 0, 0)
+        stop
+
+      UseDuke:
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconDuke2", 0, 0)
+        stop
+
+      UseMarathon:
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconMarathon2", 0, 0)
+        stop
+
+      UseQuake:
+        TNT1 A 0 A_FireCustomMissile("StrifeBeaconQuake2", 0, 0)
+        stop
+    }
+}
+
+
+actor StrifeBeaconSpawner2
+{
+    Radius 4
+    Height 4
+
+    Speed 8
+
+    -SOLID
+
+    ReactionTime 5
+
+    States
+    {
+      Spawn:
+        BEAC A 0
+        BEAC A 1 A_JumpIf(1 == 1, "SpawnLoop")
+        loop
+
+      SpawnLoop:
+        "----" A 35
+        "----" A 160 ACS_ExecuteAlways(323, 0, 1)
+        "----" AAA 160 ACS_ExecuteAlways(323)
+        stop
+
+      WhatAmIDoingWithMyLife:
+        "----" A 0 A_PlaySound("weapons/hegrenadebang")
+        "----" A 0 A_SpawnItemEx("Bang4Cloud", 0,0,16)
+        "----" A 0 A_Explode(64, 160) // okay this is just silly
+        stop
+
+      FuckYouImAPickup:
+        "----" A 0 A_PlaySound("weapons/hegrenadebang")
+        "----" A 0 A_SpawnItemEx("Bang4Cloud")
+        "----" A 0 A_SpawnItemEx("SuperStrifeBeaconItem", 0,0,0, random(0,4),0,random(0,8), random(0, 360))
+        stop
+    }
+}
+
+actor StrifeBeaconDoom2: StrifeBeaconSpawner2
+{
+    States
+    {
+      SpawnLoop:
+        BEAC BC 12
+        BEAC D  11
+      // +35 (0)
+        BEAC B 12 ACS_ExecuteAlways(323, 0, 1)
+        BEAC CDBCDBCDBCDB 12
+        BEAC C 4
+      // +160 (1)
+        BEAC C 8 ACS_ExecuteAlways(323)
+        BEAC DBCDBCDBCDBC 12
+        BEAC D 8
+      // +160 (2)
+        BEAC D 4 ACS_ExecuteAlways(323)
+        BEAC BCDBCDBCDBCDB 12
+      // +160 (3)
+        BEAC C 12 ACS_ExecuteAlways(323)
+        BEAC DBCDBCDBCDBCD 12
+        stop
+    }
+}
+
+actor StrifeBeaconChex2: StrifeBeaconSpawner2
+{
+    States
+    {
+      Spawn:
+        BEAC E 0
+        goto SpawnLoop
+    }
+}
+
+actor StrifeBeaconHeretic2: StrifeBeaconSpawner2
+{
+    States
+    {
+      Spawn:
+        BEAC F 0
+        goto SpawnLoop
+    }
+}
+
+actor StrifeBeaconWolf2: StrifeBeaconSpawner2
+{
+    States
+    {
+      Spawn:
+        BEAC G 0
+        goto SpawnLoop
+    }
+}
+
+actor StrifeBeaconHexen2: StrifeBeaconSpawner2
+{
+    States
+    {
+      Spawn:
+        BEAC H 0
+        goto SpawnLoop
+    }
+}
+
+actor StrifeBeaconDuke2: StrifeBeaconSpawner2
+{
+    States
+    {
+      Spawn:
+        BEAC I 0
+        goto SpawnLoop
+    }
+}
+
+actor StrifeBeaconMarathon2: StrifeBeaconSpawner2
+{
+    States
+    {
+      Spawn:
+        BEAC J 0
+        goto SpawnLoop
+    }
+}
+
+actor StrifeBeaconQuake2: StrifeBeaconSpawner2
 {
     States
     {

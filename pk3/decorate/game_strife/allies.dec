@@ -9,50 +9,79 @@ actor FriendlyDoomImp : DoomImp2
     PainSound "friendlyimp/pain"
     DeathSound "friendlyimp/death"
     ActiveSound "friendlyimp/active"
-    HitObituary "%o was somehow killed by a friendly Imp."
-    Obituary "%o was somehow killed by a friendly Imp."
-    
+    HitObituary "%o was somehow killed by a friendly dark Imp."
+    Obituary "%o was somehow killed by a friendly dark Imp."
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
     Species "Player"
-    
-    -SOLID
+
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
     +FRIENDLY
-    
+
+    Translation "1:1=8:8", "16:47=[0,0,255]:[0,0,0]", "48:79=[185,185,185]:[0,0,0]", "151:151=6:6", "160:167=198:204", "169:174=194:200", "175:183=197:205", "184:185=206:207", "186:191=240:245", "208:223=193:207", "232:235=201:204"//"48:79=[185,185,185]:[0,0,0]", "175:183=197:205", "169:174=194:200", "184:185=206:207", "186:191=240:245", "16:47=[0,0,255]:[0,0,0]", "232:235=201:204", "160:167=198:204", "208:223=193:207"
+	
     States
     {
       Spawn:
-        TRO2 AB 10 A_Look
+        TROO AB 10 A_Look
         loop
         
       See:
-        TRO2 AABBCCDD 3 A_Chase
+        TROO AABBCCDD 3 A_Chase
         Loop
         
       Melee:
       Missile:
-        TRO2 EF 8 A_FaceTarget
-        TRO2 G 6 A_CustomComboAttack("FriendlyDoomImpBall", 32, 3 * random(1, 8), "friendlyimp/melee")//A_TroopAttack
+        TROO EF 6 A_FaceTarget
+        TROO G 6 A_CustomComboAttack("FriendlyDoomImpBall", 32, random[troopattack](1,8)*3, "friendlyimp/melee")//A_TroopAttack
         Goto See
         
       Pain:
-        TRO2 H 2
-        TRO2 H 2 A_Pain
+        TROO H 2
+        TROO H 2 A_Pain
         Goto See
         
       Death:
-        TRO2 I 8
-        TRO2 J 8 A_Scream
-        TRO2 K 6
-        TRO2 L 6 A_NoBlocking
-        TRO2 M -1
+        TROO I 8
+        TROO J 8 A_Scream
+        TROO K 6
+        TROO L 6 A_NoBlocking
+        TROO M 3000
+        TROO MMMMMMMMMMMM 4 A_FadeOut
         Stop
         
       XDeath:
-        TRO2 N 5
-        TRO2 O 5 A_XScream
-        TRO2 P 5
-        TRO2 Q 5 A_NoBlocking
-        TRO2 RST 5
-        TRO2 U -1
+        TROO N 5
+        TROO O 5 A_XScream
+        TROO P 5
+        TROO Q 5 A_NoBlocking
+        TROO RST 5
+        TROO U 3000
+        TROO UUUUUUUUUUUU 4 A_FadeOut
         Stop
         
       Raise:
@@ -62,23 +91,15 @@ actor FriendlyDoomImp : DoomImp2
 
 actor FriendlyDoomImpBall : DoomImpBall2
 {
-    +THRUSPECIES
-    
+    Speed 15
+
+    +THRUSPECIES    
     Species "Player"
     
     SeeSound "friendlyimp/attack"
     DeathSound "friendlyimp/shotx"
     
-    States
-    {
-      Spawn:
-        DBL1 AB 4
-        Loop
-        
-      Death:
-        DBL1 CDE 6
-        Stop
-    }
+    Translation "176:183=200:207", "184:191=240:247", "168:175=198:199", "210:223=198:203", "233:233=202:202", "231:231=197:197"
 }
 
 //=================
@@ -89,10 +110,36 @@ actor FriendlyNitrogolem : MummyLeader2
     Health 100
     HitObituary "%o was somehow killed by a friendly Nitrogolem."
     Obituary "%o was somehow killed by a friendly Nitrogolem."
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
     
-    -SOLID
-    +FRIENDLY
     Species "Player"
+
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
     
     States
     {
@@ -100,10 +147,28 @@ actor FriendlyNitrogolem : MummyLeader2
         MUMM X 5 A_FaceTarget
         MUMM Y 5 Bright A_FaceTarget
         MUMM X 5 A_FaceTarget
-        //MUMM Y 5 Bright A_FaceTarget - So as not to be so damned useless.
-        //MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_FaceTarget
+        MUMM X 5 A_FaceTarget
         MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_FaceTarget
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*4, "mummy/attack2")
         Goto See
+
+      Raise:
+	Stop
+
+  Death:
+    MUMM I 5
+    MUMM J 5 A_Scream
+    MUMM K 5 A_SpawnItemEx("MummySoul", 0, 0, 10, 0, 0, 1)
+    MUMM L 5
+    MUMM M 5 A_NoBlocking
+    MUMM NO 5
+    MUMM P 3000
+    MUMM PPPPPPPPPPPP 4 A_FadeOut(0.1)
+    Stop
     }
 }
 
@@ -118,16 +183,42 @@ actor FriendlyNitrogolemShot : MummyFX1
 // Oddly enough, never shot balls of slime despite having more orifices to shoot from than the armored one.
 actor FriendlyFlemoid : FlemoidusBipedicus2
 {
-    Health 100
+    Health 150
     SeeSound "friendlyflemoid/sight"
     AttackSound "friendlyflemoid/attack"
     PainSound "friendlyflemoid/pain"
     DeathSound "friendlyflemoid/death"
     ActiveSound "friendlyflemoid/active"
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
     
-    -SOLID
-    +FRIENDLY
     Species "Player"
+    
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
     
     Obituary "%o was somehow slimed by a friendly flemoid."
     
@@ -154,7 +245,7 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
       Pain.Zorch:
         BPFL G 3
         BPFL G 3 A_Pain
-        Goto See
+	Goto See
         
       Death.DukeExplosive:
       Death.DukeSpectral:
@@ -180,21 +271,20 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
         SPOD A 10
         SPOD ABC 7
-        SPOD D -1
+        SPOD D 3000
+	SPOD DDDDDDDDDDDD 4 A_FadeOut(0.1)
         stop
         
       Death.ZorchPistol:
         
       Death.Zorch:
-      Death.ZorchKamikaze:
-      Death.PhasingZorch:
-      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         BPFL H 5
         BPFL I 5 A_Scream
         BPFL J 5 A_NoBlocking
         BPFL K 5
-        BPFL L -1
+        BPFL L 3000
+	BPFL LLLLLLLLLLLL 4 A_FadeOut(0.1)
         Stop
         
       Death.DukeIce:
@@ -229,9 +319,12 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
       Melee:
       Missile:
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        BPFL EF 6 A_FaceTarget // Previously 8 each
-        BPFL E 6 A_CustomComboAttack("FriendlyFlemBall", 32, random[troopattack](1,8)*3, "friendlyflemoid/shotx", "flem")
+        BPFL EF 8 A_FaceTarget // Previously 6 each
+        BPFL E 8 A_CustomComboAttack("FriendlyFlemBall", 32, random[troopattack](1,8)*3, "friendlyflemoid/shotx", "flem")
         Goto See
+
+      Raise:
+	Stop
     }
 }
 
@@ -265,16 +358,45 @@ ACTOR FriendlyNazi
     PainChance 170
     Scale 1.25
     Monster
-    +FLOORCLIP
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+		damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
+    Species "Player"
+    
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
     +FRIENDLY
-    -SOLID
+
     SeeSound "friendlynazi/sight"
     PainSound "friendlynazi/pain"
     DeathSound "friendlynazi/death"
     ActiveSound "friendlynazi/active"
-    AttackSound "friendlynazi/attack"
+    AttackSound "wolfen/pistol"
     Obituary "%o was somehow killed by a friendly Nazi."
-    Dropitem "Clip"
+    Dropitem "Ammo1Small"
+    Dropitem "HereticAmmo1Small"
     Species "Player"
     
     States
@@ -290,7 +412,7 @@ ACTOR FriendlyNazi
       Missile:
         NGRD H 5 A_FaceTarget
         NGRD H 5 A_FaceTarget
-        TNT1 A 0 A_PlaySound("friendlynazi/attack")
+        TNT1 A 0 A_PlayWeaponSound("wolfen/pistol")
         NGRD I 5 Bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
         //NGRD H 1 A_CPosRefire
         Goto See
@@ -305,14 +427,19 @@ ACTOR FriendlyNazi
         NGRD J 5 A_Scream
         NGRD K 5 A_NoBlocking
         NGRD LM 5
-        NGRD N -1
+        NGRD N 3000
+	NGRD NNNNNNNNNNNN 4 A_FadeOut(0.1)
         Stop
+
+      Raise:
+	Stop
+
     }
 }
 
 actor FriendlyNaziBullet : WolfenBullet2
 {
-    Damage (Random(1,3)*5)
+    Damage (15)
     +THRUSPECIES
     Species "Player"
 }
@@ -323,11 +450,37 @@ actor FriendlyNaziBullet : WolfenBullet2
 actor FriendlyAfrit : FireDemon2
 {
     Health 100
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
     
     Species "Player"
-    -SOLID
+    
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Invulnerable
+  -Solid
     +FRIENDLY
-    -INVULNERABLE
     
     States
     {
@@ -345,6 +498,9 @@ actor FriendlyAfrit : FireDemon2
         TNT1 A 0 A_PlaySound("FireDemonAttack")
         FDMN K 5 Bright A_CustomMissile("FriendlyFireDemonMissile")
         Goto Chase
+
+      Raise:
+	Stop
     }
 }
 
@@ -360,84 +516,192 @@ actor FriendlyFireDemonMissile : FireDemonMissile
 actor FriendlyAlienTrooper
 {
     Health 100
+    GibHealth -50
     Radius 16
     Height 50
-    Speed 6
+    Speed 12
     PainChance 64
     Scale 0.65
     MONSTER
-    -SOLID
-    +FRIENDLY
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
     Species "Player"
+    
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
     Obituary "%o was somehow killed by a friendly Assault Trooper."
     SeeSound "dukealien/sight"
     PainSound "dukealien/pain"
     DeathSound "dukealien/death"
     ActiveSound "dukealien/active"
-    states
-    {
-      Spawn:
-        ALTR A 10 A_Look
-        ALTR B 10 A_Look
-        loop
-
-      See:
-        ALTR AAABBBCCCDDD 2 A_Chase
-        loop
-
-      Missile:
-        TNT1 A 0 A_Jump(64,"Missile2")
-        ALTR E 7 A_FaceTarget
-        TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-        ALTR F 6 bright A_CustomMissile("AlienTrooperShot",32,-4,random(-8,8))
-        ALTR E 7
-        TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-        ALTR F 6 bright A_CustomMissile("AlienTrooperShot",32,-4,random(-8,8))
-        goto See
-
-      Missile2:
-        ALTR G 5 A_FaceTarget
-        TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-        ALTR H 4 bright A_CustomMissile("AlienTrooperShot",28,-4,random(-2,2))
-        ALTR G 4 A_FaceTarget
-        TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-        ALTR H 4 bright A_CustomMissile("AlienTrooperShot",28,-4,random(-2,2))
-        ALTR G 4 A_FaceTarget
-        TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-        ALTR H 4 bright A_CustomMissile("AlienTrooperShot",28,-4,random(-2,2))
-        ALTR G 5 A_FaceTarget
-        goto See
-
-      Pain:
-        ALTR A 2 A_Pain
-        //ALTR A 0 A_Jump(128,"TeleportAwaaaay") // Removed because they had an annoying tendency to teleport in areas they shouldn't be.
-        goto See
-
-      Death:
-        ALTR K 6 A_Scream
-        ALTR L 6 A_NoBlocking
-        ALTR MNO 6
-        ALTR O -1
-        stop
-
-      XDeath:
-        TNT1 A 0 A_XScream
-        TNT1 A 0 A_SpawnDebris("DukeGibs1")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6")
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        ACLO E 5 A_NoBlocking
-        ACLO E -1
-        stop
+    MissileType "AlienTrooperShot"
+    MissileHeight 26
+    States
+	{
+	Spawn:
+		DFOD AB 10 A_Look
+		Loop
+	See:
+		DFOD G 0 A_ChangeFlag("NOGRAVITY",0)
+		DFOD G 0 A_ChangeFlag("NOPAIN",0)
+		DFOD G 0 A_ChangeFlag("FLOAT",0)
+		DFOD ABCD 4 A_Chase
+		Goto See+3
+	Missile:
+		DFOD F 0 A_JumpIfCloser(1024,2)
+		DFOD F 0 A_Jump(224,1)
+		Goto SeeJetpackRising
+		DFOD F 0 A_Jump(128, "DuckMissile")
+		DFOD F 10 A_FaceTarget
+       		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-8,8))
+		DFOD F 10 A_FaceTarget
+       		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-8,8))
+		DFOD F 10 A_FaceTarget
+       		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-8,8))
+		Goto See+3
+	SeeJetpackRising:
+		DFOD G 0 A_ChangeFlag("NOGRAVITY",1)
+		DFOD G 0 A_ChangeFlag("NOPAIN",1)
+		DFOD G 0 A_JumpIf(z-floorz>=128,"SeeJetpack")
+		DFOD G 0 A_JumpIf(ceilingz-z<=56,"SeeJetpack")
+		DFOD G 0 ThrustThingZ(0,3,0,0)
+		DFOD G 2 A_Chase("","",0)
+		Goto SeeJetpackRising+2
+	SeeJetpack:
+			DFOD G 0 A_ChangeFlag("FLOAT",1)
+		DFOD G 1
+		DFOD G 1 A_Chase("","JetpackAttack",0)
+		Goto SeeJetpack+1
+	JetpackAttack:
+		DFOD G 0 A_Jump(64,1)
+		Goto SeeJetpack+1
+		DFOD G 0 A_FaceTarget
+		DFOD G 0 A_MissileAttack
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD H 0 A_Chase("","",0)
+		DFOD HHHH 1 Bright A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD H 0 A_Chase("","",0)
+		DFOD HHHH 1 Bright A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		DFOD G 0 ThrustThingZ(0,2,1,0)
+		DFOD G 0 A_Chase("","",0)
+		DFOD GG 1 A_CheckFloor("See")
+		Loop 
+	DuckMissile:
+		DFOD Q 10 A_FaceTarget
+		DFOD R 8 Bright A_FaceTarget
+       		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		DFOD Q 8 Bright A_CustomMissile("AlienTrooperShot",26,-4,random(-2,2))
+		DFOD R 8 Bright A_FaceTarget
+       		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		DFOD Q 8 Bright A_CustomMissile("AlienTrooperShot",26,-4,random(-2,2))
+		Goto See+3
+	Pain:
+		DFOD I 3
+		DFOD I 3 A_Pain
+		Goto See+3
+      Death.DukeExplosive:
+      Death.DukeSpectral:
+        
+      Death.DukeDamage:
+        
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+        
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+        
+	Death:
+		DFOD I 6
+		DFOD J 6 A_Scream
+		DFOD K 6 A_Fall
+		DFOD L 6
+		DFOD M 3000
+		DFOD MMMMMMMMMMMM 4 A_FadeOut(0.1)
+		Stop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("duke/splat")
+    	TNT1 A 0 A_CustomMissile("Gibbage1",24,0,random(0,359),2,random(30,50))
+    	TNT1 A 0 A_CustomMissile("Gibbage2",24,0,random(0,359),2,random(30,50))
+    	TNT1 A 0 A_CustomMissile("Gibbage3",24,0,random(0,359),2,random(30,50))
+    	TNT1 A 0 A_CustomMissile("Gibbage4",24,0,random(0,359),2,random(30,50))
+    	TNT1 A 0 A_CustomMissile("Gibbage5",24,0,random(0,359),2,random(30,50))
+    	TNT1 AAAAAAAAAA 0 A_CustomMissile("Gibbage6",24,0,random(0,359),2,random(30,50))
+		Stop
+      Raise:
+	Stop
     }
 }
 
 actor AlienTrooperShot
 {
-    Speed 30
+    Speed 25
     Damage (7)
     Radius 12
     Height 8
@@ -448,13 +712,8 @@ actor AlienTrooperShot
     States
     {
       Spawn:
-        ALTR S 0 A_SpawnItemEx("AlienShotTrail",-30,0,0,0,0,0,0,128,0)
-        ALTR S 0 A_SpawnItemEx("AlienShotTrail",-25,0,0,0,0,0,0,128,0)
-        ALTR S 0 A_SpawnItemEx("AlienShotTrail",-20,0,0,0,0,0,0,128,0)
-        ALTR S 0 A_SpawnItemEx("AlienShotTrail",-15,0,0,0,0,0,0,128,0)
-        ALTR S 0 A_SpawnItemEx("AlienShotTrail",-10,0,0,0,0,0,0,128,0)
-        ALTR S 1 BRIGHT A_SpawnItemEx("AlienShotTrail",-5,0,0,0,0,0,0,128,0)
-        loop
+        ALTR SSSS 1 BRIGHT A_SpawnItem("AlienShotTrail",0)
+        Goto Spawn+1
 
       Death:
         ACLO E 1
@@ -473,7 +732,7 @@ actor AlienShotTrail
     States
     {
       Spawn:
-        ALTR S 2 BRIGHT
+        ALTR S 4 BRIGHT
         stop
     }
 }
@@ -490,20 +749,45 @@ ACTOR FriendlyPfhorTrooper
     Height 50
     Mass 100
     Speed 8
-    PainChance 200
-    MinMissileChance 120
+    PainChance 255
     Scale 0.45
+    MinMissileChance 128
     BloodColor "Yellow"
     SeeSound "pfhor/see"
     DeathSound "pfhor/death"
     ActiveSound "pfhor/active"
     Monster
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
     Species "Player"
-    +MISSILEMORE
-    //+MISSILEEVENMORE
-    +FLOORCLIP
+    
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
     +FRIENDLY
     -SOLID
+
     States
     {
       Spawn:
@@ -517,13 +801,13 @@ ACTOR FriendlyPfhorTrooper
       Missile: // No grenade attack, since it's far too easy to hurt the player with it.
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
-        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-4,4))
+        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-5,5))
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
-        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-4,4))
+        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-5,5))
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
-        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-4,4))
+        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-5,5))
         TNT1 A 0 A_Jump(64,"Missile")
         Goto See
 
@@ -538,11 +822,12 @@ ACTOR FriendlyPfhorTrooper
         PTRO H 5 A_Scream
         PTRO I 5
         PTRO J 5 A_NoBlocking
-        PTRO K -1
+        PTRO K 3000
+	PTRO KKKKKKKKKKKK 4 A_FadeOut(0.1)
         Stop
 
       Death.HexGreenFire: // Hah hah yeah right.
-
+      Death.Inferno:
       Burn:
         TNT1 A 0 ThrustThingZ(0, random(4,8), 0, 0)
         TNT1 A 0 A_Recoil(random(1,3))
@@ -558,14 +843,18 @@ ACTOR FriendlyPfhorTrooper
         SOPL V 7 Bright
         SOPL W 7 Bright
         SOPL X 7 Bright A_NoBlocking
-        SOPL X -1
+        SOPL X 3000
+	SOPL XXXXXXXXXXXX 4 A_FadeOut(0.1)
         stop
+
+      Raise:
+	Stop
     }
 }
 
 ACTOR PfhorTrooperBullet : MarathonARBulletCoop
 {
-    Damage (5)
+    Damage (Random(6,9))
 }
 
 //=================
@@ -580,17 +869,44 @@ ACTOR FriendlyGrunt
     PainChance 60
     Scale 0.1976285   // lol specific
     Monster
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
     Species "Player"
-    +FLOORCLIP
+    
+  +LOOKALLAROUND
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  +MISSILEMORE
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
     +FRIENDLY
-    -SOLID
-    +MISSILEMORE
+
     SeeSound "friendlygrunt/sight"
     PainSound "friendlygrunt/pain"
     DeathSound "friendlygrunt/death"
     ActiveSound "friendlygrunt/active"
     Obituary "%o was somehow killed by a friendly Grunt."
-    Translation "96:111=192:216", "241:246=192:208", "32:63=192:223" // No blood, but I'm not increasing filesize by megs just for another modelrip.
+    //Translation "96:111=192:216", "241:246=192:208", "32:63=192:223" // No blood, but I'm not increasing filesize by megs just for another modelrip.
     States
     {
       Spawn:
@@ -605,18 +921,18 @@ ACTOR FriendlyGrunt
         RANG BBCCDDEE 3 A_Chase
         goto See
 
-      IdleNoise:
-        TNT1 A 0 A_PlaySound("friendlygrunt/active")
+      SightNoise:
+        TNT1 A 0 A_PlaySound("friendlygrunt/sight")
         goto See2
 
-      SightNoise:
+      IdleNoise:
         TNT1 A 0 A_PlaySound("friendlygrunt/active")
         goto See2
 
       Missile:
         RANG G 6 A_FaceTarget
         TNT1 A 0 A_PlaySound("quakeweps/shotgunfire")
-        TNT1 AAAA 0 A_CustomMissile("GruntBullet",32,0,random(-150,150)/100.0,0,0)
+        TNT1 AAAAAA 0 A_CustomMissile("GruntBullet",32,0,random(-150,150)/100.0,0,0)
         RANG H 8 Bright
         RANG G 8
         Goto See2
@@ -631,7 +947,8 @@ ACTOR FriendlyGrunt
         RANG I 5 A_PlayerScream
         RANG J 5 A_NoBlocking
         RANG KLM 4
-        RANG N -1
+        RANG N 3000
+	RANG NNNNNNNNNNNN 4 A_FadeOut(0.1)
         Stop
 
       XDeath:
@@ -642,8 +959,13 @@ ACTOR FriendlyGrunt
         ACLO EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 0 A_SpawnItemEx("Blood", 0, 0, random(8, 56), random(-4, 4), 0, random(0, 6))
         ACLO E 0 A_SpawnItemEx("QuakeSmallGibDropper",0,0,random(20,40),0,0,0,0,1)
         QGBA C 1 ThrustThing(random(0, 255), random(0, 4), 1, 0)
-        QGBA C -1 ThrustThingZ(0, random(14, 20), 0, 1)
+        QGBA C 1 ThrustThingZ(0, random(14, 20), 0, 1)
+        QGBA C 3000
+	QGBA CCCCCCCCCCCC 4 A_FadeOut(0.1)
         Stop
+
+      Raise:
+	Stop
     }
 }
 
@@ -654,5 +976,1104 @@ Translation "187:202=81:95"
 
 ACTOR GruntBullet : QuakeBullet2
 {
-    Damage (5)
+}
+
+
+//////////////////////////////////////////////////
+//////////////// SUPER BEACON ////////////////////
+//////////////////////////////////////////////////
+
+//=================
+// DOOMGUY: Belphegor
+// Hey look, a baron recolor!
+
+ACTOR FriendlyBelphegor : BaronOfHell2
+{
+    Game Doom
+    SpawnID 215
+    Health 1000
+    PainChance 25
+    HitObituary "%o was somehow killed by a friendly belphegor."
+    Obituary "%o was somehow killed by a friendly belphegor."
+    Translation "16:47=176:191", "48:79=80:111"
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
+    Species "Player"
+
+  +MISSILEEVENMORE
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
+  states
+	{
+      Melee:
+      Missile:
+        BOSS EF 6 A_FaceTarget
+        BOSS G 6 A_CustomComboAttack("FriendlyBaronBall", 32, Random(3,16)*5, "baron/melee")
+        BOSS EF 6 A_FaceTarget
+        BOSS G 6 A_CustomComboAttack("FriendlyBaronBall", 32, Random(3,16)*5, "baron/melee")
+        BOSS EF 6 A_FaceTarget
+        BOSS G 6 A_CustomComboAttack("FriendlyBaronBall", 32, Random(3,16)*5, "baron/melee")
+        Goto See
+	}
+}
+
+actor FriendlyBaronBall : BaronBall3
+{
+    Damage 12
+    +THRUSPECIES
+    Speed 20
+    Species "Player"   
+}
+
+
+//=================
+// CORVUS: Iron Lich
+// Much like the nitrogolem, these guys have an awesome name. Their attacks are awesome too.
+
+ACTOR FriendlyIronLich : IronLich2
+    {
+    Health 1000
+    PainChance 64
+    HitObituary "%o was somehow killed by a friendly Iron lich."
+    Obituary "%o was somehow killed by a friendly Iron lich."
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+    
+    Species "Player"
+
+  +MISSILEMORE
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -Boss
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
+
+  DropItem "Berserk" 192
+  DropItem "Ammo1Small" 192
+  DropItem "HereticAmmo1Small" 192
+  DropItem "Ammo2Small" 192
+  DropItem "HereticAmmo2Small" 192
+  DropItem "Ammo3Small" 192
+  DropItem "HereticAmmo3Small" 192
+  DropItem "Ammo4Small" 192
+  DropItem "HereticAmmo4Small" 192
+
+    States
+    {
+  Missile:
+    LICH A 0 A_JumpIfCloser(256,"SuperMissile")
+    LICH A 5 A_FaceTarget
+    LICH B 20 A_LichAttack
+    LICH A 5 A_FaceTarget
+    LICH B 20 A_LichAttack
+    Goto See
+  SuperMissile:
+    LICH A 5 A_FaceTarget
+    LICH B 0 A_LichAttack
+    LICH B 20 A_LichAttack
+    Goto See
+  Death:
+    LICH C 7
+    LICH D 7 A_Scream
+    LICH EF 7
+    LICH G 7 A_NoBlocking
+    LICH H 7
+    LICH I 3000
+    LICH IIIIIIIIIIII 4 A_FadeOut(0.1)
+    Stop
+    Raise:
+	Stop
+    }
+}
+
+actor FriendlyHeadFX1 : HeadFX12 replaces HeadFX12
+{
+    +THRUSPECIES
+    Species "Player"
+}
+
+actor FriendlyHeadFX2 : HeadFX22 replaces HeadFX22
+{
+    +THRUSPECIES
+    Species "Player"
+}
+
+actor FriendlyHeadFX3 : HeadFX32 replaces HeadFX32
+{
+    +THRUSPECIES
+    Species "Player"
+}
+
+actor FriendlyHeadFX4 replaces HeadFX4 //Had to rework Whirlwind due to the original acting glitchy for some odd reason.
+{
+    Speed 10
+    Renderstyle Translucent
+    Alpha 0.4
+    +FRIENDLY
+    +LOOKALLAROUND
+    +THRUSPECIES
+    -SOLID
+    -SHOOTABLE
+    Species "Player"
+  States
+{
+Spawn:
+TNT1 A 0
+FX07 DEFG 3
+Goto Look
+Look:
+FX07 A 0 A_Look
+FX07 AA 1 A_Wander
+FX07 B 0 A_Look
+FX07 BB 1 A_Wander
+FX07 C 0 A_Look
+FX07 CC 1 A_Wander
+FX07 A 0 A_GiveInventory("Clip",1)
+FX07 A 0 A_JumpIfInventory("Clip",25,"Death")
+Loop
+See:
+FX07 A 0 A_JumpIfCloser(128,"Attack")
+FX07 A 1 A_Wander
+FX07 A 1 A_Chase
+FX07 B 1 A_Wander
+FX07 B 1 A_Chase
+FX07 C 1 A_Wander
+FX07 C 1 A_Chase
+FX07 A 0 A_GiveInventory("Clip",1)
+FX07 A 0 A_JumpIfInventory("Clip",25,"Death")
+Loop
+Attack:
+FX07 A 1 A_Wander
+FX07 A 1 A_FastChase
+FX07 A 0 A_SpawnItem("HurricaneHurt")
+FX07 A 0 A_GiveInventory("Cell",1)
+FX07 A 0 A_JumpIfInventory("Cell",20,"Death")
+FX07 B 1 A_Wander
+FX07 B 1 A_FastChase
+FX07 B 0 A_SpawnItem("HurricaneHurt")
+FX07 B 0 A_GiveInventory("Cell",1)
+FX07 B 0 A_JumpIfInventory("Cell",20,"Death")
+FX07 C 1 A_Wander
+FX07 C 1 A_FastChase
+FX07 C 0 A_SpawnItem("HurricaneHurt")
+FX07 C 0 A_GiveInventory("Clip",1)
+FX07 C 0 A_JumpIfInventory("Clip",20,"Death")
+Goto See
+Death:
+FX07 GFED 4
+Stop
+}
+}
+
+actor HurricaneHurt
+{
+DamageType "Explosive"
+-SOLID
++PAINLESS
+//+NODAMAGETHRUST
+//+FORCERADIUSDMG
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_Explode(8, 64, 0)
+Stop
+}
+}
+
+//=================
+// CHEX WARRIOR: Flemoidus Maximus
+// Yes, these use the same slimeballs as the Flemoids, only bigger and more damaging. I'm lazy, alright?
+actor FriendlyFlemoidusMaximus : FlemoidusMaximus
+{
+    Health 1500
+    PainChance 25
+    SeeSound "friendlyflemoid/sight"
+    AttackSound "friendlyflemoid/attack"
+    PainSound "friendlyflemoid/pain"
+    DeathSound "friendlyflemoid/death"
+    ActiveSound "friendlyflemoid/active"
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+    
+    Species "Player"
+
+  +MISSILEEVENMORE
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -Boss
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
+    
+    Obituary "%o was somehow slimed by a friendly flemoidus maximus."
+    
+    States
+    {
+      Spawn:
+        FLMB AB 10 A_Look
+        Loop
+        
+      See:
+        FLMB AABBCCDD 3 A_Chase
+        Loop
+        
+      Pain:
+        FLMB AAA 1 A_SpawnDebris("FlemoidGib",1)
+        FLMB A 3 A_Pain
+        Goto See
+        
+      Raise:
+        stop
+        
+      Pain.ZorchPistol:
+        
+      Pain.Zorch:
+        FLMB H 3
+        FLMB H 3 A_Pain
+	Goto See
+        
+      Death.DukeExplosive:
+      Death.DukeSpectral:
+        
+      Death.DukeDamage:
+        
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+        
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+        
+      XDeath:
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_PlaySound("flemdie")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
+        SPOD A 10
+        SPOD ABC 7
+        SPOD D 3000
+	SPOD DDDDDDDDDDDD 4 A_Fadeout(0.1)
+        stop
+        
+      Death.ZorchPistol:
+        
+      Death.Zorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        FLMB H 5
+        FLMB I 5 A_Scream
+        FLMB J 5 A_NoBlocking
+        FLMB K 5
+        FLMB L 5
+        Stop
+        
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Ice
+        
+      Ice:
+      Death.HexenIce:
+        
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_NoBlocking
+        FLMB A 0 A_UnsetSolid
+        FLMB A 70 A_GenericFreezeDeath
+        FLMB A 0 A_IceGuyDie
+        FLMB A 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+        
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        FLMB A 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+        FLMB A 16 A_Pain
+        Goto See
+        
+      Melee:
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        FLMB EF 8 A_FaceTarget // Previously 6 each
+        FLMB G 8 A_CustomComboAttack("FriendlyFlemBall2", 56, random[troopattack](2,16)*5, "friendlyflemoid/shotx", "flem")
+        FLMB EF 8 A_FaceTarget // Previously 6 each
+        FLMB G 8 A_CustomComboAttack("FriendlyFlemBall2", 56, random[troopattack](2,16)*5, "friendlyflemoid/shotx", "flem")
+        Goto See
+
+      Raise:
+	Stop
+    }
+}
+
+actor FriendlyFlemBall2 : BipedicusBallV3
+{
+    +THRUSPECIES
+    Scale 2
+    Damage 8
+    Species "Player"
+    SeeSound "friendlyflemoid/flem"
+    DeathSound "friendlyflemoid/shotx"
+    States
+    {
+      Spawn:
+        FLB1 AB 4
+        Loop
+        
+      Death:
+        FLB1 CDE 6
+        Stop
+    }
+}
+
+//=================
+// B.J. BLAZKOWICZ: Wolfenstein SS
+// Perfect Accuracy Repeat Fire. Totally Awesome.
+ACTOR FriendlyWolfensteinSS
+{
+    Health 1000
+    Radius 16
+    Height 50
+    Speed 8
+    PainChance 10
+    Scale 1.2
+    Monster
+
+        damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
+    Species "Player"
+
+  MinMissileChance 160
+
+  +MISSILEMORE
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
+
+    SeeSound "blue/sight"
+    PainSound "friendlynazi/pain"
+    DeathSound "blue/death"
+    ActiveSound "friendlynazi/active"
+    AttackSound "wolfen/machinegun"
+    Obituary "%o was somehow killed by a friendly Wolfenstein SS."
+    Dropitem "ClipBox"
+    Species "Player"
+    
+    States
+  {
+  Spawn:
+    ASSV AB 10 A_Look
+    loop
+  See:
+    ASSV AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    ASSV E 4 A_FaceTarget
+    ASSV F 4 A_FaceTarget
+    ASSV G 0 Bright A_FaceTarget
+    TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
+    ASSV G 4 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
+    ASSV F 4 A_FaceTarget
+    ASSV G 0 Bright A_FaceTarget
+    TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
+    ASSV G 4 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
+    ASSV F 0 A_SpidRefire
+    goto Missile+1
+  Pain:
+    ASSV H 3
+    ASSV H 3 A_Pain
+    goto See
+  Death:
+    ASSV I 5
+    ASSV J 5 A_Scream
+    ASSV K 5 A_NoBlocking
+    ASSV L 5
+    ASSV M 3000
+    ASSV MMMMMMMMMMMM 4 A_FadeOut(0.1)
+    stop
+  XDeath:
+    ASSV N 0 A_SpawnItemEX("HDGib9_Generator",0,0,0,0,0,0,0,128)
+    ASSV N 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
+    ASSV N 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
+    ASSV N 5
+    ASSV O 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
+    ASSV O 5 A_XScream
+    ASSV P 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
+    ASSV P 5 A_NoBlocking
+    ASSV Q 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
+    ASSV QRSTU 5
+    ASSV V 3000
+    ASSV VVVVVVVVVVVV 4 A_FadeOut(0.1)
+    Stop
+  Raise:
+    Stop
+  }
+}
+
+//=================
+// PARIAS: Slaughtaurs
+// SHIELD OP HAX BAN NERF
+
+ACTOR FriendlySlaughtaur : CentaurLeader2 115
+{
+	damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
+    Species "Player"
+
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
+
+  RadiusDamageFactor 0.25 //Because Parias.
+  MeleeThreshold 256 //So they charge in more.
+  MeleeRange 128 //The melee is the main focus of this guy.
+  Health 1000
+  PainChance 32 //So they don't constantly shield and be immune to everything.
+  Speed 15
+  Obituary "%o was somehow killed by a friendly Slaughtaur."
+  HitObituary "%o was somehow killed by a friendly Slaughtaur."
+  States
+  {
+  Pain:
+    CENT G 6 A_Pain
+    CENT G 6 A_SetReflectiveInvulnerable
+    CENT EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 1 A_CentaurDefend //So they break out of invuln easily.
+    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto See
+  Melee:
+    CENT H 4 A_FaceTarget
+    CENT I 4 A_FaceTarget
+    CENT J 4 A_CustomMeleeAttack(random[CentaurAttack](10,50))
+    Goto See
+  Missile:
+    CENT E 1 A_SetReflectiveInvulnerable
+    CENT E 1 A_FaceTarget
+    CENT EEEEEEEEE 1 A_CentaurDefend //But go invulnerable way more often.
+    CENT F 1 Bright A_CustomMissile("FriendlyCentaurFX", 45, 0, 0)
+    CENT FFFFFFF 1 A_CentaurDefend
+    CENT E 1 A_FaceTarget
+    CENT EEEEEEEEE 1 A_CentaurDefend
+    CENT F 1 Bright A_CustomMissile("FriendlyCentaurFX", 45, 0, 0)
+    CENT FFFFFFF 1 A_CentaurDefend
+    CENT F 1 A_UnsetReflectiveInvulnerable
+    Goto See
+  XDeath:
+  Death:
+    CENT K 4
+    CENT L 4 A_Scream
+    CENT MN 4
+    CENT O 4 A_NoBlocking
+    CENT PQ 4
+    CENT R 4
+    CENT S 4
+    CENT T 3000
+    CENT TTTTTTTTTTTT 4 A_Fadeout(0.1)
+    Stop
+  }
+}
+
+ACTOR FriendlyCentaurFX : CentaurFX2
+{
+	Damage 5
+	+THRUSPECIES
+	Species "Player"
+}
+
+//=================
+// DUKE NUKEM: BattleLord
+// Totally not a higher tier monster than the other elite summons. 
+
+ACTOR FriendlyBattleLord 
+{ 
+        Health 1000
+	Mass 2000
+	Radius 20
+	Height 72
+	Scale 0.75
+	Speed 10
+	PainChance 50
+	MONSTER 
+
+	damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
+  +MISSILEMORE
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
+
+	Species "Player"
+	SeeSound "battlelord/sight"
+	AttackSound "lizard/attack"
+	PainSound "battlelord/pain"
+	DeathSound "battlelord/death"
+	ActiveSound "battlelord/active"
+	Obituary "%o was somehow killed by a friendly BattleLord."
+
+	States
+	{
+	Spawn:
+		LORD AB 10 A_Look
+		Loop
+	See:
+        TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
+        TNT1 A 0 A_GiveInventory("DukeBossSee",1)
+        TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
+
+      See2:
+		LORD AABBCCDD 3 A_Chase
+		Loop
+	Missile:
+		LORD E 2 A_JumpIfCloser(448,"Chaingun")
+		Goto Mortar
+	Chaingun:
+		LORD E 3 A_FaceTarget //Oh dear lord, another DECORATE wall.
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD E 3 A_FaceTarget
+		LORD E 0 A_PlayWeaponSound("duke/chaingun")
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
+		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
+		Goto See
+	Mortar:
+		LORD G 10 A_FaceTarget
+		LORD G 0 A_PlaySound("duke/rocket")
+		LORD H 10 Bright A_CustomMissile("FriendlyMortar",32,20,0,2,35)
+		LORD G 10 A_FaceTarget
+		LORD G 0 A_PlaySound("duke/rocket")
+		LORD H 10 Bright A_CustomMissile("FriendlyMortar",32,20,0,2,35)
+		LORD G 10 A_FaceTarget
+		LORD G 0 A_PlaySound("duke/rocket")
+		LORD H 10 Bright A_CustomMissile("FriendlyMortar",32,20,0,2,35)
+		LORD G 10 A_SpidRefire
+		LORD E 0 A_Jump(96,"See")
+		LORD E 0 A_Jump(64,"Chaingun")
+		LORD E 0 A_Jump(32,"Missile")
+		Goto See
+	Pain:
+		LORD I 3
+		LORD I 3 A_Pain
+		Goto See
+	Death:
+		LORD I 14 A_Scream
+		LORD J 14 A_Fall
+		LORD KLM 14
+		LORD N 3000
+		LORD NNNNNNNNNNNN 2 A_FadeOut(0.1)
+		Stop
+	}
+
+}
+
+Actor DukeRipperBulletCoop2 : DukeRipperBulletCoop
+{
+	Damage (6)
+}
+
+Actor FriendlyMortar:Mortar {
+	Damage (0)
+	DontHurtShooter
+  	DamageType "Explosive"
+  	Species "Player"
+   	+THRUSPECIES
+
+	States 
+	{ 
+	Death:
+		XPLO A 0 A_Explode(50,100,0) //Traps broke the game horribly, so no.
+		XPLO A 0 A_SpawnItem("RedExplosion",0,0)
+		Stop
+	}
+}
+
+//=================
+// SECURITY OFFICER: Hunter
+// Just pretend these guys are green, and you've got the major hunters these are supposed to be.
+
+ACTOR FriendlyHunter
+{
+	Health 1000
+	Radius 20
+	Height 64
+	Mass 1000
+	Speed 8
+	PainChance 256
+	MinMissileChance 112 //Oh heh heh.
+	Scale 0.55
+
+	damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
+    Species "Player"
+  
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+    +FRIENDLY
+
+	SeeSound ""
+	PainSound "hunter/armor"
+	DeathSound "hunter/death"
+	ActiveSound ""
+	Monster
+	+FLOORCLIP
+	+NOBLOOD
+
+  Obituary "%o was somehow killed by a friendly Pfhor Hunter."
+  HitObituary "%o was somehow killed by a friendly Pfhor Hunter."
+	States
+	{
+	Spawn:
+		HUNT A 1 A_Look
+		LOOP
+	See:
+		HUNT BBCCDDEE 3 A_Chase
+		LOOP
+	Missile:
+		HUNT A 4 A_FaceTarget
+		TNT1 A 0 A_PlaySound("hunter/shoot")
+		HUNT F 4 Bright A_CustomMissile("HunterShot",67,7,random(-1,1),0)
+		HUNT AAA 0 A_SpidRefire
+		Loop
+	Pain:
+		HUNT A 2
+		HUNT A 2 A_Pain
+		Goto See
+	Death:
+		HUNT G 15
+		HUNT H 5 A_Scream
+		HUNT I 5 A_NoBlocking
+		HUNT J 3000
+		HUNT JJJJJJJJJJJJ 4 A_FadeOut(0.1)
+		Stop
+	Death.MarathonFusion:
+		HUNT K 15 Bright A_Explode(80+random(0,40),128)
+		HUNT L 5 Bright A_PlaySound("hunter/explode")
+		HUNT M 5 Bright
+		HUNT N 5 Bright A_NoBlocking
+		HUNT J 3000
+		HUNT OOOOOOOOOOOO 4 A_FadeOut(0.1)
+		Stop
+	Death.Explosive:
+		HUNT K 15 Bright A_Explode(80+random(0,40),128)
+		HUNT L 5 Bright A_PlaySound("hunter/explode")
+		HUNT M 5 Bright
+		HUNT N 5 Bright A_NoBlocking
+		HUNT O 3000
+		HUNT OOOOOOOOOOOO 4 A_FadeOut(0.1)
+		Stop
+	}
+}
+
+ACTOR HunterShot
+{
+	Decal ArachnotronScorch
+	Radius 6
+	Height 8
+	Speed 15
+	Damage (15+random(0,5))
+	DamageType "HunterShot"
+	+THRUSPECIES
+	Species "Player"
+	Scale 0.35
+	DeathSound "hunter/hit"
+	Projectile
+	States
+	{
+	Spawn:
+		HSHT A 1 Bright
+		LOOP
+	Death:
+		HXPL ABCD 4 Bright
+		STOP
+	}
+}
+
+//=================
+// RANGER: Vore
+// Yes, I know these are Vader and NMN's sprites, but I cannot modelrip to save my life, so deal with it.
+
+Actor FriendlyVore
+{
+  Health 1000
+  Speed 4
+  Radius 30
+  Height 56
+  Mass 1000
+  PainChance 40
+  Monster
+
+	damagefactor "Zorch", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "Wraithverge", 0
+        damagefactor "Explosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "MarathonFusion", 0
+        damagefactor "FireExplosive", 0
+        damagefactor "MarineAlly", 0
+
+    Species "Player"
+
+  +MISSILEMORE
+  +MISSILEEVENMORE 
+  +THRUSPECIES
+  +FLOORCLIP
+  +PUSHABLE
+  +ACTIVATEIMPACT
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  -NoBlockMonst
+  -CountKill
+  -ActivateMCross
+  -TeleStomp
+  -Solid
+  +FRIENDLY
+  Obituary "%o was somehow killed by a friendly Vore."
+  SeeSound "Vore/Sight"
+  ActiveSound "Vore/Active"
+  PainSound "Vore/Pain"
+  DeathSound "Vore/Death"
+  States
+  {
+  Spawn:
+    VORE D 10 A_Look
+	Loop
+  See:
+    VORE AA 3 A_Chase
+    VORE B 7 A_Chase
+    VORE CC 3 A_Chase
+    VORE D 7 A_Chase
+    VORE EE 3 A_Chase
+    VORE F 7 A_Chase
+	Loop
+  Melee:
+  Missile:
+    VORE G 0 Bright A_PlaySoundEx("Vore/Attack", "Body")
+	VORE GHHHH 4 Bright A_FaceTarget
+	VORE II 4 Bright A_FaceTarget
+	VORE J 8 Bright A_CustomMissile("VoreFirepod", 32, 0, 0)
+    VORE JJ 4 Bright A_FaceTarget
+	Goto See
+  Pain:
+	VORE K 4
+	VORE K 4 A_Pain
+	Goto See
+  Death:
+	VORE L 6
+	VORE M 6 A_Scream
+	VORE N 6
+	VORE O 6 A_NoBlocking
+	VORE P 8
+	VORE Q 3000
+	VORE QQQQQQQQQQQQ 4 A_FadeOut(0.1)
+	Stop
+  Raise:
+    Stop
+  }
+}
+
+Actor VoreFirepod
+{
+  Radius 6
+  Height 8
+  Speed 12
+  FastSpeed 18
+  Damage (36)
+  DamageType "Explosive"
+  Projectile
+  Species "Player"
+  +ThruSpecies
+  +SeekerMissile
+  RenderStyle Add
+  Alpha 0.9
+  SeeSound "Vore/Throw"
+  DeathSound "Vore/Hit"
+  Decal RevenantScorch
+  States
+  {
+  Spawn:
+    VOBA A 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA A 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA A 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA A 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA A 0 Bright A_SeekerMissile(60, 90)
+    VOBA B 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA B 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA B 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA B 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA B 0 Bright A_SeekerMissile(60, 90)
+    VOBA C 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA C 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA C 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA C 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
+    VOBA C 0 Bright A_SeekerMissile(60, 90)
+    Loop
+  Death:
+    VOBA D 0 Bright A_Explode(64, 64)	//Part of the original game was that Vores can be hurt by their own projectiles
+    VOBA DEFGHI 4 Bright
+    Stop
+  }
+}
+
+
+Actor VoreFirepodTrail
+{
+  Radius 1
+  Height 1
+  Speed 0
+  Projectile
+  RenderStyle Add
+  Alpha 0.9
+  +NoClip
+  States
+  {
+  Spawn:
+  Death:
+    TNT1 A 3
+    VOBT ABCDE 3 Bright
+    Stop
+  }
 }
