@@ -126,7 +126,7 @@ actor "Elven Wand" : Weapon
 
 actor ElvenBullet : FastProjectile
 {
-    Damage (random(1,8)+6)
+    Damage (random(2,4)+3*random(1,3))
     Radius 1
     Height 1
     Speed 320
