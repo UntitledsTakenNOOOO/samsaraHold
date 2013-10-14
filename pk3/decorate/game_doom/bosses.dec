@@ -1,16 +1,25 @@
-actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
+actor SpiderMastermind2 : Spidermastermind replaces SpidermastermindStun
 {
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
-    DamageFactor "MarathonFusion", 2.0
+    DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
+    DamageFactor "MarathonFusion", 2.25
     DamageFactor "WMCNade", 0.75
 	DamageFactor "CorvusHellstaffTomed", 0.2
-    +DONTRIP
+	painchance "Stunner", 96
+    Height 96
+    Radius 96
     +BOSSDEATH
     +NOTDMATCH
     +NOICEDEATH
+    +MISSILEEVENMORE
     states
     {
+	Pain.Stunner:
+		SPID I 3 A_ChangeFlag("NoPain", 1)
+		SPID I 300 A_Pain
+		SPID I 0 A_ChangeFlag("NoPain", 0)
+		goto See
       See:
         TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
         TNT1 A 0 A_GiveInventory("DukeBossSee",1)
@@ -35,9 +44,16 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
       Death.DukePistol:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
 
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
+	Death:
+        	TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 50)
+		SPID J 20 A_Scream
+		SPID K 10 A_NoBlocking
+		SPID LMNOPQR 10
+		SPID S 30
+		SPID S 3000 A_BossDeath
+		SPID SSSSSSSSSSSS 2 A_FadeOut(0.1)
+		stop
 
       Death.ZorchPistol:
 
@@ -46,6 +62,7 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 50)
         SPID I 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
@@ -73,6 +90,7 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 50)
         TNT1 A 0 A_NoBlocking
         //TNT1 A 0 A_SpawnItem("SpidermindFrozen")
         SPID I 0 A_PlaySoundEx("freeze/spidermind","soundslot6",0,0)
@@ -90,19 +108,26 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
 
 actor IceChunk2 : IceChunk { Health 30 +CLIENTSIDEONLY -SOLID }
 
-actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
+actor Cyberdemon2 : Cyberdemon replaces CyberdemonStun
 {
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
     DamageFactor "MarathonFusion", 2.0
+    DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
     DamageFactor "WMCNade", 0.75
 	DamageFactor "CorvusHellstaffTomed", 0.2
-    +DONTRIP
+	painchance "Stunner", 96
     +BOSSDEATH
     +NOTDMATCH
     +NOICEDEATH
+    +MISSILEMORE
     states
     {
+	Pain.Stunner:
+		CYBR G 3 A_ChangeFlag("NoPain", 1)
+		CYBR G 300 A_Pain
+		CYBR G 0 A_ChangeFlag("NoPain", 0)
+		goto See
       See:
         TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
         TNT1 A 0 A_GiveInventory("DukeBossSee",1)
@@ -126,9 +151,17 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
 
       Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
+        	TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 50)
+		CYBR H 10
+		CYBR I 10 A_Scream
+		CYBR JKL 10
+		CYBR M 10 A_NoBlocking
+		CYBR NO 10
+		CYBR P 30
+		CYBR P 3000 A_BossDeath
+		CYBR PPPPPPPPPPPP 2 A_FadeOut(0.1)
+		Stop
       Death.ZorchPistol:
 
       Death.Zorch:
@@ -136,6 +169,7 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 50)
         CYBR G 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
@@ -163,6 +197,7 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 50)
         TNT1 A 0 A_NoBlocking
         //TNT1 A 0 A_SpawnItem("CyberdemonFrozen")
         CYBR G 0 A_PlaySoundEx("freeze/cyberdemon","soundslot6",0,0)
@@ -180,50 +215,6 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
 
 actor CyberRocket : Rocket replaces Rocket
 {
-    DamageType "Explosive"
+	DamageType "DoomTheseGuysAreTheBest"
 }
 
-actor BossEye2 : BossEye replaces BossEye
-{
-States
-{
-Spawn:
-    TNT1 A 80
-    //TNT1 A 0 A_PlaySoundEx("cyber/sight","SoundSlot5",0,2)
-    TNT1 A 0 ACS_ExecuteAlways(204,0,5)
-    CYBR AAAAAAAAAAA 14
-    CYBR A 0 A_SetTranslucent(0.2,0)
-    CYBR AAAAAAAAAAA 14
-    CYBR A 0 A_SetTranslucent(0.3,0)
-    CYBR AAAAAAAAAAA 14
-    CYBR A 0 A_SetTranslucent(0.4,0)
-    CYBR AAAAAAAAAAA 14
-    CYBR A 0 A_SetTranslucent(0.5,0)
-    CYBR AAAAAAAAAAA 14
-    CYBR A 0 A_SetTranslucent(0.6,0)
-    CYBR AAAAAAAAAAA 14
-    CYBR A 0 A_SetTranslucent(0.7,0)
-    CYBR AAAAAAAAAAA 14
-    CYBR A 0 A_SetTranslucent(0.8,0)
-    CYBR AAAAAAAAAAA 14
-    CYBR A 0 A_SetTranslucent(0.9,0)
-    CYBR AAAAAAAAAAA 14
-    //TNT1 A 0 A_PlaySoundEx("cyber/active","SoundSlot5",0,2)
-    CYBR A 100 A_SetTranslucent(1,0)
-    //TNT1 A 0 A_PlaySoundEx("cyber/sight","SoundSlot5",0,2)
-    CYBR A 100
-    //TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
-    CYBR A 1 A_Look
-    wait
-		
-  Idle:
-    //TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
-    SSWV A 10 A_Look // Why the hell does the BossEye use Wolfenstein sprites?!
-    Loop
-	
-  See:
-    SSWV A 181 A_BrainAwake
-    SSWV A 150 A_BrainSpit  // See SpawnShot
-    Wait
-  }
-}

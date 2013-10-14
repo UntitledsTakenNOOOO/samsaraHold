@@ -1,24 +1,30 @@
-actor ChingunDrop: SamsaraSlotFourDrop
+actor ChaingunDrop: SamsaraSlotFourDrop
 {
     States
     {
       Spawn:
-        MGUN A -1
+        MGUN A 3000
         stop
     }
 }
 
-actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
+actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuyStun
 {
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
+	painchance "Stunner", 255
     +THRUGHOST
     +NOTDMATCH
     +NOICEDEATH
-    dropitem "ChingunDrop"
+    dropitem "ChaingunDrop"
     states
     {
+	Pain.Stunner:
+		CPOS G 3 A_ChangeFlag("NoPain", 1)
+		CPOS G 300 A_Pain
+		CPOS G 0 A_ChangeFlag("NoPain", 0)
+		goto See
       Death.DukeDamage:
 
       Death.DukePistol:
@@ -32,9 +38,16 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
         goto Death
 
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
+	Death:
+        	TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+		CPOS H 5
+		CPOS I 5 A_Scream
+		CPOS J 5 A_NoBlocking
+		CPOS KLM 5
+		CPOS N 3000
+		CPOS NNNNNNNNNNNN 2 A_FadeOut(0.1)
+		stop
 
       Death.DukeExplosive:
       Death.DukeSpectral:
@@ -54,36 +67,31 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
         TNT1 A 0 A_Jump(96,"XDeath")
         TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
 
-      XDeath:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::XDeath"
+	XDeath:
+        	TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+		CPOS O 5
+		CPOS P 5 A_XScream
+		CPOS Q 5 A_NoBlocking
+		CPOS RS 5
+		CPOS T 3000
+		CPOS TTTTTTTTTTTT 2 A_FadeOut(0.1)
+		stop
 
       Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         CPOS E 10 A_FaceTarget
         TNT1 A 0 A_PlaySound("chainguy/attack")
         CPOS F 4 bright A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
         TNT1 A 0 A_PlaySound("chainguy/attack")
         CPOS E 4 bright A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
         CPOS F 1 A_CPosRefire
-        goto Missile+2
+        goto Missile+1
 
       Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
         CPOS G 2 A_FaceTarget
         TNT1 A 0 A_Recoil(14)
         CPOS G 16 A_Pain
-        Goto See
-		
-	  Pain.MarathonStun:
-        TNT1 A 0 A_Stop
-		TNT1 A 0 A_GiveInventory("NothingSpeed")
-        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
-        CPOS G 5 A_FaceTarget
-		TNT1 A 0 A_Gravity
-        CPOS G 30 A_Pain
-        CPOS G 70
         Goto See
 
       Death.ZorchPistol:
@@ -93,6 +101,7 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 6)
         CPOS G 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -114,9 +123,7 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
         stop
 
       Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        CPOS NMLKJIH 5
-        goto See
+        Stop
 
       ZorchRaise:
         TNT1 A 1 A_UnsetShootable
@@ -147,6 +154,7 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 7)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         //TNT1 A 0 A_NoBlocking
         //TNT1 A 0 A_SpawnItem("ChaingunGuyFrozen")

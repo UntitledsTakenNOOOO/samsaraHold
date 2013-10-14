@@ -3,22 +3,28 @@ actor ShotgunDrop: SamsaraSlotTwoDrop
     States
     {
       Spawn:
-        SHOT A -1
+        SHOT A 3000
         stop
     }
 }
 
-actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
+actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuyStun
 {
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
+	painchance "Stunner", 255
     +THRUGHOST
     +NOTDMATCH
     +NOICEDEATH
     dropitem "ShotgunDrop"
     states
     {
+	Pain.Stunner:
+		SPOS G 3 A_ChangeFlag("NoPain", 1)
+		SPOS G 300 A_Pain
+		SPOS G 0 A_ChangeFlag("NoPain", 0)
+		goto See
       Death.DukeDamage:
 
       Death.DukePistol:
@@ -32,9 +38,16 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
         goto Death
 
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
+	Death:
+        	TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+		SPOS H 5
+		SPOS I 5 A_Scream
+		SPOS J 5 A_NoBlocking
+		SPOS K 5
+		SPOS L 3000
+		SPOS LLLLLLLLLLLL 2 A_FadeOut(0.1)
+		stop
 
       Death.DukeExplosive:
       Death.DukeSpectral:
@@ -54,12 +67,18 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
         TNT1 A 0 A_Jump(96,"XDeath")
         TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
 
-      XDeath:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::XDeath"
+	XDeath:
+		TNT1 A 0 A_GiveToTarget("KillCount", 1)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 4)
+		SPOS M 5
+		SPOS N 5 A_XScream
+		SPOS O 5 A_NoBlocking
+		SPOS PQRST 5
+		SPOS U 3000
+		SPOS UUUUUUUUUUUU 2 A_FadeOut(0.1)
+		stop
 
       Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         SPOS E 10 A_FaceTarget
         TNT1 A 0 A_PlaySound("shotguy/attack")
         TNT1 AAA 0 bright A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
@@ -68,21 +87,10 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
         goto See
 
       Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
         SPOS G 2 A_FaceTarget
         TNT1 A 0 A_Recoil(14)
         SPOS G 16 A_Pain
-        Goto See
-		
-	  Pain.MarathonStun:
-        TNT1 A 0 A_Stop
-		TNT1 A 0 A_GiveInventory("NothingSpeed")
-        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
-        SPOS G 5 A_FaceTarget
-		TNT1 A 0 A_Gravity
-        SPOS G 30 A_Pain
-        SPOS G 70
         Goto See
 
       Death.ZorchPistol:
@@ -92,6 +100,7 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 2)
         SPOS G 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -113,9 +122,7 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
         stop
 
       Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        SPOS LKJIH 5
-        goto See
+        Stop
 
       ZorchRaise:
         TNT1 A 1 A_UnsetShootable
@@ -146,6 +153,7 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 3)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         //TNT1 A 0 A_NoBlocking
         //TNT1 A 0 A_SpawnItem("ShotgunGuyFrozen")

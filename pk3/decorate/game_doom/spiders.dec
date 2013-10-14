@@ -1,15 +1,20 @@
-actor Arachnotron2 : Arachnotron replaces Arachnotron
+actor Arachnotron2 : Arachnotron replaces ArachnotronStun
 {
+	painchance "Stunner", 128
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
-    DamageFactor "MarathonFusion", 2.0
+    DamageFactor "MarathonFusion", 2.25
     PainChance "MightyBoot", 255
-    +DONTRIP
     +BOSSDEATH
     +NOTDMATCH
     +NOICEDEATH
     states
     {
+	Pain.Stunner:
+		BSPI I 3 A_ChangeFlag("NoPain", 1)
+		BSPI I 300 A_Pain
+		BSPI I 0 A_ChangeFlag("NoPain", 0)
+		goto See+1
       Death.DukeExplosive:
       Death.DukeSpectral:
 
@@ -26,30 +31,22 @@ actor Arachnotron2 : Arachnotron replaces Arachnotron
         TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
         goto Death
 
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
+	Death:
+        	TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 10)
+		BSPI J 20 A_Scream
+		BSPI K 7 A_NoBlocking
+		BSPI LMNO 7
+		BSPI P 3000 A_BossDeath
+		BSPI PPPPPPPPPPPP 2 A_FadeOut(0.1)
+		stop
 
       Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
         TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
         BSPI I 2 A_FaceTarget
         TNT1 A 0 A_Recoil(8)
         BSPI I 16 A_Pain
         goto See
-		
-	  Pain.MarathonStun:
-        TNT1 A 0 A_Stop
-		TNT1 A 0 A_GiveInventory("NothingSpeed")
-        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
-        BSPI I 5 A_FaceTarget
-        BSPI I 30 A_Pain
-        BSPI I 70
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Missile"
 
       Death.ZorchPistol:
 
@@ -58,6 +55,7 @@ actor Arachnotron2 : Arachnotron replaces Arachnotron
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 10)
         BSPI I 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -79,9 +77,7 @@ actor Arachnotron2 : Arachnotron replaces Arachnotron
         stop
 
       Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        BSPI PONMLKJ 5
-        goto See+1
+        Stop
 
       ZorchRaise:
         TNT1 A 1 A_UnsetShootable
@@ -112,40 +108,16 @@ actor Arachnotron2 : Arachnotron replaces Arachnotron
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 10)
         TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_SpawnItemEx("ArachnotronFrozen",0,0,0,0,0,0,0,32)
-        //BSPI I 0 A_GenericFreezeDeath
-        //BSPI I 70 A_UnsetSolid
-        //BSPI I 0 A_IceGuyDie
-        //BSPI I 1 A_IceGuyDie
+        //TNT1 A 0 A_SpawnItem("ArachnotronFrozen")
+        BSPI I 0 A_GenericFreezeDeath
+        BSPI I 70 A_UnsetSolid
+        BSPI I 0 A_IceGuyDie
+        BSPI I 1 A_IceGuyDie
         TNT1 A -1 A_BossDeath
         stop
     }
-}
-
-actor ArachnotronFrozen
-{
-  Health 10
-  Radius 64
-  Height 64
-  Mass 600
-  Monster
-  +FLOORCLIP
-  +NEVERRESPAWN
-  +NOTELEPORT
-  +NOTARGET
-  States
-  {
-  Spawn:
-    BSPI I 1
-	BSPI I 0 A_GenericFreezeDeath
-    BSPI I 70 A_UnsetSolid
-  Death:
-    BSPI I 0 A_IceGuyDie
-    BSPI I 1 A_IceGuyDie
-	TNT1 A -1
-    stop
-}
 }
 
 actor ArachnotronPlasma2 : ArachnotronPlasma replaces ArachnotronPlasma
