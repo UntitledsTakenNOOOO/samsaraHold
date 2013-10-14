@@ -101,6 +101,45 @@ script SAMSARA_BEACON (int noloop)
     }
 }
 
+script 323 (int noloop)
+{
+    int pln, classnum, SupermonType, SupermonTID, success = 0;
+    int superbeaconTID = defaultTID(0);
+    int x = GetActorX(0), y = GetActorY(0), z = GetActorZ(0);
+
+    SetActivatorToTarget(0);
+    
+    pln = PlayerNumber();
+    classnum = samsaraClassNum();
+
+    if (pln == -1)
+    {
+        SetActorState(superbeaconTID, "WhatAmIDoingWithMyLife");
+        terminate;
+    }
+
+    SupermonType = SuperBeaconMonsters[classnum];
+
+    SetActivator(superbeaconTID);
+
+    while (!success)
+    {
+        superMonTID = unusedTID(14000, 24000);
+        success = Spawn(SupermonType, x, y, z, superMonTID);
+        if (success) { Spawn("TeleportFog", x, y, z); }
+
+        if (noloop)
+        {
+            SetResultValue(success);
+
+            if (!success) { SetActorState(superbeaconTID, "FuckYouImAPickup"); }
+            terminate;
+        }
+
+        Delay(1);
+    }
+}
+
 script SAMSARA_SPECTRES (int mode, int arg1, int arg2)
 {
     int i,j,k,l, x,y,z;

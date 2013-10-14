@@ -92,7 +92,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         {
             if (isLMS())
             {
-                GiveInventory("QuadDamageItem", 1);
+                GiveInventory("QuadDamageItem2", 1);
                 break;
             }
 
@@ -100,7 +100,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 
             if (isCoop() || isSinglePlayer())
             {
-                GiveInventory("QuadDamageItem", 1);
+                GiveInventory("QuadDamageItem2", 1);
             }
         }
         break;
@@ -836,60 +836,6 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Despair, for I am the One God."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-		}
-        break;
-		
-      case 5: // THE ICON OF SIN
-	  if (GetCVar("samsara_nomonologues"))
-	  {
-		SetActorState(0,"Idle");
-	  }
-	  else
-	  {
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"In all my aeons, I have never met one like you."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"I wonder what your people would call you."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"Mighty? Great? Savior? Hero?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"Who knows how many they would have to sort through to find one for you?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"Some fitting word that could suit all the incredible deeds you've done."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"Do you know the title I have?"; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"None."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"In all the years of my life, they have never found anything suitable for my power."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"Call me Baphomet. Call me Gatekeeper. Satan. Demonlord. Hellfather. The Icon of Sin."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(154);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"Whichever name you choose for me, only one will truly fit."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        delay(140);
-        SetHudSize(640, 400, 0);
-        SetFont("BIGFONT");
-        HudMessageBold(s:"Your doom."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-		}
         break;
     }
 }
@@ -957,4 +903,32 @@ script 679 (int tx, int ty, int tz) clientside
         l %= 512;
         k = i;
     }
+}
+
+script 321 ENTER
+{
+if(GetPlayerInfo(PlayerNumber(), PLAYERINFO_PLAYERCLASS)<0 && GetActorProperty(0,APROP_Health)>0)
+{
+Print(s:"\cfPlaying \c[C3]Random \cfis not allowed in this mod.\n\cjPlease pick a \c[M7]Class\cj.");
+DamageThing(0);
+}
+Delay(35);
+Restart;
+}
+
+script 322 RESPAWN
+{
+if(GetPlayerInfo(PlayerNumber(), PLAYERINFO_PLAYERCLASS)<0 && GetActorProperty(0,APROP_Health)>0)
+{
+Print(s:"\cvPlaying \c[C1]Random \cnis not allowed in this mod.\n\cjPlease pick a \c[G1]Class\cj.");
+DamageThing(0);
+}
+Delay(35);
+Restart;
+}
+
+script 324 (Void)
+{
+GiveInventory("LifeItem", 9);
+Print(s:"\cjI just ACS'd you lives! \cnGet in there!");
 }

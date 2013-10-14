@@ -20,7 +20,7 @@
 #define SAMSARA_QUAKE               606
 #define SAMSARA_RESONATE            608
 #define SAMSARA_SYNTHFIRE           607
-#define SAMSARA_MEGAHEALTH          259
+#define SAMSARA_MEGAHEALTH          232
 #define SAMSARA_QPOWERS             636
 
 #define SAMSARA_TIPBOX              300
@@ -541,114 +541,52 @@ int CVarDefenseItems[DEFENSEMODES] =
 
 
 int ChangelogString =
-"FROM 0.29b TO 0.3\n\
-========================\n\
-GAMEPLAY:\n\
-- B.J.'s chaingun gave less ammo on pickup than his Machine Gun. Fixed, now it gives 20 ammo like the Machine Gun does.\n\
-- The Quake wiki reveals the lava nails were dealing too much damage. They were not more powerful in DM, they just pierced armor. And they only did 30% extra damage in co-op. Ranger was adjusted accordingly.\n\
-- Someone had removed +THRUGHOST on Ranger's nails. They were put back in.\n\
-- The Fusion Pistol's shots can no longer be deflected.\n\
-- In lieu of Zandronum 1.1.1, Duke's and Ranger's bullets now use FBF_NORANDOM! This gives them wonderful Unlagged compatibility while still being, as in Duke Nukem 3D, completely static about their damage!\n\
-- Splitting the Wraithverge into DM modes and coop modes gave it the side effect of being terribly, terribly overpowered. Its damage in deathmatch has been thirded and it speeds up only half as often.\n\
-- Timon's Axe now actually uses the damagetype TimonsAxe. \n\
-- In lieu of FBF_NORANDOM, Duke Nukem's Explosive Shotgun has been reworked. Damage emphasis has been placed less on the bullets and more on the explosives--the bullets do less damage, while the explosions do more to a wider radius. To accomodate the wider radius, the accuracy has been tightened up as well.\n\
-- The Devastators have had their radius increased as well, from 32 to 64, with damage increased from 35 to 48. Duke Nukem's HEIRARCHY OF EXPLOSIVES now goes:\n\
- ^- Pipebombs: Largest radius\n\
- ^- Explosive Shotgun: Most damage\n\
- ^- RPG: Fastest firing\n\
- ^- Devastators: Ultimate\n\
-- Parias now only resists 0.375 of Duke's explosives, rather than the 0.25 he does of everyone else.\n\
-- Doomguy's, Duke's, Corvus', and Chexter's bullets have been reworked to utilize an frandom-esque spread of projectiles, rather than the static grid. SO's bullets have been kept in a grid pattern, for accuracy to Marathon.\n\
-- Chexguy's bullets were originally more accurate to counteract lack of an SSG. Now he has an SSG-esque weapon, which is super-accurate. Why do the other bullets still need to be more accurate? Reverted to a Doom-esque spread level.\n\
-- Corvus' staff went through ghosts in Heretic. Now it does here.\n\
-- The difficulty settings now have ACSReturn values, for maps with ACS scripts that rely on difficulty settings.\n\
-- Here's one that's been around for a long, long time. Possessed Troopers, Sergeants, and Chaingunners couldn't infight with each other. Now they can!\n\
-- A new cvar, samsara_noult, has been implemented for DM/CTF/etc play. When enabled, no VIIs will spawn on the battlefield.\n\
-- Corvus' Crossbow has been slightly buffed and the Firemace slightly nerfed, changing out the DamageFactor Mace on everything with DamageFactor CorvusCrossbow. The DamageFactor Mace increase was made long, long ago in the early builds when the Firemace was an alternative to the chaingun and the Crossbow was OP. This is no longer the case.\n\
-- Tome of Power doubles dealt damage and halves recieved damage. Cooldown reduced further to 200.\n\
-- The SP and DM modes of the Super Large Zorcher's spatters on hit were swapped with each other. This has been fixed.\n\
-- When all of Duke's firing modes were integrated, the Explosive Shotgun had been sped up slightly, rendering it faster than the Super Shotgun. It has been slowed down back to 56 tics.\n\
-- The KKV SMG has had its out-of-water damage increased. While nowhere near as powerful as it was before, lack of water in ZDoom maps made its niche terribly infrequent at best.\n\
-- All of the enemies in Doom, sans the boss monsters, can now be stunned with the Tech.50 Pacifier.\n\
-- BJ has been given a very hacky recreation of A_WolfAttack--specifically, how bullets did more damage up-close. While BJ is and always will be a long-range focused character, a lot of Doom 2 is corridor and close-ranged based, and BJ was essentially useless in these matchups. He recieves a (very minor) 2(1d3) damage boost to his bullets when within 120 map units, which while not degrading from his long range power should give him a minor fighting chance up close.\n\
-- samsara_backpackstart is a new cvar that, well, has players spawn with backpacks.\n\
-- Corvus' bombs now force radius damage.\n\
-- The +FORCERADIUSDMG of the LAZ Device has been moved from the initial blast to the lingering wall. To compensate, the radius of the lingering explosions has been slightly increased by 32 units.\n\
-- From the same stupid minds that brought you Punchdrunk, a new gamemode has been implemented--Super Turbo Turkey Puncher 3000! How long can you stand against an endless wave of crazy chickens out for YOUR flesh?! Activated via samsara_superturboturkeypuncher3000, it endlessly spawns either aggressive chickens (1), cowardly chickens (2), or friendly chickens (3). Whoever reaches the kill limit (perscribed by samsara_superturboturkeylimit) first is the winner. It is compatible in all gamemodes with all other existing cvars, and can be used in LMS, coop, deathmatch, survival, CTF, punchdrunk, or wherever.\n\
-- Ranger's Lava Nails now use the QuakeFire damagetype rather than Fire.\n\
-- The Super Large Zorcher's bolts have been changed from projectile to fastprojectile, so that they can actually /hit/ people at high speeds. They now travel at 155 speed to hit long-range opponents more easily (though die off in 25 speed with each bounce) and the spatters now travel at speed 15 for a slightly wider AoE. Being a fastprojectile, the 'bounces' now all target Chexter, careening back to him rather than bouncing in a random direction--which should make bounce-shots easier for players to predict, and easier for opponents to avoid.\n\
-- For the Chex Quest purists, samsara_classiclaz has been implemented as a cvar. When enabled, it changes the LAZ Device back to the BFG9000 behavior. Keep in mind, the BFG spray effect still does not zorch people in Zandronum!\n\
-- Instagib mode is now supported! Everyone gets new weapons that, well, instagib people.\n\
-- I misinterpreted the PLAYERMISSILERANGE's range for hitscans to be the same as hitscans for monsters. This means that the Doom enemy shots did not travel 8192 units long (long enough to not matter) but to 2048 units (short enough to matter). The DoomEnemyBullet actor now only travels for 6 tics (1920 units) before dissipating.\n\
-- Ranger's Thunderbolt has been converted from A_Explode being the source of damage to the A_FireBullets, thanks to FBF_NoRandom. Parias and Chexguy no longer resist it, nor do bosses.\n\
-- samsara_allcanrj has been implemented as a new cvar. For the characters whose rockets do not damage themselves (Parias, Chex Warrior, BJ), this allows for the rockets to deliver self-damage and launch them up.\n\
-- samsara_nounique has been implemented for those who want duels without the unique item messing things up.\n\
-- samsara_noinvuln has been implemented for mapsets that use Invulnerability replacements as props. I'm looking at you, IDL maps.\n\
-- samsara_ban[class] has been implemented primarily as a debugging cvar, but admins who feel a certain character wrecks balance or want to enforce one-character-only matches may find it handy as well. On use, it forbids players from playing as certain classes--bandoomguy to forbid Doomguy, banchex to forbid Chex Warrior, banso to forbid Security Officer, etc.\n\
-- samsara_lmsrules has been implemented for those who want Rocket-Arena-esque matches or just to start with all weapons. As per the name, the game is treated as LMS--everyone starts with all weapons, and samsara_lmslife determines their starting health/armor.\n\
-- BJ was not the only person suffering from ammo woes--Parias now has BJ's ammo conversion system for picking up shells/rockets to convert.\n\
-- Parias' hammer might have had no self-damage, but it was dramatically slower than everyone else's and had a delayed explosion that allowed people to run away. The explosion damage has been restored to 128.\n\
-- It's impossible to make character balance that everyone agrees with--there are now cvars so that admins can buff or nerf a character on the spot as they see fit. samsara_[class]damage and samsara_[class]defense gives the class a defense or damage multiplier that can either bolster or hinder them. Alternatively, set everything at max and run through slaughterwads, or set everything at min and get a challenge.\n\
-- FireExplosive has been implemented as a damagetype for the Phoenix Rod and Hammer of Retribution.\n\
-- Two more gib decorative actors are now available for B.J. to drink up.\n\
-- The Security Officer's KKV-7 SMG and Wave Motion Cannon now have an auto-reload.\n\
-- Chex Warrior's LAZ Device has gone from 'stupidly powerful explosion' to 'pretty damn powerful', reduced from 896/512 damage/radius to 512/384.\n\
-- Chex Warrior's bullets originally all hit ghosts to counteract lack of an SSG. Now he doesn't need that anymore. Poor dude's getting nerfed all around today.\n\
-\n\
-BUGFIXES:\n\
-- Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.\n\
-- In Strife, apparently the Loremaster door wouldn't open if you had all five splinters? At least, that's what the code said. Fixed.\n\
-- The Thunderbolt could not be forced to not recoil. Fixed.\n\
-- In rare instances, the S.O.'s pain frames would be replaced with a burning corpse. This has been fixed.\n\
-- Pain Elementals can no longer be unzorched by Archviles.\n\
-- You may now suicide when invulnerable again.\n\
-- Ranger's powerups now properly deplete on death.\n\
-- Players could not be telefragged while invulnerable. This has been fixed.\n\
-- In rare instances, the IV pickup would be replaced with Duke's Ripper. This has been fixed.\n\
-- Ranger should no longer be able to infinitely stack Quad Damage on pickup.\n\
-- In crazy instances where you face Lord Snotfolus before he finishes his monologue (?!), getting him in a painstate will no longer permanently lock him in invulnerability.\n\
-- Dumb things happened with the Gargoyles' Zorch sequence online. PresidentPeople has fixed all of the dumb things!\n\
-- Armors no longer spawn on the field in Last Man Standing mode.\n\
-- Ranger's freezedeath graphic was being overwritten by one of his firing frames. No more.\n\
-- If a player has been killed, Skulltag monsters should no longer repeatedly fire at their corpse.\n\
-- Respawning no longer breaks various scripts.\n\
-- Picking up an Invulnerability as Doomguy, Chex, Corvus, BJ, Duke, and SO now gives the proper god mode hud face.\n\
-- Duke no longer moans every time he picks up a Soulsphere--now he only moans when he picks it up at critical health.\n\
-- The Security Officer can no longer fight from beyond death by holding down fire as he dies.\n\
-- Here's an old bug. Duke now gets taunt cooldown proper from picking up a weapon, and thus can no longer run two quotes at once by picking up a weapon and then killing someone/dying.\n\
-- Here's another old bug. Players no longer dance in place after spawning and triggering coop mode.\n\
-- Timefreeze no longer affects the LAZ Device shield, keeping people from locking up computers.\n\
-- Timefreeze also no longer affects the LAZ's particles.\n\
-- sv_shotgunstart now works on respawning when in non-cooperative game modes.\n\
-- The Security Officer no longer can get a LevelLimiter stuck in his inventory when picking up a dropped shotgun.\n\
-- Picking up a WSTE-M5 gave double the ammo. Whoops.\n\
-- Flemoids no longer react like normal damage to the PhasingZorch and ZorchKamikaze damagetype.\n\
-- Common Flemoids and Bipedal Common Flemoids no longer get hurt by the Flem damagetype.\n\
-- Defining the teams as Raktah and Nilah broke announcers in team-based games. Sorry. Teams reverted back to default, which also unfortunately means the colored winpics and losepics go.\n\
-- Chexguy would occaisionally go completely silent when 'gibbed'. No longer.\n\
-- Traductus no longer uses Parias' terrifying version of the Wraithverge.\n\
-- At the cost of irrevocably breaking Skulltag mode (which nobody plays, so it isn't a big loss), keys can no longer be crushed by crushers.\n\
-- Duke's pipebombs can no longer telefrag people.\n\
-- Online, Duke's Devastators no longer spam the server console with 'NETWORK_AttenuationFloatToInt: Warning unknown attenuation value!'.\n\
-- The Dark Imp had brown specs all over his body on death. Popsoap has fixed this with a new translation.\n\
-- The Cyberdemon now chases players properly.\n\
-\n\
-POLISH:\n\
-- Party Mode particles are now spawned less often and disappear faster.\n\
-- Sounds and flashes are now done if you lose armor with Marathon-style armor, to indicate when you're hit.\n\
-- All fake bullets now go at 320 tics per unit, a slight speed boost.\n\
-- Rephrased a few obituaries to be gender-ambiguous.\n\
-- The Hectebus' shots now use the HexGreenFire damagetype.\n\
-- Ranger's shaft has been given an increase in girth.\n\
-- Duke's ricochet sound happened far too often. Now it happens much less often, as proper of Duke Nukem 3D.\n\
-- Vanilla animations for Doomguy's Pistol/Chaingun now properly light up the room.\n\
-- Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.\n\
-- Thanks to Popsoap, all Skulltag monsters now have GLDefs.\n\
-- Ranger now has the Quake announcer shout 'INVISIBILITY!' on picking up the Partial Invisibility.\n\
-- The Freezethrower now has its official Widescreen sprite from the Duke Nukem 3D Megaton Edition, ripped by Kinsie. Thanks!\n\
-- The Flembrane and Flembomination now have a proper non-zorch death sequence. Only Lord Snotfolus left to go!\n\
-- Here's one I've known about for a while but was too lazy to fix. The Fusion Pistol did not have a reload sound, and thus it has been removed.\n\
-- The Laser Cannon in Scourge of Armagon had some interesting behavior I'd forgotten about--every second shot was two bolts combined into one, and it wasn't a 100% guarantee to bounce. Whoops!\n\
-- Security Officer's Partial Invisibility pickup now behaves more closely to Marathon.\n\
-- The 'see console' message now only pops up on first playing Samsara for clients. For servers, it still lists all of the serverside cvars every time. To see all of the cvars available, type 'cvarinfo' into the console--it lists all cvars, both serverside and clientside.\n\
-- FuzzballFox has contributed almost 70 new colors for players to use in their names! WOWZERS!";
+"Changes made to the Game\n
+========================\n
+SAMSARA CHANGES\n
+- Chex Zorches custom enemies, of course.\n
+- Duke taunts on custom enemies, because I would feel bad if people complained about it.\n
+- Duke's Freezethrower and Parias' Frost shards do extra damage against fire-based enemies, as a benefit to those who read the README, and to make them usable (since freezethrower is pretty terrible for a slot 6).\n
+- The weapon powerup device now spreads four specials and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.\n
+- 4 Uniques item has a max of 3, rather than 1, since it's not that powerful.\n
+- Fuel for flamer replaced by various heretic/hexen utilities. No, I'm not telling what.\n
+^- Landmines give a slot one. Ammo for landmines replaced with strife ammo boxes (12 shells, 4 rockets, OR the strife everything ammo pickups)\n
+^- Autoshotgun is a slot 2+3\n
+^- HRL is a slot 5+1 unique.\n
+^- Stunner is 3 uniques straight up.\n
+^- Railgun is slot 6+1 unique.\n
+^- Flamer is slot6+2 uniques.\n
+^- Pyro Cannon is slot7+2 uniques.\n
+^- Repeater is slot6+2 uniques.\n
+^- Devastator(Stronghold one, not Samsara one, which is renamed to Devastators to prevent code confusion, we are very sorry) is slot7+2 uniques.\n
+^- Most custom weapons also drop uniques as you can see, as to allow them to see more play, as they have to be split among the team.\n
+- Fusion Pistol does some extra-extra damage versus the terminator, due to its entirely mechanical nature.\n
+- Catharsi Detonators provide some extra explosive oomph if shot with the fusion pistol, along with detonating prematurely.\n
+- The terminator explodes when killed by the fusion pistol, in reference to Marathon's hunters.\n
+- Marine Item replaced with strife beacon.\n
+^- Super Marine Item replaced with a custom, \"Super\" strife beacon. (Oh god I'm not looking forward for the ninth hero anymore)\n
+- Random weapon device now can also give a unique, and now works for samsara.\n
+^- Random weapon's chances for each slot are NOT equal. The chances of getting a slot 7 is 3%-4%, for example.\n
+- Core now immune to friendly fire, and doing this required a new damagetype \"FaithInHumanity\" because seriously, why are you that dedicated to core-trolling?!\n
+- Custom mechanical monsters take appropriate damage from the fusion pistol.\n
+- Security Officer attains both WSTEM-5s on pick up, as per invasion mode.\n
+- Parias' and Corvus' medikit capacity has been reduced to 4, and urn/invulnerability/megasphere capacity to 1, to prevent mass stealing from these classes (harming the team). This is for in-mission items, not buyable ones.\n
+^- In mission Timefreeze and quad damages give corvus inventory ones.\n
+^-These are separate from the ones you buy.\n
+- Custom Samsara difficulty names have been removed, as they would cause monsters not to spawn.\n
+- Chainsaw, Super Bootspork, Gauntlet, Knife and Mjolnir damage and/or stunlock potential buffed, in order to let Doomguy, Chex, Corvus, BJ and Ranger share in the slot 1 fun.\n
+- Parias' Backpack capacity limited to 1, but it gives full ammo instead of half, in order to prevent mass-steals and to prevent overpoweredness with having 6 and a RWD'd wraithverge.\n
+- It turns out, that in Samsara, Corvus' Firemace does 1.1-1.15 DamageFactor on basically every monster. I Switched it so the crossbow gets it now, since it turned out the Firemace was a better suppression weapon, and was more useful in the context of Stronghold.\n
+- Various damage values have been tweaked for balance (most noticable on Parias, as I had to buff him (the hell) out due to him being melee-only). The bad news is that I forgot most of them.\n
+-The shop is modified to have a new room to adjust Armor Mode settings.\n
+-New Achievements!\n
+NOTE: This is meant to be played in coop mode. If UV single player is Impossible at certain points, please do not complain. \nJust play HMP, or start farming some items first. Also, give yourself \"CoopModeOn\" to let samsara do some stuff.\n\n
+STRONGHOLD CHANGES\n
+- Most of these should remain secret, but...\n
+- Par times are now much, much, much larger (as in like 4 Times Longer), as to allow people to have an easy time re-running previous missions for free cash. Now, the real goal is get the Time Slicer Achievement (Yes, that's a thing).\n
+- Changes to various missions all over the place. Most of these are going to remain secret, since, well, I want you to be surprised... Here, I'll give one to you.\n
+- STR18 (Smoldering Caves) replaced with STR18 (Delta Bunker) from the RC2, because seriously, Delta Bunker was more worthy of being in Tier 4, and much cooler than Smoldering Caves. It's also much harder.\n
+- Changes to various monsters. Most of these should not be noticeable, with the Key Word being Most. Again, most of these are to remain secret.\n
+- The one I'm giving to you is that Dune Warriors can now be shot while cloaked, because they say they have a cloaking device, not a phase-out-of-existence device (same goes to apprentices in STR52 btw)!\n
+-The Bruiser Demon Powerup, as fun as it was, had it's novelty wear out a long time ago. I replaced with a Terminator Powerup. Much better.\n
+-I have a separate patch for the non Samsara related changes."

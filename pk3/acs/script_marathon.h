@@ -33,7 +33,8 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         
         GiveInventory("Shell", 8 / (!!dropped+1));
         GiveInventory("WSTE-M5 Combat Shotgun", 1);
-        
+        GiveInventory("CanDualShotties", 1);   
+	/*  
         if (giveboth || (hasShotty && !dropped))
         {
             GiveInventory("CanDualShotties", 1);
@@ -44,24 +45,11 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
             GiveInventory("LevelLimiter", 1);
         }
         SetResultValue(1);
+	*/
         break;
 
       default:
         GiveInventory(ClassWeapons[class][slot][S_WEP], 1);
-
-        if (ClassWeapons[class][slot][S_AMMO1] != "")
-        {
-            i = ammoCount(ClassWeapons[class][slot][S_AMMO1]);
-            GiveInventory(ClassWeapons[class][slot][S_AMMO1], i*2);
-        }
-
-        if (ClassWeapons[class][slot][S_AMMO2] != "")
-        {
-            i = ammoCount(ClassWeapons[class][slot][S_AMMO2]);
-            GiveInventory(ClassWeapons[class][slot][S_AMMO2], i*2);
-        }
-
-        SetResultValue(1);
         break;
     }
 }

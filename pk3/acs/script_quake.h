@@ -461,7 +461,7 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
         {
             if (isLMS())
             {
-                GiveInventory("QuadDamageItem", 1);
+                GiveInventory("QuadDamageItem2", 1);
             }
             else
             {
@@ -469,7 +469,7 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
 
                 if (isCoop())
                 {
-                    GiveInventory("QuadDamageItem", 1);
+                    GiveInventory("QuadDamageItem2", 1);
                 }
             }
             givingQuad = 1;

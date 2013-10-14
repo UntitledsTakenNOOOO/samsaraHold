@@ -31,6 +31,18 @@ int BeaconMonsters[CLASSCOUNT] =
     "FriendlyGrunt",
 };
 
+int SuperBeaconMonsters[CLASSCOUNT] = 
+{
+    "FriendlyBelphegor",
+    "FriendlyFlemoidusMaximus",
+    "FriendlyIronlich",
+    "FriendlyWolfensteinSS",
+    "FriendlySlaughtaur",
+    "FriendlyBattlelord",
+    "FriendlyHunter",
+    "FriendlyVore",
+};
+
 int AccuracyUniques[CLASSCOUNT][ACCURACYCOUNT] = 
 {
     {"DoomZerkCounter",  "", "", "", "", "", "", "", "", ""},
