@@ -105,7 +105,14 @@ actor PowerGreaterTomeDM : PowerGreaterTome
 actor PowerTomeProtection : PowerProtection
 {
     Powerup.Duration -90
+    damagefactor "STBoss", 0.3
+    damagefactor "STBossFactor", 0.3
+    damagefactor "Animate", 0.3
+    damagefactor "Cyber2Factor", 0.4
+    damagefactor "OvermindFactor", 0.4
+    damagefactor "CoreFriendly", 0.25
     damagefactor "normal", 0.5
+    damagefactor "RedBlast", 0.5
     damagefactor "Pistol", 0.5
     DamageFactor "DoomFist", 0.5
     damagefactor "ZorchPistol", 0.5

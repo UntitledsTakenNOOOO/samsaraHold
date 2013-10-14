@@ -6,14 +6,14 @@ actor CorvusPlayer : PlayerPawn
     Player.StartItem "CorvusClass", 1
     Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "Clip", 50
-    //Player.StartItem "PermaProxyBomb", 1
     Player.StartItem "PermaRemoteBomb", 1
     Player.StartItem "PermaTimeBomb", 1
-    //Player.StartItem "CorvusCanProxy", 1
     Player.Face "CRV"
     Player.Soundclass "CorvusPlayer"
     Player.JumpZ 9//Default is 8
     BloodColor "Red"
+	damagefactor "MarineAlly", 0
+    DamageFactor "TimonsAxe", 0.75
     DamageFactor "PoisonCloud", 1.75
     //DamageFactor "Wraithverge", 0.75
     DamageFactor "CorvusCrossbow", 1.1
@@ -22,12 +22,13 @@ actor CorvusPlayer : PlayerPawn
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
     DamageFactor "EnemyInfightDamage", 0.0
+	Player.StartItem "LifeItem", 5   // starting lives
+	Player.StartItem "CoinItem", 1200 // starting money
     +NOSKIN
-    -DONTBLAST
-    -THRUSPECIES
+    +DONTBLAST
+    +THRUSPECIES
     Species "Player"
-    Translation "106:106=125:125"
-    Player.ColorRange 112, 127
+    Player.ColorRange 192, 207
     
     States
     {
@@ -74,7 +75,9 @@ actor CorvusPlayer : PlayerPawn
         CORV STUVWX 5
         CORV Y -1
         Stop
-
+        
+      Death.Inferno:
+        //Death.MarathonPlasma:
       Death.HexGreenFire:
       Death.QuakeFire:
 	  Death.FireExplosive:

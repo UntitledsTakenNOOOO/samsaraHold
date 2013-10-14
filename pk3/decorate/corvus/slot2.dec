@@ -318,7 +318,7 @@ actor MaceFX22 : MaceFX2 replaces MaceFX2
     Gravity 0.125
     VSpeed 0.5
     DamageType "Mace"
-    Damage 4 // Originally 6
+    Damage 6
     SeeSound "weapons/maceshoot"
     Decal BaronScorch
     //+STRIFEDAMAGE
@@ -337,10 +337,12 @@ actor MaceFX2Coop : MaceFX22
 actor MaceFX32 : MaceFX3 replaces MaceFX3
 {
     DamageType "Mace"
-    Damage 3 // Originally 4
+    Damage 4
     Decal BaronScorch
     //+STRIFEDAMAGE
     Obituary "%k \cqpelted\c- %o \cqwith balls of steel.\c-"
+    +THRUSPECIES
+    Species "Player"
 }
 
 actor MaceFX42 : MaceFX4// replaces MaceFX4
@@ -386,6 +388,7 @@ actor MaceFX43 : MaceFX4
     +THRUSPECIES
     Species "Player"
     DamageType "Mace"
+    Damage (250)
     Decal BFGScorch
     +FOILINVUL
 }

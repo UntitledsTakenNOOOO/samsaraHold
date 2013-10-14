@@ -261,4 +261,3 @@ actor ProxyOfTheAncients
 
 actor CorvusRemoteActive : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
 actor CorvusRemoteDetonate : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
-actor CorvusCanProxy : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }

@@ -54,6 +54,8 @@ actor ArtiEgg3: ArtiEgg
 
 actor EggFX2 : MorphProjectile // Yeah, no more griefing co-op allies.
 {
+    +THRUSPECIES
+    Species "Player"
     Radius 8
     Height 8
     Speed 18
@@ -148,6 +150,11 @@ actor Chicken2 : Chicken replaces Chicken
         TNT1 A -1
         stop
 
+      Burn:
+      Death.MarathonPlasma:
+      Death.Inferno:
+      Death.QuakeFire:
+      Death.FireExplosive:
       Death.WolfenFlamethrower:
         CHKN E 0 A_Scream
         CHKN E 0 A_GiveToTarget("KillCount",1)
@@ -172,8 +179,8 @@ actor ChickenPlayer2 : ChickenPlayer
     DeathSound "chicken/death"
     Player.JumpZ 1
     Player.Viewheight 21
-    Player.ForwardMove 0.85, 0.9//1.22, 1.22
-    Player.SideMove 0.85, 0.9//1.22, 1.22
+    Player.ForwardMove 1.22, 1.22//1.22, 1.22
+    Player.SideMove 1.22, 1.22//1.22, 1.22
     Player.SoundClass "Chicken"
     Player.DisplayName "Chicken"
     Player.MorphWeapon " Beak "

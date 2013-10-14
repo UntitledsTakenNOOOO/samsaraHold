@@ -19,8 +19,6 @@ actor WolfenPlayer : PlayerPawn
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
 	damagefactor "MarineAlly", 0
-        damagefactor "Explosive", 0.5
-        damagefactor "BJSpear", 0
 	DamageFactor "EnemyInfightDamage", 0.0
 	
 	Player.StartItem "LifeItem", 5   // starting lives
