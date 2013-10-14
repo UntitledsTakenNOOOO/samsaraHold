@@ -9,15 +9,20 @@ actor ChexWarrior : PlayerPawn
     Player.Face "CHX"
     Player.Soundclass "ChexWarrior"
     Player.JumpZ 9//Default is 8
+	Player.StartItem "LifeItem", 5   // starting lives
+	Player.StartItem "CoinItem", 1200 // starting money
     +NOSKIN
     +NOBLOOD
     +DONTGIB
-    -DONTBLAST
-    -THRUSPECIES
+    +DONTBLAST
+    +THRUSPECIES
     Species "Player"
+	damagefactor "MarineAlly", 0
     DamageFactor "Telefrag", 2.0
     DamageFactor "PoisonCloud", 1.65
     DamageFactor "Wraithverge", 0.9
+    DamageFactor "TimonsAxe", 0.65
+    DamageFactor "Mace", 0.9
     DamageFactor "CorvusCrossbow", 0.9
     DamageFactor "DragonClaw", 0.9
     DamageFactor "MarathonPistol", 0.8
@@ -77,6 +82,10 @@ actor ChexWarrior : PlayerPawn
 
     DamageFactor "Kamikaze", 1.33333333333
     DamageFactor "ZorchKamikaze", 1.33333333333
+
+    damagefactor "Lightning", 0.8
+    damagefactor "RedBlast", 0.8
+    damagefactor "BruiserAttack", 0.8
 	DamageFactor "EnemyInfightDamage", 0.0
     
     RadiusDamageFactor 0.75
@@ -228,7 +237,6 @@ actor ChexPuff : BulletPuff
     +PUFFONACTORS
     +BLOODLESSIMPACT
     +CLIENTSIDEONLY
-	+THRUGHOST
     DamageType "Zorch"
     RenderStyle Add
     Alpha 0.4
@@ -244,7 +252,7 @@ actor ChexPuff : BulletPuff
 
 actor ChexBullet : FastProjectile
 {
-    Damage (Random(1,3)*5)
+    Damage (Random(1,3)*6)
     Radius 1
     Height 1
     Speed 320
@@ -256,7 +264,6 @@ actor ChexBullet : FastProjectile
     +BLOODLESSIMPACT
     +THRUSPECIES
     +NOTIMEFREEZE
-	+THRUGHOST
     Alpha 1.0
     States
     {

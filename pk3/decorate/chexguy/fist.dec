@@ -35,7 +35,7 @@ actor " Bootspoon " : Weapon
 
 actor ChexSpoonPuff : BulletPuff
 {
-    DamageType "ZorchPistol"
+    DamageType "Zorch" 
     RenderStyle Add
     -BLOODSPLATTER
     +BLOODLESSIMPACT

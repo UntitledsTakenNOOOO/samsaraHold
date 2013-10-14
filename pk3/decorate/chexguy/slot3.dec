@@ -129,14 +129,15 @@ actor SLZorcherBolt// : FastProjectile
 {
     Radius 15
     Height 10
-    Speed 155
-    Damage (random(10,35))
+    Speed 150
+    Damage 10
     Scale 0.95
     Alpha 0.9
     PROJECTILE
     //+HEXENBOUNCE
     -BLOODSPLATTER
     +NOBLOOD
+	+STRIFEDAMAGE
 	+SEEKERMISSILE
     //BounceCount 3
     RenderStyle Add
@@ -207,12 +208,13 @@ actor SLZSpatter
     Radius 8
     Height 6
     Speed 15
-    Damage (random(10,15))
+    Damage 5
     Scale 0.25
     Alpha 0.75
     PROJECTILE
     -BLOODSPLATTER
     +NOBLOOD
+    +STRIFEDAMAGE
     RenderStyle Add
     DamageType "Zorch"
     States
