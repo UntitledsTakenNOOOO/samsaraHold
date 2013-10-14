@@ -115,15 +115,52 @@ actor CircleFlame1 : CircleFlame
 
 actor CFlameMissile2 : CFlameMissile replaces CFlameMissile
 {
+    Damage 8
+    Speed 256
     +THRUSPECIES
     Species "Player"
+    States
+    {
+      Spawn:
+        CFFX A 4 Bright
+        CFFX A 1 A_CFlamePuff
+        Goto Death
+
+      Crash:
+      XDeath:
+        TNT1 B 0 A_SpawnItemEx("CircleFlame2",40,0,-10,0,0,0,0,28,0)
+        TNT1 B 0 A_SpawnItemEx("CircleFlame2",40,0,-10,0,0,0,45,28,0)
+        TNT1 B 0 A_SpawnItemEx("CircleFlame2",40,0,-10,0,0,0,90,28,0)
+        TNT1 B 0 A_SpawnItemEx("CircleFlame2",40,0,-10,0,0,0,135,28,0)
+        TNT1 B 0 A_SpawnItemEx("CircleFlame2",40,0,-10,0,0,0,180,28,0)
+        TNT1 B 0 A_SpawnItemEx("CircleFlame2",40,0,-10,0,0,0,225,28,0)
+        TNT1 B 0 A_SpawnItemEx("CircleFlame2",40,0,-10,0,0,0,270,28,0)
+        TNT1 B 0 A_SpawnItemEx("CircleFlame2",40,0,-10,0,0,0,315,28,0)
+
+      Death:
+        CFFX A 1 Bright A_CFlamePuff
+        CFFX ABC 3 Bright
+        CFFX D 4 Bright
+        CFFX E 3 Bright
+        CFFX F 4 Bright
+        CFFX G 3 Bright
+        CFFX H 4 Bright
+        CFFX I 3 Bright
+        CFFX J 4 Bright
+        CFFX K 3 Bright
+        CFFX L 4 Bright
+        CFFX M 3 Bright
+        Stop
+    }
 }
 
 actor CircleFlame2 : CircleFlame replaces CircleFlame
 {
     Obituary "%k \clbaptized\c- %o \clin the Firestorm.\c-"
     Damage 2
+    DamageType "FireExplosive"
     +THRUSPECIES
+    +RIPPER
     Species "Player"
     States
     {

@@ -13,9 +13,12 @@ actor HexenPlayer : PlayerPawn
     Player.Viewheight 48
     Player.Face "PRS"
     BloodColor "Red"
+damagefactor "MarineAlly", 0
     RadiusDamageFactor 0.25
     Player.ForwardMove 1.08, 1.2
-    Player.SideMove 1.125, 1.2 //Originally 1.475
+    Player.SideMove 1.125, 1.475 //Originally 1.475
+	Player.StartItem "LifeItem", 5   // starting lives
+	Player.StartItem "CoinItem", 1200 // starting money
     DamageFactor "PoisonCloud", 1.75
     DamageFactor "Wraithverge", 2.00
     DamageFactor "CorvusCrossbow", 1.1
@@ -27,10 +30,10 @@ actor HexenPlayer : PlayerPawn
     DamageFactor "ZorchKamikaze", 4.0
 	DamageFactor "DukeExplosive", 1.5
 	DamageFactor "EnemyInfightDamage", 0.0
-    Player.ColorRange 240, 247
+    Player.ColorRange 192, 207
     +NOSKIN
-    -DONTBLAST
-    -THRUSPECIES
+    +DONTBLAST
+    +THRUSPECIES
     Species "Player"
     States
     {
@@ -92,6 +95,7 @@ actor HexenPlayer : PlayerPawn
         //Wait
 
       Death.HexGreenFire:
+      Death.Inferno:
       Death.QuakeFire:
 	  Death.FireExplosive:
       Burn:

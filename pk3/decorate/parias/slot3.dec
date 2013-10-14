@@ -54,6 +54,13 @@ actor "Timon's Axe" : FWeapAxe
         FAXE C 3 Offset (15, 32)
         FAXE D 2 Offset (15, 32)
         FAXE D 1 Offset (-5, 70) A_CustomPunch(random(40,62),1,1,"AxePuff2",144)//A_FAxeAttack - Deals 40-62 damage
+        TNT1 A 0 A_CustomPunch(10,1,0,"BlankPuff4",144)
+        TNT1 A 0 A_CustomPunch(Random(3,15),1,0,"BlankPuff4",128)
+        TNT1 A 0 A_CustomPunch(Random(3,15),1,0,"BlankPuff4",122)
+        TNT1 A 0 A_CustomPunch(Random(5,15),1,0,"BlankPuff4",96)
+        TNT1 A 0 A_CustomPunch(Random(5,15),1,0,"BlankPuff4",80)
+        TNT1 A 0 A_CustomPunch(Random(7,21),1,0,"BlankPuff4",72)
+        TNT1 A 0 A_CustomPunch(Random(7,21),1,0,"BlankPuff4",64)
         FAXE D 2 Offset (-25, 90)
 
       Fire2:
@@ -71,8 +78,14 @@ actor "Timon's Axe" : FWeapAxe
         FAXE N 4 BRIGHT Offset (15, 32)
         FAXE O 3 BRIGHT Offset (15, 32)
         FAXE P 2 BRIGHT Offset (15, 32)
-        FAXE P 1 BRIGHT Offset (-5, 70) A_CustomPunch(random(100,144),1,1,"AxePuffGlow2",144)//A_FAxeAttack - Deals 80 to 124 damage
-        FAXE P 2 BRIGHT Offset (-25, 90)
+        FAXE P 1 BRIGHT Offset (-5, 70) A_CustomPunch(random(80,124),1,1,"AxePuffGlow2",144)//A_FAxeAttack - Deals 80 to 124 damage
+        TNT1 AA 0 A_CustomPunch(10,1,0,"BlankPuff4",144)
+        TNT1 AA 0 A_CustomPunch(Random(2,12),1,0,"BlankPuff4",128)
+        TNT1 AA 0 A_CustomPunch(Random(2,12),1,0,"BlankPuff4",112)
+        TNT1 AA 0 A_CustomPunch(Random(7,14),1,0,"BlankPuff4",96)
+        TNT1 AA 0 A_CustomPunch(Random(7,14),1,0,"BlankPuff4",80)
+        TNT1 AA 0 A_CustomPunch(Random(4,32),1,0,"BlankPuff4",72)
+        TNT1 AA 0 A_CustomPunch(Random(4,32),1,0,"BlankPuff4",64)
         TNT1 A 0 A_JumpIfNoAmmo("Fire2")
         FAXE Q 1 BRIGHT Offset (15, 32)
         FAXE Q 2 BRIGHT Offset (10, 54)
@@ -88,9 +101,14 @@ actor "Timon's Axe" : FWeapAxe
         FAXE B 4 Offset (15, 32) A_JumpIfInventory("Clip",1,"SPFireGlow")//A_FAxeCheckAtk
         FAXE C 3 Offset (15, 32)
         FAXE D 2 Offset (15, 32)
-        FAXE D 1 Offset (-5, 70) A_FAxeAttack//A_CustomPunch(random(40,62),1,1,"AxePuff2",144)//
-        TNT1 A 0 A_CustomPunch(2,0,0,"BlankPuff4",144)
-        TNT1 A 0 A_CustomPunch(3,0,0,"BlankPuff4",84)//A_Saw("silence", "silence", 4, "BlankPuff")
+        FAXE D 1 Offset (-5, 70) A_FAxeAttack//A_CustomPunch(random(40,62),1,1,"AxePuff2",144)//A_FAxeAttack
+        TNT1 A 0 A_CustomPunch(10,1,0,"BlankPuff4",144)
+        TNT1 A 0 A_CustomPunch(Random(3,15),1,0,"BlankPuff4",128)
+        TNT1 A 0 A_CustomPunch(Random(3,15),1,0,"BlankPuff4",122)
+        TNT1 A 0 A_CustomPunch(Random(5,15),1,0,"BlankPuff4",96)
+        TNT1 A 0 A_CustomPunch(Random(5,15),1,0,"BlankPuff4",80)
+        TNT1 A 0 A_CustomPunch(Random(7,21),1,0,"BlankPuff4",72)
+        TNT1 A 0 A_CustomPunch(Random(7,21),1,0,"BlankPuff4",64)
         FAXE D 2 Offset (-25, 90)
 
       SPFire2:
@@ -109,8 +127,13 @@ actor "Timon's Axe" : FWeapAxe
         FAXE O 3 BRIGHT Offset (15, 32)
         FAXE P 2 BRIGHT Offset (15, 32)
         FAXE P 1 BRIGHT Offset (-5, 70) A_FAxeAttack//A_CustomPunch(random(80,124),1,1,"AxePuffGlow2",144)//A_FAxeAttack
-        TNT1 A 0 A_CustomPunch(3,0,0,"BlankPuff4",144)
-        TNT1 AA 0 A_CustomPunch(5,0,0,"BlankPuff4",84)//A_Saw("silence", "silence", 6, "BlankPuff")
+        TNT1 AA 0 A_CustomPunch(10,1,0,"BlankPuff4",144)
+        TNT1 AA 0 A_CustomPunch(Random(2,12),1,0,"BlankPuff4",128)
+        TNT1 AA 0 A_CustomPunch(Random(2,12),1,0,"BlankPuff4",112)
+        TNT1 AA 0 A_CustomPunch(Random(7,14),1,0,"BlankPuff4",96)
+        TNT1 AA 0 A_CustomPunch(Random(7,14),1,0,"BlankPuff4",80)
+        TNT1 AA 0 A_CustomPunch(Random(4,32),1,0,"BlankPuff4",72)
+        TNT1 AA 0 A_CustomPunch(Random(4,32),1,0,"BlankPuff4",64)
         FAXE P 2 BRIGHT Offset (-25, 90)
         TNT1 A 0 A_JumpIfNoAmmo("SPFire2")
         FAXE Q 1 BRIGHT Offset (15, 32)

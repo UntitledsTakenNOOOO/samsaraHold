@@ -43,7 +43,6 @@ actor MageWandMissile2 : MageWandMissile replaces MageWandMissile
     Obituary "%k \clunwove\c- %o\cl's life force with the Sapphire Wand.\c-"
     Decal RailScorchLower
     Damage 1
-    +STRIFEDAMAGE
     +SPAWNSOUNDSOURCE
     +NOBOSSRIP
     DamageType "Pistol"
