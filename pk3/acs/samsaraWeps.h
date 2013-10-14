@@ -143,7 +143,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Chaingun Cannon",                 "Clip",         "",             "", ""},
         {"RPG",                             "RocketAmmo",   "",             "", ""},
         {"Freezethrower",                   "Cell",         "",             "", ""},
-        {"Devastator",                      "Cell",         "",             "", ""},
+        {" Devastator ",                    "Cell",         "",             "", ""},
         {"CalmYoLegsDuke",                  "",             "",             "", ""},
     },
 

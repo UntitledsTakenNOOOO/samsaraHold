@@ -296,7 +296,7 @@ actor DukeNuclearKick: DukeKickAttack
         RPGX B 0 A_Stop
         RPGX B 0 A_AlertMonsters
         RPGX B 0 A_PlaySound("duke/explosion")
-        RPGX B 0 bright A_Explode(20, 64, 0)
+        RPGX B 0 bright A_Explode(32, 96, 0)
         RPGX BCDEFGHIJKLMNOPQRSTUV 2 BRIGHT
         Stop
     }

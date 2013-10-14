@@ -20,7 +20,7 @@ actor Freezethrower : Weapon
     States
     {
       Spawn:
-        FRZP A -1
+        FRZ2 A -1 //Renamed due to sprite conflict. With what? I forget.
         Stop
 
       Ready:
@@ -286,11 +286,12 @@ actor FreezethrowerBolt
     Alpha 0.95
     RenderStyle Add
     +HEXENBOUNCE
+    +ICEDAMAGE
     BounceCount 3
     States
     {
       Spawn:
-        FRZX AAABBBCCC 1 bright A_Explode(3,1,1)
+        FRZX AAABBBCCC 1 bright
         loop
 
       Death:
