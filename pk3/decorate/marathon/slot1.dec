@@ -10,7 +10,7 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
     Decal BulletChip
     Inventory.PickupMessage "You picked up a KKV-7 SMG Flechette!"
     Weapon.AmmoType		"SmgBullet"
-    Weapon.AmmoGive		0
+    Weapon.AmmoGive		500
     Weapon.AmmoUse		1
     Scale 0.35
     +AMMO_OPTIONAL

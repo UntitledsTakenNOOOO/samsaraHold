@@ -11,9 +11,12 @@ actor MarathonPlayer : PlayerPawn
     Player.SideMove 0.95, 0.925
     Player.DamageScreenColor "Red"//, 0.0
     Player.Soundclass "MarathonPlayer"
+damagefactor "MarineAlly", 0	
+	Player.StartItem "LifeItem", 5   // starting lives
+	Player.StartItem "CoinItem", 1200 // starting money
     +NOSKIN
-    -DONTBLAST
-    -THRUSPECIES
+    +DONTBLAST
+    +THRUSPECIES
     //+NOICEDEATH
     Species "Player"
     Player.ColorRange 112, 123
@@ -22,9 +25,6 @@ actor MarathonPlayer : PlayerPawn
     Player.StartItem ".44 Magnum Mega Class A1", 1
     Player.StartItem "Steel Knuckles", 1
     Player.StartItem "Clip", 50
-    Player.StartItem "RocketAmmo", 10
-    Player.StartItem "Shell", 20
-    Player.StartItem "Cell", 50
     Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "MarathonClass", 1
     //Player.StartItem "Allmap", 1
@@ -38,7 +38,7 @@ actor MarathonPlayer : PlayerPawn
     Player.StartItem "WMCAmmo", 500
     Player.StartItem "MortarAmmo", 500
     Player.StartItem "NapalmInTank", 500
-    Player.StartItem "SpankerAmmo", 2
+    Player.StartItem "SpankerAmmo", 500
     Player.StartItem "KnifeAmmo", 2
     DamageFactor "PoisonCloud", 1.75
     //DamageFactor "Wraithverge", 0.75
@@ -74,6 +74,8 @@ actor MarathonPlayer : PlayerPawn
         SOPL G 6 BRIGHT
         Goto Missile
         
+      Death.Inferno:
+        //Death.MarathonPlasma:
       Death.HexGreenFire:
       Death.QuakeFire:
 	  Death.FireExplosive:

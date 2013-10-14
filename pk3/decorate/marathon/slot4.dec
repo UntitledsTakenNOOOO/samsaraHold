@@ -15,10 +15,10 @@ actor "MA-75B Assault Rifle" : Weapon// replaces Chaingun
     Decal BulletChip
     Inventory.PickupMessage "You picked up a MA-75B Assault Rifle!"
     Weapon.AmmoType		"RifleBullet"
-    Weapon.AmmoGive		100
+    Weapon.AmmoGive		500
     Weapon.AmmoUse		1
     Weapon.AmmoType2	"GrenadeInClip"
-    Weapon.AmmoGive2	100
+    Weapon.AmmoGive2	500
     Weapon.AmmoUse2		1
     Scale 0.35
     +AMMO_OPTIONAL
@@ -238,7 +238,7 @@ actor MarathonARBullet : FastProjectile
     Damage (15)
     Radius 8
     Height 8
-    Speed 100
+    Speed 80
     Projectile
     Obituary "%k \cnassaulted\c- %o \cnwith the MA-75B.\c-"
     +BLOODSPLATTER
@@ -277,6 +277,7 @@ actor MarathonARBulletCoop : MarathonARBullet
     Species "Player"
 }
 
+//*****Assault Rifle*****
 actor 32mmCasingSpawner
 {
     Radius 1
@@ -407,7 +408,7 @@ actor MarathonGrenadeSmoke
     {
       Spawn:
         TNT1 A 2
-        FLME CD 1 BRIGHT
+        FLMZ CD 1 BRIGHT
         MSMK ABCD 1
         stop
     }

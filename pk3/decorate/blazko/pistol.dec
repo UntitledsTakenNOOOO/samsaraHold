@@ -41,7 +41,7 @@ actor Luger: InstantSwitchWeapon
     }
 }
 
-actor BlankPuff2: BlankPuff { DamageType "FaithInHumanity" }
+actor BlankPuff2: BlankPuff { DamageType "Pistol"}
 
 actor BlankPuff2Bloodless : BlankPuff2 { -BLOODSPLATTER +BLOODLESSIMPACT }
 

@@ -10,7 +10,7 @@ actor "TOZT-7 Napalm Unit" : Weapon// replaces BFG9000
     Weapon.SlotNumber 6
     Inventory.PickupMessage "You picked up a TOZT-7 Backpack Napalm Unit!"
     Weapon.AmmoType		"NapalmInTank"
-    Weapon.AmmoGive		0
+    Weapon.AmmoGive		500
     Weapon.AmmoUse		1
     Scale 0.35
     +AMMO_OPTIONAL
@@ -142,13 +142,13 @@ actor FlameShot
     States
     {
       Spawn:
-        FLME A 1 BRIGHT
-		FLME B 1 BRIGHT A_GiveInventory("ToztCounter",1)
-		FLME C 1 BRIGHT A_GiveInventory("ToztCounter",1)
-		FLME D 1 BRIGHT A_GiveInventory("ToztCounter",1)
-		FLME E 1 BRIGHT A_GiveInventory("ToztCounter",1)
-		FLME F 1 BRIGHT A_GiveInventory("ToztCounter",1)
-		FLME G 1 BRIGHT A_GiveInventory("ToztCounter",1)
+        FLMZ A 1 BRIGHT
+		FLMZ B 1 BRIGHT A_GiveInventory("ToztCounter",1)
+		FLMZ C 1 BRIGHT A_GiveInventory("ToztCounter",1)
+		FLMZ D 1 BRIGHT A_GiveInventory("ToztCounter",1)
+		FLMZ E 1 BRIGHT A_GiveInventory("ToztCounter",1)
+		FLMZ F 1 BRIGHT A_GiveInventory("ToztCounter",1)
+		FLMZ G 1 BRIGHT A_GiveInventory("ToztCounter",1)
         Stop
 
       Death:
@@ -158,26 +158,21 @@ actor FlameShot
 		TNT1 A 0 A_JumpIfInventory("ToztCounter",3,"Death3")
 		TNT1 A 0 A_JumpIfInventory("ToztCounter",2,"Death2")
 		TNT1 A 0 A_JumpIfInventory("ToztCounter",1,"Death1")
-        FLME A 1 Bright
+        FLMZ A 1 Bright
 	  Death1:
-        FLME B 1 Bright
+        FLMZ B 1 Bright
 	  Death2:
-        FLME C 1 Bright
+        FLMZ C 1 Bright
 	  Death3:
-        FLME D 1 Bright
+        FLMZ D 1 Bright
 	  Death4:
-        FLME E 1 Bright
+        FLMZ E 1 Bright
 	  Death5:
-        FLME F 1 Bright
+        FLMZ F 1 Bright
 	  Death6:
-        FLME G 1 Bright
+        FLMZ G 1 Bright
         Stop
     }
 }
 
-actor FlameShot2 : Flameshot
-{
-    Species "Player"
-    +THRUSPECIES
-    Damage (random(8,12))
-}
+actor FlameShot2 : Flameshot { Species "Player" +THRUSPECIES }
