@@ -140,7 +140,7 @@ addslotdefault 7 "B.F.G. 9000"
 addslotdefault 7 "Wraithverge"
 addslotdefault 7 "LAZ Device"
 addslotdefault 7 "Spear of Destiny"
-addslotdefault 7 "Devastator"
+addslotdefault 7 " Devastator "
 addslotdefault 7 "ONI-71 Wave Motion Cannon"
 addslotdefault 7 "Thunderbolt"
 
