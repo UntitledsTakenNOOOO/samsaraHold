@@ -18,10 +18,11 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
         stop
 
       Pickup:
-        TNT1 A 1 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 1 A_JumpIfInventory("HexenClass",1,"PickupHexen")
-        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
-        TNT1 A 1 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_JumpIfInventory("PowerInvisibility",1,"PickupHereticFail")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
         TNT1 A 0 A_PlaySound("invisibilityget")
         TNT1 A 1 A_GiveInventory("BlurSphere")
         stop
@@ -97,10 +98,11 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
-        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_JumpIfInventory("PowerInvulnerable",1,"PickupFail")
         TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
         TNT1 A 0 A_PlaySound("invulnget")
-        TNT1 A 1 A_GiveInventory("PowerFakeInvulnerable")
+        TNT1 A 1 A_GiveInventory("InvulnerabilitySphere")
         stop
 
       PickupHeretic:
@@ -129,72 +131,7 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
     }
 }
 
-ACTOR PowerFakeInvulnerable : PowerProtection
-{
-  Powerup.Duration -30
-  //inventory.icon "SPSHLD0"
-  Powerup.Color InverseMap
-  damagefactor "normal", 0.0
-  damagefactor "Pistol", 0.0
-  DamageFactor "DoomFist", 0.0
-  damagefactor "ZorchPistol", 0.0
-  damagefactor "Wraithverge", 0.0
-  damagefactor "zorch", 0.0
-  damagefactor "fire", 0.0
-  damagefactor "ice", 0.0
-  damagefactor "slime", 0.0
-  damagefactor "bfg", 0.0
-  damagefactor "bfgspray", 0.0
-  damagefactor "disintegrate", 0.0
-  damagefactor "electric", 0.0
-  DamageFactor "BFG", 0.0
-  DamageFactor "BFGSpray", 0.0
-  DamageFactor "Poison", 0.0
-  DamageFactor "PoisonCloud", 0.0
-  DamageFactor "Mace", 0.0
-  DamageFactor "DragonClaw", 0.0
-  DamageFactor "WolfenFlamethrower", 0.0
-  DamageFactor "DukeDamage", 0.0
-  DamageFactor "DukeExplosive", 0.0
-  DamageFactor "DukeSpectral", 0.0
-  DamageFactor "MightyBoot", 0.0
-  DamageFactor "DukeIce", 0.0
-  DamageFactor "DukePistol", 0.0
-  DamageFactor "MarathonPistol", 0.0
-  DamageFactor "Explosive", 0.0
-  DamageFactor "DoomPlasma", 0.0
-  DamageFactor "CorvusCrossbow", 0.0
-  DamageFactor "CorvusHellstaff", 0.0
-  DamageFactor "CorvusHellstaffTomed", 0.0
-  DamageFactor "MarathonPlasma", 0.0
-  DamageFactor "BJSpear", 0.0
-  DamageFactor "DoomCacodemon", 0.0
-  DamageFactor "DoomHellNoble", 0.0
-  DamageFactor "DoomSpiderPlasma", 0.0
-  DamageFactor "DoomTheseGuysAreTheBest", 0.0
-  DamageFactor "HereNitrogolem", 0.0
-  DamageFactor "HereAxeGreen", 0.0
-  DamageFactor "HereAxeRed", 0.0
-  DamageFactor "Wizard", 0.0
-  DamageFactor "HereLichWind", 0.0
-  DamageFactor "HereDsparil", 0.0
-  DamageFactor "HexBishop", 0.0
-  DamageFactor "HexSlaughtaur", 0.0
-  DamageFactor "HexGreenFire", 0.0
-  DamageFactor "HexStalkerShot", 0.0
-  DamageFactor "HexHeresiarchPurple", 0.0
-  DamageFactor "QuakePistol", 0.0
-  DamageFactor "NotQuadded", 0.0
-  DamageFactor "SpectralNoQuad", 0.0
-
-  DamageFactor "MarathonFusion", 1.0
-  DamageFactor "Kamikaze", 1.0
-  DamageFactor "ZorchKamikaze", 1.0
-  DamageFactor "Suicide", 1.0
-  DamageFactor "Telefrag", 1.0
-}
-
-actor QuakePentagram: PowerFakeInvulnerable
+actor QuakePentagram: PowerInvulnerable
 {
     Powerup.Duration 0x7FFFFFFF
     Powerup.Color "FF 20 00", 0.15
@@ -283,10 +220,11 @@ actor Visor : CustomInventory replaces Infrared// replaces Infrared
         loop
 
       Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
-        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_JumpIfInventory("PowerLightAmp",1,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
         TNT1 A 0 A_PlaySound("lettherebelight")
         TNT1 A 1 A_GiveInventory("Infrared")
         stop
@@ -350,7 +288,7 @@ actor PortTorch : PowerupGiver
     +FLOATBOB
     +INVENTORY.UNDROPPABLE
     +INVENTORY.PICKUPFLASH
-    Inventory.MaxAmount 16
+    Inventory.MaxAmount 1
     Inventory.Icon ARTITRCH
     Inventory.UseSound "heretic/itemuse"
     Inventory.PickupMessage "You picked up a Torch!"
@@ -358,7 +296,7 @@ actor PortTorch : PowerupGiver
     States
     {
       Spawn:
-        TRCH ABC 3 Bright
+        TORC ABC 3 Bright
         Loop
     }
 }
@@ -368,9 +306,9 @@ actor PortRingInvuln : PowerupGiver
     //tag "Ring of Invulnerability"
     +INVENTORY.UNDROPPABLE
     +inventory.hubpower
-    Inventory.MaxAmount 16
+    Inventory.MaxAmount 1
     Inventory.Icon "ARTIINVU"
-    Powerup.Type FakeInvulnerable
+    Powerup.Type Invulnerable
     inventory.usesound "heretic/itemuse"
     Powerup.Color GoldMap
 }
@@ -378,7 +316,7 @@ actor PortRingInvuln : PowerupGiver
 actor PortGhostly : PowerupGiver
 {
     //tag "Shadowsphere"
-    inventory.maxamount 16
+    inventory.maxamount 1
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
     +inventory.hubpower
@@ -392,7 +330,7 @@ actor PortTorch2 : PowerupGiver
     +FLOATBOB
     +INVENTORY.UNDROPPABLE
     +INVENTORY.PICKUPFLASH
-    Inventory.MaxAmount 16
+    Inventory.MaxAmount 1
     Inventory.Icon ARTITRCH
     Inventory.UseSound "hexen/artiuse"
     Inventory.PickupMessage "You picked up a Torch!"
@@ -410,10 +348,47 @@ actor PortIconDefender : PowerupGiver
     //tag "Icon of the Defender"
     +INVENTORY.UNDROPPABLE
     +inventory.hubpower
-    Inventory.MaxAmount 16
+    Inventory.MaxAmount 1
     Inventory.Icon "ARTIDFND"
     Powerup.Type Invulnerable
+    Powerup.Mode Reflective
     inventory.usesound "hexen/artiuse"
     Powerup.Color Grey, 0.1
 }
 
+actor MegaMap : CustomInventory replaces AllMap
+{
+  +COUNTITEM
+  +INVENTORY.FANCYPICKUPSOUND
+  +INVENTORY.ALWAYSPICKUP
+  Inventory.MaxAmount 0
+  Inventory.PickupSound "misc/p_pkup"
+  Inventory.PickupMessage "Computer Area Map and Scanner!"
+  states
+  {
+  Spawn:
+    PMAP ABCDCB 6 Bright
+    Loop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory ("PowerScanner",1,"PickupFail")
+    TNT1 A 0 A_GiveInventory ("Allmap")
+    TNT1 A 0 A_GiveInventory ("DoomScanner")
+    stop
+  PickupFail:
+    PMAP ABCDCB 6 Bright
+    Fail
+  }
+}
+
+actor DoomScanner : PowerupGiver
+{
+  powerup.duration -300
+  powerup.type "Scanner"
+  +INVENTORY.AUTOACTIVATE
+  states
+  {
+  Spawn:
+    TNT1 A 1
+    stop
+  }
+}

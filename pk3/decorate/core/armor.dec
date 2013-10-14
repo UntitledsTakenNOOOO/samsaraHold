@@ -545,7 +545,7 @@ actor BlueArmorPickup replaces BlueArmor
         stop
 
       Armor3_WithYellow:
-        TNT1 A 0 A_SpawnItemEx("SilverArmorNoDrop")
+        TNT1 A 0 A_SpawnItemEx("QRedArmorNoDrop")
         stop
 
       Armor3_Drop:
@@ -553,7 +553,7 @@ actor BlueArmorPickup replaces BlueArmor
         stop
 
       Armor3_YellowDrop:
-        TNT1 A 0 A_SpawnItemEx("SamsaraSilverArmor")
+        TNT1 A 0 A_SpawnItemEx("QuakeRedArmor")
         stop
 
       Armor4:
@@ -575,7 +575,7 @@ actor BlueArmorPickup replaces BlueArmor
     }
 }
 
-actor RedArmor 5040
+actor RedArmor replaces SuperShield 5040
 {
     +NOINTERACTION
 
@@ -790,4 +790,38 @@ actor NoArmor: BasicArmorPickup
         TNT1 A 0
         stop
     }
+}
+
+actor YellowArmorModeShopGiver : CustomInventory
+{
+	+INVENTORY.AUTOACTIVATE
+
+	States
+	{
+	Pickup:
+	TNT1 A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_YELLOW)
+	Stop
+	}
+}
+actor BlueArmorModeShopGiver : CustomInventory
+{
+	+INVENTORY.AUTOACTIVATE
+
+	States
+	{
+	Pickup:
+	TNT1 A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_BLUE_WITHYELLOW)
+	Stop
+	}
+}
+actor RedArmorModeShopGiver : CustomInventory
+{
+	+INVENTORY.AUTOACTIVATE
+
+	States
+	{
+	Pickup:
+	TNT1 A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_RED)
+	Stop
+	}
 }
