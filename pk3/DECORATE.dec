@@ -30,6 +30,7 @@ const int SAMSARA_CLIENT_DECORATE = 212;
 #include "actors/GAME_HEXEN"
 #include "decorate/game_strife.dec"
 //#include "actors/GAME_STRIFE"
+#include "decorate/game_strnghld.dec"
 #include "actors/GAME_CHAOS"
 #include "actors/GAME_TERRAINCOGNITA"
 
