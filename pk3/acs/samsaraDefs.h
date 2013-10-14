@@ -589,4 +589,4 @@ STRONGHOLD CHANGES\n
 - Changes to various monsters. Most of these should not be noticeable, with the Key Word being Most. Again, most of these are to remain secret.\n
 - The one I'm giving to you is that Dune Warriors can now be shot while cloaked, because they say they have a cloaking device, not a phase-out-of-existence device (same goes to apprentices in STR52 btw)!\n
 -The Bruiser Demon Powerup, as fun as it was, had it's novelty wear out a long time ago. I replaced with a Terminator Powerup. Much better.\n
--I have a separate patch for the non Samsara related changes."
+-I have a separate patch for the non Samsara related changes.";

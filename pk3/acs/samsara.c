@@ -836,8 +836,9 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Despair, for I am the One God."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-        break;
-    }
+        }
+	break;
+	}
 }
 
 script 205 (void)
