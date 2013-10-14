@@ -3,7 +3,7 @@ actor ZPoisonShroom2 : ZPoisonShroom replaces ZPoisonShroom { +DONTRIP }
 
 actor HexenAmmo12Small : CustomInventory replaces Mana1
 {
-    Inventory.PickupMessage "Picked up 10 of Ammo 2 and Ammo 1."
+    Inventory.PickupMessage "Picked up 50/10/0/0 of Ammo 1/2/3/4."
     Inventory.PickupSound "ammogem/bulletsmall"
     +FLOATBOB
     States
@@ -15,35 +15,43 @@ actor HexenAmmo12Small : CustomInventory replaces Mana1
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFailCheck")
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFailCheck2")
         TNT1 A 0 A_GiveInventory("Shell",10)
-        TNT1 A 0 A_GiveInventory("Clip",10)
+        TNT1 A 0 A_GiveInventory("Clip",50)
+        TNT1 A 0 A_GiveInventory("LavaNails",25)
         stop
 
       PickupMarathon:
         TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFailCheck")
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFailCheck2")
         TNT1 A 0 A_GiveInventory("Shell",10)
-        TNT1 A 0 A_GiveInventory("Clip",10)
+        TNT1 A 0 A_GiveInventory("Clip",50)
         TNT1 A 0 A_SetBlend("Green",0.4,4)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",60)
         stop
 
       PickupWolfen:
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip",20)
+        TNT1 A 0 A_GiveInventory("Clip",100)
         stop
 
       PickupFailCheck:
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip",10)
+        TNT1 A 0 A_GiveInventory("Clip",50)
+        TNT1 A 0 A_GiveInventory("LavaNails",25)
         stop
 
       PickupFailCheck2:
         TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
         TNT1 A 0 A_GiveInventory("Shell",10)
+        TNT1 A 0 A_GiveInventory("LavaNails",25)
         stop
 
       PickupFail:
@@ -54,9 +62,11 @@ actor HexenAmmo12Small : CustomInventory replaces Mana1
 
 actor HexenAmmo34Small : CustomInventory replaces Mana2
 {
-    Inventory.PickupMessage "Picked up 5 of Ammo 3 and 10 of Ammo 4."
+    Inventory.PickupMessage "Picked up 0/0/5/75 of Ammo 1/2/3/4."
     Inventory.PickupSound "ammogem/plasmasmall"
     +FLOATBOB
+    +DROPPED
+    +INVENTORY.BIGPOWERUP
     States
     {
       Spawn:
@@ -70,30 +80,33 @@ actor HexenAmmo34Small : CustomInventory replaces Mana2
         TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFailCheck")
         TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFailCheck2")
         TNT1 A 0 A_GiveInventory("RocketAmmo",5)
-        TNT1 A 0 A_GiveInventory("Cell",10)
+        TNT1 A 0 A_GiveInventory("Cell",75)
+        TNT1 A 0 A_GiveInventory("MultiRocketAmmo",2)
         stop
 
       PickupMarathon:
         TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFailCheck")
         TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFailCheck2")
         TNT1 A 0 A_GiveInventory("RocketAmmo",5)
-        TNT1 A 0 A_GiveInventory("Cell",10)
+        TNT1 A 0 A_GiveInventory("Cell",75)
         TNT1 A 0 A_SetBlend("Green",0.4,4)
         stop
 
       PickupFailCheck2:
         TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
         TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        TNT1 A 0 A_GiveInventory("MultiRocketAmmo",2)
         stop
 
       PickupFailCheck:
         TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Cell",10)
+        TNT1 A 0 A_GiveInventory("Cell",75)
+        TNT1 A 0 A_GiveInventory("MultiRocketAmmo",2)
         stop
 
       PickupHexen:
         TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Cell",15)
+        TNT1 A 0 A_GiveInventory("Cell",80)
         stop
 
       PickupFail:
@@ -104,10 +117,12 @@ actor HexenAmmo34Small : CustomInventory replaces Mana2
 
 actor HexenEverythingAmmo : CustomInventory replaces Mana3
 {
-    Inventory.PickupMessage "Picked up 15 of all ammo."
+    Inventory.PickupMessage "Picked up 30/10/5/60 of ammo 1/2/3/4."
     Inventory.PickupSound "ammo/mana"
     -INVENTORY.ALWAYSPICKUP
     +FLOATBOB
+    +DROPPED
+    +INVENTORY.BIGPOWERUP
     Scale 0.75
     States
     {
@@ -121,36 +136,38 @@ actor HexenEverythingAmmo : CustomInventory replaces Mana3
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
-        TNT1 A 0 A_GiveInventory("Clip",15)
-        TNT1 A 0 A_GiveInventory("Shell",15)
-        TNT1 A 0 A_GiveInventory("RocketAmmo",15)
-        TNT1 A 0 A_GiveInventory("Cell",15)
+        TNT1 A 0 A_GiveInventory("Clip",30)
+        TNT1 A 0 A_GiveInventory("Shell",10)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        TNT1 A 0 A_GiveInventory("Cell",60)
         stop
 
       PickupMarathon:
-        TNT1 A 0 A_GiveInventory("Clip",15)
-        TNT1 A 0 A_GiveInventory("Shell",15)
-        TNT1 A 0 A_GiveInventory("RocketAmmo",15)
-        TNT1 A 0 A_GiveInventory("Cell",15)
+        TNT1 A 0 A_GiveInventory("Clip",30)
+        TNT1 A 0 A_GiveInventory("Shell",10)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        TNT1 A 0 A_GiveInventory("Cell",60)
         TNT1 A 0 A_SetBlend("Green",0.4,4)
         stop
 
       PickupWolfen:
-        TNT1 A 0 A_GiveInventory("Clip",30)
-        TNT1 A 0 A_GiveInventory("RocketAmmo",15)
-        TNT1 A 0 A_GiveInventory("Cell",15)
+        TNT1 A 0 A_GiveInventory("Clip",80)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        TNT1 A 0 A_GiveInventory("Cell",60)
         stop
 
       PickupHexen:
-        TNT1 A 0 A_GiveInventory("Clip",30)
-        TNT1 A 0 A_GiveInventory("Cell",30)
+        TNT1 A 0 A_GiveInventory("Clip",40)
+        TNT1 A 0 A_GiveInventory("Cell",65)
         stop
 
       PickupQuake:
-        TNT1 A 0 A_GiveInventory("Clip",15)
-        TNT1 A 0 A_GiveInventory("Shell",15)
-        TNT1 A 0 A_GiveInventory("RocketAmmo",15)
-        TNT1 A 0 A_GiveInventory("Cell",15)
+        TNT1 A 0 A_GiveInventory("Clip",30)
+        TNT1 A 0 A_GiveInventory("LavaNails",15)
+        TNT1 A 0 A_GiveInventory("Shell",10)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        TNT1 A 0 A_GiveInventory("MultiRocketAmmo",2)
+        TNT1 A 0 A_GiveInventory("Cell",60)
         stop
     }
 }
@@ -160,10 +177,10 @@ actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
     RenderStyle Add
     Alpha 0.875
     +Floatbob
-    Armor.Savepercent 33.33333
-    Armor.MaxSaveAmount 200
+    Armor.Savepercent 75
+    Armor.MaxSaveAmount 250
     Armor.Saveamount 25
-    Inventory.PickupMessage "Picked up 25 Armor."
+    Inventory.PickupMessage "Picked up 25 Bonus Armor."
     Inventory.PickupSound "armor1get"
     States
     {
@@ -194,18 +211,19 @@ actor ArmorHexenTrail
 
 actor HexenArmor5 : CustomInventory replaces ArtiBoostArmor
 {
+    RenderStyle Add
+    Alpha 0.875
     +Floatbob
     Inventory.PickupMessage "Picked up 50 Extra Armor."
     Inventory.PickupSound "nosoundforyoubitch"
     States
     {
       Spawn:
-        BRAC ABCDEFGH 4 Bright
+        G_AM A 1 Bright
         Loop
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
         TNT1 A 0 A_PlaySound("FighterHammerHitWall")
         TNT1 A 1 A_GiveInventory("HexenArmor5B")
         stop
@@ -215,36 +233,12 @@ actor HexenArmor5 : CustomInventory replaces ArtiBoostArmor
         TNT1 A 0 A_PlaySound("FighterHammerHitWall")
         TNT1 A 1 A_GiveInventory("HexenArmor5B")
         stop
-
-      PickupHeretic:
-        TNT1 A 0 A_JumpIfInventory("HexenArmor5A",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
-        TNT1 A 1 A_GiveInventory("HexenArmor5A")
-        stop
-
-      PickupHereticFail:
-        BRAC A 4 BRIGHT
-        fail
-    }
-}
-
-actor HexenArmor5A : CustomInventory
-{
-    //tag "Dragonskin Bracers"
-    +INVBAR
-    Inventory.Icon "ARTIBRAC"
-    Inventory.DefMaxAmount
-    States
-    {
-      Use:
-        TNT1 A 0 A_GiveInventory("HexenArmor5B",50)
-        stop
     }
 }
 
 actor HexenArmor5B : BasicArmorBonus
 {
-    Armor.Savepercent 33.33333
+    Armor.Savepercent 87.5
     Armor.MaxSaveAmount 300
     Armor.Saveamount 50
 }
@@ -317,58 +311,112 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
 
       PickupDoom:
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 AAAAAAAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)//A_SpawnDebris("HealPack0")
+        TNT1 AAAA 1 A_SpawnItemEx("HereticAmmo2Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("HereticAmmo2Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAA 1 A_SpawnItemEx("HereticAmmo4Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("HereticAmmo4Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+	TNT1 AAAAAAA 1 A_SpawnItemEx("Ammo2Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAA 1 A_SpawnItemEx("StrifeElectricBolts",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AA 1 A_SpawnItemEx("Ammo2Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAA 1 A_SpawnItemEx("Ammo4Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("Ammo4Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         stop
 
       PickupChex:
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 AAAAAAAAAAAAAAA 1 A_SpawnItemEx("ArmorScrap",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0) //A_SpawnDebris("ArmorScrap")
+        TNT1 AAAAAAAAA 1 A_SpawnItemEx("ArmorScrap",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAA 1 A_SpawnItemEx("HexenArmorDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAA 1 A_SpawnItemEx("HereticArmorDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAA 1 A_SpawnItemEx("HexenArmor1",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAA 1 A_SpawnItemEx("HexenArmor5",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAA 1 A_SpawnItemEx("GreenArmorPickup",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAA 1 A_SpawnItemEx("YellowArmorPickup",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AA 1 A_SpawnItemEx("BlueArmorPickup",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("RedArmor",0,0,0,0,0,0,1,0)
         stop
 
       PickupWolfen:
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 AAA 1 A_SpawnItemEx("Ammo1Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)//A_SpawnDebris("Ammo1Small")
-        TNT1 AAA 1 A_SpawnItemEx("Ammo2Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)//A_SpawnDebris("Ammo1Small")
+        TNT1 A 1 A_GiveInventory("WolfenAmmoCrate",1)
+        TNT1 AAAAAAAAAAAA 1 A_SpawnItemEx("HereticAmmo1Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAAAA 1 A_SpawnItemEx("Ammo1Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAA 1 A_SpawnItemEx("HereticAmmo1Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAA 1 A_SpawnItemEx("Ammo1Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         stop
 
       PickupHeretic:
-        TNT1 A 0 A_JumpIfInventory("ArtiHealingRadius2",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
-        TNT1 A 1 A_GiveInventory("ArtiHealingRadius2")
+        TNT1 A 0 A_PlaySound("MysticIncant")
+        TNT1 A 1 A_SpawnItemEx("SamsaraUniquePickup",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("HexenAmmo12Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("StrifeMiniMissiles",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("HexenAmmo34Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("StrifeCrateOfMissiles",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("HexenEverythingAmmo",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("Visor",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("PartialInvisibility",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("AllMap",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("AmmoBackpack",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+	TNT1 A 1 A_SpawnItemEx("HexenArmor1",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+	TNT1 A 1 A_SpawnItemEx("HexenArmor2",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+	TNT1 A 1 A_SpawnItemEx("HexenArmor3",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+	TNT1 A 1 A_SpawnItemEx("HexenArmor4",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+	TNT1 A 1 A_SpawnItemEx("HexenArmor5",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("HereticLesserTome",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+	TNT1 A 1 A_SpawnItemEx("SamsaraUniquePickup",0,0,0,0,0,0,0,0)
         stop
 
       PickupHexen:
-        TNT1 A 0 A_JumpIfInventory("PortMysticAmbit",0,"PickupHereticFail")
+        TNT1 A 0 A_JumpIfInventory("PortMysticAmbit",0,"PickupFail")
         TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 AAAA 1 A_GiveInventory("ArtiHealingRadius2")
         TNT1 A 1 A_GiveInventory("PortMysticAmbit")
         stop
 
-      PickupHereticFail:
-        HRAD A 4 BRIGHT
-        fail
+      PickupFail:
+	HRAD ABCDEFGHIJKLMNOP 4 Bright
+	Fail
 
       PickupDuke:
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 AAAAA 1 A_SpawnItemEx("Ammo3Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)//A_SpawnDebris("Ammo1Small")
+        TNT1 AAAAAA 1 A_SpawnItemEx("Ammo3Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAA 1 A_SpawnItemEx("HereticAmmo3Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAA 1 A_SpawnItemEx("StrifeHEGrenades",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AA 1 A_SpawnItemEx("HereticAmmo3Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AA 1 A_SpawnItemEx("Ammo3Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         stop
 
       PickupMarathon:
         TNT1 A 0 A_SetBlend("White",0.5,5)
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 A 1 A_GiveInventory("Allmap",1)
-        TNT1 A 1 A_GiveInventory("PowerScanner",1)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HereticStuffDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HereticStuffDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack1",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAA 1 A_SpawnItemEx("HealPack2",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("SuperHealth",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 A 1 A_SpawnItemEx("MegaPack",0,0,0,0,0,0,0,0)
         stop
 
       PickupQuake:
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 AAAA 1 A_SpawnItemEx("QuakeQuarterDamage",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAAAAAAAA 1 A_SpawnItemEx("QuakeQuarterDamage",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAA 1 A_SpawnItemEx("HereticLesserTome",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         stop
     }
 }
 
 actor ArtiHealingRadius2: ArtiHealingRadius {
 Inventory.MaxAmount 16
-//Tag "Mystic Ambit Incant"
+Tag "Mystic Ambit Incant"
 }
 
 Actor QuakeQuarterDamage : PowerupGiver
@@ -384,7 +432,7 @@ Actor QuakeQuarterDamage : PowerupGiver
   Scale 0.2
   Inventory.PickupAnnouncerEntry "strength"
   Inventory.PickupSound "quakeweps/quadready"
-  Inventory.PickupMessage "Picked up a Quarter Damage!"
+  Inventory.PickupMessage "Picked up a 1.5X Damage!"
   States
   {
   Spawn:
@@ -396,41 +444,41 @@ Actor QuakeQuarterDamage : PowerupGiver
 Actor PowerQuackQuarterDamage : PowerDamage
 {
   Powerup.Color "00 50 FF", 0.1
-  Powerup.Duration -60
-  DamageFactor "Pistol", 1.25
-  DamageFactor "DoomFist", 1.25
-  DamageFactor "ZorchPistol", 1.25
-  DamageFactor "Wraithverge", 1.25
-  DamageFactor "Mace", 1.25
-  DamageFactor "DragonClaw", 1.25
-  DamageFactor "Normal", 1.25
-  DamageFactor "Zorch", 1.25
-  DamageFactor "PhasingZorch", 1.25
-  DamageFactor "BFG", 1.25
-  DamageFactor "BFGSpray", 1.25
-  DamageFactor "Fire", 1.25
-  DamageFactor "Ice", 1.25
-  DamageFactor "Disintegrate", 1.25
-  DamageFactor "WolfenFlamethrower", 1.25
-  DamageFactor "DukeDamage", 1.25
-  DamageFactor "DukeExplosive", 1.25
-  DamageFactor "DukeIce", 1.25
-  DamageFactor "MightyBoot", 1.25
+  Powerup.Duration -30
+  DamageFactor "Pistol", 1.5
+  DamageFactor "DoomFist", 1.5
+  DamageFactor "ZorchPistol", 1.5
+  DamageFactor "Wraithverge", 1.5
+  DamageFactor "Mace", 1.5
+  DamageFactor "DragonClaw", 1.5
+  DamageFactor "Normal", 1.5
+  DamageFactor "Zorch", 1.5
+  DamageFactor "PhasingZorch", 1.5
+  DamageFactor "BFG", 1.5
+  DamageFactor "BFGSpray", 1.5
+  DamageFactor "Fire", 1.5
+  DamageFactor "Ice", 1.5
+  DamageFactor "Disintegrate", 125
+  DamageFactor "WolfenFlamethrower", 1.5
+  DamageFactor "DukeDamage", 1.5
+  DamageFactor "DukeExplosive", 1.5
+  DamageFactor "DukeIce", 1.5
+  DamageFactor "MightyBoot", 1.5
   
-  DamageFactor "DukePistol", 1.25
-	DamageFactor "MarathonPistol", 1.25
-	DamageFactor "Explosive", 1.25
-	DamageFactor "MarathonFusion", 1.25
-	DamageFactor "DoomPlasma", 1.25
-	DamageFactor "CorvusCrossbow", 1.25
-	DamageFactor "CorvusHellstaff", 1.25
-	DamageFactor "CorvusHellstaffTomed", 1.25
-	DamageFactor "MarathonPlasma", 1.25
-	DamageFactor "BJSpear", 1.25
-	DamageFactor "WMCBeam", 1.25
-	DamageFactor "WMCNade", 1.25
-	DamageFactor "QuakePistol", 1.25
-	DamageFactor "NotQuadded", 1.25
+  DamageFactor "DukePistol", 1.5
+	DamageFactor "MarathonPistol", 1.5
+	DamageFactor "Explosive", 1.5
+	DamageFactor "MarathonFusion", 1.5
+	DamageFactor "DoomPlasma", 1.5
+	DamageFactor "CorvusCrossbow", 1.5
+	DamageFactor "CorvusHellstaff", 1.5
+	DamageFactor "CorvusHellstaffTomed", 1.5
+	DamageFactor "MarathonPlasma", 1.5
+	DamageFactor "BJSpear", 1.5
+	DamageFactor "WMCBeam", 1.5
+	DamageFactor "WMCNade", 1.5
+	DamageFactor "QuakePistol", 1.5
+	DamageFactor "NotQuadded", 1.5
 }
 
 actor HexenHealPack0 : HealPack0 replaces ArtiPoisonBag { }
