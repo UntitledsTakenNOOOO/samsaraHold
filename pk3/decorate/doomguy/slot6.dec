@@ -1,18 +1,25 @@
 actor "Plasma Rifle" : PlasmaRifle
 {
+    Weapon.AmmoGive 80
     Weapon.SlotNumber 6
+    Weapon.SlotPriority 0
     +INVENTORY.UNDROPPABLE
     States
     {
       Ready:
+	TNT1 A 0 A_JumpIfInventory(" Railgun ",1,"Ready2")
+	TNT1 A 0 A_GiveInventory(" Railgun ",1)
+      Ready2:
         DPLS A 1 A_WeaponReady
         Loop
 
       Deselect:
+        DPLS A 0 A_Lower
         DPLS A 1 A_Lower
         Loop
 
       Select:
+        DPLS A 0 A_Raise
         DPLS A 1 A_Raise
         Loop
 
@@ -60,13 +67,12 @@ actor "Plasma Rifle" : PlasmaRifle
         DPLS DEF 1
         DPLS GF 3
         DPLS EDCB 2
-		DPLS A 1
         goto Ready
       
       RageEnd:
-        DPLS DF 2
-        DPLS G 4
-        DPLS FEDCBA 2
+        DPLS DF 1
+        DPLS G 2
+        DPLS FEDCBA 1
         goto Ready
 
       VanillaCooldown:
@@ -103,3 +109,144 @@ actor DoomPlasmaBall : PlasmaBall
 }
 
 actor DoomPlasmaBall2 : DoomPlasmaBall { +THRUSPECIES Species "Player" }
+
+ACTOR " RailGun " : Weapon 
+{
+   Weapon.SlotPriority 1
+   spawnid 241
+   Inventory.PickupSound "misc/w_pkup"
+   Inventory.PickupMessage "You got the railgun!"
+   Obituary "%o was railed by %k."
+   Damagetype "Normal"
+   Weapon.AmmoType "Cell"
+   Weapon.AmmoGive 0
+   Weapon.AmmoUse 5
+   Decal RailScorch
+   Tag "Railgun"
+   +INVENTORY.UNDROPPABLE
+   States
+   {
+   Spawn:
+      WRAL A -1
+      Loop
+   Ready:
+	  RAIG A 2 A_WeaponReady
+	  Loop
+	  RSCP A 2 Bright A_WeaponReady(1)
+	  Goto Ready+1
+   Deselect:
+	  RAIG A 0 A_TakeInventory("RailgunScope",1)
+	  RAIG A 0 A_ZoomFactor(1)
+      RAIG A 0 A_Lower
+      RAIG A 1 A_Lower
+      Loop
+   Select:
+	  RAIG A 0 A_TakeInventory("RailgunScope",1)
+	  RAIG A 0 A_ZoomFactor(1,ZOOM_INSTANT)
+      RAIG A 0 A_Raise
+      RAIG A 1 A_Raise
+      Loop
+   Fire:
+      RAIG A 0 A_JumpIfInventory("RailgunScope",1,"ZoomFire")
+      RAIG A 0 A_JumpIfInventory("RailCharge",2,22)
+      RAIG A 0 A_JumpIfInventory("RailCharge",1,10)
+      RAIG B 6 A_PlayWeaponSound("weapons/railch")
+      RAIG B 6 Bright A_GiveInventory("RailCharge",1)
+      RAIG B 0 A_Refire
+      RAIG E 3 Bright A_GunFlash
+      RAIG E 1 A_PlayWeaponSound("weapons/railf1")
+      RAIG F 6 Bright A_RailAttack(100,0,1,"FF 00 00","FF FF FF",0,0,"RailPuff")
+      RAIG A 4
+      RAIG K 15
+      RAIG A 0 A_TakeInventory("RailCharge",3)
+      Goto Ready
+      RAIG C 6 Bright
+      RAIG C 6 Bright A_GiveInventory("RailCharge",1)
+      RAIG C 0 A_Refire
+      RAIG G 3 Bright A_GunFlash
+      RAIG G 1 A_PlayWeaponSound("weapons/railf2")
+      RAIG H 0 Bright A_RailAttack(0,0,1,"FF FF 00","FF FF FF",0,0,"RailPuff")
+      RAIG H 6 Bright A_RailAttack(200,0,1,"FF FF 00","FF 45 00",0,0,"RailPuff")
+      RAIG A 4
+      RAIG K 15
+      RAIG A 0 A_TakeInventory("RailCharge",3)
+      Goto Ready
+      RAIG D 6 Bright
+      RAIG D 6 Bright
+      RAIG D 0 A_Refire
+      RAIG I 3 Bright A_GunFlash
+      RAIG I 1 A_PlayWeaponSound("weapons/railf3")
+      RAIG J 0 Bright A_RailAttack(0,0,1,"00 00 FF","00 45 FF",0,0,"RailPuff")
+      RAIG J 0 Bright A_RailAttack(0,0,1,"00 00 FF","FF FF FF",0,0,"RailPuff")
+      RAIG J 4 Bright A_RailAttack(300,0,1,"00 00 FF","00 FF 00",0,0,"RailPuff")
+      RAIG A 4
+      RAIG K 15
+      RAIG A 0 A_TakeInventory("RailCharge",3)
+      Goto Ready
+   ZoomFire:
+	  RSCP A 0 Bright A_JumpIfInventory("RailCharge",2,19)
+      RSCP A 0 Bright A_JumpIfInventory("RailCharge",1,9)
+      RSCP A 6 Bright A_PlayWeaponSound("weapons/railch")
+      RSCP A 6 Bright A_GiveInventory("RailCharge",1)
+      RSCP A 0 Bright A_Refire
+      RSCP A 3 Bright A_GunFlash
+      RSCP A 1 Bright A_PlayWeaponSound("weapons/railf1")
+      RSCP A 6 Bright A_RailAttack(100,0,1,"FF 00 00","FF FF FF",0,0,"RailPuff")
+      RSCP A 19 Bright
+      RSCP A 0 Bright A_TakeInventory("RailCharge",3)
+      Goto Ready+1
+      RSCP A 6 Bright
+      RSCP A 6 Bright A_GiveInventory("RailCharge",1)
+      RSCP A 0 Bright A_Refire
+      RSCP A 3 Bright A_GunFlash
+      RSCP A 1 Bright A_PlayWeaponSound("weapons/railf2")
+      RSCP A 0 Bright A_RailAttack(0,0,1,"FF FF 00","FF FF FF",0,0,"RailPuff")
+      RSCP A 6 Bright A_RailAttack(200,0,1,"FF FF 00","FF 45 00",0,0,"RailPuff")
+      RSCP A 19 Bright
+      RSCP A 0 Bright A_TakeInventory("RailCharge",3)
+      Goto Ready+1
+      RSCP A 12 Bright
+      RSCP A 0 Bright A_Refire
+      RSCP A 3 Bright A_GunFlash
+      RSCP A 1 Bright A_PlayWeaponSound("weapons/railf3")
+      RSCP A 0 Bright A_RailAttack(0,0,1,"00 00 FF","00 45 FF",0,0,"RailPuff")
+      RSCP A 0 Bright A_RailAttack(0,0,1,"00 00 FF","FF FF FF",0,0,"RailPuff")
+      RSCP A 4 Bright A_RailAttack(300,0,1,"00 00 FF","00 FF 00",0,0,"RailPuff")
+      RSCP A 19 Bright
+      RSCP A 0 Bright A_TakeInventory("RailCharge",3)
+      Goto Ready+1
+   AltFire:
+      RSCP A 0 Bright A_JumpIfInventory("RailgunScope",1,3)
+	  RSCP A 0 Bright A_GiveInventory("RailgunScope",1)
+	  RSCP A 8 Bright A_ZoomFactor(3)
+	  Goto Ready+1
+	  RAIG A 0 A_TakeInventory("RailgunScope",1)
+	  RAIG A 8 A_ZoomFactor(1)
+	  Goto Ready
+   Flash:
+      TNT1 A 4 A_Light1
+      TNT1 A 4 A_Light2
+      TNT1 A 1 A_Light1
+      TNT1 A 0 A_Light0
+      Stop
+   }
+}
+
+ACTOR RailPuff : DoomBulletPuff
+{
+	DamageType "Explosive"
+}
+
+ACTOR RailCharge : Ammo
+{
+   Inventory.MaxAmount 3
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 3
+}
+
+ACTOR RailgunScope : Ammo
+{
+   Inventory.MaxAmount 1
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 1
+}

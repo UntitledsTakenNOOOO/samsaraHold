@@ -67,7 +67,7 @@ actor " Staff " : Weapon
 
 actor StaffPuff3 : StaffPuff
 {
-    DamageType "FaithInHumanity"
+    DamageType "Pistol"
     SeeSound "heretic/staffhit"
     States
     {
@@ -83,7 +83,7 @@ actor StaffPuff3 : StaffPuff
 
 actor StaffPuff4 : StaffPuff2
 {
-    DamageType "FaithInHumanity"
+    DamageType "Pistol"
     SeeSound "heretic/staffpowerhit"
     States
     {

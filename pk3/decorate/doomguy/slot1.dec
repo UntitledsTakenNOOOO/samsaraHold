@@ -11,25 +11,30 @@ actor " Chainsaw " : Chainsaw replaces Chainsaw
     States
     {
       Ready:
+	TNT1 A 0 A_JumpIfInventory("Stunner Rifle",1,"Ready2")
+	TNT1 A 0 A_GiveInventory("Stunner Rifle",1)
+      Ready2:
         DSAW CD 4 A_WeaponReady
         loop
 
       Deselect:
+        DSAW C 0 A_Lower
         DSAW C 1 A_Lower
         loop
 
       Select:
+        DSAW C 0 A_Raise
         DSAW C 1 A_Raise
         loop
 
       Fire:
         TNT1 A 0 A_JumpIfInventory("PowerChainsawBerserk", 1, "FireBerserk")
-        DSAW AB 4 A_Saw("doomguy/sawfull", "doomguy/sawhit", 2, "DoomBulletPuff") 
+        DSAW AB 3 A_Saw("doomguy/sawfull", "doomguy/sawhit", 7, "DoomBulletPuff") 
         DSAW B 0 A_ReFire
         goto Ready
 
       FireBerserk:
-        DSAW AB 3 A_Saw("doomguy/sawfull", "doomguy/sawhit", 7, "DoomBulletPuff") 
+	DSAW AB 2 A_Saw("doomguy/sawfull", "doomguy/sawhit", 10, "DoomBulletPuff") 
         DSAW B 0 A_ReFire
         goto Ready
 
@@ -44,4 +49,90 @@ actor PowerChainsawBerserk : Powerup//PowerDamage
     +INVENTORY.HUBPOWER
     Powerup.Duration 0x7FFFFFFF
     //DamageFactor "Chainsaw", 10.0 // Yeah, that turned out to not work for some reason.
+}
+
+ACTOR "Stunner Rifle" : PlasmaRifle 
+{
+   Weapon.AmmoUse 5
+// Weapon.SisterWeapon "PowerStunnerRifle"
+   Inventory.PickupMessage "You got the stunner rifle!"
+   Tag "Stunner Rifle"
+   +INVENTORY.UNDROPPABLE
+   States
+   {
+   Spawn:
+      STPP A -1
+      Loop
+   Ready:
+      STPO ABC 3 Bright A_WeaponReady
+      Loop
+   Deselect:
+      STPO E 0 A_Lower
+      STPO E 1 A_Lower
+      Loop
+   Select:
+      STPO E 0 A_Raise
+      STPO E 1 A_Raise
+      Loop
+   Fire:
+   Hold:
+      STPO F 0 Bright A_GunFlash
+      STPO F 3 Bright A_FireCustomMissile("StunnerBall",0,1,0,0)
+      STPO GH 3 Bright
+      STPO E 4
+      STPO D 6 A_ReFire
+      Goto Ready
+   Flash:
+      TNT1 A 1 A_Light1
+      TNT1 A 1 A_Light2
+      TNT1 A 1 A_Light1
+      TNT1 A 1 A_Light0
+      stop
+   }
+}
+
+actor StunnerBall
+{
+  radius 6
+  height 8
+  speed 25
+  scale 0.45
+  damagetype Stunner
+  damage 1
+  decal StunnerScorch
+  renderstyle Add
+  seesound "weapons/stunner/shot"
+  deathsound "weapons/stunner/hit"
+  translation "192:207=250:254"
+  PROJECTILE
+  +RANDOMIZE
+  +STRIFEDAMAGE
+  +RIPPER
+  +THRUSPECIES
+  Species "Player"
+  states
+  {
+  Spawn:
+    STPR A 1 bright A_SpawnItemEx("StunnerBallFX",0,0,0,0,0,0,0,128)
+    loop
+  Death:
+    PLSE ABCDE 4 bright
+    stop
+  }
+}
+
+actor StunnerBallFX
+{
+  +NOBLOCKMAP
+  +NOGRAVITY
+  scale 0.45
+  renderstyle Add
+  radius 1
+  height 2
+  States
+  {
+  Spawn:
+    STPR A 1 bright A_FadeOut(0.1)
+    Loop
+  }
 }

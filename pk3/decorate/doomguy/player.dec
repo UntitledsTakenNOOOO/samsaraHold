@@ -15,15 +15,18 @@ actor DoomguyPlayer : PlayerPawn
     //DamageFactor "Wraithverge", 0.75
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
+	damagefactor "MarineAlly", 0
+	Player.StartItem "LifeItem", 5   // starting lives
+	Player.StartItem "CoinItem", 1200 // starting money
     DamageFactor "MightyBoot", 1.5
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.1
 	DamageFactor "EnemyInfightDamage", 0.0
     +NOSKIN
-    -DONTBLAST
-    -THRUSPECIES
+    +DONTBLAST
+    +THRUSPECIES
     Species "Player"
-    Player.ColorRange 112, 127
+    Player.ColorRange 192, 207
     States
     {
       Spawn:
@@ -47,6 +50,8 @@ actor DoomguyPlayer : PlayerPawn
         DGUY G 4 A_Pain
         Goto Spawn
 
+      Death.Inferno:
+      //Death.MarathonPlasma:
       Death.HexGreenFire:
       Death.QuakeFire:
 	  Death.FireExplosive:
@@ -184,6 +189,7 @@ actor VanillaDoom : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamou
 
 actor DoomBulletPuff : BulletPuff
 {
+    DamageType "FaithInHumanity" 
     States
     {
       Spawn:
@@ -226,3 +232,8 @@ actor DoomBullet : FastProjectile
         stop
     }
 }
+
+actor DoomBullet3 : DoomBullet
+{
+	Damage (Random(1,4)*5)
+} 
