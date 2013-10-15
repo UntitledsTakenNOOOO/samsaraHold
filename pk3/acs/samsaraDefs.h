@@ -572,14 +572,14 @@ SAMSARA CHANGES\n
 - Security Officer attains both WSTEM-5s on pick up, as per invasion mode.\n
 - Parias' and Corvus' medikit capacity has been reduced to 4, and urn/invulnerability/megasphere capacity to 1, to prevent mass stealing from these classes (harming the team). This is for in-mission items, not buyable ones.\n
 ^- In mission Timefreeze and quad damages give corvus inventory ones.\n
-^-These are separate from the ones you buy.\n
+^- These are separate from the ones you buy.\n
 - Custom Samsara difficulty names have been removed, as they would cause monsters not to spawn.\n
-- Chainsaw, Super Bootspork, Gauntlet, Knife and Mjolnir damage and/or stunlock potential buffed, in order to let Doomguy, Chex, Corvus, BJ and Ranger share in the slot 1 fun.\n
+- Melee Slot 1's are buffed to allow the other heroes to share in the slot 1 fun.\n
 - Parias' Backpack capacity limited to 1, but it gives full ammo instead of half, in order to prevent mass-steals and to prevent overpoweredness with having 6 and a RWD'd wraithverge.\n
-- It turns out, that in Samsara, Corvus' Firemace does 1.1-1.15 DamageFactor on basically every monster. I Switched it so the crossbow gets it now, since it turned out the Firemace was a better suppression weapon, and was more useful in the context of Stronghold.\n
 - Various damage values have been tweaked for balance (most noticable on Parias, as I had to buff him (the hell) out due to him being melee-only). The bad news is that I forgot most of them.\n
--The shop is modified to have a new room to adjust Armor Mode settings.\n
--New Achievements!\n
+- The Super Shield is replaced by Red Armor to prevent EZ Godlike.\n
+- The intermission map is modified to have a new room to adjust settings.\n
+- New Achievements!\n
 NOTE: This is meant to be played in coop mode. If UV single player is Impossible at certain points, please do not complain. \nJust play HMP, or start farming some items first. Also, give yourself \"CoopModeOn\" to let samsara do some stuff.\n\n
 STRONGHOLD CHANGES\n
 - Most of these should remain secret, but...\n
