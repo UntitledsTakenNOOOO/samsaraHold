@@ -547,8 +547,8 @@ SAMSARA CHANGES\n
 - Chex Zorches custom enemies, of course.\n
 - Duke taunts on custom enemies, because I would feel bad if people complained about it.\n
 - Duke's Freezethrower and Parias' Frost shards do extra damage against fire-based enemies, as a benefit to those who read the README, and to make them usable (since freezethrower is pretty terrible for a slot 6).\n
-- The weapon powerup device now spreads four specials and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.\n
-- 4 Uniques item has a max of 3, rather than 1, since it's not that powerful.\n
+- The weapon powerup device now spreads three uniques and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.\n
+- 3 Uniques item has a max of 3, rather than 1, since it's not that powerful.\n
 - Fuel for flamer replaced by various heretic/hexen utilities. No, I'm not telling what.\n
 ^- Landmines give a slot one. Ammo for landmines replaced with strife ammo boxes (12 shells, 4 rockets, OR the strife everything ammo pickups)\n
 ^- Autoshotgun is a slot 2+3\n
@@ -558,7 +558,7 @@ SAMSARA CHANGES\n
 ^- Flamer is slot6+2 uniques.\n
 ^- Pyro Cannon is slot7+2 uniques.\n
 ^- Repeater is slot6+2 uniques.\n
-^- Devastator(Stronghold one, not Samsara one, which is renamed to Devastators to prevent code confusion, we are very sorry) is slot7+2 uniques.\n
+^- Devastator(Stronghold one, not Samsara one, which is renamed to prevent code confusion, we are very sorry) is slot7+2 uniques.\n
 ^- Most custom weapons also drop uniques as you can see, as to allow them to see more play, as they have to be split among the team.\n
 - Fusion Pistol does some extra-extra damage versus the terminator, due to its entirely mechanical nature.\n
 - Catharsi Detonators provide some extra explosive oomph if shot with the fusion pistol, along with detonating prematurely.\n
