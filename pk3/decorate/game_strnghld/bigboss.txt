@@ -1,0 +1,2240 @@
+ACTOR STBoss 32767
+{
+//$Category Stronghold_Monsters
+	Game Doom
+	Health 200000
+	Radius 48
+	Height 128
+	Scale 2.0
+	Mass 50000
+	Speed 6
+	PainChance 1
+	MinMissileChance 32
+	MeleeRange 128
+	Monster
+	DamageFactor "CorvusCrossbow", 1.15
+	DamageFactor "DragonClaw", 1.6
+	DamageFactor "STBoss", 0.01
+	DamageFactor "STBossFactor", 0.05
+	DamageFactor "Animate", 0.05
+	DamageFactor "HexenIce", 3
+	DamageFactor "DukeIce", 3
+	DamageFactor "WraithVerge", 2
+	damagefactor "bossfactor", 0.5
+	damagefactor "corefriendly", 0
+        DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
+	damagefactor "railgun", 0
+	PainChance "MightyBoot", 256
+	//DropItem "SpiritBoss"
+	+FLOORCLIP
+	//A couple boss flags
+	+BOSSDEATH +NORADIUSDMG +BOSS +NOICEDEATH +DONTRIP +DONTMORPH //Nice try, Morph ovum users.
+	//Extremely aggressive
+	+MISSILEMORE +MISSILEEVENMORE +LOOKALLAROUND
+	//Very Persistent
+	+NOTIMEFREEZE +NOBLOCKMONST
+	//Exempt from infighting
+	+NOTARGET +NOINFIGHTING
+	//Easily Distracted, to make him easier.
+	+QUICKTORETALIATE
+	SeeSound ""
+	PainSound "baron/pain"
+	DeathSound ""
+	ActiveSound "baron/active"
+	Translation "16:47=32:47", "48:79=32:47", "112:127=160:167"
+	Obituary "\c[G5]%o \c[G5]couldn't evade the wrath of Mephistopheles."
+	States
+	{
+	Spawn:
+		BOSS AB 10 A_Look
+		Loop
+	Heal:
+		BOSS H 0
+	See:
+		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
+		BOSS A 0 NoiseAlert(0,0)
+		BOSS A 0 A_Jump(5,"Necromancy")
+		BOSS A 0 A_JumpIfCloser(1024,"SeeClose")
+		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
+		BOSS A 0 A_Jump(16, "Teleport")
+		BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+		Loop
+	SeeClose:
+		BOSS A 0 A_ChangeFlag("FRIGHTENED",1)
+		BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+		Goto See
+	Necromancy:	
+		BOSS A 1 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
+		BOSS A 0 A_Jump(15,"RaiseArmy")
+		BOSS A 0 A_Jump(45,"SpiritAttack")
+		BOSS A 0 A_Jump(5,"Haunting")
+		BOSS A 0 A_VileChase
+		Loop
+	Teleport:
+		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
+		BOSS A 0 A_Jump(8, "SummonTeleport")
+		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
+		BOSS A 1 A_FaceTarget
+      		BOSS A 3 
+      		BOSS A 3 BRIGHT
+   		BOSS A 0 A_UnSetShootable
+   		BOSS A 1 A_PlaySound("pyro/tele")
+    		BOSS A 1 A_SetTranslucent(0.90)
+    		BOSS A 1 A_SetTranslucent(0.80)
+    		BOSS A 1 A_SetTranslucent(0.70)
+    		BOSS A 1 A_SetTranslucent(0.60)
+    		BOSS A 1 A_SetTranslucent(0.50)
+    		BOSS A 1 A_SetTranslucent(0.40)
+    		BOSS A 1 A_SetTranslucent(0.30)
+    		BOSS A 1 A_SetTranslucent(0.20)
+    		BOSS A 1 A_SetTranslucent(0.10)
+		BOSS A 1 A_Changeflag("NOGRAVITY", 1)
+		BOSS A 1 A_Changeflag("FLOAT", 1)
+    		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
+    		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_ExtChase(0,0,1,1)
+    		BOSS A 1 A_PlaySound("pyro/tele")
+    		BOSS A 1 A_SetTranslucent(0.10)
+    		BOSS A 1 A_SetTranslucent(0.20)
+    		BOSS A 1 A_SetTranslucent(0.30)
+    		BOSS A 1 A_SetTranslucent(0.40)
+    		BOSS A 1 A_SetTranslucent(0.50)
+    		BOSS A 1 A_SetTranslucent(0.60)
+    		BOSS A 1 A_SetTranslucent(0.70)
+    		BOSS A 1 A_SetTranslucent(0.80)
+    		BOSS A 1 A_SetTranslucent(0.90)
+    		BOSS A 1 A_SetTranslucent(1.0)
+    		BOSS A 0 A_SetShootable
+		BOSS A 1 A_Changeflag("FLOAT", 0)
+		BOSS A 1 A_Changeflag("NOGRAVITY", 0)
+		BOSS A 0 A_Jump(32, "FireMissile")
+		BOSS A 0 A_JumpIfCloser(1024, "See")
+		Loop
+	SummonTeleport:
+		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
+		BOSS A 0 A_Jump(8, "SummonTeleport")
+		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
+		BOSS A 1 A_FaceTarget
+      		BOSS A 3 
+      		BOSS A 3 BRIGHT
+   		BOSS A 0 A_UnSetShootable
+   		BOSS A 1 A_PlaySound("pyro/tele")
+    		BOSS A 1 A_SetTranslucent(0.90)
+    		BOSS A 1 A_SetTranslucent(0.80)
+    		BOSS A 1 A_SetTranslucent(0.70)
+    		BOSS A 1 A_SetTranslucent(0.60)
+    		BOSS A 1 A_SetTranslucent(0.50)
+    		BOSS A 1 A_SetTranslucent(0.40)
+    		BOSS A 1 A_SetTranslucent(0.30)
+    		BOSS A 1 A_SetTranslucent(0.20)
+    		BOSS A 1 A_SetTranslucent(0.10)
+		BOSS A 1 A_Changeflag("NOGRAVITY", 1)
+		BOSS A 1 A_Changeflag("FLOAT", 1)
+    		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+    		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_ExtChase(0,0,1,1)
+    		BOSS A 1 A_PlaySound("pyro/tele")
+    		BOSS A 1 A_SetTranslucent(0.10)
+    		BOSS A 1 A_SetTranslucent(0.20)
+    		BOSS A 1 A_SetTranslucent(0.30)
+    		BOSS A 1 A_SetTranslucent(0.40)
+    		BOSS A 1 A_SetTranslucent(0.50)
+    		BOSS A 1 A_SetTranslucent(0.60)
+    		BOSS A 1 A_SetTranslucent(0.70)
+    		BOSS A 1 A_SetTranslucent(0.80)
+    		BOSS A 1 A_SetTranslucent(0.90)
+    		BOSS A 1 A_SetTranslucent(1.0)
+    		BOSS A 0 A_SetShootable
+		BOSS A 1 A_Changeflag("FLOAT", 0)
+		BOSS A 1 A_Changeflag("NOGRAVITY", 0)
+		BOSS A 0 A_Jump(64, "FireMissile")
+		BOSS A 0 A_JumpIfCloser(1024, "See")
+		Loop
+	LongTeleport:
+		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
+		BOSS A 1 A_FaceTarget
+      		BOSS A 3 
+      		BOSS A 3 BRIGHT
+   		BOSS A 0 A_UnSetShootable
+   		BOSS A 1 A_PlaySound("pyro/tele")
+    		BOSS A 1 A_SetTranslucent(0.90)
+    		BOSS A 1 A_SetTranslucent(0.80)
+    		BOSS A 1 A_SetTranslucent(0.70)
+    		BOSS A 1 A_SetTranslucent(0.60)
+    		BOSS A 1 A_SetTranslucent(0.50)
+    		BOSS A 1 A_SetTranslucent(0.40)
+    		BOSS A 1 A_SetTranslucent(0.30)
+    		BOSS A 1 A_SetTranslucent(0.20)
+    		BOSS A 1 A_SetTranslucent(0.10)
+		BOSS A 1 A_Changeflag("NOGRAVITY", 1)
+		BOSS A 1 A_Changeflag("FLOAT", 1)
+		BOSS A 1 A_Changeflag("SOLID", 0)
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 4 A_Wander
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 4 A_ExtChase(0,0,1,1)
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 5 A_Wander
+		BOSS A 1 A_Changeflag("SOLID", 1)
+    		BOSS A 1 A_PlaySound("pyro/tele")
+    		BOSS A 1 A_SetTranslucent(0.10)
+    		BOSS A 1 A_SetTranslucent(0.20)
+    		BOSS A 1 A_SetTranslucent(0.30)
+    		BOSS A 1 A_SetTranslucent(0.40)
+    		BOSS A 1 A_SetTranslucent(0.50)
+    		BOSS A 1 A_SetTranslucent(0.60)
+    		BOSS A 1 A_SetTranslucent(0.70)
+    		BOSS A 1 A_SetTranslucent(0.80)
+    		BOSS A 1 A_SetTranslucent(0.90)
+    		BOSS A 1 A_SetTranslucent(1.0)
+    		BOSS A 0 A_SetShootable
+		BOSS A 1 A_Changeflag("FLOAT", 0)
+		BOSS A 1 A_Changeflag("NOGRAVITY", 0)
+		Goto FireMissile
+	FireMissile:
+		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
+		BOSS A 0 A_Jump(32,"FireNova")
+		BOSS A 0 A_Jump(32,"FireVolley")
+		BOSS A 0 A_Jump(32,"FireBall")
+		BOSS A 0 A_Jump(32,"ConvergeAttack")
+		BOSS A 1 A_VileChase
+		Loop
+	CallingOfTheDamned:
+		BOSS E 0 A_Changeflag("NOPAIN",1)
+		BOSS E 0 A_JumpIfHealthLower(9000,"CallingOfTheDamned2")
+		BOSS E 0 A_AlertMonsters
+		BOSS E 0 A_SpawnItemEx("STBossAttack4", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS E 1 A_FaceTarget
+		Goto CallingOfTheDamned+1
+	CallingOfTheDamned2:
+		BOSS E 0 A_JumpIfHealthLower(8000,"CallingOfTheDamned3")
+		BOSS E 0 A_AlertMonsters
+		BOSS E 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS E 1 A_FaceTarget
+		Loop
+	CallingOfTheDamned3:
+		BOSS E 0 A_JumpIfHealthLower(7000,"CallingOfTheDamned4")
+		BOSS E 0 A_AlertMonsters
+		BOSS E 0 A_SpawnItemEx("STBossAttack6", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS E 1 A_FaceTarget
+		Loop
+	CallingOfTheDamned4:
+		BOSS F 0 A_JumpIfHealthLower(6000,"CallingOfTheDamned5")
+		BOSS F 0 A_AlertMonsters
+		BOSS F 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS F 1 A_FaceTarget
+		Loop
+	CallingOfTheDamned5:
+		BOSS F 0 A_JumpIfHealthLower(5000,"CallingOfTheDamned6")
+		BOSS F 0 A_AlertMonsters
+		BOSS F 0 A_SpawnItemEx("STBossAttack4", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS F 0 A_SpawnItemEx("STBossAttack6", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS F 1 A_FaceTarget
+		Loop
+	CallingOfTheDamned6:
+		BOSS F 0 A_JumpIfHealthLower(4000,"CallingOfTheDamned7")
+		BOSS F 0 A_AlertMonsters
+		BOSS F 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS F 0 A_SpawnItemEx("STBossAttack6", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS F 1 A_FaceTarget
+		Loop
+	CallingOfTheDamned7:
+		BOSS G 0 A_JumpIfHealthLower(3000,"CallingOfTheDamned8")
+		BOSS G 0 A_AlertMonsters
+		BOSS G 0 A_SpawnItemEx("STBossAttack4", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		Loop
+	CallingOfTheDamned8:
+		BOSS G 0 A_JumpIfHealthLower(2000,"CallingOfTheDamned9")
+		BOSS G 0 A_AlertMonsters
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		Loop
+	CallingOfTheDamned9:
+		BOSS G 0 A_JumpIfHealthLower(1000,"CallingOfTheDamnedFinal")
+		BOSS G 0 A_AlertMonsters
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		BOSS G 1 A_FaceTarget
+		Loop
+	CallingOfTheDamnedFinal:
+		BOSS G 0 A_AlertMonsters
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		Loop
+	Melee:
+		BOSS A 0 A_Jump(64,"Missile")
+		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
+		BOSS E 17 A_FaceTarget
+		BOSS F 18 A_FaceTarget
+		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_SpawnItemEx("STFireEffect2", random(-160,160), random(-160,160), 0, 0, 0, 0, 0, 0)	
+		BOSS G 35
+		Goto See
+	Missile:
+		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
+		BOSS A 0 A_Jump(32,"FireNova")
+		BOSS A 0 A_Jump(28,"FireVolley")
+		BOSS A 0 A_Jump(24,"FireBall")
+		BOSS A 0 A_Jump(20,"ConvergeAttack")
+		BOSS A 0 A_Jump(15,"SpiritAttack")
+		BOSS A 0 A_Jump(1,"Haunting")
+		BOSS A 0 A_Jump(12,"Raisearmy")
+		BOSS A 0 A_Jump(8,"LongTeleport")
+		BOSS A 0 A_Jump(4,"Hadouken")
+		BOSS A 1 A_VileChase
+		Loop
+	FireNova:
+		BOSS EF 3 A_FaceTarget
+//		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,36,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,72,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,108,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,144,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,180,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,216,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,252,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,288,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,324,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,360,2,4)
+		BOSS G 3 A_FaceTarget
+		Goto Missile
+	FireVolley:
+		BOSS EF 8 A_FaceTarget
+//		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS GGGGGGGG 2 A_CustomMissile("STBossAttack3")
+		Goto See
+	FireBall:
+		BOSS A 0 A_Jump(85,"Eruption")
+		BOSS EF 4 A_FaceTarget
+//		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS G 0 A_CustomMissile("STBossAttack7",64,0,10)
+		BOSS G 0 A_CustomMissile("STBossAttack7",64,0,-10)
+		BOSS G 4 A_CustomMissile("STBossAttack7",64,0,0)
+		Goto See
+	Eruption:
+		BOSS EF 6 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS G 8 A_CustomBulletAttack(0,0,1,0,"Eruption")
+		Goto See
+	ConvergeAttack:
+		BOSS A 0 A_Jump(64,"FireSpark")
+		BOSS EF 5 A_FaceTarget
+//		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS G 0 A_CustomMissile("STBossAttack1",64,0,20)
+		BOSS G 0 A_CustomMissile("STBossAttack1",64,0,-20)
+		BOSS G 5 A_CustomMissile("STBossAttack1",64,0,0)
+		Goto See
+	FireSpark:
+		BOSS EF 8 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS G 8 A_CustomMissile("STBossAttack9",0,0,0,2,4)
+		Goto See
+	SpiritAttack:
+		BOSS A 0 A_Jump(16,"Haunting")
+		BOSS H 8 A_FaceTarget
+		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack4",0,0,random(0,360))
+		BOSS A 0 A_AlertMonsters
+		Goto See
+	Haunting:
+		BOSS H 8 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack6",0,0,random(0,360))
+		BOSS A 0 A_AlertMonsters
+		Goto See
+	RaiseArmy:
+		BOSS H 8 A_FaceTarget
+		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		Goto See
+	Hadouken:
+		BOSS A 8 A_FaceTarget
+		BOSS A 1 A_Changeflag("NOGRAVITY", 1)
+		BOSS A 0 A_Changeflag("INVULNERABLE", 1)
+		BOSS A 1 ThrustThingZ(0,3,0,0)
+		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEFFFFFFFFFF 3 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS FFFFFFFFFF 2 A_FaceTarget
+		//BOSS GGGGGGGGGG 7 A_CustomMissile("Hadouken",75,0,0)
+		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("RainCometNull",0,0,Random(0,360))
+		BOSS G 70 A_CustomMissile("FinalFlash",75,0,0)	
+		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack4",0,0,random(0,360))
+		BOSS G 70 A_Changeflag("NOGRAVITY", 0)
+		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack6",0,0,random(0,360))
+		BOSS G 35 A_Changeflag("INVULNERABLE", 0)
+		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		Goto See
+	Pain:
+		BOSS H 1 A_Changeflag("NOGRAVITY", 0)
+		BOSS H 1 A_Pain
+		BOSS H 1 A_Changeflag("INVULNERABLE", 0)
+		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
+		Goto Missile
+	Death:
+		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("SpiritCaller",0,0,random(0,360))	
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("SpiritCaller",0,0,random(0,360))	
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("SpiritCaller",0,0,random(0,360))	
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
+		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,30,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,60,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,90,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,120,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,150,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,180,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,210,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,240,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,270,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,300,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,330,2,4)
+		BOSS G 0 A_CustomMissile("STBossAttack2",0,0,360,2,4)	
+		BOSS I 8
+		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("SpiritCaller",0,0,random(0,360))
+		BOSS K 8 A_GiveToTarget("AwardItem",999)
+		BOSS L 8 A_NoBlocking
+		BOSS MN 8
+		BOSS O 0 A_SpawnItemEx("SpiritBoss",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TELEFRAG,0)
+		BOSS OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 1 A_FadeOut(0.05)   
+		Stop
+	}
+}
+
+ACTOR STBossAttack1 {
+	+SEEKERMISSILE
+	DamageType "STBossFactor"
+	Speed 20
+	Damage 12
+	Radius 12
+	Height 12
+	FastSpeed 35
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 0.6
+	Translation "112:127=160:167"
+	+RANDOMIZE
+	+NOTIMEFREEZE
+	SeeSound "imp/attack"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR A 1 bright A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		STFR A 1 bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		STFR A 0 A_SeekerMissile(2,5)
+		STFR A 1 bright A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		STFR A 1 bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		TNT1 A 0 A_SeekerMissile(2,5)
+		loop
+	Death:
+		BAL7 C 6 Bright
+		TNT1 A 0 A_Explode(48,256)
+		TNT1 A 0 A_CheckSight("NoGen")
+		TNT1 A 0 A_SpawnItem("KDBossSparkGen", 0, 10, 0)
+		TNT1 A 0 A_SpawnItem("KDBossFlameGen", 0, 10, 0)
+		TNT1 A 0 A_SpawnItem("KDBossSmokeGen", 0, 10, 0)
+		BAL7 DE 6 bright
+		stop
+	NoGen:
+		BAL7 C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		BAL7 C 6 bright A_Explode(48,256,0)
+		BAL7 DE 6 bright
+		Stop
+	}
+}
+
+ACTOR Eruption : BulletPuff
+{
+	+FLOORHUGGER
+	+NOTIMEFREEZE
+	VSpeed 0
+	States
+  {
+  Spawn:
+  TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 90), 0, 128 | 8, 0)
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1 A_CustomMissile("EruptionShot2",0,0,random(0,360),2,Random(85,90))
+  TNT1 A 1
+  Stop
+  }
+}
+
+ACTOR EruptionShot
+{
+	+NOTIMEFREEZE
+	DamageType "STBossFactor"
+	Speed 20
+	Damage 4
+	Radius 24
+	Height 32
+	FastSpeed 35
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 1
+	Translation "112:127=160:167"
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR A 1 bright //A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		loop
+	Death:
+		BAL7 C 0
+		BAL7 C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		//BAL7 C 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		//BAL7 C 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		BAL7 C 6 bright A_Explode(16,256,0)
+		BAL7 DE 6 bright
+		stop
+	}
+}
+ACTOR EruptionShot2 : EruptionShot
+{
+	states
+	{
+	Spawn:
+		STFR B 1 bright //A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		loop
+	}
+}
+/*
+ACTOR EruptionA
+{
+	DamageType "STBossFactor"
+	Speed 20
+	Damage 16
+	Radius 16
+	Height 16
+	FastSpeed 35
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 1
+	Translation "112:127=160:167"
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR B 1 bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)	
+		loop
+	Death:
+		BAL7 C 0
+		BAL7 C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		BAL7 C 6 bright A_Explode(64,256,0)
+      		BAL7 CCCCCCCCCCCC 0 Bright A_CustomMissile("EruptionB",random(8,24),0,random(0,360),2,random(0,90))
+		BAL7 DE 6 bright
+		stop
+	}
+}
+
+ACTOR EruptionB
+{
+	DamageType "STBossFactor"
+	Speed 20
+	Damage 12
+	Radius 16
+	Height 16
+	FastSpeed 35
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 0.75
+	-NOGRAVITY
+	Translation "112:127=160:167"
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR B 1 bright A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		loop
+	Death:
+		BAL7 C 0
+		BAL7 C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		BAL7 C 6 bright A_Explode(48,256,0)
+      		BAL7 CCCCCCCC 0 Bright A_CustomMissile("EruptionC",random(8,24),0,random(0,360),2,random(0,60))
+		BAL7 DE 6 bright
+		stop
+	}
+}
+ACTOR EruptionC
+{
+	DamageType "STBossFactor"
+	Speed 20
+	Damage 8
+	Radius 16
+	Height 16
+	FastSpeed 35
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 0.5
+	-NOGRAVITY
+	Translation "112:127=160:167"
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR A 1 bright A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)	
+		loop
+	Death:
+		BAL7 C 0
+		BAL7 C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		BAL7 C 6 bright A_Explode(32,256,0)
+		BAL7 DE 6 bright
+		stop
+	}
+}
+*/
+ACTOR STBossAttack2 {
+	DamageType "STBossFactor"
+	Speed 20
+	Damage 1
+	Radius 24
+	Height 24
+	FastSpeed 35
+	Projectile
+	+RIPPER
+	+NOTIMEFREEZE
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 1
+	Scale 4.0
+	SeeSound "vile/firestrt"
+	DeathSound "vile/firecrkl"
+	states
+	{
+	Spawn:
+		TNT1 A 1 A_SpawnItemEx("KDBossBiggerFlame", Random(-40, 40), Random(-40, 40), Random(0, 20), MomX, MomY, 0.1 * Random(-2, 80), 0, 128 | 8, 0)
+		Loop
+	Death:
+		TNT1 A 0 A_CheckSight("NoGen")
+		TNT1 A 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		TNT1 A 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("KDBossBiggerSmoke", Random(-40, 40), Random(-40, 40), Random(0, 20), MomX, MomY, 0.1 * Random(-2, 80), 0, 128 | 8, 0)
+		FIRE CCBBCCBBCCBDCCDDCCDDEEDDEEDDEEFFEEFFEEFFGGHHGGHHGGHH 1 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		stop
+	NoGen:
+		FIRE CCBBCCBBCCBDCCDDCCDDEEDDEEDDEEFFEEFFEEFFGGHHGGHHGGHH 1 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		stop
+	}
+}
+ACTOR STBossAttack3 {
+	DamageType "STBossFactor"
+	Speed 20
+	Damage 8
+	Radius 18
+	Height 18
+	FastSpeed 35
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 0.5
+	Translation "112:127=160:167"
+	+RANDOMIZE
+	+RIPPER
+	+NOTIMEFREEZE
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR A 0 bright A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		STFR A 1 bright A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)	
+		loop
+	Death:
+		BAL7 C 0
+		TNT1 A 0 A_CheckSight("NoGen")
+		BAL7 C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		BAL7 C 6 bright A_Explode(32,256,0)
+		BAL7 DE 6 bright
+		stop
+	NoGen:
+		BAL7 C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		BAL7 C 6 bright A_Explode(32,256,0)
+		BAL7 DE 6 bright
+		Stop
+	}
+}
+
+ACTOR STBossAttack4 {
+	Translation Ice
+	RenderStyle Add
+	Alpha 1.0
+	+NOTIMEFREEZE +SHOOTABLE +LOOKALLAROUND +NOPAIN -ISMONSTER -SOLID -FRIENDLY
+	Radius 16
+	Height 16
+	Health 1
+	Speed 20
+	ReactionTime 2
+	states
+	{
+	Spawn:
+		SKUL A 0 BRIGHT A_JumpIfInventory("Clip",1,"Looking")
+		SKUL A 0 BRIGHT A_GiveInventory("Clip",15)
+	Looking:
+		SKUL A 0 BRIGHT A_TakeInventory("Clip",1)
+		SKUL A 0 BRIGHT A_JumpIfInventory("Clip",1,1)
+		Goto Death
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Look
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Look
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Look
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Look
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Look
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Look
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Look
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Look
+		loop
+	See:
+		SKUL A 0 BRIGHT A_TakeInventory("Clip",1)
+		SKUL A 0 BRIGHT A_JumpIfInventory("Clip",1,1)
+		Goto Death
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE | CHF_RESURRECT )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE | CHF_RESURRECT )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE | CHF_RESURRECT )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE | CHF_RESURRECT )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE | CHF_RESURRECT )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE | CHF_RESURRECT )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE | CHF_RESURRECT )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE | CHF_RESURRECT )
+		loop
+	Melee:
+		SKUL A 0 BRIGHT A_TakeInventory("Clip",1)
+		SKUL A 0 BRIGHT A_JumpIfInventory("Clip",1,1)
+		Goto Death
+		SKUL CD 5 BRIGHT A_CustomMeleeAttack(Random(0,1)*2,"none","none","CoreFriendly",0)
+		SKUL A 5 BRIGHT A_Recoil(-32)
+		SKUL A 0 BRIGHT A_Stop
+		goto See
+	Heal:
+		goto Death
+	Death:
+		SKUL AABBAABBAA 3 BRIGHT A_FadeOut(0.1)
+		stop
+	}
+}
+ACTOR STBossAttack4B : STBossAttack4
+{
+	States
+	{
+	See:
+		SKUL A 0 BRIGHT A_TakeInventory("Clip",1)
+		SKUL A 0 BRIGHT A_JumpIfInventory("Clip",1,1)
+		Goto Death
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		loop
+	}
+}
+ACTOR STBossAttack5
+{
+	Projectile
+	+RIPPER -DROPOFF
+	+BLOODLESSIMPACT
+	Damage 0
+	Speed 20
+	FastSpeed 15
+	states
+	{
+	Spawn:
+		TNT1 A 4 A_SpawnItemEx("STBossSkeleton",0,0,0,0,0,0,0,0,224)
+		loop
+	Death:
+		TNT1 A 0
+		stop
+	}
+}
+ACTOR STBossAttack5B: StBossAttack5
+{
+states
+	{
+	Spawn:
+		TNT1 A 7 A_SpawnItemEx("STBossSkeleton",0,0,0,0,0,0,0,0,240)
+		loop
+	}
+}
+
+ACTOR STBossAttack6 : STBossAttack4
+{
+	states
+	{
+	Spawn:
+		SKUL A 0 BRIGHT A_JumpIfInventory("Clip",1,"Looking")
+		SKUL A 0 BRIGHT A_GiveInventory("Clip",75)
+		goto Looking		
+	}
+}
+ACTOR STBossAttack6B : STBossAttack6
+{
+	States
+	{
+	See:
+		SKUL A 0 BRIGHT A_TakeInventory("Clip",1)
+		SKUL A 0 BRIGHT A_JumpIfInventory("Clip",1,1)
+		Goto Death
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL A 0 BRIGHT A_Wander
+		SKUL A 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		SKUL B 0 BRIGHT A_Wander
+		SKUL B 1 BRIGHT A_Chase("Melee",0, CHF_FASTCHASE )
+		loop
+	}
+}
+ACTOR STBossAttack7
+{
+	DamageType "STBossFactor"
+	Speed 20
+	Damage 16
+	Radius 18
+	Height 18
+	FastSpeed 35
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 0.75
+	+RANDOMIZE
+	+NOTIMEFREEZE
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR B 1 bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		loop
+	Death:
+		TNT1 A 0 bright A_CheckSight("NoGen")
+		MISL B 6 bright A_Explode(64,256,0)
+		MISL C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		MISL C 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		MISL C 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,18,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,36,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,54,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,72,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,90,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,108,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,126,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,144,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,162,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,180,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,198,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,216,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,234,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,252,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,270,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,288,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,306,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,324,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,342,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,360,2,4)
+		MISL CD 6 bright
+		stop
+	NoGen:
+		MISL B 6 bright A_Explode(64,256,0)
+		MISL C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,18,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,36,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,54,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,72,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,90,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,108,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,126,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,144,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,162,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,180,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,198,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,216,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,234,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,252,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,270,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,288,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,306,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,324,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,342,2,4)
+		MISL C 0 A_CustomMissile("STBossAttack2",0,0,360,2,4)
+		MISL CD 6 bright
+		Stop
+	}
+}
+ACTOR STBossAttack8
+{
+	DamageType "STBossFactor"
+	Speed 0
+	Damage 1000
+	Radius 24
+	Height 24
+	FastSpeed 35
+	Projectile
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 1
+	Scale 4.0
+	SeeSound "vile/firestrt"
+	DeathSound "vile/firecrkl"
+	
+	ReactionTime 20
+	
+	+NOTIMEFREEZE
+
+	states
+	{
+	Spawn:
+		TNT1 A 0 A_Explode(random(0,random(0,1)),128,0)
+		TNT1 A 0 A_SpawnItemEx("KDBossSmoke", Random(-40, 40), Random(-40, 40), Random(0, 20), MomX, MomY, 0.1 * Random(-2, 80), 0, 128 | 8, 0)
+		TNT1 A 1 A_SpawnItemEx("KDBossFlame", Random(-40, 40), Random(-40, 40), Random(0, 20), MomX, MomY, 0.1 * Random(-2, 80), 0, 128 | 8, 0)
+		TNT1 A 0 A_SpawnItemEx("KDBossBiggerSmoke", Random(-40, 40), Random(-40, 40), Random(0, 20), MomX, MomY, 0.1 * Random(-2, 80), 0, 128 | 8, 0)
+		TNT1 A 1 A_SpawnItemEx("KDBossBiggerFlame", Random(-40, 40), Random(-40, 40), Random(0, 20), MomX, MomY, 0.1 * Random(-2, 80), 0, 128 | 8, 0)
+		TNT1 A 0 A_CountDown
+		Loop
+	Death:
+		TNT1 A 0 A_CheckSight("NoGen")
+		TNT1 A 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		TNT1 A 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		TNT1 AAAAAAAAA 0 A_SpawnItemEx("KDBossBiggerSmoke", Random(-40, 40), Random(-40, 40), Random(0, 20), MomX, MomY, 0.1 * Random(-2, 80), 0, 128 | 8, 0)
+		FIRE A 0 A_PlaySound("vile/firecrkl")
+		FIRE CBCBCDCDCDEDEDEFEFEFGHGHGH 2 bright A_Explode(random(0,random(0,100)),128,0)
+		stop
+	NoGen:
+		FIRE A 0 A_PlaySound("vile/firecrkl")
+		FIRE CBCBCDCDCDEDEDEFEFEFGHGHGH 2 bright A_Explode(random(0,random(0,100)),128,0)
+		stop
+	}
+}
+ACTOR STBossSkeleton 32766
+{
+	obituary "\c[G9]%o \c[G9]got whalloped by a skeleton."
+	health 1
+	scale 0.75
+	radius 15
+	height 42
+	mass 20
+	speed 8
+	painchance 256
+	dropitem "MegaSphere" 1
+	seesound ""
+	painsound ""
+	deathsound "skeleton/death"
+	activesound ""
+	Translation "48:79=80:111","16:47=80:111","176:191=80:111","160:167=80:103",
+		"128:151=88:103","232:235=104:105","236:239=110:111","13:15=107:111"
+	MONSTER
+	+FLOORCLIP +NOBLOOD +NOBLOCKMONST +NOPAIN +DROPOFF
+	states
+	{
+	Spawn:
+		SKEL Q 0 A_JumpIfInventory("Clip",1,"Beginning")
+		SKEL Q 0 A_GiveInventory("Clip",1)
+		Goto Raise
+	Beginning:
+		SKEL AB 10 A_Look
+		loop
+	See:
+		SKEL A 0 A_ChangeFlag("NOPAIN",0)
+		SKEL AAAABBBBCCCCDDDDEEEEFFFF 1 A_Chase
+		loop
+	Melee:
+		SKEL G 0 A_FaceTarget
+		SKEL G 6 A_SkelWhoosh
+		SKEL H 6 A_FaceTarget
+		//SKEL I 0 A_PlaySound("skeleton/melee")
+		SKEL I 6 A_CustomMeleeAttack(Random(0,1)*2,"skeleton/melee","skeleton/melee","CoreFriendly",0)
+		goto See
+	Pain:
+		SKEL L 5
+    		SKEL L 5 A_Pain
+    		goto See
+	Pain.Animate:
+    		goto Death.Animate
+	Death:
+		SKEL LM 7
+		SKEL N 7 A_Scream
+		SKEL O 7 A_NoBlocking
+		//SKEL PPPPPPP 1 A_SpawnItemEx("KDBossSmallerSmoke", Random(-7, 7), Random(-7, 7), 0, 0, 0, 0.01 * Random(1, 125), 0, 128, 0)
+		SKEL P 7 //What the lag, tormentor.
+		SKEL QQQQQQQQQQQQQQQQQQQQQQQQ 2 A_FadeOut(0.05)
+		TNT1 A -1
+		stop
+	Death.Animate:
+		SKEL L 1 A_SpawnItemEx("STFireEffectB",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		SKEL L 1 A_SpawnItemEx("STBossSkeleton2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		stop
+	Raise:
+		SKEL QPONML 5
+		goto See
+	}
+}
+
+ACTOR STBossSkeleton2 : STBossSkeleton
+{
+	obituary "\c[U4]%o \c[U4]got whalloped by a skeleton."
+	PainChance 192
+	PainChance "Animate", 0
+	DamageFactor "Animate", 0
+	DamageFactor "CorvusCrossbow", 1.15
+	DamageFactor "DragonClaw", 1.5
+	DamageFactor "DukeIce", 2.0
+	DamageFactor "HexenIce", 2.0
+	Health 100
+	Scale 0.85
+	Translation "48:79=168:191","16:47=168:191","176:191=168:191","160:167=168:183",
+		"128:151=172:183","232:235=187:188","236:239=190:191","13:15=188:191"
+	states
+	{
+	Spawn:
+		SKEL AB 10 A_Look
+		loop
+	Melee:
+		SKEL G 0 A_FaceTarget
+		SKEL G 6 A_SkelWhoosh
+		SKEL H 6 A_FaceTarget
+		//SKEL I 0 A_PlaySound("skeleton/melee")
+		SKEL I 6 A_CustomMeleeAttack(20,"skeleton/melee","skeleton/melee","CoreFriendly",0)
+		goto See
+	Pain:
+		SKEL L 5
+    		SKEL L 5 A_Pain
+    		goto See
+	Death:
+		SKEL LM 7
+		SKEL N 7 A_Scream
+		SKEL O 7 A_NoBlocking
+		SKEL PPPPPPP 1 A_SpawnItemEx("KDBossSmallerSmoke", Random(-7, 7), Random(-7, 7), 0, 0, 0, 0.01 * Random(1, 125), 0, 128, 0)
+		SKEL QQQQQQQQQQQQQQQQQQQQQQQQ 2 A_FadeOut(0.05)
+		stop
+	Raise:
+		stop
+	}
+}
+ACTOR STFireEffect {
+	+NOINTERACTION
+	+CLIENTSIDEONLY
+	Scale 4.0
+	RenderStyle Add
+	states {
+	Spawn:
+		FIRE ABABCDCDEFEFGHGH 2 bright A_SpawnItemEx("KDBossFlame", Random(-7, 7), Random(-7, 7), 0, 0, 0, 0.01 * Random(1, 125), 0, 128, 0)
+		stop
+	}
+}
+
+ACTOR STFireEffectB : STFireEffect
+{
+Scale 1.25
+}
+
+ACTOR STFireEffect2 {
+	DamageType "STBoss"
+	Speed 20
+	Damage 1
+	Radius 24
+	Height 24
+	FastSpeed 35
+	Projectile
+	+RIPPER
+	+RANDOMIZE
+	+NOTIMEFREEZE
+	RenderStyle Add
+	Alpha 1
+	Scale 4.0
+	SeeSound "vile/firestrt"
+	DeathSound "vile/firecrkl"
+	states
+	{
+	Spawn:
+		TNT1 A 1 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+	Death:
+		TNT1 A 0 A_CheckSight("NoGen")
+		TNT1 A 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		TNT1 A 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		TNT1 AAAAAAAAA 0 A_SpawnItemEx("KDBossBiggerSmoke", Random(-40, 40), Random(-40, 40), Random(0, 20), MomX, MomY, 0.1 * Random(-2, 80), 0, 128 | 8, 0)
+		TNT1 A 0 A_Explode(128,128,0)
+		FIRE ABABCDCDEFEFGHGH 2 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		stop
+	NoGen:
+		TNT1 A 0 A_Explode(128,128,0)
+		FIRE ABABCDCDEFEFGHGH 2 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		stop
+	}
+}
+
+// ============================== SFX Actors by KeksDose
+// =====================================================
+// By adjusting the reactiontime, you can adjust how
+// many particles are spawned in the generator actors.
+
+Actor KDBossSparkGen
+{
+	+NOTIMEFREEZE
+	+NOINTERACTION
+	+CLIENTSIDEONLY
+
+	States
+	{
+	Spawn:
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("KDBossSpark", 0, 0, 0, 0.1 * Random(0, 125), 0.1 * Random(0, 125), 0.1 * Random(0, 140), Random(0, 359), 128, 96)
+		TNT1 A 1 A_SpawnItemEx("KDBossSpark", 0, 0, 0, 0.1 * Random(0, 125), 0.1 * Random(0, 125), 0.1 * Random(0, 140), Random(0, 359), 128, 96)
+		Stop
+	}
+}
+
+Actor KDBossSmokeGen : KDBossSparkGen
+{	
+	+NOTIMEFREEZE
+	+NOINTERACTION
+	+CLIENTSIDEONLY
+
+	States
+	{
+	Spawn:
+		TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("KDBossSmoke", 0, 0, 0, 0.1 * Random(0, 12), 0.1 * Random(0, 12), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+		TNT1 A 1 A_SpawnItemEx("KDBossSmoke", 0, 0, 0, 0.1 * Random(0, 12), 0.1 * Random(0, 12), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+		Stop
+	}
+}
+
+Actor KDBossFlameGen : KDBossSmokeGen
+{
+	+NOTIMEFREEZE
+	+NOINTERACTION
+	+CLIENTSIDEONLY
+
+	States
+	{
+	Spawn:
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+		TNT1 A 1 A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+		Stop
+	}
+}
+
+Actor KDBossSpark
+{
+	+NOTIMEFREEZE
+	+NoBlockmap
+	+NoInteraction
+	+ClientSideOnly
+	Radius 4
+	Height 8
+	Gravity 0.4
+	RenderStyle Add
+	Scale 0.15
+	States
+	{
+	Spawn:
+		PAO1 A 35 Bright
+		PAO1 AAA 1 Bright A_FadeOut(0.05)
+		Goto Spawn+1
+	}
+}
+
+Actor KDBossSmoke
+{
+	+NOTIMEFREEZE
+	+NoInteraction
+	+ClientSideOnly
+	RenderStyle Translucent
+	Scale 0.8
+	Alpha 0.15
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_Jump(256, "IdleA", "IdleB", "IdleC", "IdleD")
+	IdleA:
+		SMOK A 1 A_FadeOut(0.001)
+		Loop
+	IdleB:
+		SMOK B 1 A_FadeOut(0.001)
+		Loop
+	IdleC:
+		SMOK C 1 A_FadeOut(0.001)
+		Loop
+	IdleD:
+		SMOK D 1 A_FadeOut(0.001)
+		Loop
+	}
+}
+
+Actor KDBossBiggerSmoke : KDBossSmoke { Scale 1.5 }
+Actor KDBossSmallerSmoke : KDBossSmoke { Scale 0.5 }
+
+Actor KDBossFlame
+{
+	+NOTIMEFREEZE
+	+NoInteraction
+	+ClientSideOnly
+	RenderStyle Add
+	Scale 0.6
+	Alpha 0.4
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_Jump(256, "IdleA", "IdleB", "IdleC", "IdleD")
+	IdleA:
+		FRED A 1 A_FadeOut(0.0125)
+		Loop
+	IdleB:
+		FRED B 1 A_FadeOut(0.0125)
+		Loop
+	IdleC:
+		FRED C 1 A_FadeOut(0.0125)
+		Loop
+	IdleD:
+		FRED D 1 A_FadeOut(0.0125)
+		Loop
+	}
+}
+
+Actor KDBossBiggerFlame : KDBossFlame { Scale 1.25 }
+
+
+/*ACTOR Hadouken //Not used anymore. The Old Hadouken Attack was spamming 15 of these.
+{
+	Speed 32
+	Damage 32
+	Mass 9001
+	Radius 32
+	Height 32
+	FastSpeed 36
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	DONTHURTSHOOTER
+	+RANDOMIZE
+	+RIPPER
+	+FORCERADIUSDMG
+	+LOWGRAVITY
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR A 1 bright A_SpawnItemEx("KDBossFlame", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		loop
+	Death:
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("StBossAttack2", 0, 0, Random(0, 360)) //LAG ALL THE PROCESSORS
+		TNT1 A 0 bright A_Explode(160,640,0) //BLOW UP ALL THE THINGS
+		TNT1 C 0 A_SpawnItem("KDBossBiggerFlame", 0, 0, 0)
+		FIRE CBCBCDCDCDEDEDEFEFEFGHGHGH 2 BRIGHT
+		stop
+	}
+}*/
+
+ACTOR FinalFlash : FastProjectile
+	{
+	Speed 48
+	Damage 1000
+	Radius 48
+	Height 64
+	FastSpeed 64
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 3.0
+	+RANDOMIZE
+        +DONTREFLECT
+	+NOTIMEFREEZE
+	+FORCERADIUSDMG
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	DamageType "STBoss"
+	states
+	{
+	Spawn:
+		WLXP B 1 bright A_SpawnItemEx("FinalFlashTrail", Random(16,-16), Random(16,-16), Random(16,-16), Random(0,8) ,Random(0,8) ,Random(0,8) ,Random(0,360))
+		WLXP B 0 bright A_Explode(Random(224,256),160,0)
+		WLXP B 1 bright A_SpawnItemEx("FinalFlashTrail", Random(16,-16), Random(16,-16), Random(16,-16), Random(0,8) ,Random(0,8) ,Random(0,8) ,Random(0,360))
+		WLXP B 0 bright A_Explode(Random(336,384),96,0)
+		Loop
+	Death:
+		NULL A 0 A_Explode(512,512,0)
+		NULL A 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		NULL A 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		NULL A 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		NULL A 0 A_SpawnItem("FinalFlashDeath", 0, 0, 0)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-256,256), random(-256,256), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)	
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-256,256), random(-256,256), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)	
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-256,256), random(-256,256), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)	
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-256,256), random(-256,256), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)	
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-272,272), random(-272,272), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-272,272), random(-272,272), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-272,272), random(-272,272), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-272,272), random(-272,272), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-288,288), random(-288,288), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-288,288), random(-288,288), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-288,288), random(-288,288), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-288,288), random(-288,288), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-304,304), random(-304,304), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-304,304), random(-304,304), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-304,304), random(-304,304), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-304,304), random(-304,304), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-320,320), random(-320,320), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-320,320), random(-320,320), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-320,320), random(-320,320), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-320,320), random(-320,320), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-336,336), random(-336,336), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-336,336), random(-336,336), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-336,336), random(-336,336), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-336,336), random(-336,336), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-352,352), random(-352,352), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-352,352), random(-352,352), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-352,352), random(-352,352), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-352,352), random(-352,352), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-368,368), random(-368,368), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-368,368), random(-368,368), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-368,368), random(-368,368), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-368,368), random(-368,368), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-384,384), random(-384,384), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-384,384), random(-384,384), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-384,384), random(-384,384), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-384,384), random(-384,384), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-400,400), random(-400,400), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-400,400), random(-400,400), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-400,400), random(-400,400), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-400,400), random(-400,400), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-416,416), random(-416,416), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-416,416), random(-416,416), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-416,416), random(-416,416), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-416,416), random(-416,416), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-432,432), random(-432,432), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-432,432), random(-432,432), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-432,432), random(-432,432), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-432,432), random(-432,432), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-448,448), random(-448,448), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-448,448), random(-448,448), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-448,448), random(-448,448), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-448,448), random(-448,448), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-464,464), random(-464,464), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-464,464), random(-464,464), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-464,464), random(-464,464), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-464,464), random(-464,464), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-480,480), random(-480,480), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-480,480), random(-480,480), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-480,480), random(-480,480), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-480,480), random(-480,480), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-496,496), random(-496,496), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-496,496), random(-496,496), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-496,496), random(-496,496), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-496,496), random(-496,496), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
+		stop
+	}
+}
+
+ACTOR FinalFlashTrail
+{   
+   Radius 48
+   Height 64
+   Scale 2.5
+   Speed 0
+   PROJECTILE
+   RENDERSTYLE ADD
+   ALPHA 0.67
+   +Nointeraction
+   States
+   {
+   Spawn:
+      WLXP BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB 1 A_FadeOut(0.025)
+      Stop 
+   }
+}
+
+ACTOR FinalFlashDeath : FinalFlashTrail
+{
+	States
+	{
+	Spawn:
+		WLXP AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_FadeOut(0.01)
+		Stop
+	}
+}
+
+ACTOR FlashFire
+	{
+	Speed 0
+	Damage 5
+	Radius 64
+	Height 112
+	Projectile
+	Alpha 1
+	Scale 4.0
+	RenderStyle Add
+	+RANDOMIZE
+	+FORCERADIUSDMG
+	+RIPPER
+	SeeSound "vile/firestrt"
+	DamageType "STBoss"
+	states
+	{
+	Spawn:
+		goto Death
+	Death:  
+		FIRE H 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE H 1 bright A_Explode(80,256,0)
+		FIRE H 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE H 1 bright A_Explode(80,256,0)
+		FIRE G 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE G 1 bright A_Explode(80,256,0)
+		FIRE G 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE G 1 bright A_Explode(80,256,0)
+		FIRE F 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE F 1 bright A_Explode(80,256,0)
+		FIRE F 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE F 1 bright A_Explode(80,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(80,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(80,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(80,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(80,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(80,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(80,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(80,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(80,256,0)
+		FIRE A 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE A 1 bright A_Explode(80,256,0)
+		FIRE A 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE A 1 bright A_Explode(80,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(128,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(128,256,0)
+		FIRE A 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE A 1 bright A_Explode(128,256,0)
+		FIRE A 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE A 1 bright A_Explode(128,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(128,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(128,256,0)
+		FIRE A 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE A 1 bright A_Explode(128,256,0)
+		FIRE A 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE A 1 bright A_Explode(128,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(128,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(128,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(96,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(96,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(96,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(96,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(96,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(96,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(96,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(96,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(96,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(96,256,0)
+		FIRE B 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE B 1 bright A_Explode(96,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(64,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(64,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(64,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(64,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(64,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(64,256,0)
+		FIRE C 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE C 1 bright A_Explode(64,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(64,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(48,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(48,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(48,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(48,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(48,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(48,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(48,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(48,256,0)
+		FIRE D 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE D 1 bright A_Explode(48,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(48,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(32,256,0)
+		FIRE F 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE F 1 bright A_Explode(32,256,0)
+		FIRE F 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE F 1 bright A_Explode(32,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(32,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(32,256,0)
+		FIRE F 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE F 1 bright A_Explode(32,256,0)
+		FIRE F 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE F 1 bright A_Explode(32,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(32,256,0)
+		FIRE E 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE E 1 bright A_Explode(32,256,0)
+		FIRE F 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE F 1 bright A_Explode(32,256,0)
+		FIRE F 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE F 1 bright A_Explode(32,256,0)
+		FIRE G 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE G 1 bright A_Explode(16,256,0)
+		FIRE G 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE G 1 bright A_Explode(16,256,0)
+		FIRE H 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE H 1 bright A_Explode(16,256,0)
+		FIRE H 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE H 1 bright A_Explode(16,256,0)
+		FIRE G 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE G 1 bright A_Explode(16,256,0)
+		FIRE G 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE G 1 bright A_Explode(16,256,0)
+		FIRE H 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE H 1 bright A_Explode(16,256,0)
+		FIRE H 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE H 1 bright A_Explode(16,256,0)
+		FIRE G 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE G 1 bright A_Explode(16,256,0)
+		FIRE G 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE G 1 bright A_Explode(16,256,0)
+		FIRE H 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE H 1 bright A_Explode(16,256,0)
+		FIRE H 0 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE H 1 bright A_Explode(16,256,0)
+		stop
+	}
+}
+Actor STBossAttack9
+{
+	DamageType "Animate"
+	Speed 12
+	Damage 0
+	Radius 20
+	Height 64
+	FastSpeed 16
+	Projectile
+	RenderStyle Add
+	Alpha 1
+	Scale 0.33
+	+RANDOMIZE
+   	+NODAMAGETHRUST
+   	+DONTSPLASH
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STFR B 1 bright
+		loop
+	Death:
+		BAL7 C 6
+		BAL7 C 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+		BAL7 C 0 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		BAL7 DE 6 bright
+		TNT1 A 17 bright
+		TNT1 A 17
+		TNT1 A 18 A_SpawnItem("KDBossSparkGen", 0, 0, 0)
+		BAL7 E 0 A_Burst("STBossDropFire")
+		stop
+	}
+}
+
+ACTOR STBossDropFire
+{
+   DamageType "Animate"
+   Radius 16
+   Height 8
+   Damage 1
+   PROJECTILE
+   RENDERSTYLE ADD
+   ALPHA 0.90
+   DONTHURTSHOOTER
+   -NOGRAVITY
+   +LOWGRAVITY
+   +FORCERADIUSDMG
+   +NOEXPLODEFLOOR
+   +NODAMAGETHRUST
+   +DONTSPLASH
+   +RIPPER
+   States
+   {
+   Spawn:
+      TNT1 A 1 Bright A_Playsound("weapons/onfire")
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 Bright A_Explode(2,32,0)
+      TNT1 A 1 Bright A_SpawnItemEx("KDBossBiggerFlame", 0, 0, 0, 0.1 * Random(0, 20), 0.1 * Random(0, 20), 0.1 * Random(0, 25), Random(0, 359), 128, 0)
+      TNT1 A 1 A_Jump(4,1)
+      loop
+      TNT1 A 0 A_SpawnItem("KDBossFlameGen", 0, 0, 0)
+      goto death
+   Death:
+      TNT1 A 1 Bright A_SpawnItem("KDBossSmokeGen", 0, 0, 0)
+      stop
+   }
+}
+
+ACTOR SpiritKnight : BaronOfHell
+{
+    +NOBLOCKMONST
+    Health 100
+    meleeDamage 5
+    Translation ice
+    Alpha 0.6
+    RenderStyle Translucent
+	MissileType SpiritBall
+	Obituary "\c[G3]%o's \c[G3]existence has ended."
+    States
+    {
+	Spawn:
+	BOS2 A 0 A_JumpIfInventory("Clip",1,"Beginning")
+	BOS2 A 0 A_GiveInventory("Clip",1)
+	Goto Raise
+
+	Beginning:
+	BOS2 AB 10 A_Look
+	loop
+	
+	Raise:
+	BOS2 ONMLKJI 6
+	goto See	
+
+	Missile:
+	BOS2 EF 8 A_FaceTarget
+    	BOS2 G 8 A_ComboAttack
+    	goto See
+
+	Death:
+	BOS2 A 0 A_SpawnItem("KDBossIce",0,0)
+	BOS2 IJKLMNO 6 A_FadeOut(0.1)
+	Stop
+    }
+}
+
+ACTOR SpiritBall : BaronBall
+{
+    damage 4
+    translation ice
+    DamageType "STBossFactor"
+}
+
+ACTOR SpiritCaller
+{
+	Projectile
+	+RIPPER -DROPOFF
+	+THRUACTORS
+	+BLOODLESSIMPACT
+	Damage 0
+	Speed 20
+	FastSpeed 10
+	states
+	{
+	Spawn:
+		TNT1 A 2 A_SpawnItemEx("SpiritKnight",0,0,0,0,0,0,0,0,224)
+		loop
+	Death:
+		TNT1 A 0
+		stop
+	}
+}
+
+ACTOR SpiritBoss 32765
+{
+    Health 50000
+    Translation ice
+    Mass 100000
+    Radius 48
+    Height 128
+    Alpha 0.8
+    Scale 2.0
+    Speed 8
+    FastSpeed 10
+    Renderstyle translucent
+    MeleeRange 144
+	DamageFactor "CorvusCrossbow", 1.1
+	DamageFactor "DragonClaw", 1.5
+	DamageFactor "STBoss", 0
+	DamageFactor "STBossFactor", 0
+	DamageFactor "Animate", 0
+	DamageFactor "CorvusHellStaffTomed", 0.2
+	DamageFactor "WMCNade", 0.75
+	damagefactor "bossfactor", 0.01
+	damagefactor "corefriendly", 0
+	damagefactor "railgun", 0
+	Monster
+	+FLOORCLIP
+	//A couple boss flags
+	+BOSSDEATH +NORADIUSDMG +BOSS +DONTMORPH +DONTRIP
+	//Extremely aggressive
+	+LOOKALLAROUND
+	//Very Persistent
+	+NOTIMEFREEZE +NOBLOCKMONST
+	//Exempt from infighting
+	+NOTARGET +NOINFIGHTING
+	//Easily Distracted. Trust me, it's the only way you're going to win.
+	+QUICKTORETALIATE
+	Obituary "\c[U3]%o's \c[U3]existence was erased by the spirit of Mephistopheles."
+    states
+    {
+	Spawn:
+	BOSS ABCD 6 A_Look
+	Loop
+
+	See:
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBB 1 A_VileChase
+	BOSS GGGG 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS CCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
+	BOSS GGGGGGGGGGGGGGGG 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	Loop
+
+	Missile:
+	BOSS EF 6 A_FaceTarget
+	BOSS G 0 A_SpawnItem("STIceEffect", 0, 0, 0)
+	BOSS G 8 A_CustomMissile("SpiritNuke",64,0,0)
+	Goto See
+
+	Melee:
+	BOSS EF 16 A_FaceTarget
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,12), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,12), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,12), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,12), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS G 5
+	Goto See
+
+	Pain:
+	Goto See
+	
+	Death:
+	BOSS IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII 5 A_Mushroom("STBossIce", Random(1,8))
+	BOSS I 8 A_GiveToTarget("AwardItem",9001)
+	BOSS J 8 Thing_Destroy(0,1)
+	BOSS K 8 ACS_Execute(910,0)
+	BOSS LMNO 8 A_FadeOut(0.2)
+	Stop
+
+	Heal:
+	BOSS A 0
+	Goto See
+	
+    }
+}
+
+ACTOR SpiritNuke
+{
+        DamageType "STBoss"
+	Speed 40
+	Damage 32
+	Mass 5
+	Radius 20
+	Height 20
+	FastSpeed 50
+	Projectile
+	Scale 4.0
+	Translation "STBoss"
+	Renderstyle Add
+	Alpha 1.0
+	+RANDOMIZE
+	+FORCERADIUSDMG
+	SeeSound "vile/firestrt"
+	DeathSound "imp/shotx"
+	states
+	{
+	Spawn:
+		STEM A 0 A_SpawnItemEx("PowerFTFire2", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		STEM A 0 A_CustomMissile("PowerFTFire2NoDMG", 0, 0, Random(0,360),2,Random(0,360))	
+		STEM A 0 A_SpawnItemEx("PowerFTFire2", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		STEM A 0 A_CustomMissile("PowerFTFire2NoDMG", 0, 0, Random(0,360),2,Random(0,360))	
+		STEM A 0 A_SpawnItemEx("PowerFTFire2", 0, 0, 0, 0.1 * Random(-6, 6), 0.1 * Random(-6, 6), 0.1 * Random(-2, 17), 0, 128, 0)
+		STEM A 1 A_CustomMissile("PowerFTFire2NoDMG", 0, 0, Random(0,360),2,Random(0,360))	
+		loop
+	Death:
+		TNT1 A 0 A_SpawnItem("STIceEffect", 0, 0, 0)
+		TNT1 A 0 A_SpawnItem("KDBossBiggerIce", 0, 0, 0)
+		TNT1 A 0 A_Mushroom("PowerFTFire2", 16)
+		TNT1 AAAAAAAAAAAA 1 A_CustomMissile("PowerFTFire2", 0, 0, Random(180,-180),2,Random(180,-180))
+		TNT1 AAAAAAAA 2 A_CustomMissile("PowerFTFire2", 0, 0, Random(180,-180),2,Random(180,-180))
+		TNT1 AAAA 3 A_CustomMissile("PowerFTFire2", 0, 0, Random(180,-180),2,Random(180,-180))
+		stop
+	}
+}
+
+ACTOR STBossIce : STBossAttack2
+{
+	Translation Ice
+}
+
+ACTOR KDBossIce : KDBossFlame
+{
+	Translation Ice
+}
+
+ACTOR KDBossBiggerIce : KDBossBiggerFlame
+{
+	Translation Ice
+}
+
+ACTOR STIceEffect : STFireEffect
+{
+	Translation Ice
+	Scale 4.0
+}
+
+ACTOR PowerFTFire2
+{
+   Radius 2
+   Height 4
+   Speed 16
+   Damage 3
+   Translation Ice
+   PROJECTILE
+   RENDERSTYLE ADD
+   +STRIFEDAMAGE
+   DamageType "STBoss"
+   ALPHA 0.67
+   Scale 0.67
+   SeeSound ""
+   DeathSound ""
+   DONTHURTSHOOTER
+   States
+   {
+   Spawn:
+      STEM A 2 
+      STEM BCD 2 A_Explode(Random(4,8),16,0)
+      STEM EFG 2 A_Explode(Random(4,8),32,0)
+      STEM HIJ 2 A_Explode(Random(4,8),48,0)
+      STEM KJI 2 A_Explode(Random(4,8),64,0)
+      STEM HGFEDCBA 1
+      stop
+   Death:
+      STEM J 1 A_Explode(Random(8,12),96,0)
+      STEM I 1 A_Explode(Random(8,12),72,0)
+      STEM HGECA 1
+      stop
+   }
+}
+
+ACTOR PowerFTFire2NoDMG : PowerFTFire2
+{
+   Damage 0
+   +NOINTERACTION
+   +CLIENTSIDEONLY
+   States
+   {
+   Spawn:
+      STEM ABCDEFGHIJKJI 2
+      STEM HGFEDCBA 1
+      stop
+   Death:
+      STEM JIHGECA 1
+      stop
+   }
+}

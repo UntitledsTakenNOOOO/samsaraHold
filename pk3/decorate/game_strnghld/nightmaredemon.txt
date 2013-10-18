@@ -1,0 +1,136 @@
+ACTOR NightmareDemon 10100 //NIGHTMARE DEMON
+{
+//$Category Stronghold_Monsters
+	painchance "Stunner", 128	
+	DamageFactor "CorvusCrossbow", 1.1
+	DamageFactor "DragonClaw", 1.5
+	painchance "MightyBoot", 255
+	SpawnID 233
+	Health 260
+	Radius 30
+	Height 56
+	Speed 16
+	Mass 200
+	PainChance 200
+	RenderStyle TRANSLUCENT
+	Alpha 0.6
+	MONSTER
+	+FLOORCLIP
+	+LONGMELEERANGE
+	+NOICEDEATH
+	SeeSound "nightmareDemon/sight"
+	AttackSound "nightmareDemon/melee"
+	PainSound "nightmareDemon/pain"
+	DeathSound "nightmareDemon/death"
+	ActiveSound "nightmareDemon/active"
+        Obituary "%o was spooked by a Nightmare Demon."
+        States
+        {
+        Spawn:
+        	SAR2 AB 10 A_look
+        	Loop
+        See:
+        	SAR2 AABBCCDD 2 A_Chase
+        	Loop
+        Melee:
+        	SAR2 E 6 A_FaceTarget
+        	SAR2 F 6 A_FaceTarget
+        	SAR2 G 6 A_SargAttack
+        	Goto See
+        Missile:
+        	SAR2 O 6 A_FaceTarget
+        	SAR2 P 8 A_CustomMissile("NDemonBall", 24, 0, 0)
+        	Goto See
+        Pain:
+        	SAR2 H 3
+        	SAR2 H 3 A_Pain
+        	Goto See
+        Pain.Stunner:
+       		SAR2 H 2 A_ChangeFlag("NoPain", 1)
+       		SAR2 H 300 A_Pain
+       		SAR2 H 0 A_ChangeFlag("NoPain", 0)
+       		goto See
+      Pain.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        SAR2 H 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(12)
+        SAR2 H 16 A_Pain
+        Goto See 
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+
+      Ice:
+      Death.HexenIce:
+
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 10)
+        TNT1 A 0 A_NoBlocking
+        SAR2 H 0 A_GenericFreezeDeath
+        SAR2 H 70 A_UnsetSolid
+        SAR2 H 0 A_IceGuyDie
+        SAR2 H 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+      Death.DukeExplosive:
+      Death.DukeDamage:
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+ Death.ZorchPistol:
+ Death.Zorch:
+	TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveToTarget("AwardItem", 10)
+        TNT1 A 0 A_GiveToTarget("KillCount", 1)	
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        SAR2 H 4 A_SpawnItem("ZorchEffectSmall")
+        SAR2 HHHHHHHHHHHH 4 Bright A_Fadeout(0.1)
+	Stop
+        Death:
+      		TNT1 A 0 A_GiveToTarget("KillCount", 1)
+        	TNT1 A 0 A_GiveToTarget("AwardItem", 10)
+        	SAR2 I 5
+        	SAR2 J 5 A_Scream
+        	SAR2 K 5
+        	SAR2 L 5 A_Fall
+        	SAR2 M 5
+        	SAR2 N 3000
+                SAR2 NNNNNNNNNNNN 2 A_FadeOut(0.1)
+        	Stop
+        Raise:
+        	Stop
+        }
+}
+
+ACTOR NDemonBall //NIGHTMARE DEMON - Fireball
+{
+    Radius 8
+    Height 6
+    Speed 12
+    Damage 4
+    DamageType "Normal"
+    PROJECTILE
+    +THRUGHOST
+    SeeSound "64ball/shoot"
+    DeathSound "64ball/explode"
+    States
+    {
+    Spawn:
+        NBAL AB 4 Bright
+        Loop
+    Death:
+        NBAL CDEFGH 4 Bright
+        Stop
+    }
+}
+
