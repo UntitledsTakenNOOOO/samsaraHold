@@ -304,6 +304,7 @@ script SAMSARA_SPAWN (int respawning)
     ACS_ExecuteWithResult(SAMSARA_WOLFMOVE, startTime,0,0);
     ACS_ExecuteWithResult(SAMSARA_QPOWERS,  startTime,0,0);
     
+	Delay(35);
     if (isLMS()) { ApplyLMS(); }
     if (GetCvar("samsara_lmsrules") == 1)
     {
