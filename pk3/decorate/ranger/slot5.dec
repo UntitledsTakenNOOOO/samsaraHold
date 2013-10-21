@@ -365,7 +365,7 @@ actor QuakeClusterRocket: QuakeRocket
     States
     {
       Death:
-        DMSL B 0 A_Explode(48, 91)
+        DMSL B 0 A_Explode(64, 91)
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }
@@ -387,7 +387,7 @@ actor QuadClusterRocket: QuakeClusterRocket
     States
     {
       Death:
-        DMSL B 0 A_Explode(192, 91)
+        DMSL B 0 A_Explode(256, 91)
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }

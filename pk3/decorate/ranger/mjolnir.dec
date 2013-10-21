@@ -524,12 +524,12 @@ actor MJBeam: FastProjectile
 
 actor MjBeamDM: MJBeam
 {
-    Damage (12)
+    Damage (20)
 }
 
 actor MjBeamWeak: MJBeam
 {
-    Damage (30)
+    Damage (20)
 }
 
 actor MJBeamSpectral: MJBeam
