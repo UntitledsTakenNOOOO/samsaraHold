@@ -100,8 +100,9 @@ actor EggFX3 : MorphProjectile // This, however, still works funderfully in DM.
 
 actor EggFX4: EggFX2
 {
-    MorphProjectile.Duration 245 // 35 * 7 = 245
+    MorphProjectile.Duration 1050 // 35 * 30 = 1050
     MorphProjectile.PlayerClass "ChickenPlayer3"
+    MorphProjectile.MonsterClass "Chicken2"
 }
 
 actor Chicken2 : Chicken replaces Chicken
