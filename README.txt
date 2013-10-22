@@ -5,7 +5,7 @@ SAMSARA CHANGES
 - The weapon powerup device now spreads three specials and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.
 - 3 Uniques item has a max of 3, rather than 1, since it's not that powerful.
 - Fuel for flamer replaced by various heretic/hexen utilities. No, I'm not telling what.
-^- Landmines give a slot one. Ammo for landmines replaced with strife ammo boxes (12 shells, 4 rockets, OR the strife everything ammo pickups)
+^- Landmines give a slot one. Ammo for landmines replaced with strife missile boxes (the strife everything ammo pickups)
 ^- Autoshotgun is a slot 2+3
 ^- HRL is a slot 5+1 unique.
 ^- Stunner is 3 uniques straight up.
@@ -13,24 +13,25 @@ SAMSARA CHANGES
 ^- Flamer is slot6+2 uniques.
 ^- Pyro Cannon is slot7+2 uniques.
 ^- Repeater is slot6+2 uniques.
-^- Devastator(Stronghold one, not Samsara one, which is renamed to Devastators to prevent code confusion, sorry) is slot7+2 uniques.
+^- Devastator(Stronghold one, not Samsara one, which is renamed to " Devastator " to prevent code confusion, sorry) is slot7+2 uniques.
 ^- Most custom weapons also drop uniques as you can see, as to allow them to see more play, as they have to be split among the team.
 - Fusion Pistol does some extra-extra damage versus the terminator, due to its entirely mechanical nature.
-- Catharsi Detonators provide some extra explosive oomph if shot with the fusion pistol, along with detonating prematurely.
 - The terminator explodes when killed by the fusion pistol, in reference to Marathon's hunters.
+- Catharsi Detonators provide some extra explosive oomph if shot with the fusion pistol, along with detonating prematurely.
 - Marine Item replaced with strife beacon.
 ^- Super Marine Item replaced with a custom, "elite" strife beacon. (Oh god I'm not looking forward for the ninth hero anymore)
 - Random weapon device now can also give a unique, and now works for samsara.
 ^- Random weapon's chances for each slot are NOT equal. The chances of getting a slot 7 is 3%-4%, for example.
-- Core now immune to friendly fire, and doing this required a new damagetype "FaithInHumanity" because seriously, why are you that dedicated to core-trolling?!
+- Core now immune to friendly fire, which required a new damagetype "FaithInHumanity" because seriously, why are you that dedicated to core-trolling?!
 - Custom mechanical monsters take appropriate damage from the fusion pistol.
 - Security Officer attains both WSTEM-5s on pick up, as per invasion mode.
 - Parias' and Corvus' medikit capacity has been reduced to 4, and urn/invulnerability/megasphere capacity to 1, to prevent mass stealing from these classes (harming the team). This is for in-mission items, not buyable ones.
-^- In mission Timefreeze and quad damages give corvus inventory ones. ^-These are separate from the ones you buy.
+^- In mission Timefreeze and quad damages give corvus inventory ones. 
+^- These are separate from the ones you buy.
 - Custom Samsara difficulty names have been removed, as they would cause monsters not to spawn.
 - Chainsaw, Super Bootspork, Gauntlet, Knife and Mjolnir damage and/or stunlock potential buffed, in order to let Doomguy, Chex, Corvus, BJ and Ranger share in the slot 1 fun.
+- Because of melee weapons being terrible in Stronghold, PunchDrunk saws and uniques are super-buffed.
 - Parias' Backpack capacity limited to 1, but it gives full ammo instead of half, in order to prevent mass-steals and to prevent overpoweredness with having 6 and a RWD'd wraithverge.
-- It turns out, that in Samsara, Corvus' Firemace does 1.1-1.15 DamageFactor on basically every monster. I Switched it so the crossbow gets it now, since it turned out the Firemace was a better suppression weapon, and was more useful in the context of Stronghold.
 - Various damage values have been tweaked for balance (most noticable on Parias, as I had to buff him out due to him being melee-only). The bad news is that I forgot most of them.
 -The shop is modified to have a new room to adjust Armor Mode settings.
 -New Achievements!
