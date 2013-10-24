@@ -43,7 +43,7 @@ actor QuakePlayer: PlayerPawn
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.1
     
-        damagefactor "NotQuadded", 0.25
+        damagefactor "NotQuadded", 0.5
 	damagefactor "MarineAlly", 0
     
     States
