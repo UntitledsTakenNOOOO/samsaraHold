@@ -105,7 +105,13 @@ actor Ammo2Small : CustomInventory replaces Shell
     }
 }
 
-actor Ammo2Big : CustomInventory replaces ShellBox
+actor Ammo2BigSpawner : RandomSpawner replaces ShellBox
+{
+	DropItem "Ammo2Big" 255 3
+	DropItem "StrifeElectricBolts" 255 1
+}
+
+actor Ammo2Big : CustomInventory// replaces ShellBox
 {
     Inventory.PickupMessage "Picked up 20 rounds of Ammo 2."
     Inventory.PickupSound "ammo/shellbig"
@@ -146,7 +152,7 @@ actor Ammo2Big : CustomInventory replaces ShellBox
     }
 }
 
-actor Ammo3Small : CustomInventory replaces RocketAmmo// replaces RocketAmmo
+actor Ammo3Small : CustomInventory replaces RocketAmmo
 {
     Inventory.PickupMessage "Picked up 2 rounds of Ammo 3."
     Inventory.PickupSound "ammo/rocketsmall"
@@ -186,7 +192,13 @@ actor Ammo3Small : CustomInventory replaces RocketAmmo// replaces RocketAmmo
     }
 }
 
-actor Ammo3Big : CustomInventory replaces RocketBox// replaces RocketBox
+actor Ammo2BigSpawner : RandomSpawner replaces RocketBox
+{
+	DropItem "Ammo3Big" 255 2
+	DropItem "StrifeHEGrenades" 255 1
+}
+
+actor Ammo3Big : CustomInventory// replaces RocketBox
 {
     Inventory.PickupMessage "Picked up 6 rounds of Ammo 3."
     Inventory.PickupSound "ammo/rocketbig"
