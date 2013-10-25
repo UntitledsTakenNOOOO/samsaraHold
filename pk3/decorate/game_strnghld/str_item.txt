@@ -306,7 +306,7 @@ ACTOR ScriptedMarine2 : ScriptedMarine
 
 ACTOR STMarineDoomSlot2 : ScriptedMarine2
 {
-  Translation "112:127=112:127"
+  Translation "112:127=112:119"
   obituary "%o chewed on a marine's shotgun."
   attacksound "doomguy/shotgf"
   states
@@ -323,7 +323,7 @@ ACTOR STMarineDoomSlot2 : ScriptedMarine2
 
 ACTOR STMarineChexSlot2 : ScriptedMarine2
 {
-  Translation "112:127=80:95"
+  Translation "112:127=200:207"
   obituary "%o chewed on a marine's large zorcher."
   attacksound "chex/shotgf"
   states
@@ -340,7 +340,7 @@ ACTOR STMarineChexSlot2 : ScriptedMarine2
 
 ACTOR STMarineHereticSlot2 : ScriptedMarine2
 {
-  Translation "112:127=48:63"
+  Translation "112:127=120:127"
   obituary "%o chewed on a marine's firemace."
   attacksound "weapons/maceshoot"
   states
@@ -376,7 +376,7 @@ ACTOR STMarineHereticSlot2 : ScriptedMarine2
 
 ACTOR STMarineHexenSlot2 : ScriptedMarine2
 {
-  Translation "112:127=64:79"
+  Translation "112:127=32:39"
   obituary "%o chewed on a marine's frost shards."
   states
   {
@@ -438,7 +438,7 @@ ACTOR MarineShardMelee
 
 ACTOR STMarineWolfSlot2 : ScriptedMarine2
 {
-  Translation "112:127=16:31"
+  Translation "112:127=84:91"
   obituary "%o chewed on a marine's Machine Gun."
   states
   {
@@ -453,7 +453,7 @@ ACTOR STMarineWolfSlot2 : ScriptedMarine2
 
 ACTOR STMarineDukeSlot2 : ScriptedMarine2
 {
-  Translation "112:127=96:111"
+  Translation "112:127=160:167"
   obituary "%o chewed on a marine's shotgun."
   states
   {
@@ -469,7 +469,7 @@ ACTOR STMarineDukeSlot2 : ScriptedMarine2
 
 ACTOR STMarineMarathonSlot2 : ScriptedMarine2
 {
-  Translation "112:127=192:207"
+  Translation "112:127=192:199"
   obituary "%o chewed on a marine's WSTE-M5 combat shotgun."
   states
   {
@@ -485,14 +485,14 @@ ACTOR STMarineMarathonSlot2 : ScriptedMarine2
 
 ACTOR STMarineQuakeSlot2 : ScriptedMarine2
 {
-  Translation "112:127=32:47"
+  Translation "112:127=64:71"
   obituary "%o chewed on a marine's double shotgun."
   states
   {
   Missile:
     PLAY E 8 A_FaceTarget
 	PLAY E 0 A_PlaySound("quakeweps/ssgfire")
-	PLAY FFFFFFFFFFFFFFF 0 BRIGHT A_CustomMissile("QuakeBullet",32,0,Random(-400,400)/100.0)
+	PLAY FFFFFFFFFFFFF 0 BRIGHT A_CustomMissile("QuakeBullet",32,0,Random(-400,400)/100.0)
     PLAY F 8 BRIGHT A_CustomMissile("QuakeBullet",32,0,Random(-400,400)/100.0)
     PLAY E 8
     goto See
@@ -568,13 +568,18 @@ ACTOR STMarineHereticSlot3 : STMarineHereticSlot2
 ACTOR STMarineHexenSlot3 : STMarineHexenSlot2 
 {
   obituary "%o was splattered by a marine's axe."
+  MeleeRange 144
   states
   {
   Missile:
     Goto See
   Melee:
     PLAY E 6 A_FaceTarget
-	PLAY F 6 BRIGHT A_CustomMeleeAttack(Random(80,124),"none","none","TimonsAxe",0)
+	PLAY F 0 BRIGHT A_CustomMeleeAttack(10,"none","none","TimonsAxe",0)
+ 	PLAY F 0 BRIGHT A_CustomMeleeAttack(10,"none","none","TimonsAxe",0)
+ 	PLAY F 0 BRIGHT A_CustomMeleeAttack(10,"none","none","TimonsAxe",0)
+ 	PLAY F 0 BRIGHT A_CustomMeleeAttack(10,"none","none","TimonsAxe",0)
+ 	PLAY F 6 BRIGHT A_CustomMeleeAttack(Random(80,124),"none","none","TimonsAxe",0)
     PLAY E 6
     goto See
   }
@@ -636,27 +641,15 @@ ACTOR STMarineQuakeSlot3 : STMarineQuakeSlot2
   states
   {
   Missile:
-	PLAY E 0 A_Jump(72,"Missile2")
     PLAY E 10 A_FaceTarget
 	PLAY E 0 A_PlaySound ("quakeweps/glfire")
-	PLAY F 10 BRIGHT A_CustomMissile("QuakeGrenadeCoop",32,0,0)
+	PLAY F 10 BRIGHT A_CustomMissile("QuakeGrenadeCoop2",32,0,0)
     PLAY E 10 
     goto See
-  Missile2:
-	PLAY E 10 A_FaceTarget
-	PLAY A 0 A_PlaySound ("quakeweps/glfire")
-	PLAY F 10 BRIGHT A_CustomMissile("QuakeClusterGrnCoop",32,0,0)
-    PLAY E 10 
-	goto See
   }
 }
 
 ACTOR QuakeGrenadeCoop2 : QuakeGrenadeCoop
-{
-	DamageType "MarineAlly"
-}
-
-ACTOR QuakeClusterGrnCoop2 : QuakeClusterGrnCoop
 {
 	DamageType "MarineAlly"
 }
@@ -719,7 +712,7 @@ ACTOR STMarineHereticSlot4 : STMarineHereticSlot2
 ACTOR STMarineHexenSlot4 : STMarineHexenSlot2
 {
   obituary "%o was mowed down by a marine's serpent staff."
-  MeleeRange 72
+  MeleeRange 128
   states
   {
   Melee:
@@ -770,10 +763,10 @@ ACTOR STMarineMarathonSlot4 : STMarineMarathonSlot2
   states
   {
   Missile:
-    PLAY E 0 A_Jump(36,"Missile2")
+    PLAY E 0 A_Jump(72,"Missile2")
     PLAY E 8 A_FaceTarget
 	PLAY E 0 A_PlaySound ("marathon/rifle/fire")
-    PLAY F 3 BRIGHT A_CustomMissile("MarathonARBulletCoop",32,0,Random(-10,10))
+    PLAY F 3 BRIGHT A_CustomMissile("MarathonARBulletCoop",32,0,Random(-5,5))
     PLAY E 0 A_CPosRefire
     goto Missile+2
   Missile2:
@@ -1008,7 +1001,7 @@ ACTOR STMarineQuakeSlot5 : STMarineQuakeSlot2
     PLAY E 3 
     goto See
   Missile:
-    PLAY E 0 A_Jump(72,"Missile2")
+    PLAY E 0 A_Jump(51,"Missile2")
     PLAY E 16 A_FaceTarget
 	PLAY E 0 A_PlaySound("quakeweps/rlfire")
     PLAY F 16 BRIGHT A_CustomMissile("QuakeRocketCoop2",32,0,0)
@@ -1140,7 +1133,7 @@ ACTOR STMarineDukeSlot6 : STMarineDukeSlot2
 ACTOR STMarineMarathonSlot6 : STMarineMarathonSlot2
 {
   obituary "%o was melted by a marine's TOZT-7 napalm unit."
-  missiletype "FlameShot"
+  missiletype "FlameShot2"
   meleethreshold 512
   meleerange 384
   states
@@ -2215,96 +2208,37 @@ actor RandomWeaponItem : CustomInventory 25023
   Spawn:
    	WEPP A -1 BRIGHT
     	Stop
-  Use: 
-	TNT1 A 1 A_Jump(64,"GiveUnique","GiveSlotOne")
-	TNT1 A 1 ACS_ExecuteWithResult(229,Random(1,5)+Random(0,2))
+  Use:
+    TNT1 A 1 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,24,0,0) == 1, "NoUlt")
+    TNT1 A 1 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,27,0,0) == 1, "NoUnique")
+    TNT1 A 1 A_Jump(32,"GiveUnique")
+    TNT1 A 1 A_Jump(5,"GiveUlt")
+    TNT1 A 1 ACS_ExecuteWithResult(229,Random(1,6))
 	Stop
+	
+  NoUlt:
+    TNT1 A 1 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,27,0,0) == 1, "NoUltOrUnique")
+    TNT1 A 1 A_Jump(32,"GiveUnique")
+	TNT1 A 1 ACS_ExecuteWithResult(229,Random(1,6))
+	Stop
+
+  NoUnique:
+    TNT1 A 1 A_Jump(5,"GiveUlt")
+    TNT1 A 1 ACS_ExecuteWithResult(229,Random(1,6))
+	Stop
+
+  NoUltOrUnique:
+    TNT1 A 1 ACS_ExecuteWithResult(229,Random(1,6))
+	Stop
+	
   GiveUnique:
 	TNT1 A 1 ACS_ExecuteWithResult(231)
 	Stop
-  GiveSlotOne:
-	TNT1 A 1 ACS_ExecuteWithResult(229,1)
+  GiveUlt:
+	TNT1 A 1 ACS_ExecuteWithResult(229,7)
 	Stop
   }
 }
-/*
-actor RandomWeaponItem2 : CustomInventory 
-{
-//$Category Stronghold_Items
-  inventory.pickupmessage "Picked up a random weapon sphere."
-  inventory.maxamount 3
-  inventory.icon WEPIA0
-  Tag "Random Weapon"
-  +INVENTORY.INVBAR
-  scale 0.75
-  states
-  {
-  Spawn:
-   	WEPP A -1 BRIGHT
-    	stop
-  Use: 
-        TNT1 A 1 A_Jump(64, 21)
-        TNT1 A 1 A_Jump(64, 19)
-        TNT1 A 1 A_Jump(64, 17)
-        TNT1 A 1 A_Jump(64, 15)
-        TNT1 A 1 A_Jump(64, 13)
-        TNT1 A 1 A_Jump(64, 11)
-        TNT1 A 1 A_Jump(64, 9)
-        TNT1 A 1 A_Jump(64, 7)
-        TNT1 A 1 A_Jump(64, 5)
-        TNT1 A 1 A_Jump(64, 3)
-        TNT1 A 1 A_Jump(64, 1)
-	TNT1 A 1 A_GiveInventory("SamsaraSlotSevenPickup",1)	
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraSlotSevenPickup",1)
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraSlotSixPickup",1)
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraSlotSixPickup",1)
-  	Goto PlaceholderStuff
-        TNT1 A 1 A_GiveInventory("SamsaraSlotFivePickup",1)
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraSlotFivePickup",1)
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraSlotFourPickup",1)
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraSlotThreePickup",1)
-  	Goto PlaceholderStuff
-        TNT1 A 1 A_GiveInventory("SamsaraSlotTwoPickup",1)
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraSlotOnePickup",1)
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraUniquePickup2",1)
-  	Goto PlaceholderStuff
-	TNT1 A 1 A_GiveInventory("SamsaraUniquePickup1",1)
-  	stop
-  PlaceholderStuff:
-        TNT1 A 0 A_TakeInventory("RandomWeaponItem",3)
-        TNT1 A 0 A_JumpIfInventory("RandomWeaponPlaceholder",1,"PlaceholderStuff1")
-        TNT1 A 0 A_JumpIfInventory("RandomWeaponPlaceholder",2,"PlaceholderStuff2")
-        TNT1 A 0 A_JumpIfInventory("RandomWeaponPlaceholder",3,"PlaceholderStuff3")
-	Stop
-  PlaceholderStuff1:
-        TNT1 A 0 A_GiveInventory("RandomWeaponItem",0)
-        TNT1 A 0 A_TakeInventory("RandomWeaponPlaceholder",1)
-	Stop //I REALLY Hate this bug, and what it forced me to do.
-  PlaceholderStuff2:
-        TNT1 A 0 A_GiveInventory("RandomWeaponItem",1)
-        TNT1 A 0 A_TakeInventory("RandomWeaponPlaceholder",2)
-	Stop //Future Notice in case you forgot: The bug was that the RWD sometimes didn't go away after usage.
-  PlaceholderStuff3:
-        TNT1 A 0 A_GiveInventory("RandomWeaponItem",2)
-        TNT1 A 0 A_TakeInventory("RandomWeaponPlaceholder",3)
-	Stop //So you designed this utterly unconventional placeholder system.
-  }
-}
-
-ACTOR RandomWeaponPlaceholder : CustomInventory
-{
-	Inventory.MaxAmount 3
-}
-//AND IT TURNS OUT WE DIDN'T NEED IT THE ENTIRE ****ING TIME
-*/
 /*
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // AUTO DRONE ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
