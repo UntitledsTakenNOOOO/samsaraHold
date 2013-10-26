@@ -930,6 +930,10 @@ Restart;
 
 script 324 (Void)
 {
-GiveInventory("LifeItem", 9);
-Print(s:"\cjI just ACS'd you lives! \cnGet in there!");
+GiveInventory("NoUniqueItem",1);
+}
+
+script 325 (Void)
+{
+GiveInventory("NoUltItem",1);
 }

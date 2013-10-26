@@ -20,6 +20,7 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
         loop
 	  
 	  NoUlt:
+	    TNT1 A 0 ACS_ExecuteAlways(325)
 	    TNT1 A 0
 		stop
         

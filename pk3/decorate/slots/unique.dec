@@ -18,6 +18,7 @@ actor SamsaraUniquePickup1: CustomInventory
         goto SpawnLoop
 		
 	  Nope:
+	    UNIQ B 0 ACS_ExecuteAlways(324)
 	    UNIQ B 0
 		stop
 
