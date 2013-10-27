@@ -342,6 +342,7 @@ actor "Spectral LAZ Device": "LAZ Device"
 
 actor ChexLAZBall : BFGBall
 {
+    Damage (Random(1,8)*75+125)
     DamageType "Zorch"
     Decal None
     +BRIGHT
@@ -357,9 +358,17 @@ actor ChexLAZBall : BFGBall
         loop
         
       Death:
-        CFE1 AB 8 bright
+	CFE1 A 4 bright A_Explode(100, 512, 0)
+	CFE1 A 4 bright A_Explode(random(30,60), 384, 0)
+	CFE1 B 4 bright A_Explode(25, 352, 0)
+	CFE1 B 4 bright A_Explode(20, 320, 0)
         CFE1 C 8 bright A_BFGSpray("ChexLAZSplash")
-        CFE1 DEF 8 bright
+	CFE1 D 4 bright A_Explode(random(30,75), 192, 0)
+	CFE1 D 4 bright A_Explode(20, 160, 0)
+	CFE1 E 4 bright A_Explode(random(25,40), 128, 0)
+	CFE1 E 4 bright A_Explode(30, 96, 0)
+	CFE1 F 4 bright A_Explode(35, 64, 0)
+	CFE1 F 4 bright A_Explode(40, 32, 0)
         stop
     }
 }
