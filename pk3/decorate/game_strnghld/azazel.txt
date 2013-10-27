@@ -129,8 +129,11 @@ damagefactor "ZorchKamikaze", 0.5
         AZEP A 1 A_IceGuyDie
         TNT1 A -1
         stop
-   Death.ZorchPistol:
-   Death.Zorch:
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
+      Death.ZorchSpectral:
 	TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("AwardItem", 64)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)	

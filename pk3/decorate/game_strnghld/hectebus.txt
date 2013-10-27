@@ -107,8 +107,11 @@ DamageFactor "MarathonFusion", 2.0
         TNT1 A 0 A_Jump(64,"Death")
         TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
         goto Death
-   Death.ZorchPistol:
-   Death.Zorch:
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
+      Death.ZorchSpectral:
 	TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveToTarget("AwardItem", 17)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)	
