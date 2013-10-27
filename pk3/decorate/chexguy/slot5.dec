@@ -29,13 +29,11 @@ actor "Zorch Propulsor" : Weapon
         MISC B 8 A_GunFlash
 	    TNT1 A 0 A_JumpIfInventory("RJingModeOn",1,"RJFire")
         MISC B 12 A_FireCustomMissile("ChexRocket")
-        MISC A 4
         MISC B 0 A_ReFire
         Goto Ready
 		
 	  RJFire:
         MISC B 12 A_FireCustomMissile("ChexRocketRJ")
-        MISC A 4
         MISC B 0 A_ReFire
         Goto Ready
 
@@ -43,13 +41,11 @@ actor "Zorch Propulsor" : Weapon
         MISC B 8 A_GunFlash
 	    TNT1 A 0 A_JumpIfInventory("RJingModeOn",1,"RJFireCoop")
         MISC B 12 A_FireCustomMissile("ChexRocket2")
-        MISC A 4
         MISC B 0 A_ReFire
         Goto Ready
 		
 	  RJFireCoop:
         MISC B 12 A_FireCustomMissile("ChexRocket2RJ")
-        MISC A 4
         MISC B 0 A_ReFire
         Goto Ready
 
