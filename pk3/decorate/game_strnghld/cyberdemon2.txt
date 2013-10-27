@@ -8,6 +8,8 @@ ACTOR CyberdemonMk2 32757
 	damagefactor "Railgun", 0
 	damagefactor "BossFactor", 0.25
 	damagefactor "Cyber2Factor", 0
+	DamageFactor "Kamikaze", 0.01
+	damagefactor "ZorchKamikaze", 0.01
         DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
 	Health 50000
 	MeleeRange 160

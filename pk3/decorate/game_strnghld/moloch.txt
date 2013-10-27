@@ -7,6 +7,8 @@ DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
 DamageFactor "MarathonFusion", 2.0
 DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
+DamageFactor "Kamikaze", 0.05
+damagefactor "ZorchKamikaze", 0.05
 health 10000
 radius 40
 height 80

@@ -6,6 +6,8 @@ painchance "Stunner", 128
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
 DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
+DamageFactor "Kamikaze", 0.5
+damagefactor "ZorchKamikaze", 0.5
 Health 2000 
 Radius 24 
 Height 64 

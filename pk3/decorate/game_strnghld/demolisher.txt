@@ -14,6 +14,8 @@ DamageFactor "BFGSplash", 0.5
 DamageFactor "Wraithverge", 0.4
 DamageFactor "DukeExplosive", 0.75
 DamageFactor "Zorch", 0.9
+DamageFactor "Kamikaze", 0.5
+damagefactor "ZorchKamikaze", 0.5
 spawnid 249
 Obituary "%o felt the power of the Spider-Demolisher."
 Health 6000

@@ -5,6 +5,8 @@ spawnid 216
 painchance "Stunner", 128
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
+DamageFactor "Kamikaze", 0.5
+damagefactor "ZorchKamikaze", 0.5
     DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
     Health 2400
     Radius 22

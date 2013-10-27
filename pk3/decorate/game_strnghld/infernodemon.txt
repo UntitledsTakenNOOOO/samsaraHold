@@ -8,6 +8,8 @@ ACTOR InfernoDemon 12345
   damagefactor "DragonClaw", 1.6
   damagefactor "DukeIce", 3.2
   damagefactor "HexenIce", 3.2
+  DamageFactor "Kamikaze", 0.05
+  damagefactor "ZorchKamikaze", 0.05
   DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
   Health 20000
   Speed 20
