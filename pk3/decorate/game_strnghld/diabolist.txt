@@ -12,7 +12,7 @@ DamageFactor "DukeIce", 2.6
 DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
-Obituary "\c[Y5]%o \c[Y5]was set ablaze by a Diabloist."
+Obituary "\c[V7]%o \c[V7]was set ablaze by a Diabloist."
 Health 1400
 Radius 20
 Height 56

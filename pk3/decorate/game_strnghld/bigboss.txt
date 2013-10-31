@@ -44,7 +44,7 @@ ACTOR STBoss 32767
 	DeathSound ""
 	ActiveSound "baron/active"
 	Translation "16:47=32:47", "48:79=32:47", "112:127=160:167"
-	Obituary "\c[G5]%o \c[G5]couldn't evade the wrath of Mephistopheles."
+	Obituary "\c[E7]%o \c[E7]couldn't evade the wrath of Mephistopheles."
 	States
 	{
 	Spawn:
@@ -2049,7 +2049,7 @@ ACTOR SpiritBoss 32765
 	+NOTARGET +NOINFIGHTING
 	//Easily Distracted. Trust me, it's the only way you're going to win.
 	+QUICKTORETALIATE
-	Obituary "\c[U3]%o's \c[U3]existence was erased by the spirit of Mephistopheles."
+	Obituary "\c[J0]%o's \c[J0]existence was erased by the spirit of Mephistopheles."
     states
     {
 	Spawn:
