@@ -161,7 +161,7 @@ actor HereticArmorDump : ArmorScrap replaces ArtiTimeBomb
     States
     {
       Spawn:
-        BON3 A -1 bright
+        BON9 A -1 bright
         stop
     }
 }
