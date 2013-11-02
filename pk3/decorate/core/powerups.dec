@@ -358,7 +358,7 @@ actor PortTorch : PowerupGiver
     States
     {
       Spawn:
-        TRCH ABC 3 Bright
+        TRC2 ABC 3 Bright
         Loop
     }
 }
@@ -400,7 +400,7 @@ actor PortTorch2 : PowerupGiver
     States
     {
       Spawn:
-        TRCH ABC 3 Bright
+        TRC2 ABC 3 Bright
         Loop
     }
 }
@@ -413,6 +413,7 @@ actor PortIconDefender : PowerupGiver
     Inventory.MaxAmount 16
     Inventory.Icon "ARTIDFND"
     Powerup.Type Invulnerable
+    Powerup.Mode Reflective
     inventory.usesound "hexen/artiuse"
     Powerup.Color Grey, 0.1
 }

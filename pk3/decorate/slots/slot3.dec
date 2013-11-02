@@ -75,6 +75,43 @@ actor SamsaraSlotThreeDrop: SamsaraSlotThreePickup
 }
 
 //actor SamsaraSlotThree_Allmap:  SamsaraSlotThreePickup replaces Allmap {}
+actor MegaMap : CustomInventory replaces AllMap
+{
+  +COUNTITEM
+  +INVENTORY.FANCYPICKUPSOUND
+  +INVENTORY.ALWAYSPICKUP
+  Inventory.MaxAmount 0
+  Inventory.PickupSound "misc/p_pkup"
+  Inventory.PickupMessage "Computer Area Map and Scanner!"
+  states
+  {
+  Spawn:
+    PMAP ABCDCB 6 Bright
+    Loop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory ("PowerScanner",1,"PickupFail")
+    TNT1 A 0 A_GiveInventory ("Allmap")
+    TNT1 A 0 A_GiveInventory ("DoomScanner")
+    stop
+  PickupFail:
+    PMAP ABCDCB 6 Bright
+    Fail
+  }
+}
+
+actor DoomScanner : PowerupGiver
+{
+  powerup.duration -240
+  powerup.type "Scanner"
+  +INVENTORY.AUTOACTIVATE
+  states
+  {
+  Spawn:
+    TNT1 A 1
+    stop
+  }
+}
+
 actor SamsaraSlotThree_Chex:    SamsaraSlotThreePickup replaces SuperLargeZorcher {}
 actor SamsaraSlotThree_Hexen:   SamsaraSlotThreePickup replaces CWeapFlame {}
 actor SamsaraSlotThree_Strife:  SamsaraSlotThreePickup replaces MiniMissileLauncher {}
