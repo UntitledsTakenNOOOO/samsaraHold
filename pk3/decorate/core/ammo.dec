@@ -416,7 +416,7 @@ actor Ammo1Medium : CustomInventory
     }
 }
 
-actor Ammo2Big : CustomInventory
+actor Ammo2Medium : CustomInventory
 {
     Inventory.PickupMessage "Picked up 12 rounds of Ammo 2."
     Inventory.PickupSound "ammo/shellbig"
