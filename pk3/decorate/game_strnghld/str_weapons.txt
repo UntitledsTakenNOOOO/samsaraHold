@@ -102,23 +102,11 @@ ACTOR SamsaraSlotSevenPickup_Str3 : SamsaraSlotSevenPickup replaces Devastator
     }
 }
 
-actor STRStuffDump1 : RandomSpawner replaces Mines
+actor STRAmmoDump1 : RandomSpawner replaces Mines
 {
-	DropItem "StrifeMiniMissiles" 256 4
-	DropItem "StrifeCrateOfMissiles" 256 1
-}
-
-ACTOR STRStuffDump2 : RandomSpawner replaces Fuel
-{
-	DropItem "HereticAmmoDump" 256 10
-	DropItem "HereticAmmoDump2" 256 5
-	DropItem "HereticLesserTome"  256 1
-}
-
-ACTOR STRStuffDump3 : RandomSpawner replaces Gas
-{
-	DropItem "HexenAmmo12Small" 256 5
-	DropItem "HexenAmmo34Small" 256 5
-	DropItem "HexenEverythingAmmo"  256 5
-	DropItem "HexenTeamPickup" 256 1
+	DropItem "Ammo1Medium" 256 1
+	DropItem "Ammo2Medium" 256 1
+	DropItem "Ammo3Medium" 256 1
+	DropItem "Ammo4Medium" 256 1
+	DropItem "StrifeThingOfMissiles" 256 1
 }
