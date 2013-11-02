@@ -128,8 +128,8 @@ actor StrifeMiniMissiles: CustomInventory replaces Gas//replaces MiniMissiles
         stop
 
       PickupHexen:
-        TNT1 A 0 A_GiveInventory("Clip", 15)
-        TNT1 A 0 A_GiveInventory("Cell", 15)
+        TNT1 A 0 A_GiveInventory("Clip", 30)
+        TNT1 A 0 A_GiveInventory("Cell", 30)
         stop
 
       PickupDuke:
@@ -220,8 +220,8 @@ actor StrifeThingOfMissiles: CustomInventory
         stop
 
       PickupHexen:
-        TNT1 A 0 A_GiveInventory("Clip", 20)
-        TNT1 A 0 A_GiveInventory("Cell", 20)
+        TNT1 A 0 A_GiveInventory("Clip", 40)
+        TNT1 A 0 A_GiveInventory("Cell", 40)
         stop
 
       PickupDuke:
@@ -313,8 +313,8 @@ actor StrifeCrateOfMissiles: CustomInventory replaces Fuel//replaces CrateOfMiss
         stop
 
       PickupHexen:
-        TNT1 A 0 A_GiveInventory("Clip", 20)
-        TNT1 A 0 A_GiveInventory("Cell", 20)
+        TNT1 A 0 A_GiveInventory("Clip", 60)
+        TNT1 A 0 A_GiveInventory("Cell", 60)
         stop
 
       PickupDuke:
