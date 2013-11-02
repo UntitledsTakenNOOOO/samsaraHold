@@ -73,6 +73,8 @@ actor StrifeMiniMissiles: CustomInventory replaces MiniMissiles
     Inventory.PickupMessage "Picked up 25/12/5/20 Ammo 1/2/3/4."
     Inventory.PickupSound "ammo/mana"
 
+    +INVENTORY.BIGPOWERUP
+
     States
     {
       Spawn:
@@ -128,6 +130,8 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
 
     Inventory.PickupMessage "Picked up 50/24/10/40 Ammo 1/2/3/4."
     Inventory.PickupSound "ammo/mana"
+
+    +INVENTORY.BIGPOWERUP
 
     States
     {
