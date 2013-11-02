@@ -1,4 +1,4 @@
-ACTOR " Railgun " : Weapon
+ACTOR "  Railgun  " : Weapon
 {
     Weapon.Selectionorder 100
     Weapon.Kickback 100
