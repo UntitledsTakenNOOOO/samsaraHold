@@ -40,7 +40,7 @@ actor Belphegor : BaronOfHell2 5008
     HitObituary "%o was slain by a Belphegor."
     Translation "16:47=176:191", "48:79=80:111"
 }
-
+/*
 actor BloodDemon : DoomDemon2 5004
 {
     Game Doom
@@ -49,7 +49,7 @@ actor BloodDemon : DoomDemon2 5004
     Obituary "%o was chomped on by a Blood Demon."
     Translation "16:35=28:47", "36:47=[75,0,0]:[0,0,0]", "160:162=168:168", "163:166=164:167", "224:230=165:165", "161:161=164:164", "80:111=[200,200,200]:[0,0,0]", "208:223=177:188"
 }
-
+*/
 actor Cacolantern : Cacodemon2 5006
 {
     Game Doom
@@ -114,7 +114,7 @@ actor DarkImpBall : DoomImpBall
 Translation "176:183=200:207", "184:191=240:247", "168:175=198:199", "210:223=198:203", "233:233=202:202", "231:231=197:197"
 +THRUGHOST
 }
-
+/*
 actor Hectebus : Fatso2 5007
 {
     Game Doom
@@ -153,7 +153,7 @@ actor Hectebus : Fatso2 5007
 		Goto Missile
 	}
 }
-
+*/
 actor HectShot : BaronBall//FatShot - Surprisingly, the Baron Ball looks better.
 {
 +THRUGHOST

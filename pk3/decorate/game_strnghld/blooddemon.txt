@@ -1,4 +1,4 @@
-ACTOR BloodDemon2 replaces BloodDemon 3110
+ACTOR BloodDemon 3110
 {
 //$Category Stronghold_Monsters
     painchance "Stunner", 200
