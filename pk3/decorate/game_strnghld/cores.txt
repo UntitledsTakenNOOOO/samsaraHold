@@ -39,6 +39,9 @@ actor FakeGoalBase
         damagefactor "MarathonFusion", 0
         DamageFactor "CoreFriendly", 0
 
+        damagefactor "Kamikaze", 0
+        DamageFactor "ZorchKamikaze", 0
+
         DamageFactor "Cyber2Factor", 0.5
 
         DamageFactor "STBoss", 0.02
@@ -4882,6 +4885,9 @@ actor PowerCore 21234
   damagefactor "MarathonFusion", 0
   DamageFactor "CoreFriendly", 0
 
+        damagefactor "Kamikaze", 0
+        DamageFactor "ZorchKamikaze", 0
+
   DamageFactor "STBoss", 0.015
   DamageFactor "STBossFactor", 0.1
   DamageFactor "Animate", 0
@@ -4991,6 +4997,9 @@ Actor OvermindCore 29952
   	damageFactor "Wraithverge", 0
         damagefactor "MarathonFusion", 0
   	DamageFactor "CoreFriendly", 0
+
+	damagefactor "Kamikaze", 0
+        DamageFactor "ZorchKamikaze", 0
 
 	DamageFactor "Normal", 4
 	DamageFactor "Lightning", 5

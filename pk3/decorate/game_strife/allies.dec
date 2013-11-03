@@ -26,6 +26,8 @@ actor FriendlyDoomImp : DoomImp2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.1
+        damagefactor "ZorchKamikaze", 0.1
 
     Species "Player"
 
@@ -125,6 +127,8 @@ actor FriendlyNitrogolem : MummyLeader2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.1
+        damagefactor "ZorchKamikaze", 0.1
     
     Species "Player"
 
@@ -204,6 +208,8 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.1
+        damagefactor "ZorchKamikaze", 0.1
     
     Species "Player"
     
@@ -371,8 +377,10 @@ ACTOR FriendlyNazi
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
         damagefactor "MarathonFusion", 0
-		damagefactor "FireExplosive", 0
+	damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.1
+        damagefactor "ZorchKamikaze", 0.1
 
     Species "Player"
     
@@ -465,6 +473,8 @@ actor FriendlyAfrit : FireDemon2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.1
+        damagefactor "ZorchKamikaze", 0.1
     
     Species "Player"
     
@@ -538,6 +548,8 @@ actor FriendlyAlienTrooper
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.1
+        damagefactor "ZorchKamikaze", 0.1
 
     Species "Player"
     
@@ -772,6 +784,8 @@ ACTOR FriendlyPfhorTrooper
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.1
+        damagefactor "ZorchKamikaze", 0.1
 
     Species "Player"
     
@@ -884,6 +898,8 @@ ACTOR FriendlyGrunt
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.1
+        damagefactor "ZorchKamikaze", 0.1
 
     Species "Player"
     
@@ -1011,6 +1027,8 @@ ACTOR FriendlyBelphegor : BaronOfHell2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.15
+        damagefactor "ZorchKamikaze", 0.15
 
     Species "Player"
 
@@ -1075,7 +1093,9 @@ ACTOR FriendlyIronLich : IronLich2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
-    
+        damagefactor "Kamikaze", 0.15
+        damagefactor "ZorchKamikaze", 0.15
+
     Species "Player"
 
   +MISSILEMORE
@@ -1253,6 +1273,8 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.15
+        damagefactor "ZorchKamikaze", 0.15
     
     Species "Player"
 
@@ -1427,6 +1449,8 @@ ACTOR FriendlyWolfensteinSS
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.15
+        damagefactor "ZorchKamikaze", 0.15
 
     Species "Player"
 
@@ -1526,6 +1550,8 @@ ACTOR FriendlySlaughtaur : CentaurLeader2 115
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.15
+        damagefactor "ZorchKamikaze", 0.15
 
     Species "Player"
 
@@ -1626,6 +1652,8 @@ ACTOR FriendlyBattleLord
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.15
+        damagefactor "ZorchKamikaze", 0.15
 
   +MISSILEMORE
   +THRUSPECIES
@@ -1832,6 +1860,8 @@ ACTOR FriendlyHunter
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.15
+        damagefactor "ZorchKamikaze", 0.15
 
     Species "Player"
   
@@ -1954,6 +1984,8 @@ Actor FriendlyVore
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.15
+        damagefactor "ZorchKamikaze", 0.15
 
     Species "Player"
 

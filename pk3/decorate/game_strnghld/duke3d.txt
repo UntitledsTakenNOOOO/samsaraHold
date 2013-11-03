@@ -1856,23 +1856,25 @@ ACTOR BabeBase
 {
   +SOLID
   +SHOOTABLE
-  +NORADIUSDMG
   +THRUSPECIES
   Species "Player"
 
-        damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
-        damagefactor "Explosive", 0
-        damagefactor "NotQuadded", 0
-        damagefactor "WMCNade", 0
-        damagefactor "WMCBeam", 0
-        damagefactor "DukeExplosive", 0
-        damagefactor "BFG", 0
-        damagefactor "BFGSplash", 0
-        damagefactor "BJSpear", 0
+        damagefactor "Zorch", 0.1
+        damagefactor "PoisonCloud", 0.1
+        damagefactor "Wraithverge", 0.1
+        damagefactor "Explosive", 0.1
+        damagefactor "NotQuadded", 0.1
+        damagefactor "WMCNade", 0.1
+        damagefactor "WMCBeam", 0.1
+        damagefactor "DukeExplosive", 0.1
+        damagefactor "BFG", 0.1
+        damagefactor "BFGSplash", 0.1
+        damagefactor "BJSpear", 0.1
         damagefactor "MarineAlly", 0
+        damagefactor "Kamikaze", 0.01
+        DamageFactor "ZorchKamikaze", 0.01
 
+  RadiusDamageFactor 0.5
   BloodType "DN3DBlood", "DN3DBlood"
   Health 300
   Height 64

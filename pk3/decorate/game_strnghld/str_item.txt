@@ -249,6 +249,8 @@ ACTOR ScriptedMarine2 : ScriptedMarine
         damagefactor "BJSpear", 0
 	damagefactor "MarathonFusion", 0
         damagefactor "MarineAlly", 0
+	damagefactor "Kamikaze", 0.05
+        damagefactor "ZorchKamikaze", 0.05
   MONSTER
   +SLIDESONWALLS
   +NODROPOFF
@@ -1271,6 +1273,8 @@ actor Sentry 12856
 	mass 9999999999
         damagefactor "BossFactor", 0
         damagefactor "Zorch", 0
+        damagefactor "WraithVerge", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "Explosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
@@ -1279,8 +1283,10 @@ actor Sentry 12856
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
-        damagefactor "PoisonCloud", 0
-	damagefactor "MarineAlly", 0
+	damagefactor "MarathonFusion", 0
+        damagefactor "MarineAlly", 0
+	damagefactor "Kamikaze", 0.05
+        damagefactor "ZorchKamikaze", 0.05
         radius 16
 	height 16
 	health 300
@@ -1327,6 +1333,8 @@ actor Sentry2 12857
 	mass 9999999999
         damagefactor "BossFactor", 0
         damagefactor "Zorch", 0
+        damagefactor "WraithVerge", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "Explosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
@@ -1335,8 +1343,10 @@ actor Sentry2 12857
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
-        damagefactor "PoisonCloud", 0
-	damagefactor "MarineAlly", 0
+	damagefactor "MarathonFusion", 0
+        damagefactor "MarineAlly", 0
+		damagefactor "Kamikaze", 0.05
+        damagefactor "ZorchKamikaze", 0.05
         radius 16
 	height 16
 	health 300
@@ -2120,7 +2130,10 @@ actor WallPlaced
 	+THRUSPECIES
 	Species "Player"
 	DeathSound "WallItem/Explode"
+        damagefactor "BossFactor", 0
         damagefactor "Zorch", 0
+        damagefactor "WraithVerge", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "Explosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
@@ -2129,7 +2142,10 @@ actor WallPlaced
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
-        damagefactor "PoisonCloud", 0
+	damagefactor "MarathonFusion", 0
+        damagefactor "MarineAlly", 0
+  	damagefactor "ZorchKamikaze", 0.05
+        damagefactor "Kamikaze", 0.05      
 	states
  	{
  	Spawn:
