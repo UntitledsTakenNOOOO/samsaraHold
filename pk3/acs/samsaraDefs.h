@@ -549,8 +549,8 @@ SAMSARA CHANGES\n
 - Duke's Freezethrower and Parias' Frost shards do extra damage against fire-based enemies, as a benefit to those who read the README, and to make them usable (since freezethrower is pretty terrible for a slot 6).\n
 - The weapon powerup device now spreads three uniques and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.\n
 - 3 Uniques item has a max of 3, rather than 1, since it's not that powerful.\n
-- Fuel for flamer replaced by various heretic/hexen utilities. No, I'm not telling what.\n
-^- Landmines give a slot one. Ammo for landmines replaced with strife ammo boxes (12 shells, 4 rockets, OR the strife everything ammo pickups)\n
+- Fuel for flamer replaced by replaced with strife missile boxes (the strife everything ammo pickups).\n
+^- Landmines give a slot one. Ammo for landmines replaced with medium ammo boxes (30 bullets, 12 shells, 4 rockets, 60 cells).\n
 ^- Autoshotgun is a slot 2+3\n
 ^- HRL is a slot 5+1 unique.\n
 ^- Stunner is 3 uniques straight up.\n
