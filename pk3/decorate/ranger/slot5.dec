@@ -347,7 +347,7 @@ actor QuakeRocketCoop: QuakeRocket
     +THRUSPECIES
     Species "Player"
     
-    Damage (24)
+    Damage (30)
 }
 
 actor QuakeRocketCoopQuad: QuakeRocketQuad
@@ -355,7 +355,7 @@ actor QuakeRocketCoopQuad: QuakeRocketQuad
     +THRUSPECIES
     Species "Player"
     
-    Damage (96)
+    Damage (120)
 }
 
 actor QuakeClusterRocket: QuakeRocket
@@ -376,7 +376,7 @@ actor QuakeClusterRkCoop: QuakeClusterRocket
     +THRUSPECIES
     Species "Player"
     
-    Damage (12)
+    Damage (15)
 }
 
 actor QuadClusterRocket: QuakeClusterRocket
@@ -398,7 +398,7 @@ actor QuadClusterRkCoop: QuadClusterRocket
     +THRUSPECIES
     Species "Player"
     
-    Damage (48)
+    Damage (60)
 }
 
 actor SpectralRocket: QuakeRocketCoopQuad { DamageType "SpectralNoQuad" }

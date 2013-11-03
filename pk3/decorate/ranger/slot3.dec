@@ -414,7 +414,7 @@ actor QuakeGrenadeCoop: QuakeGrenade
 {
     +THRUSPECIES
     Species "Player"
-	Damage (25)
+	Damage (30)
 }
 
 actor QuakeGrenadeQuad: QuakeGrenade
@@ -438,7 +438,7 @@ actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
     Radius 4
     Height 4
     
-    Damage (100)
+    Damage (120)
 }
 
 actor SpectralGrenade: QuakeGrenadeCoopQuad { DamageType "SpectralNoQuad" }
@@ -468,7 +468,7 @@ actor QuakeClusterGrnCoop: QuakeClusterGrenade
     +THRUSPECIES
     Species "Player"
     
-    Damage (25)
+    Damage (30)
     
     Radius 4
     Height 4
@@ -509,7 +509,7 @@ actor QuadClusterGrnCoop: QuadClusterGrenade
     Species "Player"
     
     DamageType "NotQuadded"
-    Damage (100)
+    Damage (120)
     
     Radius 4
     Height 4
@@ -572,7 +572,7 @@ actor QuakeTinyGrnCoop: QuakeTinyGrenade
     Radius 4
     Height 4
     
-    Damage (20)
+    Damage (6)
 }
 
 actor QuadTinyGrenade: QuakeTinyGrenade
@@ -593,7 +593,7 @@ actor QuadTinyGrnCoop: QuadTinyGrenade
     +THRUSPECIES
     Species "Player"
     
-    Damage (80)
+    Damage (24)
 }
 
 actor SpectralClusterGrenade: QuadClusterGrnCoop
