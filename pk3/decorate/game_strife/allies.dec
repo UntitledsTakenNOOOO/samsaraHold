@@ -145,6 +145,8 @@ actor FriendlyNitrogolem : MummyLeader2
   -Solid
     +FRIENDLY
     
+    Dropitem "HereticAmmo2Small"
+
     States
     {
       Missile:
@@ -645,7 +647,7 @@ actor FriendlyAlienTrooper
 		DFOD G 0 A_Jump(64,1)
 		Goto SeeJetpack+1
 		DFOD G 0 A_FaceTarget
-		DFOD G 0 A_MissileAttack
+		DFOD G 0 A_CustomMissile("AlienTrooperShot",27,-4,random(-200,200)\100.0)
 		DFOD G 0 ThrustThingZ(0,2,1,0)
 		DFOD H 0 A_Chase("","",0)
 		DFOD HHHH 1 Bright A_CheckFloor("See")
@@ -848,13 +850,13 @@ ACTOR FriendlyPfhorTrooper
       Missile: // No grenade attack, since it's far too easy to hurt the player with it.
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
-        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-400,600)/100.00)
-        PTRO E 2 A_FaceTarget
-        TNT1 A 0 A_PlaySound("pfhor/shoot")
-        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-600,400)/100.00)
+        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-400,400)/100.00)
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
         PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-500,500)/100.00)
+        PTRO E 2 A_FaceTarget
+        TNT1 A 0 A_PlaySound("pfhor/shoot")
+        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-600,600)/100.00)
         Goto See
 
       Pain:
@@ -1280,7 +1282,7 @@ Stop
 // Yes, these use the same slimeballs as the Flemoids, only bigger and more damaging. I'm lazy, alright?
 actor FriendlyFlemoidusMaximus : FlemoidusMaximus
 {
-    Health 1500
+    Health 1500 //Yeah he gets it because Defense
     PainChance 25
     SeeSound "friendlyflemoid/sight"
     AttackSound "friendlyflemoid/attack"
@@ -1507,7 +1509,7 @@ ACTOR FriendlyWolfensteinSS
     ActiveSound "friendlynazi/active"
     AttackSound "wolfen/machinegun"
     Obituary "%o was somehow killed by a friendly Wolfenstein SS."
-    Dropitem "ClipBox"
+    Dropitem "HexenAmmo12Small"
     Species "Player"
     
     States
@@ -1519,15 +1521,15 @@ ACTOR FriendlyWolfensteinSS
     ASSV AABBCCDD 3 A_Chase
     loop
   Missile:
-    ASSV E 4 A_FaceTarget
-    ASSV F 4 A_FaceTarget
+    ASSV E 8 A_FaceTarget
+    ASSV F 3 A_FaceTarget
     ASSV G 0 Bright A_FaceTarget
     TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
-    ASSV G 4 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
-    ASSV F 4 A_FaceTarget
+    ASSV G 3 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
+    ASSV F 3 A_FaceTarget
     ASSV G 0 Bright A_FaceTarget
     TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
-    ASSV G 4 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
+    ASSV G 3 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
     ASSV F 0 A_SpidRefire
     goto Missile+1
   Pain:
@@ -1933,14 +1935,10 @@ ACTOR FriendlyHunter
 		HUNT JJJJJJJJJJJJ 4 A_FadeOut(0.1)
 		Stop
 	Death.MarathonFusion:
-		HUNT K 15 Bright A_Explode(80+random(0,40),128)
-		HUNT L 5 Bright A_PlaySound("hunter/explode")
-		HUNT M 5 Bright
-		HUNT N 5 Bright A_NoBlocking
-		HUNT J 3000
-		HUNT OOOOOOOOOOOO 4 A_FadeOut(0.1)
-		Stop
 	Death.Explosive:
+	Death.STBoss:
+	Death.Inferno:
+	Death.Redblast:
 		HUNT K 15 Bright A_Explode(80+random(0,40),128)
 		HUNT L 5 Bright A_PlaySound("hunter/explode")
 		HUNT M 5 Bright
