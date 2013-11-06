@@ -2,7 +2,6 @@ actor SpiderMastermind2 : Spidermastermind replaces SpidermastermindStun
 {
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
-    DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
     DamageFactor "MarathonFusion", 2.25
     DamageFactor "WMCNade", 0.75
 	DamageFactor "CorvusHellstaffTomed", 0.2
@@ -113,7 +112,6 @@ actor Cyberdemon2 : Cyberdemon replaces CyberdemonStun
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
     DamageFactor "MarathonFusion", 2.0
-    DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
     DamageFactor "WMCNade", 0.75
 	DamageFactor "CorvusHellstaffTomed", 0.2
 	painchance "Stunner", 96

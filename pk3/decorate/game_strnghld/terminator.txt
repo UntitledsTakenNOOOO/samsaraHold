@@ -13,7 +13,6 @@ DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 3.0
 DamageFactor "WMCNade", 0.75
 DamageFactor "CorvusHellStaffTomed", 0.2
-DamageFactor "NotQuadded", 2.0 //Still Immune to Splash Damage, so this is for direct hits.
 DamageFactor "Kamikaze", 0.25
 damagefactor "ZorchKamikaze", 0.25
 SpawnID 231

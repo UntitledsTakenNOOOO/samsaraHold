@@ -22,7 +22,6 @@ ACTOR STBoss 32767
 	DamageFactor "WraithVerge", 2
 	damagefactor "bossfactor", 0.5
 	damagefactor "corefriendly", 0
-        DamageFactor "NotQuadded", 2.0 //Still Immune to Splash Damage, so this is for direct hits.
 	damagefactor "railgun", 0
 	DamageFactor "CorvusHellStaff", 1.4
 	DamageFactor "WolfenFlameThrower", 1.25
