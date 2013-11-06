@@ -104,9 +104,6 @@ ACTOR SamsaraSlotSevenPickup_Str3 : SamsaraSlotSevenPickup replaces Devastator
 
 actor STRAmmoDump1 : RandomSpawner replaces Mines
 {
-	DropItem "Ammo1Medium" 256 1
-	DropItem "Ammo2Medium" 256 1
-	DropItem "Ammo3Medium" 256 1
-	DropItem "Ammo4Medium" 256 1
-	DropItem "StrifeThingOfMissiles" 256 1
+	DropItem "StrifeMiniMissiles" 256 4
+	DropItem "StrifeCrateOfMissiles" 256 1
 }

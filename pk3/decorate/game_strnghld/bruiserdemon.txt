@@ -8,7 +8,7 @@ DamageFactor "HexenIce", 2.4
 DamageFactor "DukeIce", 2.4
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
-        DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
+        DamageFactor "NotQuadded", 2.0 //Still Immune to Splash Damage, so this is for direct hits.
 	SpawnID 234
         Health 1500
 	Radius 24

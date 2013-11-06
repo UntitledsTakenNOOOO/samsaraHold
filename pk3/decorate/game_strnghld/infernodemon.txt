@@ -10,7 +10,6 @@ ACTOR InfernoDemon 12345
   damagefactor "HexenIce", 3.2
   DamageFactor "Kamikaze", 0.05
   damagefactor "ZorchKamikaze", 0.05
-  DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
   Health 20000
   Speed 20
   Radius 65
@@ -27,6 +26,9 @@ ACTOR InfernoDemon 12345
   +FLOORCLIP
   +NOTARGET
   +NOICEDEATH
+  damagefactor "Fire", 0.25
+  damagefactor "FireExplosive", 0.25
+  damagefactor "WolfenFlamethrower", 0.375
   damagefactor "Inferno", 0
   MinMissileChance 128
   SeeSound "Infdem/see"

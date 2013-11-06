@@ -13,7 +13,7 @@ DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 3.0
 DamageFactor "WMCNade", 0.75
 DamageFactor "CorvusHellStaffTomed", 0.2
-DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
+DamageFactor "NotQuadded", 2.0 //Still Immune to Splash Damage, so this is for direct hits.
 DamageFactor "Kamikaze", 0.25
 damagefactor "ZorchKamikaze", 0.25
 SpawnID 231
@@ -251,7 +251,7 @@ actor Redgrenade //More like Red Missile now. Heh heh.
     Speed 30
     FastSpeed 45
     Damage 4
-    DamageType "Normal"
+    DamageType "Redblast"
     OBITUARY "\c[U2]%o \c[U2]was torn apart by a blood missile."
     PROJECTILE
     //Heh heh. Players won't know what hit them. Hopefully neither will Popsoap.
@@ -313,7 +313,7 @@ actor Grenadeblast
     Speed 6
     Damage 3
     OBITUARY "\c[U2]%o \c[U2]was torn apart by a blood missile."
-    DamageType Redblast
+    DamageType "Redblast"
     PROJECTILE
     RENDERSTYLE ADD
     +Ripper

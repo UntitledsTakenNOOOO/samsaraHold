@@ -22,7 +22,7 @@ ACTOR STBoss 32767
 	DamageFactor "WraithVerge", 2
 	damagefactor "bossfactor", 0.5
 	damagefactor "corefriendly", 0
-        DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
+        DamageFactor "NotQuadded", 2.0 //Still Immune to Splash Damage, so this is for direct hits.
 	damagefactor "railgun", 0
     DamageFactor "Kamikaze", 0.1 //Nice Try.
 	damagefactor "ZorchKamikaze", 0.1

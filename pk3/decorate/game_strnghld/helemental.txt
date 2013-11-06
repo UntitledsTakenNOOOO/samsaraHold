@@ -5,7 +5,7 @@ actor Helemental 30130
   painchance "Stunner", 128
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
-DamageFactor "NotQuadded", 3.0 //Still Immune to Splash Damage, so this is for direct hits.
+DamageFactor "NotQuadded", 2.0 //Still Immune to Splash Damage, so this is for direct hits.
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
   obituary "%o was electrocuted by a Hades elemental."
@@ -31,6 +31,7 @@ damagefactor "ZorchKamikaze", 0.5
   +NOTARGET
   +DONTHURTSPECIES
   +NOICEDEATH
+  +NORADIUSDMG
   states
   {
   Spawn:

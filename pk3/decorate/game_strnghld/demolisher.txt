@@ -2,16 +2,16 @@ ACTOR Demolisher 30110
 {
 //$Category Stronghold_Monsters
 painchance "Stunner", 128
-DamageFactor "CorvusCrossbow", 1.15
-DamageFactor "DragonClaw", 1.6
+DamageFactor "CorvusCrossbow", 1.1
+DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 2.5
-DamageFactor "WMCBeam", 0.5
-DamageFactor "WMCNade", 0.4
+DamageFactor "WMCBeam", 0.4
+DamageFactor "WMCNade", 0.375
 DamageFactor "BJSpear", 0.5
 DamageFactor "CorvusHellStaffTomed", 0.2
 DamageFactor "BFG", 0.5
 DamageFactor "BFGSplash", 0.5
-DamageFactor "Wraithverge", 0.4
+DamageFactor "Wraithverge", 0.5
 DamageFactor "DukeExplosive", 0.75
 DamageFactor "Zorch", 0.9
 DamageFactor "Kamikaze", 0.5
