@@ -229,7 +229,7 @@ actor Turbosphere2: CustomInventory replaces Turbosphere
 
 actor TurbosphereHeretic : PowerupGiver
 {
-    inventory.maxamount 16
+    inventory.maxamount 1
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
     +inventory.hubpower
@@ -276,12 +276,13 @@ actor TimeFreezeSphere2: CustomInventory replaces TimeFreezeSphere
 
 actor TimeFreezeSphereHeretic : PowerupGiver
 {
-    inventory.maxamount 16
+    inventory.maxamount 1
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
     +inventory.hubpower
     Inventory.Icon "ARTISTP2"
     Powerup.Type TimeFreezer
+    Powerup.Duration -30
 	Powerup.Color GoldMap
 }
 
@@ -349,7 +350,7 @@ actor InvisibilitySphere2: CustomInventory replaces InvisibilitySphere
 
 actor InvisibilitySphereHeretic : PowerupGiver
 {
-    inventory.maxamount 16
+    inventory.maxamount 1
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
     +inventory.hubpower
@@ -400,7 +401,7 @@ actor Doomsphere2: CustomInventory replaces Doomsphere
 
 actor DoomsphereHeretic : PowerupGiver
 {
-    inventory.maxamount 16
+    inventory.maxamount 1
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
     +inventory.hubpower
@@ -412,7 +413,7 @@ actor DoomsphereHeretic : PowerupGiver
 actor PowerDoomsphereColor : Powerup
 {
 	Powerup.Color RedMap
-	Powerup.Duration -25
+	Powerup.Duration -30
 }
 
 //actor Guardsphere : CustomInventory 5037
@@ -453,7 +454,7 @@ actor Guardsphere2: CustomInventory replaces Guardsphere
 
 actor GuardsphereHeretic : PowerupGiver
 {
-    inventory.maxamount 16
+    inventory.maxamount 1
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
     +inventory.hubpower
