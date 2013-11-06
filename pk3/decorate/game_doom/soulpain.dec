@@ -86,7 +86,6 @@ actor PainElemental2 : PainElemental replaces PainElementalStun
 	painchance "Stunner", 160
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
-    DamageFactor "NotQuadded", 1.33
     DamageFactor "HexenIce", 1.6
     DamageFactor "DukeIce", 1.6
     PainChance "MightyBoot", 255
