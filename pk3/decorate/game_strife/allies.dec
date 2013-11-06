@@ -4,7 +4,7 @@
 // Which is actually kind of depressing, if you're a fan of the other iwads. None of them have stuff like that.
 actor FriendlyDoomImp : DoomImp2
 {
-    Health 100
+    Health 120
     SeeSound "friendlyimp/sight"
     PainSound "friendlyimp/pain"
     DeathSound "friendlyimp/death"
@@ -59,7 +59,7 @@ actor FriendlyDoomImp : DoomImp2
       Melee:
       Missile:
         TROO EF 6 A_FaceTarget
-        TROO G 6 A_CustomComboAttack("FriendlyDoomImpBall", 32, random[troopattack](1,8)*3, "friendlyimp/melee")//A_TroopAttack
+        TROO G 6 A_CustomComboAttack("FriendlyDoomImpBall", 32, random[troopattack](1,10)*3, "friendlyimp/melee")//A_TroopAttack
         Goto See
         
       Pain:
@@ -148,6 +148,7 @@ actor FriendlyNitrogolem : MummyLeader2
     States
     {
       Missile:
+	MUMM X 0 A_JumpIfCloser(512,"Missile2")
         MUMM X 5 A_FaceTarget
         MUMM Y 5 Bright A_FaceTarget
         MUMM X 5 A_FaceTarget
@@ -157,7 +158,26 @@ actor FriendlyNitrogolem : MummyLeader2
         MUMM X 5 A_FaceTarget
         MUMM Y 5 Bright A_FaceTarget
         MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*4, "mummy/attack2")
+        MUMM Y 5 Bright A_FaceTarget
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
+	MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_FaceTarget
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_FaceTarget
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
+        Goto See
+
+      Missile2:
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_FaceTarget
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*3, "mummy/attack2")
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_FaceTarget
+        MUMM X 5 A_FaceTarget
+        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*3, "mummy/attack2")
         Goto See
 
       Raise:
@@ -187,12 +207,14 @@ actor FriendlyNitrogolemShot : MummyFX1
 // Oddly enough, never shot balls of slime despite having more orifices to shoot from than the armored one.
 actor FriendlyFlemoid : FlemoidusBipedicus2
 {
-    Health 150
+    Health 150 //Healthy
     SeeSound "friendlyflemoid/sight"
     AttackSound "friendlyflemoid/attack"
     PainSound "friendlyflemoid/pain"
     DeathSound "friendlyflemoid/death"
     ActiveSound "friendlyflemoid/active"
+
+		damagefactor 0.8
 
         damagefactor "Zorch", 0
         damagefactor "PoisonCloud", 0
@@ -403,7 +425,6 @@ ACTOR FriendlyNazi
     ActiveSound "friendlynazi/active"
     AttackSound "wolfen/pistol"
     Obituary "%o was somehow killed by a friendly Nazi."
-    Dropitem "Ammo1Small"
     Dropitem "HereticAmmo1Small"
     Species "Player"
     
@@ -457,7 +478,7 @@ actor FriendlyNaziBullet : WolfenBullet2
 // Squawk.
 actor FriendlyAfrit : FireDemon2
 {
-    Health 100
+    Health 80
 
         damagefactor "Zorch", 0
         damagefactor "PoisonCloud", 0
@@ -507,6 +528,14 @@ actor FriendlyAfrit : FireDemon2
         FDMN K 5 Bright A_CustomMissile("FriendlyFireDemonMissile")
         TNT1 A 0 A_PlaySound("FireDemonAttack")
         FDMN K 5 Bright A_CustomMissile("FriendlyFireDemonMissile")
+        FDMN ABCABC 5 Bright A_FireDChase
+        FDMN K 3 Bright A_FaceTarget
+        TNT1 A 0 A_PlaySound("FireDemonAttack")
+        FDMN K 5 Bright A_CustomMissile("FriendlyFireDemonMissile")
+        TNT1 A 0 A_PlaySound("FireDemonAttack")
+        FDMN K 5 Bright A_CustomMissile("FriendlyFireDemonMissile")
+        TNT1 A 0 A_PlaySound("FireDemonAttack")
+        FDMN K 5 Bright A_CustomMissile("FriendlyFireDemonMissile")
         Goto Chase
 
       Raise:
@@ -516,6 +545,7 @@ actor FriendlyAfrit : FireDemon2
 
 actor FriendlyFireDemonMissile : FireDemonMissile
 {
+	Damage (Random(1,12))
     +THRUSPECIES
     Species "Player"
 }
@@ -525,7 +555,7 @@ actor FriendlyFireDemonMissile : FireDemonMissile
 // I don't have anything witty to say here.
 actor FriendlyAlienTrooper
 {
-    Health 100
+    Health 90
     GibHealth -50
     Radius 16
     Height 50
@@ -590,13 +620,13 @@ actor FriendlyAlienTrooper
 		DFOD F 0 A_Jump(128, "DuckMissile")
 		DFOD F 10 A_FaceTarget
        		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-8,8))
+		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-200,200)\100.0)
 		DFOD F 10 A_FaceTarget
        		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-8,8))
+		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-200,200)\100.0)
 		DFOD F 10 A_FaceTarget
        		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-8,8))
+		DFOD F 6 Bright A_CustomMissile("AlienTrooperShot",28,-4,random(-200,200)\100.0)
 		Goto See+3
 	SeeJetpackRising:
 		DFOD G 0 A_ChangeFlag("NOGRAVITY",1)
@@ -663,10 +693,13 @@ actor FriendlyAlienTrooper
 		DFOD Q 10 A_FaceTarget
 		DFOD R 8 Bright A_FaceTarget
        		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-		DFOD Q 8 Bright A_CustomMissile("AlienTrooperShot",26,-4,random(-2,2))
+		DFOD Q 8 Bright A_CustomMissile("AlienTrooperShot",26,-4,random(-200,200)\100.0)
 		DFOD R 8 Bright A_FaceTarget
        		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
-		DFOD Q 8 Bright A_CustomMissile("AlienTrooperShot",26,-4,random(-2,2))
+		DFOD Q 8 Bright A_CustomMissile("AlienTrooperShot",26,-4,random(-200,200)\100.0)
+		DFOD R 8 Bright A_FaceTarget
+       		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		DFOD Q 8 Bright A_CustomMissile("AlienTrooperShot",26,-4,random(-200,200)\100.0)
 		Goto See+3
 	Pain:
 		DFOD I 3
@@ -756,7 +789,7 @@ ACTOR FriendlyPfhorTrooper
 {
     Obituary "%o was somehow killed by a friendly Pfhor Trooper."
     Gravity 0.15
-    Health 100
+    Health 130
     Radius 16
     Height 50
     Mass 100
@@ -815,14 +848,13 @@ ACTOR FriendlyPfhorTrooper
       Missile: // No grenade attack, since it's far too easy to hurt the player with it.
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
-        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-5,5))
+        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-400,600)/100.00)
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
-        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-5,5))
+        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-600,400)/100.00)
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
-        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-5,5))
-        TNT1 A 0 A_Jump(64,"Missile")
+        PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-500,500)/100.00)
         Goto See
 
       Pain:
@@ -1074,7 +1106,7 @@ actor FriendlyBaronBall : BaronBall3
 
 ACTOR FriendlyIronLich : IronLich2
     {
-    Health 1000
+    Health 875
     PainChance 64
     HitObituary "%o was somehow killed by a friendly Iron lich."
     Obituary "%o was somehow killed by a friendly Iron lich."
@@ -1098,7 +1130,6 @@ ACTOR FriendlyIronLich : IronLich2
 
     Species "Player"
 
-  +MISSILEMORE
   +THRUSPECIES
   +FLOORCLIP
   +PUSHABLE
@@ -1113,15 +1144,11 @@ ACTOR FriendlyIronLich : IronLich2
   -Solid
     +FRIENDLY
 
-  DropItem "Berserk" 192
-  DropItem "Ammo1Small" 192
-  DropItem "HereticAmmo1Small" 192
-  DropItem "Ammo2Small" 192
-  DropItem "HereticAmmo2Small" 192
-  DropItem "Ammo3Small" 192
-  DropItem "HereticAmmo3Small" 192
-  DropItem "Ammo4Small" 192
-  DropItem "HereticAmmo4Small" 192
+  DropItem "Berserk"
+  DropItem "HereticAmmo1Small"
+  DropItem "HereticAmmo2Small"
+  DropItem "HereticAmmo3Small"
+  DropItem "HereticAmmo4Small"
 
     States
     {
@@ -1131,10 +1158,12 @@ ACTOR FriendlyIronLich : IronLich2
     LICH B 20 A_LichAttack
     LICH A 5 A_FaceTarget
     LICH B 20 A_LichAttack
+    LICH A 5 A_FaceTarget
+    LICH B 20 A_LichAttack //They either fire multiple times in a row...
     Goto See
   SuperMissile:
     LICH A 5 A_FaceTarget
-    LICH B 0 A_LichAttack
+    LICH B 0 A_LichAttack //Or they fire mutliple times at once.
     LICH B 20 A_LichAttack
     Goto See
   Death:
@@ -1232,7 +1261,7 @@ Stop
 
 actor HurricaneHurt
 {
-DamageType "Explosive"
+DamageType "MarineAlly"
 -SOLID
 +PAINLESS
 //+NODAMAGETHRUST
@@ -1259,6 +1288,8 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
     DeathSound "friendlyflemoid/death"
     ActiveSound "friendlyflemoid/active"
 
+		damagefactor 0.9
+		
         damagefactor "Zorch", 0
         damagefactor "PoisonCloud", 0
         damagefactor "Wraithverge", 0
@@ -1511,20 +1542,6 @@ ACTOR FriendlyWolfensteinSS
     ASSV M 3000
     ASSV MMMMMMMMMMMM 4 A_FadeOut(0.1)
     stop
-  XDeath:
-    ASSV N 0 A_SpawnItemEX("HDGib9_Generator",0,0,0,0,0,0,0,128)
-    ASSV N 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
-    ASSV N 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
-    ASSV N 5
-    ASSV O 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
-    ASSV O 5 A_XScream
-    ASSV P 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
-    ASSV P 5 A_NoBlocking
-    ASSV Q 0 A_SpawnItemEX("GibGenerator",0,0,0,0,0,0,0,128)
-    ASSV QRSTU 5
-    ASSV V 3000
-    ASSV VVVVVVVVVVVV 4 A_FadeOut(0.1)
-    Stop
   Raise:
     Stop
   }
@@ -1572,8 +1589,8 @@ ACTOR FriendlySlaughtaur : CentaurLeader2 115
   MeleeThreshold 256 //So they charge in more.
   MeleeRange 128 //The melee is the main focus of this guy.
   Health 1000
-  PainChance 32 //So they don't constantly shield and be immune to everything.
-  Speed 15
+  PainChance 48 //So they don't constantly shield and be immune to everything. 96 was just too damn high.
+  Speed 16
   Obituary "%o was somehow killed by a friendly Slaughtaur."
   HitObituary "%o was somehow killed by a friendly Slaughtaur."
   States
@@ -1591,14 +1608,14 @@ ACTOR FriendlySlaughtaur : CentaurLeader2 115
     Goto See
   Missile:
     CENT E 1 A_SetReflectiveInvulnerable
-    CENT E 1 A_FaceTarget
-    CENT EEEEEEEEE 1 A_CentaurDefend //But go invulnerable way more often.
-    CENT F 1 Bright A_CustomMissile("FriendlyCentaurFX", 45, 0, 0)
-    CENT FFFFFFF 1 A_CentaurDefend
-    CENT E 1 A_FaceTarget
-    CENT EEEEEEEEE 1 A_CentaurDefend
-    CENT F 1 Bright A_CustomMissile("FriendlyCentaurFX", 45, 0, 0)
-    CENT FFFFFFF 1 A_CentaurDefend
+    CENT E 0 A_FaceTarget
+    CENT EEEEEEEEEE 1 A_CentaurDefend //But go invulnerable way more often.
+    CENT F 0 Bright A_CustomMissile("FriendlyCentaurFX", 45, 0, 0)
+    CENT FFFFFFFF Bright 1 A_CentaurDefend
+    CENT E 0 A_FaceTarget
+    CENT EEEEEEEEEE 1 A_CentaurDefend
+    CENT F 0 Bright A_CustomMissile("FriendlyCentaurFX", 45, 0, 0)
+    CENT FFFFFFFF Bright 1 A_CentaurDefend
     CENT F 1 A_UnsetReflectiveInvulnerable
     Goto See
   XDeath:
@@ -1638,6 +1655,8 @@ ACTOR FriendlyBattleLord
 	PainChance 50
 	MONSTER 
 
+	damagefactor 1.1
+	
 	damagefactor "Zorch", 0
         damagefactor "PoisonCloud", 0
         damagefactor "Wraithverge", 0
@@ -1818,7 +1837,7 @@ Actor DukeRipperBulletCoop2 : DukeRipperBulletCoop
 Actor FriendlyMortar:Mortar {
 	Damage (0)
 	DontHurtShooter
-  	DamageType "Explosive"
+  	DamageType "MarineAlly"
   	Species "Player"
    	+THRUSPECIES
 
@@ -1842,7 +1861,7 @@ ACTOR FriendlyHunter
 	Height 64
 	Mass 1000
 	Speed 8
-	PainChance 256
+	PainChance 255
 	MinMissileChance 112 //Oh heh heh.
 	Scale 0.55
 
@@ -2053,8 +2072,8 @@ Actor VoreFirepod
   Height 8
   Speed 12
   FastSpeed 18
-  Damage (36)
-  DamageType "Explosive"
+  Damage (20)
+  DamageType "MarineAlly"
   Projectile
   Species "Player"
   +ThruSpecies
@@ -2084,7 +2103,7 @@ Actor VoreFirepod
     VOBA C 0 Bright A_SeekerMissile(60, 90)
     Loop
   Death:
-    VOBA D 0 Bright A_Explode(64, 64)	//Part of the original game was that Vores can be hurt by their own projectiles
+    VOBA D 0 Bright A_Explode(64, 128)	//Part of the original game was that Vores can be hurt by their own projectiles
     VOBA DEFGHI 4 Bright
     Stop
   }
