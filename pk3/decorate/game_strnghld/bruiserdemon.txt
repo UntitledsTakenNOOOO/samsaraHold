@@ -4,8 +4,8 @@ ACTOR BruiserDemon 3333
         painchance "Stunner", 120
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
-DamageFactor "HexenIce", 2.4
-DamageFactor "DukeIce", 2.4
+DamageFactor "HexenIce", 2.25
+DamageFactor "DukeIce", 2.25
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
         DamageFactor "NotQuadded", 2.0 //Still Immune to Splash Damage, so this is for direct hits.

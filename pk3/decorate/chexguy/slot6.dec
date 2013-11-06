@@ -72,7 +72,7 @@ actor ChexPlasma
     Radius 13
     Height 8
     Speed 25
-    Damage (20)
+    Damage (22)
     Projectile
     +RANDOMIZE
     +BLOODLESSIMPACT

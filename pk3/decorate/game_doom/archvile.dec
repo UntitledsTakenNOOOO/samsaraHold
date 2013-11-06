@@ -3,8 +3,8 @@ actor Archvile2 : Archvile replaces ArchvileStun
 	painchance "Stunner", 128
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
-    DamageFactor "HexenIce", 2.2
-    DamageFactor "DukeIce", 2.2
+    DamageFactor "HexenIce", 2.0
+    DamageFactor "DukeIce", 2.0
     PainChance "MightyBoot", 255
     +FIREDAMAGE
     +NOTDMATCH

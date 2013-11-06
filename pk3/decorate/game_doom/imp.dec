@@ -5,8 +5,8 @@ actor DoomImp2 : DoomImp replaces DoomImpStun
 	painchance "Stunner", 255
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
-    DamageFactor "HexenIce", 1.2
-    DamageFactor "DukeIce", 1.2
+    DamageFactor "HexenIce", 1.25
+    DamageFactor "DukeIce", 1.25
     PainChance "MightyBoot", 255
     states
     {

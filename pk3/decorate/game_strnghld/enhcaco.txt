@@ -5,8 +5,8 @@ ACTOR EnhancedCaco 3118
    painchance "MightyBoot", 255
    DamageFactor "CorvusCrossbow", 1.1
    DamageFactor "DragonClaw", 1.5
-   DamageFactor "HexenIce", 1.4
-   DamageFactor "DukeIce", 1.4
+   DamageFactor "HexenIce", 1.5
+   DamageFactor "DukeIce", 1.5
    spawnid 245
    Health 300
    Speed 8

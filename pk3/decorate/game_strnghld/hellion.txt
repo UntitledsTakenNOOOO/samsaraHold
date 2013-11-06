@@ -7,8 +7,8 @@ actor Hellion 30132
   painchance "MightyBoot", 255
   DamageFactor "CorvusCrossbow", 1.1
   DamageFactor "DragonClaw", 1.5
-  DamageFactor "HexenIce", 1.8
-  DamageFactor "DukeIce", 1.8
+  DamageFactor "HexenIce", 1.75
+  DamageFactor "DukeIce", 1.75
   obituary "A Hellion burned %o to a crisp."
   health 70
   radius 20

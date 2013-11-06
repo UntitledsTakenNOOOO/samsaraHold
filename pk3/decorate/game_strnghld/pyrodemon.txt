@@ -6,8 +6,8 @@ painchance "HexenIce", 40
 painchance "DukeIce", 40
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
-DamageFactor "HexenIce", 2.8
-DamageFactor "DukeIce", 2.8
+DamageFactor "HexenIce", 2.75
+DamageFactor "DukeIce", 2.75
 DamageFactor "NotQuadded", 2.0 //Still Immune to Splash Damage, so this is for direct hits.
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5

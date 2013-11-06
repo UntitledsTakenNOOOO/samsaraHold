@@ -2,8 +2,8 @@ actor Cacodemon2 : Cacodemon replaces CacodemonStun
 {
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
-    DamageFactor "HexenIce", 1.4
-    DamageFactor "DukeIce", 1.4
+    DamageFactor "HexenIce", 1.5
+    DamageFactor "DukeIce", 1.5
 	painchance "Stunner", 200
     PainChance "MightyBoot", 255
     BloodColor blue

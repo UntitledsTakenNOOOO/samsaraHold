@@ -6,8 +6,8 @@ ACTOR InfernoDemon 12345
 {
   damagefactor "CorvusCrossbow", 1.15
   damagefactor "DragonClaw", 1.6
-  damagefactor "DukeIce", 3.2
-  damagefactor "HexenIce", 3.2
+  damagefactor "DukeIce", 3.0
+  damagefactor "HexenIce", 3.0
   DamageFactor "Kamikaze", 0.05
   damagefactor "ZorchKamikaze", 0.05
   Health 20000
