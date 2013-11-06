@@ -123,7 +123,7 @@ actor StrifeMiniMissiles: CustomInventory replaces MiniMissiles
         TNT1 A 0 A_SetBlend("Green", 0.4, 4)
         TNT1 A 0 A_GiveInventory("Clip", 25)
         TNT1 A 0 A_GiveInventory("Shell", 12)	
-	T	NT1 A 0 A_GiveInventory("RocketAmmo", 5)
+	TNT1 A 0 A_GiveInventory("RocketAmmo", 5)
         TNT1 A 0 A_GiveInventory("Cell", 20)
         stop
 
