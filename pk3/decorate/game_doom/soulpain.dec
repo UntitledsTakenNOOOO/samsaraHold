@@ -7,6 +7,7 @@ actor LostSoul2 : LostSoul replaces LostSoulStun
     DamageFactor "DukeIce", 2.0
     PainChance "MightyBoot", 255
 	painchance "Stunner", 200
+	BloodType "SamsaraBloodyHellBlood"
     +NOTDMATCH
     +NOICEDEATH
     states

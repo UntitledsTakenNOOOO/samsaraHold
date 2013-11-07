@@ -27,6 +27,7 @@ ACTOR STBoss 32767
 	DamageFactor "WolfenFlameThrower", 1.25
 	DamageFactor "Kamikaze", 0.1 //Nice Try.
 	damagefactor "ZorchKamikaze", 0.1
+	BloodType "SamsaraBloodyHellBlood"
 	PainChance "MightyBoot", 256
 	//DropItem "SpiritBoss"
 	+FLOORCLIP

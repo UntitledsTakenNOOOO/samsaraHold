@@ -6,6 +6,7 @@ ACTOR Shadow 3126
         painchance "MightyBoot", 255
 	DamageFactor "CorvusCrossbow", 1.1
 	DamageFactor "DragonClaw", 1.5
+	BloodType "SamsaraBloodyHellBlood"
 	SpawnID 235
 	Health 80
 	Radius 20
@@ -134,6 +135,7 @@ ACTOR Shadow 3126
 	XDeath:
       		TNT1 A 0 A_GiveToTarget("KillCount", 1)
 		TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+		TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
 		SHDX A 8
 		SHDX B 6 A_XScream
 		SHDX C 6 

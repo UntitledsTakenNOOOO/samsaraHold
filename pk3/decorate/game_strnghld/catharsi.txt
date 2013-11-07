@@ -6,6 +6,7 @@ painchance "MightyBoot", 255
 DamageFactor "CorvusCrossbow", 1.1
 DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 2.0
+BloodType "SamsaraBloodyHellBlood"
   SpawnId 230
   OBITUARY "%o was blasted by a catharsi."
   Health 120
@@ -132,6 +133,7 @@ DamageFactor "MarathonFusion", 2.0
   XDeath:
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     TNT1 A 0 A_GiveToTarget("AwardItem", 10)
+    TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
     SDDM O 5
     SDDM P 5 A_XScream
     SDDM Q 5 A_NoBlocking

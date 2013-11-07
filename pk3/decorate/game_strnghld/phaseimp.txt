@@ -5,6 +5,7 @@ ACTOR PhaseImp 24105
     painchance "MightyBoot", 255
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
+    BloodType "SamsaraBloodyHellBlood"
     SpawnID 232
     Health 150
     Radius 20
@@ -125,6 +126,7 @@ ACTOR PhaseImp 24105
     Death:
         TNT1 A 0 A_GiveToTarget("KillCount", 1)
         TNT1 A 0 A_GiveToTarget("AwardItem", 6)
+        TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
         DIMP I 0 A_UnHideThing
         DIMP I 8 A_SetTranslucent(1)
         DIMP J 8 A_Scream

@@ -15,6 +15,7 @@ DamageFactor "WMCNade", 0.75
 DamageFactor "CorvusHellStaffTomed", 0.2
 DamageFactor "Kamikaze", 0.25
 damagefactor "ZorchKamikaze", 0.25
+BloodType "SamsaraBloodyHellBlood"
 SpawnID 231
 Health 7000 
 Radius 24 
@@ -33,6 +34,7 @@ Obituary "\c[U2]%o \c[U2] was liquidated by a Terminator."
 +NORADIUSDMG
 +DONTMORPH
 +NOICEDEATH
++NOBLOOD
 Missiletype Grenadeblast
 Damagefactor "Redblast", 0.0
 MeleeRange 192

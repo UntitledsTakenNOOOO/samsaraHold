@@ -5,6 +5,7 @@ painchance "Stunner", 64
 painchance "MightyBoot", 255
 DamageFactor "CorvusCrossbow", 1.1
 DamageFactor "DragonClaw", 1.5
+BloodType "SamsaraBloodyHellBlood"
 //$Category Stronghold_Monsters
    Health 400
    Speed 8

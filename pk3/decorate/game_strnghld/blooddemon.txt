@@ -6,6 +6,7 @@ painchance "MightyBoot", 255
 DamageFactor "CorvusCrossbow", 1.1
 DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 2.0
+BloodType "SamsaraBloodyHellBlood"
     spawnid 252
     Health 300
     Speed 12

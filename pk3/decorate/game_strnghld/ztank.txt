@@ -6,7 +6,7 @@ painchance "Stunner", 32
 painchance "MightyBoot", 255
 DamageFactor "CorvusCrossbow", 1.1
 DamageFactor "DragonClaw", 1.5
-DamageFactor "MarathonFusion", 2.5
+DamageFactor "MarathonFusion", 2.75
     Health 600
     Painchance 50
     Speed 6

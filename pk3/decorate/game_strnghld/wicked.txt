@@ -8,6 +8,7 @@ DamageFactor "CorvusCrossbow", 1.1
 DamageFactor "DragonClaw", 1.5
 DamageFactor "HexenIce", 1.25
 DamageFactor "DukeIce", 1.25
+BloodType "SamsaraBloodyHellBlood"
 Health 275 
 Radius 25 
 Height 88 

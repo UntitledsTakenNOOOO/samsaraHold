@@ -11,6 +11,7 @@ actor SuicideBomber 22099
   painchance "MightyBoot", 255
   DamageFactor "CorvusCrossbow", 1.1
   DamageFactor "DragonClaw", 1.5
+  BloodType "SamsaraBloodyHellBlood"
   spawnid 243
   obituary "%o was killed by a crazy suicide bomber."
   health 80
@@ -100,7 +101,8 @@ actor SuicideBomber 22099
   Death:
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     TNT1 A 0 A_GiveToTarget("AwardItem", 5)
-    BMBE M 0 bright A_Explode (64, 128)
+    TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
+    BMBE M 0 bright A_Explode (48, 96)
     BMBE M 5 bright A_PlaySound ("weapons/rocklx")
     BMBE N 5 bright A_XScream
     BMBE O 5 A_NoBlocking
@@ -108,5 +110,17 @@ actor SuicideBomber 22099
     BMBE U 3000
     BMBE UUUUUUUUUUUU 2 A_FadeOut(0.1)
     stop
+  XDeath:
+    TNT1 A 0 A_GiveToTarget("KillCount", 1)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 6)
+    TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
+    BMBE M 0 bright A_Explode (64, 128)
+    BMBE M 5 bright A_PlaySound ("weapons/rocklx")
+    BMBE N 5 bright A_XScream
+    BMBE O 5 A_NoBlocking
+    BMBE PQRST 5
+    BMBE U 3000
+    BMBE UUUUUUUUUUUU 2 A_FadeOut(0.1)
+    stop  
   }
 }

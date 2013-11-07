@@ -7,6 +7,7 @@ actor Cacodemon2 : Cacodemon replaces CacodemonStun
 	painchance "Stunner", 200
     PainChance "MightyBoot", 255
     BloodColor blue
+    BloodType "SamsaraBloodyHellBlood"
     +NOTDMATCH
     +NOICEDEATH
     states

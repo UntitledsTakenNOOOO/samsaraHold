@@ -9,6 +9,7 @@ ACTOR Overmind 16999
 	DamageFactor "MarathonFusion", 2.0
 	DamageFactor "Kamikaze", 0 //Yeah no.
 	damagefactor "ZorchKamikaze", 0
+	BloodType "SamsaraBloodyHellBlood"
 	Health 25000
 	Mass 80000
 	Radius 128
