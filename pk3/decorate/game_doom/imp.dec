@@ -61,7 +61,7 @@ actor DoomImp2 : DoomImp replaces DoomImpStun
 	XDeath:
         	TNT1 A 0 A_GiveToTarget("KillCount",1)
 		TNT1 A 0 A_GiveToTarget("AwardItem", 6)
-		TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
+		TNT1 A 0 ACS_ExecuteAlways(680,0,1)
 		TROO N 5
 		TROO O 5 A_XScream
 		TROO P 5
@@ -70,6 +70,24 @@ actor DoomImp2 : DoomImp replaces DoomImpStun
 		TROO U 3000
 		TROO UUUUUUUUUUUU 2 A_FadeOut(0.1)
 		stop
+
+       XDeathNashgore:
+         TNT1 A 0
+         TNT1 A 0 A_SpawnDebris("NashGore_Gib9",0)
+         TNT1 A 0 A_SpawnDebris("NashGore_Gib10",0)
+         TNT1 AA 0 A_SpawnDebris("NashGore_Gib11",0)
+         TNT1 AA 0 A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+        TROO N 5
+         TNT1 AA 0 A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+        TROO O 5 A_XScream
+         TNT1 AA 0 A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+        TROO P 5
+         TNT1 AA 0 A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+        TROO Q 5 A_NoBlocking
+                TROO RST 5
+        TROO U 3000
+	TROO UUUUUUUUUUUU 2 A_FadeOut(0.1)
+        stop
 
       Pain.MightyBoot:
         TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
