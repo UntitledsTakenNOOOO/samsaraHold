@@ -47,7 +47,8 @@ damagefactor "MarineAlly", 0
     DamageFactor "MightyBoot", 1.5
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.1
-	
+    DamageFactor "Kamikaze", 0
+    DamageFactor "ZorchKamikaze", 0
 	DamageFactor "EnemyInfightDamage", 0.0
     
     States

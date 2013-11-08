@@ -42,6 +42,8 @@ actor QuakePlayer: PlayerPawn
     DamageFactor "MightyBoot", 1.5
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.1
+    DamageFactor "Kamikaze", 0
+    DamageFactor "ZorchKamikaze", 0
     
         damagefactor "NotQuadded", 0.5
 	damagefactor "MarineAlly", 0

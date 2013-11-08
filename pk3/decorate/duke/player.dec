@@ -82,6 +82,8 @@ actor DukePlayer : PlayerPawn
         damagefactor "STBossFactor", 1.1
 
 	DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "Kamikaze", 0
+    DamageFactor "ZorchKamikaze", 0
 	
 	DamageFactor "DukeItOutDamage", 1.0 //Come on. It's HIS map.
 

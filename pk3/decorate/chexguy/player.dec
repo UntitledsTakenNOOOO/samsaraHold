@@ -80,8 +80,8 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "QuakeFire", 0.8 
 	DamageFactor "FireExplosive", 0.8
 
-    DamageFactor "Kamikaze", 1.33333333333
-    DamageFactor "ZorchKamikaze", 1.33333333333
+    DamageFactor "Kamikaze", 0
+    DamageFactor "ZorchKamikaze", 0
 
     damagefactor "Lightning", 0.8
     damagefactor "RedBlast", 0.8

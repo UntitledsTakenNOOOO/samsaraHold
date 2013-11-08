@@ -26,8 +26,8 @@ damagefactor "MarineAlly", 0
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
     DamageFactor "MightyBoot", 1.5
-    DamageFactor "Kamikaze", 4.0
-    DamageFactor "ZorchKamikaze", 4.0
+    DamageFactor "Kamikaze", 0
+    DamageFactor "ZorchKamikaze", 0
 	DamageFactor "DukeExplosive", 1.5
 	DamageFactor "EnemyInfightDamage", 0.0
     Player.ColorRange 192, 207
