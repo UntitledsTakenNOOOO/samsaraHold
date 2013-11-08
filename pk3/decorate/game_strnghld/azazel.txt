@@ -27,7 +27,7 @@ BloodType "SamsaraBloodyHellBlood"
     DeathSound "Goat/death"
     ActiveSound "diablo2/goatman/idle"
     MeleeSound "baron/melee"
-    Obituary "\c[S3]%o \c[S3]was slaughtered by Azazel."
+    Obituary "\c[B4]%o \c[B4]was slaughtered by Azazel."
     MinMissileChance 20
     MeleeDamage 8
     States

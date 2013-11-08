@@ -29,14 +29,17 @@ ACTOR InfernoDemon 12345
   +NOICEDEATH
   damagefactor "Fire", 0.25
   damagefactor "FireExplosive", 0.25
+  damagefactor "DukeExplosive", 0.8
+  damagefactor "Explosive", 0.8
   damagefactor "WolfenFlamethrower", 0.375
+  damagefactor "QuakeFire", 0.375 
   damagefactor "Inferno", 0
   MinMissileChance 128
   SeeSound "Infdem/see"
   PainSound "Infdem/pain"
   DeathSound "Infdem/death"
   ActiveSound "Infdem/active"
-  Obituary "\c[V7]%o \c[V7]was sent to burn in the fires of hell for an eternity."
+  Obituary "\c[G5]%o \c[G5]was sent to burn in the fires of hell for an eternity."
 
   States
   {

@@ -215,7 +215,7 @@ ACTOR MiniSpider 22290
    deathsound "littlespider/death"
    activesound "littlespider/sight"
    meleesound "littlespider/pain"
-   OBITUARY "\c[Y0]%o \c[Y0]succumbed to the swarm."
+   OBITUARY "\c[Y3]%o \c[Y3]succumbed to the swarm."
    Speed 10
    Damage 0
    MeleeDamage 1
@@ -268,7 +268,7 @@ ACTOR LargeSpider 22291
    deathsound "littlespider/death"
    activesound "littlespider/sight"
    meleesound "littlespider/pain"
-   OBITUARY "\c[Y3]%o \c[Y3]succumbed to the swarm."
+   OBITUARY "\c[Y0]%o \c[Y0]succumbed to the swarm."
    Speed 20
    Damage 0
    MeleeDamage 2
@@ -632,8 +632,8 @@ actor Vulgar : DoomImp 30127
   DamageFactor "DragonClaw", 1.5
   SpawnID 180
   BloodType "SamsaraBloodyHellBlood"
-  OBITUARY "\c[G4]%o \c[G4]was poisoned by a vulgar."
-  hitobituary "\c[U1]A vulgar had %o \c[U1]for lunch."
+  OBITUARY "\c[U1]%o \c[U1]was poisoned by a vulgar."
+  hitobituary "\c[G4]A vulgar had %o \c[G4]for lunch."
   health 100
   radius 20
   height 56
@@ -823,7 +823,7 @@ Speed 10
 Damage 2
 MeleeDamage 1
 RENDERSTYLE ADD
-OBITUARY "A wraith had its way with %o."
+OBITUARY "\c[G1]A wraith had its way with %o\c[G1]."
 HITOBITUARY "\c[G1]%o \c[G1]got bitten by a wraith too many times."
 Alpha 0.67
 PainChance 64

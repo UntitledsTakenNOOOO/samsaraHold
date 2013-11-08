@@ -1187,7 +1187,7 @@ ACTOR STBossSkeleton 32766
 
 ACTOR STBossSkeleton2 : STBossSkeleton
 {
-	obituary "\c[U4]%o \c[U4]got whalloped by a skeleton."
+	obituary "\c[Q2]%o \c[Q2]got whalloped by a skeleton."
 	PainChance 192
 	PainChance "Animate", 0
 	DamageFactor "Animate", 0
@@ -1961,7 +1961,7 @@ ACTOR SpiritKnight : BaronOfHell
     Alpha 0.6
     RenderStyle Translucent
 	MissileType SpiritBall
-	Obituary "\c[G3]%o's \c[G3]existence has ended."
+	Obituary "\c[S3]%o's \c[S3]existence has ended."
     States
     {
 	Spawn:

@@ -18,7 +18,7 @@ scale 0.75
 painchance 15
 damage 20
 Obituary "\c[V4]%o \c[V4]was sacrificed to Moloch."
-HitObituary "\c[Y0]%o \c[Y0]got shredded by Moloch's claws."
+HitObituary "\c[V4]%o \c[V4]got shredded by Moloch's claws."
 seesound "moloch/sight"
 painsound "moloch/pain"
 deathsound "moloch/death"

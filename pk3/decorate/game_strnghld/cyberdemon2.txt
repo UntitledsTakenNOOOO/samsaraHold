@@ -770,7 +770,7 @@ ACTOR ChaosCyber 32755
 {
 	//$Category Stronghold_Monsters
   Translation "48:83=176:191, 48:63=176:191, 128:155=176:191, 28:63=176:191, 162:223=176:191, 268:224=176:191, 268:239=176:191"
-  OBITUARY "\c[S5]%o \c[S5]met an irritating cyberdemon."
+  OBITUARY "\c[E9]%o \c[E9]met an irritating cyberdemon."
   Health 4000
   Radius 26
   Height 55
