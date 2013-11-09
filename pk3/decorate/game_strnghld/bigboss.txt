@@ -20,13 +20,8 @@ ACTOR STBoss 32767
 	DamageFactor "HexenIce", 2.5
 	DamageFactor "DukeIce", 2.5
 	DamageFactor "WraithVerge", 2
-	damagefactor "bossfactor", 0.5
-	damagefactor "corefriendly", 0
-	damagefactor "railgun", 0
 	DamageFactor "CorvusHellStaff", 1.4
 	DamageFactor "WolfenFlameThrower", 1.25
-	DamageFactor "Kamikaze", 0.1 //Nice Try.
-	damagefactor "ZorchKamikaze", 0.1
 	BloodType "SamsaraBloodyHellBlood"
 	PainChance "MightyBoot", 256
 	//DropItem "SpiritBoss"
@@ -2018,7 +2013,7 @@ ACTOR SpiritCaller
 
 ACTOR SpiritBoss 32765
 {
-    Health 50000
+    Health 25000
     Translation ice
     Mass 100000
     Radius 48
@@ -2039,6 +2034,8 @@ ACTOR SpiritBoss 32765
 	damagefactor "bossfactor", 0.01
 	damagefactor "corefriendly", 0
 	damagefactor "railgun", 0
+	damagefactor "Kamikaze", 0
+	damagefactor "ZorchKamikaze", 0
 	Monster
 	+FLOORCLIP
 	//A couple boss flags
@@ -2135,12 +2132,12 @@ ACTOR SpiritBoss 32765
 ACTOR SpiritNuke
 {
         DamageType "STBoss"
-	Speed 40
+	Speed 30
 	Damage 32
 	Mass 5
 	Radius 20
 	Height 20
-	FastSpeed 50
+	FastSpeed 40
 	Projectile
 	Scale 4.0
 	Translation "STBoss"
