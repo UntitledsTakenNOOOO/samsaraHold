@@ -24,7 +24,7 @@ ACTOR PhaseImp 24105
     MeleeSound "neodarkimp/melee"
     Obituary "%o was incinerated by a phase imp."
     HitObituary "%o was scratched by a phase imp."
-    MissileType DarkImpBall
+    MissileType PhaseImpBall
     States
     {
     Spawn:
@@ -151,12 +151,12 @@ ACTOR PhaseImp 24105
     }
 }
 
-ACTOR DarkImpBall
+ACTOR PhaseImpBall
 {
     Radius 6
     Height 8
     Speed 10
-    Damage (Random(1,3)*Random(3,9))
+    Damage (Random(1,3)*Random(3,9)) //3-27. Huh. Odd damage formula.
     +THRUGHOST
     DamageType "Normal"
     PROJECTILE
