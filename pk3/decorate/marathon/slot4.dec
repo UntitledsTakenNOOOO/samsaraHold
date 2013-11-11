@@ -352,6 +352,7 @@ actor MarathonGrenade
     +LOWGRAVITY
     +FORCERADIUSDMG
     +BLOODLESSIMPACT
+    +EXTREMEDEATH
     //+GRENADETRAIL
     States
     {
