@@ -1,5 +1,8 @@
 [enu default]
 
+// QUIT MESSAGES
+// =============
+
 //Quake
 QUITMSG = "Are you gonna quit this game\njust like everything else?"; // Quake quit message
 //Doom
@@ -223,7 +226,7 @@ SAMSARA_POWERUP_INVIS = "Picked up Partial Invisibility.";
 SAMSARA_POWERUP_INVULN = "Picked up Invulnerability.";
 SAMSARA_POWERUP_RADSUIT = "Picked up Environmental Protection.";
 SAMSARA_POWERUP_INFRARED = "Picked up Light Amplification.";
-SAMSARA_HEALPACK_HERETIC = "Picked up 4 Health.";
+SAMSARA_HEALPACK_HERETIC = "Picked up 5 Health.";
 SAMSARA_ARMORSCRAP_HERETIC = "Picked up 5 Armor.";
 SAMSARA_HEALPACK_TI = "Picked up 2 Health.";
 SAMSARA_ARMORSCRAP_TI = "Picked up 2 Armor.";
