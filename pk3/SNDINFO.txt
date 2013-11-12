@@ -47,6 +47,37 @@ blackbirdtrustnoone			VOC14 // Haaaaack.
 samsara/shieldhit            sounds/samsara/shieldhit.wav
 marathon/shieldhit           sounds/samsara/shieldhit2.wav
 
+
+$random brutal/splatter { bsplatter1 bsplatter2 bsplatter3 bsplatter4 } // ORIGINAL SOUND PLZ DONUT STEELE
+bsplatter1                   BRTSPLT1
+bsplatter2                   BRTSPLT2
+bsplatter3                   BRTSPLT3
+bsplatter4                   BRTSPLT4
+
+$random brutal/bounce { bbounce1 bbounce2 bbounce3 bbounce4 bbounce5 } // Taken from Painkiller
+bbounce1                     BRTBNCE1
+bbounce2                     BRTBNCE2
+bbounce3                     BRTBNCE3
+bbounce4                     BRTBNCE4
+bbounce5                     BRTBNCE5
+
+$random brutal/splash { bsplash1 bsplash2 bsplash3 bsplash4 bsplash5 }
+bsplash1                     BRTSPLS1 // By Bloax
+bsplash2                     BRTSPLS2 // From Painkiller
+bsplash3                     BRTSPLS3 // From Painkiller
+bsplash4                     BRTSPLS4 // From Unreal 2k4
+bsplash5                     BRTSPLS5 // From Unreal 2k4
+
+$random brutal/thud { bthud1 bthud2 } // Taken from Painkiller
+bthud1                       BRTTHUD1
+bthud2                       BRTTHUD2
+
+$random brutal/death { bdeth1 bdeth2 bdeth3 bdeth4 } // Mixed from various Freesfx.co.uk bone-breaking sounds and Painkiller/Quake gib sounds.
+bdeth1                       BRTDETH1
+bdeth2                       BRTDETH2
+bdeth3                       BRTDETH3
+bdeth4                       BRTDETH4
+
 ////////////////////
 // Ally sounds for Strife's beacons
 ////////////////////
@@ -93,6 +124,14 @@ mummy/death			sounds/allies/mumdth.wav
 mummy/active			sounds/allies/mumsit.wav
 mummy/head			sounds/allies/mumhed.wav
 
+ironlich/sight			sounds/allies/hedsit.lmp
+ironlich/active			sounds/allies/hedact.lmp
+ironlich/death			sounds/allies/heddth.lmp
+ironlich/pain			sounds/allies/hedpai.lmp
+ironlich/attack1		sounds/allies/hedat1.lmp
+ironlich/attack2		sounds/allies/hedat2.lmp
+ironlich/attack3		sounds/allies/hedat3.lmp
+
 // Nazi
 friendlynazi/sight		sounds/allies/nazisit.ogg
 friendlynazi/pain		sounds/allies/nazipain.ogg
@@ -107,12 +146,23 @@ nazi/die5			sounds/allies/nazidie5.ogg
 nazi/die6			sounds/allies/nazidie6.ogg
 nazi/die7			sounds/allies/nazidie7.ogg
 
+blue/sight			sounds/allies/dsblusit.wav
+blue/death			sounds/allies/dsbludth.wav
+
 // Afrit
 FireDemonActive         	sounds/allies/fired5.wav
 FireDemonPain           	sounds/allies/fired2.wav
 FireDemonAttack         	sounds/allies/spit6.wav
 FireDemonMissileHit     	sounds/allies/firedhit.wav
 FireDemonDeath          	sounds/allies/fired3.wav
+
+CentaurSight            	sounds/allies/taur1.lmp
+CentaurActive           	sounds/allies/taur2.lmp
+CentaurPain             	sounds/allies/taur4.lmp
+CentaurAttack           	sounds/allies/centhit2.lmp
+CentaurDeath            	sounds/allies/cntdth1.lmp
+CentaurLeaderAttack     	sounds/allies/cntshld4.lmp
+CentaurMissileExplode   	sounds/allies/impact3.lmp
 
 // Assault Trooper
 dukealien/active1		sounds/allies/altract1.wav
@@ -130,6 +180,12 @@ pfhor/active			sounds/allies/PHFITACT.wav
 pfhor/burn				sounds/allies/PHFITTOS.wav
 $Random pfhor/shoot {puff/hit1 puff/hit2 puff/hit3}
 
+hunter/shoot	sounds/allies/DSHNTSHT.wav
+hunter/armor	sounds/allies/DSHNTARM.wav
+hunter/death	sounds/allies/DSHNTDIE.wav
+hunter/explode	sounds/allies/DSHNTXPL.wav
+hunter/hit		sounds/allies/DSHNTHIT.wav
+
 // Grunt
 friendlygrunt/sight		sounds/allies/GRNTSIT.wav
 $random friendlygrunt/pain	{ grunt/pain1 grunt/pain2 }
@@ -137,6 +193,14 @@ friendlygrunt/death		sounds/allies/GRNTDETH.wav
 friendlygrunt/active	sounds/allies/GRNTIDLE.wav
 grunt/pain1				sounds/allies/GRNTPN1.wav
 grunt/pain2				sounds/allies/GRNTPN2.wav
+
+Vore/Sight	sounds/allies/VORESIGH.ogg
+Vore/Active	sounds/allies/VOREACTI.ogg
+Vore/Attack	sounds/allies/VOREATTK.ogg
+Vore/Throw	sounds/allies/VORETHRW.ogg
+Vore/Hit	sounds/allies/dsbarexp.ogg
+Vore/Pain	sounds/allies/VOREPAIN.ogg
+Vore/Death	sounds/allies/VOREDEAT.ogg
 
 ////////////////////
 // Doomguy sounds
@@ -1297,3 +1361,6 @@ quake/impalsplod                sounds/ranger/impex.wav
 quake/impalefire                sounds/ranger/impfire.wav
 quake/impaload                  sounds/ranger/impload.wav
 quake/impalwall                 sounds/ranger/impwall.wav
+
+satyr/sight			DSSATSIT
+satyr/death			DSSATDTH
