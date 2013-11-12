@@ -3,7 +3,7 @@ actor ZPoisonShroom2 : ZPoisonShroom replaces ZPoisonShroom { +DONTRIP }
 
 actor HexenAmmo12Small : CustomInventory replaces Mana1
 {
-    Inventory.PickupMessage "Picked up 50/20/0/0 of Ammo 1/2/3/4."
+    Inventory.PickupMessage "$SAMSARA_CLIPSHELL_HEXEN"
     Inventory.PickupSound "ammogem/bulletsmall"
     +FLOATBOB
     States
@@ -60,7 +60,7 @@ actor HexenAmmo12Small : CustomInventory replaces Mana1
 
 actor HexenAmmo34Small : CustomInventory replaces Mana2
 {
-    Inventory.PickupMessage "Picked up 0/0/15/100 of Ammo 1/2/3/4."
+    Inventory.PickupMessage "$SAMSARA_ROCKETCELL_HEXEN"
     Inventory.PickupSound "ammogem/plasmasmall"
     +FLOATBOB
     +DROPPED
@@ -112,7 +112,7 @@ actor HexenAmmo34Small : CustomInventory replaces Mana2
 
 actor HexenEverythingAmmo : CustomInventory replaces Mana3
 {
-    Inventory.PickupMessage "Picked up 25/20/10/100 of ammo 1/2/3/4."
+    Inventory.PickupMessage "$SAMSARA_ALLAMMO_HEXEN"
     Inventory.PickupSound "ammo/mana"
     -INVENTORY.ALWAYSPICKUP
     +FLOATBOB

@@ -342,7 +342,7 @@ actor PowerLesserTome : PowerDamage
 // Dropped ammo replacement!
 actor GoldWandAmmo2 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 3 rounds of Ammo 1."
+    Inventory.PickupMessage "$SAMSARA_CLIPDROP_HERETIC_1"
     Inventory.PickupSound "ammo/bulletsmall"
     States
     {
@@ -370,7 +370,7 @@ actor GoldWandAmmo2 : CustomInventory
 
 actor BlasterAmmo2 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 10 rounds of Ammo 1."
+    Inventory.PickupMessage "$SAMSARA_CLIPDROP_HERETIC_2"
     Inventory.PickupSound "ammo/bulletsmall"
     States
     {
@@ -399,7 +399,7 @@ actor BlasterAmmo2 : CustomInventory
 actor CrossbowAmmo2 : CustomInventory//Shell
 {
     //Inventory.Amount 10
-    Inventory.PickupMessage "Picked up 5 rounds of Ammo 2."
+    Inventory.PickupMessage "$SAMSARA_SHELLDROP_HERETIC_1"
     Inventory.PickupSound "ammo/shellsmall"
     States
     {
@@ -423,7 +423,7 @@ actor CrossbowAmmo2 : CustomInventory//Shell
 
       PickupWolfen:
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip",5)
+        TNT1 A 0 A_GiveInventory("Clip",25)
         stop
 
       PickupFail:
@@ -435,7 +435,7 @@ actor CrossbowAmmo2 : CustomInventory//Shell
 actor CrossbowAmmo3 : CustomInventory//Shell
 {
     //Inventory.Amount 20
-    Inventory.PickupMessage "Picked up 10 rounds of Ammo 2."
+    Inventory.PickupMessage "$SAMSARA_SHELLDROP_HERETIC_2"
     Inventory.PickupSound "ammo/shellsmall"
     States
     {
@@ -459,7 +459,7 @@ actor CrossbowAmmo3 : CustomInventory//Shell
 
       PickupWolfen:
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip",10)
+        TNT1 A 0 A_GiveInventory("Clip",50)
         stop
 
       PickupFail:
@@ -470,7 +470,7 @@ actor CrossbowAmmo3 : CustomInventory//Shell
 
 actor PhoenixRodAmmo2 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 5 rounds of Ammo 3."
+    Inventory.PickupMessage "$SAMSARA_ROCKETDROP_HERETIC_1"
     Inventory.PickupSound "ammo/rocketsmall"
     States
     {
@@ -504,7 +504,7 @@ actor PhoenixRodAmmo2 : CustomInventory
 
 actor PhoenixRodAmmo3 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 10 rounds of Ammo 3."
+    Inventory.PickupMessage "$SAMSARA_ROCKETDROP_HERETIC_2"
     Inventory.PickupSound "ammo/rocketsmall"
     States
     {
@@ -538,7 +538,7 @@ actor PhoenixRodAmmo3 : CustomInventory
 
 actor SkullRodAmmo2 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 20 rounds of Ammo 4."
+    Inventory.PickupMessage "$SAMSARA_CELLDROP_HERETIC"
     Inventory.PickupSound "ammo/plasmasmall"
     States
     {
