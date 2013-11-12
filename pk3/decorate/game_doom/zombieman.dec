@@ -195,7 +195,7 @@ actor Zombieman2 : Zombieman replaces ZombiemanStun
         POSS O 5 A_NoBlocking
          TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
         POSS PQRST 5
-        POSS U -1
+        POSS U 4200
         stop
                 
       DeathBrutal:
@@ -243,7 +243,7 @@ actor Zombieman2 : Zombieman replaces ZombiemanStun
         POSS I 5 A_Scream
         POSS J 5 A_NoBlocking
         POSS K 5
-        POSS L -1
+        POSS L 2100
         Stop
                 
          XDeathHappyfun:
@@ -260,7 +260,7 @@ actor Zombieman2 : Zombieman replaces ZombiemanStun
                 TNT1 A 0 A_NoBlocking
         POSS O 5 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
         POSS PQRST 5 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
-                POSS U -1
+                POSS U 2100
         stop
     }
 }
