@@ -11,6 +11,8 @@ DamageFactor "HexenIce", 2.25
 DamageFactor "DukeIce", 2.25
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
+painchance "HexenIce", 20
+painchance "DukeIce", 20
 BloodType "SamsaraBloodyHellBlood"
 Obituary "\c[C3]%o \c[C3]was set ablaze by a Diabloist."
 Health 1400

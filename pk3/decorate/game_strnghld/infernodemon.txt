@@ -34,6 +34,8 @@ ACTOR InfernoDemon 12345
   damagefactor "WolfenFlamethrower", 0.375
   damagefactor "QuakeFire", 0.375 
   damagefactor "Inferno", 0
+  painchance "HexenIce", 16
+  painchance "DukeIce", 16
   MinMissileChance 128
   SeeSound "Infdem/see"
   PainSound "Infdem/pain"
