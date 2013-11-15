@@ -88,9 +88,10 @@ actor Zombieman2 : Zombieman replaces ZombiemanStun
         TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
 
 	XDeath:
-        	TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_GiveToTarget("AwardItem", 3)
 		TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,10)
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+		TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
 		POSS M 5
 		POSS N 5 A_XScream
 		POSS O 5 A_NoBlocking
@@ -183,7 +184,7 @@ actor Zombieman2 : Zombieman replaces ZombiemanStun
         stop
                 
          XDeathNashgore:
-         Goto Death+1
+         Goto XDeath+1
                 
       DeathBrutal:
          TNT1 A 0

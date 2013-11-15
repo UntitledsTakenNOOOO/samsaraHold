@@ -170,7 +170,7 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuyStun
         stop
                 
          XDeathNashgore:
-         Goto Death+1
+         Goto XDeath+1
          
       DeathBrutal:
          TNT1 A 0
