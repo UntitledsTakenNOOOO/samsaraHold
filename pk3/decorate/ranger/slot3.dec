@@ -87,9 +87,9 @@ actor "Grenade Launcher": InstantSwitchWeapon
       Fire2:
         TNT1 A 0 A_TakeInventory("UsingMultiNades")
         TNT1 A 0 A_TakeInventory("UsingDoEAmmo")
-        QGRL B 2 bright 
-        QGRL C 3 
-        QGRL D 4 
+        QGRL B 2 bright
+        QGRL C 3
+        QGRL D 4
         QGRL E 4
         QGRL F 3
         QGRL G 3
@@ -136,9 +136,9 @@ actor "Grenade Launcher": InstantSwitchWeapon
       AltFire2:
         TNT1 A 0 A_GiveInventory("UsingMultiNades")
         TNT1 A 0 A_GiveInventory("UsingDoEAmmo")
-        QMGL B 2 bright 
-        QMGL C 3 
-        QMGL D 4 
+        QMGL B 2 bright
+        QMGL C 3
+        QMGL D 4
         QMGL E 4
         QMGL F 3
         QMGL G 3
@@ -149,6 +149,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto MultiReady
         
       AltFire:
+         TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"Ready")
         TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"Swap2")
         TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
         TNT1 A 0 A_GiveInventory("UsingMultiNades",1)
@@ -170,19 +171,19 @@ actor "Grenade Launcher": InstantSwitchWeapon
       DeselectShit:
         TNT1 A 0 A_JumpIfInventory("Thunderbolt",1,"ConsiderTB")
         Consider6:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon5",1,"ConsiderQRL")
-	  Consider5:
-		//TNT1 A 0 A_JumpIfInventory("GotWeapon3",1,"ConsiderQGL")
-	  Consider4:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon6",1,"ConsiderSNG")
-	  Consider3:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon4",1,"ConsiderNG")
-	  Consider2:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon2",1,"ConsiderDSG")
-	  Consider1:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"ConsiderLasCan")
-	  Consider0:
-		QGRL A 1 A_SelectWeapon("Single Shotgun")
+                TNT1 A 0 A_JumpIfInventory("GotWeapon5",1,"ConsiderQRL")
+         Consider5:
+                //TNT1 A 0 A_JumpIfInventory("GotWeapon3",1,"ConsiderQGL")
+         Consider4:
+                TNT1 A 0 A_JumpIfInventory("GotWeapon6",1,"ConsiderSNG")
+         Consider3:
+                TNT1 A 0 A_JumpIfInventory("GotWeapon4",1,"ConsiderNG")
+         Consider2:
+                TNT1 A 0 A_JumpIfInventory("GotWeapon2",1,"ConsiderDSG")
+         Consider1:
+                TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"ConsiderLasCan")
+         Consider0:
+                QGRL A 1 A_SelectWeapon("Single Shotgun")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
         goto Deselect
@@ -222,7 +223,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto Deselect
 
       SelectQRL:
-        TNT1 A 0 A_SelectWeapon("  Rocket Launcher  ")
+        TNT1 A 0 A_SelectWeapon(" Rocket Launcher ")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
         goto Deselect
@@ -267,11 +268,11 @@ actor "Grenade Launcher": InstantSwitchWeapon
 actor "Spectral GL": "Grenade Launcher"
 {
     Weapon.AmmoType ""
-    Weapon.AmmoUse  0
+    Weapon.AmmoUse 0
     Weapon.AmmoGive 0
     
     Weapon.AmmoType2 ""
-    Weapon.AmmoUse2  0
+    Weapon.AmmoUse2 0
     Weapon.AmmoGive2 0
     
     Weapon.SisterWeapon "Grenade Launcher"
@@ -333,13 +334,13 @@ actor QuakeGrenade
     
     SeeSound "quakeweps/grenadebounce"
     
-    Obituary "%k \csfed\c- %o \csa pineapple.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT3_1"
     
     States
     {
       Spawn:
         QGRN A 0
-        QGRN A 0 A_Recoil(-1)  // to stop the "freeze in midair" bug from happening
+        QGRN A 0 A_Recoil(-1) // to stop the "freeze in midair" bug from happening
         QGRN A 0 A_PlaySound("quakeweps/blank", CHAN_VOICE)
         goto SpawnLoop
         
@@ -420,7 +421,7 @@ actor QuakeGrenadeCoop: QuakeGrenade
 actor QuakeGrenadeQuad: QuakeGrenade
 {
     DamageType "NotQuadded"
-
+    
     States
     {
       Death:
@@ -437,7 +438,6 @@ actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
     
     Radius 4
     Height 4
-    
     Damage (160)
 }
 
@@ -446,15 +446,15 @@ actor SpectralGrenade: QuakeGrenadeCoopQuad { DamageType "SpectralNoQuad" }
 actor QuakeClusterGrenade: QuakeGrenade
 {
     Translation "80:111=48:79"
-    Obituary "%k \csfed\c- %o \csa cluster of pineapples.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT3_2"
     
     ReactionTime 46
     
     States
     {
       Death:
-        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0,   0, 6, 70)
-        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0,  72, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0, 0, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0, 72, 6, 70)
         MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0, 144, 6, 70)
         MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0, 216, 6, 70)
         MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0, 288, 6, 70)
@@ -470,14 +470,11 @@ actor QuakeClusterGrnCoop: QuakeClusterGrenade
     
     Damage (40)
     
-    Radius 4
-    Height 4
-    
     States
     {
       Death:
-        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0,   0, 6, 70)
-        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0,  72, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0, 0, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0, 72, 6, 70)
         MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0, 144, 6, 70)
         MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0, 216, 6, 70)
         MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0, 288, 6, 70)
@@ -493,8 +490,8 @@ actor QuadClusterGrenade: QuakeClusterGrenade
     States
     {
       Death:
-        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0,   0, 6, random(60,80))
-        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0,  72, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 0, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 72, 6, random(60,80))
         MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 144, 6, random(60,80))
         MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 216, 6, random(60,80))
         MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 288, 6, random(60,80))
@@ -511,14 +508,11 @@ actor QuadClusterGrnCoop: QuadClusterGrenade
     DamageType "NotQuadded"
     Damage (160)
     
-    Radius 4
-    Height 4
-    
     States
     {
       Death:
-        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0,   0, 6, random(60,80))
-        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0,  72, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 0, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 72, 6, random(60,80))
         MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 144, 6, random(60,80))
         MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 216, 6, random(60,80))
         MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 288, 6, random(60,80))
@@ -533,12 +527,12 @@ actor QuakeTinyGrenade: QuakeGrenade
     Scale 0.1625
     ReactionTime 46
     
-    Radius 8
-    Height 8
+    Radius 2
+    Height 2
     
     SeeSound "quakeweps/grenadebounce_quiet"
     
-    Obituary "%k \csfed\c- %o \csa cluster of pineapples.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT3_2"
     
     States
     {
@@ -569,9 +563,8 @@ actor QuakeTinyGrnCoop: QuakeTinyGrenade
     +THRUSPECIES
     Species "Player"
     
-    Radius 4
-    Height 4
-    
+    Radius 2
+    Height 2
     Damage (8)
 }
 
@@ -592,7 +585,6 @@ actor QuadTinyGrnCoop: QuadTinyGrenade
 {
     +THRUSPECIES
     Species "Player"
-    
     Damage (32)
 }
 
@@ -603,8 +595,8 @@ actor SpectralClusterGrenade: QuadClusterGrnCoop
     States
     {
       Death:
-        MISL B 0 A_CustomMissile("SpectralTinyGrenade", 0,0,   0, 6, random(60,80))
-        MISL B 0 A_CustomMissile("SpectralTinyGrenade", 0,0,  72, 6, random(60,80))
+        MISL B 0 A_CustomMissile("SpectralTinyGrenade", 0,0, 0, 6, random(60,80))
+        MISL B 0 A_CustomMissile("SpectralTinyGrenade", 0,0, 72, 6, random(60,80))
         MISL B 0 A_CustomMissile("SpectralTinyGrenade", 0,0, 144, 6, random(60,80))
         MISL B 0 A_CustomMissile("SpectralTinyGrenade", 0,0, 216, 6, random(60,80))
         MISL B 0 A_CustomMissile("SpectralTinyGrenade", 0,0, 288, 6, random(60,80))
