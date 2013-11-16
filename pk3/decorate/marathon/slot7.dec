@@ -1371,7 +1371,6 @@ actor WMCRailLevel3Baby: FastProjectile
         
       Death:
         TNT1 A 0 A_Explode(32,96)
-        TNT1 A 0 A_Explode(32,128)
         TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
         
       Spawn1:
