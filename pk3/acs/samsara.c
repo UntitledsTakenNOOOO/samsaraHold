@@ -393,7 +393,6 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is
         break;
      }  
     SetResultValue(result);
-    }
 }
 
 script SAMSARA_GETSETTINGS (void) net
