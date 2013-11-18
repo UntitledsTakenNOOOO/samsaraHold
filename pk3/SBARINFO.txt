@@ -123,7 +123,7 @@ StatusBar Fullscreen
             DrawImage AmmoIcon2, 228, 192, Center;
         }
 
-        IsSelected " Rocket Launcher ", "Grenade Launcher"
+        IsSelected "  Rocket Launcher  ", "Grenade Launcher"
         {
             DrawImage "HUDBAR", 250, 192;
             DrawBar "HAMBAR", "HEMPTY", MultiRocketAmmo, Horizontal, Reverse, 251, 193;
