@@ -175,11 +175,11 @@ actor FriendlyNitrogolem : MummyLeader2
         MUMM X 5 A_FaceTarget
         MUMM Y 5 Bright A_FaceTarget
         MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*3, "mummy/attack2")
+        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
         MUMM X 5 A_FaceTarget
         MUMM Y 5 Bright A_FaceTarget
         MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*3, "mummy/attack2")
+        MUMM Y 5 Bright A_CustomComboAttack("FriendlyNitrogolemShot", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
         Goto See
 
       Raise:
@@ -216,6 +216,7 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
     DeathSound "friendlyflemoid/death"
     ActiveSound "friendlyflemoid/active"
 
+    	RadiusDamageFactor 0.8
 		damagefactor "Normal", 0.8
 
         damagefactor "Zorch", 0
@@ -1290,7 +1291,8 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
     DeathSound "friendlyflemoid/death"
     ActiveSound "friendlyflemoid/active"
 
-		damagefactor "Normal", 0.9
+		damagefactor "Normal", 0.75
+		RadiusDamageFactor 0.9
 		
         damagefactor "Zorch", 0
         damagefactor "PoisonCloud", 0
@@ -1435,7 +1437,7 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
     }
 }
 
-actor FriendlyFlemBall2 : BipedicusBallV3
+actor FriendlyFlemBall2 : SnotfolusBall
 {
     +THRUSPECIES
     Scale 2

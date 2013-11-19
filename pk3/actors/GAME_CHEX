@@ -42,22 +42,22 @@ actor FlemoidGib
     {
       Spawn:
         TNT1 A 0
-        FBLD A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD A 1 
-        FBLD A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD A 1
-        FBLD B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD B 1
-        FBLD B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD B 1
-        FBLD C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD C 1
-        FBLD C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD C 1
-        FBLD D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD D 1
-        FBLD D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD D 1
+        FLBL A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL A 1 
+        FLBL A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL A 1
+        FLBL B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL B 1
+        FLBL B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL B 1
+        FLBL C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL C 1
+        FLBL C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL C 1
+        FLBL D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL D 1
+        FLBL D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL D 1
         loop
 
       Crash:
@@ -2568,8 +2568,8 @@ ACTOR Flembomination 7
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-10,10),random(-55,55),random(16,56),random(-2,2),random(-2,2),random(5,20))
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-10,10),random(-55,55),random(16,56),random(-2,2),random(-2,2),random(5,25))
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-10,10),random(-55,55),random(16,56),random(-2,2),random(-2,2),random(5,20))
-		FLBD VWXY 5 A_NoBlocking
-		FLBD Z -1 A_BossDeath
+		FLBL VWXY 5 A_NoBlocking
+		FLBL Z -1 A_BossDeath
 		stop
 	Death.Zorch:
 	Death.ZorchPistol:
