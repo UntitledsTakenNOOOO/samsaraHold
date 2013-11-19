@@ -5,7 +5,6 @@ actor Revenant2 : Revenant replaces RevenantStun
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
 	painchance "Stunner", 160
-	BloodType "SamsaraBloodyHellBlood"
     +NOTDMATCH
     +NOICEDEATH
     states

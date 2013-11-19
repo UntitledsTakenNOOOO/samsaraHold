@@ -6,7 +6,6 @@ ACTOR FusionSpider 20110
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
 DamageFactor "MarathonFusion", 2.25
-BloodType "SamsaraBloodyHellBlood"
   spawnid 247
   OBITUARY "%o was vaporized by a fusion cannon arachnotron." 
   Health 600

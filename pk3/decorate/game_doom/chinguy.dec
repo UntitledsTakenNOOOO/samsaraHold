@@ -17,7 +17,6 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuyStun
     +THRUGHOST
     +NOTDMATCH
     +NOICEDEATH
-    BloodType "SamsaraBloodyHellBlood"
     dropitem "ChaingunDrop"
     states
     {

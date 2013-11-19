@@ -7,7 +7,6 @@ actor DoomImp2 : DoomImp replaces DoomImpStun
     DamageFactor "DragonClaw", 1.5
     DamageFactor "HexenIce", 1.25
     DamageFactor "DukeIce", 1.25
-    BloodType "SamsaraBloodyHellBlood"
     PainChance "MightyBoot", 255
     states
     {

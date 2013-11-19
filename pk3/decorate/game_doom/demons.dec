@@ -4,7 +4,6 @@ actor DoomDemon2 : Demon replaces DemonStun
     DamageFactor "DragonClaw", 1.5
 	painchance "Stunner", 255
     PainChance "MightyBoot", 255
-    BloodType "SamsaraBloodyHellBlood"
     +NOTDMATCH
     +NOICEDEATH
     states

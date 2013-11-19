@@ -6,7 +6,6 @@ actor SpiderMastermind2 : Spidermastermind replaces SpidermastermindStun
     DamageFactor "WMCNade", 0.75
 	DamageFactor "CorvusHellstaffTomed", 0.2
 	painchance "Stunner", 96
-	BloodType "SamsaraBloodyHellBlood"
     Height 96
     Radius 96
     +BOSSDEATH

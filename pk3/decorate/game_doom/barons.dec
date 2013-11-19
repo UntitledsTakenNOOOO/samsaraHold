@@ -5,7 +5,6 @@ actor BaronOfHell2 : BaronOfHell replaces BaronOfHellStun
     DamageFactor "DragonClaw", 1.6
     PainChance "MightyBoot", 255
     BloodColor darkolivegreen
-    BloodType "SamsaraBloodyHellBlood"
     +BOSSDEATH
     +NOTDMATCH
     +NOICEDEATH
@@ -174,7 +173,6 @@ actor Hellknight2 : Hellknight replaces HellknightStun
     DamageFactor "DragonClaw", 1.6
     PainChance "MightyBoot", 255
     BloodColor darkolivegreen
-    BloodType "SamsaraBloodyHellBlood"
     +NOTDMATCH
     +NOICEDEATH
     states

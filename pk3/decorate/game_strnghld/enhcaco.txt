@@ -7,7 +7,6 @@ ACTOR EnhancedCaco 3118
    DamageFactor "DragonClaw", 1.5
    DamageFactor "HexenIce", 1.5
    DamageFactor "DukeIce", 1.5
-   BloodType "SamsaraBloodyHellBlood"
    spawnid 245
    Health 300
    Speed 8

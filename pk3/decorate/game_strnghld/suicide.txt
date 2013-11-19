@@ -11,7 +11,6 @@ actor SuicideBomber 22099
   painchance "MightyBoot", 255
   DamageFactor "CorvusCrossbow", 1.1
   DamageFactor "DragonClaw", 1.5
-  BloodType "SamsaraBloodyHellBlood"
   spawnid 243
   obituary "%o was killed by a crazy suicide bomber."
   health 80

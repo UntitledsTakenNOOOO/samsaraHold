@@ -44,7 +44,6 @@ ACTOR RocketGuy 3202
    painchance "MightyBoot", 255
    DamageFactor "CorvusCrossbow", 1.1
    DamageFactor "DragonClaw", 1.5
-   BloodType "SamsaraBloodyHellBlood"
    spawnid 244
    Health 50
    Radius 20

@@ -14,7 +14,6 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuyStun
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
 	painchance "Stunner", 255
-	BloodType "SamsaraBloodyHellBlood"
     +THRUGHOST
     +NOTDMATCH
     +NOICEDEATH

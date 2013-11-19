@@ -4,7 +4,6 @@ ACTOR NightmareDemon 10100 //NIGHTMARE DEMON
 	painchance "Stunner", 128	
 	DamageFactor "CorvusCrossbow", 1.1
 	DamageFactor "DragonClaw", 1.5
-	BloodType "SamsaraBloodyHellBlood"
 	painchance "MightyBoot", 255
 	SpawnID 233
 	Health 260

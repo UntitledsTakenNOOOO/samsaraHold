@@ -5,7 +5,6 @@ ACTOR PhaseImp 24105
     painchance "MightyBoot", 255
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
-    BloodType "SamsaraBloodyHellBlood"
     SpawnID 232
     Health 150
     Radius 20

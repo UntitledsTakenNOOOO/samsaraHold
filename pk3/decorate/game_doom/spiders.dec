@@ -4,7 +4,6 @@ actor Arachnotron2 : Arachnotron replaces ArachnotronStun
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.25
-    BloodType "SamsaraBloodyHellBlood"
     PainChance "MightyBoot", 255
     +BOSSDEATH
     +NOTDMATCH

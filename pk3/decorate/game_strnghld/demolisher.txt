@@ -22,7 +22,6 @@ DamageFactor "CorvusHellStaff", 0.9
 DamageFactor "WolfenFlamethrower", 0.9
 DamageFactor "DukeIce", 0.9
 DamageFactor "QuakeFire", 0.8
-BloodType "SamsaraBloodyHellBlood"
 spawnid 249
 Obituary "%o felt the power of the Spider-Demolisher."
 Health 6000

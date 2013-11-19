@@ -1,6 +1,5 @@
 actor Archvile2 : Archvile replaces ArchvileStun
 {
-	BloodType "SamsaraBloodyHellBlood"
 	painchance "Stunner", 128
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6

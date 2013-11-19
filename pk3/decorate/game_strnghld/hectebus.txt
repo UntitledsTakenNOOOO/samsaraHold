@@ -3,7 +3,6 @@ Actor Hectebus 22250
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 2.0
-BloodType "SamsaraBloodyHellBlood"
   SpawnID 223
   Health 1500
   Radius 56

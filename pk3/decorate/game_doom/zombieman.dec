@@ -21,7 +21,7 @@ actor Clip2: CustomInventory
       PickupMarathon:
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 1 A_GiveInventory("Clip",10)
+        TNT1 A 1 A_GiveInventory("Clip",8)
         stop
     }
 }
@@ -33,7 +33,6 @@ actor Zombieman2 : Zombieman replaces ZombiemanStun
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
-    BloodType "SamsaraBloodyHellBlood"
     +THRUGHOST
     +NOTDMATCH
     +NOICEDEATH

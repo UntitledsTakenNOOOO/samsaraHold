@@ -5,7 +5,6 @@ ACTOR Apprentice 30000
 	painchance "MightyBoot", 255
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.5
-	BloodType "SamsaraBloodyHellBlood"
     SpawnID 174
     Health 500
     Radius 20
@@ -199,7 +198,6 @@ ACTOR MiniSpider 22290
 	painchance "MightyBoot", 255
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.5
-	BloodType "SamsaraBloodyHellBlood"
    SpawnID 175
    Radius 7
    Height 15
@@ -250,7 +248,6 @@ ACTOR LargeSpider 22291
    painchance "MightyBoot", 255
    DamageFactor "CorvusCrossbow", 1.15
    DamageFactor "DragonClaw", 1.5
-   BloodType "SamsaraBloodyHellBlood"
    SpawnID 176
    Radius 14
    Height 30
@@ -307,7 +304,6 @@ ACTOR Thrall 30119
 //$Category Stronghold_CityOfSilence
 painchance "Stunner", 128
 painchance "MightyBoot", 255
-BloodType "SamsaraBloodyHellBlood"
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.5
 SpawnID 177
@@ -405,7 +401,6 @@ ACTOR Incarnate 30115
 //$Category Stronghold_CityOfSilence
 painchance "Stunner", 128
 painchance "MightyBoot", 255
-BloodType "SamsaraBloodyHellBlood"
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.5
 SpawnID 178
@@ -507,7 +502,6 @@ ACTOR HotDog 30121
 //$Category Stronghold_CityOfSilence
 painchance "Stunner", 128
 painchance "MightyBoot", 255
-BloodType "SamsaraBloodyHellBlood"
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.5
 SpawnID 179
@@ -631,7 +625,6 @@ actor Vulgar : DoomImp 30127
   DamageFactor "CorvusCrossbow", 1.15
   DamageFactor "DragonClaw", 1.5
   SpawnID 180
-  BloodType "SamsaraBloodyHellBlood"
   OBITUARY "\c[U1]%o \c[U1]was poisoned by a vulgar."
   hitobituary "\c[G4]A vulgar had %o \c[G4]for lunch."
   health 100
@@ -882,7 +875,6 @@ ACTOR ChaingunCultist 29011
 //$Category Stronghold_CityOfSilence
   painchance "Stunner", 128
   painchance "MightyBoot", 255
-  BloodType "SamsaraBloodyHellBlood"
   DamageFactor "CorvusCrossbow", 1.15
   DamageFactor "DragonClaw", 1.5
   SpawnID 183
@@ -975,7 +967,6 @@ ACTOR FattyX 25010
   painchance "MightyBoot", 255
   DamageFactor "CorvusCrossbow", 1.15
   DamageFactor "DragonClaw", 1.5
-  BloodType "SamsaraBloodyHellBlood"
   SpawnID 185
   OBITUARY "\c[Q6]%o \c[Q6]couldn't evade the fat zombie's bile."
   HITOBITUARY "\c[Y8]%o \c[Y8]was punched by a fat zombie."
@@ -1111,7 +1102,6 @@ ACTOR ZombieX 31002
   painchance "MightyBoot", 255
   DamageFactor "Mace", 1.15
   DamageFactor "DragonClaw", 1.5
-  BloodType "SamsaraBloodyHellBlood"
   SpawnID 186
   HITOBITUARY "\c[U2]%o \c[U2]was axed by a zombie."
   Health 150

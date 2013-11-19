@@ -10,7 +10,6 @@ DamageFactor "HexenIce", 2.75
 DamageFactor "DukeIce", 2.75
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
-BloodType "SamsaraBloodyHellBlood"
 spawnid 246
 Health 2000
 Radius 24 

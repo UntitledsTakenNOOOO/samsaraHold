@@ -7,7 +7,6 @@ DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
-BloodType "SamsaraBloodyHellBlood"
   obituary "%o was electrocuted by a Hades elemental."
   hitobituary "%o got chomped by a Hades elemental."
   health 1600

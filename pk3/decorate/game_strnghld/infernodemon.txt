@@ -10,7 +10,6 @@ ACTOR InfernoDemon 12345
   damagefactor "HexenIce", 3.0
   DamageFactor "Kamikaze", 0.05
   damagefactor "ZorchKamikaze", 0.05
-  BloodType "SamsaraBloodyHellBlood"
   Health 20000
   Speed 20
   Radius 65
@@ -28,6 +27,7 @@ ACTOR InfernoDemon 12345
   +NOTARGET
   +NOICEDEATH
   damagefactor "Fire", 0.25
+  damagefactor "MarathonPlasma", 0.5
   damagefactor "FireExplosive", 0.25
   damagefactor "DukeExplosive", 0.8
   damagefactor "Explosive", 0.8
