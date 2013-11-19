@@ -7,7 +7,7 @@ DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 2.5
 DamageFactor "WMCBeam", 0.5
 DamageFactor "WMCNade", 0.375
-DamageFactor "BJSpear", 0.5
+DamageFactor "BJSpear", 0.7
 DamageFactor "CorvusHellStaffTomed", 0.2
 DamageFactor "BFG", 0.5
 DamageFactor "BFGSplash", 0.5
@@ -22,6 +22,7 @@ DamageFactor "CorvusHellStaff", 0.9
 DamageFactor "WolfenFlamethrower", 0.9
 DamageFactor "DukeIce", 0.9
 DamageFactor "QuakeFire", 0.8
+DamageFactor "MarathonPlasma", 0.85
 spawnid 249
 Obituary "%o felt the power of the Spider-Demolisher."
 Health 6000
