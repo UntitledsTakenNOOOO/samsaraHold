@@ -32,6 +32,7 @@ actor Zombieman2 : Zombieman replaces ZombiemanStun
 	painchance "Stunner", 255
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
+    DamageFactor "MarathonPlasma", 0.7
     PainChance "MightyBoot", 255
     +THRUGHOST
     +NOTDMATCH

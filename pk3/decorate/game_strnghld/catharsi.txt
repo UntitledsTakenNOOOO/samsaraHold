@@ -6,6 +6,7 @@ painchance "MightyBoot", 255
 DamageFactor "CorvusCrossbow", 1.1
 DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 2.0
+DamageFactor "MarathonPlasma", 0.85
   SpawnId 230
   OBITUARY "%o was blasted by a catharsi."
   Health 120

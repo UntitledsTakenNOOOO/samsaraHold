@@ -9,6 +9,7 @@ actor Hellion 30132
   DamageFactor "DragonClaw", 1.5
   DamageFactor "HexenIce", 1.75
   DamageFactor "DukeIce", 1.75
+  DamageFactor "MarathonPlasma", 0.85
   obituary "A Hellion burned %o to a crisp."
   health 70
   radius 20
