@@ -19,10 +19,12 @@ actor " Pistol " : Weapon// : Pistol
         Loop
 
       Deselect:
+        DPIS A 0 A_Lower
         DPIS A 1 A_Lower
         Loop
 
       Select:
+        DPIS A 0 A_Raise
         DPIS A 1 A_Raise
         Loop
 
