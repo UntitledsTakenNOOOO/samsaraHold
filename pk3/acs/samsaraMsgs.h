@@ -638,7 +638,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "No, not that pipe. No, not that smoking.",
         },
         {
-            "Picked up an Glock 17.",
+            "Picked up a Glock 17.",
             "Counterpoint number 1.",
             "Looks like more of a M1911 to me...",
             "Did you think I was \cagone\c- forever?",
