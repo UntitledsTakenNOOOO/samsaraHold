@@ -218,7 +218,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "I dunno, those guys don't seem too phased by it.",
             "You're like a futuristic pitching machine.",
             "Awww, I only get cherry Skittles.",
-            "",
+            "And the Hellstaff gets flak for being a Plasma Rifle ripoff.",
             "",
         },
         {
@@ -269,7 +269,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Great for riding motorcyles too!",
             "They're actually kind of a bitch to take on and off. Stop swapping so fast.",
             "They come with built-in guitar picks.",
-            "",
+            "Apparently applying power can make \cdgreen \cflightning turn \cgred\cf.",
         },
         {
             "Picked up a gold wand.",
@@ -305,7 +305,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "So haunted it belongs on eBay.",
             "Gravity is stupid.",
             "If it's ethereal, how do you hold it?",
-            "",
+            "...And if the bolts are ethereal, how do they hit anything except ghosts?",
         },
         {
             "You got the Dragon Claw!",
@@ -317,7 +317,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Dungeons not included.",
             "Claws work best when they don't touch the ground, right?",
             "It makes a terrible mitten, surprisingly.",
-            "",
+            "If the claw is a chaingun, imagine the mouth.",
         },
         {
             "You got the Phoenix Rod!",
@@ -353,7 +353,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Death of a thousand papercuts!",
             "Be ye magicked, bitches.",
             "I'm totally going to kick your ass, guys, just let me finish this paragraph.",
-            "It's actually a romance novel. The 'power' refers to something else entirely.",
+            "It's actually a romance novel. The 'power' refers to something else entirely.", //Thanks for the imagery, Term or Ijon, whoever came up with this one.
         },
         {
             "Gauntlets of the Necromancer! Find some disciples!",
@@ -365,7 +365,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Great for riding motorcyles too!",
             "They're actually kind of a bitch to take on and off. Stop swapping so fast.",
             "They come with built-in guitar picks.",
-            "",
+            "Apparently applying power can make \cdgreen \cflightning turn \cgred\cf.",
         },
     },
     {
@@ -414,7 +414,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Hold it properly like real gangsters do.",
             "You got a piece of rust shaped like a machine gun!",
             "Oh my god, this game rips off Call of Duty so much.",
-            "",
+            "Screw inaccuracy.",
             "",
         },
         {
@@ -426,7 +426,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "It's also licensed for weight loss.",
             "Wait, didn't I just get this?",
             "Now you still can't dual wield them.",
-            "",
+            "Can I at least get an accuracy upgrade or-oh, wait.",
             "",
         },
         {
@@ -438,7 +438,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Hope you like ammo scrounging!",
             "The as-salt to the machine gun's pepper.",
             "Oh my god, this game rips off Doom so much.",
-            "",
+            "Fastest fire rate, highest DPS, and perfect accuracy. Totally balanced",
             "",
         },
         {
@@ -521,7 +521,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "This is all you need to slaughter Korax.",
             "BEEMS",
             "I'm going to call your mother and tell her what you've been doing.",
-            "",
+            "+RIPPER on a pistol weapon is totally balanced.",
             "",
             "",
             "",
@@ -592,7 +592,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Still less powerful than a fart cloud.",
             "Ahahahaha aiming. Fuck that.",
             "Praise the Lord and pass the screaming angry souls of the damned.",
-            "The ultimate in pope-based weaponry. You know you're holy when the tortured spirits of hell bow to your will.",
+            "The ultimate in pope-based weaponry.",
             "Don't look at the Ark, Marion! Close your eyes!",
             "Ten seconds ago it was the Wraithalmostthereholdon.",
             "Will you forget me for living? Probably not.",  // Dehumaniser - After All
@@ -638,12 +638,12 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "No, not that pipe. No, not that smoking.",
         },
         {
-            "Picked up an M1911.",
+            "Picked up an Glock 17.",
             "Counterpoint number 1.",
-            "Looks like more of a Glock to me.",
+            "Looks like more of a M1911 to me...",
             "Did you think I was \cagone\c- forever?",
             "STOP HACKING.",
-            "",
+            "Yes I knew it was actually a Glock 17 I was just going off the Duke 3D port that gave it a name god damn I changed it are you happy?",
             "",
             "",
             "",
@@ -694,7 +694,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "It's turn-based. You go first.",
             "Pretty sure small explosions don't look like that.",
             "You store a gun... larger than your pants... in your pants. Okay.",
-            "",
+            "+NORADIUSDMG? That's cute.",
             "",
         },
         {
@@ -707,7 +707,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You seem like an ice person.",
             "Where's the thawthrower?",
             "Alright, those obnoxious diabolists are gonna pay for real now.",
-            "AND SO ARE THOSE DAMN PYRODEMONS",
+            "\c[G5]AND SO ARE THOSE DAMN PYRODEMONS",
         },
         {
             "You got the Devastators! Hail to the King.",
@@ -753,10 +753,10 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You thought one magnum was bad, huh?",
             "Bigger guns nearby.",
             "Everyone else gets melee weapons from this. I'm the only smart one here.",
-            "",
-            "",
-            "",
-            "",
+            "Super-accurate Long-Range Ammo-Consuming High-DPS weapon in Slot 1. Right.",
+            "pitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpit",
+            "clickclickclickclickclickclickclickclickclickclickclickclickclickclickclickclick",
+            "Oh great. Out of ammo already.",
             "",
         },
         {
@@ -829,7 +829,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You are really good at killing things. I'm impressed.",
             "Hundreds of years in the future, fire is still hot.",
             "If you're stuck here, you better go ask your mom.",
-            "",
+            "Melee Weapon. Purely a Mook Killer. Useless on Bosses. Slot 6. Riiight.",
         },
         {
             "You got the ONI-71 Wave Motion Cannon! What's that spell? Trouble.", // since apparently this quote ain't good enuf
@@ -837,7 +837,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You'll be long gone by the time you see it.",
             "For carnage, apply within.",
             "It makes a \caterrible\c- melee weapon.",
-            "I could aim. But with this thing, I don't have to.",
+            "I could aim. But with this thing, I don't have to-Wait what's that red thi-OH GOD",
             "Your brand new favorite ONI-chan.",
             "I'm sure its list of lives taken would bore you, so get back to work.",
             "By the way, I had an accident with a tank while you were away. Here's the turret.",
@@ -1004,7 +1004,7 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "I'm sure it's still good. It's just been lying here.",
         "Is this cannibalism or what?",
         "It's milk you can chew!",
-        "Doesn't matter what time. Breakfast is always a good meal.",
+        "Doesn't matter what time. Breakfast is always the best meal.",
         "Just how do you supercharge a breakfast anyway?",
     },
     {
@@ -1038,10 +1038,10 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "A crowd on demand.",
         "Well, you're a cleric. Gotta have a heal.",
         "Plot twist: it's a badly-inscribed poison spell.",
-        "IT'S RAINING ARMOR AND HEALTH",
-        "So apparently reading a scroll causes you to heal those around you.",
+        "IT'S RAINING HEAL-Oh wait those are armor shards.",
+        "So apparently reading a scroll causes it to rain armor.",
         "So who actually used these things back in Hexen?",
-        "Hint: Basically no one",
+        "",
     },
     {
         "JETPACK!",
@@ -1051,9 +1051,9 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "Because you have that on your sprite for a reason.",
         "Watch your ass, the jet burns.",
         "The gas mileage is \caterrible\c-.",
-        "This is actually kind of amazing for crowd control",
+        "This is actually kind of amazing for crowd control.",
         "You just need to get creative.",
-        "By which I mean fire explosive shotgun down into the center of crowds.",
+        "By which that means fire explosive shotgun down into the center of crowds.",
     },
     {
         "You got th@nS0-.'\casystem error \cd0xfded",
