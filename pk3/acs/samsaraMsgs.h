@@ -365,7 +365,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Great for riding motorcyles too!",
             "They're actually kind of a bitch to take on and off. Stop swapping so fast.",
             "They come with built-in guitar picks.",
-            "Apparently applying power can make \cdgreen \cflightning turn \cgred\cf.",
+            "Apparently applying power can make lightning change colors.",
         },
     },
     {
@@ -438,7 +438,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Hope you like ammo scrounging!",
             "The as-salt to the machine gun's pepper.",
             "Oh my god, this game rips off Doom so much.",
-            "Fastest fire rate, highest DPS, and perfect accuracy. Totally balanced",
+            "Fastest fire rate, highest DPS, and perfect accuracy. Totally balanced.",
             "",
         },
         {
