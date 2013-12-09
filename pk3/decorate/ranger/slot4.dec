@@ -567,7 +567,7 @@ actor QuakeLavaNailCoop: QuakeLavaNail
 
     Species "Player"
 
-    Damage (15)
+    Damage (13)
 }
 
 
