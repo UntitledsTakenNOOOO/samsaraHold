@@ -276,7 +276,7 @@ actor UnknownAmmo : Ammo
     Inventory.MaxAmount 35
 }
 
-actor UnknownAmmo2 : Ammo 
+actor UnknownAmmo2 : Ammo
 {
     +IGNORESKILL
     Inventory.MaxAmount 40
