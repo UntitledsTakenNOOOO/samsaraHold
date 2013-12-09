@@ -270,7 +270,7 @@ actor " Alien Weapon " : Weapon
     }
 }
 
-actor UnknownAmmo : Ammo 
+actor UnknownAmmo : Ammo
 {
     +IGNORESKILL
     Inventory.MaxAmount 35
