@@ -1155,6 +1155,22 @@ N8 {
                 #34ffcd  #98fffe 101 256
 }
 
+// PHOSPHORESCENCE //
+N9 {
+                #caf589  #40772c 0 256
+       Console:
+                #53ed8e  #0f652a 0 256
+}
+
+// ULTRAVIOLENT //
+N0 {
+                #94f9ff  #42278f 0 256
+       Console:
+                #42278f #94f9ff 0 256
+}
+
+
+
 /////////////////////////////////////////////
 
 // IVY ROPES //
@@ -1435,4 +1451,199 @@ J0 {
                 #1975aa  #b2e3ff 151 256
        Console:
                 #ffffff  #1975aa 0 256
+}
+
+//////////////////////////////////////////
+// EVEN MOAR COLOURS! :D!          ///////
+//////////////////////////////////////////
+
+// CREAM SODA //
+I1 {
+                #d33c83  #f0c05a 0 130
+                #eaaf3e  #ffee8d 131 256
+       Console:
+                #d33c83  #f0c05a 0 130
+                #eaaf3e  #ffee8d 131 256
+}
+
+// STICK PILE //
+I2 {
+                #1a0a06  #432119 0 120
+                #6c260e  #802814 121 180
+                #9f4d31  #301913 181 256
+       Console:
+                #1a0a06  #432119 0 120
+                #6c260e  #802814 121 180
+                #9f4d31  #301913 181 256
+}
+
+// MARSHMELLOWS //
+I3 {
+                #913baa  #c75bdb 0 59
+                #c96ae8  #c776f1 60 80
+                #cd7ff5  #fc91fb 81 100
+                #faa2f1  #fdf2ff 101 256
+       Console:
+                #913baa  #c75bdb 0 59
+                #c96ae8  #c776f1 60 80
+                #cd7ff5  #fc91fb 81 100
+                #faa2f1  #fdf2ff 101 256
+}
+
+// CRIMBO TIME //
+I4 {
+                #930000 #b30000 0 9
+                #034e00 #7ec57b 10 169
+                #8cd088 #ffffff 170 256
+       Console:
+                #930000 #b30000 0 9
+                #034e00 #7ec57b 10 169
+                #8cd088 #ffffff 170 256
+}
+
+// PEAR SALAD //
+I5 {
+                #272b1f #8ebf30 0 170
+                #a9bf30 #e4f48f 171 256
+       Console:
+                #1f2514 #8ebf30 0 170
+                #a9bf30 #e4f48f 171 256
+}
+
+// STARTAN //
+I6 {
+                #20180c #78502c 0 90
+                #685440 #9b806c 91 159
+                #787878 #e0e0e0 160 256
+       Console:
+                #20180c #78502c 0 90
+                #685440 #9b806c 91 159
+                #787878 #e0e0e0 160 256
+}
+
+// SEEING RED //
+I7 {
+                #240000 #8c0000 0 170
+                #9b0b07 #e20000 171 256
+       Console:
+                #240000 #8c0000 0 170
+                #9b0b07 #e20000 171 256
+}
+
+// CHLORINE //
+I8 {
+                #0e281e #1a7f58 0 100
+                #198973 #16d3ad 101 180
+                #16d3bf #ffffff 181 256
+       Console:
+                #0e281e #1a7f58 0 100
+                #198973 #16d3ad 101 180
+                #16d3bf #ffffff 181 256
+}
+
+// IODINE SUBSTANCE //
+I9 {
+                #ae27ad #640943 0 129
+                #7219a0 #400b40 130 256
+       Console:
+                #ae27ad #400b40 0 256
+}
+
+// DARK AND MOIST //
+I0 {
+                #1a2e40 #40576a 0 111
+                #40656a #bfc063 112 200
+                #c9ca61 #f1f2bd 201 256
+       Console:
+                #1a2e40 #40576a 0 111
+                #40656a #bfc063 112 200
+                #c9ca61 #f1f2bd 201 256
+}
+
+/////////////////////////////////////////
+
+// TERRACOTTA //
+D1 {
+               #310f18 #702841 0 100
+               #802a16 #d56819 101 256
+       Console:
+               #310f18 #702841 0 100
+               #802a16 #d56819 101 256
+}
+
+
+// THE SEQUEL //
+D2 {
+               #ababab #8b8b8b 0 9
+               #1f170b #6b4727 10 256
+       Console:
+               #1f170b #6b4727 0 256
+}
+
+// SQUID PASTE //
+D3 {
+               #000000 #29272c 0 158
+               #271e41 #65389c 159 256
+       Console:
+               #000000 #29272c 0 158
+               #271e41 #65389c 159 256
+}
+
+// MENSCH MASCHINE //
+D4 {
+		#000000  #0d0d0d 0 6
+		#550c15  #f40000 7 256
+	Console:
+		#f40000  #480a12 0 256
+}
+
+// EARTHWORM FOOD //
+D5 {
+		#301501  #6a3926 0 136
+		#77422d  #ab6f3a 137 256
+	Console:
+		#301501  #6a3926 0 136
+		#77422d  #ab6f3a 137 256
+}
+
+// PASSION FRUIT //
+D6 {
+		#5d1d2f  #97da06 0 200
+		#cadc07  #fcff00 201 256
+	Console:
+		#5d1d2f  #aeff00 0 256
+}
+
+
+// MAJESTIC //
+D7 {
+		#240d4b  #db345c 0 256
+	Console:
+		#db345c  #240d4b 0 256
+}
+
+// APPARITIONS //
+D8 {
+		#ffffff  #715e85 0 150
+                #715e85  #311e45 151 256
+	Console:
+		#ffffff  #715e85 0 150
+                #715e85  #311e45 151 256
+}
+
+// DRIED CLAY //
+D9 {
+               #1b1714 #423f3a 0 70
+               #57544f #bdb4ad 71 256
+       Console:
+               #1b1714 #423f3a 0 70
+               #57544f #bdb4ad 71 256
+}
+
+// DOOMLINGS //
+D0 {
+               #fedd00 #ffea5a 0 9
+               #005b00 #60cd00 71 256
+       Console:
+               #295700 #60cd00 0 256
 }
