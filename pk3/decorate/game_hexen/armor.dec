@@ -3,8 +3,8 @@ actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
     RenderStyle Add
     Alpha 0.875
     +Floatbob
-    Armor.Savepercent 33.33333
-    Armor.MaxSaveAmount 200
+    Armor.Savepercent 35.35
+    Armor.MaxSaveAmount 250
     Armor.Saveamount 25
     Inventory.PickupMessage "$SAMSARA_ARMORHEXEN"
     Inventory.PickupSound "armor1get"
@@ -25,12 +25,11 @@ actor HexenArmor5 : CustomInventory replaces ArtiBoostArmor
     States
     {
       Spawn:
-        BRAC ABCDEFGH 4 Bright
+        G_AM A 1 Bright
         Loop
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
         TNT1 A 0 A_PlaySound("FighterHammerHitWall")
         TNT1 A 1 A_GiveInventory("HexenArmor5B")
         stop
@@ -40,16 +39,6 @@ actor HexenArmor5 : CustomInventory replaces ArtiBoostArmor
         TNT1 A 0 A_PlaySound("FighterHammerHitWall")
         TNT1 A 1 A_GiveInventory("HexenArmor5B")
         stop
-
-      PickupHeretic:
-        TNT1 A 0 A_JumpIfInventory("HexenArmor5A",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
-        TNT1 A 1 A_GiveInventory("HexenArmor5A")
-        stop
-
-      PickupHereticFail:
-        BRAC A 4 BRIGHT
-        fail
     }
 }
 
@@ -69,7 +58,7 @@ actor HexenArmor5A : CustomInventory
 
 actor HexenArmor5B : BasicArmorBonus
 {
-    Armor.Savepercent 33.33333
+    Armor.Savepercent 70
     Armor.MaxSaveAmount 300
     Armor.Saveamount 50
 }

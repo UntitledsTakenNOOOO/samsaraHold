@@ -107,7 +107,7 @@ actor HereticAmmoBackpack : AmmoBackpack replaces BagOfHolding { }
 actor HereticStuffDump: HealPack0 replaces GoldWandHefty
 {
     Scale 0.3
-    Inventory.Amount 4
+    Inventory.Amount 5
     Inventory.PickupMessage "$SAMSARA_HEALPACK_HERETIC"
     States
     {
@@ -158,7 +158,7 @@ actor HereticArmorDump : ArmorScrap replaces ArtiTimeBomb
     States
     {
       Spawn:
-        BON3 A -1 bright
+        BON9 A -1 bright
         stop
     }
 }
