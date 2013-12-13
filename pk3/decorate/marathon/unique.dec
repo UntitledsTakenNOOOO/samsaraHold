@@ -273,13 +273,13 @@ actor " Alien Weapon " : Weapon
 actor UnknownAmmo : Ammo
 {
     +IGNORESKILL
-    Inventory.MaxAmount 35
+    Inventory.MaxAmount 50
 }
 
 actor UnknownAmmo2 : Ammo
 {
     +IGNORESKILL
-    Inventory.MaxAmount 40
+    Inventory.MaxAmount 50
 }
 
 actor EnforcerShot
