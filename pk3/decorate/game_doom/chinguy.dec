@@ -12,7 +12,7 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuyStun
 {
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
-    DamageFactor "MarathonPlasma", 0.7
+    DamageFactor "MarathonPlasma", 0.5
     PainChance "MightyBoot", 255
 	painchance "Stunner", 255
     +THRUGHOST

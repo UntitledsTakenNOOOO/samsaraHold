@@ -5,7 +5,7 @@ ACTOR PhaseImp 24105
     painchance "MightyBoot", 255
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
-    DamageFactor "MarathonPlasma", 0.85
+    DamageFactor "MarathonPlasma", 0.7
     SpawnID 232
     Health 150
     Radius 20

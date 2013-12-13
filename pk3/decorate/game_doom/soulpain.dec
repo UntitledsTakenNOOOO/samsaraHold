@@ -5,6 +5,7 @@ actor LostSoul2 : LostSoul replaces LostSoulStun
     DamageFactor "DragonClaw", 1.5
     DamageFactor "HexenIce", 2.0
     DamageFactor "DukeIce", 2.0
+    DamageFactor "MarathonPlasma", 0.85
     PainChance "MightyBoot", 255
 	painchance "Stunner", 200
     +NOTDMATCH

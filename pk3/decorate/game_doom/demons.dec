@@ -2,6 +2,7 @@ actor DoomDemon2 : Demon replaces DemonStun
 {
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
+    DamageFactor "MarathonPlasma", 0.85
 	painchance "Stunner", 255
     PainChance "MightyBoot", 255
     +NOTDMATCH

@@ -7,7 +7,7 @@ painchance "MightyBoot", 255
 DamageFactor "CorvusCrossbow", 1.1
 DamageFactor "DragonClaw", 1.5
 DamageFactor "MarathonFusion", 2.0
-DamageFactor "MarathonPlasma", 0.7
+DamageFactor "MarathonPlasma", 0.5
   OBITUARY "%o was killed by a dune warrior."
   Health 120
   Radius 20
