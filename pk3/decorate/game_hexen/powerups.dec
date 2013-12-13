@@ -5,7 +5,7 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
     +INVENTORY.PICKUPFLASH
     +INVENTORY.HUBPOWER
     +COUNTITEM
-    Inventory.PickupMessage "Picked up Team Power."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_TEAM"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {
@@ -137,7 +137,7 @@ Actor QuakeQuarterDamage : PowerupGiver
   Scale 0.2
   Inventory.PickupAnnouncerEntry "strength"
   Inventory.PickupSound "quakeweps/quadready"
-  Inventory.PickupMessage "Picked up a 1.5X Damage!"
+  Inventory.PickupMessage "$SAMSARA_POWERUP_QUARTERDMG"
   States
   {
   Spawn:
@@ -185,7 +185,6 @@ Actor PowerQuackQuarterDamage : PowerDamage
 	DamageFactor "QuakePistol", 1.5
 	DamageFactor "NotQuadded", 1.5
 }
-
 
 actor HeXenBeaconItem: CustomInventory replaces ArtiDarkServant
 {
