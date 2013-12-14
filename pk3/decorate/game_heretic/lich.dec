@@ -76,7 +76,7 @@ actor IronLich2 : IronLich replaces IronLich
         stop
     }
 }
-/*
+
 actor HeadFX12 : HeadFX1 replaces HeadFX1
 {
     +ICEDAMAGE
@@ -98,4 +98,3 @@ actor HeadFX4 : Whirlwind replaces Whirlwind
     Renderstyle Add
     Alpha 0.65
 }
-*/
