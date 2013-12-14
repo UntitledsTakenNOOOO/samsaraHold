@@ -323,7 +323,7 @@ States
        stop
    Pain:
        HADE A 35
-       stop
+       Goto See+4
    Death:
        TNT1 A 0 A_GiveToTarget("AwardItem", 12)
        HADE E 0 Bright A_Noblocking
