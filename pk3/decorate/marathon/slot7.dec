@@ -1035,7 +1035,7 @@ actor WMCRailLevel3: FastProjectile
         loop
         
       Death:
-        TNT1 A 0 A_Explode(250+random(0,50),196)
+        TNT1 A 0 A_Explode(210,196)
         TNT1 A 0 A_CustomMissile("WMCRailLevel3Baby",1,0,0,6)
         TNT1 A 0 A_CustomMissile("WMCRailLevel3Baby",1,0,22,6)
         TNT1 A 0 A_CustomMissile("WMCRailLevel3Baby",1,0,45,6)
