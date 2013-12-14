@@ -1,4 +1,4 @@
-actor " Rocket Launcher ": InstantSwitchWeapon
+actor "  Rocket Launcher  ": InstantSwitchWeapon
 {
     //Weapon.BobRangeX 0
     //Weapon.BobRangeY 0.5
