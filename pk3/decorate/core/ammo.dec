@@ -213,7 +213,7 @@ actor Ammo3Small : CustomInventory replaces RocketAmmo// replaces RocketAmmo
         TNT1 A 0 A_GiveInventory("MultiRocketAmmo", 1)
         stop
 
-      PickupQuake:
+      PickupQuake2:
         TNT1 A 0 A_GiveInventory("RocketAmmo", 5)
         TNT1 A 0
         stop
@@ -261,8 +261,13 @@ actor Ammo3Big : CustomInventory replaces RocketBox// replaces RocketBox
         TNT1 A 0
         stop
 
-      PickupHeretic:
+      PickupQuake2:
         TNT1 A 0 A_GiveInventory("RocketAmmo", 10)
+        TNT1 A 0
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 4)
         stop
 
       PickupFail:
