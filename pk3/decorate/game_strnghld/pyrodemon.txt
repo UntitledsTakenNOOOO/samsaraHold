@@ -19,8 +19,8 @@ Speed 8
 PainChance 20 
 MONSTER
 MeleeDamage 10
-OBITUARY "\c[N2]%o \c[N2]was burnt to a crisp by a pyro demon."
-HITOBITUARY "\c[N2]%o \c[N2]was melted by a pyro demon."
+OBITUARY "\c[G5]%o \c[G5]was burnt to a crisp by a pyro demon."
+HITOBITUARY "\c[G5]%o \c[G5]was melted by a pyro demon."
 Bloodcolor "75 25 00"
 +NoTarget
 +FloorClip 
@@ -150,11 +150,11 @@ states
 
 	DeathBrutal:
          TNT1 A 0
-                TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+                TNT1 AA 0 A_SpawnItemEx("BrownMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
                 TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
-                TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-                TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-                TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+                TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier_Brown",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+                TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny_Brown",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+                TNT1 A 0 A_SpawnItemEx("BrownMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
                 TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
                 TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
         goto Death+1
@@ -280,7 +280,7 @@ ACTOR FirebombExplosion1
    ExplosionDamage 128
    ExplosionRadius 144
    DamageType Fire
-   Obituary "\c[Q2]%o \c[Q2]was killed by a Firebomb explosion."
+   Obituary "\c[G5]%o \c[G5]was killed by a Firebomb explosion."
    States
    {
    Spawn:
