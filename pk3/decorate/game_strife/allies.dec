@@ -95,6 +95,7 @@ actor FriendlyDoomImpBall : DoomImpBall2
 {
     Speed 15
 
+    +PAINLESS
     +THRUSPECIES    
     Species "Player"
     
@@ -200,6 +201,7 @@ actor FriendlyNitrogolem : MummyLeader2
 
 actor FriendlyNitrogolemShot : MummyFX1
 {
+    +PAINLESS
     +THRUSPECIES
     Species "Player"
 }
@@ -361,6 +363,7 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
 
 actor FriendlyFlemBall : BipedicusBallV3
 {
+    +PAINLESS
     +THRUSPECIES
     Species "Player"
     SeeSound "friendlyflemoid/flem"
@@ -472,6 +475,7 @@ ACTOR FriendlyNazi
 actor FriendlyNaziBullet : WolfenBullet2
 {
     Damage (15)
+    +PAINLESS
     +THRUSPECIES
     Species "Player"
 }
@@ -549,6 +553,7 @@ actor FriendlyAfrit : FireDemon2
 actor FriendlyFireDemonMissile : FireDemonMissile
 {
 	Damage (Random(1,12))
+    +PAINLESS
     +THRUSPECIES
     Species "Player"
 }
@@ -756,6 +761,7 @@ actor AlienTrooperShot
     Scale 0.5
     Species "Player"
     PROJECTILE
+    +PAINLESS
     +THRUSPECIES
     States
     {
@@ -903,6 +909,7 @@ ACTOR FriendlyPfhorTrooper
 
 ACTOR PfhorTrooperBullet : MarathonARBulletCoop
 {
+    +PAINLESS //This was getting really bad.
     Damage (Random(6,9))
 }
 
@@ -1027,6 +1034,7 @@ Translation "187:202=81:95"
 
 ACTOR GruntBullet : QuakeBullet2
 {
+    +PAINLESS //and so were these guys.
 }
 
 
@@ -1097,6 +1105,7 @@ ACTOR FriendlyBelphegor : BaronOfHell2
 actor FriendlyBaronBall : BaronBall3
 {
     Damage 12
+    +PAINLESS
     +THRUSPECIES
     Speed 20
     Species "Player"   
@@ -1185,18 +1194,21 @@ ACTOR FriendlyIronLich : IronLich2
 
 actor FriendlyHeadFX1 : HeadFX12 replaces HeadFX12
 {
+    +PAINLESS
     +THRUSPECIES
     Species "Player"
 }
 
 actor FriendlyHeadFX2 : HeadFX22 replaces HeadFX22
 {
+    +PAINLESS
     +THRUSPECIES
     Species "Player"
 }
 
 actor FriendlyHeadFX3 : HeadFX32 replaces HeadFX32
 {
+    +PAINLESS
     +THRUSPECIES
     Species "Player"
 }
@@ -1206,6 +1218,7 @@ actor FriendlyHeadFX4 replaces HeadFX4 //Had to rework Whirlwind due to the orig
     Speed 10
     Renderstyle Translucent
     Alpha 0.4
+    +PAINLESS
     +FRIENDLY
     +LOOKALLAROUND
     +THRUSPECIES
@@ -1267,8 +1280,7 @@ actor HurricaneHurt
 DamageType "MarineAlly"
 -SOLID
 +PAINLESS
-//+NODAMAGETHRUST
-//+FORCERADIUSDMG
++NODAMAGETHRUST
 States
 {
 Spawn:
@@ -1439,6 +1451,7 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
 
 actor FriendlyFlemBall2 : SnotfolusBall
 {
+    +PAINLESS
     +THRUSPECIES
     Scale 2
     Damage 8
@@ -1640,6 +1653,7 @@ ACTOR FriendlySlaughtaur : CentaurLeader2 115
 ACTOR FriendlyCentaurFX : CentaurFX2
 {
 	Damage 5
+	+PAINLESS
 	+THRUSPECIES
 	Species "Player"
 }
@@ -1835,6 +1849,7 @@ ACTOR FriendlyBattleLord
 
 Actor DukeRipperBulletCoop2 : DukeRipperBulletCoop
 {
+	+PAINLESS
 	Damage (6)
 }
 
@@ -1844,6 +1859,7 @@ Actor FriendlyMortar:Mortar {
   	DamageType "MarineAlly"
   	Species "Player"
    	+THRUSPECIES
+	+PAINLESS
 
 	States 
 	{ 
@@ -1960,6 +1976,7 @@ ACTOR HunterShot
 	Damage (15+random(0,5))
 	DamageType "HunterShot"
 	+THRUSPECIES
+	+PAINLESS
 	Species "Player"
 	Scale 0.35
 	DeathSound "hunter/hit"
@@ -2078,6 +2095,7 @@ Actor VoreFirepod
   Species "Player"
   +ThruSpecies
   +SeekerMissile
+  +Painless
   RenderStyle Add
   Alpha 0.9
   SeeSound "Vore/Throw"
