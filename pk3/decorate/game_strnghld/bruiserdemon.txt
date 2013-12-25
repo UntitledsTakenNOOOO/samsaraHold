@@ -29,8 +29,8 @@ damagefactor "ZorchKamikaze", 0.5
 	ActiveSound "superbaron/act"
 	MeleeSound "baron/melee"
         DamageFactor "BruiserAttack",0
-	Obituary "%o was slaughtered by a Bruiserdemon."
-	HitObituary "%o was cremated by a Bruiserdemon."
+	Obituary "\c[L6]%o \c[L6]was slaughtered by a Bruiserdemon."
+	HitObituary "\c[K7]%o \c[K7]was cremated by a Bruiserdemon."
 	MeleeDamage 20
 	Scale 1.25
 	States
