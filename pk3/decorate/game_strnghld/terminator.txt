@@ -24,7 +24,7 @@ Speed 12
 PainChance 8
 scale 1.2
 MONSTER
-Obituary "\c[L3]%o \c[L3] was liquidated by a Terminator."
+Obituary "\c[L3]%o \c[L3]was liquidated by a Terminator."
 +FLOORCLIP 
 +BOSS
 +MISSILEMORE
