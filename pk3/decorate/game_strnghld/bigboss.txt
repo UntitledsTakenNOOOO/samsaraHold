@@ -1182,7 +1182,7 @@ ACTOR STBossSkeleton 32766
 
 ACTOR STBossSkeleton2 : STBossSkeleton
 {
-	obituary "\c[Q2]%o \c[Q2]got whalloped by a skeleton."
+	obituary "\c[D1]%o \c[D1]got whalloped by a skeleton."
 	PainChance 192
 	PainChance "Animate", 0
 	DamageFactor "Animate", 0
@@ -1956,7 +1956,7 @@ ACTOR SpiritKnight : BaronOfHell
     Alpha 0.6
     RenderStyle Translucent
 	MissileType SpiritBall
-	Obituary "\c[S3]%o's \c[S3]existence has ended."
+	Obituary "\c[G1]%o's \c[G1]existence has ended."
     States
     {
 	Spawn:
@@ -2048,7 +2048,7 @@ ACTOR SpiritBoss 32765
 	+NOTARGET +NOINFIGHTING
 	//Easily Distracted. Trust me, it's the only way you're going to win.
 	+QUICKTORETALIATE
-	Obituary "\c[J0]%o's \c[J0]existence was erased by the spirit of Mephistopheles."
+	Obituary "\c[N0]%o's \c[N0]existence was erased by the spirit of Mephistopheles."
     states
     {
 	Spawn:

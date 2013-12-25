@@ -19,8 +19,8 @@ Speed 8
 PainChance 20 
 MONSTER
 MeleeDamage 10
-OBITUARY "\c[G5]%o \c[G5]was burnt to a crisp by a pyro demon."
-HITOBITUARY "\c[G5]%o \c[G5]was melted by a pyro demon."
+OBITUARY "\c[L6]%o \c[L6]was burnt to a crisp by a pyro demon."
+HITOBITUARY "\c[L6]%o \c[L6]was melted by a pyro demon."
 Bloodcolor "75 25 00"
 +NoTarget
 +FloorClip 

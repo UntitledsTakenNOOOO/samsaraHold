@@ -213,7 +213,7 @@ ACTOR MiniSpider 22290
    deathsound "littlespider/death"
    activesound "littlespider/sight"
    meleesound "littlespider/pain"
-   OBITUARY "\c[Y3]%o \c[Y3]succumbed to the swarm."
+   OBITUARY "\c[K8]%o \c[K8]succumbed to the swarm."
    Speed 10
    Damage 0
    MeleeDamage 1
@@ -265,7 +265,7 @@ ACTOR LargeSpider 22291
    deathsound "littlespider/death"
    activesound "littlespider/sight"
    meleesound "littlespider/pain"
-   OBITUARY "\c[Y0]%o \c[Y0]succumbed to the swarm."
+   OBITUARY "\c[Y3]%o \c[Y3]succumbed to the swarm."
    Speed 20
    Damage 0
    MeleeDamage 2
@@ -519,7 +519,7 @@ MONSTER
 +FireResist
 +DontHurtSpecies
 +NOICEDEATH
-OBITUARY "\c[V7]%o \c[V7]was burned alive by a hellhound."
+OBITUARY "\c[Q2]%o \c[Q2]was burned alive by a hellhound."
 HITOBITUARY "\c[Q3]A hellhound had %o \c[Q3]for dinner."
 SEESOUND "monster/dogsit"
 ATTACKSOUND "monster/dogatk"
@@ -731,7 +731,7 @@ ACTOR ESoul 29012
   DamageFactor "CorvusCrossbow", 1.15
   DamageFactor "DragonClaw", 1.5
   SpawnID 181
-  OBITUARY "\c[S3]%o \c[S3]'s soul was leeched by the etheral soul."
+  OBITUARY "\c[J0]%o \c[J0]'s soul was leeched by the etheral soul."
   health 90
   radius 16
   height 32
@@ -816,8 +816,8 @@ Speed 10
 Damage 2
 MeleeDamage 1
 RENDERSTYLE ADD
-OBITUARY "\c[G1]A wraith had its way with %o\c[G1]."
-HITOBITUARY "\c[G1]%o \c[G1]got bitten by a wraith too many times."
+OBITUARY "\c[D8]A wraith had its way with %o\c[D8]."
+HITOBITUARY "\c[K1]%o \c[K1]got bitten by a wraith too many times."
 Alpha 0.67
 PainChance 64
 MONSTER

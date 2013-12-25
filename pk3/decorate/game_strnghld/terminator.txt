@@ -24,7 +24,7 @@ Speed 12
 PainChance 8
 scale 1.2
 MONSTER
-Obituary "\c[N0]%o \c[N0] was liquidated by a Terminator."
+Obituary "\c[L3]%o \c[L3] was liquidated by a Terminator."
 +FLOORCLIP 
 +BOSS
 +MISSILEMORE
@@ -314,7 +314,7 @@ actor Grenadeblast
     Height 12
     Speed 6
     Damage 3
-    OBITUARY "\c[D4]%o \c[D4]was torn apart by a blood missile."
+    OBITUARY "\c[B1]%o \c[B1]was torn apart by a blood missile."
     DamageType "Redblast"
     PROJECTILE
     RENDERSTYLE ADD
