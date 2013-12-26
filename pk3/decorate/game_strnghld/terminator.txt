@@ -254,7 +254,7 @@ actor Redgrenade //More like Red Missile now. Heh heh.
     FastSpeed 45
     Damage 4
     DamageType "Redblast"
-    OBITUARY "\c[Y0]%o \c[Y0]was torn apart by a blood missile."
+    OBITUARY "\c[D4]%o \c[D4]was torn apart by a blood missile."
     PROJECTILE
     //Heh heh. Players won't know what hit them. Hopefully neither will Popsoap.
     //+DoomBounce
@@ -314,7 +314,7 @@ actor Grenadeblast
     Height 12
     Speed 6
     Damage 3
-    OBITUARY "\c[Y0]%o \c[Y0]was torn apart by a blood missile."
+    OBITUARY "\c[D4]%o \c[D4]was torn apart by a blood missile."
     DamageType "Redblast"
     PROJECTILE
     RENDERSTYLE ADD
