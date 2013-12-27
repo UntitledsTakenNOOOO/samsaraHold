@@ -17,6 +17,8 @@ actor FakeGoalBase
 	RenderStyle Add
 	Damagefactor "Massacre", 0
 
+	Damagefactor "EnemyInfightDamage", 0
+
 	Damagefactor "FaithInHumanity", 0
 	Damagefactor "DoomFist", 0
 	Damagefactor "Pistol", 0
@@ -4862,6 +4864,8 @@ actor PowerCore 21234
 //$Category Stronghold
 	Damagefactor "Massacre", 0
 
+	Damagefactor "EnemyInfightDamage", 0
+
   Damagefactor "FaithInHumanity", 0 //REALLY? YOU'RE FREAKING PUNCHING THE CORE?!?!!??!?!
 
   Damagefactor "DoomFist", 0
@@ -4997,6 +5001,8 @@ Actor OvermindCore 29952
   	damageFactor "Wraithverge", 0
         damagefactor "MarathonFusion", 0
   	DamageFactor "CoreFriendly", 0
+
+	Damagefactor "EnemyInfightDamage", 0
 
 	damagefactor "Kamikaze", 0
         DamageFactor "ZorchKamikaze", 0
