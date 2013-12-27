@@ -40,30 +40,27 @@ actor Knife: InstantSwitchWeapon
         WKNF C 0 A_JumpIfInventory("PopcornStab", 1, "Popcorn2")
         goto Fire2_2
 
-      Popcorn2:
-        WKNF D 0 A_FireBullets(0,0, 1,0, "KnifePopcorn", 0, 64)
-        goto Fire2_2
 
       Fire2_2:
         WKNF DDD 1 A_CustomPunch(7,1,0,"BlankPuff2",64)
         WKNF D 0 A_PlayWeaponSound ("wolfen/knife")
-        WKNF EEE 1
+        WKNF EEE 1 A_CustomPunch(7,1,0,"BlankPuff2",64)
         goto Ready
 
       Fire3:
-        WKNF BBCC 1 A_CustomPunch(7,1,0,"BlankPuff2",64)
+        WKNF BBCC 1 A_CustomPunch(10,1,0,"BlankPuff2",64)
         WKNF C 0 A_JumpIfInventory("PopcornStab", 1, "Popcorn2")
         goto Fire3_2
 
-      Popcorn2:
-        WKNF D 0 A_FireBullets(0,0, 1,0, "KnifePopcorn", 0, 64)
-        goto Fire3_2
-
       Fire3_2:
-        WKNF DD 1 A_CustomPunch(12,1,0,"BlankPuff2",64)
+        WKNF DD 1 A_CustomPunch(11,1,0,"BlankPuff2",64)
         WKNF D 0 A_PlayWeaponSound ("wolfen/knife")
-        WKNF EE 1
+        WKNF EE 1 A_CustomPunch(11,1,0,"BlankPuff2",64)
         goto Ready
+
+      Popcorn2:
+        WKNF D 0 A_FireBullets(0,0,1,0, "KnifePopcorn", 0, 64)
+        goto Fire3_2
     }
 }
 
@@ -75,7 +72,7 @@ actor KnifePopcorn: BulletPuff
 
     Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Butterknife.\c-" 
 
-    DamageType "Pistol"
+    DamageType "EnemyInfightDamage"
     DeathSound "wolfen/spearexplode2"
 
     Scale 0.35
@@ -92,7 +89,7 @@ actor KnifePopcorn: BulletPuff
         TNT1 A 0
         TNT1 A 0 A_Scream
         SPB2 AB 0 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0,0,0, random(-3,3),0,random(-3,3), random(0,360))
-        SPX2 AAAA 1 BRIGHT A_Explode(16, 96, 0)
+        SPX2 AAAA 1 BRIGHT A_Explode(12, 96, 0)
         SPX2 BCDE 4 BRIGHT
         Stop
     }
@@ -124,8 +121,9 @@ actor "Spear of Longinus" : InstantSwitchWeapon
 
       Fire:
 	    TNT1 A 0 A_PlayWeaponSound("wolfen/spearstab")
-        WSPR GGG 1 A_CustomPunch(20,1,0,"SpearPopcornPuff",98)
-        WSPR HHHIII 1 A_CustomPunch(20,1,0,"BlankPuff2",98)
+        WSPR GGG 1 A_CustomPunch(16,1,0,"SpearPopcornPuff",128)
+        WSPR HHH 1 A_CustomPunch(16,1,0,"BlankPuff2",96)
+        WSPR III 1 A_CustomPunch(16,1,0,"BlankPuff2",64)
         WSPR I 5
         WSPR I 0
         WSPR H 1
@@ -145,7 +143,9 @@ actor SpearPopcornPuff: BulletPuff
 
     DeathSound "wolfen/spearexplode2"
     +PUFFONACTORS
-    +CLIENTSIDEONLY
+    +FORCERADIUSDMG
+
+    DamageType "EnemyInfightDamage"
 
     States
     {
@@ -155,7 +155,7 @@ actor SpearPopcornPuff: BulletPuff
         TNT1 A 0
         TNT1 A 0 A_Scream
         SPB2 AB 0 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0,0,0, random(-3,3),0,random(-3,3), random(0,360))
-        SPX2 AA 2 BRIGHT A_Explode(12, 96, 0)
+        SPX2 AAAA 1 BRIGHT A_Explode(16, 96, 0)
         SPX2 BCDE 4 BRIGHT
         Stop
     }
