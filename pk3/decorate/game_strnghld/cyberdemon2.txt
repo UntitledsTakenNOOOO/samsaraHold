@@ -105,7 +105,10 @@ ACTOR CyberdemonMk2 32757
 		CYBR E 1 BRIGHT A_Mushroom ("LiteShot2", 7)		
 		CYBR E 150 A_PlaySound ("weapons/bfgf")
 		CYBR F 0 A_FaceTarget
-		CYBR F 1 BRIGHT A_CustomMissile ("UltraBallA", 85,-24,0,0)
+		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,-24,90,0)
+		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,-24,180,0)
+		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,-24,270,0)
+		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,-24,360,0)
 		CYBR F 100 A_FaceTarget
 		CYBR A 1 A_UnsetInvulnerable
 		Goto See
@@ -352,7 +355,7 @@ ACTOR UltraBallA
       Goto Spawn+2
    Death:
       DBAL C 5 BRIGHT A_Explode
-      DBAL DDDDDDDDDDDDDDDDDDDDDDDD 0 BRIGHT A_CustomMissile("UltraBallB",32,0,Random(0,360),2,Random(0,360))
+      DBAL DDDDDDDDDD 0 BRIGHT A_CustomMissile("UltraBallB",32,0,Random(0,360),2,Random(0,360))
       DBAL DEFGHI 5 BRIGHT
       Stop
    }
@@ -400,7 +403,7 @@ ACTOR UltraBallB
       Goto Death
    Death:
       DBAL C 5 BRIGHT A_Explode
-      DBAL DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 0 BRIGHT A_CustomMissile("UltraBallC",32,0,Random(0,360),2,Random(0,360))
+      DBAL DDDDDDDDDDDD 0 BRIGHT A_CustomMissile("UltraBallC",32,0,Random(0,360),2,Random(0,360))
       DBAL DEFGHI 5 BRIGHT
       Stop
    }
@@ -438,7 +441,7 @@ ACTOR UltraBallC
       DBAL B 4 BRIGHT A_Explode (64,128,0)
    Death:
       DBAL C 5 BRIGHT A_Explode
-      DBAL DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 0 BRIGHT A_CustomMissile("DevastatorBall3",32,0,Random(0,360),2,Random(0,360))
+      DBAL DDDDDDDDDDDDDD 0 BRIGHT A_CustomMissile("DevastatorBall3",32,0,Random(0,360),2,Random(0,360))
       DBAL DEFGHI 5 BRIGHT
       Stop
    }
@@ -450,6 +453,8 @@ ACTOR DevastatorZone : UltraBallA
 	ReactionTime 5
 	-THRUGHOST
 	+RIPPER
+	+FORCERADIUSDMG
+	+FOILINVUL
 	Speed 10
 	DamageType "Cyber2Factor"
 	States
@@ -648,7 +653,7 @@ ACTOR DevastatorZone : UltraBallA
 		LFX2 HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 0 Bright A_SpawnItemEx("ZoneKillerPickup",Random(128,-128),Random(128,-128),0,0,0,0,0,0)
 		LFX2 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII 0 Bright A_SpawnItemEx("ZoneKillerPickup",Random(128,-128),Random(128,-128),0,0,0,0,0,0)
 		LFX2 JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ 0 Bright A_SpawnItemEx("ZoneKillerPickup",Random(128,-128),Random(128,-128),0,0,0,0,0,0)
-		LFX2 FGHIJFGHIJFGHIJ 2 Bright A_Explode(256,128,0)
+		LFX2 FGHIJFGHIJFGHIJ 2 Bright A_Explode(512,128,0)
 		LFX2 FGHIJ 2 Bright A_FadeOut(0.2)
 		Stop
 	}
