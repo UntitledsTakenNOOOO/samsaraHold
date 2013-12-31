@@ -8,8 +8,9 @@ ACTOR CyberdemonMk2 32757
 	damagefactor "Railgun", 0
 	damagefactor "BossFactor", 0.25
 	damagefactor "Cyber2Factor", 0
-	DamageFactor "Kamikaze", 0.01
+	damagefactor "Kamikaze", 0.01
 	damagefactor "ZorchKamikaze", 0.01
+	damagefactor "MarathonFusion", 2.0
 	Health 50000
 	MeleeRange 160
 	Radius 50
@@ -809,6 +810,7 @@ ACTOR ChaosCyber 32755
   MONSTER
   damagefactor "DragonClaw", 1.5
   damagefactor "CorvusCrossbow", 1.15
+  damagefactor "MarathonFusion", 2.0
   +NoRadiusDMG
   +DontHurtSpecies
   +FloorClip
@@ -1118,20 +1120,20 @@ ACTOR DropFire2
    {
    Spawn:
       FLME A 1 A_Playsound("weapons/onfire")
-      FLME A 1 A_Explode(5,32,0)
-      FLME BCDEFGHIJKLMN 2 A_Explode(5,16,0)
+      FLME A 1 A_Explode(2,32,0)
+      FLME BCDEFGHIJKLMN 2 A_Explode(2,16,0)
       FLME A 1 A_Playsound("weapons/onfire")
-      FLME A 1 A_Explode(5,32,0)
-      FLME BCDEFGHIJKLMN 2 A_Explode(5,16,0)
+      FLME A 1 A_Explode(2,32,0)
+      FLME BCDEFGHIJKLMN 2 A_Explode(2,16,0)
       FLME A 1 A_Playsound("weapons/onfire")
-      FLME A 1 A_Explode(5,32,0)
-      FLME BCDEFGHIJKLMN 2 A_Explode(5,16,0)
+      FLME A 1 A_Explode(2,32,0)
+      FLME BCDEFGHIJKLMN 2 A_Explode(2,16,0)
       FLME A 1 A_Playsound("weapons/onfire")
-      FLME A 1 A_Explode(5,32,0)
-      FLME BCDEFGHIJKLMN 2 A_Explode(5,16,0)
+      FLME A 1 A_Explode(2,32,0)
+      FLME BCDEFGHIJKLMN 2 A_Explode(2,16,0)
       FLME A 1 A_Playsound("weapons/onfire")
-      FLME A 1 A_Explode(5,32,0)
-      FLME BCDEFGHIJKLMN 2 A_Explode(5,16,0)
+      FLME A 1 A_Explode(2,32,0)
+      FLME BCDEFGHIJKLMN 2 A_Explode(2,16,0)
       FLME A 0 A_Jump(192,1)
       loop
       TNT1 A 0
