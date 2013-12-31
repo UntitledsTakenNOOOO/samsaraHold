@@ -1292,7 +1292,7 @@ Stop
 
 //=================
 // CHEX WARRIOR: Flemoidus Maximus
-// Yes, these use the same slimeballs as the Flemoids, only bigger and more damaging. I'm lazy, alright?
+// HEY LOOK THEY GET GREEN SLIME BALLS AGAIN
 actor FriendlyFlemoidusMaximus : FlemoidusMaximus
 {
     Health 1500 //Yeah he gets it because Defense
