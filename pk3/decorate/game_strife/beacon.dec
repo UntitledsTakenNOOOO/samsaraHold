@@ -84,7 +84,7 @@ actor StrifeBeaconSpawner
       SpawnLoop:
         "----" A 35
         "----" A 160 ACS_ExecuteAlways(315, 0, 1)
-        "----" AAAA 160 ACS_ExecuteAlways(315)
+        "----" AAA 160 ACS_ExecuteAlways(315)
         stop
 
       WhatAmIDoingWithMyLife:
@@ -122,11 +122,7 @@ actor StrifeBeaconDoom: StrifeBeaconSpawner
       // +160 (3)
         BEAC C 12 ACS_ExecuteAlways(315)
         BEAC DBCDBCDBCDBC 12
-        BEAC D 4
-      // +160 (4)
-        BEAC D 8 ACS_ExecuteAlways(315)
-        BEAC BCDBCDBCDBCD 12
-        BEAC B 8
+        BEAC C 4
         stop
     }
 }
