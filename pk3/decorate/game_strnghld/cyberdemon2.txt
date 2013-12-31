@@ -10,7 +10,6 @@ ACTOR CyberdemonMk2 32757
 	damagefactor "Cyber2Factor", 0
 	DamageFactor "Kamikaze", 0.01
 	damagefactor "ZorchKamikaze", 0.01
-	BloodType "SamsaraBloodyHellBlood"
 	Health 50000
 	MeleeRange 160
 	Radius 50
