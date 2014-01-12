@@ -280,10 +280,10 @@ actor TimeFreezeSphereHeretic : PowerupGiver
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
     +inventory.hubpower
-    Inventory.Icon "ARTISTP2"
+    Inventory.Icon "ARTISTP1"
     Powerup.Type TimeFreezer
+    powerup.color "00 33 FF" 0.10
     Powerup.Duration -30
-	Powerup.Color GoldMap
 }
 
 actor PowerTimeFreezerColor : Powerup

@@ -23,6 +23,7 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
         TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
         TNT1 A 1 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
         TNT1 A 0 A_PlaySound("invisibilityget")
+        TNT1 A 0 A_JumpIfInventory("PowerInvisibility",1,"PickupFail")
         TNT1 A 1 A_GiveInventory("BlurSphere")
         stop
 
@@ -99,6 +100,7 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
         TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
         TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
+	TNT1 A 0 A_JumpIfInventory("PowerFakeInvulnerable",1,"PickupFail")
         TNT1 A 0 A_PlaySound("invulnget")
         TNT1 A 1 A_GiveInventory("PowerFakeInvulnerable")
         stop
