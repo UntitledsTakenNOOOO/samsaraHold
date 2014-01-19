@@ -1119,7 +1119,7 @@ ACTOR STBossAttack8
 ACTOR STBossSkeleton 32766
 {
 	obituary "\c[G9]%o \c[G9]got whalloped by a skeleton."
-	health 1
+	health 20
 	scale 0.75
 	radius 15
 	height 42
@@ -1167,8 +1167,7 @@ ACTOR STBossSkeleton 32766
 		SKEL O 7 A_NoBlocking
 		//SKEL PPPPPPP 1 A_SpawnItemEx("KDBossSmallerSmoke", Random(-7, 7), Random(-7, 7), 0, 0, 0, 0.01 * Random(1, 125), 0, 128, 0)
 		SKEL P 7 //What the lag, tormentor.
-		SKEL QQQQQQQQQQQQQQQQQQQQQQQQ 2 A_FadeOut(0.05)
-		TNT1 A -1
+		SKEL Q -1
 		stop
 	Death.Animate:
 		SKEL L 1 A_SpawnItemEx("STFireEffectB",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
