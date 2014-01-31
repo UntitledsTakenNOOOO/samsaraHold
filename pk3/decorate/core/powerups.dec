@@ -33,6 +33,7 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
         TNT1 A 1 A_GiveInventory("PortGhostly")
         stop
 
+      PickupFail:
       PickupHereticFail:
         NVSI A 1 BRIGHT
         fail
