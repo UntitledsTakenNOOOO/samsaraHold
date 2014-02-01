@@ -28,7 +28,7 @@ damagefactor "ZorchKamikaze", 0.5
     MeleeSound "baron/melee"
     Obituary "\c[S3]%o \c[S3]was slaughtered by Azazel."
     MinMissileChance 20
-    MeleeDamage 8
+    MeleeDamage 16
     States
     {
     Spawn:
@@ -301,7 +301,7 @@ Actor SatyrLordMissile1 : FastProjectile
 	Projectile
 	Radius 8
 	Height 16
-	Speed 22
+	Speed 66
 	Damage 19
 	DamageType "Normal"
 	Scale 0.65
@@ -367,7 +367,7 @@ Actor SLM1Trail
 //*************************************************
 Actor SatyrLordMissile2
 {
-	Speed 14
+	Speed 12
 	damage 15
 	DamageType "Normal"
 	scale 0.35
@@ -447,10 +447,10 @@ Actor SatyrLordMissileDual1Fake
 		Stop
 	}
 }
-Actor SatyrLordMissileDual1Real
+Actor SatyrLordMissileDual1Real : FastProjectile
 {
 	Projectile
-	Speed 28
+	Speed 56
 	Scale 0.34
 	RenderStyle Add
 	Damage 16
@@ -533,7 +533,7 @@ Actor SatyrLordMissileDual2Fake
 Actor SatyrLordMissileDual2Real
 {
 	Projectile
-	Speed 18
+	Speed 10
 	Radius 6
 	Damage 12
 	DamageType "Normal"
@@ -567,7 +567,8 @@ Actor SatyrLordMissileDual2Real
 
 Actor SLMD2RTrail
 {
-	Projectile+BOSS
+	Projectile
+	+BOSS
 	Speed 0
 	Damage 0
 	+NOCLIP
@@ -595,7 +596,7 @@ Actor SLMD2RTrail
 actor Satyr 3109
 {
     PainChance "Stunner", 192
-    PainChance "MightyBoot", 256
+    PainChance "MightyBoot", 255
     DamageFactor "DragonClaw", 1.5
     DamageFactor "CorvusCrossbow", 1.1
     Health 400
@@ -614,7 +615,6 @@ actor Satyr 3109
     ActiveSound "knight/active"
     MeleeSound "baron/melee"
     HitObituary "%o was mauled by a satyr."
-    BloodType "SamsaraBloodyHellBlood"
     MeleeDamage 8
     States
     {
@@ -625,7 +625,7 @@ actor Satyr 3109
         STYR AABBCCDD 3 A_Chase
         Loop
     Melee:
-        STYR EF 6 A_FaceTarget
+        STYR EF 5 A_FaceTarget
         STYR G 6 A_MeleeAttack
         STYR PQ 5 A_FaceTarget
         STYR R 6 A_MeleeAttack
