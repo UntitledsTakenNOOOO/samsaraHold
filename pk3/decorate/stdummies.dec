@@ -3,14 +3,14 @@
 //actor InvisibilitySphere : PartialInvisibility { }
 
 //actor MaxArmorBonus : ArmorScrap 5091
-actor MaxArmorBonus2: ArmorScrap replaces MaxArmorBonus
+actor MaxArmorBonus3: ArmorScrap replaces MaxArmorBonus
 {
     Game Doom
     SpawnID 167
 }
 
 //actor MaxHealthBonus : HealPack0 5090
-actor MaxHealthBonus2: HealPack0 replaces MaxHealthBonus
+actor MaxHealthBonus3: HealPack0 replaces MaxHealthBonus
 {
     Game Doom
     SpawnID 166
