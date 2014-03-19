@@ -210,7 +210,7 @@ actor MarathonSMGBulletOverwater : MarathonSMGBullet
     Radius 1
     Height 1
     Speed 80
-    Damage (random(9,12))
+    Damage (random(9,10))
     +THRUSPECIES
     Species "Player"
 }
