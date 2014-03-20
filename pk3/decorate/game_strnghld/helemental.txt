@@ -29,6 +29,7 @@ damagefactor "ZorchKamikaze", 0.5
   +MISSILEMORE
   +NOTARGET
   +DONTHURTSPECIES
+  +DONTRIP
   +NOICEDEATH
   +NORADIUSDMG
   states

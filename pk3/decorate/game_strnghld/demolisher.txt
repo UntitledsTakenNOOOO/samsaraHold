@@ -38,6 +38,7 @@ MONSTER
 +MISSILEEVENMORE
 +NORADIUSDMG
 +DONTMORPH
++DONTRIP
 +NOICEDEATH
 SeeSound "monster/demsit"
 AttackSound "spider/attack"

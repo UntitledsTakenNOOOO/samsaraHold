@@ -181,6 +181,7 @@ ACTOR Queen
 	PainChance 32
 	MONSTER 
 	+FLOORCLIP
+	+DONTRIP
 	+DONTMORPH
 	+BOSS
 	+FULLVOLACTIVE
@@ -282,7 +283,7 @@ ACTOR Cycloid
 	MONSTER 
 	+BOSS
 	+DONTMORPH
-
+	+DONTRIP
 	+FLOORCLIP
 	+NOICEDEATH
 
@@ -378,6 +379,7 @@ ACTOR Overlord
 	Speed 25
 	PainChance 32
 	MONSTER
+	+DONTRIP
 	+BOSS
 	+FLOORCLIP
 	+NOICEDEATH
@@ -1009,6 +1011,7 @@ ACTOR SuperBattleLord : BattleLord
 {   
 //$Category Stronghold_DukeNukem  
 	+DONTMORPH   
+	+DONTRIP
 	spawnid 165
 	Scale 1.4
 	Speed 18

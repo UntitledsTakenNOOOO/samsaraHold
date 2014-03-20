@@ -32,6 +32,7 @@ Obituary "\c[L3]%o \c[L3]was liquidated by a Terminator."
 +DONTHURTSPECIES
 +NORADIUSDMG
 +DONTMORPH
++DONTRIP
 +NOICEDEATH
 +NOBLOOD
 Missiletype Grenadeblast

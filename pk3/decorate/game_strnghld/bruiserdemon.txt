@@ -22,6 +22,7 @@ damagefactor "ZorchKamikaze", 0.5
 	+MISSILEEVENMORE
 	+NOICEDEATH
 	+NORADIUSDMG
+	+DONTRIP
 	MissileType BruiserBall
 	SeeSound "superbaron/scream"
 	PainSound "superbaron/pain"

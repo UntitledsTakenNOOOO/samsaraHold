@@ -28,6 +28,7 @@ MONSTER
 +NORADIUSDMG
 +MISSILEMORE
 +BOSS
++DONTRIP
 +DONTHURTSPECIES
 SeeSound "monster/diasit"
 PainSound "monster/diapai"

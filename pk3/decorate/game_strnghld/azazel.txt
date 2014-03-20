@@ -19,6 +19,7 @@ damagefactor "ZorchKamikaze", 0.5
     +MISSILEEVENMORE
     +MISSILEMORE
     +NORADIUSDMG
+    +DONTRIP
     +DONTMORPH
     +NOICEDEATH
     SeeSound "diablo2/goatman/sight"

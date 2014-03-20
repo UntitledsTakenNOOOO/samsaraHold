@@ -752,6 +752,7 @@ ACTOR MiniCyber 32756
   damagefactor "CorvusCrossbow", 1.1
   damagefactor "Cyber2Factor", 0
   +NoRadiusDMG //Oh heh these things will annoy everyone.
+  +DontRip
   +DontHurtSpecies
   +FloorClip
   +MissileMore

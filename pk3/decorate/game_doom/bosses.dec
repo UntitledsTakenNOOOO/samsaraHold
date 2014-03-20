@@ -9,6 +9,7 @@ actor SpiderMastermind2 : Spidermastermind replaces SpidermastermindStun
     Height 96
     Radius 96
     +BOSSDEATH
+    +DONTRIP
     +NOTDMATCH
     +NOICEDEATH
     +MISSILEEVENMORE
@@ -192,6 +193,7 @@ actor Cyberdemon2 : Cyberdemon replaces CyberdemonStun
     DamageFactor "WMCNade", 0.75
 	DamageFactor "CorvusHellstaffTomed", 0.2
 	painchance "Stunner", 96
+    +DONTRIP
     +BOSSDEATH
     +NOTDMATCH
     +NOICEDEATH

@@ -21,6 +21,7 @@ HitObituary "%o was smashed by a Cybruiser."
 +MISSILEMORE
 +DONTHURTSPECIES
 +NOICEDEATH
++DONTRIP
 SeeSound "monster/brusit"
 PainSound "baron/pain"
 DeathSound "monster/brudth"

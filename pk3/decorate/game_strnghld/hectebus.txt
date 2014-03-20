@@ -21,6 +21,7 @@ DamageFactor "MarathonFusion", 2.0
   Monster
   +FloorClip
   +MissileMore
+  +DONTRIP
   +NOICEDEATH
   Obituary "%o was cremated by a Hectebus."
   States
