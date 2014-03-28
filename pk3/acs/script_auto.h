@@ -401,6 +401,9 @@ script SAMSARA_SPAWN (int respawning)
         if (array_weaponBar[pln]) { GiveInventory("ExpandedHud", 1); }
         else { TakeInventory("ExpandedHud", 0x7FFFFFFF); }
 
+        if (array_strweapons[pln]) { GiveInventory("StrongholdWeapons", 1); }
+        else { TakeInventory("StrongholdWeapons", 0x7FFFFFFF); }
+
         if (GetCVar("dmflags2") & 256) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
         else { GiveInventory("DoomNoBFGAim", 1); }
 
@@ -823,6 +826,10 @@ script SAMSARA_ENTER_CLIENT (void) clientside
         if (!GetCVar("samsara_cl_printpickup"))
         {   ConsoleCommand("set samsara_cl_printpickup 0");
         ConsoleCommand("archivecvar samsara_cl_printpickup"); }
+
+        if (!GetCVar("samsarahold_cl_strweapons"))
+        {   ConsoleCommand("set samsarahold_cl_strweapons 0");
+        ConsoleCommand("archivecvar samsarahold_cl_strweapons"); }
     }
 
     for (i = 0; i < RESCOUNT; i++)
@@ -862,6 +869,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
             array_ballgag[pln]      = !!GetCVar("samsara_cl_ballgag");
             array_weaponBar[pln]    = !!GetCVar("samsara_cl_weaponhud");
             array_pickupswitch[pln] = !!GetCVar("switchonpickup");
+            array_strweapons[pln]   = !!GetCVar("samsarahold_cl_strweapons");
         }
         else
         {
