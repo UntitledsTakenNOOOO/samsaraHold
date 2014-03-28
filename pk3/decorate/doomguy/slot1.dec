@@ -14,20 +14,37 @@ actor " Chainsaw " : Chainsaw replaces Chainsaw
 	TNT1 A 0 A_JumpIfInventory("Stunner Rifle",1,"Ready2")
 	TNT1 A 0 A_GiveInventory("Stunner Rifle",1)
       Ready2:
+	DSAW A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
         DSAW CD 4 A_WeaponReady
         loop
+      StrongholdReady:
+	SAWG CD 4 A_WeaponReady
+	goto Ready
 
       Deselect:
+        DSAW A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdDeselect")
         DSAW C 0 A_Lower
         DSAW C 1 A_Lower
         loop
 
+      StrongholdDeselect:
+        SAWG C 0 A_Lower
+        SAWG C 1 A_Lower
+        goto Deselect
+
       Select:
+        DSAW A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdSelect")
         DSAW C 0 A_Raise
         DSAW C 1 A_Raise
         loop
 
+      StrongholdSelect:
+        SAWG C 0 A_Raise
+        SAWG C 1 A_Raise
+        goto select
+
       Fire:
+        DSAW A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdFire")
         TNT1 A 0 A_JumpIfInventory("PowerChainsawBerserk", 1, "FireBerserk")
         DSAW AB 3 A_Saw("doomguy/sawfull", "doomguy/sawhit", 7, "DoomBulletPuff") 
         DSAW B 0 A_ReFire
@@ -37,6 +54,17 @@ actor " Chainsaw " : Chainsaw replaces Chainsaw
 	DSAW AB 2 A_Saw("doomguy/sawfull", "doomguy/sawhit", 10, "DoomBulletPuff") 
         DSAW B 0 A_ReFire
         goto Ready
+
+      StrongholdFire:
+        TNT1 A 0 A_JumpIfInventory("PowerChainsawBerserk", 1, "FireBerserk")
+        SAWG AB 3 A_Saw("doomguy/sawfull", "doomguy/sawhit", 7, "DoomBulletPuff") 
+        SAWG B 0 A_ReFire
+        goto Ready
+
+      StrongholdFireBerserk:
+	SAWG AB 2 A_Saw("doomguy/sawfull", "doomguy/sawhit", 10, "DoomBulletPuff") 
+        SAWG B 0 A_ReFire
+        goto Ready	
 
       Spawn:
         WSAW A -1

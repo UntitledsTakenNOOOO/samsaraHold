@@ -65,6 +65,8 @@ actor GotWeapon5: Boolean {}
 actor GotWeapon6: Boolean {}
 actor GotWeapon7: Boolean {}
 
+actor StrongholdWeapons: Boolean {}
+
 actor WeaponGetYaaaay : Ammo
 {
     Radius 4

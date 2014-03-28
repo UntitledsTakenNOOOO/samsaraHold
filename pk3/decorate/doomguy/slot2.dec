@@ -10,22 +10,47 @@ actor " Shotgun " : Shotgun
     States
     {
       Ready:
+        DSHT A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
         DSHT A 1 A_WeaponReady
         Loop
 
+      StrongholdReady:
+        SHTG A 1 A_WeaponReady
+        Goto Ready
+
       Deselect:
+	DSHT A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdDeselect")
         DSHT A 0 A_Lower
         DSHT A 1 A_Lower
         Loop
 
       Select:
+        DSHT A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdSelect")
         DSHT A 0 A_Raise
         DSHT A 1 A_Raise
         Loop
 
+      StrongholdDeselect:
+        SHTG A 0 A_Lower
+        SHTG A 1 A_Lower
+        Goto Deselect
+
+      StrongholdSelect:
+        SHTG A 0 A_Raise
+        SHTG A 1 A_Raise
+        Goto Select
+
       Fire:
+        DSHT A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdStart")
         DSHT A 3
         DSHT A 0 A_PlayWeaponSound("doomguy/shotgf")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+        TNT1 A 0 A_FireBullets (5.6, 0, 8, 5, "DoomBulletPuff")
+        goto FireAnim
+
+      StrongholdStart:
+        SHTG A 3
+        SHTG A 0 A_PlayWeaponSound("weapons/shotgf")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         TNT1 A 0 A_FireBullets (5.6, 0, 8, 5, "DoomBulletPuff")
         goto FireAnim
@@ -39,6 +64,7 @@ actor " Shotgun " : Shotgun
 
       FireAnim:
         DSHT A 0 A_GunFlash
+        DSHT A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdAnim")
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
         TNT1 A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageAnim")
         TNT1 A 0 A_ZoomFactor(0.995, ZOOM_INSTANT)
@@ -76,6 +102,17 @@ actor " Shotgun " : Shotgun
         DSHT A 3
         DSHT A 7 A_ReFire
         Goto Ready
+
+      StrongholdAnim:
+        SHTG E 2
+        SHTG F 3
+        SHTG G 2
+        SHTG BC 5
+        SHTG D 4
+        SHTG CB 5
+        SHTG A 3
+        SHTG A 7 A_ReFire
+	Goto Ready
 
       Flash:
         DSHF A 3 bright A_Light1

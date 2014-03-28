@@ -10,20 +10,38 @@ actor "Rocket Launcher" : RocketLauncher
 	TNT1 A 0 A_JumpIfInventory("Land Mine Layer",1,"Ready2")
 	TNT1 A 0 A_GiveInventory("Land Mine Layer",1)
       Ready2:
+	DMIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
         DMIS A 1 A_WeaponReady
         Loop
 
+      StrongholdReady:
+	MISG A 1 A_WeaponReady
+	goto Ready
+
       Deselect:
-	DMIS A 0 A_Lower
+	DMIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdDeselect")
+        DMIS A 0 A_Lower
         DMIS A 1 A_Lower
-        Loop
+        loop
+
+      StrongholdDeselect:
+        MISG A 0 A_Lower
+        MISG A 1 A_Lower
+        Goto Deselect
 
       Select:
-	DMIS A 0 A_Raise
+	DMIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdDelect")
+        DMIS A 0 A_Raise
         DMIS A 1 A_Raise
         Loop
 
+      StrongholdSelect:
+        MISG A 0 A_Raise
+        MISG A 1 A_Raise
+        Goto select
+
       Fire:
+	DMIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdFire")
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
         DMIS A 2 
         DMIS A 4 bright A_GunFlash
@@ -65,6 +83,12 @@ actor "Rocket Launcher" : RocketLauncher
         DRKL D 4 bright
         DMIS B 5 A_Light0
         DMIS B 0 A_ReFire // 20 frames total
+        Goto Ready
+
+      StrongholdFire:
+	MISF A 4 Bright A_GunFlash
+        MISF B 5 Bright A_FireCustomMissile("DoomRocket2",0,1,0,0)
+        MISF CD 5 Bright
         Goto Ready
         
       Flash:

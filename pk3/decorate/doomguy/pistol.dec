@@ -15,23 +15,45 @@ actor " Pistol " : Weapon// : Pistol
     States
     {
       Ready:
+        DPIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
         DPIS A 1 A_WeaponReady
         Loop
 
       Deselect:
+        DPIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdDeselect")
         DPIS A 0 A_Lower
         DPIS A 1 A_Lower
         Loop
 
       Select:
+        DPIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdSelect")
         DPIS A 0 A_Raise
         DPIS A 1 A_Raise
         Loop
 
+      StrongholdDeselect:
+        PISG A 0 A_Lower
+        PISG A 1 A_Lower
+        goto Deselect
+
+      StrongholdSelect:
+        PISG A 0 A_Raise
+        PISG A 1 A_Raise
+        goto Select
+
       Fire:
          TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"CheckForAmmo")
+
          Fire2:
+	DPIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdStart")
         DPIS A 4
+	goto Fire3
+
+	StrongholdStart:
+	PISG A 4
+	Goto Fire3
+
+	Fire3:
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
                 TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         TNT1 A 0 A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff2")
@@ -51,6 +73,7 @@ actor " Pistol " : Weapon// : Pistol
       FireAnim:
          TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"TakePistolAmmo")
          FireAnim2:
+        TNT1 A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdAnim")
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
             TNT1 A 0 A_GunFlash
         TNT1 A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageAnim")
@@ -76,10 +99,24 @@ actor " Pistol " : Weapon// : Pistol
          TNT1 A 0 A_TakeInventory("Clip",1)
                 goto FireAnim2
 
+      StrongholdAnim:
+        PISF A 6 A_GunFlash
+        PISG C 4
+        PISG B 5 A_ReFire
+        goto Ready
+
       Hold:
          TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"CheckForAmmoHold")
          Hold2:
+	TNT1 A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdHold")
         DPIS A 4
+	Goto Hold3
+	
+	StrongholdHold:
+	PISG A 4
+	Goto Hold3
+
+	Hold3:
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopHold")
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         TNT1 A 0 A_FireBullets (5.6, 0, -1, 5, "DoomBulletPuff2")

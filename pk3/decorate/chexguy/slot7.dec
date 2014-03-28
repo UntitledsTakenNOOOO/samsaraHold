@@ -342,7 +342,7 @@ actor "Spectral LAZ Device": "LAZ Device"
 
 actor ChexLAZBall : BFGBall
 {
-    Damage (Random(1,8)*75+125)
+    Damage 125
     DamageType "Zorch"
     Decal None
     +BRIGHT
@@ -394,7 +394,7 @@ actor ChexBFGBall
     Radius 13
     Height 8
     Speed 25
-    Damage 100
+    Damage 75
     RenderStyle Translucent
     Obituary "%k \chkicked\c- %o\ch off to another dimension with the LAZ device.\c-"
     Alpha 0.75
