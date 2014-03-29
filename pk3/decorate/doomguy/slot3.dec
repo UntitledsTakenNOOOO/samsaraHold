@@ -58,7 +58,7 @@ actor "Super Shotgun" : SuperShotgun
       StrongholdStart:
 	SHT2 A 3
 	TNT1 A 0 A_PlayWeaponSound ("weapons/sshotf")
-        TNT1 A 0 A_GunFlash("StrongholdFlash")
+        TNT1 A 0 A_GunFlash
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopMid")
         TNT1 A 0 A_FireBullets (11.2, 7.1, 21, 5, "DoomBulletPuff")
 	goto FireEnd
@@ -141,6 +141,7 @@ actor "Super Shotgun" : SuperShotgun
     goto Ready
 
       Flash:
+        TNT1 A 0 A_JumpIfInventory("StrongholdWeapons", 1, "StrongholdFlash")
         DSSF A 3 bright A_Light1
         DSSF B 3 bright A_Light2
         Goto LightDone
