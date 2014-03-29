@@ -30,7 +30,7 @@ actor "Rocket Launcher" : RocketLauncher
         Goto Deselect
 
       Select:
-	DMIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdDelect")
+		DMIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdSelect")
         DMIS A 0 A_Raise
         DMIS A 1 A_Raise
         Loop
@@ -89,6 +89,7 @@ actor "Rocket Launcher" : RocketLauncher
 	MISF A 4 Bright A_GunFlash
         MISF B 5 Bright A_FireCustomMissile("DoomRocket2",0,1,0,0)
         MISF CD 5 Bright
+	MISF D 0 A_ReFire
         Goto Ready
         
       Flash:

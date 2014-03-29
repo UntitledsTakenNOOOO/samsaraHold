@@ -82,8 +82,8 @@ Actor "B.F.G. 9000" : BFG9000
         BFGG G 5 Bright
         BFGG H 5 Bright
         BFGG I 5 Bright
-        BFGG J 4 Bright
-        BFGG K 7 Bright
+        BFGG J 5 Bright
+        BFGG K 5 Bright
 	goto FireMid
 
       FireMid:
@@ -160,10 +160,10 @@ Actor "B.F.G. 9000" : BFG9000
         goto Ready
 
       StrongholdEnd:
-        BFGG L 8 Bright
-        BFGG M 8 Bright
-        BFGG N 7 Bright
-        BFGG E 20 Bright A_ReFire
+        BFGG L 5 Bright
+        BFGG M 5 Bright
+        BFGG N 5 Bright A_ReFire
+        BFGG E 15 Bright
 	goto Ready
 
       Flash:

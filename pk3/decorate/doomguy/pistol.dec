@@ -19,6 +19,10 @@ actor " Pistol " : Weapon// : Pistol
         DPIS A 1 A_WeaponReady
         Loop
 
+      StrongholdReady:
+        PISG A 1 A_WeaponReady
+        Loop
+
       Deselect:
         DPIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdDeselect")
         DPIS A 0 A_Lower
