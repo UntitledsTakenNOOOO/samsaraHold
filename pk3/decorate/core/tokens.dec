@@ -52,6 +52,8 @@ actor ForceSOGravity: Boolean {}
 actor NoUniqueItem: Boolean {}
 actor NoUltItem: Boolean {}
 
+actor StrongholdWeapons: Boolean {}
+
 actor SynthFireActive:  Boolean {} // enables synthetic-fire system.
 actor SynthFireLeft:    Boolean {} // special refire-trackers for
 actor SynthFireRight:   Boolean {} // synthetic-fire dual-wielding.
@@ -64,8 +66,6 @@ actor GotWeapon4: Boolean {}
 actor GotWeapon5: Boolean {}
 actor GotWeapon6: Boolean {}
 actor GotWeapon7: Boolean {}
-
-actor StrongholdWeapons: Boolean {}
 
 actor WeaponGetYaaaay : Ammo
 {
