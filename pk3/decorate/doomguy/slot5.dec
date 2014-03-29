@@ -99,6 +99,13 @@ actor "Rocket Launcher" : RocketLauncher
         DMSF DE 3 bright
         Goto LightDone
 
+      StrongholdFlash:
+	TNT1 A 4 bright A_Light1
+	TNT1 A 5 bright A_Light2
+	TNT1 A 5 bright A_Light1
+	TNT1 A 5 bright A_Light0
+	stop
+
       Spawn:
         WDRL A -1
         Stop

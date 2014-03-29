@@ -104,7 +104,7 @@ actor " Pistol " : Weapon// : Pistol
                 goto FireAnim2
 
       StrongholdAnim:
-        PISF A 6 A_GunFlash
+        PISF A 6 A_GunFlash("StrongholdFlash")
         PISG C 4
         PISG B 5 A_ReFire
         goto Ready
@@ -147,6 +147,17 @@ actor " Pistol " : Weapon// : Pistol
         TNT1 A 3 Bright A_Light1
         TNT1 A 2 A_Light1
         Goto LightDone
+
+      Flash:
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFlash")
+        TNT1 A 3 Bright A_Light1
+        TNT1 A 2 A_Light1
+        Goto LightDone
+
+      StrongholdFlash:
+        PISF A 7 bright A_Light1
+        PISF A 0 bright A_Light0
+        stop
 
       Spawn:
         WPST A -1

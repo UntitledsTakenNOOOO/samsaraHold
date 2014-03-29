@@ -63,8 +63,8 @@ actor " Shotgun " : Shotgun
         goto FireAnim
 
       FireAnim:
-        DSHT A 0 A_GunFlash
         DSHT A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdAnim")
+        DSHT A 0 A_GunFlash
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
         TNT1 A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageAnim")
         TNT1 A 0 A_ZoomFactor(0.995, ZOOM_INSTANT)
@@ -104,7 +104,7 @@ actor " Shotgun " : Shotgun
         Goto Ready
 
       StrongholdAnim:
-        SHTG E 2
+        SHTG E 2 A_GunFlash("StrongholdFlash")
         SHTG F 3
         SHTG G 2
         SHTG BC 5
@@ -118,6 +118,12 @@ actor " Shotgun " : Shotgun
         DSHF A 3 bright A_Light1
         DSHF B 4 bright A_Light2
         Goto LightDone
+
+      StrongholdFlash:
+	TNT1 A 4 bright A_Light1
+	TNT1 A 3 bright A_Light2
+	TNT1 A 0 bright A_Light0
+	stop
 
       Spawn:
         WSHT A -1
