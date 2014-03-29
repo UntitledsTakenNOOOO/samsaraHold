@@ -587,7 +587,8 @@ NOTE: This is meant to be played in coop mode. If UV single player is Impossible
 STRONGHOLD CHANGES\n
 - Most of these should remain secret, but...\n
 - Par times are now much, much, much larger (as in like 4 Times Longer), as to allow people to have an easy time re-running previous missions for free cash. Now, the real goal is get the Time Slicer Achievement (Yes, that's a thing).\n
-- Changes to various missions all over the place. Most of these are going to remain secret, since, well, I want you to be surprised...\n
+- Changes to various missions all over the place. Most of these are going to remain secret, since, well, I want you to be surprised... Here, I'll give one to you.\n
+- STR18 (Smoldering Caves) replaced with STR18 (Delta Bunker) from the RC2, because seriously, Delta Bunker was more worthy of being in Tier 4, and much cooler than Smoldering Caves. It's also much harder.\n
 - Changes to various monsters. Most of these should not be noticeable, with the Key Word being Most. Again, most of these are to remain secret.\n
 - The one I'm giving to you is that Dune Warriors can now be shot while cloaked, because they say they have a cloaking device, not a phase-out-of-existence device (same goes to apprentices in STR52 btw)!\n
 -The Bruiser Demon Powerup, as fun as it was, had it's novelty wear out a long time ago. I replaced with a Terminator Powerup. Much better.\n

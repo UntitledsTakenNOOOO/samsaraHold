@@ -14,6 +14,7 @@ int array_vanillaAnim[PLAYERMAX];
 int array_ballgag[PLAYERMAX];
 int array_weaponBar[PLAYERMAX];
 int array_pickupswitch[PLAYERMAX];
+int array_strweapons[PLAYERMAX];
 int DukeQuoteCooldown[PLAYERMAX];
 int ServerEnterTimes[PLAYERMAX];
 int WolfenEnterTimes[PLAYERMAX];

@@ -905,6 +905,7 @@ script SAMSARA_PUKE (int values, int pln) net
     array_ballgag[pln]      = values & 4;
     array_weaponBar[pln]    = values & 8;
     array_pickupswitch[pln] = values & 16;
+    array_strweapons[pln]   = values & 32;
 }
 
 
