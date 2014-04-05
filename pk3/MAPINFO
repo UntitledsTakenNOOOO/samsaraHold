@@ -13,7 +13,7 @@ gameinfo
 skill baby
 {
 	AutoUseHealth
-	AmmoFactor = 2
+	//AmmoFactor = 2
 	DamageFactor = 0.5
 	ACSReturn = 0
 	EasyBossBrain
@@ -79,7 +79,7 @@ skill hard
 skill nightmare
 {
 	ACSReturn = 4
-	//AmmoFactor = 2
+	AmmoFactor = 2
 	FastMonsters
 	//DisableCheats
 	//RespawnTime = 12
@@ -95,6 +95,6 @@ skill nightmare
     PlayerClassName = "Ranger", "NIGHTMARE!"
 	MustConfirm = "Heedfulness is the Deathless path; heedlessness, the path to death."
 	
-	DamageFactor = 1.5
-	Aggressiveness = 0.75
+	//DamageFactor = 1.5
+	//Aggressiveness = 0.75
 }
