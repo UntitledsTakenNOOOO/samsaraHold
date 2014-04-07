@@ -1,7 +1,7 @@
 actor "Super Shotgun" : SuperShotgun
 {
     Weapon.AmmoType "Shell"
-    Weapon.AmmoGive 16
+    Weapon.AmmoGive 20
     Decal BulletChip
     Weapon.SlotNumber 3
     +THRUGHOST
@@ -11,11 +11,9 @@ actor "Super Shotgun" : SuperShotgun
     States
     {
       Ready:
-      /*
-	TNT1 A 0 A_JumpIfInventory("Automatic Shotgun",1,"Ready2") //Someday.
+	TNT1 A 0 A_JumpIfInventory("Automatic Shotgun",1,"Ready2")
 	TNT1 A 0 A_GiveInventory("Automatic Shotgun",1)
       Ready2:
-      */
         TNT1 A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
         DSSG A 1 A_WeaponReady
         Loop
@@ -157,4 +155,90 @@ actor "Super Shotgun" : SuperShotgun
         WSSG A -1
         Stop
     }
+}
+
+Actor "Automatic Shotgun" : Weapon
+{
+   +AMMO_OPTIONAL
+   Inventory.PickupMessage "You got the Auto Shotgun!"
+   Inventory.PickupSound "misc/w_pkup"
+   Weapon.SlotPriority 1
+   Weapon.AmmoType "AutoShotgunClip"
+   Weapon.AmmoGive1 20
+   Weapon.AmmoUse 1
+   Weapon.AmmoType2 "Shell"
+   Weapon.AmmoGive2 20
+   Weapon.AmmoUse2 0
+   Tag "Auto Shotgun"
+   +INVENTORY.UNDROPPABLE
+  states
+  {
+  Spawn:
+    WASG A -1
+    stop
+  Ready:
+    ASGG A 1 A_WeaponReady
+    loop
+  Deselect:
+    ASGG A 0 A_Lower
+    ASGG A 1 A_Lower
+    loop
+  Select:
+    ASGG A 0 A_Raise
+    ASGG A 1 A_Raise
+    loop
+  Fire:
+  Hold:
+    ASGG A 0 A_JumpIfInventory("AutoShotgunClip", 1, "Shoot")
+    ASGG A 0 A_JumpIfInventory("Shell", 1, "Altfire")
+    Goto Stall
+  Stall:
+    ASGG A 2 A_PlayWeaponSound("Weapons/asgout")
+    Goto Ready
+  Shoot:
+    ASGG A 1
+    ASGG L 0 A_GunFlash
+    ASGG A 0
+    TNT1 AA 0 A_FireCustomMissile("DoomBullet", random(-500, 500)/100.00, 0, 0, 1, 0, random(-400, 400)/100.00)
+    TNT1 AA 0 A_FireCustomMissile("DoomBullet", random(-400, 400)/100.00, 0, 0, 1, 0, random(-320, 320)/100.00)
+    TNT1 AA 0 A_FireCustomMissile("DoomBullet", random(-300, 300)/100.00, 0, 0, 1, 0, random(-240, 240)/100.00)
+    TNT1 A  0 A_FireCustomMissile("DoomBullet", random(-200, 200)/100.00, 0, 0, 1, 0, random(-160, 160)/100.00)
+    TNT1 A  0 A_FireCustomMissile("DoomBullet", random(-100, 100)/100.00, 1, 0, 1, 0, random(-80, 80)/100.00)
+    ASGG M 3
+    ASGG N 2
+    ASGG A 5 A_PlaySoundEX("weapons/asgld1","auto",0)
+    ASGG A 3
+    ASGG A 0 A_ReFire
+    goto Ready
+  Altfire:
+    ASGG BCDEF 3
+    ASGG G 3 A_PlayWeaponSound("Weapons/asgout")
+    ASGG HIJ 3
+    ASGG k 15
+    ASGG JIH 3
+  Reloading1:
+    ASGG G 0 A_TakeInventory("Shell",1)
+    ASGG G 0 A_GiveInventory("AutoShotgunClip",1)
+    ASGG G 0 A_JumpIfInventory("AutoShotgunClip",20,"Reloading2")
+    ASGG G 0 A_JumpIfInventory("Shell",1,"Reloading1")
+    ASGG G 0
+    Goto Reloading2
+  Reloading2:
+    ASGG G 3 A_PlayWeaponSound("Weapons/asgin")
+    ASGG FEDCB 3
+    ASGG A 8 A_PlaySoundEX("weapons/asgld1","auto",0)
+    goto Ready
+  Flash:
+    TNT1 A 4 bright A_Light1
+    TNT1 A 3 bright A_Light2
+    TNT1 A 0 bright A_Light0
+    stop
+}
+
+ACTOR AutoShotgunClip: Ammo
+{
+     Inventory.MaxAmount 20
+     Ammo.BackpackAmount 0
+     Ammo.BackpackMaxAmount 20
+     +Inventory.IgnoreSkill
 }
