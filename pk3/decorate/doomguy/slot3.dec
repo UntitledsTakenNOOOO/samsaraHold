@@ -233,6 +233,7 @@ Actor "Automatic Shotgun" : Weapon
     TNT1 A 3 bright A_Light2
     TNT1 A 0 bright A_Light0
     stop
+    }
 }
 
 ACTOR AutoShotgunClip: Ammo
