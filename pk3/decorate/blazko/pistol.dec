@@ -67,7 +67,7 @@ actor BlankPuff2Bloodless : BlankPuff2 { -BLOODSPLATTER +BLOODLESSIMPACT }
 
 actor WolfenBullet2: FastProjectile
 {
-    Damage (15)
+    Damage (Random(1,3)*7)
     Radius 1
     Height 1
     Speed 320
@@ -92,7 +92,7 @@ actor WolfenBullet2: FastProjectile
 actor WolfenBulletSupplement//: WolfenBullet2
 {
     Speed 256
-    Damage (5)
+    Damage (Random(1,3)*2)
     Radius 1
     Height 1
     Projectile
