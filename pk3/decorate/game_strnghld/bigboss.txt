@@ -2,7 +2,7 @@ ACTOR STBoss 32767
 {
 //$Category Stronghold_Monsters
 	Game Doom
-	Health 200000
+	Health 150000
 	Radius 48
 	Height 128
 	Scale 2.0
@@ -19,7 +19,7 @@ ACTOR STBoss 32767
 	DamageFactor "Animate", 0.05
 	DamageFactor "HexenIce", 2.5
 	DamageFactor "DukeIce", 2.5
-	DamageFactor "WraithVerge", 2
+	DamageFactor "Wraithverge", 2
 	DamageFactor "CorvusHellStaff", 1.4
 	DamageFactor "WolfenFlameThrower", 1.25
 	BloodType "SamsaraBloodyHellBlood"
@@ -110,7 +110,6 @@ ACTOR STBoss 32767
 		Loop
 	SummonTeleport:
 		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
-		BOSS A 0 A_Jump(8, "SummonTeleport")
 		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
 		BOSS A 1 A_FaceTarget
       		BOSS A 3 
@@ -169,9 +168,10 @@ ACTOR STBoss 32767
 		BOSS A 1 A_Changeflag("SOLID", 0)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 4 A_Wander
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_ExtChase(0,0,1,1)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_ExtChase(0,0,1,1)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
-		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 4 A_ExtChase(0,0,1,1)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 5 A_Wander
 		BOSS A 1 A_Changeflag("SOLID", 1)
     		BOSS A 1 A_PlaySound("pyro/tele")
@@ -253,6 +253,15 @@ ACTOR STBoss 32767
 	CallingOfTheDamned9:
 		BOSS G 0 A_JumpIfHealthLower(1000,"CallingOfTheDamnedFinal")
 		BOSS G 0 A_AlertMonsters
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 1 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
+		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
 		BOSS G 1 A_FaceTarget
 		BOSS G 0 A_SpawnItemEx("STBossAttack4B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
 		BOSS G 0 A_SpawnItemEx("STBossAttack6B", random(-1024,1024), random(-1024,1024), 0, 0, 0, 0, 0, SXF_SETMASTER)
@@ -788,7 +797,7 @@ ACTOR STBossAttack2 {
 		FIRE CCBBCCBBCCBDCCDDCCDDEEDDEEDDEEFFEEFFEEFFGGHHGGHHGGHH 1 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
 		stop
 	NoGen:
-		FIRE CCBBCCBBCCBDCCDDCCDDEEDDEEDDEEFFEEFFEEFFGGHHGGHHGGHH 1 bright A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
+		FIRE CCBBCCBBCCBDCCDDCCDDEEDDEEDDEEFFEEFFEEFFGGHHGGHHGGHH 1 bright //A_SpawnItemEx("KDBossBiggerFlame", Random(-60, 60), Random(-60, 60), Random(0, 30), MomX, MomY, 0.1 * Random(-2, 160), 0, 128 | 8, 0)
 		stop
 	}
 }
@@ -1437,7 +1446,7 @@ Actor KDBossBiggerFlame : KDBossFlame { Scale 1.25 }
 
 ACTOR FinalFlash : FastProjectile
 	{
-	Speed 48
+	Speed 48 //So not actually that fast
 	Damage 1000
 	Radius 48
 	Height 64
@@ -1627,7 +1636,7 @@ ACTOR FinalFlash : FastProjectile
 		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
 		NULL A 0 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
 		NULL A 1 A_SpawnItemEx("FlashFire", random(-512,512), random(-512,512), random(-128,128), 0, 0, 0, 0, SXF_SETMASTER)
-		stop
+		stop //There's probably a better way to code that but I don't care enough to change it
 	}
 }
 
@@ -1955,7 +1964,7 @@ ACTOR SpiritKnight : BaronOfHell
     Alpha 0.6
     RenderStyle Translucent
 	MissileType SpiritBall
-	Obituary "\c[G1]%o's \c[G1]existence has ended."
+	Obituary "\c[G1]%o's \c[G1]existence was ended."
     States
     {
 	Spawn:
