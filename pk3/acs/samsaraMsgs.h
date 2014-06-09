@@ -23,7 +23,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Tearfully, you realize you can finally enact your secret lumberjack fantasies.",
             "Go ahead, chuckles, charge those gunmen.",
             "Well, normally I would rip and tear, but that just seems so barbaric.",
-            "Freeze and Rip... and tear.",
+            "Freeze, Rip, and tear.",
             "When you have a chainsaw, everything starts looking like a tree.",
             "It makes a terrible unicycle.",
         },
@@ -49,7 +49,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Duck season! Fire!",
             "Tape two side by side, still not as good as the SSG.",
             "I think I saw this in the toy aisle...",
-            "The UAC has forgone auto-shotguns in favor of...well actually...",
+            "The UAC has forgone auto-shotguns in favor of...well, actually...",
         },
         {
             "You got the Super and Automatic Shotguns!",
@@ -427,7 +427,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Wait, didn't I just get this?",
             "Now you still can't dual wield them.",
             "Can I at least get an accuracy upgrade or-oh, wait.",
-            "Feels like a real ripoff, doesn't it?",
+            "Feels like a real let-down, doesn't it?",
         },
         {
             "You got the Chaingun!",
@@ -439,7 +439,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "The as-salt to the machine gun's pepper.",
             "Oh my god, this game rips off Doom so much.",
             "Fastest fire rate, highest DPS, and perfect accuracy. Totally balanced.",
-            "Dear lord, you can even snipe with a fully-auto chaingun.",
+            "Dear lord, you can snipe with an already fast chaingun.",
         },
         {
             "You got the Rocket Launcher!",
@@ -561,7 +561,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "I put a spell on you, 'cuz you're miiiine.",
             "I only need one evil eye.",  // The Last in Line - Evil Eyes
             "Spread the gospel of heavy metal. Poison the shit out of everyone in the way.",
-            "Great for sucking, but spit lots of venom. Just like your ex.",
+            "Great for sucking, but spits lots of venom. Just like your ex.",
         },
         {
             "You got the Hammer of Retribution!",
@@ -757,7 +757,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "pitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpitpit",
             "clickclickclickclickclickclickclickclickclickclickclickclickclickclickclickclick",
             "Someday you'll be able to use this without fear of ammo problems. But it's not today.",
-            "",
+            "...and amazingly, it works wonders underwater!",
         },
         {
             "Picked up a magnum.",
@@ -828,7 +828,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Despite all your fancy future tech, fire's still pretty good.",
             "You are really good at killing things. I'm impressed.",
             "Hundreds of years in the future, fire is still hot.",
-            "The w+m1 from 1994 through 1996.",
+            "The w+m1 from 1995.",
             "Melee Weapon. Purely a Mook Killer. Useless on Bosses. Slot 6. Riiight.",
         },
         {
@@ -1039,7 +1039,7 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "Well, you're a cleric. Gotta have a heal.",
         "Plot twist: it's a badly-inscribed poison spell.",
         "Too bad A_RadiusGive doesn't work in Zandronum.",
-        "It's an elaborate rain dance, except with armor shards falling instead of rain.",
+        "It's an elaborate rain dance, except with armor shards instead of rain.",
         "Essentially, the Superchanged Breakfast is now useless.",
         "And given Parias, the Berserk is also now useless.",
     },
