@@ -168,7 +168,7 @@ Actor "Automatic Shotgun" : Weapon
    Weapon.AmmoGive1 20
    Weapon.AmmoUse 1
    Weapon.AmmoType2 "Shell"
-   Weapon.AmmoGive2 20
+   Weapon.AmmoGive2 0
    Weapon.AmmoUse2 0
    Tag "Auto Shotgun"
    +INVENTORY.UNDROPPABLE
