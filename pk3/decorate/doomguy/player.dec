@@ -308,9 +308,4 @@ actor DoomBullet : FastProjectile
 actor DoomBullet3 : DoomBullet
 {
 	Damage (Random(1,4)*5)
-} 
-
-actor DoomBullet4 : DoomBullet
-{
-	Damage (Random(1,3)*6)
-} 
+}
