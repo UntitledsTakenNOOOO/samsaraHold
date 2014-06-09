@@ -10,10 +10,10 @@ ACTOR Overmind 16999
 	DamageFactor "Kamikaze", 0 //Yeah no.
 	damagefactor "ZorchKamikaze", 0
 	BloodType "SamsaraBloodyHellBlood"
-	Health 25000
+	Health 30000
 	Mass 80000
 	Radius 128
-	Height 256
+	Height 320
 	Scale 4.0
 	Speed 12
 	PainChance 5
@@ -41,12 +41,43 @@ ACTOR Overmind 16999
 		OYCL AB 30 A_Look
 		Loop
 	See:
+        	TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
+        	TNT1 A 0 A_GiveInventory("DukeBossSee",1)
+        	TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
+      	See2:
+		OYCL A 0 A_JumpIfHealthLower(21000,"See3")
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
-		OYCL A 0 A_Explode(32,384)
+		OYCL A 0 A_Explode(32,384,0)
 		OYCL AAAABBBB 4 A_Chase
 		OYCL C 0 Radius_Quake(4,8,0,32,0)
-		OYCL A 0 A_Explode(32,384)
+		OYCL A 0 A_Explode(32,384,0)
 		OYCL CCCCDDDD 4 A_Chase
+		Loop
+      	See3:
+		OYCL A 0 A_JumpIfHealthLower(12000,"See4")
+		OYCL A 0 Radius_Quake(4,8,0,32,0)
+		OYCL A 0 A_Explode(32,384,0)
+		OYCL AAAABBBB 3 A_Chase
+		OYCL C 0 Radius_Quake(4,8,0,32,0)
+		OYCL A 0 A_Explode(32,384,0)
+		OYCL CCCCDDDD 3 A_Chase
+		Loop
+      	See4:
+		OYCL A 0 A_JumpIfHealthLower(3000,"See5")
+		OYCL A 0 Radius_Quake(4,8,0,32,0)
+		OYCL A 0 A_Explode(32,384,0)
+		OYCL AAAABBBB 2 A_Chase
+		OYCL C 0 Radius_Quake(4,8,0,32,0)
+		OYCL A 0 A_Explode(32,384,0)
+		OYCL CCCCDDDD 2 A_Chase
+		Loop
+      	See5:
+		OYCL A 0 Radius_Quake(4,8,0,32,0)
+		OYCL A 0 A_Explode(32,384,0)
+		OYCL AAAABBBB 1 A_Chase
+		OYCL C 0 Radius_Quake(4,8,0,32,0)
+		OYCL A 0 A_Explode(32,384,0)
+		OYCL CCCCDDDD 1 A_Chase
 		Loop
 	Missile:
 		OYCL E 0 A_PlaySoundEx("cycloid/attack","Auto",0,2)
@@ -127,17 +158,56 @@ ACTOR Overmind 16999
 		OYCL A 0 A_ChangeFlag("NOPAIN",0)
 		OYCL A 0 A_ChangeFlag("INVULNERABLE",0)
 		Goto See
+
+      Death.DukeDamage:
+      Death.MightyBoot:
+      Death.DukeExplosive:
+      Death.DukeSpectral:
+      Death.DukePistol:
+        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
 	Death:
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
 		OYCL I 12 A_GiveToTarget("AwardItem",800)
 		OYCL J 12 A_Scream
 		OYCL K 12 A_Fall
 		OYCL LMNOP 12
-		OYCL Q -1
+		OYCL Q 3150
+		OYCL QQQQQQQQQQQQQQQQQQQQQQQQ 8 A_FadeOut(0.05)
 		Stop
+
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
+      Death.ZorchSpectral:
+        OYCL A 0 A_GiveToTarget("KillCount",1)
+	OYCL A 0 A_GiveToTarget("AwardItem", 800)
+        OYCL A 0 A_Stop
+      ZorchDeathLoop: //Intentional Fallthrough
+        OYCL A I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),Random(32,-32),0)
+        OYCL A I 0 A_FadeOut(0.02)
+        Loop
 	}
 }
 
-
+ACTOR ZorchEffectHuger : ZorchEffectHuge
+{
+	yscale 4
+	xscale 4
+}
 
 ACTOR FlameBreathOvermind {
    Radius 16
@@ -147,7 +217,7 @@ ACTOR FlameBreathOvermind {
    Scale 1.0
    damagetype "overmindfactor"
    Projectile
-   Damage 2
+   Damage 3
    +RIPPER
    +NODAMAGETHRUST
    +NOTIMEFREEZE
@@ -157,8 +227,9 @@ ACTOR FlameBreathOvermind {
    States
    {
    Spawn:
-      XPLO ABCDEFGHIJKLMN 2 BRIGHT A_Explode (12, 64, 0)
-      XPLO OPQRSTU 2 BRIGHT A_Explode (8, 48, 0)
+      XPLO ABCDEFG 2 BRIGHT A_Explode (12, 64, 0)
+      XPLO HIJKLMN 2 BRIGHT A_Explode (8, 48, 0)
+      XPLO OPQRSTU 2 BRIGHT A_Explode (4, 32, 0)
       Stop
    }
 }
@@ -168,8 +239,17 @@ actor CatharsiBallLarge : CatharsiBall
   damagetype "overmindfactor"
   Scale 2.5
   Speed 40
-  Damage 8
+  Damage 3
   +NOTIMEFREEZE
+  States
+  {
+	Death:
+	SDFB B 6 BRIGHT A_Explode(Random(12,15),64,0)
+	SDFB C 6 BRIGHT A_Explode(Random(8,10),32,0)
+	SDFB D 6 BRIGHT A_Explode(Random(4,5),16,0)
+	SDFB E 6 BRIGHT
+	stop
+  }
 }
 
 actor OvermindPyroShot : PyroShot
