@@ -404,6 +404,9 @@ script SAMSARA_SPAWN (int respawning)
         if (array_strweapons[pln]) { GiveInventory("StrongholdWeapons", 1); }
         else { TakeInventory("StrongholdWeapons", 0x7FFFFFFF); }
 
+        if (array_dukemusic[pln]) { GiveInventory("DukeMusicItem", 1); }
+        else { TakeInventory("DukeMusicItem", 0x7FFFFFFF); }
+
         if (GetCVar("dmflags2") & 256) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
         else { GiveInventory("DoomNoBFGAim", 1); }
 
@@ -830,6 +833,10 @@ script SAMSARA_ENTER_CLIENT (void) clientside
         if (!GetCVar("samsarahold_cl_strweapons"))
         {   ConsoleCommand("set samsarahold_cl_strweapons 0");
         ConsoleCommand("archivecvar samsarahold_cl_strweapons"); }
+
+        if (!GetCVar("samsarahold_cl_dukemusic"))
+        {   ConsoleCommand("set samsarahold_cl_dukemusic 0");
+        ConsoleCommand("archivecvar samsarahold_cl_dukemusic"); }
     }
 
     for (i = 0; i < RESCOUNT; i++)
@@ -870,6 +877,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
             array_weaponBar[pln]    = !!GetCVar("samsara_cl_weaponhud");
             array_pickupswitch[pln] = !!GetCVar("switchonpickup");
             array_strweapons[pln]   = !!GetCVar("samsarahold_cl_strweapons");
+			array_dukemusic[pln]    = !!GetCVar("samsarahold_cl_dukemusic");
         }
         else
         {
@@ -906,6 +914,7 @@ script SAMSARA_PUKE (int values, int pln) net
     array_weaponBar[pln]    = values & 8;
     array_pickupswitch[pln] = values & 16;
     array_strweapons[pln]   = values & 32;
+    array_dukemusic[pln]    = values & 64;
 }
 
 

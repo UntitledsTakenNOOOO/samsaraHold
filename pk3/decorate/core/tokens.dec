@@ -53,6 +53,7 @@ actor NoUniqueItem: Boolean {}
 actor NoUltItem: Boolean {}
 
 actor StrongholdWeapons: Boolean {}
+actor DukeMusicItem: Boolean {}
 
 actor SynthFireActive:  Boolean {} // enables synthetic-fire system.
 actor SynthFireLeft:    Boolean {} // special refire-trackers for

@@ -123,7 +123,10 @@ samsara_cl_norecoil 0/1: Controls whether Ranger's weapons recoil.\n\
 samsara_cl_sinerecoil 0/1: Toggles whether Ranger's recoil movement uses a sine wave.\n\
 samsara_cl_weaponhud 0/1: Controls whether the weapon bar at the top of your screen appears.\n\
 samsara_cl_vanilladoom 0/1: Toggles the vanilla weapon animations for Doomguy.\n\
-samsara_cl_wolfmove 0/1: Toggles classic Wolfenstein movement on B.J. Blazkowicz.";
+samsara_cl_wolfmove 0/1: Toggles classic Wolfenstein movement on B.J. Blazkowicz.\n\
+samsarahold_cl_strweapons 0/1: Toggles stronghold graphics on Doom Weapons.\n\
+samsarahold_cl_dukemusic 0/1: Toggles amazing duke nukem remix music near the end of the mission.";
+
 
 int LMSArmors[LMSMODES] = 
 {
@@ -581,7 +584,7 @@ SAMSARA CHANGES\n
 - Parias' Backpack capacity limited to 1, but it gives full ammo instead of half, in order to prevent mass-steals and to prevent overpoweredness with having 6 and a RWD'd wraithverge.\n
 - Various damage values have been tweaked for balance (most noticable on Parias, as I had to buff him (the hell) out due to him being melee-only). The bad news is that I forgot most of them.\n
 - The Super Shield is replaced by Red Armor to prevent EZ Godlike.\n
-- The intermission map is modified to have a new room to adjust settings.\n
+- The intermission map is modified to have new rooms to adjust settings.\n
 - New Achievements!\n
 NOTE: This is meant to be played in coop mode. If UV single player is Impossible at certain points, please do not complain. \nJust play HMP, or start farming some items first. Also, give yourself \"CoopModeOn\" to let samsara do some stuff.\n\n
 STRONGHOLD CHANGES\n
@@ -590,6 +593,6 @@ STRONGHOLD CHANGES\n
 - Changes to various missions all over the place. Most of these are going to remain secret, since, well, I want you to be surprised... Here, I'll give one to you.\n
 - STR18 (Smoldering Caves) replaced with STR18 (Delta Bunker) from the RC2, because seriously, Delta Bunker was more worthy of being in Tier 4, and much cooler than Smoldering Caves. It's also much harder.\n
 - Changes to various monsters. Most of these should not be noticeable, with the Key Word being Most. Again, most of these are to remain secret.\n
-- The one I'm giving to you is that Dune Warriors can now be shot while cloaked, because they say they have a cloaking device, not a phase-out-of-existence device (same goes to apprentices in STR52 btw)!\n
--The Bruiser Demon Powerup, as fun as it was, had it's novelty wear out a long time ago. I replaced with a Terminator Powerup. Much better.\n
--I have a separate patch for the non Samsara related changes.";
+- The one I'm giving to you is that Dune Warriors can now be shot while cloaked, because they say they have a cloaking device, not a phase-out-of-existence device (same goes to apprentices in STR52)!\n
+- The Bruiser Demon Powerup, as fun as it was, had it's novelty wear out a long time ago. I replaced with a Terminator Powerup. Much better.\n
+- I have a separate patch for the non Samsara related changes.";
