@@ -54,6 +54,26 @@ actor NoUltItem: Boolean {}
 
 actor StrongholdWeapons: Boolean {}
 actor DukeMusicItem: Boolean {}
+actor GRAB1Item: Trigger
+{
+States
+    {
+    Pickup:
+    Use:
+	TNT1 A 0 ACS_Execute(326)
+	Stop
+    }
+}
+actor GRAB2Item: Trigger
+{
+States
+    {
+    Pickup:
+    Use:
+	TNT1 A 0 ACS_Execute(327)
+	Stop
+    }
+}
 
 actor SynthFireActive:  Boolean {} // enables synthetic-fire system.
 actor SynthFireLeft:    Boolean {} // special refire-trackers for

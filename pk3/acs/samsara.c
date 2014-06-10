@@ -971,3 +971,15 @@ script 325 (Void)
 {
 GiveInventory("NoUltItem",1);
 }
+
+script 326 (Void)
+{
+If(CheckInventory("DukeMusicItem"))
+LocalSetMusic("GRAB1");
+}
+
+script 327 (Void)
+{
+If(CheckInventory("DukeMusicItem"))
+LocalSetMusic("GRAB2");
+}
