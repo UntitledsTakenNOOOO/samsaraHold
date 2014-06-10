@@ -975,11 +975,23 @@ GiveInventory("NoUltItem",1);
 script 326 (Void)
 {
 If(CheckInventory("DukeMusicItem"))
-LocalSetMusic("GRAB1");
+	{
+	    LocalSetMusic("GRAB1");
+            Print(
+                s:"\cbYeah come get some!\n",
+                s:"\cfGrabbag\cb Remixed by \cfThermometer10"
+            );
+	}
 }
 
 script 327 (Void)
 {
 If(CheckInventory("DukeMusicItem"))
-LocalSetMusic("GRAB2");
+        {
+            LocalSetMusic("GRAB0");
+            Print(
+                s:"\cbNow let's rock!\n",
+                s:"\cfGrabbag\cb Remixed by \cfJonny Death"
+            );
+        }
 }
