@@ -245,6 +245,21 @@ ACTOR Overmind 16999
         OYCL I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
         OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
         OYCL I 0 A_FadeOut(0.02)
+        OYCL I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 1 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
+        OYCL I 0 A_FadeOut(0.02)
         Loop
 	}
 }
