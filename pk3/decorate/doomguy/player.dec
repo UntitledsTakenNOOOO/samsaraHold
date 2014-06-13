@@ -304,8 +304,3 @@ actor DoomBullet : FastProjectile
         stop
     }
 }
-
-actor DoomBullet3 : DoomBullet
-{
-	Damage (Random(1,4)*5)
-}
