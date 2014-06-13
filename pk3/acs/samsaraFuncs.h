@@ -194,13 +194,15 @@ function int itemToSlot(int i)
 
 function int SamsaraClientVars(void)
 {
+    int dukemusic       = !!GetCVar("samsarahold_cl_dukemusic");
+    int strweapons      = !!GetCVar("samsarahold_cl_strweapons");
     int switchOnPickup  = !!GetCVar("switchonpickup");
     int weaponBar       = !!GetCVar("samsara_cl_weaponhud");
     int ballgag         = !!GetCVar("samsara_cl_ballgag");
     int classicAnims    = !!GetCVar("samsara_cl_vanilladoom");
     int wolfmove        = !!GetCVar("samsara_cl_wolfmove");
 
-    return (switchOnPickup << 4) + (weaponBar << 3) + (ballgag << 2) + (classicAnims << 1) + wolfmove;
+    return (dukemusic << 6) + (strweapons << 5) + (switchOnPickup << 4) + (weaponBar << 3) + (ballgag << 2) + (classicAnims << 1) + wolfmove;
 }
 
 function int GiveUnique(int cnum, int unum)
