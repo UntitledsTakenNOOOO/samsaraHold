@@ -420,7 +420,7 @@ actor QuakeSLNailCoop: QuakeSLNail
     +THRUSPECIES
     -THRUGHOST
     Species "Player"
-    Damage (26)
+    Damage (Random(26,30))
 }
 
 
