@@ -17,17 +17,6 @@ actor HappyOnlineSound_Titanic : HappyOnlineSound
    }
 }
 
-actor IceChunk2Client : IceChunk2
-{
-   +CLIENTSIDEONLY
-}
-
-actor IceChunk2HugeClient : IceChunk2Huge
-{
-   +CLIENTSIDEONLY
-}
-
-
 //// Giant Sand Worm ////
 actor Switchable_FlyingBlood_BrightGreen : Switchable_FlyingBlood { Translation "16:47=[0, 255, 0]:[0, 70, 0]", "176:191=[0, 255, 0]:[0, 70, 0]" }
 
