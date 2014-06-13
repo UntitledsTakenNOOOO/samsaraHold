@@ -30,6 +30,8 @@ damagefactor "ZorchKamikaze", 0.5
 	ActiveSound "superbaron/act"
 	MeleeSound "baron/melee"
         DamageFactor "BruiserAttack",0
+	BloodColor "#ff8d40" // for decals
+	BloodType "BruiserFlameBlood", "BruiserFlameBlood2" // Apparently fire demons bleed molten creamsicle	
 	Obituary "%o was slaughtered by a Bruiserdemon."
 	HitObituary "%o was cremated by a Bruiserdemon."
 	MeleeDamage 20
@@ -143,23 +145,25 @@ damagefactor "ZorchKamikaze", 0.5
 		Stop
 
 	DeathBrutal:
-         TNT1 A 0
-                TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-                TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
-                TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-                TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-                TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-                TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
-                TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
-        goto Death+1
+         TNT1 A 0            
+        TNT1 AAA 0 A_SpawnItemEx("OrangeMistTrail",random(-13,13),random(-13,13),random(16,53),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("BrutalTinyBone",random(-7,7),random(-7,7),random(16,53),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("BrutalChunkTinier_Orange",random(-13,13),random(-13,13),random(16,53),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("BrutalChunkTiny_Orange",random(-13,13),random(-13,13),random(16,53),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("OrangeMistIntenseTrail",random(-13,13),random(-13,13),random(16,53),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("Switchable_FlyingBlood_Flaming",random(-26,26),random(-26,26),random(16,64),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 AAAAAAA 0 A_SpawnItemEx("FlamingMistTrail",random(-13,13),random(-13,13),random(16,53),random(-300,300)/100.00,random(-300,300)/100.00,random(125,250)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
+         goto Death+1
                 
          DeathHappyfun:
          TNT1 A 0
-                TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
-                TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+                TNT1 AAAA 0 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
+                TNT1 AAAAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
+                TNT1 AAAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
                 TNT1 A 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
-                TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
-                TNT1 AAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-5,5),random(-5,5),random(25,30),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+                TNT1 AAAAAAA 0 A_SpawnItemEx("RainbowSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+                TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-5,5),random(-5,5),random(25,30),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
         goto Death+1
 	}
 }

@@ -18,6 +18,7 @@ ACTOR InfernoDemon 12345
   Damage 15
   Scale 1.25
   BloodColor "Orange"
+  BloodType "BruiserFlameBlood", "BruiserFlameBlood2" // Apparently fire demons bleed molten creamsicle	
   Monster
   PainChance 4
   +MISSILEMORE

@@ -167,8 +167,10 @@ ACTOR Overmind 16999
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
 	Death:
 		TNT1 A 0 A_GiveToTarget("KillCount",1)
-		OYCL I 12 A_GiveToTarget("AwardItem",800)
-		OYCL J 12 A_Scream
+		TNT1 A 0 A_GiveToTarget("AwardItem",800)
+		TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
+		OYCL I 12
+	   	OYCL J 12 A_Scream
 		OYCL K 12 A_Fall
 		OYCL LMNOP 12
 		OYCL Q 3150
@@ -261,6 +263,56 @@ ACTOR Overmind 16999
         OYCL I 0 A_SpawnItemEx("ZorchEffectHuger",Random(32,-32),Random(32,-32),Random(32,-32),Random(64,-16),Random(64,-16),Random(64,-16),Random(180,-180),0)
         OYCL I 0 A_FadeOut(0.02)
         Loop
+
+       DeathHappyFun:
+		TNT1 A 0
+		TNT1 AAAAAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSparkTiny_Titanic",random(-105,105),random(-105,105),random(105,420),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+		OYCL I 12
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HappyOnlineSound_Titanic",random(-140,140),random(-140,140),random(84,560),0,0,0,0,32)
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-240,240)/20.0,random(-240,240)/20.0,random(-160,160)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("WhiteSpark_Titanic",0,0,random(84,560),random(-240,240)/20.0,random(-240,240)/20.0,random(-160,160)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-240,240)/20.0,random(-240,240)/20.0,random(-160,160)/20.0,random(-180,180),32)
+	   	OYCL J 12 A_Scream
+		TNT1 AAAAAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSparkTiny_Titanic",random(-105,105),random(-105,105),random(105,420),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+		OYCL K 12 A_Fall
+		TNT1 AAAAAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSparkTiny_Titanic",random(-105,105),random(-105,105),random(105,420),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)     
+		OYCL L 12
+		TNT1 AAAAAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSparkTiny_Titanic",random(-105,105),random(-105,105),random(105,420),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)     
+		OYCL M 12
+		TNT1 AAAAAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSparkTiny_Titanic",random(-105,105),random(-105,105),random(105,420),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)     
+		OYCL N 12
+		TNT1 AAAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAA 0 A_SpawnItemEx("RainbowSparkTiny_Titanic",random(-105,105),random(-105,105),random(105,420),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)     
+		OYCL O 12
+		TNT1 AAAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAA 0 A_SpawnItemEx("RainbowSparkTiny_Titanic",random(-105,105),random(-105,105),random(105,420),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)     
+		OYCL P 12
+		TNT1 AAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkHuge_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAA 0 A_SpawnItemEx("RainbowSpark_Titanic",random(-140,140),random(-140,140),random(84,560),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkTiny_Titanic",random(-105,105),random(-105,105),random(105,420),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)     
+		OYCL Q 3150
+		OYCL QQQQQQQQQQQQQQQQQQQQQQQQ 8 A_FadeOut(0.05)
+		Stop
 	}
 }
 

@@ -22,6 +22,7 @@ MeleeDamage 10
 OBITUARY "\c[L6]%o \c[L6]was burnt to a crisp by a pyro demon."
 HITOBITUARY "\c[L6]%o \c[L6]was melted by a pyro demon."
 Bloodcolor "75 25 00"
+BloodType "BruiserFlameBlood", "BruiserFlameBlood2" // Apparently fire demons bleed molten creamsicle
 +NoTarget
 +FloorClip 
 +MissileMore
