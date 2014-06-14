@@ -1034,7 +1034,7 @@ ACTOR ChaosRocket
 ACTOR ChaosCyberPyroFlare : PyroFlare
 {
     Damage 1
-    DamageFactor "Cyber2Factor"
+    DamageType "Cyber2Factor"
     States
     {
     Death:
