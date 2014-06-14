@@ -32,7 +32,7 @@ actor Ammo1Small : CustomInventory replaces Clip// replaces Clip
         stop
 
       PickupQuake2:
-        TNT1 A 0 A_GiveInventory("Clip", 15)
+        TNT1 A 0 A_GiveInventory("Clip", 25)
         stop
     }
 }
@@ -288,6 +288,7 @@ actor Ammo4Small : CustomInventory replaces Cell// replaces Cell
         loop
 
       Pickup:
+        TNT1 A 0 A_JumpIfInventory("QuakeClass", 0, "PickupQuake")
         TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
         TNT1 A 0 A_GiveInventory("Cell", 20)
@@ -306,6 +307,17 @@ actor Ammo4Small : CustomInventory replaces Cell// replaces Cell
       PickupHeretic:
 	TNT1 A 0 A_TakeInventory("TomeOfPowerCooldown",5)
 	Stop
+
+      PickupQuake:
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"PickupQuake2")
+        TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell", 20)
+        stop
+
+      PickupQuake2:
+        TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell", 60)
+        stop
     }
 }
 
@@ -321,6 +333,7 @@ actor Ammo4Big : CustomInventory replaces Cellpack// replaces Cellpack
         loop
 
       Pickup:
+        TNT1 A 0 A_JumpIfInventory("QuakeClass", 0, "PickupQuake")
         TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
         TNT1 A 0 A_GiveInventory("Cell", 100)
@@ -339,6 +352,17 @@ actor Ammo4Big : CustomInventory replaces Cellpack// replaces Cellpack
       PickupHeretic:
 	TNT1 A 0 A_TakeInventory("TomeOfPowerCooldown",15)
 	Stop
+
+      PickupQuake:
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"PickupQuake2")
+        TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell", 100)
+        stop
+
+      PickupQuake2:
+        TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell", 120)
+        stop
     }
 }
 

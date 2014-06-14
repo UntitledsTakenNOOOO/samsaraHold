@@ -65,6 +65,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         
       QuadFire:
         TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        QGRL B 0  A_JumpIfInventory("QuakeModeOn",1,"CoopQuad2")
         QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
         QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuad")
         QGRL B 0 A_FireCustomMissile("QuakeGrenadeQuad", 0, 1, 0, 0, 0, 5)
@@ -73,8 +74,13 @@ actor "Grenade Launcher": InstantSwitchWeapon
       CoopQuad:
         QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoopQuad", 0, 1, 0, 0, 0, 5)
         goto Fire2
+
+      CoopQuad2:
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoopQuad2", 0, 1, 0, 0, 0, 5)
+        goto Fire2
         
       AfterSound:
+        QGRL B 0  A_JumpIfInventory("QuakeModeOn",1,"CoopFire2")
         QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopFire")
         QGRL B 0 A_FireCustomMissile("QuakeGrenade", 0, 1, 0, 0, 0, 5)
@@ -82,6 +88,10 @@ actor "Grenade Launcher": InstantSwitchWeapon
         
       CoopFire:
         QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoop", 0, 1, 0, 0, 0, 5)
+        goto Fire2
+
+      CoopFire2:
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoop2, 0, 1, 0, 0, 0, 5)
         goto Fire2
         
       Fire2:
@@ -149,7 +159,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto MultiReady
         
       AltFire:
-         TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"Ready")
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"Ready")
         TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"Swap2")
         TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
         TNT1 A 0 A_GiveInventory("UsingMultiNades",1)
@@ -411,7 +421,12 @@ actor QuakeGrenadeCoop: QuakeGrenade
 {
     +THRUSPECIES
     Species "Player"
-        Damage (40)
+        Damage (60)
+}
+
+actor QuakeGrenadeCoop2: QuakeGrenadeCoop
+{
+	Damage (80)
 }
 
 actor QuakeGrenadeQuad: QuakeGrenade
@@ -436,7 +451,12 @@ actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
     
     Radius 4
     Height 4
-        Damage (160)
+        Damage (240)
+}
+
+actor QuakeGrenadeCoopQuad2: QuakeGrenadeCoopQuad
+{
+	Damage (320)
 }
 
 actor SpectralGrenade: QuakeGrenadeCoopQuad { +FORCERADIUSDMG DamageType "SpectralNoQuad" }
@@ -465,7 +485,7 @@ actor QuakeClusterGrnCoop: QuakeClusterGrenade
 {
     +THRUSPECIES
     Species "Player"
-        Damage (40)
+        Damage (60)
     
     States
     {
@@ -503,7 +523,7 @@ actor QuadClusterGrnCoop: QuadClusterGrenade
     Species "Player"
     
     DamageType "NotQuadded"
-        Damage (160)
+        Damage (240)
     
     States
     {
@@ -562,7 +582,7 @@ actor QuakeTinyGrnCoop: QuakeTinyGrenade
     
     Radius 2
     Height 2
-        Damage (8)
+        Damage (12)
 }
 
 actor QuadTinyGrenade: QuakeTinyGrenade
@@ -582,7 +602,7 @@ actor QuadTinyGrnCoop: QuadTinyGrenade
 {
     +THRUSPECIES
     Species "Player"
-        Damage (32)
+        Damage (48)
 }
 
 actor SpectralClusterGrenade: QuadClusterGrnCoop

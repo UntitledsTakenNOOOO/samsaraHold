@@ -58,6 +58,7 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         goto AfterSound
         
       QuadFire:
+        QRKL A 0 A_JumpIfInventory("QuakeModeOn", 1, "CoopFire2")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
         TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuad")
         QRKL B 0 A_FireCustomMissile("QuakeRocketQuad")
@@ -66,8 +67,13 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
       CoopQuad:
         QRKL B 0 A_FireCustomMissile("QuakeRocketCoopQuad")
         goto Fire2
+
+      CoopQuad2:
+        QRKL B 0 A_FireCustomMissile("QuakeRocketCoopQuad2")
+        goto Fire2
         
       AfterSound:
+        QRKL A 0 A_JumpIfInventory("QuakeModeOn", 1, "CoopFire2")
         QRKL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QRKL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopFire")
         QRKL B 0 A_FireCustomMissile("QuakeRocket")
@@ -75,6 +81,10 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         
       CoopFire:
         QRKL B 0 A_FireCustomMissile("QuakeRocketCoop")
+        goto Fire2
+
+      CoopFire2:
+        QRKL B 0 A_FireCustomMissile("QuakeRocketCoop2")
         goto Fire2
         
       Fire2:
@@ -351,14 +361,28 @@ actor QuakeRocketCoop: QuakeRocket
 {
     +THRUSPECIES
     Species "Player"
-        Damage (35)
+        Damage (50)
 }
 
 actor QuakeRocketCoopQuad: QuakeRocketQuad
 {
     +THRUSPECIES
     Species "Player"
-        Damage (140)
+        Damage (200)
+}
+
+actor QuakeRocketCoop2: QuakeRocket
+{
+    +THRUSPECIES
+    Species "Player"
+        Damage (75)
+}
+
+actor QuakeRocketCoopQuad2: QuakeRocketQuad
+{
+    +THRUSPECIES
+    Species "Player"
+        Damage (300)
 }
 
 actor QuakeClusterRocket: QuakeRocket
@@ -381,7 +405,7 @@ actor QuakeClusterRkCoop: QuakeClusterRocket
     +THRUSPECIES
     Species "Player"
     
-    Damage (17)
+    Damage (25)
 }
 
 actor QuadClusterRocket: QuakeClusterRocket
@@ -404,7 +428,7 @@ actor QuadClusterRkCoop: QuadClusterRocket
 {
     +THRUSPECIES
     Species "Player"
-        Damage (70)
+        Damage (100)
 }
 
 actor SpectralRocket: QuakeRocketCoopQuad { +FORCERADIUSDMG DamageType "SpectralNoQuad" }
