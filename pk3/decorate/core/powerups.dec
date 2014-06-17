@@ -353,7 +353,7 @@ actor PortTorch : PowerupGiver
     +FLOATBOB
     +INVENTORY.UNDROPPABLE
     +INVENTORY.PICKUPFLASH
-    Inventory.MaxAmount 16
+    Inventory.MaxAmount 1
     Inventory.Icon ARTITRCH
     Inventory.UseSound "heretic/itemuse"
     Inventory.PickupMessage "You picked up a Torch!"
@@ -371,7 +371,7 @@ actor PortRingInvuln : PowerupGiver
     //tag "Ring of Invulnerability"
     +INVENTORY.UNDROPPABLE
     +inventory.hubpower
-    Inventory.MaxAmount 16
+    Inventory.MaxAmount 1
     Inventory.Icon "ARTIINVU"
     Powerup.Type FakeInvulnerable
     inventory.usesound "heretic/itemuse"
@@ -381,7 +381,7 @@ actor PortRingInvuln : PowerupGiver
 actor PortGhostly : PowerupGiver
 {
     //tag "Shadowsphere"
-    inventory.maxamount 16
+    inventory.maxamount 1
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
     +inventory.hubpower
@@ -395,7 +395,7 @@ actor PortTorch2 : PowerupGiver
     +FLOATBOB
     +INVENTORY.UNDROPPABLE
     +INVENTORY.PICKUPFLASH
-    Inventory.MaxAmount 16
+    Inventory.MaxAmount 1
     Inventory.Icon ARTITRCH
     Inventory.UseSound "hexen/artiuse"
     Inventory.PickupMessage "You picked up a Torch!"
@@ -413,7 +413,7 @@ actor PortIconDefender : PowerupGiver
     //tag "Icon of the Defender"
     +INVENTORY.UNDROPPABLE
     +inventory.hubpower
-    Inventory.MaxAmount 16
+    Inventory.MaxAmount 1
     Inventory.Icon "ARTIDFND"
     Powerup.Type Invulnerable
     Powerup.Mode Reflective
