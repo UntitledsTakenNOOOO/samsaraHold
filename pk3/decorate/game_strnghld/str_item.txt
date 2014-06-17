@@ -267,6 +267,12 @@ ACTOR ScriptedMarine2 : ScriptedMarine
   +THRUSPECIES
   +FLOORCLIP
   RadiusDamageFactor 0.25
+  DropItem "SuperShield" 1
+  DropItem "BlueArmor" 2
+  DropItem "SamsaraYellowArmor" 4
+  DropItem "GreenArmor" 8
+  DropItem "Medikit" 64
+  DropItem "Stimpack" 64
   species "Player"
   states
   {
