@@ -58,13 +58,13 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         goto AfterSound
         
       QuadFire:
-        QRKL A 0 A_JumpIfInventory("QuakeModeOn", 1, "CoopFire2")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
         TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuad")
         QRKL B 0 A_FireCustomMissile("QuakeRocketQuad")
         goto Fire2
         
       CoopQuad:
+        QRKL B 0 A_JumpIfInventory("QuakeModeOn", 1, "CoopQuad2")
         QRKL B 0 A_FireCustomMissile("QuakeRocketCoopQuad")
         goto Fire2
 
@@ -73,13 +73,13 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         goto Fire2
         
       AfterSound:
-        QRKL A 0 A_JumpIfInventory("QuakeModeOn", 1, "CoopFire2")
         QRKL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QRKL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopFire")
         QRKL B 0 A_FireCustomMissile("QuakeRocket")
         goto Fire2
         
       CoopFire:
+        QRKL B 0 A_JumpIfInventory("QuakeModeOn", 1, "CoopFire2")
         QRKL B 0 A_FireCustomMissile("QuakeRocketCoop")
         goto Fire2
 
