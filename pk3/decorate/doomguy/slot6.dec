@@ -1,15 +1,15 @@
 actor "Plasma Rifle" : PlasmaRifle
 {
-    Weapon.AmmoGive 80
+    Weapon.AmmoGive 40
     Weapon.SlotNumber 6
     Weapon.SlotPriority 0
     +INVENTORY.UNDROPPABLE
     States
     {
       Ready:
-	TNT1 A 0 A_JumpIfInventory(" Railgun ",1,"Ready2")
+	/*TNT1 A 0 A_JumpIfInventory(" Railgun ",1,"Ready2")
 	TNT1 A 0 A_GiveInventory(" Railgun ",1)
-      Ready2:
+      Ready2:*/
 	DPLS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
         DPLS A 1 A_WeaponReady
         Loop
@@ -148,7 +148,7 @@ ACTOR " RailGun " : Weapon
    Obituary "%o was railed by %k."
    Damagetype "Normal"
    Weapon.AmmoType "Cell"
-   Weapon.AmmoGive 0
+   Weapon.AmmoGive 40
    Weapon.AmmoUse 5
    Decal RailScorch
    Tag "Railgun"

@@ -7,9 +7,9 @@ actor "Rocket Launcher" : RocketLauncher
     States
     {
       Ready:
-	TNT1 A 0 A_JumpIfInventory("Land Mine Layer",1,"Ready2")
+	/*TNT1 A 0 A_JumpIfInventory("Land Mine Layer",1,"Ready2")
 	TNT1 A 0 A_GiveInventory("Land Mine Layer",1)
-      Ready2:
+      Ready2:*/
 	DMIS A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
         DMIS A 1 A_WeaponReady
         Loop

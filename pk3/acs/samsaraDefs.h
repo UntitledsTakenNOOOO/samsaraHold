@@ -22,6 +22,7 @@
 #define SAMSARA_SYNTHFIRE           607
 #define SAMSARA_MEGAHEALTH          232
 #define SAMSARA_QPOWERS             636
+#define SAMSARA_DOOM                610
 
 #define SAMSARA_TIPBOX              300
 #define SAMSARA_TIPBOX_CLIENT       301

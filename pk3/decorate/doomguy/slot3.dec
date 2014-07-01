@@ -12,9 +12,9 @@ actor "Super Shotgun" : SuperShotgun
     States
     {
       Ready:
-	TNT1 A 0 A_JumpIfInventory("Automatic Shotgun",1,"Ready2")
+	/*TNT1 A 0 A_JumpIfInventory("Automatic Shotgun",1,"Ready2")
 	TNT1 A 0 A_GiveInventory("Automatic Shotgun",1)
-      Ready2:
+      Ready2:*/
         TNT1 A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
         DSSG A 1 A_WeaponReady
         Loop

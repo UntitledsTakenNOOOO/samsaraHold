@@ -175,7 +175,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
 int ClassScripts[CLASSCOUNT][SLOTCOUNT] = 
 {
-    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,SAMSARA_DOOM,        0,  0,SAMSARA_DOOM,0,SAMSARA_DOOM,SAMSARA_DOOM,SAMSARA_DOOM,0},
     {0,0,                   0,  0,0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0,0},
