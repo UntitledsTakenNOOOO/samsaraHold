@@ -70,6 +70,12 @@ StatusBar Fullscreen
             DrawBar "HAMBAR", "HEMPTY", Ammo2, Horizontal, Reverse, 251, 193;
             DrawNumber 3, INDEXFON, White, Ammo2, 270, 186;
         }
+        IsSelected "Automatic Shotgun"
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo2, Horizontal, Reverse, 251, 193;
+            DrawNumber 3, INDEXFON, White, Ammo2, 270, 186;
+        }
         IsSelected "MA-75B Assault Rifle"
         {
             DrawImage "HUDBAR", 250, 192;
