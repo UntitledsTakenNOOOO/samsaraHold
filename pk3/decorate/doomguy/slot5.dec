@@ -256,10 +256,10 @@ ACTOR Landmine3 : Landmine2
 
 actor LandMineAmmo: Ammo
 {
-    Inventory.Amount 1
+    Inventory.Amount 2
     Inventory.MaxAmount 20
 
-    Ammo.BackpackAmount 2
+    Ammo.BackpackAmount 5
     Ammo.BackpackMaxAmount 40
 
     Inventory.Icon "AMSML0"
