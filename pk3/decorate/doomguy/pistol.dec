@@ -70,7 +70,7 @@ actor " Pistol " : Weapon// : Pistol
 
       CoopFire:
          TNT1 A 0
-        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        //TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         TNT1 A 0 A_FireCustomMissile("DoomBullet2", 0, 1, 0, 1)
         Goto FireAnim
 
@@ -79,7 +79,8 @@ actor " Pistol " : Weapon// : Pistol
          FireAnim2:
         TNT1 A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdAnim")
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
-            TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         TNT1 A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageAnim")
         DPIS B 2 bright
         DPIS C 1 bright
@@ -94,6 +95,7 @@ actor " Pistol " : Weapon// : Pistol
         goto Ready
         
       VanillaFire:
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DPIS F 6 BRIGHT A_GunFlash
         DPIS G 4
         DPIS H 5 A_ReFire
@@ -104,6 +106,7 @@ actor " Pistol " : Weapon// : Pistol
                 goto FireAnim2
 
       StrongholdAnim:
+        TNT1 A 0 A_PlayWeaponSound("weapons/pistol")
         PISF A 6 A_GunFlash
         PISG C 4
         PISG B 5 A_ReFire
@@ -144,18 +147,12 @@ actor " Pistol " : Weapon// : Pistol
         TNT1 A 2 A_Light1
         Goto LightDone
         
-         VanillaFlash:
-        TNT1 A 3 Bright A_Light1
-        TNT1 A 2 A_Light1
-        Goto LightDone
-
-      Flash:
-        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFlash")
-        TNT1 A 3 Bright A_Light1
-        TNT1 A 2 A_Light1
-        Goto LightDone
-
       StrongholdFlash:
+        TNT1 A 3 Bright A_Light1
+        TNT1 A 2 A_Light1
+        Goto LightDone
+
+      VanillaFlash:
         PISF A 7 bright A_Light1
         PISF A 0 bright A_Light0
         stop

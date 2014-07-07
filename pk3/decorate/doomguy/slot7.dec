@@ -160,10 +160,10 @@ Actor "B.F.G. 9000" : BFG9000
         goto Ready
 
       StrongholdEnd:
-        BFGG L 4 Bright
-        BFGG M 3 Bright
-        BFGG N 3 Bright
-        BFGG E 20 Bright A_ReFire
+        BFGG L 5 Bright
+        BFGG M 5 Bright
+        BFGG N 5 Bright A_ReFire
+        BFGG E 15 Bright
 	goto Ready
 
       Flash:
@@ -173,9 +173,9 @@ Actor "B.F.G. 9000" : BFG9000
         Goto LightDone
 
       StrongholdFlash:
-        TNT1 A 4 A_Light1
-        TNT1 A 3 A_Light2
-        TNT1 A 3 A_Light1
+        TNT1 A 5 A_Light1
+        TNT1 A 5 A_Light2
+        TNT1 A 5 A_Light1
         TNT1 A 0 A_Light1
         TNT1 A 0 A_Light0
 		stop

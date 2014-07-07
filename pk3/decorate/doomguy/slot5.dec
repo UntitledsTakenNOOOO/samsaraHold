@@ -87,7 +87,7 @@ actor "Rocket Launcher" : RocketLauncher
 
       StrongholdFire:
 	MISF A 4 Bright A_GunFlash
-        MISF B 5 Bright A_FireCustomMissile("DoomRocket2",0,1,0,0)
+        MISF B 5 Bright A_FireCustomMissile("DoomRocket3",0,1,0,0)
         MISF CD 5 Bright
 	MISF D 0 A_ReFire
         Goto Ready
@@ -136,6 +136,12 @@ actor DoomRocket : Rocket
 }
 
 actor DoomRocket2 : DoomRocket { +THRUSPECIES Species "Player" }
+
+actor DoomRocket3 : DoomRocket2
+{
+    SeeSound "weapons/rocklf"
+    DeathSound "weapons/rocklx"
+}
 
 ACTOR "Land Mine Layer" : Weapon
 {

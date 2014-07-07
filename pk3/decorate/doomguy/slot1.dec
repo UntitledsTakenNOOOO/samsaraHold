@@ -15,10 +15,17 @@ actor " Chainsaw " : Chainsaw replaces Chainsaw
 	TNT1 A 0 A_GiveInventory("Stunner Rifle",1)
       Ready2:*/
 	DSAW A 0 A_JumpIfInventory("StrongholdWeapons",1,"StrongholdReady")
-        DSAW CD 4 A_WeaponReady
+        DSAW C 0 A_PlayWeaponSound("doomguy/sawidle")
+        DSAW C 4 A_WeaponReady
+        DSAW D 0 A_PlayWeaponSound("doomguy/sawidle")
+        DSAW D 4 A_WeaponReady
         loop
+
       StrongholdReady:
-	SAWG CD 4 A_WeaponReady
+	SAWG C 0 A_PlayWeaponSound("doomguy/sawidle")
+	SAWG C 4 A_WeaponReady
+	SAWG D 0 A_PlayWeaponSound("doomguy/sawidle")
+	SAWG D 4 A_WeaponReady
 	goto Ready
 
       Deselect:

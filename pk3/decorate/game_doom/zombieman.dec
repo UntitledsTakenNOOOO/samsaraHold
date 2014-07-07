@@ -6,7 +6,7 @@ actor Clip2: CustomInventory
     {
       Spawn:
         CLIP B 3150
-	CLIP BBBBBBBBBBBBBBBBBBBBBBBB A_FadeOut(0.05)
+	CLIP BBBBBBBBBBBBBBBBBBBBBBBB 4 A_FadeOut(0.05)
         stop
 
       Pickup:
