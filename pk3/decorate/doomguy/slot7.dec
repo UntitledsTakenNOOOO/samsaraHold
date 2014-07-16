@@ -203,8 +203,8 @@ actor DoomBFGBall : BFGBall
         
       Death:
         DBFE A 8 bright A_Explode(128,256,0)
-        DBFE B 8 bright
-        DBFE C 8 bright A_BFGSpray("DoomBFGSplash",60,15)
+        DBFE B 8 bright A_BFGSpray("DoomBFGSplash",25,12)
+        DBFE C 8 bright A_BFGSpray("DoomBFGSplash",50,12)
         DBFE DEF 8 bright
         stop
     }
