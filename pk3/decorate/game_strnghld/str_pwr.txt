@@ -20,7 +20,8 @@ actor WeaponPowerItem : CustomInventory 25007
   	TNT1 A 1 A_PlaySound("pickup")
   	stop
   Use:
-        TNT1 A 0 A_SpawnItemEx("SamsaraUniquePickup1",0,64,96,0,0,4,0,0)
+        TNT1 A 0 A_SpawnItemEx("YellowArmorPickup",64,0,96,0,0,4,0,0)
+  	TNT1 A 0 A_SpawnItemEx("SamsaraUniquePickup1",0,64,96,0,0,4,0,0)
         TNT1 A 0 A_SpawnItemEx("SamsaraUniquePickup2",0,-64,96,0,0,4,0,0)
         TNT1 A 0 A_SpawnItemEx("SamsaraUniquePickup",-64,0,96,0,0,4,0,0)
         TNT1 A 0 A_SpawnItemEx("HexenTeamPickup",0,0,192,0,0,8,0,0)

@@ -147,7 +147,7 @@ actor ArmorPack3: BasicArmorPickup
     }
 }
 
-actor SamsaraYellowArmor: BasicArmorPickup 28636
+actor SamsaraYellowArmor: BasicArmorPickup //28636
 {
     Radius 20
     Height 16
@@ -436,7 +436,7 @@ actor GreenArmorPickup replaces GreenArmor
     }
 }
 
-actor YellowArmorPickup //28636
+actor YellowArmorPickup 28636
 {
     +NOINTERACTION
 
