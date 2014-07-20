@@ -1,6 +1,6 @@
 Actor "B.F.G. 9000" : BFG9000
 {
-    Weapon.AmmoGive 40
+    Weapon.AmmoGive 80
     Weapon.SlotPriority 0
     DamageType "BFG"
     Obituary "%k \cdshowed\c- %o \cdyou don't hide from the B.F.G. 9000.\c-"

@@ -554,19 +554,19 @@ SAMSARA CHANGES\n
 - Chex Zorches custom enemies, of course.\n
 - Duke taunts on custom enemies, because I would feel bad if people complained about it.\n
 - Duke's Freezethrower and Parias' Frost shards do extra damage against fire-based enemies, as a benefit to those who read the README, and to make them usable (since freezethrower is pretty terrible for a slot 6).\n
-- The weapon powerup device now spreads three uniques and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.\n
-- 3 Uniques item has a max of 3, rather than 1, since it's not that powerful.\n
-- Fuel for flamer replaced by replaced with strife missile boxes (the strife everything ammo pickups).\n
-^- Landmines give a slot one. Ammo for landmines replaced with medium ammo boxes (30 bullets, 12 shells, 4 rockets, 60 cells).\n
+- The weapon powerup device now spreads three unique items and a mystic ambit for team use. Sorry, folks, but making an original powered-up version of every samsara weapon is not in our itinerary at the moment, and never will be.\n
+- Unique Team Powerup Item has a max of 3, rather than 1, since it's not that powerful.\n
+- Fuel for flamer replaced by replaced with heretic and hexen ammo gems.\n
+^- Landmines give a slot one. Ammo for landmines replaced with strife ammo boxes.\n
 ^- Autoshotgun is a slot 2+3\n
 ^- HRL is a slot 5+1 unique.\n
-^- Stunner is 3 uniques straight up.\n
+^- Stunner is 3 unique items straight up.\n
 ^- Railgun is slot 6+1 unique.\n
 ^- Flamer is slot6+2 uniques.\n
 ^- Pyro Cannon is slot7+2 uniques.\n
 ^- Repeater is slot6+2 uniques.\n
-^- Devastator(Stronghold one, not Samsara one, which is renamed to prevent code confusion, we are very sorry) is slot7+2 uniques.\n
-^- Most custom weapons also drop uniques as you can see, as to allow them to see more play, as they have to be split among the team.\n
+^- Devastator (Stronghold one, not Samsara one, which is renamed to prevent code confusion, we are very sorry) is slot7+2 uniques.\n
+^- Most custom weapons also drop uniques (pretty easy to see), as to allow them to see more play, as they have to be split among the team.\n
 - Fusion Pistol does some extra-extra damage versus the terminator, due to its entirely mechanical nature.\n
 - Catharsi Detonators provide some extra explosive oomph if shot with the fusion pistol, along with detonating prematurely.\n
 - The terminator explodes when killed by the fusion pistol, in reference to Marathon's hunters.\n
@@ -580,10 +580,9 @@ SAMSARA CHANGES\n
 - Parias' and Corvus' medikit capacity has been reduced to 4, and urn/invulnerability/megasphere capacity to 1, to prevent mass stealing from these classes (harming the team). This is for in-mission items, not buyable ones.\n
 ^- In mission Timefreeze and quad damages give corvus inventory ones.\n
 ^- These are separate from the ones you buy.\n
-- Custom Samsara difficulty names have been removed, as they would cause monsters not to spawn.\n
 - Melee Slot 1's are buffed to allow the other heroes to share in the slot 1 fun.\n
 - Parias' Backpack capacity limited to 1, but it gives full ammo instead of half, in order to prevent mass-steals and to prevent overpoweredness with having 6 and a RWD'd wraithverge.\n
-- Various damage values have been tweaked for balance (most noticable on Parias, as I had to buff him (the hell) out due to him being melee-only). The bad news is that I forgot most of them.\n
+- Various damage values have been tweaked for balance (most noticable on Parias). The bad news is that I forgot most of them.\n
 - The Super Shield is replaced by Red Armor to prevent EZ Godlike.\n
 - The intermission map is modified to have new rooms to adjust settings.\n
 - New Achievements!\n
