@@ -6,20 +6,20 @@
 //Quake
 QUITMSG = "Are you gonna quit this game\njust like everything else?"; // Quake quit message
 //Doom
-QUITMSG1 = "hey, ron!\ncan we say 'fuck' in the game?"; // Unused Doom quit message
-QUITMSG2 = "i'd leave:\nthis is just more monsters and levels.\nwhat a load."; // Unused Doom quit message
+QUITMSG1 = "look, bud. you leave now and\nyou forfeit your body count!"; // Doom 2 quit message
+QUITMSG2 = "get outta here and go back\nto your boring programs."; // Doom 2 quit message
 //Chex Quest
-QUITMSG3 = "I hope you're just taking a\nbreak for Chex(R) party mix."; // Chex Quest 1 quit message
-QUITMSG4 = "The only people who don't run\nare either fools or heroes.\nLet's hope you're the latter."; // Chex Quest 2 manual
+QUITMSG3 = "The real Chex(R) Warrior\nwouldn't give up so fast!"; // Chex Quest 1 quit message
+QUITMSG4 = "Don't abandon the\nIntergalactic Federation of Cereals!"; // Chex Quest 1 quit message
 //Heretic
 QUITMSG5 = "...the world is surely damned."; // Heretic Manual
-QUITMSG6 = "It is not my destiny to be a hero."; // Heretic II
+QUITMSG6 = "No one ever said being a Heretic was easy!"; // E1 end text.
 //HeXen
 QUITMSG7 = "Worship me, and I may yet be merciful.\nThen again, maybe not."; // Hexen, Hub 3
 QUITMSG8 = "My servants can smell your blood, human."; // Hexen, Hub 2
 //Wolfenstein
 QUITMSG9 = "Heroes don't quit, but\ngo ahead and press Y\nif you aren't one."; // Wolfenstein quit message
-QUITMSG10 = "Sieg heil...huh.\nSieg hell."; // Wolfenstein E3 end text
+QUITMSG10 = "The next adventure awaits!\nSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
 //Duke Nukem
 QUITMSG11 = "After a few days of R&R,\nI'll be ready for more action!"; // Last line before credits in Duke Nukem 3D
 QUITMSG12 = "I guess I'll lean against this oozing,\nbulbous wall and wait for death."; // Duke Nukem II
@@ -29,19 +29,19 @@ QUITMSG14 = "P.S.: If things around here aren't working,\nit's because I'm laugh
 
 // Zandronum cuts off here. The ZDoom-specific messages are as follows:
 //Doom
-QUITMSG15 = "look, bud. you leave now and\nyou forfeit your body count!"; // Doom 2 quit message
-QUITMSG16 = "get outta here and go back\nto your boring programs."; // Doom 2 quit message
+QUITMSG15 = "hey, ron!\ncan we say 'fuck' in the game?"; // Unused Doom quit message
+QUITMSG16 = "i'd leave:\nthis is just more monsters and levels.\nwhat a load."; // Unused Doom quit message
 QUITMSG17 = "go ahead and leave. see if i care."; // Doom quit message
 QUITMSG18 = "let's beat it -- this is turning\ninto a bloodbath!"; // Doom quit message
 //Chex Quest
-QUITMSG19 = "The real Chex(R) Warrior\nwouldn't give up so fast!"; // Chex Quest 1 quit message
-QUITMSG20 = "Don't abandon the\nIntergalactic Federation of Cereals!"; // Chex Quest 1 quit message
+QUITMSG19 = "I hope you're just taking a\nbreak for Chex(R) party mix."; // Chex Quest 1 quit message
+QUITMSG20 = "The only people who don't run\nare either fools or heroes.\nLet's hope you're the latter."; // Chex Quest 2 manual
 QUITMSG21 = "Don't quit now! We need your help!"; // Chex Quest 1 quit message
 QUITMSG22 = "The mission continues..."; // Various Chex Quest promo
 //Heretic
 QUITMSG23 = "But what else can you do,\nif the will to fight is gone?"; // E5 end text
 QUITMSG24 = "You find, in the end,\nthat it is not within you\nto surrender without a fight."; // E5 end text
-QUITMSG25 = "No one ever said being a Heretic was easy!"; // E1 end text.
+QUITMSG25 = "It is not my destiny to be a hero."; // Heretic II
 QUITMSG26 = "Your fight has been in vain."; // Heretic II.
 //HeXen
 QUITMSG27 = "Regardless of the path you choose,\nDeath awaits you."; // Hexen II, Hub 1
@@ -51,11 +51,11 @@ QUITMSG30 = "You've made it to your final goal,\nto turn back would be cowardice
 //Wolfenstein
 QUITMSG31 = "We owe you a great debt, Mr. Blazkowicz.\nYou have served your country well."; // Spear of Destiny end text
 QUITMSG32 = "For guns and glory, press N.\nFor work and worry, press Y."; // Wolfenstein 3D quit message
-QUITMSG33 = "The next adventure awaits!\nSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
+QUITMSG33 = "Sieg heil...huh.\nSieg hell."; // Wolfenstein E3 end text
 QUITMSG34 = "But the adventure is just beginning!"; // The Nocturnal Missions promo text
 //Duke Nukem
 QUITMSG35 = "I need a stiff drink... a shower...\nand a soft-skinned belly to lie my head on."; // Duke Nukem 3D: E2 end text
-QUITMSG36 = "The last thing that's gonna go thru your mind before you die... is my size 13 boot!"; // Duke Nukem 3D: E2 end text
+QUITMSG36 = "I guess I'll lean against this oozing,\nbulbous wall and wait for death."; // Duke Nukem II
 QUITMSG37 = "I always said if there's a way to go,\nit would have something to do with\nwomen, whips and oil."; // Duke Nukem: Manhattan Project
 QUITMSG38 = "I should probably kill everything,\nthen watch a movie."; // Duke Nukem: Land of the Babes
 //Marathon
