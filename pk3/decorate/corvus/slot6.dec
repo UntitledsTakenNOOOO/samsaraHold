@@ -244,8 +244,8 @@ actor HornRodFX22 : HornRodFX2
         FX00 I 5 BRIGHT
         FX00 J 4 BRIGHT
         FX00 KLM 3 BRIGHT
-        FX00 G 1
-        FX00 G 1 A_AddPlayerRain
+        FX00 G 2
+        //FX00 G 1 A_AddPlayerRain
         ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
         ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
