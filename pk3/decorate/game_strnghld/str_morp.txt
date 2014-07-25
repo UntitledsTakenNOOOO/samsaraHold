@@ -317,7 +317,6 @@ ACTOR grenadeblast2
     RENDERSTYLE ADD
     +Ripper
     +NoDamageThrust
-    +StrifeDamage
     +ThruSpecies
     Species "Player"
     ALPHA 0.8

@@ -97,7 +97,7 @@ actor "Spectral Gauntlet": Gauntlet
 actor GauntletPuff: QuakeBulletPuff
 {
     +PUFFONACTORS
-
+    DamageType "QuakePistol"
     SeeSound "quakeweps/gauntlethit"
     //Decal "BulletChip"
 

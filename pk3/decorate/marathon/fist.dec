@@ -94,6 +94,8 @@ ACTOR TCCBThrown
     +RIPPER
     +DOOMBOUNCE
     +NOGRAVITY
+    +THRUSPECIES
+    Species "Player"
     Speed 50
     Height 12
     Radius 12
@@ -266,6 +268,8 @@ actor Tech50Shot
     +FOILINVUL
     +PIERCEARMOR
     +BLOODLESSIMPACT
+    +THRUSPECIES
+    Species "Player"
     Obituary "%k \cnbrought\c- %o \cnin for resisting security.\c-"
     Projectile
     States

@@ -26,7 +26,8 @@ actor FakeGoalBase
 	Damagefactor "TimonsAxe", 0
 	Damagefactor "MightyBoot", 0
 	Damagefactor "QuakePistol", 0
-
+	damageFactor "MarineAlly", 0
+	
         damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
         damagefactor "Explosive", 0
@@ -4888,7 +4889,8 @@ actor PowerCore 21234
   damageFactor "Wraithverge", 0
   damagefactor "MarathonFusion", 0
   DamageFactor "CoreFriendly", 0
-
+  damageFactor "MarineAlly", 0
+        
         damagefactor "Kamikaze", 0
         DamageFactor "ZorchKamikaze", 0
 
@@ -4979,33 +4981,33 @@ Actor OvermindCore 29952
 	mass 0x7FFFFFFF
 	translation 2
 
-	DamageFactor "Massacre", 0
-	Damagefactor "FaithInHumanity", 0
-	Damagefactor "DoomFist", 0
-	Damagefactor "Pistol", 0
-	Damagefactor "ZorchPistol", 0
-	Damagefactor "TimonsAxe", 0
-	Damagefactor "MightyBoot", 0
-	Damagefactor "QuakePistol", 0
-  	Damagefactor "MightyBoot", 0
- 	damagefactor "Zorch", 0
- 	damagefactor "Explosive", 0
-  	damagefactor "NotQuadded", 0
-  	damagefactor "WMCNade", 0
-  	damagefactor "WMCBeam", 0
-  	damagefactor "DukeExplosive", 0
-  	damagefactor "BFG", 0
-  	damagefactor "BFGSplash", 0
-  	damagefactor "BJSpear", 0
-  	damagefactor "PoisonCloud", 0
-  	damageFactor "Wraithverge", 0
-        damagefactor "MarathonFusion", 0
+    DamageFactor "Massacre", 0
+    Damagefactor "FaithInHumanity", 0
+    Damagefactor "DoomFist", 0
+    Damagefactor "Pistol", 0
+    Damagefactor "ZorchPistol", 0
+    Damagefactor "TimonsAxe", 0
+    Damagefactor "MightyBoot", 0
+    Damagefactor "QuakePistol", 0
+    Damagefactor "MightyBoot", 0
+    damagefactor "Zorch", 0
+    damagefactor "Explosive", 0
+    damagefactor "NotQuadded", 0
+    damagefactor "WMCNade", 0
+    damagefactor "WMCBeam", 0
+    damagefactor "DukeExplosive", 0
+    damagefactor "BFG", 0
+    damagefactor "BFGSplash", 0
+    damagefactor "BJSpear", 0
+    damagefactor "PoisonCloud", 0
+    damageFactor "Wraithverge", 0
+    damagefactor "MarathonFusion", 0
   	DamageFactor "CoreFriendly", 0
+    damageFactor "MarineAlly", 0
+    Damagefactor "EnemyInfightDamage", 0
 
-	Damagefactor "EnemyInfightDamage", 0
-
-	damagefactor "Kamikaze", 0
-        DamageFactor "ZorchKamikaze", 0
+    damagefactor "Kamikaze", 0
+    DamageFactor "ZorchKamikaze", 0
 
 	DamageFactor "Normal", 4
 	DamageFactor "Lightning", 5
