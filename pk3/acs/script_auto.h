@@ -877,7 +877,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
             array_weaponBar[pln]    = !!GetCVar("samsara_cl_weaponhud");
             array_pickupswitch[pln] = !!GetCVar("switchonpickup");
             array_strweapons[pln]   = !!GetCVar("samsarahold_cl_strweapons");
-			array_dukemusic[pln]    = !!GetCVar("samsarahold_cl_dukemusic");
+            array_dukemusic[pln]    = !!GetCVar("samsarahold_cl_dukemusic");
         }
         else
         {

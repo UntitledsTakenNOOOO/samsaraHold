@@ -125,6 +125,7 @@ samsara_cl_sinerecoil 0/1: Toggles whether Ranger's recoil movement uses a sine 
 samsara_cl_weaponhud 0/1: Controls whether the weapon bar at the top of your screen appears.\n\
 samsara_cl_vanilladoom 0/1: Toggles the vanilla weapon animations for Doomguy.\n\
 samsara_cl_wolfmove 0/1: Toggles classic Wolfenstein movement on B.J. Blazkowicz.\n\
+samsara_cl_bloodyhell -1-2: Fancy Clientside blood effects. Modes are None, Nashgore, Brutal, and Happyfun.\n\
 samsarahold_cl_strweapons 0/1: Toggles stronghold graphics on Doom Weapons.\n\
 samsarahold_cl_dukemusic 0/1: Toggles amazing duke nukem remix music near the end of the mission.";
 
