@@ -2012,7 +2012,7 @@ ACTOR HunterShot
 	Radius 6
 	Height 8
 	Speed 15
-	Damage (Random(Random(15,20),Random(20,30)))
+	Damage (Random(20,30))
 	DamageType "HunterShot"
 	+THRUSPECIES
 	+PAINLESS
