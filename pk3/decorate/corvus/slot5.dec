@@ -142,7 +142,7 @@ actor PhoenixShot : PhoenixFX1
 actor PhoenixShot2 : PhoenixShot { +THRUSPECIES Species "Player" }
 actor PhoenixFX2A : PhoenixFX2
 {
-    Damage (Random(1,8))
+    Damage 1
     +FORCERADIUSDMG
     +THRUSPECIES
     +FIREDAMAGE
@@ -154,21 +154,19 @@ actor PhoenixFX2A : PhoenixFX2
   {
   Spawn:
     FX09 A 2 Bright
-    FX09 BABA 2 Bright A_Explode(5,8,0)
-    FX09 BAB 2 Bright A_Explode(5,16,0)
-    FX09 ABA 2 Bright A_Explode(5,32,0)
+    FX09 BABA 2 Bright A_Explode(4,8,0)
+    FX09 BAB 2 Bright A_Explode(4,16,0)
+    FX09 ABA 2 Bright A_Explode(4,32,0)
     FX09 B 0 Bright A_FlameEnd
-    FX09 BCD 2 Bright A_Explode(5,64,0)
-    FX09 EF 2 Bright A_Explode(5,64,0)
+    FX09 BCD 2 Bright A_Explode(3,64,0)
+    FX09 EF 2 Bright
     Stop
   Death:
-    FX09 G 2 Bright A_Explode(5,32,0)
-    FX09 G 1 Bright A_Explode(5,32,0)
-    FX09 H 1 Bright A_FloatPuff
-    FX09 H 2 Bright A_Explode(5,32,0)
-    FX09 II 2 Bright A_Explode(5,64,0)
-    FX09 J 5 Bright A_Explode(5,64,0)
-    FX09 K 5 Bright
+    FX09 G 2 Bright A_Explode(Random(3,4),32,0)
+    FX09 G 1 Bright A_Explode(4,64,0)
+    FX09 H 3 Bright A_FloatPuff
+    FX09 I 4 Bright
+    FX09 JK 5 Bright
     Stop
   }
 }
