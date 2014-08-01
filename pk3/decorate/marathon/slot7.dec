@@ -1410,6 +1410,7 @@ actor WMCBeamExplode: FastProjectile
     Speed 20
     Projectile
     Obituary "$SAMSARA_MARATHON_OB_SLOT7_1"
+    +FORCERADIUSDMG
     +RIPPER
     -SOLID
     -BLOODSPLATTER
@@ -1422,7 +1423,7 @@ actor WMCBeamExplode: FastProjectile
     States
     {
       Spawn:
-        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_Explode(48,128,0)
+        TNT1 AAAAAAAAAAAAAAAAAA 1 A_Explode(48,128,0)
         
       Death:
         TNT1 A 0 A_Explode(64,128,0)
