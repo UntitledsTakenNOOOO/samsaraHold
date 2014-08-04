@@ -22,6 +22,7 @@ DamageFactor "MarathonPlasma", 0.5
   DropItem "Clip" 255
   DropItem "Shell" 255
   DropItem "RocketAmmo" 255
+  DropItem "Cell" 255
   MONSTER
   +NOICEDEATH
   +FloorClip
