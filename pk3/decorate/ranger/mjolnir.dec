@@ -17,6 +17,7 @@ actor Mjolnir: InstantSwitchWeapon
     Obituary "%k \cshammered \c-%o\cs without %p consent."
 
     Weapon.SisterWeapon "Spectral Mjolnir"
+    Weapon.YAdjust 24
 
     States
     {
