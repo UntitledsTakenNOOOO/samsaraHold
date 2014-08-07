@@ -442,7 +442,7 @@ script SAMSARA_QPOWERS (int startTime)
 
 script SAMSARA_QUAKE (int class, int slot, int dropped)
 {
-    int givingQuad, givingLG;
+    int givingRL, givingQuad, givingLG;
 
     int stay = GetCVar("sv_weaponstay") && !dropped;
     int ultStay = GetCVar("samsara_permault") && !dropped;
@@ -456,6 +456,23 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
 
     switch (slot)
     {
+      case SLOT_ROCKETLAUNCHER:
+	if (!CheckInventory("  Rocket Launcher  ")
+         || (!stay && (GetAmmoCapacity("RocketAmmo") > CheckInventory("RocketAmmo"))))
+        {
+            givingRL = 1;
+        }
+
+        if (givingRL)
+        {
+        GiveInventory("  Rocket Launcher  ", 1);
+	    GiveInventory("RocketAmmo", 10);
+        }
+
+	SetResultValue(givingRL);
+        break;
+
+	
       case SLOT_BFG9000:
         if (doquad)
         {
