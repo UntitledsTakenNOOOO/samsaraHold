@@ -466,7 +466,7 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
         if (givingRL)
         {
         GiveInventory("  Rocket Launcher  ", 1);
-	    GiveInventory("RocketAmmo", 10);
+	    GiveInventory("RocketAmmo", 5);
         }
 
 	SetResultValue(givingRL);
