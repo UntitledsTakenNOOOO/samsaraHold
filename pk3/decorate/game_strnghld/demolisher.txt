@@ -4,7 +4,7 @@ ACTOR Demolisher 30110
 painchance "Stunner", 128
 DamageFactor "CorvusCrossbow", 1.1
 DamageFactor "DragonClaw", 1.5
-DamageFactor "MarathonFusion", 2.5
+DamageFactor "MarathonFusion", 2.0
 DamageFactor "WMCBeam", 0.5
 DamageFactor "WMCNade", 0.375
 DamageFactor "BJSpear", 0.7

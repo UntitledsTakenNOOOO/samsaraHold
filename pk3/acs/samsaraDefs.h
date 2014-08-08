@@ -568,7 +568,6 @@ SAMSARA CHANGES\n
 ^- Repeater is slot6+2 uniques.\n
 ^- Devastator (Stronghold one, not Samsara one, which is renamed to prevent code confusion, we are very sorry) is slot7+2 uniques.\n
 ^- Most custom weapons also drop uniques (pretty easy to see), as to allow them to see more play, as they have to be split among the team.\n
-- Fusion Pistol does some extra-extra damage versus the terminator, due to its entirely mechanical nature.\n
 - Catharsi Detonators provide some extra explosive oomph if shot with the fusion pistol, along with detonating prematurely.\n
 - The terminator explodes when killed by the fusion pistol, in reference to Marathon's hunters.\n
 - Marine Item replaced with strife beacon.\n

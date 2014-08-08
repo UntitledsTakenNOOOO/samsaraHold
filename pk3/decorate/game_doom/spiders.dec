@@ -3,7 +3,7 @@ actor Arachnotron2 : Arachnotron replaces ArachnotronStun
 	painchance "Stunner", 128
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
-    DamageFactor "MarathonFusion", 2.25
+    DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
     +BOSSDEATH
     +NOTDMATCH
