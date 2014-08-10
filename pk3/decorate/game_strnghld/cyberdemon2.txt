@@ -4,6 +4,7 @@ ACTOR CyberdemonMk2 32757
     	Translation "16:79=96:111","128:159=96:111"
 	damagefactor "DragonClaw", 1.6
 	damagefactor "CorvusCrossbow", 1.15
+	damagefactor "CorvusHellstaffTomed", 0.1
 	damagefactor "CoreFriendly", 0
 	damagefactor "Railgun", 0
 	damagefactor "BossFactor", 0.25
@@ -813,6 +814,7 @@ ACTOR ChaosCyber 32755
   damagefactor "DragonClaw", 1.5
   damagefactor "CorvusCrossbow", 1.15
   damagefactor "MarathonFusion", 2.0
+  DamageFactor "CorvusHellStaffTomed", 0.2
   +NoRadiusDMG
   +DontHurtSpecies
   +FloorClip

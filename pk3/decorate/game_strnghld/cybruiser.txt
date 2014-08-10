@@ -6,6 +6,7 @@ painchance "MightyBoot", 255
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
 DamageFactor "MarathonFusion", 2.0
+DamageFactor "CorvusHellStaffTomed", 0.5
 SpawnId 250
 Health 2000
 Radius 24

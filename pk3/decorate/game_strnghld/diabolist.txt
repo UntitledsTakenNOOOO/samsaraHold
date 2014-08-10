@@ -11,6 +11,7 @@ DamageFactor "HexenIce", 2.25
 DamageFactor "DukeIce", 2.25
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
+DamageFactor "CorvusHellStaffTomed", 0.3
 painchance "HexenIce", 20
 painchance "DukeIce", 20
 Obituary "\c[V7]%o \c[V7]was set ablaze by a Diabloist."

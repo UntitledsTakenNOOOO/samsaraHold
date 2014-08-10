@@ -20,8 +20,6 @@ ACTOR STBoss 32767
 	DamageFactor "HexenIce", 2.5
 	DamageFactor "DukeIce", 2.5
 	DamageFactor "Wraithverge", 2
-	DamageFactor "CorvusHellStaff", 1.4
-	DamageFactor "WolfenFlameThrower", 1.25
 	PainChance "MightyBoot", 256
 	//DropItem "SpiritBoss"
 	+FLOORCLIP
@@ -2041,11 +2039,19 @@ ACTOR SpiritBoss 32765
     MeleeRange 144
 	DamageFactor "CorvusCrossbow", 1.1
 	DamageFactor "DragonClaw", 1.5
+	DamageFactor "WMCBeam", 0.75
+	DamageFactor "WMCNade", 0.5625
+	DamageFactor "BJSpear", 0.85
+	DamageFactor "CorvusHellStaffTomed", 0.1
+	DamageFactor "BFG", 0.75
+	DamageFactor "BFGSplash", 0.75
+	DamageFactor "Wraithverge", 0.75
+	DamageFactor "DukeExplosive", 0.875
+	DamageFactor "Zorch", 0.9
 	DamageFactor "STBoss", 0
 	DamageFactor "STBossFactor", 0
 	DamageFactor "Animate", 0
-	DamageFactor "CorvusHellStaffTomed", 0.2
-	DamageFactor "WMCNade", 0.75
+	DamageFactor "CorvusHellStaffTomed", 0.1
 	damagefactor "bossfactor", 0.01
 	damagefactor "corefriendly", 0
 	damagefactor "railgun", 0

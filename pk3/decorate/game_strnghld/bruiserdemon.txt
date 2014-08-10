@@ -2,6 +2,7 @@ ACTOR BruiserDemon 3333
 {
 //$Category Stronghold_Monsters
         painchance "Stunner", 120
+DamageFactor "CorvusHellStaffTomed", 0.4
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
 DamageFactor "HexenIce", 2.25
