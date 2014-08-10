@@ -148,7 +148,7 @@ actor PhoenixFX2A : PhoenixFX2
     +FORCERADIUSDMG
     +THRUSPECIES
     +FIREDAMAGE
-    DamageType "Explosive"
+    DamageType "FireExplosive"
     Species "Player"
     DECAL PhoenixThrowerScorch
     Speed 16

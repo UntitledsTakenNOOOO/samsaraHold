@@ -1861,21 +1861,52 @@ ACTOR BabeBase
   +SHOOTABLE
   +THRUSPECIES
   Species "Player"
+	Damagefactor "Massacre", 0
 
-        damagefactor "Zorch", 0.1
-        damagefactor "PoisonCloud", 0.1
-        damagefactor "Wraithverge", 0.1
-        damagefactor "Explosive", 0.1
-        damagefactor "NotQuadded", 0.1
-        damagefactor "WMCNade", 0.1
-        damagefactor "WMCBeam", 0.1
-        damagefactor "DukeExplosive", 0.1
-        damagefactor "BFG", 0.1
-        damagefactor "BFGSplash", 0.1
-        damagefactor "BJSpear", 0.1
-        damagefactor "MarineAlly", 0
-        damagefactor "Kamikaze", 0.01
-        DamageFactor "ZorchKamikaze", 0.01
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
+        damagefactor "Zorch", 0
+        damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
+        damagefactor "NotQuadded", 0
+        damagefactor "WMCNade", 0
+        damagefactor "WMCBeam", 0
+        damagefactor "DukeExplosive", 0
+        damagefactor "BFG", 0
+        damagefactor "BFGSplash", 0
+        damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
+        damagefactor "MarathonFusion", 0
+        DamageFactor "CoreFriendly", 0
+
+        damagefactor "Kamikaze", 0
+        DamageFactor "ZorchKamikaze", 0
+
+        DamageFactor "Cyber2Factor", 0.5
+
+        DamageFactor "STBoss", 0.02
+        DamageFactor "STBossFactor", 0.25
+        DamageFactor "Animate", 0.1
+
+	DamageFactor "Normal", 0.8
+	DamageFactor "Lightning", 1
+	DamageFactor "Fire", 1
+	DamageFactor "RedBlast", 1		
+	DamageFactor "DoomTheseGuysAreTheBest", 1
+	DamageFactor "DoomHellNoble", 1
+	DamageFactor "DoomCacodemon", 1
+	DamageFactor "DoomSpiderPlasma", 1
+	DamageFactor "OvermindFactor", 1
 
   RadiusDamageFactor 0.5
   BloodType "DN3DBlood", "DN3DBlood"

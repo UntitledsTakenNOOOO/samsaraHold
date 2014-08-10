@@ -31,6 +31,7 @@ actor FakeGoalBase
         damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -4878,6 +4879,7 @@ actor PowerCore 21234
   Damagefactor "MightyBoot", 0
   damagefactor "Zorch", 0
   damagefactor "Explosive", 0
+  Damagefactor "FireExplosive", 0
   damagefactor "NotQuadded", 0
   damagefactor "WMCNade", 0
   damagefactor "WMCBeam", 0
@@ -4992,6 +4994,7 @@ Actor OvermindCore 29952
     Damagefactor "MightyBoot", 0
     damagefactor "Zorch", 0
     damagefactor "Explosive", 0
+    Damagefactor "FireExplosive", 0
     damagefactor "NotQuadded", 0
     damagefactor "WMCNade", 0
     damagefactor "WMCBeam", 0
