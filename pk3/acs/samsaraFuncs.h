@@ -270,11 +270,12 @@ function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
     //   or
     //  - You can have multiple duplicates of the unique, and you're not full
 
-    if (unique != "" && ((!CheckInventory(unique) || ignoreinv) || 
-                         (uniqueMax <= 1 && (!strcmp(unammo, "") || unammoMax == 0)) ||
-                         (unammoMax != 0 && (CheckInventory(unammo) != unammoMax || ignoreinv)) ||
-                         (uniqueMax > 1 && (CheckInventory(unique) != uniqueMax || ignoreinv))
-                        )
+    if (strcmp(unique, "") &&
+        ((!CheckInventory(unique) || ignoreinv) || 
+          (uniqueMax <= 1 && (!strcmp(unammo, "") || unammoMax == 0)) ||
+          (unammoMax != 0 && (CheckInventory(unammo) != unammoMax || ignoreinv)) ||
+          (uniqueMax > 1 && (CheckInventory(unique) != uniqueMax || ignoreinv))
+        )
        )
     {
         GiveInventory(unique, unCount);
@@ -365,7 +366,7 @@ function int ammoCount(int ammoname)
     {
       case "Clip":          return 10;
       case "Shell":         return 4;
-      case "Shell":     return 4;
+      case "AmmoShell":     return 4;
       case "RocketAmmo":    return 1;
       case "Cell":          return 20;
     }

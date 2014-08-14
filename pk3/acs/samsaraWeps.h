@@ -71,14 +71,14 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 {
     {   // Doomguy
         {" Fist ",                          "",             "",             "", ""},
-        {" Chainsaw ",                      "Cell",         "",             "", ""}, //For the stunner rifle.
+        {" Chainsaw ",                      "Cell",         "",             "Stunner Rifle", ""}, //For the stunner rifle.
         {" Pistol ",                        "",             "",             "", ""},
         {" Shotgun ",                       "Shell",        "",             "", ""},
-        {"Super Shotgun",                   "Shell",        "",             "", ""},
+        {"Super Shotgun",                   "Shell",        "",             "Automatic Shotgun", ""},
         {" Chaingun ",                      "Clip",         "",             "", ""},
-        {"Rocket Launcher",                 "RocketAmmo",   "LandMineAmmo", "", ""}, //For the land mines.
-        {"Plasma Rifle",                    "Cell",         "",             "", ""},
-        {"B.F.G. 9000",                     "Cell",         "",             "", ""},
+        {"Rocket Launcher",                 "RocketAmmo",   "LandMineAmmo", "Land Mine Layer", ""}, //For the land mines.
+        {"Plasma Rifle",                    "Cell",         "",             " Railgun ", ""},
+        {"B.F.G. 9000",                     "Cell",         "",             "Plasma Repeater", ""},
         {" Chainsaw ",                      "",             "",             "", ""},
     },
 
