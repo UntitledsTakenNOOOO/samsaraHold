@@ -262,8 +262,14 @@ actor FusionShot
     States
     {
       Spawn:
-        FSH3 ABC 2 Bright
+        FSH3 ABC 2 Bright A_JumpIf(waterlevel >= 2, "FuckWater")
         LOOP
+
+      FuckWater:
+        FSHT A 0 A_Stop
+        FSHT A 0 A_Explode(Random(45,60),128,0)
+        FSHT A 0 A_Die
+        goto Death
 
       Death:
         FHIT ABCD 2 Bright
@@ -301,7 +307,8 @@ actor FusionShotWater
 
       Death:
         TNT1 A 0 A_Stop
-        TNT1 A 0 A_Explode(random(60,80),128)
+        TNT1 A 0 A_Explode(random(30,40),128,0)
+        TNT1 A 0 A_Explode(random(30,40),128)
         FHIT ABCD 2 Bright
         STOP
     }
@@ -327,8 +334,31 @@ actor FusionSuper
     States
     {
       Spawn:
-        CHGB AAABBBCCC 1 Bright A_SpawnItem("FusionTrail2")
+        CHGB A 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB A 1 Bright A_SpawnItem("FusionTrail")
+        CHGB A 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB A 1 Bright A_SpawnItem("FusionTrail")
+        CHGB A 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB A 1 Bright A_SpawnItem("FusionTrail")
+        CHGB B 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB B 1 Bright A_SpawnItem("FusionTrail")
+        CHGB B 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB B 1 Bright A_SpawnItem("FusionTrail")
+        CHGB B 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB B 1 Bright A_SpawnItem("FusionTrail")
+        CHGB C 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB C 1 Bright A_SpawnItem("FusionTrail")
+        CHGB C 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB C 1 Bright A_SpawnItem("FusionTrail")
+        CHGB C 0 A_JumpIf(waterlevel >= 2, "FuckWater")
+        CHGB C 1 Bright A_SpawnItem("FusionTrail")
         LOOP
+
+      FuckWater:
+        FSHT A 0 A_Stop
+        FSHT A 0 A_Explode(Random(120,150),128,0)
+        FSHT A 0 A_Die
+        goto Death
 
       Death:
         FHIT ABCD 2 Bright
@@ -384,7 +414,8 @@ actor FusionShotWater2
 
       Death:
         TNT1 A 0 A_Stop
-        TNT1 A 0 A_Explode(random(160,200),128)
+        TNT1 A 0 A_Explode(random(80,100),128,0)
+        TNT1 A 0 A_Explode(random(80,100),128)
         FHIT AB 5 bright
         FHIT CD 4 bright
         STOP

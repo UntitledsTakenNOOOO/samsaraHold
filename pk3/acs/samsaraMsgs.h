@@ -962,7 +962,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Touch the ends together, and a million volts of electricity will come out.",
             "You can't spell Genocide with a Q, silly.",
             "You're like King Midas. But with gibs instead of gold.",
-            "omg op gay hax nerf masterban",
+            "Atop the tallest of earth's peaks dwell the gods of earth, and suffer not man to tell that he hath looked upon them.",
             "Guaranteed to make balancing efforts fall apart, or your money back.",
         },
         {
@@ -1074,10 +1074,10 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "Bouncy red death!",
         "Pewpewlasers!",
         "What is this, Star Wars?",
-        "Despite being lasers, they don't create a solid beam.",
-        "Oh gosh darnit even the berserk replacement is ranged.",
-        "This used to a thunderbolt, then 0.29 happened.",
-        "PEWPEWPEWPEWPEWPEWPEWPEWPEWPEWPEWPEWPEWPEWPEW",
+        "Does it come in blueberry?",
+        "Do not aim at face. Not that it'll help.",
+        "Are any of the weapon designs in Quake even practical?",
+        "If this were in vanilla Quake, it would be slot 6. \ckbut alas",
     },
 };
 
