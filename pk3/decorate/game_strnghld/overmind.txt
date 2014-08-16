@@ -7,7 +7,6 @@ ACTOR Overmind 16999
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.6
 	damagefactor "CorvusHellStaffTomed", 0.1
-	DamageFactor "MarathonFusion", 2.0
 	DamageFactor "Kamikaze", 0 //Yeah no.
 	damagefactor "ZorchKamikaze", 0
 	Health 50000
