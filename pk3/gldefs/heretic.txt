@@ -473,7 +473,6 @@ object HornRodFX2A
 }
 
 // Tomed hellstaff rain
-/*
 pointlight REDRAIN
 {
     color 1.0 0.0 0.0
@@ -525,7 +524,7 @@ object HellstaffRain
     frame FX22E { light REDRAIN_X3 }
     frame FX22F { light REDRAIN_X4 }
 }
-*/
+
 // Phoenix rod shot
 pointlight PHOENIXSHOT
 {
