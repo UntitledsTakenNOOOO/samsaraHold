@@ -583,7 +583,10 @@ script SAMSARA_SPAWN (int respawning)
         SetActorProperty(0, APROP_JumpZ, max(i, 0));
         
         //if (isDead(0)) { endloop = 1; }
-        
+
+        if (CheckInventory("StopBreakingEverything_Quad")) { TakeInventory("StopBreakingEverything_Quad", 0x7FFFFFFF); }
+        if (CheckInventory("StopBreakingEverything_Bomb")) { TakeInventory("StopBreakingEverything_Bomb", 0x7FFFFFFF); }
+
         Delay(1);
 
         opcount = pcount;
