@@ -153,8 +153,8 @@ actor " Pistol " : Weapon// : Pistol
         Goto LightDone
 
       VanillaFlash:
-        PISF A 7 bright A_Light1
-        PISF A 0 bright A_Light0
+        DPIS F 7 bright A_Light1
+        DPIS F 0 bright A_Light0
         stop
 
       Spawn:
