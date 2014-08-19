@@ -22,7 +22,7 @@ actor BaronOfHell2 : BaronOfHell replaces BaronOfHellStun
         //goto See
       Missile:
         BOSS EF 8 A_FaceTarget
-        BOSS G 8 A_CustomComboAttack("BaronBall3", 32, 10 * random(1, 8), "baron/melee")//A_CustomMissile("BaronBall3")
+        BOSS G 8 A_CustomComboAttack("BaronBall2", 32, 10 * random(1, 8), "baron/melee")//A_CustomMissile("BaronBall3")
         goto See
 
       Death.DukeExplosive:
@@ -139,7 +139,6 @@ actor BaronOfHell2 : BaronOfHell replaces BaronOfHellStun
 actor BaronBall3 : BaronBall
 {
     DamageType "DoomHellNoble"
-    +THRUGHOST
 }
 
 actor BaronBall2 : BaronBall replaces BaronBall

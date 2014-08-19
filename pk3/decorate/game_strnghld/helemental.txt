@@ -226,7 +226,7 @@ ACTOR HadesBolt : CacodemonBall
    +HEXENBOUNCE
    +RIPPER
    -NOGRAVITY
-   -STRIFEDAMAGE
+   +STRIFEDAMAGE
    States
    {
    Spawn:

@@ -171,6 +171,7 @@ ACTOR FusionShot
   SEESOUND "fusionspid/see" 
   DEATHSOUND "fusionspid/die"
   PROJECTILE
+  +THRUGHOST
   states
   {
   Spawn:

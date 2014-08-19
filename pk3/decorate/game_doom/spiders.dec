@@ -126,5 +126,6 @@ actor Arachnotron2 : Arachnotron replaces ArachnotronStun
 actor ArachnotronPlasma2 : ArachnotronPlasma replaces ArachnotronPlasma
 {
     DamageType "DoomSpiderPlasma"
+    +THRUGHOST
 }
 
