@@ -2,7 +2,7 @@ ACTOR STBoss 32767
 {
 //$Category Stronghold_Monsters
 	Game Doom
-	Health 150000
+	Health 200000
 	Radius 48
 	Height 128
 	Scale 2.0
@@ -2026,7 +2026,7 @@ ACTOR SpiritCaller
 
 ACTOR SpiritBoss 32765
 {
-    Health 20000
+    Health 22222
     Translation ice
     Mass 100000
     Radius 48
