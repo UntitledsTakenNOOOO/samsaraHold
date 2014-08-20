@@ -335,23 +335,23 @@ actor FusionSuper
     {
       Spawn:
         CHGB A 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB A 1 Bright A_SpawnItem("FusionTrail")
+        CHGB A 1 Bright A_SpawnItem("FusionTrail2")
         CHGB A 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB A 1 Bright A_SpawnItem("FusionTrail")
+        CHGB A 1 Bright A_SpawnItem("FusionTrail2")
         CHGB A 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB A 1 Bright A_SpawnItem("FusionTrail")
+        CHGB A 1 Bright A_SpawnItem("FusionTrail2")
         CHGB B 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB B 1 Bright A_SpawnItem("FusionTrail")
+        CHGB B 1 Bright A_SpawnItem("FusionTrail2")
         CHGB B 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB B 1 Bright A_SpawnItem("FusionTrail")
+        CHGB B 1 Bright A_SpawnItem("FusionTrail2")
         CHGB B 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB B 1 Bright A_SpawnItem("FusionTrail")
+        CHGB B 1 Bright A_SpawnItem("FusionTrail2")
         CHGB C 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB C 1 Bright A_SpawnItem("FusionTrail")
+        CHGB C 1 Bright A_SpawnItem("FusionTrail2")
         CHGB C 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB C 1 Bright A_SpawnItem("FusionTrail")
+        CHGB C 1 Bright A_SpawnItem("FusionTrail2")
         CHGB C 0 A_JumpIf(waterlevel >= 2, "FuckWater")
-        CHGB C 1 Bright A_SpawnItem("FusionTrail")
+        CHGB C 1 Bright A_SpawnItem("FusionTrail2")
         LOOP
 
       FuckWater:
