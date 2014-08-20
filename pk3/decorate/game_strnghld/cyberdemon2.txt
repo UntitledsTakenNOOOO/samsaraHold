@@ -1,7 +1,7 @@
 ACTOR CyberdemonMk2 32757
 {
 	//$Category Stronghold_Monsters
-    	Translation "16:79=96:111","128:159=96:111"
+    	Translation "1:2=247:247", "48:72=90:111", "73:79=5:8", "128:140=101:111", "141:143=5:7", "144:151=5:7", "236:239=247:247"
 	damagefactor "DragonClaw", 1.6
 	damagefactor "CorvusCrossbow", 1.15
 	damagefactor "CorvusHellstaffTomed", 0.1
@@ -731,7 +731,7 @@ ACTOR MiniCyberSummon
 ACTOR MiniCyber 32756
 {
 	//$Category Stronghold_Monsters
-  //Translation "48:83=104:111, 48:63=104:111, 128:155=104:111, 28:63=104:111, 162:223=104:111, 208:224=104:111, 208:239=104:111"
+  //Translation "1:2=247:247", "48:72=90:111", "73:79=5:8", "128:140=101:111", "141:143=5:7", "144:151=5:7", "236:239=247:247"
   OBITUARY "%o was made into a firework by a mini-Cyberdemon."
   Health 40
   Radius 20
@@ -796,7 +796,7 @@ ACTOR MiniCyber 32756
 ACTOR ChaosCyber 32755
 {
 	//$Category Stronghold_Monsters
-  Translation "48:83=176:191, 48:63=176:191, 128:155=176:191, 28:63=176:191, 162:223=176:191, 268:224=176:191, 268:239=176:191"
+  Translation "1:2=247:247", "48:72=170:191", "73:79=5:8", "128:140=181:191", "141:143=189:191", "144:151=189:191", "236:239=247:247"
   OBITUARY "\c[E9]%o \c[E9]met an irritating cyberdemon."
   Health 4000
   Radius 26
