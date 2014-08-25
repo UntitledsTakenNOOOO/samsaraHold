@@ -225,7 +225,6 @@ ACTOR CatharsiBall
   DEATHSOUND "catharsi/shotdth"
   PROJECTILE
   +Randomize
-  +STRIFEDAMAGE
   +THRUGHOST
   states
   {

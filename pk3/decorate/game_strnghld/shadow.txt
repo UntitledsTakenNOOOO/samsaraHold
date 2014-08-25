@@ -227,7 +227,6 @@ ACTOR ShadowBall
 	DamageType "Normal"
 	Projectile
 	+RANDOMIZE
-	+STRIFEDAMAGE
 	RenderStyle "ADD"
 	Alpha 0.75
 	SeeSound "Shadow/attack"

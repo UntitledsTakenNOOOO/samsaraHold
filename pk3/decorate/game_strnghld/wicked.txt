@@ -147,7 +147,7 @@ ACTOR WickedShot
    Radius 8
    Height 8
    Speed 10
-   Damage (Random(3,35))
+   Damage 5
    RENDERSTYLE ADD
    DamageType Fire
    ALPHA 0.67

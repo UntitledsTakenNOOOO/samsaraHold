@@ -339,9 +339,9 @@ ACTOR FlameBreathOvermind {
    States
    {
    Spawn:
-      XPLO ABCDEFG 2 BRIGHT A_Explode (12, 64, 0)
-      XPLO HIJKLMN 2 BRIGHT A_Explode (8, 48, 0)
-      XPLO OPQRSTU 2 BRIGHT A_Explode (4, 32, 0)
+      XPLO ABCDEFG 2 BRIGHT A_Explode (12, 128, 0)
+      XPLO HIJKLMN 2 BRIGHT A_Explode (8, 96, 0)
+      XPLO OPQRSTU 2 BRIGHT A_Explode (4, 64, 0)
       Stop
    }
 }
@@ -351,14 +351,13 @@ actor CatharsiBallLarge : CatharsiBall
   damagetype "overmindfactor"
   Scale 2.5
   Speed 40
-  Damage 3
   +NOTIMEFREEZE
   States
   {
 	Death:
-	SDFB B 6 BRIGHT A_Explode(Random(12,15),64,0)
-	SDFB C 6 BRIGHT A_Explode(Random(8,10),32,0)
-	SDFB D 6 BRIGHT A_Explode(Random(4,5),16,0)
+	SDFB B 6 BRIGHT A_Explode(Random(12,15),96,0)
+	SDFB C 6 BRIGHT A_Explode(Random(8,10),64,0)
+	SDFB D 6 BRIGHT A_Explode(Random(4,5),32,0)
 	SDFB E 6 BRIGHT
 	stop
   }
