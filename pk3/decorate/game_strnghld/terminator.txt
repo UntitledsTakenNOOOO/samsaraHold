@@ -24,7 +24,7 @@ Speed 12
 PainChance 8
 scale 1.2
 MONSTER
-Obituary "\c[L3]%o \c[L3]was liquidated by a Terminator."
+Obituary "\c[D4]%o \c[D4]was liquidated by a Terminator."
 +FLOORCLIP 
 +BOSS
 +MISSILEMORE
@@ -255,7 +255,7 @@ actor Redgrenade //More like Red Missile now. Heh heh.
     FastSpeed 45
     Damage 4
     DamageType "Redblast"
-    OBITUARY "\c[D4]%o \c[D4]was torn apart by a blood missile."
+    OBITUARY "\c[L3]%o \c[L3]was torn apart by a blood missile."
     PROJECTILE
     //Heh heh. Players won't know what hit them. Hopefully neither will Popsoap.
     //+DoomBounce
@@ -315,7 +315,7 @@ actor Grenadeblast
     Height 12
     Speed 6
     Damage 3
-    OBITUARY "\c[D4]%o \c[D4]was torn apart by a blood missile."
+    OBITUARY "\c[L3]%o \c[L3]was torn apart by a blood missile."
     DamageType "Redblast"
     PROJECTILE
     RENDERSTYLE ADD

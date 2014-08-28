@@ -12,14 +12,14 @@ DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
 DamageFactor "CorvusHellStaffTomed", 0.3
 spawnid 246
-Health 2000
+Health 2500
 Radius 24 
 Height 64 
 Mass 1000 
 Speed 8 
 PainChance 20 
 MONSTER
-MeleeDamage 10
+MeleeDamage 20
 OBITUARY "\c[L6]%o \c[L6]was burnt to a crisp by a pyro demon."
 HITOBITUARY "\c[L6]%o \c[L6]was melted by a pyro demon."
 Bloodcolor "75 25 00"
