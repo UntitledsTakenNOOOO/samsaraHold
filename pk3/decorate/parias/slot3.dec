@@ -152,12 +152,14 @@ actor "Timon's Axe" : FWeapAxe
 actor AxePuff2 : AxePuff replaces AxePuff
 {
     DamageType "TimonsAxe"
+    +FOILINVUL
 }
 
 actor AxePuffGlow2 : AxePuffGlow replaces AxePuffGlow
 {
     DamageType "TimonsAxe"
     +PUFFGETSOWNER
+    +FOILINVUL
     States
     {
     Spawn:
@@ -178,4 +180,5 @@ actor AxePuffGlow2 : AxePuffGlow replaces AxePuffGlow
 actor BlankPuff4 : BlankPuff
 {
     DamageType "TimonsAxe"
+    +FOILINVUL
 }
