@@ -33,7 +33,7 @@ ACTOR Overmind 16999
 	PainSound "cycloid/pain"
 	DeathSound "cycloid/death"
 	ActiveSound "cycloid/roam"
-	Obituary "\c[V9]%o \c[V9]was slaughtered by the Overmind."
+	Obituary "\c[K9]%o \c[K9]was slaughtered by the Overmind."
 	States
 	{
 	Spawn:

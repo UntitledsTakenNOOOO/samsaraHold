@@ -122,12 +122,11 @@ ACTOR CyberdemonMk2 32757
 		CYBR E 1 BRIGHT A_Mushroom ("LiteShotNoDMG", 7)		
 		CYBR E 150 A_PlaySound ("weapons/bfgf")
 		CYBR F 0 A_FaceTarget
-		CYBR F 0 BRIGHT A_Mushroom("UltraBallA",5)
 		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,0,0,0)
-		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,0,90,0)
-		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,0,180,0)
-		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,0,270,0)
-		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallA", 85,0,360,0)
+		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallB", 85,0,90,0)
+		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallB", 85,0,180,0)
+		CYBR F 0 BRIGHT A_CustomMissile ("UltraBallB", 85,0,270,0)
+		CYBR F 0 BRIGHT A_Mushroom("UltraBallC",5)
 		CYBR F 100 A_FaceTarget
 		CYBR A 1 A_UnsetInvulnerable
 		Goto See
@@ -271,14 +270,15 @@ ACTOR LiteShot2 : FastProjectile
    Radius 8
    Height 12
    Speed 60
-   Damage 10
+   Damage 5
    PROJECTILE
    RENDERSTYLE ADD
    Alpha 0.85
    DamageType "Cyber2Factor"
    SEESOUND "weapons/devlit"
    DEATHSOUND "weapons/devzap"
-   +Ripper 
+   +Ripper
+   +StrifeDamage
    states
    {
    Spawn:
@@ -359,7 +359,6 @@ ACTOR UltraBallA
    Alpha 0.90
    DamageType "Cyber2Factor"
    DontHurtShooter
-   +DONTREFLECT
    DEATHSOUND "weapons/devexp"
    Decal DevastatorLightning
    states
@@ -375,7 +374,7 @@ ACTOR UltraBallA
       Goto Spawn+2
    Death:
       DBAL C 5 BRIGHT A_Explode
-      DBAL DDDDDDDDDD 0 BRIGHT A_CustomMissile("UltraBallB",32,0,Random(0,360),2,Random(0,360))
+      DBAL DDDDDDDDDDDDDDDDDDDD 0 BRIGHT A_CustomMissile("UltraBallB",32,0,Random(0,360),2,Random(0,360))
       DBAL DEFGHI 5 BRIGHT
       Stop
    }
@@ -423,7 +422,7 @@ ACTOR UltraBallB
       Goto Death
    Death:
       DBAL C 5 BRIGHT A_Explode
-      DBAL DDDDDDDDDD 0 BRIGHT A_CustomMissile("UltraBallC",32,0,Random(0,360),2,Random(0,360))
+      DBAL DDDDDDDDDDDDDDDDDDDD 0 BRIGHT A_CustomMissile("UltraBallC",32,0,Random(0,360),2,Random(0,360))
       DBAL DEFGHI 5 BRIGHT
       Stop
    }
@@ -461,7 +460,7 @@ ACTOR UltraBallC
       DBAL B 4 BRIGHT A_Explode (64,128,0)
    Death:
       DBAL C 5 BRIGHT A_Explode
-      DBAL DDDDDDDDDD 0 BRIGHT A_CustomMissile("DevastatorBall3",32,0,Random(0,360),2,Random(0,360))
+      DBAL DDDDDDDDDDDDDDDDDDDD 0 BRIGHT A_CustomMissile("DevastatorBall3",32,0,Random(0,360),2,Random(0,360))
       DBAL DEFGHI 5 BRIGHT
       Stop
    }
@@ -740,8 +739,10 @@ ACTOR MiniCyber 32756
   Mass 500
   Speed 12
   PainChance 255
-  DropItem "RocketAmmo" 256
-  DropItem "Cell" 256
+  DropItem "Clip" 128
+  DropItem "Shell" 128
+  DropItem "RocketAmmo" 128
+  DropItem "Cell" 128
   DropItem "HealthBonus" 256
   DropItem "ArmorBonus" 256
   SEESOUND "cyber/sight"

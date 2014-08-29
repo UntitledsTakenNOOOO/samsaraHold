@@ -24,8 +24,8 @@ ACTOR EnhancedCaco 3118
    PainSound "caco/pain"
    DeathSound "caco/death"
    ActiveSound "caco/active"
-   HitObituary "%o was mowed down by an enhanced cacodemon."
-   Obituary "%o was made into a snack by the enhanced cacodemon."
+   Obituary "%o was mowed down by an enhanced cacodemon."
+   HitObituary "%o was made into a snack by the enhanced cacodemon."
    States
    {
    Spawn:

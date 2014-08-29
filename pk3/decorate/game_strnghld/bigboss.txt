@@ -946,7 +946,8 @@ ACTOR STBossAttack5
 	states
 	{
 	Spawn:
-		TNT1 A 4 A_SpawnItemEx("STBossSkeleton",0,0,0,0,0,0,0,0,224)
+		TNT1 AAAAAAAAAAAAAAA 4 A_SpawnItemEx("STBossSkeleton",0,0,0,0,0,0,0,0,224)
+		TNT1 A 4 A_SpawnItemEx("STBossSkeleton2",0,0,0,0,0,0,0,0,224)
 		loop
 	Death:
 		TNT1 A 0
@@ -958,7 +959,8 @@ ACTOR STBossAttack5B: StBossAttack5
 states
 	{
 	Spawn:
-		TNT1 A 7 A_SpawnItemEx("STBossSkeleton",0,0,0,0,0,0,0,0,240)
+		TNT1 A 7 A_SpawnItemEx("STBossSkeleton2",0,0,0,0,0,0,0,0,240)
+		TNT1 AAAAAAA 7 A_SpawnItemEx("STBossSkeleton",0,0,0,0,0,0,0,0,240)
 		loop
 	}
 }
@@ -1189,7 +1191,7 @@ ACTOR STBossSkeleton 32766
 
 ACTOR STBossSkeleton2 : STBossSkeleton
 {
-	obituary "\c[D1]%o \c[D1]got whalloped by a skeleton."
+	obituary "\c[Q8]%o \c[Q8]got whalloped by a skeleton."
 	PainChance 192
 	dropitem "MegaSphere" 4
 	PainChance "Animate", 0
