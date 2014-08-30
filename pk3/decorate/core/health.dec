@@ -375,7 +375,8 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
         TNT1 A 1 A_GiveInventory("CorvusMegasphere")
         stop
 
-      PickupQuake:
+      PickupQuake: 
+	TNT1 A 0 A_JumpIfInventory("QuakeRegenTimer",575,"PickupFail")
         TNT1 A 0 A_PlaySound("quakeweps/megasphere", CHAN_ITEM)
         TNT1 A 0 A_GiveInventory("QuakeRegenGiver")
         TNT1 A 0 A_GiveInventory("QuakeRedArmor")
@@ -412,7 +413,7 @@ actor PortQuartzFlask : HealthPickup
 {
     //tag "Quartz Flask"
     health 25
-    inventory.maxamount 4
+    inventory.maxamount 5
     inventory.icon "ARTIQRTZ"
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
@@ -506,11 +507,11 @@ actor BecauseTermSaidSo: CustomInventory
 
       Pickup:
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "Infinite")
-        TNT1 A 0 A_GiveInventory("FiniteHealth", 10)
+        TNT1 A 0 A_GiveInventory("FiniteHealth", 25)
         stop
 
       Infinite:
-        TNT1 A 0 A_GiveInventory("InfiniteHealth", 10)
+        TNT1 A 0 A_GiveInventory("InfiniteHealth", 25)
         stop
         
       Nope:
