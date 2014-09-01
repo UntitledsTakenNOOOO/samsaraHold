@@ -1742,45 +1742,45 @@ function void Setup (void)
 		// All level par times here, in minutes
 		// 0 means no set par time (yet)
 		// Hint: 5min 20sec can be shown as 5*60+20
-		MapParTime[1]	= 2*60;
-		MapParTime[2]	= 5*60;
-		MapParTime[3]	= 10*60;
-		MapParTime[4]	= 6*60;
-		MapParTime[5]	= 9*60;
-		MapParTime[6]	= 10*60;
-		MapParTime[7]	= 9*60;
-		MapParTime[8]	= 8*60;
-		MapParTime[9]	= 6*60;
-		MapParTime[10]	= 9*60;
-		MapParTime[11]	= 9*60;
-		MapParTime[12]	= 10*60;
-		MapParTime[13]	= 8*60;
-		MapParTime[14]	= 10*60;
-		MapParTime[15]	= 11*60;
-		MapParTime[16]	= 19*60;
-		MapParTime[17]	= 10*60;
-		MapParTime[18]	= 15*60;
-		MapParTime[19]	= 15*60;
-		MapParTime[20]	= 10*60;
-		MapParTime[21]	= 5*60;
-		MapParTime[22]	= 18*60;
-		MapParTime[23]	= 13*60;
-		MapParTime[24]	= 16*60;
-		MapParTime[25]	= 6*60;
-		MapParTime[26]	= 28*60;
-		MapParTime[27]	= 24*60;
-		MapParTime[28]	= 20*60;
-		MapParTime[29]	= 19*60;
-		MapParTime[30]	= 25*60;
-		MapParTime[31]	= 13*60;
-		MapParTime[32]	= 22*60;
-		MapParTime[33]	= 17*60;
-		MapParTime[34]	= 30*60;
-		MapParTime[35]	= 45*60;
-		MapParTime[50]	= 11*60;
-		MapParTime[52]	= 12*60;
-		MapParTime[54]	= 27*60;
-		MapParTime[56]	= 13*60;
+		MapParTime[1]	= 4*60;
+		MapParTime[2]	= 10*60;
+		MapParTime[3]	= 20*60;
+		MapParTime[4]	= 12*60;
+		MapParTime[5]	= 18*60;
+		MapParTime[6]	= 20*60;
+		MapParTime[7]	= 18*60;
+		MapParTime[8]	= 16*60;
+		MapParTime[9]	= 12*60;
+		MapParTime[10]	= 18*60;
+		MapParTime[11]	= 18*60;
+		MapParTime[12]	= 20*60;
+		MapParTime[13]	= 16*60;
+		MapParTime[14]	= 20*60;
+		MapParTime[15]	= 22*60;
+		MapParTime[16]	= 40*60;
+		MapParTime[17]	= 20*60;
+		MapParTime[18]	= 30*60;
+		MapParTime[19]	= 30*60;
+		MapParTime[20]	= 20*60;
+		MapParTime[21]	= 10*60;
+		MapParTime[22]	= 36*60;
+		MapParTime[23]	= 25*60;
+		MapParTime[24]	= 32*60;
+		MapParTime[25]	= 12*60;
+		MapParTime[26]	= 56*60;
+		MapParTime[27]	= 49*60;
+		MapParTime[28]	= 40*60;
+		MapParTime[29]	= 38*60;
+		MapParTime[30]	= 50*60;
+		MapParTime[31]	= 15*60;
+		MapParTime[32]	= 45*60;
+		MapParTime[33]	= 35*60;
+		MapParTime[34]	= 60*60;
+		MapParTime[35]	= 90*60;
+		MapParTime[50]	= 22*60;
+		MapParTime[52]	= 24*60;
+		MapParTime[54]	= 54*60;
+		MapParTime[56]	= 26*60;
 
 		AddMapReward("CoinItem", MapCoinReward[GetLevelInfo(LEVELINFO_LEVELNUM)]);
 
@@ -1827,9 +1827,15 @@ function int RawMultiplier (int type)
 		break;
 	case M_MEDIC:
 	case M_AMMO:
+		If(TimeAttackMode)
+		result = 1.25*PlayerCount() - 0.04  ;	// Slightly above 1.0 for one player to account for rounding errors
+		else
 		result = 1.05*PlayerCount() - 0.04  ;	// Slightly above 1.0 for one player to account for rounding errors
 		break;
 	case M_ENEMIES:
+		If(TimeAttackMode)
+		result = FixedMul(0.05 + 1.21*PlayerCount(), SkillScaler[GameSkill()]);
+		else
 		result = FixedMul(0.05 + 0.96*PlayerCount(), SkillScaler[GameSkill()]);
 		break;
 	case M_BOSSHEALTH:
@@ -1998,7 +2004,7 @@ script S_MISSION_FAIL (void)
 
 	if (MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)]==-1)
 	{
-		SetFont("HUDTH");
+	SetFont("HUDGO");
 	HudMessageBold (s:"a"; HUDMSG_FADEINOUT, EndMessageHID, CR_UNTRANSLATED,
 			320.0, 240.0,
 			5.0, 0.5, 0.5);
@@ -2618,6 +2624,11 @@ function int GetPercentColorCore (int percent)
 // waited on.
 script S_CALLWAVE (int wave)
 {
+	if(TimeAttackMode)
+	{
+	HardScalerPlayerCount = 1;
+	}
+
 	Setup();
 
 	if(EventScript)
