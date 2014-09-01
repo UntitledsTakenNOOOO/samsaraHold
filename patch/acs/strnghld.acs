@@ -1962,6 +1962,9 @@ script S_MISSION_COMPLETE (void)
 			}
 
 			delay(10*35);
+				HudMessageBold(s:"Hard Mode Beaten!";
+					HUDMSG_FADEINOUT|HUDMSG_LOG, 0, CR_GREEN, 240.0, 240.1, 6.0, 2.5, 1.0);
+			delay(10*35);
 
 			SetPlayerProperty(1, false, PROP_TOTALLYFROZEN);
 		}
