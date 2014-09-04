@@ -163,7 +163,7 @@ int DamageTaken[32];
 bool PlayersAreLate = FALSE;
 int LatePlayersDelay = 35*60; // Time before late players are put into jail immediately.
 
-int HardScalerPlayerCount = 7; //Used for player scaling
+int HardScalerPlayerCount = 6; //Used for player scaling. 6 on average, generally varies between 5-7, with some 8-9.
 
 #libdefine RADIONAME_SIZE	16
 int RadioName[RADIONAME_SIZE];
@@ -1823,22 +1823,25 @@ function int RawMultiplier (int type)
 	switch(type)
 	{
 	case M_POWERUP:
+		If(TimeAttackMode)
+		result = 1.5*PlayerCount();
+		else
 		result = 1.0*PlayerCount();
 		break;
 	case M_MEDIC:
 	case M_AMMO:
 		If(TimeAttackMode)
-		result = 1.25*PlayerCount() - 0.04  ;	// Slightly above 1.0 for one player to account for rounding errors
+		result = 1.46*PlayerCount() + 0.05  ;	// Slightly above 1.5 for one player to account for rounding errors
 		else
 		result = 1.05*PlayerCount() - 0.04  ;	// Slightly above 1.0 for one player to account for rounding errors
 		break;
 	case M_ENEMIES:
 		If(TimeAttackMode)
-		result = FixedMul(0.05 + 1.21*PlayerCount(), SkillScaler[GameSkill()]);
+		result = FixedMul(1.55*PlayerCount(), SkillScaler[GameSkill()] - 0.04);
 		else
 		result = FixedMul(0.05 + 0.96*PlayerCount(), SkillScaler[GameSkill()]);
 		break;
-	case M_BOSSHEALTH:
+	case M_BOSSHEALTH: //Not being used anymore, because THANKS ZANDRONUM
 		// 1 player	= 1x
 		// 8 players	= 3x
 		// result = 2/7 * playercount + 5/7
@@ -2004,21 +2007,29 @@ script S_MISSION_FAIL (void)
 
 	SetHudSize (640, 480, 1);
 
-
+/*
 	if (MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)]==-1)
 	{
-	SetFont("HUDGO");
+	SetFont("HUDTH");
 	HudMessageBold (s:"a"; HUDMSG_FADEINOUT, EndMessageHID, CR_UNTRANSLATED,
 			320.0, 240.0,
 			5.0, 0.5, 0.5);
 	}
 	else
 	{
+
 	SetFont("HUDGO");
 	HudMessageBold (s:"a"; HUDMSG_FADEINOUT, EndMessageHID, CR_UNTRANSLATED,
 			320.0, 240.0,
 			5.0, 0.5, 0.5);
 	}
+*/
+
+	SetFont("HUDGO");
+	HudMessageBold (s:"a"; HUDMSG_FADEINOUT, EndMessageHID, CR_UNTRANSLATED,
+			320.0, 240.0,
+			5.0, 0.5, 0.5);
+
 	ScreenFadeOut( 5.0 );
 
 	delay(35 * 3);
@@ -2386,21 +2397,23 @@ script S_LIMIT_GAME (void)
 	ACS_ExecuteWait(S_DEADLINE,0,0);
 }
 
+/* //Testing script, also not used anymore.
 script 180 (void)
 {
-	/*PrintBold(d:ActivatorTID());
+	PrintBold(d:ActivatorTID());
 	int NewHealth = Multiplier( M_BOSSHEALTH, BossHealth );
 	SetActorProperty(0, APROP_Health, NewHealth);
 	Delay(35);
-	PrintBold(d:ActivatorTID());*/
+	PrintBold(d:ActivatorTID());
 }
+*/
 
 script S_OVERMIND (void)
 {
 	// Set up boss monster
 	GameMode = GAME_OVERMIND;
 	
-	/*
+	/* //Testing stuff back when Overmind was broken
 	PrintBold(s:"GameMode is currently: ", d:GameMode);
 	PrintBold(s:"BossHealth is currently: ", d:BossHealth);
 	PrintBold(s:"BossTarget is currently: ", d:BossTarget);
@@ -2410,10 +2423,10 @@ script S_OVERMIND (void)
 	Thing_Activate(BossMonster);
 	Thing_Hate(BossMonster, BossTarget, 2);
 
-	int OriginalHealth = GetActorProperty(BossMonster, APROP_HEALTH);
+	int OriginalHealth = GetActorProperty(BossMonster, APROP_HEALTH); //SCREW YOU OVERMIND I HAD TO REWRITE YOUR GAME MODE
 
-	/*int OriginalHealth = Multiplier(M_BOSSHEALTH, BossHealth);
-	SetActorProperty(BossMonster, APROP_Health, OriginalHealth);*/
+	/*int OriginalHealth = Multiplier(M_BOSSHEALTH, BossHealth); //BECAUSE THIS SETACTORPROPERTY RANDOMLY LOST THE DAMN TID
+	SetActorProperty(BossMonster, APROP_Health, OriginalHealth);*/ //TIDS ARE LITERALLY THE WORST, CAN YOU NOT FUCKING WORK PROPERLY
 
 	NumberOfTargets = ThingCount( T_NONE, BossTarget );
 
@@ -2627,9 +2640,9 @@ function int GetPercentColorCore (int percent)
 // waited on.
 script S_CALLWAVE (int wave)
 {
-	if(TimeAttackMode)
+	if(TimeAttackMode) //Variable name is outdated, but it's not worth the trouble to change it.
 	{
-	HardScalerPlayerCount = 1;
+	HardScalerPlayerCount = 1; //If on replay mode, invoke additional player-scaling immediately, regardless of player count.
 	}
 
 	Setup();
@@ -2650,7 +2663,6 @@ script S_CALLWAVE (int wave)
 	ACS_ExecuteAlways(S_MESSAGE,0,wave);
 
 	Delay( 5*35 );
-
 
 	// Monster spawning
 	if( ZoneDataUsed )
@@ -2739,7 +2751,11 @@ script S_CALLWAVE (int wave)
 					Thing_ChangeTID(tid, MonstersTid);
 				}
 
+				if(TimeAttackMode) //Variable name is outdated, but it's not worth the trouble to change it.
+				delay( Random(0,tics_between_monster_spawns) );
+				else
 				delay( tics_between_monster_spawns );
+
 			}
 
 			// Remove the enemy just spawned from the cache
