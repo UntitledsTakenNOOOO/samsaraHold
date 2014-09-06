@@ -61,7 +61,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Time to completely ignore your normal shotgun now.",
             "As if the Super Shotgun wasn't enough, have the Automatic Shotgun!",
             "Suddenly, you discovered vertical spread.",
-            "You're not stuffing the shells in the front of the barrel, are you?",
+            "How does one exactly load 20 shotgun shells into a clip?",
         },
         {
             "You got the Chaingun!",
@@ -984,16 +984,16 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
 int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
 {
     {
-        "Berserk!",
+        "Berserk or Flamer!",
         "Rip and tear! Rip and tear your guts!",
         "Oooh, here comes the night train!",
         "I'm the man! I'm superbad!",
         "The quickest way to a man's heart is through their chest.",
-        "Someone spiked the punch.",
-        "You got a black box with a cross on it. omg jesus",
-        "Plot twist: you were Baratus all along.",
+        "Crack open this canister, and \c[g5]BOOM\c-!",
         "You touched it with your feet, though...",
-        "Hey, you also heal to 100 health. That's cool, I guess.",
+        "At this point, being near you is a liability.",
+        "Fear the wrath of my pyro-blasters, space wierdos!", //Kid Icarus: Uprising
+        "Some men just want to watch the world burn.",
     },
     {
         "Supercharge breakfast!",

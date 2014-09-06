@@ -2928,6 +2928,8 @@ script S_ENTER ENTER
 	TakeInventory(" Railgun ", INT_MAX);
 	TakeInventory("Plasma Repeater", INT_MAX);
 	TakeInventory("  Railgun  ", INT_MAX);
+	TakeInventory("FlamerAmmo", INT_MAX);
+	TakeInventory(" Flamer ", INT_MAX);
 	// Chex Warrior
 	TakeInventory(" Bootspoon ", INT_MAX);
 	TakeInventory("Super Bootspork", INT_MAX);

@@ -206,6 +206,7 @@ actor Hellion 30132
 ACTOR HellionBall : CacodemonBall
 {
 Damage 8
+DamageType "PariasResistHellions"
 Speed 15
 Alpha 0.80
 DamageType Fire

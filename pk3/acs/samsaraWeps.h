@@ -31,7 +31,7 @@
 
 int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] = 
 {
-    {"DoomguyBerserker",    "",                 "", ""},
+    {"DoomguyBerserker",    "",                 " Flamer ", "FlamerAmmo"}, //OH GOD HERE WE GO
     {"ChexSoulsphere",      "",                 "", ""},
     {"ArtiEgg2",            "",                 "", ""},
     {"WolfExtraLife",       "",                 "", ""},
@@ -43,13 +43,13 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
 
 int UniqueMaxes[CLASSCOUNT][CHOICECOUNT_U] = 
 {
-    {0,     0,      0,  0},
+    {0,     0,      1,  40},
     {0,     0,      0,  0},
     {16,    0,      0,  0},
     {9,     0,      0,  0},
     {16,    0,      0,  0},
     {1,     100,    0,  0},
-    {1,     50,     1,  50},
+    {1,     49,     1,  49},
     {1,     0,      0,  0},
 };
 
@@ -71,15 +71,15 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 {
     {   // Doomguy
         {" Fist ",                          "",             "",             "", ""},
-        {" Chainsaw ",                      "Cell",         "",             "Stunner Rifle", ""}, //For the stunner rifle.
+        {" Chainsaw ",                      "Cell",         "",             "", ""}, //For the stunner rifle.
         {" Pistol ",                        "",             "",             "", ""},
         {" Shotgun ",                       "Shell",        "",             "", ""},
-        {"Super Shotgun",                   "Shell",        "",             "Automatic Shotgun", ""},
+        {"Super Shotgun",                   "Shell",     "AutoShotgunClip", "", ""}, //For the Automatic Shotgun.
         {" Chaingun ",                      "Clip",         "",             "", ""},
-        {"Rocket Launcher",                 "RocketAmmo",   "LandMineAmmo", "Land Mine Layer", ""}, //For the land mines.
-        {"Plasma Rifle",                    "Cell",         "",             " Railgun ", ""},
-        {"B.F.G. 9000",                     "Cell",         "",             "Plasma Repeater", ""},
-        {" Chainsaw ",                      "",             "",             "", ""},
+        {"Rocket Launcher",                 "RocketAmmo",   "LandMineAmmo", "", ""}, //For the land mines.
+        {"Plasma Rifle",                    "Cell",         "",             "", ""}, //Alright, so putting the Stronghold Weps in here caused some bugs.
+        {"B.F.G. 9000",                     "Cell",         "",             "", ""}, //Leaving them out for now, since no one SHOULD be given them except doomguy
+        {" Chainsaw ",                      "",             "",             "", ""}, //hah, no stunner rifle for you in Punchdrunk mode.
     },
 
     {   // Chexguy

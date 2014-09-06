@@ -165,7 +165,7 @@ ACTOR FusionShot
   Speed 6
   FastSpeed 15
   Damage 5
-  DamageType "Normal"
+  DamageType "PariasResistFusionSpiders"
   Scale 1.0   
   RENDERSTYLE Add
   SEESOUND "fusionspid/see" 

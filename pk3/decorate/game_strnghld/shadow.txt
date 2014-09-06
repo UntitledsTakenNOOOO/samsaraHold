@@ -224,8 +224,8 @@ ACTOR ShadowBall
 	Speed 12
 	Damage 4
     	+THRUGHOST
-	DamageType "Normal"
-	Projectile
+	DamageType "PariasResistShadows"
+  	Projectile
 	+RANDOMIZE
 	RenderStyle "ADD"
 	Alpha 0.75

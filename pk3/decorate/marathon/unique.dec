@@ -3,15 +3,19 @@ actor UsingAlienWeapon2: Boolean {}
 
 actor UnknownResonator1: Ammo
 {
-    Inventory.Amount 1
-    Inventory.MaxAmount 50
+    Inventory.Amount 7
+    Inventory.MaxAmount 77
+    Ammo.BackpackAmount 7
+    Ammo.BackpackMaxAmount 77
     +IGNORESKILL
 }
 
 actor UnknownResonator2: Ammo
 {
     Inventory.Amount 1
-    Inventory.MaxAmount 50
+    Inventory.MaxAmount 49
+    Ammo.BackpackAmount 1
+    Ammo.BackpackMaxAmount 49
     +IGNORESKILL
 }
 
@@ -289,7 +293,7 @@ actor EnforcerShot
     Height 8
     Speed 15
     Damage (random(30, 38)) // Formerly 20, 28
-    DamageType Fire
+    DamageType MarathonPlasma
     -BLOODSPLATTER
     +NOBLOOD
     +BLOODLESSIMPACT

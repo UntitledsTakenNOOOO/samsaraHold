@@ -219,7 +219,7 @@ ACTOR CatharsiBall
   Height 8
   Speed 15
   Damage 3
-  DamageType "Normal"
+  DamageType "PariasResistCatharsi"
   RENDERSTYLE Add
   SEESOUND "catharsi/shotsit"
   DEATHSOUND "catharsi/shotdth"

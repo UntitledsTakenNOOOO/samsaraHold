@@ -203,9 +203,8 @@ actor DoomBFGBall : BFGBall
         loop
         
       Death:
-        DBFE A 8 bright A_BFGSpray("DoomBFGSplash",10,12)
-        DBFE B 8 bright A_BFGSpray("DoomBFGSplash",25,12)
-        DBFE C 8 bright A_BFGSpray("DoomBFGSplash",40,12)
+        DBFE AB 8 bright
+        DBFE C 8 bright A_BFGSpray("DoomBFGSplash",40,16)
         DBFE DEF 8 bright
         stop
     }
@@ -480,7 +479,7 @@ actor "Plasma Repeater" : Weapon
 
 Actor RepeaterBullet : DoomBullet
 {
-      Damage (Random(1,3)*10)
+      Damage (Random(1,3)*9)
       States
       {
       Death:
@@ -499,7 +498,7 @@ Actor RepPuff2
    ALPHA 0.75
    DamageType "Explosive"
    ExplosionDamage 32
-   ExplosionRadius 96
+   ExplosionRadius 88
    +ALWAYSPUFF
    +PUFFONACTORS
    +NOGRAVITY

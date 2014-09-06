@@ -89,6 +89,7 @@ actor PowerChainsawBerserk : Powerup//PowerDamage
 ACTOR "Stunner Rifle" : PlasmaRifle 
 {
    Weapon.AmmoUse 5
+   Weapon.SlotPriority 0
 // Weapon.SisterWeapon "PowerStunnerRifle"
    Inventory.PickupMessage "You got the stunner rifle!"
    Tag "Stunner Rifle"
