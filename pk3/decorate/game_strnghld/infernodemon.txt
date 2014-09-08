@@ -11,6 +11,7 @@ ACTOR InfernoDemon 12345
   damagefactor "HexenIce", 3.0
   DamageFactor "Kamikaze", 0.05
   damagefactor "ZorchKamikaze", 0.05
+  DamageFactor "Wraithverge", 2
   Health 20000
   Speed 20
   Radius 48

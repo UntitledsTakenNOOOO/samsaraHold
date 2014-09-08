@@ -19,7 +19,7 @@ ACTOR STBoss 32767
 	DamageFactor "Animate", 0.05
 	DamageFactor "HexenIce", 2.5
 	DamageFactor "DukeIce", 2.5
-	DamageFactor "Wraithverge", 2
+	DamageFactor "Wraithverge", 3.0
 	PainChance "MightyBoot", 256
 	//DropItem "SpiritBoss"
 	+FLOORCLIP
@@ -1125,6 +1125,9 @@ ACTOR STBossAttack8
 ACTOR STBossSkeleton 32766
 {
 	obituary "\c[G9]%o \c[G9]got whalloped by a skeleton."
+	DamageFactor "Wraithverge", 6
+	DamageFactor "CorvusCrossbow", 1.1
+	DamageFactor "DragonClaw", 1.6
 	health 20
 	scale 0.75
 	radius 15
@@ -1196,6 +1199,7 @@ ACTOR STBossSkeleton2 : STBossSkeleton
 	dropitem "MegaSphere" 4
 	PainChance "Animate", 0
 	DamageFactor "Animate", 0
+	DamageFactor "Wraithverge", 4
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.5
 	DamageFactor "DukeIce", 2.0
@@ -2047,8 +2051,8 @@ ACTOR SpiritBoss 32765
 	DamageFactor "CorvusHellStaffTomed", 0.1
 	DamageFactor "BFG", 0.75
 	DamageFactor "BFGSplash", 0.75
-	DamageFactor "Wraithverge", 0.75
-	DamageFactor "DukeExplosive", 0.875
+	DamageFactor "Wraithverge", 0.25
+	DamageFactor "DukeExplosive", 0.5
 	DamageFactor "Zorch", 0.9
 	DamageFactor "STBoss", 0
 	DamageFactor "STBossFactor", 0
