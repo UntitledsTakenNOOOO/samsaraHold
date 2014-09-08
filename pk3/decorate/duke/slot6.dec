@@ -21,7 +21,7 @@ actor Freezethrower : Weapon
     States
     {
       Spawn:
-        FRZP A -1
+        FRZ2 A -1
         Stop
 
       ReadyB:

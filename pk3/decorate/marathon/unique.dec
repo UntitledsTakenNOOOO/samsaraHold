@@ -3,19 +3,15 @@ actor UsingAlienWeapon2: Boolean {}
 
 actor UnknownResonator1: Ammo
 {
-    Inventory.Amount 7
-    Inventory.MaxAmount 77
-    Ammo.BackpackAmount 7
-    Ammo.BackpackMaxAmount 77
+    Inventory.Amount 1
+    Inventory.MaxAmount 100
     +IGNORESKILL
 }
 
 actor UnknownResonator2: Ammo
 {
     Inventory.Amount 1
-    Inventory.MaxAmount 49
-    Ammo.BackpackAmount 1
-    Ammo.BackpackMaxAmount 49
+    Inventory.MaxAmount 100
     +IGNORESKILL
 }
 
@@ -125,7 +121,7 @@ actor "Alien Weapon" : Weapon
 
       Fire2:
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_Jump(256,"CheckAltfire","CheckAltfire","CheckAltfire","CheckAltfire","CheckAltfire","CheckAltfire","TakeAmmo")
+        TNT1 A 0 A_Jump(256,"CheckAltfire","CheckAltfire","CheckAltfire","TakeAmmo")
         goto CheckAltfire
 
       CheckAltfire:
@@ -277,13 +273,19 @@ actor " Alien Weapon " : Weapon
 actor UnknownAmmo : Ammo
 {
     +IGNORESKILL
-    Inventory.MaxAmount 50
+    Inventory.Amount 7
+    Inventory.MaxAmount 77
+    Ammo.BackpackAmount 7
+    Ammo.BackpackMaxAmount 77
 }
 
 actor UnknownAmmo2 : Ammo
 {
     +IGNORESKILL
-    Inventory.MaxAmount 50
+    Inventory.Amount 7
+    Inventory.MaxAmount 49
+    Ammo.BackpackAmount 7
+    Ammo.BackpackMaxAmount 49
 }
 
 actor EnforcerShot
@@ -292,7 +294,7 @@ actor EnforcerShot
     Radius 6
     Height 8
     Speed 15
-    Damage (random(30, 38)) // Formerly 20, 28
+    Damage (random(25, 42)) // Formerly 20, 28
     DamageType MarathonPlasma
     -BLOODSPLATTER
     +NOBLOOD
@@ -382,5 +384,3 @@ actor EnforcerShotCoop : EnforcerShot
     +THRUSPECIES
     Species "Player"
 }
-
-

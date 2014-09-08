@@ -43,13 +43,13 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
 
 int UniqueMaxes[CLASSCOUNT][CHOICECOUNT_U] = 
 {
-    {0,     0,      1,  40},
+    {0,     0,      1,  80},
     {0,     0,      0,  0},
     {16,    0,      0,  0},
     {9,     0,      0,  0},
     {16,    0,      0,  0},
     {1,     100,    0,  0},
-    {1,     49,     1,  49},
+    {1,     77,     1,  49},
     {1,     0,      0,  0},
 };
 

@@ -14,7 +14,7 @@ actor " Flamer " : Weapon
    States
    {
    Spawn:
-      WFLM A -1
+      WFL2 A -1
       Loop
    Ready:
       FLMG BCD 3 A_WeaponReady

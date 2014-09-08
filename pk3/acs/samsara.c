@@ -990,7 +990,7 @@ script 327 (Void)
 {
 If(CheckInventory("DukeMusicItem"))
         {
-            LocalSetMusic("GRAB0");
+            LocalSetMusic("GRAB2");
             Print(
                 s:"\cbNow let's rock!\n",
                 s:"\cfGrabbag\cb Remixed by \cfJonny Death"

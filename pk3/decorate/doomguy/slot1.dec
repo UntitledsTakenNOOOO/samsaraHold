@@ -22,9 +22,9 @@ actor " Chainsaw " : Chainsaw replaces Chainsaw
         loop
 
       StrongholdReady:
-	SAWG C 0 A_PlayWeaponSound("doomguy/sawidle")
+	SAWG C 0 A_PlayWeaponSound("weapons/sawidle")
 	SAWG C 4 A_WeaponReady
-	SAWG D 0 A_PlayWeaponSound("doomguy/sawidle")
+	SAWG D 0 A_PlayWeaponSound("weapons/sawidle")
 	SAWG D 4 A_WeaponReady
 	goto Ready
 
@@ -64,12 +64,12 @@ actor " Chainsaw " : Chainsaw replaces Chainsaw
 
       StrongholdFire:
         TNT1 A 0 A_JumpIfInventory("PowerChainsawBerserk", 1, "StrongholdFireBerserk")
-        SAWG AB 3 A_Saw("doomguy/sawfull", "doomguy/sawhit", 7, "DoomBulletPuff") 
+        SAWG AB 3 A_Saw("weapons/sawfull", "weapons/sawhit", 7, "DoomBulletPuff") 
         SAWG B 0 A_ReFire
         goto Ready
 
       StrongholdFireBerserk:
-	SAWG AB 2 A_Saw("doomguy/sawfull", "doomguy/sawhit", 10, "DoomBulletPuff") 
+	SAWG AB 2 A_Saw("weapons/sawfull", "weapons/sawhit", 10, "DoomBulletPuff") 
         SAWG B 0 A_ReFire
         goto Ready	
 

@@ -584,10 +584,10 @@ SAMSARA CHANGES\n
 - Catharsi Detonators provide some extra explosive oomph if shot with the fusion pistol, along with detonating prematurely.\n
 - The terminator explodes when killed by the fusion pistol, in reference to Marathon's hunters.\n
 - Marine Item replaced with strife beacon.\n
-^- Super Marine Item replaced with a custom, \"Super\" strife beacon. (Oh god I'm not looking forward for the ninth hero anymore)\n
+^- Super Marine Item replaced with a custom, \"Super\" strife beacon. (Oh god, I'm not looking forward for the ninth hero anymore)\n
 - Random weapon device now can also give a unique, and now works for samsara.\n
 ^- Random weapon's chances for each slot are NOT equal. The chances of getting a slot 7 is 3%-4%, for example.\n
-- Core now immune to friendly fire, and doing this required a new damagetype \"FaithInHumanity\" because seriously, why are you that dedicated to core-trolling?!\n
+- Core now immune to friendly fire. Doing this required a new damagetype called \"FaithInHumanity\" because seriously, why are you that dedicated to core-trolling?!\n
 - Custom mechanical monsters take appropriate damage from the fusion pistol.\n
 - Security Officer attains both WSTEM-5s on pick up, as per invasion mode.\n
 - Parias' and Corvus' medikit capacity has been reduced to 4, and urn/invulnerability/megasphere capacity to 1, to prevent mass stealing from these classes (harming the team). This is for in-mission items, not buyable ones.\n
@@ -597,15 +597,17 @@ SAMSARA CHANGES\n
 - Parias' Backpack capacity limited to 1, but it gives full ammo instead of half, in order to prevent mass-steals and to prevent overpoweredness with having 6 and a RWD'd wraithverge.\n
 - Various damage values have been tweaked for balance (most noticable on Parias). The bad news is that I forgot most of them.\n
 - The Super Shield is replaced by Red Armor to prevent EZ Godlike.\n
+- Doomguy, in effort to make him more playable, gets several weapons from stronghold while playing.
 - The intermission map is modified to have new rooms to adjust settings.\n
 - New Achievements!\n
 NOTE: This is meant to be played in coop mode. If UV single player is Impossible at certain points, please do not complain. \nJust play HMP, or start farming some items first. Also, give yourself \"CoopModeOn\" to let samsara do some stuff.\n\n
 STRONGHOLD CHANGES\n
 - Most of these should remain secret, but...\n
-- Par times are now much, much, much larger (as in like 4 Times Longer), as to allow people to have an easy time re-running previous missions for free cash. Now, the real goal is get the Time Slicer Achievement (Yes, that's a thing).\n
+- Rather than time attack, replay mode is now Hard Mode, where the monsters spawn faster, are tougher, and are higher in number.\n
 - Changes to various missions all over the place. Most of these are going to remain secret, since, well, I want you to be surprised... Here, I'll give one to you.\n
 - STR18 (Smoldering Caves) replaced with STR18 (Delta Bunker) from the RC2, because seriously, Delta Bunker was more worthy of being in Tier 4, and much cooler than Smoldering Caves. It's also much harder.\n
 - Changes to various monsters. Most of these should not be noticeable, with the Key Word being Most. Again, most of these are to remain secret.\n
 - The one I'm giving to you is that Dune Warriors can now be shot while cloaked, because they say they have a cloaking device, not a phase-out-of-existence device (same goes to apprentices in STR52)!\n
 - The Bruiser Demon Powerup, as fun as it was, had it's novelty wear out a long time ago. I replaced with a Terminator Powerup. Much better.\n
+- When playing on higher player counts, AAAAAAAAAAAAAAHAHAHAHAHAHAHA.\n
 - I have a separate patch for the non Samsara related changes.";
