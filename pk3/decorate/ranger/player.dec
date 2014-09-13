@@ -48,8 +48,7 @@ actor QuakePlayer: PlayerPawn
         damagefactor "Explosive", 0.5
         damagefactor "NotQuadded", 0.5
 	damagefactor "MarineAlly", 0
-    
-    BloodType "SamsaraBloodyHellBlood"
+	damagefactor "EnemyInfightDamage", 0
 
     States
     {
