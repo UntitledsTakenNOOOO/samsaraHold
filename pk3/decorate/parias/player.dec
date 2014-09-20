@@ -28,10 +28,10 @@ damagefactor "MarineAlly", 0
     DamageFactor "MightyBoot", 1.5
     DamageFactor "Kamikaze", 0
     DamageFactor "ZorchKamikaze", 0
-    DamageFactor "PariasResistCatharsi", 0.55
-    DamageFactor "PariasResistFusionSpiders", 0.77
-    DamageFactor "PariasResistHellions", 0.83
-    DamageFactor "PariasResistShadows", 0.55
+    DamageFactor "PariasResistCatharsi", 0.66
+    DamageFactor "PariasResistFusionSpiders", 0.6
+    DamageFactor "PariasResistHellions", 0.5
+    DamageFactor "PariasResistShadows", 0.75
     DamageFactor "EnemyInfightDamage", 0.0
     Player.ColorRange 192, 207
     +NOSKIN
