@@ -34,6 +34,7 @@ actor " Chaingun " : Weapon// : Chaingun
         Loop
 
       StrongholdDeselect:
+        CHGG A 0 A_StopSoundEx("weapon")
         CHGG A 0 A_Lower
         CHGG A 1 A_Lower
         goto Deselect
