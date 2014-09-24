@@ -132,12 +132,14 @@ actor ArmorPack3: BasicArmorPickup
     DamageFactor "Fire", 0.125
     DamageFactor "Explosive", 0.125
     DamageFactor "DoomTheseGuysAreTheBest", 0.125
-    DamageFactor "DoomHellNoble", 0.125
     DamageFactor "DukeSpectral", 0.125
     DamageFactor "DukeExplosive", 0.125
     DamageFactor "NotQuadded", 0.125
     DamageFactor "SpectralNoQuad", 0.125
-
+    DamageFactor "PariasResistCatharsi", 0.125
+    DamageFactor "PariasResistHellions", 0.125
+    DamageFactor "BruiserAttack", 0.125
+    DamageFactor "Inferno", 0.125
     States
     {
       Spawn:
