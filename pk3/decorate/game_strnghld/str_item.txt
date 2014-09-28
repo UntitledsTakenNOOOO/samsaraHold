@@ -249,6 +249,7 @@ ACTOR ScriptedMarine2 : ScriptedMarine
         damagefactor "BJSpear", 0
 	damagefactor "MarathonFusion", 0
         damagefactor "MarineAlly", 0
+	damagefactor "FaithInHumanity", 0
 	damagefactor "Kamikaze", 0.05
         damagefactor "ZorchKamikaze", 0.05
   MONSTER

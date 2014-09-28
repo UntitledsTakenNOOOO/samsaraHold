@@ -26,6 +26,7 @@ actor FriendlyDoomImp : DoomImp2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
 
@@ -128,6 +129,7 @@ actor FriendlyNitrogolem : MummyLeader2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
     
@@ -235,6 +237,7 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
     
@@ -407,6 +410,7 @@ ACTOR FriendlyNazi
         damagefactor "MarathonFusion", 0
 	damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
 
@@ -513,6 +517,7 @@ actor FriendlyAfrit : FireDemon2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
     
@@ -598,6 +603,7 @@ actor FriendlyAlienTrooper
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
 
@@ -838,6 +844,7 @@ ACTOR FriendlyPfhorTrooper
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
 
@@ -952,6 +959,7 @@ ACTOR FriendlyGrunt
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
 
@@ -976,7 +984,7 @@ ACTOR FriendlyGrunt
     DeathSound "friendlygrunt/death"
     ActiveSound "friendlygrunt/active"
     Obituary "%o was somehow killed by a friendly Grunt."
-    //Translation "96:111=192:216", "241:246=192:208", "32:63=192:223" // No blood, but I'm not increasing filesize by megs just for another modelrip.
+    Translation "187:202=81:95"
     States
     {
       Spawn:
@@ -1082,6 +1090,7 @@ ACTOR FriendlyBelphegor : BaronOfHell2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1149,6 +1158,7 @@ ACTOR FriendlyIronLich : IronLich2
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1332,6 +1342,7 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
     
@@ -1509,6 +1520,7 @@ ACTOR FriendlyWolfensteinSS
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1604,6 +1616,7 @@ ACTOR FriendlySlaughtaur : CentaurLeader2 115
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1709,6 +1722,7 @@ ACTOR FriendlyBattleLord
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1921,6 +1935,7 @@ ACTOR FriendlyHunter
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -2059,6 +2074,7 @@ Actor FriendlyVore
         damagefactor "MarathonFusion", 0
         damagefactor "FireExplosive", 0
         damagefactor "MarineAlly", 0
+        damagefactor "FaithInHumanity", 0
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
