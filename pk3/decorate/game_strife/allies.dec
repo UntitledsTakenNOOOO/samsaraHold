@@ -12,10 +12,21 @@ actor FriendlyDoomImp : DoomImp2
     HitObituary "%o was somehow killed by a friendly dark Imp."
     Obituary "%o was somehow killed by a friendly dark Imp."
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -23,10 +34,10 @@ actor FriendlyDoomImp : DoomImp2
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
 
@@ -115,10 +126,21 @@ actor FriendlyNitrogolem : MummyLeader2
     HitObituary "%o was somehow killed by a friendly Nitrogolem."
     Obituary "%o was somehow killed by a friendly Nitrogolem."
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -126,10 +148,10 @@ actor FriendlyNitrogolem : MummyLeader2
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
     
@@ -221,12 +243,23 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
     ActiveSound "friendlyflemoid/active"
 
     	RadiusDamageFactor 0.8
-		damagefactor "Normal", 0.8
+	damagefactor "Normal", 0.8
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -234,10 +267,10 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
     
@@ -396,10 +429,21 @@ ACTOR FriendlyNazi
     Scale 1.25
     Monster
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -407,10 +451,10 @@ ACTOR FriendlyNazi
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-	damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
 
@@ -503,10 +547,21 @@ actor FriendlyAfrit : FireDemon2
 {
     Health 80
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -514,10 +569,10 @@ actor FriendlyAfrit : FireDemon2
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
     
@@ -589,10 +644,21 @@ actor FriendlyAlienTrooper
     Scale 0.65
     MONSTER
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -600,10 +666,10 @@ actor FriendlyAlienTrooper
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
 
@@ -830,10 +896,21 @@ ACTOR FriendlyPfhorTrooper
     ActiveSound "pfhor/active"
     Monster
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -841,13 +918,12 @@ ACTOR FriendlyPfhorTrooper
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
-
     Species "Player"
     
   +THRUSPECIES
@@ -945,10 +1021,21 @@ ACTOR FriendlyGrunt
     Scale 0.1976285   // lol specific
     Monster
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -956,13 +1043,12 @@ ACTOR FriendlyGrunt
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.1
         damagefactor "ZorchKamikaze", 0.1
-
     Species "Player"
     
   +LOOKALLAROUND
@@ -1076,10 +1162,21 @@ ACTOR FriendlyBelphegor : BaronOfHell2
     Obituary "%o was somehow killed by a friendly belphegor."
     Translation "16:47=176:191", "48:79=80:111"
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -1087,10 +1184,10 @@ ACTOR FriendlyBelphegor : BaronOfHell2
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1143,11 +1240,21 @@ ACTOR FriendlyIronLich : IronLich2
     PainChance 64
     HitObituary "%o was somehow killed by a friendly Iron lich."
     Obituary "%o was somehow killed by a friendly Iron lich."
+	Damagefactor "EnemyInfightDamage", 0
 
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -1155,10 +1262,10 @@ ACTOR FriendlyIronLich : IronLich2
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1319,19 +1426,27 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
 {
     Health 1500 //Yeah he gets it because Defense
     PainChance 25
-    SeeSound "friendlyflemoid/sight"
     AttackSound "friendlyflemoid/attack"
-    PainSound "friendlyflemoid/pain"
     DeathSound "friendlyflemoid/death"
-    ActiveSound "friendlyflemoid/active"
-
+    
 		damagefactor "Normal", 0.75
 		RadiusDamageFactor 0.9
 		
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -1339,10 +1454,10 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
     
@@ -1506,10 +1621,21 @@ ACTOR FriendlyWolfensteinSS
     Scale 1.2
     Monster
 
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -1517,10 +1643,10 @@ ACTOR FriendlyWolfensteinSS
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1602,10 +1728,21 @@ ACTOR FriendlyWolfensteinSS
 
 ACTOR FriendlySlaughtaur : CentaurLeader2 115
 {
-	damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
+        damagefactor "Zorch", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -1613,10 +1750,10 @@ ACTOR FriendlySlaughtaur : CentaurLeader2 115
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1708,10 +1845,21 @@ ACTOR FriendlyBattleLord
 
 	damagefactor "Normal", 1.1
 	
-	damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
+        damagefactor "Zorch", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -1719,10 +1867,10 @@ ACTOR FriendlyBattleLord
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -1920,11 +2068,21 @@ ACTOR FriendlyHunter
 	PainChance 255
 	MinMissileChance 112 //Oh heh heh.
 	Scale 0.55
+	Damagefactor "EnemyInfightDamage", 0
 
-	damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
+        damagefactor "Zorch", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -1932,10 +2090,10 @@ ACTOR FriendlyHunter
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
@@ -2060,10 +2218,21 @@ Actor FriendlyVore
   PainChance 40
   Monster
 
-	damagefactor "Zorch", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "Wraithverge", 0
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
+        damagefactor "Zorch", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -2071,10 +2240,10 @@ Actor FriendlyVore
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
+        damagefactor "PoisonCloud", 0
         damagefactor "MarathonFusion", 0
-        damagefactor "FireExplosive", 0
-        damagefactor "MarineAlly", 0
-        damagefactor "FaithInHumanity", 0
+        DamageFactor "CoreFriendly", 0
+
         damagefactor "Kamikaze", 0.15
         damagefactor "ZorchKamikaze", 0.15
 
