@@ -188,3 +188,14 @@ actor FuckArmor: BasicArmorPickup
     Inventory.PickupMessage "Fuck armor."
     Inventory.Icon "RMR2A0"
 }
+
+ACTOR WhyZandronumWhy 31505 //TELL US THE REASON WHY
+{
+states
+{
+Spawn:
+TNT1 A 1
+TNT1 A 1 ACS_Execute(1,0,0,0,0)
+Stop
+}
+}
