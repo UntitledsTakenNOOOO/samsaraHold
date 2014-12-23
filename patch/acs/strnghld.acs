@@ -147,7 +147,7 @@ int TeleporterOnLight;
 int TeleporterOffLight;
 int BreakTime = -1;	// Deadline default is 6*35. Can be overridden by map.
 int LimitMax = 100;	// Can be overridden by map
-int tics_between_monster_spawns = 1;	// Can be overridden, but highly not recommended to shorten this either.
+int tics_between_monster_spawns = 1;	// Can be overridden, but highly not recommended to shorten this either. //Well too bad!
 bool GameActive = TRUE;	// When this is false, the player can't lose lives
 bool GameVictory = FALSE;
 bool TrainingMap = FALSE;
@@ -1892,7 +1892,7 @@ script S_MISSION_COMPLETE (void)
 		else
 			{
 				if(levelRunningTime<MapParTime[GetLevelInfo(LEVELINFO_LEVELNUM)]*35)
-					newRecord = true;
+				newRecord = true;
 			}
 
 		GameActive = FALSE;
@@ -1953,13 +1953,15 @@ script S_MISSION_COMPLETE (void)
 
 			if(newRecord)
 			{
-				MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)] = levelRunningTime;
+				MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)] = levelRunningTime; //Always true
 				//Log(s:"Extra Credit: ", d:(MapParTime[GetLevelInfo(LEVELINFO_LEVELNUM)]-(levelRunningTime/35))*10);
 				GiveInventory("CoinItem", (MapParTime[GetLevelInfo(LEVELINFO_LEVELNUM)]-(levelRunningTime/35))*10);
 
 				HudMessageBold(s:"A new record!";
 					HUDMSG_FADEINOUT|HUDMSG_LOG, 0, CR_GREEN, 240.0, 240.1, 6.0, 2.5, 1.0);
 			} else {
+				MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)] = MapParTime[GetLevelInfo(LEVELINFO_LEVELNUM)];
+				
 				HudMessageBold(s:"Record not beaten";
 					HUDMSG_FADEINOUT|HUDMSG_LOG, 0, CR_ORANGE, 240.0, 240.1, 6.0, 2.5, 1.0);
 			}
