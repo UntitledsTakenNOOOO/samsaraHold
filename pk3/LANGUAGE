@@ -19,10 +19,10 @@ QUITMSG7 = "Worship me, and I may yet be merciful.\nThen again, maybe not."; // 
 QUITMSG8 = "My servants can smell your blood, human."; // Hexen, Hub 2
 //Wolfenstein
 QUITMSG9 = "Heroes don't quit, but\ngo ahead and press Y\nif you aren't one."; // Wolfenstein quit message
-QUITMSG10 = "The next adventure awaits!\nSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
+QUITMSG10 = "For guns and glory, press N.\nFor work and worry, press Y."; // Wolfenstein 3D quit message
 //Duke Nukem
-QUITMSG11 = "After a few days of R&R,\nI'll be ready for more action!"; // Last line before credits in Duke Nukem 3D
-QUITMSG12 = "I guess I'll lean against this oozing,\nbulbous wall and wait for death."; // Duke Nukem II
+QUITMSG11 = "I need a stiff drink... a shower...\nand a soft-skinned belly to lie my head on."; // Duke Nukem 3D: E2 end text
+QUITMSG12 = "The last thing that's gonna go thru your mind before you die... is my size 13 boot!"; // Duke Nukem 3D: E2 end text
 //Marathon
 QUITMSG13 = "Do you know what kind of hat I'm wearing?\nA party hat. You don't get one."; // Marathon: Infinity terminal
 QUITMSG14 = "P.S.: If things around here aren't working,\nit's because I'm laughing so hard."; // Marathon terminal
@@ -50,11 +50,11 @@ QUITMSG29 = "Your meddling will only result in your death.\nLeave while you can.
 QUITMSG30 = "You've made it to your final goal,\nto turn back would be cowardice."; // Hexen II: Portal of Praevus
 //Wolfenstein
 QUITMSG31 = "We owe you a great debt, Mr. Blazkowicz.\nYou have served your country well."; // Spear of Destiny end text
-QUITMSG32 = "For guns and glory, press N.\nFor work and worry, press Y."; // Wolfenstein 3D quit message
-QUITMSG33 = "Sieg heil...huh.\nSieg hell."; // Wolfenstein E3 end text
+QUITMSG32 = "Sieg heil...huh.\nSieg hell."; // Wolfenstein E3 end text
+QUITMSG33 = "The next adventure awaits!\nSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
 QUITMSG34 = "But the adventure is just beginning!"; // The Nocturnal Missions promo text
 //Duke Nukem
-QUITMSG35 = "I need a stiff drink... a shower...\nand a soft-skinned belly to lie my head on."; // Duke Nukem 3D: E2 end text
+QUITMSG35 = "After a few days of R&R,\nI'll be ready for more action!"; // Last line before credits in Duke Nukem 3D
 QUITMSG36 = "I guess I'll lean against this oozing,\nbulbous wall and wait for death."; // Duke Nukem II
 QUITMSG37 = "I always said if there's a way to go,\nit would have something to do with\nwomen, whips and oil."; // Duke Nukem: Manhattan Project
 QUITMSG38 = "I should probably kill everything,\nthen watch a movie."; // Duke Nukem: Land of the Babes
