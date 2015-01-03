@@ -59,8 +59,8 @@ actor WolfRocket
     Scale 0.75
     Radius 8
     Height 6
-    Speed 45
-    Damage 15
+    Speed 30
+    Damage 10
     Projectile
     +RIPPER
     +FORCERADIUSDMG
@@ -73,7 +73,7 @@ actor WolfRocket
     States
     {
       Spawn:
-        WMSL A 2 A_SpawnItem("WolfRocketSmoke")
+        WMSL A 3 A_SpawnItem("WolfRocketSmoke")
         Loop
 
       Death:

@@ -332,6 +332,11 @@ actor WolfenBullet : FastProjectile
     }
 }
 
+actor WolfenBullet3 : WolfenBullet
+{
+	Damage (Random(1,3)*6)
+}
+
 actor BlankPuff
 {
     +CLIENTSIDEONLY

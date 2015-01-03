@@ -479,7 +479,7 @@ actor "Plasma Repeater" : Weapon
 
 Actor RepeaterBullet : DoomBullet
 {
-      Damage (Random(1,3)*9)
+      Damage (Random(1,3)*10)
       States
       {
       Death:
@@ -498,7 +498,7 @@ Actor RepPuff2
    ALPHA 0.75
    DamageType "Explosive"
    ExplosionDamage 32
-   ExplosionRadius 88
+   ExplosionRadius 96
    +ALWAYSPUFF
    +PUFFONACTORS
    +NOGRAVITY

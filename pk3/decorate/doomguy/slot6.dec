@@ -184,7 +184,7 @@ ACTOR " RailGun " : Weapon
       RAIG B 0 A_Refire
       RAIG E 3 Bright A_GunFlash
       RAIG E 1 A_PlayWeaponSound("weapons/railf1")
-      RAIG F 6 Bright A_RailAttack(100,0,1,"FF 00 00","FF FF FF",0,0,"RailPuff")
+      RAIG F 6 Bright A_RailAttack(Random(50,75),0,1,"FF 00 00","FF FF FF",0,0,"RailPuff")
       RAIG A 4
       RAIG K 15
       RAIG A 0 A_TakeInventory("RailCharge",3)
@@ -195,7 +195,7 @@ ACTOR " RailGun " : Weapon
       RAIG G 3 Bright A_GunFlash
       RAIG G 1 A_PlayWeaponSound("weapons/railf2")
       RAIG H 0 Bright A_RailAttack(0,0,1,"FF FF 00","FF FF FF",0,0,"RailPuff")
-      RAIG H 6 Bright A_RailAttack(200,0,1,"FF FF 00","FF 45 00",0,0,"RailPuff")
+      RAIG H 6 Bright A_RailAttack(Random(100,125),0,1,"FF FF 00","FF 45 00",0,0,"RailPuff")
       RAIG A 4
       RAIG K 15
       RAIG A 0 A_TakeInventory("RailCharge",3)
@@ -207,7 +207,7 @@ ACTOR " RailGun " : Weapon
       RAIG I 1 A_PlayWeaponSound("weapons/railf3")
       RAIG J 0 Bright A_RailAttack(0,0,1,"00 00 FF","00 45 FF",0,0,"RailPuff")
       RAIG J 0 Bright A_RailAttack(0,0,1,"00 00 FF","FF FF FF",0,0,"RailPuff")
-      RAIG J 4 Bright A_RailAttack(300,0,1,"00 00 FF","00 FF 00",0,0,"RailPuff")
+      RAIG J 4 Bright A_RailAttack(Random(150,175),0,1,"00 00 FF","00 FF 00",0,0,"RailPuff")
       RAIG A 4
       RAIG K 15
       RAIG A 0 A_TakeInventory("RailCharge",3)
@@ -220,7 +220,7 @@ ACTOR " RailGun " : Weapon
       RSCP A 0 Bright A_Refire
       RSCP A 3 Bright A_GunFlash
       RSCP A 1 Bright A_PlayWeaponSound("weapons/railf1")
-      RSCP A 6 Bright A_RailAttack(100,0,1,"FF 00 00","FF FF FF",0,0,"RailPuff")
+      RSCP A 6 Bright A_RailAttack(Random(50,75),0,1,"FF 00 00","FF FF FF",0,0,"RailPuff")
       RSCP A 19 Bright
       RSCP A 0 Bright A_TakeInventory("RailCharge",3)
       Goto Ready+1
@@ -230,7 +230,7 @@ ACTOR " RailGun " : Weapon
       RSCP A 3 Bright A_GunFlash
       RSCP A 1 Bright A_PlayWeaponSound("weapons/railf2")
       RSCP A 0 Bright A_RailAttack(0,0,1,"FF FF 00","FF FF FF",0,0,"RailPuff")
-      RSCP A 6 Bright A_RailAttack(200,0,1,"FF FF 00","FF 45 00",0,0,"RailPuff")
+      RSCP A 6 Bright A_RailAttack(Random(100,150),0,1,"FF FF 00","FF 45 00",0,0,"RailPuff")
       RSCP A 19 Bright
       RSCP A 0 Bright A_TakeInventory("RailCharge",3)
       Goto Ready+1
@@ -240,7 +240,7 @@ ACTOR " RailGun " : Weapon
       RSCP A 1 Bright A_PlayWeaponSound("weapons/railf3")
       RSCP A 0 Bright A_RailAttack(0,0,1,"00 00 FF","00 45 FF",0,0,"RailPuff")
       RSCP A 0 Bright A_RailAttack(0,0,1,"00 00 FF","FF FF FF",0,0,"RailPuff")
-      RSCP A 4 Bright A_RailAttack(300,0,1,"00 00 FF","00 FF 00",0,0,"RailPuff")
+      RSCP A 4 Bright A_RailAttack(Random(150,225),0,1,"00 00 FF","00 FF 00",0,0,"RailPuff")
       RSCP A 19 Bright
       RSCP A 0 Bright A_TakeInventory("RailCharge",3)
       Goto Ready+1
