@@ -2032,7 +2032,7 @@ ACTOR SpiritCaller
 
 ACTOR SpiritBoss 32765
 {
-    Health 22222
+    Health 50000
     Translation ice
     Mass 100000
     Radius 48
@@ -2067,8 +2067,8 @@ ACTOR SpiritBoss 32765
 	+FLOORCLIP
 	//A couple boss flags
 	+BOSSDEATH +NORADIUSDMG +BOSS +DONTMORPH +DONTRIP
-	//Extremely aggressive
-	+LOOKALLAROUND
+	//Aggressive
+	+LOOKALLAROUND +MISSILEMORE
 	//Very Persistent
 	+NOTIMEFREEZE +NOBLOCKMONST
 	//Exempt from infighting
@@ -2083,59 +2083,106 @@ ACTOR SpiritBoss 32765
 	Loop
 
 	See:
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBB 1 A_VileChase
-	BOSS GGGG 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
-	BOSS CCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-	BOSS GGGGGGGGGGGGGGGG 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
 	Loop
 
 	Missile:
+	BOSS A 0 A_Jump(192,"Summon1","Summon1","Summon1","Summon1","Summon2","Summon2","Summon2","Summon3","Summon3","Summon4")
 	BOSS EF 6 A_FaceTarget
 	BOSS G 0 A_SpawnItem("STIceEffect", 0, 0, 0)
 	BOSS G 8 A_CustomMissile("SpiritNuke",64,0,0)
 	Goto See
 
+	Summon1:
+	BOSS H 12 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	Goto See
+
+	Summon2:
+	BOSS HH 6 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	Goto See
+
+	Summon3:
+	BOSS HHH 4 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	Goto See
+
+	Summon4:
+	BOSS HHHH 3 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	Goto See
+
 	Melee:
 	BOSS EF 16 A_FaceTarget
-	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,12), random(0,6), random(0,3), 0, 0)	
+	BOSS G 1
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,9), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
 	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,12), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
-	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,12), random(0,6), random(0,3), 0, 0)	
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,9), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
 	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-192,192), random(-192,192), 32, random(0,12), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
 	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,9), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
-	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,12), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
 	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,9), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
-	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-224,224), random(-224,224), Random(24,48), random(0,12), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
 	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,9), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
-	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,9), random(0,6), random(0,3), 0, 0)	
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,12), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
 	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,9), random(0,6), random(0,3), 0, 0)	
 	BOSS G 1
-	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,9), random(0,6), random(0,3), 0, 0)	
-	BOSS G 5
+	BOSS GGGGGGGGGGGG 0 A_SpawnItemEx("PowerFTFire2", random(-256,256), random(-256,256), Random(16,64), random(0,12), random(0,6), random(0,3), 0, 0)	
+	BOSS G 4
 	Goto See
 
 	Pain:
