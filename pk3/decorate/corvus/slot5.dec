@@ -133,7 +133,7 @@ actor PhoenixRodCount : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.max
 
 actor PhoenixShot : PhoenixFX1
 {
-    Damage (random(1,35)*5)
+    Damage (random(1,36)*5)
     -SPECIALFIREDAMAGE
     +FIREDAMAGE
     DamageType "FireExplosive"
@@ -156,16 +156,16 @@ actor PhoenixFX2A : PhoenixFX2
   {
   Spawn:
     FX09 A 2 Bright
-    FX09 BABA 2 Bright A_Explode(Random(Random(3,4),4),8,0)
-    FX09 BAB 2 Bright A_Explode(Random(Random(3,4),4),16,0)
-    FX09 ABA 2 Bright A_Explode(Random(Random(3,4),4),32,0)
+    FX09 BABA 2 Bright A_Explode(Random(Random(1,4),Random(4,6)),8,0)
+    FX09 BAB 2 Bright A_Explode(Random(Random(1,4),Random(4,6)),16,0)
+    FX09 ABA 2 Bright A_Explode(Random(Random(1,4),Random(4,6)),32,0)
     FX09 B 0 Bright A_FlameEnd
-    FX09 BCD 2 Bright A_Explode(Random(Random(3,4),4),64,0)
+    FX09 BCD 2 Bright A_Explode(Random(Random(1,4),Random(4,6)),64,0)
     FX09 EF 2 Bright
     Stop
   Death:
-    FX09 G 2 Bright A_Explode(Random(Random(3,4),4),32,0)
-    FX09 G 1 Bright A_Explode(Random(Random(3,4),4),64,0)
+    FX09 G 2 Bright A_Explode(Random(Random(1,4),Random(4,6)),32,0)
+    FX09 G 1 Bright A_Explode(Random(Random(1,4),Random(4,6)),64,0)
     FX09 H 3 Bright A_FloatPuff
     FX09 I 4 Bright
     FX09 JK 5 Bright
