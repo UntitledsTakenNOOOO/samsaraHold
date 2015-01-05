@@ -46,8 +46,8 @@ actor "Ethereal Crossbow" : Weapon
       FireTomed:
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFireTomed")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireTomed")
-        CRBW A 0 A_FireCustomMissile("CrossbowFX23",0,0)
-        CRBW A 0 A_FireCustomMissile("CrossbowFX23",0,0)
+        CRBW A 0 A_FireCustomMissile("CrossbowFX2B",0,1)
+        CRBW A 0 A_FireCustomMissile("CrossbowFX2B",0,0)
         CRBW A 0 A_FireCustomMissile("CrossbowFX2B",4.5,0)
         CRBW A 0 A_FireCustomMissile("CrossbowFX2B",-4.5,0)
         CRBW A 0 A_FireCustomMissile("CrossbowFX3B",9,0)
@@ -76,7 +76,7 @@ actor "Ethereal Crossbow" : Weapon
       CoopFireTomed:
 	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"TomedFireSpectral")
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",0,1)
-        CRBW A 0 A_FireCustomMissile("CrossbowFX22",0,1)
+        CRBW A 0 A_FireCustomMissile("CrossbowFX22",0,0)
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",4.5,0)
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",-4.5,0)
         CRBW A 0 A_FireCustomMissile("CrossbowFX32",9,0)

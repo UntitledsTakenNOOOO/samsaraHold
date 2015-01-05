@@ -308,7 +308,7 @@ actor WolfCheckMoving: CustomInventory
 
 actor WolfenBullet : FastProjectile
 {
-    Damage (Random(1,3)*7)
+    Damage (Random(1,3)*6+1)
     Radius 1
     Height 1
     Speed 320
