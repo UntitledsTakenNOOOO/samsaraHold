@@ -172,7 +172,7 @@ actor LaserCannonBolt
 
 actor LaserCannonBoltCoop : LaserCannonBolt
 {
-    Damage (10)
+    Damage (12)
     +THRUSPECIES
     Species "Player"
 }
