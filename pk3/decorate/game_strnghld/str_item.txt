@@ -235,11 +235,21 @@ ACTOR ScriptedMarine2 : ScriptedMarine
   painsound "*pain50"
   activesound "marine/active"
   deathsound "marine/death"
-        damagefactor "BossFactor", 0
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "WraithVerge", 0
-        damagefactor "PoisonCloud", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -247,11 +257,12 @@ ACTOR ScriptedMarine2 : ScriptedMarine
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
-	damagefactor "MarathonFusion", 0
-        damagefactor "MarineAlly", 0
-	damagefactor "FaithInHumanity", 0
-	damagefactor "Kamikaze", 0.05
-        damagefactor "ZorchKamikaze", 0.05
+        damagefactor "PoisonCloud", 0
+        damagefactor "MarathonFusion", 0
+        DamageFactor "CoreFriendly", 0
+
+        damagefactor "Kamikaze", 0.05
+        DamageFactor "ZorchKamikaze", 0.05
   MONSTER
   +SLIDESONWALLS
   +NODROPOFF
@@ -2130,11 +2141,21 @@ actor WallPlaced
 	+THRUSPECIES
 	Species "Player"
 	DeathSound "WallItem/Explode"
-        damagefactor "BossFactor", 0
+	Damagefactor "EnemyInfightDamage", 0
+
+	Damagefactor "FaithInHumanity", 0
+	Damagefactor "DoomFist", 0
+	Damagefactor "Pistol", 0
+	Damagefactor "ZorchPistol", 0
+	Damagefactor "TimonsAxe", 0
+	Damagefactor "MightyBoot", 0
+	Damagefactor "QuakePistol", 0
+	damageFactor "MarineAlly", 0
+	
+        damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
-        damagefactor "WraithVerge", 0
-        damagefactor "PoisonCloud", 0
         damagefactor "Explosive", 0
+	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
         damagefactor "WMCBeam", 0
@@ -2142,10 +2163,12 @@ actor WallPlaced
         damagefactor "BFG", 0
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
-	damagefactor "MarathonFusion", 0
-        damagefactor "MarineAlly", 0
-  	damagefactor "ZorchKamikaze", 0.05
-        damagefactor "Kamikaze", 0.05      
+        damagefactor "PoisonCloud", 0
+        damagefactor "MarathonFusion", 0
+        DamageFactor "CoreFriendly", 0
+
+        damagefactor "Kamikaze", 0.01
+        DamageFactor "ZorchKamikaze", 0.01
 	states
  	{
  	Spawn:
