@@ -105,7 +105,7 @@ actor SerpentHealth: Health
 actor CStaffMissile2 : CStaffMissile replaces CStaffMissile
 {
     Decal DoomImpScorch
-    Damage 5
+    Damage (Random(1,6)*5)
     Obituary "%k \clmelted\c- %o\cl's flesh off with the Serpent's venom.\c-"
     +BLOODSPLATTER
 }
