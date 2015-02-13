@@ -216,6 +216,7 @@ int BriefExtraHID	= 1003;
 #define	S_LIMIT_WATCH	928
 #define	S_OVERMIND_COMPLETE	918
 #define	S_HUD_COINS	919
+#define	S_HARD_MODE_CHECK	935
 
 #define S_HUD		915
 #define	S_TIMER		916
@@ -4163,4 +4164,16 @@ function int FreeTempTid (int tid)
 		return FALSE;
 	}
 	return TRUE;
+}
+
+script S_HARD_MODE_CHECK (void)
+{
+	int Result = 0;
+
+	if(PlayerCount()>=HardScalerPlayerCount)
+	{
+	Result = 1;
+	}
+
+	SetResultValue(Result);
 }
