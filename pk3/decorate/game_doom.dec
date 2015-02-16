@@ -246,6 +246,26 @@ ACTOR HardModeEnhancedCaco
     Stop
   }
 }
+ACTOR HardModePainElemental
+{
+  Radius 32
+  Height 57
+  +NOBLOCKMAP
+  +NOSECTOR
+  +NOGRAVITY
+  +THRUACTORS
+  States
+  {
+  Spawn:
+    TNT1 A 0
+    TNT1 A 1 A_JumpIf(ACS_ExecuteWithResult(935) == 1, "Summon")
+    TNT1 A 0
+    Stop
+  Summon:
+    TNT1 A 0 A_SpawnItemEx("PainElemental",0,0,0,0,0,0,0,0)
+    Stop
+  }
+}
 ACTOR HardModeHElemental
 {
   Radius 32
