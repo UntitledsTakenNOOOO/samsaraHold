@@ -2,27 +2,27 @@ ACTOR Demolisher 30110
 {
 //$Category Stronghold_Monsters
 painchance "Stunner", 128
-DamageFactor "CorvusCrossbow", 1.1
-DamageFactor "DragonClaw", 1.5
+DamageFactor "CorvusCrossbow", 1.15
+DamageFactor "DragonClaw", 1.6
 DamageFactor "MarathonFusion", 2.0
-DamageFactor "WMCBeam", 0.5
-DamageFactor "WMCNade", 0.375
-DamageFactor "BJSpear", 0.7
+DamageFactor "WMCBeam", 0.75
+DamageFactor "WMCNade", 0.5625
+DamageFactor "BJSpear", 0.85
 DamageFactor "CorvusHellStaffTomed", 0.1
-DamageFactor "BFG", 0.5
-DamageFactor "BFGSplash", 0.5
-DamageFactor "Wraithverge", 0.5
-DamageFactor "DukeExplosive", 0.75
-DamageFactor "Zorch", 0.8
+DamageFactor "BFG", 0.75
+DamageFactor "BFGSplash", 0.75
+DamageFactor "Wraithverge", 0.75
+DamageFactor "DukeExplosive", 0.875
+DamageFactor "Zorch", 0.9
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
-DamageFactor "DoomPlasma", 0.9
-DamageFactor "PhasingZorch", 0.9
-DamageFactor "CorvusHellStaff", 0.9
-DamageFactor "WolfenFlamethrower", 0.9
-DamageFactor "DukeIce", 0.9
+DamageFactor "DoomPlasma", 0.95
+DamageFactor "PhasingZorch", 0.95
+DamageFactor "CorvusHellStaff", 0.95
+DamageFactor "WolfenFlamethrower", 0.95
+DamageFactor "DukeIce", 0.95
 DamageFactor "QuakeFire", 0.8
-DamageFactor "MarathonPlasma", 0.85
+DamageFactor "MarathonPlasma", 0.925
 spawnid 249
 Obituary "%o felt the power of the Spider-Demolisher."
 Health 6000

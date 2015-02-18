@@ -4,26 +4,26 @@ ACTOR Overmind 16999
 	damagefactor "bossfactor", 0.05
 	damagefactor "corefriendly", 0
 	damagefactor "railgun", 0
-	DamageFactor "CorvusCrossbow", 1.15
-	DamageFactor "DragonClaw", 1.6
-	DamageFactor "WMCBeam", 0.75
-	DamageFactor "WMCNade", 0.5625
-	DamageFactor "BJSpear", 0.85
-	DamageFactor "BFG", 0.75
-	DamageFactor "BFGSplash", 0.75
-	DamageFactor "Wraithverge", 0.75
-	DamageFactor "DukeExplosive", 0.875
-	DamageFactor "Zorch", 0.9
+	DamageFactor "CorvusCrossbow", 1.1
+	DamageFactor "DragonClaw", 1.5
+	DamageFactor "WMCBeam", 0.5
+	DamageFactor "WMCNade", 0.375
+	DamageFactor "BJSpear", 0.7
+	DamageFactor "BFG", 0.5
+	DamageFactor "BFGSplash", 0.5
+	DamageFactor "Wraithverge", 0.5
+	DamageFactor "DukeExplosive", 0.75
+	DamageFactor "Zorch", 0.8
 	damagefactor "CorvusHellStaffTomed", 0.1
 	DamageFactor "Kamikaze", 0 //Yeah no.
 	damagefactor "ZorchKamikaze", 0
-	DamageFactor "DoomPlasma", 0.95
-	DamageFactor "PhasingZorch", 0.95
-	DamageFactor "CorvusHellStaff", 0.95
-	DamageFactor "WolfenFlamethrower", 0.95
-	DamageFactor "DukeIce", 0.95
-	DamageFactor "QuakeFire", 0.9
-	DamageFactor "MarathonPlasma", 0.925
+	DamageFactor "DoomPlasma", 0.9
+	DamageFactor "PhasingZorch", 0.9
+	DamageFactor "CorvusHellStaff", 0.9
+	DamageFactor "WolfenFlamethrower", 0.9
+	DamageFactor "DukeIce", 0.9
+	DamageFactor "QuakeFire", 0.8
+	DamageFactor "MarathonPlasma", 0.85
 	Health 50000
 	Mass 80000
 	Radius 128
@@ -387,4 +387,14 @@ actor OvermindPyroShot : PyroShot
   +FULLVOLDEATH
   +NOTIMEFREEZE
   +DONTREFLECT
+}
+
+actor IHateFOILINVUL : PowerProtection //Fustol, Timon's Axe, Flechette, Lava Nails, Dammit.
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "TimonsAxe", 0
+	DamageFactor "PoisonCloud", 0
+	DamageFactor "MarathonFusion", 0
+	DamageFactor "QuakeFire", 0
+	DamageFactor "Massacre", 0
 }
