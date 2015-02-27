@@ -11,7 +11,7 @@ ACTOR Overmind 16999
 	DamageFactor "BJSpear", 0.7
 	DamageFactor "BFG", 0.5
 	DamageFactor "BFGSplash", 0.5
-	DamageFactor "Wraithverge", 0.5
+	DamageFactor "Wraithverge", 0.6
 	DamageFactor "DukeExplosive", 0.75
 	DamageFactor "Zorch", 0.8
 	damagefactor "CorvusHellStaffTomed", 0.1

@@ -19,7 +19,7 @@ ACTOR STBoss 32767
 	DamageFactor "Animate", 0.05
 	DamageFactor "HexenIce", 2.5
 	DamageFactor "DukeIce", 2.5
-	DamageFactor "Wraithverge", 3.0
+	DamageFactor "Wraithverge", 10.0
 	PainChance "MightyBoot", 256
 	//DropItem "SpiritBoss"
 	+FLOORCLIP
@@ -2141,19 +2141,221 @@ ACTOR SpiritBoss 32765
 	Goto See
 
 	Summon1:
-	BOSS H 12 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
 	Goto See
 
 	Summon2:
-	BOSS HH 6 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
 	Goto See
 
 	Summon3:
-	BOSS HHH 4 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
 	Goto See
 
 	Summon4:
-	BOSS HHHH 3 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS A 1 A_VileChase
+	BOSS A 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS B 1 A_VileChase
+	BOSS B 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS C 1 A_VileChase
+	BOSS C 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS D 1 A_VileChase
+	BOSS D 0 A_SpawnItemEx("PowerFTFire2", random(32,-32), random(32, -32), 0, 0, 0, 0, 0)
+	BOSS H 0 A_CustomMissile("SpiritCaller",64,0,Random(0,360))
 	Goto See
 
 	Melee:
