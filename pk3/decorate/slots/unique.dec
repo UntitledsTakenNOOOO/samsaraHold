@@ -87,7 +87,6 @@ actor SamsaraUniquePickup2: SamsaraUniquePickup1
         WFL2 A 35 A_ChangeFlag("FLOATBOB", 0)
         goto SpawnLoop
         
-
       Marathon:
         AWPN B 35 A_ChangeFlag("FLOATBOB", 0)
         goto SpawnLoop

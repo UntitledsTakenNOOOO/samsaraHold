@@ -85,7 +85,7 @@ actor "Spear of Eternity": "Spear of Destiny"
 actor SpearBolt
 {
     Speed 16
-    Height 2
+    Height 4
     Radius 4
     Mass 9
     Damage 55
@@ -136,8 +136,8 @@ actor SpearBolt2: SpearBolt { +THRUSPECIES Species "Player" }
 
 actor SpearShotMini
 {
-    Radius 10
-    Height 16
+    Radius 4
+    Height 4
     Speed 10
     Damage 4
     Scale 0.75

@@ -297,9 +297,8 @@ actor MaceFX12 : MaceFX1 replaces MaceFX1
     Gravity 0.125
     VSpeed 0.5
     DamageType "Mace"
-    Damage (Random(1,8)*2+Random(0,2)) // Originally 2
+    Damage (Random(1,18)) // Originally 2
     Decal BaronScorch
-    //+STRIFEDAMAGE
     Obituary "%k \cqpelted\c- %o \cqwith balls of steel.\c-"
 }
 
@@ -318,7 +317,7 @@ actor MaceFX22 : MaceFX2 replaces MaceFX2
     Gravity 0.125
     VSpeed 0.5
     DamageType "Mace"
-    Damage (Random(1,8)*6+Random(0,4))
+    Damage (Random(1,Random(36,54)))
     SeeSound "weapons/maceshoot"
     Decal BaronScorch
     //+STRIFEDAMAGE
@@ -337,7 +336,7 @@ actor MaceFX2Coop : MaceFX22
 actor MaceFX32 : MaceFX3 replaces MaceFX3
 {
     DamageType "Mace"
-    Damage (Random(1,8)*4+Random(0,3))
+    Damage (Random(1,Random(27,36)))
     Decal BaronScorch
     //+STRIFEDAMAGE
     Obituary "%k \cqpelted\c- %o \cqwith balls of steel.\c-"
