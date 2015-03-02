@@ -81,7 +81,7 @@ actor "Frost Shards" : MWeapFrost
 
       CoopFire:
         CONE D 3
-        TNT1 A 0 A_JumpIfCloser(92,"FrostMelee")
+        TNT1 A 0 A_JumpIfCloser(96,"FrostMelee")
         CONE E 5 BRIGHT
         // THIS HERE AREA WAS A DICK
         TNT1 A 0 A_FireCustomMissile("FrostMissileDM",14,0,6,1)
