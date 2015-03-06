@@ -11,18 +11,16 @@ ACTOR Overmind 16999
 	DamageFactor "BJSpear", 0.7
 	DamageFactor "BFG", 0.5
 	DamageFactor "BFGSplash", 0.5
-	DamageFactor "Wraithverge", 0.6
-	DamageFactor "DukeExplosive", 0.75
-	DamageFactor "Zorch", 0.8
+	DamageFactor "DukeExplosive", 0.5
 	damagefactor "CorvusHellStaffTomed", 0.1
 	DamageFactor "Kamikaze", 0 //Yeah no.
 	damagefactor "ZorchKamikaze", 0
-	DamageFactor "DoomPlasma", 0.9
-	DamageFactor "PhasingZorch", 0.9
-	DamageFactor "CorvusHellStaff", 0.9
-	DamageFactor "WolfenFlamethrower", 0.9
-	DamageFactor "DukeIce", 0.9
-	DamageFactor "QuakeFire", 0.8
+	DamageFactor "DoomPlasma", 0.75
+	DamageFactor "PhasingZorch", 0.75
+	DamageFactor "CorvusHellStaff", 0.75
+	DamageFactor "WolfenFlamethrower", 0.75
+	DamageFactor "DukeIce", 0.75
+	DamageFactor "QuakeFire", 0.75
 	DamageFactor "MarathonPlasma", 0.85
 	Health 50000
 	Mass 80000
@@ -392,6 +390,7 @@ actor OvermindPyroShot : PyroShot
 actor IHateFOILINVUL : PowerProtection //Fustol, Timon's Axe, Flechette, Lava Nails, Dammit.
 {
 	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Mace", 0
 	DamageFactor "TimonsAxe", 0
 	DamageFactor "PoisonCloud", 0
 	DamageFactor "MarathonFusion", 0
