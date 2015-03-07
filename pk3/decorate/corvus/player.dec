@@ -6,8 +6,9 @@ actor CorvusPlayer : PlayerPawn
     Player.StartItem "CorvusClass", 1
     Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "Clip", 50
-    Player.StartItem "PermaRemoteBomb", 1
     Player.StartItem "PermaTimeBomb", 1
+    Player.StartItem "PermaRemoteBomb", 1
+    Player.StartItem "PermaProxyBomb", 1
     Player.Face "CRV"
     Player.Soundclass "CorvusPlayer"
     Player.JumpZ 9//Default is 8
