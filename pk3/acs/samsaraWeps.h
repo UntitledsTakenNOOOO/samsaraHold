@@ -31,38 +31,38 @@
 
 int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] = 
 {
-    {"DoomguyBerserker",    "",                 " Flamer ", "FlamerAmmo"}, //OH GOD HERE WE GO
+    {"DoomguyBerserker",    "",                 "Stunner Rifle", "Cell"}, //OH GOD HERE WE GO
     {"ChexSoulsphere",      "",                 "", ""},
-    {"ArtiEgg2",            "",                 "", ""},
-    {"WolfExtraLife",       "",                 "", ""},
-    {"PortMysticAmbit",     "",                 "", ""},
+    {"ArtiEgg2",            "",                 "ArtiEgg2", ""},
+    {"WolfExtraLife",       "",                 "WolfExtraLife", ""},
+    {"PortMysticAmbit",     "",                 "PortMysticAmbit", ""},
     {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
     {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
-    {"Laser Cannon",        "Cell",             "", ""},
+    {"Laser Cannon",        "Cell",             "Laser Cannon", "Cell"},
 };
 
 int UniqueMaxes[CLASSCOUNT][CHOICECOUNT_U] = 
 {
-    {0,     0,      1,  80},
+    {0,     0,      1,  0},
     {0,     0,      0,  0},
-    {16,    0,      0,  0},
-    {9,     0,      0,  0},
-    {16,    0,      0,  0},
+    {16,    0,      16, 0},
+    {9,     0,      9,  0},
+    {16,    0,      16,  0},
     {1,     100,    0,  0},
     {1,     77,     1,  49},
-    {1,     0,      0,  0},
+    {1,     0,      1,  0},
 };
 
 int UniqueCounts[CLASSCOUNT][CHOICECOUNT_U] =
 {
+    {-1,    -1,     -1, 0},
     {-1,    -1,     -1, -1},
     {-1,    -1,     -1, -1},
     {-1,    -1,     -1, -1},
     {-1,    -1,     -1, -1},
     {-1,    -1,     -1, -1},
     {-1,    -1,     -1, -1},
-    {-1,    -1,     -1, -1},
-    {-1,     0,     -1, -1},
+    {-1,     0,     -1, 0},
 };
 
 int UniqueScripts[CLASSCOUNT] = {0, 0, 0, 0, 0, 0, SAMSARA_MARATHON, 0};
@@ -71,7 +71,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 {
     {   // Doomguy
         {" Fist ",                          "",             "",             "", ""},
-        {" Chainsaw ",                      "Cell",         "",             "", ""}, //For the stunner rifle.
+        {" Chainsaw ",                      "",             "",             "", ""},
         {" Pistol ",                        "",             "",             "", ""},
         {" Shotgun ",                       "Shell",        "",             "", ""},
         {"Super Shotgun",                   "Shell",     "AutoShotgunClip", "", ""}, //For the Automatic Shotgun.
@@ -79,7 +79,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Rocket Launcher",                 "RocketAmmo",   "LandMineAmmo", "", ""}, //For the land mines.
         {"Plasma Rifle",                    "Cell",         "",             "", ""}, //Alright, so putting the Stronghold Weps in here caused some bugs.
         {"B.F.G. 9000",                     "Cell",         "",             "", ""}, //Leaving them out for now, since no one SHOULD be given them except doomguy
-        {" Chainsaw ",                      "",             "",             "", ""}, //hah, no stunner rifle for you in Punchdrunk mode.
+        {" Chainsaw ",                      "",             "",             "", ""},
     },
 
     {   // Chexguy
@@ -130,7 +130,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Serpent Staff",                   "Clip",         "",             "", ""},
         {"Hammer of Retribution",           "Cell",         "",             "", ""},
         {"Firestorm",                       "Cell",         "",             "", ""},
-        {"Wraithverge",                     "Cell",         "",             "", ""},
+        {"Wraithverge",                     "Cell",         "Clip",         "", ""},
         {"PortFlechette",                   "",             "",             "", ""},
     },
 
@@ -175,7 +175,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
 int ClassScripts[CLASSCOUNT][SLOTCOUNT] = 
 {
-    {0,SAMSARA_DOOM,        0,  0,SAMSARA_DOOM,0,SAMSARA_DOOM,SAMSARA_DOOM,SAMSARA_DOOM,0},
+    {0,0,                   0,  0,SAMSARA_DOOM,SAMSARA_DOOM,SAMSARA_DOOM,SAMSARA_DOOM,SAMSARA_DOOM,0},
     {0,0,                   0,  0,0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0,0},

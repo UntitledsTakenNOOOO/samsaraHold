@@ -2,13 +2,13 @@ script SAMSARA_DOOM (int class, int slot, int dropped)
 {
     switch (slot)
     {
-      case 1:
-        GiveInventory(" Chainsaw ", 1);
-        GiveInventory("Stunner Rifle", 1);
-        break;
       case 4:
         GiveInventory("Super Shotgun", 1);
         GiveInventory("Automatic Shotgun", 1);
+        break;
+      case 5:
+        GiveInventory(" Chaingun ", 1);
+        GiveInventory(" Flamer ", 1);
         break;
       case 6:
         GiveInventory("Rocket Launcher", 1);

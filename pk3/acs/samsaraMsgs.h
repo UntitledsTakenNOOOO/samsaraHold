@@ -16,7 +16,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "",
         },
         {
-            "A chainsaw and Stunner Rifle! Find some meat!",
+            "A chainsaw! Find some meat!",
             "The great communicator!",
             "Groovy.",
             "Warning: Welding to hand may be hazardous to health.",
@@ -64,16 +64,16 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "How does one exactly load 20 shotgun shells into a clip?",
         },
         {
-            "You got the Chaingun!",
+            "You got the Chaingun and Flamer!",
             "Hey, chaingun! The hell with respect!",
-            "It's not like you were using that ammo for anything else...",
+            "It's not like you were using the bullets for anything else...",
             "Does not actually shoot chains.",
             "Real men use handheld gatling guns.",
             "Spingun acquired.",
             "No speed debuff needed.",
-            "omg it spins dicks",
-            "You spin me right 'round baby right round.",
-            "Who thought it would be a good idea to mount a gatling on a rifle?",
+            "Some men just want to watch the world burn.",
+            "w+m1. As soon as you have cell ammo.",
+            "Fear the wrath of my Pyro-Blasters, space weirdos! \c[G5]Kablooey! Kablammy!", //Kid Icarus: Uprising.
         },
         {
             "You got the Rocket Launcher and Land Mines!",
@@ -439,7 +439,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "The as-salt to the machine gun's pepper.",
             "Oh my god, this game rips off Doom so much.",
             "Fastest fire rate, highest DPS, and perfect accuracy. Totally balanced.",
-            "Dear lord, you can snipe with an already fast chaingun.",
+            "How does a chaingun this size have perfect accuracy?!",
         },
         {
             "You got the Rocket Launcher!",
@@ -707,7 +707,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You seem like an ice person.",
             "Where's the thawthrower?",
             "Alright, those diabolists are gonna pay for real now.",
-            "\c[G5]SUCK IT PYRODEMONS",
+            "\cnSUCK IT PYRODEMONS",
         },
         {
             "You got the Devastators! Hail to the King.",
@@ -731,7 +731,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "\ciFALCON KICK!",
             "\cnMIGHTY FOOT EVEN MORE ENGAGED",
             "I'm not going to waste my time explaining the boot mechanism to you.",
-            "You can run...while kicking with both feet. Right.",
+            "You can run...while kicking...with both feet. Right.",
         },
     },
     {
@@ -984,16 +984,16 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
 int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
 {
     {
-        "Berserk or Flamer!",
+        "Berserk or Stunner Rifle!",
         "Rip and tear! Rip and tear your guts!",
         "Plot twist: you were Baratus all along.",
         "I'm the man! I'm superbad!",
         "The quickest way to a man's heart is through their chest.",
-        "I'm certain wielding around this is good for whatever's next to you.",
+        "What's that? You can't move away from my fist? That's a shame.",
         "Meanwhile, everyone backs away and looks at you like you're a maniac.",
         "At this point, being near you is a liability.",
-        "Fear the wrath of my pyro-blasters, space wierdos! \c[g5]Kablooey! Kablammy!", //Kid Icarus: Uprising
-        "Some men just want to watch the world burn.",
+        "Someone spiked the punch.",
+        "Whats that? You want to move away from the fist? \cgNAH.",
     },
     {
         "Supercharge breakfast!",
@@ -1116,8 +1116,8 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "I'm sure there's hundreds of egg puns you can use.",
         "Omelettes, break some eggs, etc.",
         "Too bad this doesn't work on bosses.",
-        "Which is to say, most of Stronghold's Custom Beastiary.",
-        "Hint: Burning the chickens gives you something special.",
+        "Sadly, most of Stronghold's custom beastiary is bosses.",
+        "Secret Protip: Burn the chickens!",
     },
     {
         "You got the Spear of... Longinus?",
