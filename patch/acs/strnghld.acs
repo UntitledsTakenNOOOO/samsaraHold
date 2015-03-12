@@ -1760,28 +1760,28 @@ function void Setup (void)
 		MapParTime[15]	= 25*60;
 		MapParTime[16]	= 45*60;
 		MapParTime[17]	= 20*60;
-		MapParTime[18]	= 33*60;
-		MapParTime[19]	= 32*60;
+		MapParTime[18]	= 32*60;
+		MapParTime[19]	= 30*60;
 		MapParTime[20]	= 25*60;
 		MapParTime[21]	= 10*60;
 		MapParTime[22]	= 18*60;
 		MapParTime[23]	= 35*60;
-		MapParTime[24]	= 30*60;
+		MapParTime[24]	= 33*60;
 		MapParTime[25]	= 12*60;
-		MapParTime[26]	= 50*60;
-		MapParTime[27]	= 48*60;
+		MapParTime[26]	= 48*60;
+		MapParTime[27]	= 44*60;
 		MapParTime[28]	= 40*60;
 		MapParTime[29]	= 38*60;
 		MapParTime[30]	= 45*60;
 		MapParTime[31]	= 20*60;
-		MapParTime[32]	= 44*60;
-		MapParTime[33]	= 33*60;
+		MapParTime[32]	= 50*60;
+		MapParTime[33]	= 36*60;
 		MapParTime[34]	= 60*60;
 		MapParTime[35]	= 90*60;
 		MapParTime[50]	= 20*60;
 		MapParTime[52]	= 24*60;
 		MapParTime[54]	= 55*60;
-		MapParTime[56]	= 30*60;
+		MapParTime[56]	= 33*60;
 
 		AddMapReward("CoinItem", MapCoinReward[GetLevelInfo(LEVELINFO_LEVELNUM)]);
 
