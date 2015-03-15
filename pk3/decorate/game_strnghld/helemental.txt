@@ -8,7 +8,6 @@ DamageFactor "DragonClaw", 1.6
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
 DamageFactor "CorvusHellStaffTomed", 0.4
-DamageFactor "Wraithverge", 6
   obituary "%o was electrocuted by a Hades elemental."
   hitobituary "%o got chomped by a Hades elemental."
   health 1600

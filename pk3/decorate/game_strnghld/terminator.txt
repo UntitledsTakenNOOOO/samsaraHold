@@ -15,7 +15,6 @@ DamageFactor "WMCNade", 0.75
 DamageFactor "CorvusHellStaffTomed", 0.2
 DamageFactor "Kamikaze", 0.25
 damagefactor "ZorchKamikaze", 0.25
-DamageFactor "Wraithverge", 3
 SpawnID 231
 Health 7000 
 Radius 24 

@@ -8,7 +8,6 @@ DamageFactor "DragonClaw", 1.6
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
 DamageFactor "CorvusHellStaffTomed", 0.3
-DamageFactor "Wraithverge", 3
     Health 2400
     Radius 22
     Height 64

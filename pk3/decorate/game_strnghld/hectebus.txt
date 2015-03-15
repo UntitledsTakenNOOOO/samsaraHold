@@ -92,10 +92,10 @@ DamageFactor "CorvusHellStaffTomed", 0.5
         TNT1 A 0 A_GiveToTarget("KillCount",1)
 	TNT1 A 0 A_GiveToTarget("AwardItem", 17)
         TNT1 A 0 A_NoBlocking
-        CUBE D 0 A_GenericFreezeDeath
-        CUBE D 70 A_UnsetSolid
-        CUBE D 0 A_IceGuyDie
-        CUBE D 1 A_IceGuyDie
+        HECT J 0 A_GenericFreezeDeath
+        HECT J 70 A_UnsetSolid
+        HECT J 0 A_IceGuyDie
+        HECT J 1 A_IceGuyDie
         TNT1 A -1
         stop
       Death.DukeExplosive:

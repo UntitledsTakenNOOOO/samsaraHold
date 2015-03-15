@@ -169,7 +169,6 @@ ACTOR Queen
 	painchance "Stunner", 128
 	DamageFactor "CorvusCrossbow", 1.1
 	DamageFactor "DragonClaw", 1.5
-	DamageFactor "Wraithverge", 4.0
 	BloodType "DN3DBlood", "DN3DBlood"
 	
 	spawnid 173
@@ -270,7 +269,6 @@ ACTOR Cycloid
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.5
 	DamageFactor "MarathonFusion", 2.0
-	DamageFactor "Wraithverge", 4.0
 	
 	BloodType "DN3DBlood", "DN3DBlood"
 
@@ -370,7 +368,6 @@ ACTOR Overlord
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.5
 	DamageFactor "MarathonFusion", 2.0
-	DamageFactor "Wraithverge", 4.0
 	
 	BloodType "DN3DBlood", "DN3DBlood"
 
@@ -1025,6 +1022,10 @@ ACTOR SuperBattleLord : BattleLord
 	Mass 6000
 	MissileHeight 64
 	MinMissileChance 48
+	DamageFactor "CorvusCrossbow", 1.1
+	DamageFactor "DragonClaw", 1.5
+	DamageFactor "MarathonFusion", 2.0
+
 	Obituary "\c[M1]%o \c[M1]was perforated by the battlelord's super-chaingun."
 	States
 	{
