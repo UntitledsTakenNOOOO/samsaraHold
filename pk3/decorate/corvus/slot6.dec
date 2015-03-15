@@ -189,10 +189,10 @@ actor HornRodFX2A : HornRodFX2
 
 actor HellstaffRain
 {
-    Radius 5
-    Height 12
-    Speed 24//Original is 12
-    Damage 10//Original is 5
+    Radius 3//Original is 5
+    Height 4//Original is 12
+    Speed 12
+    Damage 5
     Mass 10//Original is 5
     Renderstyle Add
     //Gravity 12
