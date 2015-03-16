@@ -84,7 +84,7 @@ actor SamsaraUniquePickup2: SamsaraUniquePickup1
     States
     {
       Doomguy:  
-        WFL2 A 35 A_ChangeFlag("FLOATBOB", 0)
+        STPP A 35 A_ChangeFlag("FLOATBOB", 0)
         goto SpawnLoop
         
       Marathon:

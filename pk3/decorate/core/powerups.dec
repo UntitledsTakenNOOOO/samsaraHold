@@ -193,6 +193,7 @@ ACTOR PowerFakeInvulnerable : PowerProtection
   DamageFactor "NotQuadded", 0.0
   DamageFactor "SpectralNoQuad", 0.0
 
+  DamageFactor "STBoss", 0.05 //Mostly harmless
   DamageFactor "MarathonFusion", 1.0
   DamageFactor "Kamikaze", 1.0
   DamageFactor "ZorchKamikaze", 1.0

@@ -693,6 +693,7 @@ ACTOR ZoneKillerPickup : CustomInventory
 		LFX2 FGHIJ 2 Bright A_FadeOut(0.2)
 		Stop
 	Pickup:
+		TNT1 A 1 A_JumpIfInventory("PowerFakeInvulnerable",1,"PickupFail")
 		TNT1 A 1 A_JumpIfInventory("PowerInvulnerability",1,"PickupFail")
 		TNT1 A 1 DamageThing(99999) //You are already dead.
 		TNT1 A 1 A_SetBlend("99 00 00",0.75,105)

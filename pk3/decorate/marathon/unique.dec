@@ -294,7 +294,7 @@ actor EnforcerShot
     Radius 6
     Height 8
     Speed 15
-    Damage (random(25, 42)) // Formerly 20, 28
+    Damage (random(30, 38)) // Formerly 20, 28
     DamageType MarathonPlasma
     -BLOODSPLATTER
     +NOBLOOD
@@ -317,7 +317,7 @@ actor EnforcerShot
 
 actor AlienWeaponBullet : FastProjectile
 {
-    Damage (random(10,18)) // Formerly 9-15
+    Damage (random(10,18)) // Formerly 10-15
     Radius 1
     Height 1
     Speed 80
