@@ -192,7 +192,7 @@ actor HellstaffRain
     Radius 3//Original is 5
     Height 4//Original is 12
     Speed 12
-    Damage 5
+    Damage 10
     Mass 10//Original is 5
     Renderstyle Add
     //Gravity 12
