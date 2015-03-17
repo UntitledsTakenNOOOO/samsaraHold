@@ -12,7 +12,7 @@ DamageFactor "CorvusHellStaffTomed", 0.1
 DamageFactor "BFG", 0.75
 DamageFactor "BFGSplash", 0.75
 DamageFactor "DukeExplosive", 0.875
-DamageFactor "Wraithverge", 0.6666
+DamageFactor "Wraithverge", 0.5
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
 DamageFactor "DoomPlasma", 0.9

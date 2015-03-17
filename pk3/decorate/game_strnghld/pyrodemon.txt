@@ -11,6 +11,7 @@ DamageFactor "DukeIce", 2.75
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
 DamageFactor "CorvusHellStaffTomed", 0.3
+DamageFactor "Wraithverge", 2.0
 spawnid 246
 Health 2500
 Radius 24 

@@ -106,7 +106,7 @@ actor HolySpirit2 : HolySpirit replaces HolySpirit
 	PROJECTILE
     	+BRIGHT
 	+THRUSPECIES
-	//+FORCERADIUSDMG
+	+FORCERADIUSDMG
 	+STRIFEDAMAGE
 	Damage 0
 	Species "Player"
@@ -251,9 +251,18 @@ actor HolyMissilePuff2: HolyMissilePuff replaces HolyMissilePuff
     -NOBLOCKMAP -NOGRAVITY -DROPOFF -NOTELEPORT
     +NOINTERACTION +CLIENTSIDEONLY
 }
-actor HolyMissilePuff3: HolyMissilePuff
+
+actor HolyMissilePuff3
 {
+  Radius 4
+  Height 8
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +DROPOFF
+  +NOTELEPORT
   +FORCERADIUSDMG
+  RenderStyle "Translucent"
+  Alpha 0.4
   Damagetype "Wraithverge"
   States
   {
