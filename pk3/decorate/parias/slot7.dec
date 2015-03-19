@@ -154,7 +154,7 @@ actor HolySpirit2 : HolySpirit replaces HolySpirit
       TNT1 A 0 A_SpawnItemEx("HolyMissilePuff3",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
       SPIR B 2 A_CHolyCheckScream
       TNT1 A 0 A_SpawnItemEx("HolyMissilePuff3",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
-      TNT1 A 0 A_ChangeFlag("PAINLESS",0)
+      TNT1 A 0 A_ChangeFlag("PAINLESS",1)
       goto Spawn
     Death:
       SPIR D 4
