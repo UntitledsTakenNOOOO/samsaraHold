@@ -937,7 +937,7 @@ script 204 (int bossmonologueshit)
 	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
-        HudMessageBold(s:"I suppose I ought to congradulate you."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        HudMessageBold(s:"I suppose I ought to congratulate you."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
         delay(154);
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
@@ -945,7 +945,7 @@ script 204 (int bossmonologueshit)
         delay(154);
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
-        HudMessageBold(s:"Many aeons have passed, with every sort of demon at your doorstep."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        HudMessageBold(s:"Aeons have passed, with every sort of demon at your doorstep."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
         delay(154);
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
@@ -961,7 +961,7 @@ script 204 (int bossmonologueshit)
         delay(154);
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
-        HudMessageBold(s:"And now you have proven worthy of my greatest honour:"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        HudMessageBold(s:"But only you now you have proven worthy of my greatest honour:"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
         delay(154);
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
