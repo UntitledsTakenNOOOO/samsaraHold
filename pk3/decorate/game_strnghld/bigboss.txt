@@ -178,15 +178,9 @@ ACTOR STBoss 32767
 		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
 		BOSS A 0 NoiseAlert(0,0)
 		BOSS A 0 A_Jump(5,"Necromancy")
-		BOSS A 0 A_JumpIfCloser(1024,"SeeClose")
-		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
 		BOSS A 0 A_Jump(16, "Teleport")
 		BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
 		Loop
-	SeeClose:
-		BOSS A 0 A_ChangeFlag("FRIGHTENED",1)
-		BOSS AAAAAABBBBBBCCCCCCDDDDDD 1 A_VileChase
-		Goto See
 	Necromancy:	
 		BOSS A 1 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
 		BOSS A 0 A_Jump(15,"RaiseArmy")
@@ -196,8 +190,6 @@ ACTOR STBoss 32767
 		Loop
 	Teleport:
 		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
-		BOSS A 0 A_Jump(8, "SummonTeleport")
-		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
 		BOSS A 1 A_FaceTarget
       		BOSS A 3 
       		BOSS A 3 BRIGHT
@@ -212,8 +204,8 @@ ACTOR STBoss 32767
     		BOSS A 1 A_SetTranslucent(0.30)
     		BOSS A 1 A_SetTranslucent(0.20)
     		BOSS A 1 A_SetTranslucent(0.10)
-		BOSS A 1 A_Changeflag("NOGRAVITY", 1)
-		BOSS A 1 A_Changeflag("FLOAT", 1)
+		//BOSS A 1 A_Changeflag("NOGRAVITY", 1)
+		//BOSS A 1 A_Changeflag("FLOAT", 1)
     		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
     		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_ExtChase(0,0,1,1)
     		BOSS A 1 A_PlaySound("pyro/tele")
@@ -228,52 +220,12 @@ ACTOR STBoss 32767
     		BOSS A 1 A_SetTranslucent(0.90)
     		BOSS A 1 A_SetTranslucent(1.0)
     		BOSS A 0 A_SetShootable
-		BOSS A 1 A_Changeflag("FLOAT", 0)
-		BOSS A 1 A_Changeflag("NOGRAVITY", 0)
+		//BOSS A 1 A_Changeflag("FLOAT", 0)
+		//BOSS A 1 A_Changeflag("NOGRAVITY", 0)
 		BOSS A 0 A_Jump(32, "FireMissile")
 		BOSS A 0 A_JumpIfCloser(1024, "See")
 		Loop
-	SummonTeleport:
-		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
-		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
-		BOSS A 1 A_FaceTarget
-      		BOSS A 3 
-      		BOSS A 3 BRIGHT
-   		BOSS A 0 A_UnSetShootable
-   		BOSS A 1 A_PlaySound("pyro/tele")
-    		BOSS A 1 A_SetTranslucent(0.90)
-    		BOSS A 1 A_SetTranslucent(0.80)
-    		BOSS A 1 A_SetTranslucent(0.70)
-    		BOSS A 1 A_SetTranslucent(0.60)
-    		BOSS A 1 A_SetTranslucent(0.50)
-    		BOSS A 1 A_SetTranslucent(0.40)
-    		BOSS A 1 A_SetTranslucent(0.30)
-    		BOSS A 1 A_SetTranslucent(0.20)
-    		BOSS A 1 A_SetTranslucent(0.10)
-		BOSS A 1 A_Changeflag("NOGRAVITY", 1)
-		BOSS A 1 A_Changeflag("FLOAT", 1)
-    		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
-		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
-    		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_ExtChase(0,0,1,1)
-    		BOSS A 1 A_PlaySound("pyro/tele")
-    		BOSS A 1 A_SetTranslucent(0.10)
-    		BOSS A 1 A_SetTranslucent(0.20)
-    		BOSS A 1 A_SetTranslucent(0.30)
-    		BOSS A 1 A_SetTranslucent(0.40)
-    		BOSS A 1 A_SetTranslucent(0.50)
-    		BOSS A 1 A_SetTranslucent(0.60)
-    		BOSS A 1 A_SetTranslucent(0.70)
-    		BOSS A 1 A_SetTranslucent(0.80)
-    		BOSS A 1 A_SetTranslucent(0.90)
-    		BOSS A 1 A_SetTranslucent(1.0)
-    		BOSS A 0 A_SetShootable
-		BOSS A 1 A_Changeflag("FLOAT", 0)
-		BOSS A 1 A_Changeflag("NOGRAVITY", 0)
-		BOSS A 0 A_Jump(64, "FireMissile")
-		BOSS A 0 A_JumpIfCloser(1024, "See")
-		Goto Teleport
 	LongTeleport:
-		BOSS A 0 A_ChangeFlag("FRIGHTENED",0)
 		BOSS A 1 A_FaceTarget
       		BOSS A 3 
       		BOSS A 3 BRIGHT
@@ -288,10 +240,14 @@ ACTOR STBoss 32767
     		BOSS A 1 A_SetTranslucent(0.30)
     		BOSS A 1 A_SetTranslucent(0.20)
     		BOSS A 1 A_SetTranslucent(0.10)
-		BOSS A 1 A_Changeflag("NOGRAVITY", 1)
-		BOSS A 1 A_Changeflag("FLOAT", 1)
+		//BOSS A 1 A_Changeflag("NOGRAVITY", 1)
+		//BOSS A 1 A_Changeflag("FLOAT", 1)
 		BOSS A 1 A_Changeflag("SOLID", 0)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 4 A_Wander
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_ExtChase(0,0,1,1)
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_ExtChase(0,0,1,1)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_ExtChase(0,0,1,1)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomMissile("STBossAttack5",0,0,random(0,360))
@@ -311,8 +267,8 @@ ACTOR STBoss 32767
     		BOSS A 1 A_SetTranslucent(0.90)
     		BOSS A 1 A_SetTranslucent(1.0)
     		BOSS A 0 A_SetShootable
-		BOSS A 1 A_Changeflag("FLOAT", 0)
-		BOSS A 1 A_Changeflag("NOGRAVITY", 0)
+		//BOSS A 1 A_Changeflag("FLOAT", 0)
+		//BOSS A 1 A_Changeflag("NOGRAVITY", 0)
 		Goto FireMissile
 	FireMissile:
 		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
@@ -392,16 +348,14 @@ ACTOR STBoss 32767
 		Goto See
 	Missile:
 		BOSS A 0 A_JumpIfHealthLower(10000,"CallingOfTheDamned")
-		BOSS A 0 A_Jump(48,"FireNova")
-		BOSS A 0 A_Jump(44,"FireVolley")
-		BOSS A 0 A_Jump(40,"FireBall")
-		BOSS A 0 A_Jump(36,"ConvergeAttack")
-		BOSS A 0 A_Jump(32,"FireSpark")
-		BOSS A 0 A_Jump(28,"Eruption")
-		BOSS A 0 A_Jump(24,"SpiritAttack")
-		BOSS A 0 A_Jump(20,"RaiseArmy")
-		BOSS A 0 A_Jump(16,"SummonTeleport")
-		BOSS A 0 A_Jump(12,"LongTeleport")
+		BOSS A 0 A_Jump(40,"FireNova")
+		BOSS A 0 A_Jump(36,"FireVolley")
+		BOSS A 0 A_Jump(32,"FireBall")
+		BOSS A 0 A_Jump(28,"ConvergeAttack")
+		BOSS A 0 A_Jump(24,"FireSpark")
+		BOSS A 0 A_Jump(20,"Eruption")
+		BOSS A 0 A_Jump(16,"RaiseArmy")
+		BOSS A 0 A_Jump(12,"SpiritAttack")
 		BOSS A 0 A_Jump(8,"Haunting")
 		BOSS A 0 A_Jump(4,"Hadouken")
 		BOSS A 1 A_VileChase
@@ -433,11 +387,6 @@ ACTOR STBoss 32767
 		BOSS G 0 A_CustomMissile("STBossAttack7",64,0,-10)
 		BOSS G 4 A_CustomMissile("STBossAttack7",64,0,0)
 		Goto See
-	Eruption:
-		BOSS EF 6 A_FaceTarget
-		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
-		BOSS G 8 A_CustomBulletAttack(0,0,1,0,"Eruption")
-		Goto See
 	ConvergeAttack:
 		BOSS EF 5 A_FaceTarget
 //		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
@@ -450,6 +399,15 @@ ACTOR STBoss 32767
 		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
 		BOSS G 8 A_CustomMissile("STBossAttack9",0,0,0,2,4)
 		Goto See
+	Eruption:
+		BOSS EF 6 A_FaceTarget
+		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
+		BOSS G 8 A_CustomBulletAttack(0,0,1,0,"Eruption")
+		Goto See
+	RaiseArmy:
+		BOSS H 8 A_FaceTarget
+		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
+		Goto See
 	SpiritAttack:
 		BOSS H 8 A_FaceTarget
 		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack4",0,0,random(0,360))
@@ -457,13 +415,8 @@ ACTOR STBoss 32767
 		Goto See
 	Haunting:
 		BOSS H 8 A_FaceTarget
-		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
 		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack6",0,0,random(0,360))
 		BOSS A 0 A_AlertMonsters
-		Goto See
-	RaiseArmy:
-		BOSS H 8 A_FaceTarget
-		BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("STBossAttack5",0,0,random(0,360))
 		Goto See
 	Hadouken:
 		BOSS A 8 A_FaceTarget
@@ -472,7 +425,6 @@ ACTOR STBoss 32767
 		BOSS A 1 ThrustThingZ(0,3,0,0)
 		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEFFFFFFFFFF 3 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
 		BOSS FFFFFFFFFF 2 A_FaceTarget
-		//BOSS GGGGGGGGGG 7 A_CustomMissile("Hadouken",75,0,0)
 		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("RainCometNull",0,0,Random(0,360))
 		BOSS G 70 A_CustomMissile("FinalFlash",75,0,0)	
 		BOSS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("STBossAttack4",0,0,random(0,360))

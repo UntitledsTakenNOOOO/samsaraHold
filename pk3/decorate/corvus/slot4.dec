@@ -190,6 +190,9 @@ actor BlasterFX1C : BlasterFX1B { +THRUSPECIES Species "Player" }
 
 actor Ripper2 : Ripper
 {
+    Speed 20
+    Radius 4
+    Height 4
     +MISSILE
     -NOCLIP
     +NOBOSSRIP
