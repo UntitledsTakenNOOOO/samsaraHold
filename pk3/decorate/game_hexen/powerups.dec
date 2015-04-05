@@ -14,13 +14,13 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
         Loop
 
       Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("DoomguyClass",1,"PickupDoom")
         TNT1 A 0 A_JumpIfInventory("ChexClass",1,"PickupChex")
         TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
         TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
         TNT1 A 1
         fail
@@ -30,27 +30,24 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
         TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HereticAmmo4Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 AA 1 A_SpawnItemEx("HereticAmmo4Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HereticAmmo2Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AA 1 A_SpawnItemEx("HereticAmmo2Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAA 1 A_SpawnItemEx("HereticAmmo2Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         stop
 
       PickupChex:
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 AAAAAA 1 A_SpawnItemEx("ArmorScrap",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAA 1 A_SpawnItemEx("HereticArmorDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("HereticArmorDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 AAAA 1 A_SpawnItemEx("GreenArmorPickup",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 AAA 1 A_SpawnItemEx("YellowArmorPickup",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 AA 1 A_SpawnItemEx("BlueArmorPickup",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 A 1 A_SpawnItemEx("RedArmor",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 A 1 A_SpawnItemEx("MegaPack",0,0,0,0,0,0,1,0)
         stop
 
       PickupWolfen:
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 A 1 A_GiveInventory("WolfenAmmoCrate",1)
         TNT1 AAAAA 1 A_SpawnItemEx("HereticAmmo4Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 A 1 A_SpawnItemEx("HereticAmmo4Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("HereticAmmo1Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAA 1 A_SpawnItemEx("HereticAmmo1Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("HereticAmmo1Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAA 1 A_SpawnItemEx("HereticAmmo1Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         stop
 
       PickupHeretic:
@@ -70,7 +67,6 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
         TNT1 A 1 A_SpawnItemEx("HexenArmor3",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 A 1 A_SpawnItemEx("HexenArmor4",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 A 1 A_SpawnItemEx("HexenArmor5",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 A 1 A_SpawnItemEx("SamsaraUniquePickup",0,0,0,0,0,0,0,0)
         stop
 
       PickupHexen:
@@ -87,29 +83,17 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
         TNT1 A 0 A_PlaySound("MysticIncant")
         TNT1 AAAAA 1 A_SpawnItemEx("HereticAmmo4Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 A 1 A_SpawnItemEx("HereticAmmo4Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAAAAA 1 A_SpawnItemEx("HereticAmmo3Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAA 1 A_SpawnItemEx("HereticAmmo3Small",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 AAAA 1 A_SpawnItemEx("HereticAmmo3Big",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         stop
 
       PickupMarathon:
         TNT1 A 0 A_SetBlend("White",0.5,5)
         TNT1 A 0 A_PlaySound("MysticIncant")
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack0",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HereticStuffDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HereticStuffDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("HereticStuffDump",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HealPack1",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 AAAA 1 A_SpawnItemEx("HealPack2",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
         TNT1 A 1 A_SpawnItemEx("SuperHealth",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
-        TNT1 A 1 A_SpawnItemEx("MegaPack",0,0,0,0,0,0,0,0)
         stop
 
       PickupQuake:
