@@ -102,7 +102,7 @@ actor Ammo2Small : CustomInventory replaces Shell
 
       PickupWolfen:
         TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip", 20)
+        TNT1 A 0 A_GiveInventory("Clip", 16)
         stop
 
       PickupHexen:
@@ -155,7 +155,7 @@ actor Ammo2Big : CustomInventory replaces ShellBox
 
       PickupWolfen:
         TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip", 100)
+        TNT1 A 0 A_GiveInventory("Clip", 80)
         stop
 
       PickupHexen:

@@ -1975,35 +1975,8 @@ ACTOR FriendlyBattleLord
 		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
 		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
 		LORD E 3 A_FaceTarget
-		LORD E 0 A_PlayWeaponSound("duke/chaingun")
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
-		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
-		LORD E 3 A_FaceTarget
-		LORD E 0 A_PlayWeaponSound("duke/chaingun")
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
-		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
-		LORD E 3 A_FaceTarget
-		LORD E 0 A_PlayWeaponSound("duke/chaingun")
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
-		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
-		LORD E 3 A_FaceTarget
-		LORD E 0 A_PlayWeaponSound("duke/chaingun")
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
-		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
-		LORD E 3 A_FaceTarget
-		LORD E 0 A_PlayWeaponSound("duke/chaingun")
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))		
-		LORD F 0 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
-		LORD F 3 Bright	A_CustomMissile("DukeRipperBulletCoop2",32,0,Random(-22.5,22.5))
 		Goto See
 	Mortar:
-		LORD G 10 A_FaceTarget
-		LORD G 0 A_PlaySound("duke/rocket")
-		LORD H 10 Bright A_CustomMissile("FriendlyMortar",32,20,0,2,35)
 		LORD G 10 A_FaceTarget
 		LORD G 0 A_PlaySound("duke/rocket")
 		LORD H 10 Bright A_CustomMissile("FriendlyMortar",32,20,0,2,35)
@@ -2056,7 +2029,7 @@ Actor FriendlyMortar:Mortar {
 
 //=================
 // SECURITY OFFICER: Hunter
-// Just pretend these guys are green, and you've got the major hunters these are supposed to be.
+// MAJOR HUNTER SPRITES HELL YES.
 
 ACTOR FriendlyHunter
 {
@@ -2064,7 +2037,7 @@ ACTOR FriendlyHunter
 	Radius 20
 	Height 64
 	Mass 1000
-	Speed 8
+	Speed 12
 	PainChance 255
 	MinMissileChance 112 //Oh heh heh.
 	Scale 0.55
@@ -2313,7 +2286,7 @@ Actor VoreFirepod
   Height 8
   Speed 12
   FastSpeed 18
-  Damage (20)
+  Damage (15)
   DamageType "MarineAlly"
   Projectile
   Species "Player"
@@ -2345,7 +2318,7 @@ Actor VoreFirepod
     VOBA C 0 Bright A_SeekerMissile(60, 90)
     Loop
   Death:
-    VOBA D 0 Bright A_Explode(80, 128)	//Part of the original game was that Vores can be hurt by their own projectiles
+    VOBA D 0 Bright A_Explode(64, 128)
     VOBA DEFGHI 4 Bright
     Stop
   }

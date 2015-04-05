@@ -44,7 +44,7 @@ actor StrifeElectricBolts: CustomInventory replaces ElectricBolts
 
       PickupWolfen:
         TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip", 60)
+        TNT1 A 0 A_GiveInventory("Clip", 48)
         stop
 
       PickupHexen:
@@ -107,7 +107,7 @@ actor StrifeMiniMissiles: CustomInventory replaces MiniMissiles
         stop
 
       PickupWolfen:
-        TNT1 A 0 A_GiveInventory("Clip", 15)
+        TNT1 A 0 A_GiveInventory("Clip", 13)
         TNT1 A 0 A_GiveInventory("Cell", 4)
         stop
 
