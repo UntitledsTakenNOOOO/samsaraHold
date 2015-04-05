@@ -59,7 +59,7 @@ actor WolfenPlayer : PlayerPawn
         Goto Spawn
 
       GoingToSalvate:
-        BJBL G 4 A_JumpIfHealthLower(25, "GoingTo")
+        BJBL G 4 A_JumpIfHealthLower(5, "GoingTo")
         BJBL G 4 A_Pain
         Goto Spawn
 
@@ -68,9 +68,8 @@ actor WolfenPlayer : PlayerPawn
         TNT1 A 0 A_GiveInventory("Medikit")
         TNT1 A 0 A_GiveInventory("Medikit")
         TNT1 A 0 A_GiveInventory("Medikit")
-        TNT1 A 0 A_GiveInventory("Clip",50)
-        TNT1 A 0 A_GiveInventory("BlueArmor")
         TNT1 A 0 A_GiveInventory("Salvate")
+        TNT1 A 0 A_GiveInventory("YellowArmorModeShopGiver")
         TNT1 A 0 A_GiveInventory("WolfLifeProtection")
         TNT1 A 0 A_PlayerScream
         BJBL G 4 A_TakeInventory("WolfExtraLife",1)
@@ -266,7 +265,7 @@ actor WolfenAmmoCrate : CustomInventory
 {
     +INVENTORY.INVBAR
     +INVENTORY.UNDROPPABLE
-    Inventory.maxamount 1
+    Inventory.maxamount 9
     Inventory.Icon "BJAMMCRT"
     Inventory.UseSound "wolfen/ammocrate"
     Inventory.PickupMessage "You got a crate full of bullets!"

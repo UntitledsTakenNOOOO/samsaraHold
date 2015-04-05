@@ -110,8 +110,26 @@ actor ChexWarrior : PlayerPawn
         Goto Missile
 
       Pain:
-        CHEX G 4 
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
+        CHEX G 4
         CHEX G 4 A_Pain
+        Goto Spawn
+
+      GoingToSalvate:
+        CHEX G 4 A_JumpIfHealthLower(5, "GoingTo")
+        CHEX G 4 A_Pain
+        Goto Spawn
+
+      GoingTo:
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Salvate")
+        TNT1 A 0 A_GiveInventory("WolfLifeProtection")
+        TNT1 A 0 A_PlayerScream
+        CHEX G 4 A_TakeInventory("WolfExtraLife",1)
+        CHEX G 4
         Goto Spawn
 		
 	  Pain.Flem:

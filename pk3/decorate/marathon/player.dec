@@ -343,18 +343,21 @@ damagefactor "MarineAlly", 0
         
       Pain.DoomCacodemon:
       Pain.HexSlaughtaur:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("0EBFE9",0.8,8) // Diamond blue
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.HereWizard:
       Pain.HexHeresiarchPurple:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("5C246E",0.8,8) // Ultramarine violet
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.HexBishop:
       Pain.DoomSpiderPlasma:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("00FF66",0.8,8) // Neon avacado
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -364,21 +367,25 @@ damagefactor "MarineAlly", 0
       Pain.DoomHellNoble:
       Pain.CorvusCrossbow:
       Pain.HereAxeGreen:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("49E20E",0.8,8) // Nerf green
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.HereNitrogolem:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("E6B426",0.8,8) // Yellow chocolate
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.BJSpear:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("FFEC8B",0.8,8) // Light goldenrod
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.HereLichWind:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("CDC9A5",0.8,8) // Lemon chiffon
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -386,6 +393,7 @@ damagefactor "MarineAlly", 0
       Pain.HereDsparil:
       Pain.MarathonFusion:
       Pain.DoomPlasma:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("0FDDAF",0.8,8) // Turquoise
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -395,6 +403,7 @@ damagefactor "MarineAlly", 0
       Pain.DukeExplosive:
       Pain.SpectralNoQuad:
       Pain.NotQuadded:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("Yellow",0.8,8)
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -402,6 +411,7 @@ damagefactor "MarineAlly", 0
       Pain.CorvusHellstaff:
       Pain.CorvusHellstaffTomed:
       Pain.HereAxeRed:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("8B0000",0.8,8) // Dark red
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -412,12 +422,14 @@ damagefactor "MarineAlly", 0
       Pain.QuakePistol:
       Pain.Pistol:
       Pain:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("E3170D",0.8,8) // Cadmium red
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.TimonsAxe:
       Pain.DragonClaw:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("Blue",0.8,8)
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -425,17 +437,20 @@ damagefactor "MarineAlly", 0
       Pain.BFG:
       Pain.BFGspray:
       Pain.BFGsplash:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("7FFF00",0.8,8) // Chartreuse
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.ZorchPistol:
       Pain.Zorch:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("Red",0.8,8)
         SOPL Y 4 A_Pain
         Goto Spawn
 
       Pain.MarathonPlasma:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("FF69AF",0.8,8) // Dry violet-red
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -444,12 +459,14 @@ damagefactor "MarineAlly", 0
 	  Pain.QuakeFire:
 	  Pain.FireExplosive:
       Pain.Fire:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("FF8C00",0.8,8) // Fiery orange
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.Drowning:
 	  Pain.CorvusGrimBallista:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("White",0.8,8)
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -457,6 +474,7 @@ damagefactor "MarineAlly", 0
       Pain.HexenIce:
       Pain.DukeIce:
       Pain.Ice:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("00FFFF",0.8,8) // Aqua
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -465,6 +483,7 @@ damagefactor "MarineAlly", 0
       Pain.PoisonCloud:
       Pain.Flem:
       Pain.Slime:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
         SOPL Y 4 A_SetBlend("228B22",0.8,8) // Muck green
         SOPL Y 4 A_Pain
         Goto Spawn
@@ -472,6 +491,7 @@ damagefactor "MarineAlly", 0
       Pain.Wraithverge:
       Pain.Gray:
 	  Pain.Grey:
+       TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
        SOPL Y 4 A_SetBlend("33 33 33",0.8,8)  // Gray
        SOPL Y 4 A_Pain
         Goto Spawn
@@ -506,38 +526,62 @@ damagefactor "MarineAlly", 0
         Goto Pain.Explosive
 
       Pain.Green:
+       TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
        SOPL Y 4 A_SetBlend("00 8B 00",0.8,8)
        SOPL Y 4 A_Pain
         Goto Spawn
 
       Pain.Purple:
+       TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
        SOPL Y 4 A_SetBlend("82 0B BB",0.8,8) // It's actually more of a violet, but...
        SOPL Y 4 A_Pain
         Goto Spawn
 
       Pain.Brown:
+       TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
        SOPL Y 4 A_SetBlend("5C 33 17",0.8,8)
        SOPL Y 4 A_Pain
         Goto Spawn
 
       Pain.Gold:
+       TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
        SOPL Y 4 A_SetBlend("8B 75 00",0.8,8)
        SOPL Y 4 A_Pain
         Goto Spawn
 
       Pain.Black:
+       TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
        SOPL Y 4 A_SetBlend("00 00 00",0.8,8)
        SOPL Y 4 A_Pain
         Goto Spawn
 
       Pain.Pink:
+       TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
        SOPL Y 4 A_SetBlend("FF 6F F2",0.8,8)
        SOPL Y 4 A_Pain
         Goto Spawn
 
       Pain.Orange:
+       TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
        SOPL Y 4 A_SetBlend("FF AA 00",0.8,8)
        SOPL Y 4 A_Pain
+        Goto Spawn
+
+      GoingToSalvate:
+        SOPL Y 4 A_JumpIfHealthLower(5, "GoingTo")
+        SOPL Y 4 A_Pain
+        Goto Spawn
+
+      GoingTo:
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Salvate")
+        TNT1 A 0 A_GiveInventory("WolfLifeProtection")
+        TNT1 A 0 A_PlayerScream
+        SOPL Y 4 A_TakeInventory("WolfExtraLife",1)
+        SOPL Y 4
         Goto Spawn
 
          XDeathNashgore:

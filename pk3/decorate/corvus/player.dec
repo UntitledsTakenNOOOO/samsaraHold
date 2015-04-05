@@ -51,8 +51,26 @@ actor CorvusPlayer : PlayerPawn
         Goto Spawn
 
       Pain:
-        CORV G 4 //A_GiveInventory("CorvusCanProxy",1)
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",1,"GoingToSalvate")
+        CORV G 4
         CORV G 4 A_Pain
+        Goto Spawn
+
+      GoingToSalvate:
+        CORV G 4 A_JumpIfHealthLower(5, "GoingTo")
+        CORV G 4 A_Pain
+        Goto Spawn
+
+      GoingTo:
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Medikit")
+        TNT1 A 0 A_GiveInventory("Salvate")
+        TNT1 A 0 A_GiveInventory("WolfLifeProtection")
+        TNT1 A 0 A_PlayerScream
+        CORV G 4 A_TakeInventory("WolfExtraLife",1)
+        CORV G 4
         Goto Spawn
 
       Death:
