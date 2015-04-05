@@ -822,3 +822,14 @@ object HectShot
 	frame BAL7D { light BARONBALL_X2 }
 	frame BAL7E { light BARONBALL_X3 }
 }
+
+PointLight PlasmaZombieAttack
+{
+Color 0.0 0.0 1.0
+Size 28
+}
+
+Object PlasmaZombie
+{
+Frame ZMAYF { Light PlasmaZombieAttack }
+}

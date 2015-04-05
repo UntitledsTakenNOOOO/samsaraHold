@@ -134,3 +134,73 @@ actor CacodemonBall2 : CacodemonBall replaces CacodemonBall
     +THRUGHOST
 }
 
+actor NightmareCaco : Cacodemon2
+{
+  Health 700
+  Speed 6
+  RenderStyle Add
+  Alpha 0.5
+  MeleeDamage 7
+  MissileType "CacolanternBall"
+  Translation "168:191=192:207", "192:207=168:191", "16:31=192:199", "32:63=200:207"
+  HitObituary "%o was snuck up on by the Nightmare Cacodemon." 
+  Obituary "%o couldn't dodge the Nightmare Cacodemon's fireball." 
+  States
+  { 
+  See:
+    HEAD A 2 A_Chase
+    loop
+  Missile:
+    HEAD B 0 A_Jump(128,1)
+    Goto See
+    HEAD B 0
+    HEAD B 3 A_FaceTarget
+    HEAD B 3 A_FaceTarget
+    HEAD C 4 A_ComboAttack
+    HEAD B 3 A_FaceTarget
+    HEAD B 3 A_FaceTarget
+    HEAD C 4 A_ComboAttack
+    HEAD B 3 A_FaceTarget
+    HEAD B 3 A_FaceTarget
+    HEAD C 4 A_ComboAttack
+    Goto See
+  Death:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    Goto "Super::Death"
+  Death.ZorchPistol:
+  Death.Zorch:
+  Death.ZorchKamikaze:
+  Death.PhasingZorch:
+  Death.ZorchSpectral:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    Goto "Super::Death.Zorch"
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    Goto "Super::Ice"
+  }
+}
+
+ACTOR CacolanternBall
+{
+  SpawnID 219
+  Radius 6
+  Height 8
+  Speed 20
+  Damage 5
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  SeeSound "caco/attack"
+  DeathSound "caco/shotx"
+  States
+  {
+  Spawn:
+    BAL8 AB 4 Bright
+    Loop
+  Death:
+    BAL8 CDE 6 Bright
+    Stop
+  }
+}
