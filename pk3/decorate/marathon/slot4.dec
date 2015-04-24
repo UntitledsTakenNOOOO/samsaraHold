@@ -388,7 +388,7 @@ actor MarathonGrenade
         
       Death:
         TNT1 A 0 A_NoGravity
-        XPLD A 4 Bright A_Explode(70+random(0, 20), 128)
+        XPLD A 4 Bright A_Explode(70+random(0,20), 128)
         XPLD B 4 Bright
         XPLD C 4 Bright
         XPLD D 4 Bright
@@ -407,7 +407,8 @@ actor MarathonGrenadeCoop : MarathonGrenade
     {
       Death:
         TNT1 A 0 A_NoGravity
-        XPLD A 4 Bright A_Explode(80+random(0, 20), 128)
+        XPLD A 0 Bright A_Explode(random(0,20), 96, 1)
+        XPLD A 4 Bright A_Explode(70, 96, 1, 1, 96)
         XPLD B 4 Bright
         XPLD C 4 Bright
         XPLD D 4 Bright

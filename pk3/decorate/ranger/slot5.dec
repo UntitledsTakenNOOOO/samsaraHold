@@ -368,7 +368,7 @@ actor QuakeRocketCoopQuad: QuakeRocketQuad
 {
     +THRUSPECIES
     Species "Player"
-        Damage (Random(90,150)
+        Damage (Random(90,150))
 }
 
 actor QuakeRocketCoop2: QuakeRocket

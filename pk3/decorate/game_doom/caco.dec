@@ -137,10 +137,9 @@ actor CacodemonBall2 : CacodemonBall replaces CacodemonBall
 actor NightmareCaco : Cacodemon2
 {
   Health 700
-  Speed 6
   RenderStyle Add
   Alpha 0.5
-  MeleeDamage 7
+  MeleeDamage 9
   MissileType "CacolanternBall"
   Translation "168:191=192:207", "192:207=168:191", "16:31=192:199", "32:63=200:207"
   HitObituary "%o was snuck up on by the Nightmare Cacodemon." 

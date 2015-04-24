@@ -2200,7 +2200,8 @@ actor RedSparkle
   height 2
   radius 1
   speed 1.0
-  +MISSILE +NOINTERACTION
+  PROJECTILE
+  +NOCLIP
   renderstyle Add
   alpha 0.9
   Scale 0.5

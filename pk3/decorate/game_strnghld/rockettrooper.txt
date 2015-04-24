@@ -233,7 +233,7 @@ actor Cell2: CustomInventory
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Cell",20)
+        TNT1 A 0 A_GiveInventory("Cell",10)
         stop
 
       PickupFail:

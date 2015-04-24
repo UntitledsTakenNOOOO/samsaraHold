@@ -16,7 +16,7 @@ actor "Timon's Axe" : FWeapAxe
     +WEAPON.MELEEWEAPON
     +INVENTORY.UNDROPPABLE
     +PIERCEARMOR
-    +FOILINVUL
+    //+FOILINVUL
     States
     {
       Spawn:
@@ -180,5 +180,5 @@ actor AxePuffGlow2 : AxePuffGlow replaces AxePuffGlow
 actor BlankPuff4 : BlankPuff
 {
     DamageType "TimonsAxe"
-    +FOILINVUL
+    //+FOILINVUL
 }

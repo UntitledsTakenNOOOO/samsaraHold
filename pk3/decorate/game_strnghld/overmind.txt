@@ -388,11 +388,12 @@ actor OvermindPyroShot : PyroShot
   +DONTREFLECT
 }
 
-actor IHateFOILINVUL : PowerProtection //Fustol, Timon's Axe, Flechette, Lava Nails, Dammit.
+actor IHateFOILINVUL : PowerProtection //Fustol, Timon's Axe, Lava Nails, Dammit.
 {
 	Powerup.Duration 0x7FFFFFFF
 	DamageFactor "Mace", 0
 	DamageFactor "TimonsAxe", 0
+	DamageFactor "FaithInHumanity", 0
 	DamageFactor "PoisonCloud", 0
 	DamageFactor "MarathonFusion", 0
 	DamageFactor "QuakeFire", 0
