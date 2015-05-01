@@ -2829,17 +2829,20 @@ ACTOR PowerMorphPlayer : PowerMorph
 
 actor PowerOSPDamage : PowerDamage {
   damagefactor "normal", 4
+  Powerup.Duration -65
 }
 actor PowerOSPSpeed : PowerSpeed {
   Speed 2.0
+  Powerup.Duration -65
 }
 
 actor OSPInv : PowerupGiver {
   +INVENTORY.AUTOACTIVATE
   +INVENTORY.ALWAYSPICKUP
   Inventory.MaxAmount 0
-  Powerup.Duration -120
+  Powerup.Duration -65
   Powerup.Type "Invulnerable"
+  Powerup.Mode Reflective
   Powerup.Color GoldMap
   States
   {
@@ -2852,7 +2855,7 @@ actor OSPQuad : PowerupGiver {
   +INVENTORY.AUTOACTIVATE
   +INVENTORY.ALWAYSPICKUP
   Inventory.MaxAmount 0
-  Powerup.Duration -120
+  Powerup.Duration -65
   Powerup.Type "OSPDamage"
   Powerup.color "FF 00 00",0.35
   States
@@ -2866,7 +2869,7 @@ actor OSPSpeed : PowerupGiver {
   +INVENTORY.AUTOACTIVATE
   +INVENTORY.ALWAYSPICKUP
   Inventory.MaxAmount 0
-  Powerup.Duration -120
+  Powerup.Duration -65
   Powerup.Type "OSPSpeed"
   States
   {
@@ -2879,7 +2882,7 @@ actor OSPFlight : PowerupGiver {
   +INVENTORY.AUTOACTIVATE
   +INVENTORY.ALWAYSPICKUP
   Inventory.MaxAmount 0
-  Powerup.Duration -120
+  Powerup.Duration -65
   Powerup.Type "Flight"
   States
   {
@@ -2888,7 +2891,32 @@ actor OSPFlight : PowerupGiver {
     Loop
   }
 }
-
+actor OSPInfiniteAmmo : PowerupGiver {
+  +INVENTORY.AUTOACTIVATE
+  +INVENTORY.ALWAYSPICKUP
+  Inventory.MaxAmount 0
+  Powerup.Duration -65
+  Powerup.Type "InfiniteAmmo"
+  States
+  {
+  Spawn:
+    MEGA A 6
+    Loop
+  }
+}
+actor OSPDoubleFiringSpeed : PowerupGiver {
+  +INVENTORY.AUTOACTIVATE
+  +INVENTORY.ALWAYSPICKUP
+  Inventory.MaxAmount 0
+  Powerup.Duration -65
+  Powerup.Type "DoubleFiringSpeed"
+  States
+  {
+  Spawn:
+    MEGA A 6
+    Loop
+  }
+}
 actor OSPHealth : Health {
   Inventory.Amount 300
   Inventory.MaxAmount 300
@@ -2914,10 +2942,13 @@ actor IWinButtonItem : CustomInventory 23475
       IWBP A -1 BRIGHT
       stop
     Use:
+      TNT1 A 0 ACS_Execute(936)
       TNT1 A 0 A_GiveInventory("OSPInv")
       TNT1 A 0 A_GiveInventory("OSPQuad")
       TNT1 A 0 A_GiveInventory("OSPSpeed")
       TNT1 A 0 A_GiveInventory("OSPFlight")
+      TNT1 A 0 A_GiveInventory("OSPInfiniteAmmo")
+      TNT1 A 0 A_GiveInventory("OSPDoubleFiringSpeed")
       TNT1 A 0 A_GiveInventory("OSPHealth")
       TNT1 A 0 A_GiveInventory("SuperShield")
       stop
