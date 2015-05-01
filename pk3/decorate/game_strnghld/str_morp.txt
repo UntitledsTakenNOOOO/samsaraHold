@@ -179,7 +179,7 @@ ACTOR TerminatorBlaster2
    Height 12
    Speed 35
    FastSpeed 45
-   Damage 8
+   Damage 10
    DamageType "MarineAlly"
    SpawnID 251
    PROJECTILE
@@ -196,18 +196,18 @@ ACTOR TerminatorBlaster2
       BLST A 1 Bright 
       loop
    Death:
-      BLST B 6 Bright A_Explode(64,128,0)
+      BLST B 6 Bright A_Explode(64,128,0,0,96)
       BLST CDEFGHIJKL 3 Bright 
       stop
    }
 }
-ACTOR Redstar2 : MageStaffFX2 //Totally hacky.
+ACTOR Redstar2 //: MageStaffFX2 //WORKS IN ZANDRONUM, HELL YES
 {
     Radius 10
     Height 20
     Speed 30
     FastSpeed 40
-    Damage 4
+    Damage 8
     DamageType "MarineAlly"
     Scale 0.6
     +SEEKERMISSILE
@@ -223,41 +223,41 @@ ACTOR Redstar2 : MageStaffFX2 //Totally hacky.
     States
     {
     Spawn:
-        STAX A 0 Bright A_MStaffTrack
+        STAX A 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX A 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        //STAX A 0 Bright A_MStaffTrack
+        STAX A 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX A 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX A 0 Bright A_MStaffTrack
+        STAX A 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX A 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        //STAX A 0 Bright A_MStaffTrack
+        STAX A 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX A 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX B 0 Bright A_MStaffTrack
+        STAX B 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX B 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        //STAX B 0 Bright A_MStaffTrack
+        STAX B 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX B 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX B 0 Bright A_MStaffTrack
+        STAX B 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX B 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        //STAX B 0 Bright A_MStaffTrack
+        STAX B 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX B 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX C 0 Bright A_MStaffTrack
+        STAX C 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX C 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        //STAX C 0 Bright A_MStaffTrack
+        STAX C 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX C 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX C 0 Bright A_MStaffTrack
+        STAX C 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX C 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        //STAX C 0 Bright A_MStaffTrack
+        STAX C 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX C 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX D 0 Bright A_MStaffTrack
+        STAX D 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX D 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        //STAX D 0 Bright A_MStaffTrack
+        STAX D 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX D 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX D 0 Bright A_MStaffTrack
+        STAX D 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX D 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        //STAX D 0 Bright A_MStaffTrack
+        STAX D 0 Bright A_SeekerMissile(2,10,SMF_LOOK)
 	STAX D 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
         Loop
     Death:
-        STAX E 3 Bright A_Explode(80,192,0)
+        STAX E 3 Bright A_Explode(80,160,0,0,120)
         STAX FGHIJKLMNO 3 Bright
         Stop
     }
@@ -268,7 +268,7 @@ ACTOR RedGrenade2
     Height 12
     Speed 30
     FastSpeed 45
-    Damage 4
+    Damage 8
     PROJECTILE
     +ThruSpecies
     Species "Player"
@@ -311,7 +311,7 @@ ACTOR grenadeblast2
     Radius 8
     Height 12
     Speed 6
-    Damage 3
+    Damage 2
     DamageType "MarineAlly"
     PROJECTILE
     RENDERSTYLE ADD

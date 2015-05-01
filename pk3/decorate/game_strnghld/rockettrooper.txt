@@ -222,8 +222,8 @@ ACTOR RocketGuy 3202
 
 actor Cell2: CustomInventory
 {
-    Inventory.PickupMessage "Picked up 20 rounds of Ammo 4."
-    Inventory.PickupSound "ammo/rocketsmall"
+    Inventory.PickupMessage "Picked up 10 rounds of Ammo 4."
+    Inventory.PickupSound "ammo/plasmasmall"
     States
     {
       Spawn:
