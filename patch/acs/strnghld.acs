@@ -217,6 +217,7 @@ int BriefExtraHID	= 1003;
 #define	S_OVERMIND_COMPLETE	918
 #define	S_HUD_COINS	919
 #define	S_HARD_MODE_CHECK	935
+#define	S_I_WIN_BUTTON	936
 
 #define S_HUD		915
 #define	S_TIMER		916
@@ -1759,8 +1760,8 @@ function void Setup (void)
 		MapParTime[14]	= 22*60;
 		MapParTime[15]	= 25*60;
 		MapParTime[16]	= 45*60;
-		MapParTime[17]	= 20*60;
-		MapParTime[18]	= 32*60;
+		MapParTime[17]	= 24*60;
+		MapParTime[18]	= 28*60;
 		MapParTime[19]	= 30*60;
 		MapParTime[20]	= 25*60;
 		MapParTime[21]	= 10*60;
@@ -2640,11 +2641,6 @@ function int GetPercentColorCore (int percent)
 // waited on.
 script S_CALLWAVE (int wave)
 {
-	if(TimeAttackMode) //Variable name is outdated, but it's not worth the trouble to change it.
-	{
-	HardScalerPlayerCount = 1; //If on replay mode, invoke additional player-scaling immediately, regardless of player count.
-	}
-
 	Setup();
 
 	if(EventScript)
@@ -3194,6 +3190,11 @@ script S_ENTER ENTER
 
 script S_LATEPLAYERS OPEN
 {
+  if(TimeAttackMode) //Variable name is outdated, but it's not worth the trouble to change it.
+  {
+  HardScalerPlayerCount = 1; //If on replay mode, invoke additional player-scaling immediately, regardless of player count.
+  }
+
   delay(LatePlayersDelay);
   
   PlayersAreLate++;
@@ -4173,4 +4174,13 @@ script S_HARD_MODE_CHECK (void)
 	}
 
 	SetResultValue(Result);
+}
+
+script S_I_WIN_BUTTON (void)
+{
+	SetMusic("");
+	SetMusic("WINNING");
+	delay(35*65);
+	SetMusic("*");
+	Terminate;
 }
