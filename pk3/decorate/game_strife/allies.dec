@@ -2140,9 +2140,11 @@ ACTOR FriendlyHunter
 	Death.MarathonFusion:
 	Death.Explosive:
 	Death.STBoss:
+	Death.STBossFactor:
+	Death.STBossOvermind:
 	Death.Inferno:
 	Death.Redblast:
-		HUNT K 15 Bright A_Explode(80+random(0,40),128)
+		HUNT K 15 Bright A_Explode(80+random(0,40),128,1,0,128)
 		HUNT L 5 Bright A_PlaySound("hunter/explode")
 		HUNT M 5 Bright
 		HUNT N 5 Bright A_NoBlocking
@@ -2305,17 +2307,17 @@ Actor VoreFirepod
     VOBA A 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
     VOBA A 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
     VOBA A 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
-    VOBA A 0 Bright A_SeekerMissile(60, 90)
+    VOBA A 0 Bright A_SeekerMissile(90, 90, SMF_LOOK, 255, 8)
     VOBA B 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
     VOBA B 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
     VOBA B 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
     VOBA B 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
-    VOBA B 0 Bright A_SeekerMissile(60, 90)
+    VOBA B 0 Bright A_SeekerMissile(90, 90, SMF_LOOK, 255, 8)
     VOBA C 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
     VOBA C 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
     VOBA C 0 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
     VOBA C 1 Bright A_SpawnItemEx("VoreFirepodTrail", random(5, -5), 0, random(5, -1), 0, 0, 0, 180)
-    VOBA C 0 Bright A_SeekerMissile(60, 90)
+    VOBA C 0 Bright A_SeekerMissile(90, 90, SMF_LOOK, 255, 8)
     Loop
   Death:
     VOBA D 0 Bright A_Explode(64, 128)
