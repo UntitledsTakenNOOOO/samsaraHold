@@ -21,19 +21,19 @@ int SpectralTogglers[SIGILCOUNT] =
 
 int BeaconMonsters[CLASSCOUNT] = 
 {
-    "FriendlyDoomImp",
+    "FriendlyMarineSpawner",
     "FriendlyFlemoid",
-    "FriendlyNitrogolem",
+    "FriendlyNitrogolemSpawner",
     "FriendlyNazi",
     "FriendlyAfrit",
-    "FriendlyAlienTrooper",
+    "FriendlyAlienSpawner",
     "FriendlyPfhorTrooper",
     "FriendlyGrunt",
 };
 
 int SuperBeaconMonsters[CLASSCOUNT] = 
 {
-    "FriendlyBelphegor",
+    "FriendlyEliteMarineSpawner",
     "FriendlyFlemoidusMaximus",
     "FriendlyIronlich",
     "FriendlyWolfensteinSS",
