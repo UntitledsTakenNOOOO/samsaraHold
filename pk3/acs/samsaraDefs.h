@@ -115,7 +115,8 @@ samsara_noinvuln 0/1: Toggles whether Invulnerability spawns.\n\
 samsara_ban[class] 0/1: Forbids players from playing certain classes. bandoomguy for Doomguy, banchex for Chex Warrior, etc.\n\
 samsara_lmsrules 0/1: For players who want Rocket Arena-style showdowns or just to spawn with all weapons.\n\
 samsara_[class]damage -10-30: Adjusts the character's damage multiplier.\n\
-samsara_[class]defense -10-20: Adjusts the character's defense multiplier.";
+samsara_[class]defense -10-20: Adjusts the character's defense multiplier.\n\
+samsarahold_allymarines 0/1: Controls what Reinforcement Unit is used.";
 
 int HELPSTR_CL = 
 "Likewise, there are several clientside console variables, including:\n\
@@ -128,8 +129,8 @@ samsara_cl_vanilladoom 0/1: Toggles the vanilla weapon animations for Doomguy.\n
 samsara_cl_wolfmove 0/1: Toggles classic Wolfenstein movement on B.J. Blazkowicz.\n\
 samsara_cl_bloodyhell -1-2: Fancy Clientside blood effects. Modes are None, Nashgore, Brutal, and Happyfun.\n\
 samsarahold_cl_strweapons 0/1: Toggles stronghold graphics on Doom Weapons.\n\
-samsarahold_cl_dukemusic 0/1: Toggles amazing duke nukem remix music near the end of the mission.";
-
+samsarahold_cl_dukemusic 0/1: Toggles duke nukem remix music near the end of the mission.\n\
+samsarahold_cl_turnthatdamnalarmoff 0/1: Makes the goddamn alarm shut up, if it's getting too continuous.";
 
 int LMSArmors[LMSMODES] = 
 {

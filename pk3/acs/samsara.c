@@ -392,11 +392,17 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is
         if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
         if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
         break;
-  case 12:
+
+    case 12:
         result = GetCVar("samsara_cl_bloodyhell");
         break;
+
+    case 13:
+        if(GetCvar("samsarahold_cl_turnthatdamnalarmoff") == 0) { SetActorState(0,"ScrewYouImMakingNoise"); }
+	break;
      }  
-    SetResultValue(result);
+
+     SetResultValue(result);
 }
 
 script SAMSARA_GETSETTINGS (void) net
