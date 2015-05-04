@@ -675,7 +675,7 @@ actor "Thunderbolt": InstantSwitchWeapon
         goto Ready  // you're probably dead now
 
       Flash:
-        TNT1 A 0 ACS_ExecuteAlways(312, 0, -66, 0, 3)
+        //TNT1 A 0 ACS_ExecuteAlways(312, 0, -66, 0, 3)
         TNT1 A 2 A_Light2
         TNT1 A 1 A_Light1
         goto LightDone
