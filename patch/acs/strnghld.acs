@@ -3190,11 +3190,6 @@ script S_ENTER ENTER
 
 script S_LATEPLAYERS OPEN
 {
-  if(TimeAttackMode) //Variable name is outdated, but it's not worth the trouble to change it.
-  {
-  HardScalerPlayerCount = 1; //If on replay mode, invoke additional player-scaling immediately, regardless of player count.
-  }
-
   delay(LatePlayersDelay);
   
   PlayersAreLate++;
