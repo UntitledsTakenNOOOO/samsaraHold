@@ -286,6 +286,14 @@ script SAMSARA_OPEN open
         { ConsoleCommand("set samsara_vanillaquake 0");
         ConsoleCommand("archivecvar samsara_vanillaquake"); }
 
+        if (!GetCVar("samsarahold_allymarines"))
+        { ConsoleCommand("set samsarahold_allymarines 0");
+        ConsoleCommand("archivecvar samsarahold_allymarines"); }
+
+        if (!GetCVar("samsarahold_cl_turnthatdamnalarmoff"))
+        {   ConsoleCommand("set samsarahold_cl_turnthatdamnalarmoff 0");
+        ConsoleCommand("archivecvar samsarahold_cl_turnthatdamnalarmoff"); }
+
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
 
@@ -421,6 +429,9 @@ script SAMSARA_SPAWN (int respawning)
         
         if (GetCVar("samsara_vanillaquake") == 1) { GiveInventory("QuakeModeOn", 1); }
         else { TakeInventory("QuakeModeOn", 0x7FFFFFFF); }
+
+        if (GetCVar("samsarahold_allymarines") == 1) { GiveInventory("MarineModeOn", 1); }
+        else { TakeInventory("MarineModeOn", 0x7FFFFFFF); }
 
         if (GetCVar("samsara_dukesoundboard") == 1) { if (CheckInventory("DukeClass") == 1) {
                 GiveInventory("Soundboard - Boss Kill",1);
@@ -834,6 +845,10 @@ script SAMSARA_ENTER_CLIENT (void) clientside
         {   ConsoleCommand("set samsara_cl_printpickup 0");
         ConsoleCommand("archivecvar samsara_cl_printpickup"); }
 
+        if (!GetCVar("samsara_cl_bloodyhell"))
+        {   ConsoleCommand("set samsara_cl_bloodyhell 0");
+        ConsoleCommand("archivecvar samsara_cl_bloodyhell"); }
+
         if (!GetCVar("samsarahold_cl_strweapons"))
         {   ConsoleCommand("set samsarahold_cl_strweapons 0");
         ConsoleCommand("archivecvar samsarahold_cl_strweapons"); }
@@ -841,6 +856,10 @@ script SAMSARA_ENTER_CLIENT (void) clientside
         if (!GetCVar("samsarahold_cl_dukemusic"))
         {   ConsoleCommand("set samsarahold_cl_dukemusic 0");
         ConsoleCommand("archivecvar samsarahold_cl_dukemusic"); }
+
+        if (!GetCVar("samsarahold_cl_turnthatdamnalarmoff"))
+        {   ConsoleCommand("set samsarahold_cl_turnthatdamnalarmoff 0");
+        ConsoleCommand("archivecvar samsarahold_cl_turnthatdamnalarmoff"); }
     }
 
     for (i = 0; i < RESCOUNT; i++)

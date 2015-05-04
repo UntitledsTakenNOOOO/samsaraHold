@@ -41,6 +41,7 @@ actor InstagibModeOn: Boolean {}
 actor RJingModeOn: Boolean {}
 actor PistolModeOn: Boolean {}
 actor QuakeModeOn: Boolean {}
+actor MarineModeOn: Boolean {}
 actor ExpandedHud: Boolean {}
 actor DoomNoBFGAim: Boolean {}
 actor UsingDoEAmmo: Boolean {}

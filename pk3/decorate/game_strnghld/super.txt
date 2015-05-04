@@ -168,6 +168,7 @@ Actor SuperMarineItem : CustomInventory 25009
    	SMAR A -1 BRIGHT
     	stop
   Use:
+        TNT1 A 0 A_JumpIfInventory("MarineModeOn",  1, "MarineUse")
         TNT1 A 0 A_JumpIfInventory("DoomguyClass",  1, "UseDoom")
         TNT1 A 0 A_JumpIfInventory("ChexClass",     1, "UseChex")
         TNT1 A 0 A_JumpIfInventory("CorvusClass",   1, "UseHeretic")
@@ -210,6 +211,52 @@ Actor SuperMarineItem : CustomInventory 25009
       UseQuake:
         TNT1 A 0 A_FireCustomMissile("StrifeBeaconQuake2", 0, 0)
         stop
+
+  MarineUse:
+	TNT1 A 0 A_JumpIfInventory("SPModeOn",      1, "MarineUseRandom")
+        TNT1 A 0 A_JumpIfInventory("DoomguyClass",  1, "MarineUseDoom")
+        TNT1 A 0 A_JumpIfInventory("ChexClass",     1, "MarineUseChex")
+        TNT1 A 0 A_JumpIfInventory("CorvusClass",   1, "MarineUseHeretic")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",   1, "MarineUseWolf")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",    1, "MarineUseHexen")
+        TNT1 A 0 A_JumpIfInventory("DukeClass",     1, "MarineUseDuke")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "MarineUseMarathon")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass",    1, "MarineUseQuake")
+  MarineUseRandom:
+	TNT1 A 0 A_Jump(256,"MarineUseDoom","MarineUseChex","MarineUseHeretic","MarineUseWolf","MarineUseHexen","MarineUseDuke","MarineUseMarathon","MarineUseQuake")
+	Loop
+  MarineUseDoom:
+        TNT1 A 1 A_SpawnItem("TeleportFog", 64, 16, 0, 1)
+	TNT1 A 0 A_SpawnItem("STMarineDoomSlot7", 64, 16, 0, 0)
+  	stop
+  MarineUseChex:
+        TNT1 A 1 A_SpawnItem("TeleportFog", 64, 16, 0, 1)
+	TNT1 A 0 A_SpawnItem("STMarineChexSlot7", 64, 16, 0, 0)
+  	stop
+  MarineUseHeretic:
+        TNT1 A 1 A_SpawnItem("TeleportFog", 64, 16, 0, 1)
+	TNT1 A 0 A_SpawnItem("STMarineHereticSlot7", 64, 16, 0, 0)
+  	stop
+  MarineUseWolf:
+        TNT1 A 1 A_SpawnItem("TeleportFog", 64, 16, 0, 1)
+	TNT1 A 0 A_SpawnItem("STMarineWolfSlot7", 64, 16, 0, 0)
+  	stop
+  MarineUseHexen:
+        TNT1 A 1 A_SpawnItem("TeleportFog", 64, 16, 0, 1)
+	TNT1 A 0 A_SpawnItem("STMarineHexenSlot7", 64, 16, 0, 0)
+  	stop
+  MarineUseDuke:
+        TNT1 A 1 A_SpawnItem("TeleportFog", 64, 16, 0, 1)
+	TNT1 A 0 A_SpawnItem("STMarineDukeSlot7", 64, 16, 0, 0)
+  	stop
+  MarineUseMarathon:
+        TNT1 A 1 A_SpawnItem("TeleportFog", 64, 16, 0, 1)
+	TNT1 A 0 A_SpawnItem("STMarineMarathonSlot7", 64, 16, 0, 0)
+  	stop
+  MarineUseQuake:
+        TNT1 A 1 A_SpawnItem("TeleportFog", 64, 16, 0, 1)
+	TNT1 A 0 A_SpawnItem("STMarineQuakeSlot7", 64, 16, 0, 0)
+  	stop
     }
 }
 
