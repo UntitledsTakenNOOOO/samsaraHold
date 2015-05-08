@@ -190,13 +190,14 @@ actor BlasterFX1C : BlasterFX1B { +THRUSPECIES Species "Player" }
 
 actor Ripper2 : Ripper
 {
-    Speed 20
-    Radius 4
-    Height 4
+    Speed 28
+    Radius 1
+    Height 1
     +MISSILE
     -NOCLIP
     +NOBOSSRIP
     +THRUSPECIES
+    +STRIFEDAMAGE
     Species "Player"
     DONTHURTSHOOTER
     Decal HImpScorch
