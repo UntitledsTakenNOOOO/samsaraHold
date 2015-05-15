@@ -137,8 +137,8 @@ actor CacodemonBall2 : CacodemonBall replaces CacodemonBall
 actor NightmareCaco : Cacodemon2
 {
   Health 700
-  RenderStyle Add
-  Alpha 0.5
+  RenderStyle translucent
+  Alpha 0.75
   MeleeDamage 9
   MissileType "CacolanternBall"
   BloodColor Red
