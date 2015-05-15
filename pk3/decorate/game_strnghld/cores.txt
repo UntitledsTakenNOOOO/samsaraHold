@@ -5120,14 +5120,32 @@ actor AlarmSounder2 replaces AlarmSounder 21235
 		Loop
 	See:
 		TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,13)
-		//TNT1 A 1 A_PlaySoundEx("AMB16", "Auto", 0, 1)
-	AlrightImShuttingUp: //Intentional Fallthrough
-		TNT1 A 1
-		goto spawn
-	ScrewYouImMakingNoise:
-		TNT1 A 1 A_PlaySoundEx("AMB16", "Auto", 0, 1)
+		TNT1 A 1 A_SpawnItemEx("AlarmSounding",0,0,0,0,0,0,0,0)
 		TNT1 A 55 //Delay
 		goto spawn
+	}
+}
+
+actor AlarmSounding
+{
+	-SOLID
+	-SHOOTABLE
+	+NOBLOCKMAP
+	+CLIENTSIDEONLY
+
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		TNT1 A 1
+	AlrightImShuttingUp: //Intentional Fallthrough
+		TNT1 A 1 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,13)
+		TNT1 A 1
+		Stop
+	ScrewYouImMakingNoise:
+		TNT1 A 1 A_PlaySoundEx("AMB16", "Auto", 0, 1)
+		TNT1 A 1
+		Stop
 	}
 }
 /*
