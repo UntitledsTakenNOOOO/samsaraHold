@@ -1236,6 +1236,8 @@ Actor FakeBFGBall
   DamageType "MarineAlly"
   PROJECTILE
   +RANDOMIZE
+  +THRUSPECIES
+  Species "Player"
   Decal BFGLightning
   States
   {
@@ -1348,7 +1350,9 @@ ACTOR STMarineHexenSlot7 : STMarineHexenSlot2
 actor HolyMissileFake: HolyMissile
 {
     DamageType "MarineAlly"
-    
+    +THRUSPECIES
+    Species "Player"
+   
     States
     {
       Spawn:
@@ -1421,7 +1425,7 @@ actor SpearBoltWeak: SpearBolt
 
 actor SpearShotMini2Weak: SpearShotMini2
 {
-    DamageType "BJSpear"
+    DamageType "MarineAlly"
     States
     {
       Spawn:
@@ -1439,7 +1443,7 @@ actor SpearShotMini2Weak: SpearShotMini2
 
 actor SpearShotMiniWeak: SpearShotMini
 {
-    DamageType "BJSpear"
+    DamageType "MarineAlly"
     States
     {
       Spawn:
@@ -1514,7 +1518,7 @@ ACTOR STMarineMarathonSlot7 : STMarineMarathonSlot2
     PLAY EEE 10 A_FaceTarget
     TNT1 A 0 A_PlayWeaponSound("wmc/beep1")
     TNT1 A 0 A_CustomMissile("WMCRailLevel1Marine",32,0,0)
-    TNT1 F 6 BRIGHT A_CustomMissile("WMCBeamMissile",32,0,0)
+    PLAY F 6 BRIGHT A_CustomMissile("WMCBeamMissile",32,0,0)
     PLAY FFF 5 BRIGHT A_FaceTarget
     PLAY E 8 A_FaceTarget
     Goto See
@@ -1525,7 +1529,7 @@ ACTOR STMarineMarathonSlot7 : STMarineMarathonSlot2
     PLAY EEE 10 A_FaceTarget
     TNT1 A 0 A_PlayWeaponSound("wmc/beep1")
     TNT1 A 0 A_CustomMissile("WMCRailLevel2Marine",32,0,0)
-    TNT1 F 6 BRIGHT A_CustomMissile("WMCBeamMissile",32,0,0)
+    PLAY F 6 BRIGHT A_CustomMissile("WMCBeamMissile",32,0,0)
     PLAY FFF 5 BRIGHT A_FaceTarget
     PLAY E 8 A_FaceTarget
     Goto See
@@ -1539,7 +1543,7 @@ ACTOR STMarineMarathonSlot7 : STMarineMarathonSlot2
     TNT1 A 0 A_PlayWeaponSound("wmc/beep2")
     PLAY EEE 10 A_FaceTarget
     TNT1 A 0 A_CustomMissile("WMCRailLevel3Marine",32,0,0)
-    TNT1 F 6 BRIGHT A_CustomMissile("WMCBeamMissile",32,0,0)
+    PLAY F 6 BRIGHT A_CustomMissile("WMCBeamMissile",32,0,0)
     PLAY FFF 5 BRIGHT A_FaceTarget
     PLAY E 8 A_FaceTarget
     Goto See
