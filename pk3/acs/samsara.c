@@ -398,7 +398,7 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is
         break;
 
     case 13:
-        if(GetCvar("samsarahold_cl_turnthatdamnalarmoff") == 0) { SetActorState(0,"AlrightImShuttingUp"); }
+        if(GetCvar("samsarahold_cl_turnthatdamnalarmoff") == 1) { SetActorState(0,"AlrightImShuttingUp"); }
 	break;
      }  
 
