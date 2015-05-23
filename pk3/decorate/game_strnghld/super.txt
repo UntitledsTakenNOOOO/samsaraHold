@@ -285,7 +285,10 @@ Actor STMarineBFG
   -CountKill
   -ActivateMCross
   species "Player"
+        damagefactor "EnemyInfightDamage", 0
+        damagefactor "MarineAlly", 0
         damagefactor "Zorch", 0
+        damagefactor "PhasingZorch", 0
         damagefactor "Explosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
@@ -399,7 +402,10 @@ Actor STMarinePyroCannon
 	Mass 10
 	Health 300
 	Speed 12
+        damagefactor "EnemyInfightDamage", 0
+        damagefactor "MarineAlly", 0
         damagefactor "Zorch", 0
+        damagefactor "PhasingZorch", 0
         damagefactor "Explosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
@@ -607,7 +613,10 @@ Actor STMarineDevastator
   -ActivateMCross
   -TeleStomp
   species "Player"
+        damagefactor "EnemyInfightDamage", 0
+        damagefactor "MarineAlly", 0
         damagefactor "Zorch", 0
+        damagefactor "PhasingZorch", 0
         damagefactor "Explosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0

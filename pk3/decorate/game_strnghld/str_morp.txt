@@ -13,6 +13,7 @@ ACTOR MorphedPlayer : PlayerPawn
   player.viewheight 64
   player.morphweapon "TerminatorWeapon"
         damagefactor "Zorch", 0
+        damagefactor "PhasingZorch", 0
         damagefactor "Explosive", 0
         damagefactor "NotQuadded", 0
         damagefactor "WMCNade", 0
@@ -22,6 +23,10 @@ ACTOR MorphedPlayer : PlayerPawn
         damagefactor "BFGSplash", 0
         damagefactor "BJSpear", 0
         damagefactor "PoisonCloud", 0
+        damagefactor "EnemyInfightDamage", 0
+        damagefactor "MarineAlly", 0
+        damagefactor "BossFactor", 0
+        damagefactor "CoreFriendly", 0
 	Species "Player"
   +THRUSPECIES
   +NOSKIN

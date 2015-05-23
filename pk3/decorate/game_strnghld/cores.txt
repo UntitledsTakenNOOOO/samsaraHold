@@ -30,6 +30,7 @@ actor FakeGoalBase2 replaces FakeGoalBase
 	
         damageFactor "Wraithverge", 0
         damagefactor "Zorch", 0
+        damagefactor "PhasingZorch", 0
         damagefactor "Explosive", 0
 	Damagefactor "FireExplosive", 0
         damagefactor "NotQuadded", 0
@@ -4878,6 +4879,7 @@ actor PowerCore2 replaces PowerCore 21234
   Damagefactor "QuakePistol", 0
   Damagefactor "MightyBoot", 0
   damagefactor "Zorch", 0
+  damagefactor "PhasingZorch", 0
   damagefactor "Explosive", 0
   Damagefactor "FireExplosive", 0
   damagefactor "NotQuadded", 0
@@ -4993,6 +4995,7 @@ Actor OvermindCore2 replaces OvermindCore 29952
     Damagefactor "QuakePistol", 0
     Damagefactor "MightyBoot", 0
     damagefactor "Zorch", 0
+    damagefactor "PhasingZorch", 0
     damagefactor "Explosive", 0
     Damagefactor "FireExplosive", 0
     damagefactor "NotQuadded", 0
