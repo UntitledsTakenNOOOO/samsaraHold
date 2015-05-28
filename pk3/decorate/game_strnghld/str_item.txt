@@ -1413,6 +1413,9 @@ actor SpearBoltWeak: SpearBolt
     DamageType "MarineAlly"
     States
     {
+      Spawn:
+        SPB1 ABABABAB 3 BRIGHT A_SpawnItemEx("SpearShotTrail", 0, 0, 0)
+        goto Death
       Death:
         SPX1 A 0 A_Stop
         SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMiniWeak", 0, 0, random(-180, 180), 2, random(-25, 25))
