@@ -291,7 +291,7 @@ ACTOR STBoss 32767
 		Loop
 	CallingOfTheDamned:
 		BOSS E 0 A_Changeflag("NOPAIN",1)
-		BOSS E 0 A_JumpIfHealthLower(8000,"CallingOfTheDamned2")
+		BOSS E 0 A_JumpIfHealthLower(7500,"CallingOfTheDamned2")
 		BOSS E 0 A_AlertMonsters
 		BOSS E 0 A_CustomMissile("STBossAttack5B",64,0,Random(0,360))
 		BOSS E 3 A_FaceTarget
@@ -299,7 +299,7 @@ ACTOR STBoss 32767
 		BOSS E 4 A_FaceTarget
 		Goto CallingOfTheDamned+1
 	CallingOfTheDamned2:
-		BOSS F 0 A_JumpIfHealthLower(7500,"CallingOfTheDamned3")
+		BOSS F 0 A_JumpIfHealthLower(5000,"CallingOfTheDamned3")
 		BOSS E 0 A_AlertMonsters
 		BOSS F 0 A_CustomMissile("EruptionShot",64,0,Random(0,360))
 		BOSS E 0 A_CustomMissile("STBossAttack5B",64,0,Random(0,360))
@@ -309,7 +309,7 @@ ACTOR STBoss 32767
 		BOSS E 4 A_FaceTarget
 		Goto CallingOfTheDamned2
 	CallingOfTheDamned3:
-		BOSS G 0 A_JumpIfHealthLower(5000,"CallingOfTheDamned4")
+		BOSS G 0 A_JumpIfHealthLower(2500,"CallingOfTheDamned4")
 		BOSS G 0 A_AlertMonsters
 		BOSS G 3 A_FaceTarget
 		BOSS G 0 A_CustomMissile("STBossAttack5B",64,0,Random(0,360))
@@ -327,7 +327,6 @@ ACTOR STBoss 32767
 		BOSS G 0 A_CustomMissile("EruptionShot2",64,0,Random(0,360))
 		Goto CallingOfTheDamned3
 	CallingOfTheDamned4:
-		BOSS G 0 A_JumpIfHealthLower(2500,"CallingOfTheDamned5")
 		BOSS G 0 A_AlertMonsters
 		BOSS G 1 A_FaceTarget
 		BOSS G 0 A_CustomMissile("STFireEffect",64,0,Random(0,360))
