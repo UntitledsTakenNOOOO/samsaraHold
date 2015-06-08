@@ -29,7 +29,7 @@ DamageFactor "Wraithverge", 2.0
     DeathSound "Goat/death"
     ActiveSound "diablo2/goatman/idle"
     MeleeSound "baron/melee"
-    Obituary "\c[S3]%o \c[S3]was slaughtered by Azazel."
+    Obituary "\c[S3]%o \c[S3]was slaughtered by an Azazel."
     MinMissileChance 20
     MeleeDamage 16
     States

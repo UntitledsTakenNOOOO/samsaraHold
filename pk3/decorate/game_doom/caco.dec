@@ -143,8 +143,8 @@ actor NightmareCaco : Cacodemon2
   MissileType "CacolanternBall"
   BloodColor Red
   Translation "168:191=192:207", "192:207=168:191", "16:31=192:199", "32:63=200:207"
-  HitObituary "%o was snuck up on by the Nightmare Cacodemon." 
-  Obituary "%o couldn't dodge the Nightmare Cacodemon's fireball." 
+  HitObituary "%o was snuck up on by a Nightmare Cacodemon." 
+  Obituary "%o couldn't dodge a Nightmare Cacodemon's fireball." 
   States
   { 
   See:
