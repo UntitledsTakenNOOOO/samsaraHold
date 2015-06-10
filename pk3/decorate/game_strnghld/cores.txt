@@ -5122,7 +5122,10 @@ actor AlarmSounder2 replaces AlarmSounder 21235
 		TNT1 A 1 A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360,"See")
 		Loop
 	See:
-		TNT1 A 1 A_SpawnItemEx("AlarmSounding",0,0,0,0,0,0,0,0)
+		//TNT1 A 1 A_SpawnItemEx("AlarmSounding",0,0,0,0,0,0,0,0)
+		//ALARM WAS STUPIDLY BROKEN EVEN THOUGH I DID EVERYTHING RIGHT
+		//SO NOPE NO CLIENTSIDE ALARM FOR YOU BECAUSE DAMMIT ZANDRONUM
+		TNT1 A 1 A_PlaySoundEx("AMB16", "Auto", 0, 1)
 		TNT1 A 55 //Delay
 		goto spawn
 	}
