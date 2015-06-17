@@ -3133,7 +3133,7 @@ script S_ENTER ENTER
 			delay(35);	// Placed at beginning of loop, so that there is no chance this
 					// becomes a runaway script
 
-			if(!CheckWeapon("DEShrinkFist"))
+			if(!CheckWeapon("DEShrinkFist")&&!CheckWeapon("VotingDevice"))
 			{
 				Print(s:"You're lucky you didn't get shot for holding a loaded weapon here!");
 				restart;	// Clear inventory again
