@@ -290,9 +290,9 @@ script SAMSARA_OPEN open
         { ConsoleCommand("set samsarahold_allymarines 0");
         ConsoleCommand("archivecvar samsarahold_allymarines"); }
 
-        if (!GetCVar("samsarahold_cl_turnthatdamnalarmoff"))
-        {   ConsoleCommand("set samsarahold_cl_turnthatdamnalarmoff 0");
-        ConsoleCommand("archivecvar samsarahold_cl_turnthatdamnalarmoff"); }
+        if (!GetCVar("samsarahold_hardmode"))
+        { ConsoleCommand("set samsarahold_hardmode 0");
+        ConsoleCommand("archivecvar samsarahold_hardmode"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");

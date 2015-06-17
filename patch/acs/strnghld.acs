@@ -3872,9 +3872,8 @@ function void clearHud (void)
 
 script S_TIMER open
 {
-	if(MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)]!=0)
+	if(MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)]!=0 || GetCvar("samsarahold_hardmode"))
 		TimeAttackMode = TRUE;
-
 
 	while( TRUE )
 	{

@@ -116,7 +116,8 @@ samsara_ban[class] 0/1: Forbids players from playing certain classes. bandoomguy
 samsara_lmsrules 0/1: For players who want Rocket Arena-style showdowns or just to spawn with all weapons.\n\
 samsara_[class]damage -10-30: Adjusts the character's damage multiplier.\n\
 samsara_[class]defense -10-20: Adjusts the character's defense multiplier.\n\
-samsarahold_allymarines 0/1: Controls what Reinforcement Unit is used.";
+samsarahold_allymarines 0/1: Controls what Reinforcement Unit is used.\n\
+samsarahold_hardmode 0/1: Forces Hard Mode on - does not effect replay mode.";
 
 int HELPSTR_CL = 
 "Likewise, there are several clientside console variables, including:\n\
