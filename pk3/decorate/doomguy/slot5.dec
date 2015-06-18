@@ -206,6 +206,7 @@ ACTOR Landmine
    ExplosionRadius 160
    DONTHURTSHOOTER
    Speed 0
+   Damagetype "Explosive"
    +NOBLOOD
    -SHOOTABLE
    +MISSILE
@@ -236,6 +237,7 @@ ACTOR Landmine2
    SeeSound "weapons/tink"
    DONTHURTSHOOTER
    Speed 15
+   Damagetype "Explosive"
    +NOBLOOD
    -SHOOTABLE
    +MISSILE
