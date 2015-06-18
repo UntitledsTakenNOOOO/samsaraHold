@@ -1603,6 +1603,7 @@ actor WMCRailLevel2Marine: WMCRailLevel2
 }
 actor WMCRailLevel3Marine: WMCRailLevel3
 {
+    DamageType "MarineAlly"
     States
     {
       Spawn:
