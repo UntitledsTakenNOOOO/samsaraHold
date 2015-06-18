@@ -13,8 +13,6 @@ actor QuakePlayer: PlayerPawn
     PainChance 255
     
     Species "Player"
-    -THRUSPECIES
-    -DONTBLAST
     
     Player.SoundClass "ranger"
     Player.Face "RNG"
@@ -49,6 +47,9 @@ actor QuakePlayer: PlayerPawn
         damagefactor "NotQuadded", 0.5
 	damagefactor "MarineAlly", 0
 	damagefactor "EnemyInfightDamage", 0
+
+	+THRUSPECIES
+	+DONTBLAST
 
     States
     {
