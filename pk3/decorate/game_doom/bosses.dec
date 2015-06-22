@@ -8,8 +8,8 @@ actor SpiderMastermind2 : Spidermastermind replaces SpidermastermindStun
     DamageFactor "CorvusHellstaffTomed", 0.2
     DamageFactor "Wraithverge", 2.0
     painchance "Stunner", 96
-    Height 96
-    Radius 96
+    Height 88
+    Radius 88
     +BOSSDEATH
     +DONTRIP
     +NOTDMATCH

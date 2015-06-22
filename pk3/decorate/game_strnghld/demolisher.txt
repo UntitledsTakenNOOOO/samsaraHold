@@ -25,8 +25,8 @@ DamageFactor "MarathonPlasma", 0.925
 spawnid 249
 Obituary "%o felt the power of the Spider-Demolisher."
 Health 6000
-Radius 96
-Height 96
+Radius 88
+Height 88
 Mass 1000
 Speed 16
 PainChance 20
