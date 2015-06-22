@@ -121,7 +121,7 @@ ACTOR Apprentice 30000
         APDP H 3 A_CustomMissile("AoDGhost",8,0,0)
         APDP I 3 A_Fall
         APDP JKL 2
-        APDP M -1
+        APDP M 3000
         Stop
     Raise:
         APDP ML 8
@@ -180,8 +180,8 @@ ACTOR AoDGhost
     Alpha 0.75
     +Noclip
     SEESOUND "aod/ghost"
-    DropItem "HereticStuffDump" 96
-    DropItem "HereticArmorDump" 96
+    DropItem "HereticStuffDump" 48
+    DropItem "HereticArmorDump" 12
     states
     {
     Spawn:
@@ -199,9 +199,9 @@ ACTOR MiniSpider 22290
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.5
    SpawnID 175
-   Radius 7
-   Height 15
-   Health 15
+   Radius 8
+   Height 16
+   Health 75
    Scale 0.25
    Translation 0
    MONSTER
@@ -216,18 +216,28 @@ ACTOR MiniSpider 22290
    OBITUARY "\c[K8]%o \c[K8]succumbed to the swarm."
    Speed 10
    Damage 0
-   MeleeDamage 1
+   MeleeDamage 2
    States
    {
    Spawn:
      MNTR AB 10 A_Look
      Loop
    See:
+     MNTR A 0 A_Jump(96,"See2","See2","See2","See3","See3","See4")
      MNTR ABCD 4 A_Chase
      Loop
+   See2:
+     MNTR ABCD 3 A_Chse
+     Goto See
+   See3:
+     MNTR ABCD 2 A_Chse
+     Goto See
+   See4:
+     MNTR ABCD 1 A_Chse
+     Goto See
    Melee:
-     MNTR VW 5 A_FaceTarget
-     MNTR X 5 A_MeleeAttack
+     MNTR VW 3 A_FaceTarget
+     MNTR X 6 A_MeleeAttack
      Goto See
    Death:
      TNT1 A 0 A_GiveToTarget("AwardItem", 1)
@@ -237,7 +247,7 @@ ACTOR MiniSpider 22290
      MNTS D 5
      MNTS C 5 A_NoBlocking
      MNTS B 5
-     MNTS A -1 A_BossDeath
+     MNTS A 3000 A_BossDeath
      Stop
    }
 }
@@ -249,16 +259,16 @@ ACTOR LargeSpider 22291
    DamageFactor "CorvusCrossbow", 1.15
    DamageFactor "DragonClaw", 1.5
    SpawnID 176
-   Radius 14
-   Height 30
+   Radius 16
+   Height 32
    Health 150
    Scale 0.50
    Translation 1
    MONSTER
    +FLOORCLIP
    +NOICEDEATH
-   DropItem "HereticStuffDump" 160
-   DropItem "HereticArmorDump" 160
+   DropItem "HereticStuffDump" 80
+   DropItem "HereticArmorDump" 20
    seesound "littlespider/sight"
    attacksound "littlespider/attack"
    painsound "littlespider/pain"
@@ -268,33 +278,40 @@ ACTOR LargeSpider 22291
    OBITUARY "\c[Y3]%o \c[Y3]succumbed to the swarm."
    Speed 20
    Damage 0
-   MeleeDamage 2
+   MeleeDamage 4
    States
    {
    Spawn:
      MNTR AB 10 A_Look
      Loop
    See:
+     MNTR A 0 A_Jump(80,"See2","See2","See2","See3")
      MNTR ABCD 4 A_Chase
      Loop
+   See2:
+     MNTR ABCD 3 A_Chse
+     Goto See
+   See3:
+     MNTR ABCD 2 A_Chse
+     Goto See
    Missile:
      MNTR A 10 A_FaceTarget
      MNTR A 0 A_SkullAttack
      MNTR ABCD 2
      Goto Missile+2
    Melee:
-     MNTR VW 5 A_FaceTarget
-     MNTR X 5 A_MeleeAttack
+     MNTR VW 4 A_FaceTarget
+     MNTR X 4 A_MeleeAttack
      Goto See
    Death:
-   TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+   TNT1 A 0 A_GiveToTarget("AwardItem", 3)
    TNT1 A 0 A_GiveToTarget("KillCount", 1)
      MNTS F 5
      MNTS E 5 A_Scream
      MNTS D 5
      MNTS C 5 A_NoBlocking
      MNTS B 5
-     MNTS A -1 A_BossDeath
+     MNTS A 3000 A_BossDeath
      Stop
    }
 }
@@ -357,7 +374,7 @@ states
        CULT J 4
        CULT K 4 A_NoBlocking
        CULT L 4
-       CULT M -1
+       CULT M 3000
        Stop
    XDeath:
        TNT1 A 0 A_GiveToTarget("AwardItem", 3)
@@ -367,7 +384,7 @@ states
        CULT O 5 A_XScream
        CULT P 5 A_NoBlocking
        CULT QRSTUV 5
-       CULT W -1
+       CULT W 3000
    Raise:
        CULT MLKJHI 5
        Goto See
@@ -412,8 +429,8 @@ Speed 12
 Damage 1
 MeleeDamage 8
 PainChance 32
-DropItem "HereticStuffDump" 160
-DropItem "HereticArmorDump" 160
+DropItem "HereticStuffDump" 80
+DropItem "HereticArmorDump" 20
 MONSTER
 +FloorClip
 +MissileMore
@@ -478,7 +495,7 @@ states
        INCX D 5 BRIGHT A_NoBlocking
        INCX D 0 BRIGHT A_SpawnItem("HS",0,32)
        INCX EFGHIJ 5 BRIGHT
-       INCX K -1
+       INCX K 3000
        Stop
    XDeath:
        TNT1 A 0 A_GiveToTarget("AwardItem", 8)
@@ -488,7 +505,7 @@ states
        INCA O 7 A_NoBlocking
        INCA P 7
        INCA Q 175
-       INCA Q -1
+       INCA Q 3000
        Stop
    Raise:
        INCA Q 0 A_KillChildren
@@ -512,8 +529,8 @@ Radius 30
 Height 50
 Mass 500
 MeleeDamage 7
-DropItem "HereticStuffDump" 160
-DropItem "HereticArmorDump" 160
+DropItem "HereticStuffDump" 80
+DropItem "HereticArmorDump" 20
 MONSTER
 +FloorClip
 +FireResist
@@ -576,7 +593,7 @@ states
        HDOG M 4
        HDOG N 4 A_NoBlocking
        HDOG OP 4
-       HDOG Q -1
+       HDOG Q 3000
        Stop
    Raise:
        HDOG QPONMLK 5
@@ -640,8 +657,8 @@ actor Vulgar : DoomImp 30127
   deathsound "monster/vuldth"
   activesound "monster/vulact"
   meleesound "monster/vulhit"
-  DropItem "HereticStuffDump" 128
-  DropItem "HereticArmorDump" 128
+  DropItem "HereticStuffDump" 64
+  DropItem "HereticArmorDump" 16
   MONSTER
   +FLOORCLIP
   +NOICEDEATH
@@ -680,7 +697,7 @@ actor Vulgar : DoomImp 30127
     VULG J 8 A_Scream
     VULG KL 6
     VULG M 6 A_NoBlocking
-    VULG N -1
+    VULG N 3000
     stop
   XDeath:
     TNT1 A 0 A_GiveToTarget("AwardItem", 3)
@@ -691,7 +708,7 @@ actor Vulgar : DoomImp 30127
     VULG Q 5
     VULG R 5 A_NoBlocking
     VULG STU 5
-    VULG V -1
+    VULG V 3000
     stop
   Raise:
     VULG ML 8
@@ -740,8 +757,8 @@ ACTOR ESoul 29012
   damage 5
   painchance 128
   renderstyle Add
-  DropItem "HereticStuffDump" 160
-  DropItem "HereticArmorDump" 160
+  DropItem "HereticStuffDump" 80
+  DropItem "HereticArmorDump" 20
   Alpha 0.4
   attacksound "skull/melee"
   PainSound "nightmare/pain"
@@ -924,7 +941,7 @@ ACTOR ChaingunCultist 29011
     BCUL I 5 A_Scream
     BCUL J 5 A_NoBlocking
     BCUL KLM 5
-    BCUL N -1
+    BCUL N 3000
     Stop
   XDeath:
     TNT1 A 0 A_GiveToTarget("AwardItem", 3)
@@ -934,7 +951,7 @@ ACTOR ChaingunCultist 29011
     BCUL P 5 A_XScream
     BCUL Q 5 A_NoBlocking
     BCUL RST 5
-    BCUL U -1
+    BCUL U 3000
     Stop
   Raise:
     BCUL NMLKJIH 5
@@ -982,8 +999,8 @@ ACTOR FattyX 25010
   DEATHSOUND "fatty/death"
   ACTIVESOUND "fatty/act"
   MONSTER
-  DropItem "HereticStuffDump" 128
-  DropItem "HereticArmorDump" 128
+  DropItem "HereticStuffDump" 64
+  DropItem "HereticArmorDump" 16
   +FloorClip
   +LongMeleeRange
   +MissileMore
@@ -1028,7 +1045,7 @@ ACTOR FattyX 25010
     BFAT N 9 A_Scream
     BFAT O 9 A_NoBlocking
     BFAT P 9
-    BFAT Q -1
+    BFAT Q 3000
     Stop
   Raise:
     BFAT QPONML 5
@@ -1108,8 +1125,8 @@ ACTOR ZombieX 31002
   PainChance 0
   Speed 9
   Radius 30
-  DropItem "HereticStuffDump" 160
-  DropItem "HereticArmorDump" 160
+  DropItem "HereticStuffDump" 80
+  DropItem "HereticArmorDump" 20
   Height 56
   Mass 400
   MeleeDamage 10
@@ -1153,7 +1170,7 @@ ACTOR ZombieX 31002
     BZOM K 4
     BZOM L 4 A_NoBlocking
     BZOM M 4
-    BZOM N -1
+    BZOM N 3000
     Stop
   Raise:
     BZOM NMLKJI 5
