@@ -23,7 +23,7 @@ DamageFactor "DragonClaw", 1.5
    +FLOORCLIP
    +NOICEDEATH
    Missiletype HellWarriorBall
-   Obituary "%o was tagged by the hell warrior's fireball."
+   Obituary "%o was tagged by a hell warrior's fireball."
    HitObituary "%o was torn apart by a hell warrior."
    States
    {
