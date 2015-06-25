@@ -227,13 +227,13 @@ ACTOR MiniSpider 22290
      MNTR ABCD 4 A_Chase
      Loop
    See2:
-     MNTR ABCD 3 A_Chse
+     MNTR ABCD 3 A_Chase
      Goto See
    See3:
-     MNTR ABCD 2 A_Chse
+     MNTR ABCD 2 A_Chase
      Goto See
    See4:
-     MNTR ABCD 1 A_Chse
+     MNTR ABCD 1 A_Chase
      Goto See
    Melee:
      MNTR VW 3 A_FaceTarget
@@ -289,10 +289,10 @@ ACTOR LargeSpider 22291
      MNTR ABCD 4 A_Chase
      Loop
    See2:
-     MNTR ABCD 3 A_Chse
+     MNTR ABCD 3 A_Chase
      Goto See
    See3:
-     MNTR ABCD 2 A_Chse
+     MNTR ABCD 2 A_Chase
      Goto See
    Missile:
      MNTR A 10 A_FaceTarget

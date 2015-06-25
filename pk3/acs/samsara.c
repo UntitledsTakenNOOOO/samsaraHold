@@ -934,6 +934,7 @@ script 204 (int bossmonologueshit)
 		}
         break;
 
+	//Not used
       case 6: // MEPHISTOPHELES
 	  if (GetCVar("samsara_nomonologues"))
 	  {
