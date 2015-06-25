@@ -13,22 +13,24 @@ ACTOR VotingDevice : DEFist
     PISG A 1 A_WeaponReady
     Loop
   Deselect:
-    PISG A 1 A_Lower
+    TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
+    TNT1 A 1 A_Lower
     Loop
   Select:
-    PISG A 1 A_Raise
+    TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Raise
+    TNT1 A 1 A_Raise
     Loop
   Fire:
-    PISG A 4
-    PISG B 6 ACS_ExecuteAlways(189)
-    PISG C 4
-    PISG B 5 A_TakeInventory("VotingDevice")
+    PISG A 3
+    PISG B 3 ACS_ExecuteAlways(189)
+    PISG C 3
+    PISG B 3 A_TakeInventory("VotingDevice")
     Goto Ready
   AltFire:
-    PISG A 4
-    PISG B 6 ACS_ExecuteAlways(190)
-    PISG C 4
-    PISG B 5 A_TakeInventory("VotingDevice")
+    PISG A 3
+    PISG B 3 ACS_ExecuteAlways(190)
+    PISG C 3
+    PISG B 3 A_TakeInventory("VotingDevice")
     Goto Ready
   Spawn:
     PIST A -1
