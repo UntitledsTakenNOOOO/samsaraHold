@@ -260,6 +260,7 @@ ACTOR CyberdemonMk2 32757
 		CYBR L 10
 		CYBR M 10 A_NoBlocking
 		CYBR NO 10
+		CYBR P 350
 		CYBR P 10 ACS_ExecuteWithResult(930,1,0,0)
 		CYBR P -1
 		Stop
