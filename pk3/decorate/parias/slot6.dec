@@ -116,7 +116,7 @@ actor CircleFlame1 : CircleFlame
 actor CFlameMissile2 : CFlameMissile replaces CFlameMissile
 {
     Damage 8
-    Speed 256
+    Speed 200
     +THRUSPECIES
     Species "Player"
     States
