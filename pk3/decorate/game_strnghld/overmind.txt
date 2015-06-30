@@ -68,7 +68,7 @@ ACTOR Overmind 16999
 		OYCL CCCCDDDD 4 A_Chase
 		Loop
       	See3:
-		OYCL A 0 A_TakeInventory("WeakenOvermind",1)
+		OYCL A 0 A_TakeInventory("WeakenOvermind",0x7FFFFFFF)
 		OYCL A 0 A_JumpIfHealthLower(20000,"See4")
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
 		OYCL A 0 A_Explode(32,384,0)
@@ -88,7 +88,7 @@ ACTOR Overmind 16999
 		OYCL CCCCDDDD 2 A_Chase
 		Loop
       	See5:
-		OYCL A 0 A_TakeInventory("ProtectOvermind",1)
+		OYCL A 0 A_TakeInventory("ProtectOvermind",0x7FFFFFFF)
 		OYCL A 0 A_GiveInventory("ProtectOvermindMore",1)
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
 		OYCL A 0 A_Explode(32,384,0)
