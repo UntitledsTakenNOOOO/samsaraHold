@@ -157,7 +157,7 @@ actor CrossbowFX12 : CrossbowFX1
 actor CrossbowFX22 : CrossbowFX2
 {
     DamageType "CorvusCrossbow"
-    Damage 10
+    Damage 16
     +THRUSPECIES
     Species "Player"
     Speed 42

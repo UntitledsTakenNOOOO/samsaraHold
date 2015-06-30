@@ -144,7 +144,7 @@ actor PhoenixShot : PhoenixFX1
 actor PhoenixShot2 : PhoenixShot { +THRUSPECIES Species "Player" }
 actor PhoenixFX2A : PhoenixFX2
 {
-    Damage (0)
+    Damage (1)
     +FORCERADIUSDMG
     +THRUSPECIES
     +FIREDAMAGE
@@ -164,8 +164,8 @@ actor PhoenixFX2A : PhoenixFX2
     FX09 EF 2 Bright
     Stop
   Death:
-    FX09 G 2 Bright A_Explode(Random(Random(1,4),Random(4,6)),32,0)
-    FX09 G 1 Bright A_Explode(Random(Random(1,4),Random(4,6)),64,0)
+    FX09 G 2 Bright A_Explode(Random(Random(2,5),Random(6,9)),32,0)
+    FX09 G 1 Bright A_Explode(Random(Random(2,5),Random(6,9)),64,0)
     FX09 H 3 Bright A_FloatPuff
     FX09 I 4 Bright
     FX09 JK 5 Bright
