@@ -9,15 +9,15 @@ ACTOR Overmind 16999
 	DamageFactor "WMCBeam", 0.5
 	DamageFactor "WMCNade", 0.375
 	DamageFactor "BJSpear", 0.5
-	DamageFactor "Wraithverge", 0.25
+	DamageFactor "Wraithverge", 0.5
 	DamageFactor "BFG", 0.5
 	DamageFactor "BFGSplash", 0.5
-	DamageFactor "DukeExplosive", 0.5
+	DamageFactor "DukeExplosive", 0.625
 	damagefactor "CorvusHellStaffTomed", 0.1
 	DamageFactor "Kamikaze", 0 //Yeah no.
 	damagefactor "ZorchKamikaze", 0
 	DamageFactor "DoomPlasma", 0.75
-	DamageFactor "PhasingZorch", 0.7
+	DamageFactor "PhasingZorch", 0.625
 	DamageFactor "CorvusHellStaff", 0.75
 	DamageFactor "WolfenFlamethrower", 0.75
 	DamageFactor "DukeIce", 0.75
@@ -58,6 +58,7 @@ ACTOR Overmind 16999
         	TNT1 A 0 A_GiveInventory("DukeBossSee",1)
         	TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
       	See2:
+		OYCL A 0 A_GiveInventory("WeakenOvermind",1)
 		OYCL A 0 A_JumpIfHealthLower(35000,"See3")
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
 		OYCL A 0 A_Explode(32,384,0)
@@ -67,6 +68,7 @@ ACTOR Overmind 16999
 		OYCL CCCCDDDD 4 A_Chase
 		Loop
       	See3:
+		OYCL A 0 A_TakeInventory("WeakenOvermind",1)
 		OYCL A 0 A_JumpIfHealthLower(20000,"See4")
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
 		OYCL A 0 A_Explode(32,384,0)
@@ -76,6 +78,7 @@ ACTOR Overmind 16999
 		OYCL CCCCDDDD 3 A_Chase
 		Loop
       	See4:
+		OYCL A 0 A_GiveInventory("ProtectOvermind",1)
 		OYCL A 0 A_JumpIfHealthLower(5000,"See5")
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
 		OYCL A 0 A_Explode(32,384,0)
@@ -85,6 +88,8 @@ ACTOR Overmind 16999
 		OYCL CCCCDDDD 2 A_Chase
 		Loop
       	See5:
+		OYCL A 0 A_TakeInventory("ProtectOvermind",1)
+		OYCL A 0 A_GiveInventory("ProtectOvermindMore",1)
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
 		OYCL A 0 A_Explode(32,384,0)
 		OYCL AAAABBBB 1 A_Chase
@@ -388,7 +393,7 @@ actor OvermindPyroShot : PyroShot
   +DONTREFLECT
 }
 
-actor IHateFOILINVUL : PowerProtection //Fustol, Timon's Axe, Lava Nails, Dammit.
+actor IHateFOILINVUL : PowerProtection //God dammit why did I have to make this
 {
 	Powerup.Duration 0x7FFFFFFF
 	DamageFactor "Mace", 0
@@ -398,4 +403,21 @@ actor IHateFOILINVUL : PowerProtection //Fustol, Timon's Axe, Lava Nails, Dammit
 	DamageFactor "MarathonFusion", 0
 	DamageFactor "QuakeFire", 0
 	DamageFactor "Massacre", 0
+	DamageFactor "Wraithverge", 0
+}
+
+actor WeakenOvermind : PowerProtection //So you can shotgun him
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 2.0
+}
+actor ProtectOvermind : PowerProtection //But plasma doesnt wreck him
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 0.5
+}
+actor ProtectOvermindMore : PowerProtection //And neither do BFGs
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 0.25
 }
