@@ -6,8 +6,8 @@ actor "Double Shotgun": InstantSwitchWeapon
     //Weapon.BobStyle Alpha
     Weapon.Kickback 100
     Weapon.SelectionOrder 6
-    Weapon.AmmoUse 2
-    Weapon.AmmoGive 20
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 10
     Weapon.AmmoType "Shell"
 
     +UNDROPPABLE

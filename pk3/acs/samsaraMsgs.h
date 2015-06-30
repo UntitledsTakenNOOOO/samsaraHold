@@ -900,7 +900,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "It's totally not the super shotgun. It's shittier, for one.",
             "When you just need a little extra bass.",
             "Insert witty comment here.",
-            "The second barrel is now being used, at the cost of them both sucking.",
+            "The second barrel is there to confuse you.",
             "Watch those shells just pile up.",
             "Doomguy can speedload. You don't even need that.",
             "Shells are stupid anyway.",

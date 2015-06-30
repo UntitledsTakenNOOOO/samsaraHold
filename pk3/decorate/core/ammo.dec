@@ -119,12 +119,12 @@ actor Ammo2Small : CustomInventory replaces Shell
       PickupQuake:
         TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"PickupQuake2")
         TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
-        TNT1 A 0 A_GiveInventory("Shell", 8)
+        TNT1 A 0 A_GiveInventory("Shell", 4)
         stop
 
       PickupQuake2:
         TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
-        TNT1 A 0 A_GiveInventory("Shell", 20)
+        TNT1 A 0 A_GiveInventory("Shell", 10)
         stop
 
       PickupFail:
@@ -145,7 +145,6 @@ actor Ammo2Big : CustomInventory replaces ShellBox
         loop
 
       Pickup:
-        TNT1 A 0 A_JumpIfInventory("QuakeClass", 0, "PickupQuake")
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
@@ -167,11 +166,6 @@ actor Ammo2Big : CustomInventory replaces ShellBox
         TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
         TNT1 A 0 A_SetBlend("Green", 0.3, 3)
         TNT1 A 0 A_GiveInventory("Shell", 20)
-        stop
-
-      PickupQuake:
-        TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
-        TNT1 A 0 A_GiveInventory("Shell", 40)
         stop
 
       PickupFail:
