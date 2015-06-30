@@ -294,6 +294,7 @@ actor HolyMissilePuff3
   +DROPOFF
   +NOTELEPORT
   +FORCERADIUSDMG
+  +FOILINVUL
   RenderStyle "Translucent"
   Alpha 0.4
   Damagetype "Wraithverge"

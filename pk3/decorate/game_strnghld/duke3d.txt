@@ -169,7 +169,7 @@ ACTOR Queen
 	painchance "Stunner", 128
 	DamageFactor "CorvusCrossbow", 1.1
 	DamageFactor "DragonClaw", 1.5
-	DamageFactor "Wraithverge", 2.0
+	DamageFactor "Wraithverge", 4.0
 	
 	BloodType "DN3DBlood", "DN3DBlood"
 	
@@ -271,7 +271,7 @@ ACTOR Cycloid
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.5
 	DamageFactor "MarathonFusion", 2.0
-	DamageFactor "Wraithverge", 2.0
+	DamageFactor "Wraithverge", 4.0
 	
 	BloodType "DN3DBlood", "DN3DBlood"
 
@@ -371,7 +371,7 @@ ACTOR Overlord
 	DamageFactor "CorvusCrossbow", 1.15
 	DamageFactor "DragonClaw", 1.5
 	DamageFactor "MarathonFusion", 2.0
-	DamageFactor "Wraithverge", 2.0
+	DamageFactor "Wraithverge", 4.0
 	
 	BloodType "DN3DBlood", "DN3DBlood"
 
