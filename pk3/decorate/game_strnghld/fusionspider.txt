@@ -9,11 +9,11 @@ DamageFactor "MarathonFusion", 2.0
   spawnid 247
   OBITUARY "%o was vaporized by a fusion cannon arachnotron." 
   Health 600
-  Radius 64
-  Height 64
+  Radius 48
+  Height 56
   Mass 600
   Speed 12
-  PainChance 30   
+  PainChance 64
   SEESOUND "baby/sight"
   PAINSOUND "baby/pain"
   DEATHSOUND "baby/death"

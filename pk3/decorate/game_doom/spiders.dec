@@ -5,6 +5,8 @@ actor Arachnotron2 : Arachnotron replaces ArachnotronStun
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
+    Radius 48
+    Height 56
     +BOSSDEATH
     +NOTDMATCH
     +NOICEDEATH
