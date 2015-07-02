@@ -1733,64 +1733,6 @@ actor Sentry 12856
 	mass 9999999999
         damagefactor "BossFactor", 0
         damagefactor "Zorch", 0
-        damagefactor "PhasingZorch", 0
-        damagefactor "Explosive", 0
-        damagefactor "NotQuadded", 0
-        damagefactor "WMCNade", 0
-        damagefactor "WMCBeam", 0
-        damagefactor "DukeExplosive", 0
-        damagefactor "BFG", 0
-        damagefactor "BFGSplash", 0
-        damagefactor "BJSpear", 0
-        damagefactor "PoisonCloud", 0
-        damagefactor "MarathonFusion", 0
-	damagefactor "MarineAlly", 0
-        radius 16
-	height 16
-	health 300
-        maxstepheight 512
-        maxdropoffheight 512
-	RadiusDamageFactor 0.25
-	-solid
-	+shootable
-	+noblood
-	+friendly
-	+lookallaround
-	+alwaysfast
-	+missilemore
-	+missileevenmore
-	MinMissileChance 0
-	speed 0
-
-	states
- 	{
-
- 	spawn:
- 		DGUN A 4 a_look
- 		loop
-
- 	see:
- 		DGUN A 4 A_chase
- 		loop
- 	missile:
- 		DGUN A 4 A_facetarget
- 		DGUN B 4 A_custommissile("SentryPlasma", 16, -10, 0)
- 		DGUN C 4 A_custommissile("SentryPlasma", 16, 10, 0)
- 		DGUN A 8 A_SpidRefire //was A 4
- 		loop
- 	death:
- 		TNT1 A 4
- 		stop
- 	}
-
-}
-
-actor Sentry 12856
-{
-//$Category Stronghold_Marines
-	mass 9999999999
-        damagefactor "BossFactor", 0
-        damagefactor "Zorch", 0
         damagefactor "WraithVerge", 0
         damagefactor "PoisonCloud", 0
         damagefactor "Explosive", 0
@@ -1819,6 +1761,8 @@ actor Sentry 12856
 	+alwaysfast
 	+missilemore
 	+missileevenmore
+	+thruspecies
+	Species "Player"
 	MinMissileChance 0
 	speed 0
 
@@ -1863,7 +1807,7 @@ actor Sentry2 12857
         damagefactor "BJSpear", 0
 	damagefactor "MarathonFusion", 0
         damagefactor "MarineAlly", 0
-		damagefactor "Kamikaze", 0.05
+	damagefactor "Kamikaze", 0.05
         damagefactor "ZorchKamikaze", 0.05
         radius 16
 	height 16
@@ -1878,6 +1822,8 @@ actor Sentry2 12857
 	+lookallaround
 	+missilemore
 	+missileevenmore
+	+thruspecies
+	Species "Player"
 	MinMissileChance 0
 	speed 0
 
@@ -1911,7 +1857,9 @@ actor SentryPlasma
         damage 3
         scale 0.3
 	damagetype "BossFactor"
+	+NOEXTREMEDEATH
 	+DONTBLAST
+	+PAINLESS
 	+THRUSPECIES
 	Species "Player"
 	projectile

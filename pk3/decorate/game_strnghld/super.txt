@@ -37,7 +37,6 @@ Actor SuperSentryPlasma
         damage 5
         scale 0.3
 	damagetype "BossFactor"
-	+NOEXTREMEDEATH
 	+DONTBLAST
 	+PAINLESS
         +THRUSPECIES
@@ -83,6 +82,8 @@ Actor SuperSentry
 	+alwaysfast
 	+missilemore
 	+missileevenmore
+	+thruspecies
+	Species "Player"
 	MinMissileChance 0
 	speed 0
 	states
@@ -130,6 +131,8 @@ Actor SuperSentry2
 	+alwaysfast
 	+missilemore
 	+missileevenmore
+	+thruspecies
+	Species "Player"
 	MinMissileChance 0
 	speed 0
 	states
