@@ -397,7 +397,6 @@ ACTOR STBoss 32767
 		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
 		BOSS I 8 A_Mushroom("Pyroflare", random(2,7))
 		BOSS I 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
-		BOSS G 0 A_SpawnItemEx("STFireEffect",0,0,0,0,0,0,0,160)
 		BOSS I 8
 		//BOSS GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 0 A_CustomMissile("SpiritCaller",0,0,random(0,360))
 		BOSS K 8 //A_GiveToTarget("AwardItem",999)

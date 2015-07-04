@@ -87,7 +87,7 @@ DamageFactor "MarathonPlasma", 0.7
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 9)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 7)
         TNT1 A 0 A_NoBlocking
         SDDM G 0 A_GenericFreezeDeath
         SDDM G 70 A_UnsetSolid
@@ -112,7 +112,7 @@ DamageFactor "MarathonPlasma", 0.7
       Death.PhasingZorch:
       Death.ZorchSpectral:
 	TNT1 A 0 A_Stop
-        TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+        TNT1 A 0 A_GiveToTarget("AwardItem", 6)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)	
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -121,7 +121,7 @@ DamageFactor "MarathonPlasma", 0.7
 	Stop
   Death:
     TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
-    TNT1 A 0 A_GiveToTarget("AwardItem", 7)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 5)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     SDDM H 5
     SDDM I 5 A_Scream
@@ -134,7 +134,7 @@ DamageFactor "MarathonPlasma", 0.7
   XDeath:
     TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,10)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
-    TNT1 A 0 A_GiveToTarget("AwardItem", 10)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 8)
     TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
     SDDM O 5
     SDDM P 5 A_XScream
@@ -161,9 +161,6 @@ DamageFactor "MarathonPlasma", 0.7
         goto Death+1
                 
          XDeathBrutal:
-         POSS M 1
-	TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 3)
                 TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy1",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
                 TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy2",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
                 TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy3",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
@@ -183,8 +180,6 @@ DamageFactor "MarathonPlasma", 0.7
                 
          DeathHappyfun:
          TNT1 A 0
-	TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 1)
                 TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
                 TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
                 TNT1 A 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
@@ -195,7 +190,7 @@ DamageFactor "MarathonPlasma", 0.7
          XDeathHappyfun:
          TNT1 A 0
 	TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 8)
                 TNT1 AAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
                 TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
                 TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
@@ -252,7 +247,7 @@ ACTOR CatharsiDetonator
 	+FloatBob
 	+Randomize
 	+NoBlood
-	-NoGravity
+	+NoGravity
 	states
 	{
 	Spawn:
@@ -310,7 +305,7 @@ ACTOR CatharsiDetonator
 		SDFB B 0 A_CustomMissile("CatharsiBall", 4, 2, 300)
 		SDFB B 0 A_CustomMissile("CatharsiBall", 4, 2, 320)
 		SDFB B 0 A_CustomMissile("CatharsiBall", 4, 2, 340)
-		SDFB BCDE 6 BRIGHT A_Die
+		SDFB BCDE 6 BRIGHT
 		Stop
 	}
 }

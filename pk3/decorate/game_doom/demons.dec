@@ -33,7 +33,7 @@ actor DoomDemon2 : Demon replaces DemonStun
       Death:
 		TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         	TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 6)
 		SARG I 8
 		SARG J 8 A_Scream
 		SARG K 4
@@ -57,7 +57,7 @@ actor DoomDemon2 : Demon replaces DemonStun
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 6)
         SARG H 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -91,7 +91,7 @@ actor DoomDemon2 : Demon replaces DemonStun
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 6)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         TNT1 A 0 A_NoBlocking
         //TNT1 A 0 A_SpawnItem("DoomDemonFrozen")
@@ -150,7 +150,7 @@ actor Spectre2: DoomDemon2 replaces SpectreStun
       Death.Ice:
 	TNT1 A 0 A_SetTranslucent(1,0)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 6)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         TNT1 A 0 A_NoBlocking
         //TNT1 A 0 A_SpawnItem("DoomDemonFrozen")

@@ -2260,7 +2260,7 @@ actor QuadDamageItem : PowerupGiver 12794
  inventory.usesound "pickups/slowmo"
  inventory.icon "DAMIA0"
  powerup.type QuadDamage
- powerup.duration -30
+ powerup.duration -25
  Tag "Quad Damage"
  +INVENTORY.FANCYPICKUPSOUND
    states
@@ -2361,7 +2361,7 @@ actor InvulnerabilityItem : PowerupGiver 12795
  inventory.usesound "pickups/slowmo"
  powerup.color InverseMap
  powerup.type "Invulnerable"
- powerup.duration -40
+ powerup.duration -30
  Tag "Invulnerability"
  +INVENTORY.FANCYPICKUPSOUND
  states
@@ -2618,11 +2618,11 @@ actor WallPlaced
  	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_JumpIfInventory("WallTimer",2100,"Death")
-		TNT1 A 1 A_SpawnItemEx("RedSparkleRandom",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
-		TNT1 A 1 A_SpawnItemEx("RedSparkleRandom",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
-		TNT1 A 1 A_SpawnItemEx("RedSparkleRandom",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
-		TNT1 A 1 A_SpawnItemEx("RedSparkleRandom",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
-		TNT1 A 1 A_SpawnItemEx("RedSparkleRandom",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
+		TNT1 A 1 A_SpawnItemEx("RedSparkleTiny",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
+		TNT1 A 1 A_SpawnItemEx("RedSparkleSmall",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
+		TNT1 A 1 A_SpawnItemEx("RedSparkleMedium",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
+		TNT1 A 1 A_SpawnItemEx("RedSparkleLarge",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
+		TNT1 A 1 A_SpawnItemEx("RedSparkle",random(-10.0,10.0),0,0,0,0,random(0.05,2.00),0,128,192)
 		TNT1 A 0 A_GiveInventory("WallTimer",1)
   		Loop
  	Death:
@@ -3251,7 +3251,7 @@ actor ProtectionItem : PowerupGiver 24041
  inventory.usesound "pickups/slowmo"
  powerup.color "FF AA 00" 0.10
  powerup.type QuarterDamage
- powerup.duration -45
+ powerup.duration -40
  Tag "Protection"
  +INVENTORY.FANCYPICKUPSOUND
  states

@@ -123,7 +123,7 @@ DamageFactor "Wraithverge", 8.0
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 64)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 48)
         TNT1 A 0 A_NoBlocking
         AZEP A 0 A_GenericFreezeDeath
         AZEP A 70 A_UnsetSolid
@@ -137,7 +137,7 @@ DamageFactor "Wraithverge", 8.0
       Death.PhasingZorch:
       Death.ZorchSpectral:
 	TNT1 A 0 A_Stop
-        TNT1 A 0 A_GiveToTarget("AwardItem", 64)
+        TNT1 A 0 A_GiveToTarget("AwardItem", 48)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)	
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -152,7 +152,7 @@ DamageFactor "Wraithverge", 8.0
     Death:
         TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)
-        TNT1 A 0 A_GiveToTarget("AwardItem", 64)
+        TNT1 A 0 A_GiveToTarget("AwardItem", 48)
         AZED A 5
         AZED B 5 A_Scream
         AZED C 5
@@ -661,7 +661,7 @@ actor Satyr 3109
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 10)
         TNT1 A 0 A_NoBlocking
         STYR A 0 A_GenericFreezeDeath
         STYR A 70 A_UnsetSolid
@@ -672,7 +672,7 @@ actor Satyr 3109
    Death.ZorchPistol:
    Death.Zorch:
 	TNT1 A 0 A_Stop
-        TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+        TNT1 A 0 A_GiveToTarget("AwardItem", 10)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)	
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -693,7 +693,7 @@ actor Satyr 3109
     Death:
 	TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         STYR I 0 A_GiveToTarget("KillCount",1)
-	STYR I 0 A_GiveToTarget("AwardItem",8)
+	STYR I 0 A_GiveToTarget("AwardItem",10)
         STYR I 5
         STYR J 5 A_Scream
         STYR K 6

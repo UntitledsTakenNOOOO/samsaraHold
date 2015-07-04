@@ -37,7 +37,7 @@ actor LostSoul2 : LostSoul replaces LostSoulStun
 
 	Death:
         	TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_GiveToTarget("AwardItem", 6)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 4)
 		SKUL F 6 bright
 		SKUL G 6 bright A_Scream
 		SKUL H 6 bright
@@ -59,7 +59,7 @@ actor LostSoul2 : LostSoul replaces LostSoulStun
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 4)
         SKUL E 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
@@ -117,7 +117,7 @@ actor PainElemental2 : PainElemental replaces PainElementalStun
       	Death:
 		TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         	TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_GiveToTarget("AwardItem", 12)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 13)
 		PAIN H 8 bright
 		PAIN I 8 bright A_Scream
 		PAIN JK 8 bright
@@ -142,7 +142,7 @@ actor PainElemental2 : PainElemental replaces PainElementalStun
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 12)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 13)
         TNT1 A 0 A_NoGravity
         PAIN E 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -150,7 +150,7 @@ actor PainElemental2 : PainElemental replaces PainElementalStun
         PAIN E 4 A_SpawnItem("ZorchEffectBig")
         PAIN E 4 A_SetTranslucent(0.9,0)
         PAIN E 0 A_Scream
-        TNT1 A 0 A_PainDie
+        //TNT1 A 0 A_PainDie
         PAIN E 4 A_SetTranslucent(0.8,0)
         PAIN E 4 A_SetTranslucent(0.7,0)
         PAIN E 4 A_SetTranslucent(0.6,0)
@@ -177,7 +177,7 @@ actor PainElemental2 : PainElemental replaces PainElementalStun
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_SetFloorClip
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 12)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 13)
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_PainDie
         //TNT1 A 0 A_SpawnItem("PainElementalFrozen")

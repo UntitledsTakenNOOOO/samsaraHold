@@ -73,7 +73,7 @@ states
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 5)
         TNT1 A 0 A_NoBlocking
         CUBE D 0 A_GenericFreezeDeath
         CUBE D 70 A_UnsetSolid
@@ -98,7 +98,7 @@ states
       Death.PhasingZorch:
       Death.ZorchSpectral:
 	TNT1 A 0 A_Stop
-        TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+        TNT1 A 0 A_GiveToTarget("AwardItem", 5)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)	
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -107,7 +107,7 @@ states
 	Stop
    Death:
        TNT1 A 0 A_GiveToTarget("KillCount", 1)
-       TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+       TNT1 A 0 A_GiveToTarget("AwardItem", 5)
        CUBE E 0 BRIGHT A_NoBlocking
        CUBE E 0 BRIGHT A_SetFloorClip
        CUBE E 6 BRIGHT A_Scream

@@ -239,7 +239,7 @@ ACTOR HadesBolt : CacodemonBall
       LFX2 J 0 Bright A_CountDown
       loop
    Death:
-      LFX2 FGHIJ 2 Bright A_Explode(32,64,0)
+      LFX2 FGHIJ 2 Bright A_Explode(16,64,0)
       stop
    }
 }
@@ -322,12 +322,12 @@ States
        HADE A 35
        Goto See+4
    Death:
-       TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+       TNT1 A 0 A_GiveToTarget("AwardItem", 2)
        HADE E 0 Bright A_Noblocking
        HADE E 0 Bright A_CustomMissile("HSBoom",0,0,0,0)
        Stop
    XDeath:
-       TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+       TNT1 A 0 A_GiveToTarget("AwardItem", 2)
        HADE N 0 Bright A_Noblocking
        HADE H 5 Bright A_PlaySound("monster/haddth")
        HADE GFE 4 Bright

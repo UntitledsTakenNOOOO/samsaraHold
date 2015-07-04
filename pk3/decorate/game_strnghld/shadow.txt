@@ -89,7 +89,7 @@ ACTOR Shadow 3126
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 7)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 6)
         TNT1 A 0 A_NoBlocking
         SHDW H 0 A_GenericFreezeDeath
         SHDW H 70 A_UnsetSolid
@@ -114,7 +114,7 @@ ACTOR Shadow 3126
       Death.PhasingZorch:
       Death.ZorchSpectral:
 	TNT1 A 0 A_Stop
-        TNT1 A 0 A_GiveToTarget("AwardItem", 6)
+        TNT1 A 0 A_GiveToTarget("AwardItem", 5)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)	
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -124,7 +124,7 @@ ACTOR Shadow 3126
 	Death:
     TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
      	 	TNT1 A 0 A_GiveToTarget("KillCount", 1)
-		TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 4)
 		SHDW I 6 A_Scream
 		SHDW J 5
 		SHDW K 5 A_SpawnItemEx("Shadowtorso", 0, 0, 0, 1, 0, 0, 0, 128)
@@ -136,7 +136,7 @@ ACTOR Shadow 3126
 	XDeath:
     TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,10)
       		TNT1 A 0 A_GiveToTarget("KillCount", 1)
-		TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 7)
 		TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
 		SHDX A 8
 		SHDX B 6 A_XScream
@@ -165,9 +165,6 @@ ACTOR Shadow 3126
         goto Death+1
                 
          XDeathBrutal:
-         POSS M 1
-	TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 3)
                 TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy1",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
                 TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy2",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
                 TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy3",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
@@ -182,13 +179,11 @@ ACTOR Shadow 3126
                 TNT1 AAAAAAAAAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
                 TNT1 AAAAA 0 A_SpawnItemEx("RedMistIntense",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
                 TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
-				TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound",0,0,0,0,0,0,0,160)
+                TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound",0,0,0,0,0,0,0,160)
 		Goto Death+1
                 
          DeathHappyfun:
          TNT1 A 0
-	TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 1)
                 TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
                 TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
                 TNT1 A 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
@@ -199,7 +194,7 @@ ACTOR Shadow 3126
          XDeathHappyfun:
          TNT1 A 0
 	TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 7)
                 TNT1 AAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
                 TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
                 TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)

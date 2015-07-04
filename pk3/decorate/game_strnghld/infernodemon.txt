@@ -608,7 +608,7 @@ ACTOR InfernoDemon 12345
     XDIB K 5 A_FaceTarget
     XDIB L 5 A_Scream
     XDIB MNOPQ 5
-    XDIB R 10 A_GiveToTarget("AwardItem",400)
+    XDIB R 10 A_GiveToTarget("AwardItem",150)
     XDIB S 5 Radius_Quake(20,200,0,40,0)
     XDIB T 5 A_NoBlocking
     XDIB UV 5

@@ -35,7 +35,7 @@ actor Archvile2 : Archvile replaces ArchvileStun
 	Death:
 		TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         	TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_GiveToTarget("AwardItem", 20)
+		TNT1 A 0 A_GiveToTarget("AwardItem", 18)
 		VILE Q 7
 		VILE R 7 A_Scream
 		VILE S 7 A_NoBlocking
@@ -59,7 +59,7 @@ actor Archvile2 : Archvile replaces ArchvileStun
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 20)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 18)
         VILE Q 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -89,7 +89,7 @@ actor Archvile2 : Archvile replaces ArchvileStun
 
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-	TNT1 A 0 A_GiveToTarget("AwardItem", 20)
+	TNT1 A 0 A_GiveToTarget("AwardItem", 18)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         TNT1 A 0 A_NoBlocking
         //TNT1 A 0 A_SpawnItem("ArchvileFrozen")
