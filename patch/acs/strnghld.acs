@@ -145,9 +145,9 @@ int PrisonTeleporterThrustAngle;
 int PrisonExitThrustAngle = -1;
 int TeleporterOnLight;
 int TeleporterOffLight;
-int BreakTime = -1;	// Deadline default is 6*35. Can be overridden by map.
+int BreakTime = -1;	// Deadline default is 3*35. Can be overridden by map.
 int LimitMax = 100;	// Can be overridden by map
-int tics_between_monster_spawns = 1;	// Can be overridden, but highly not recommended to shorten this either. //Well too bad!
+int tics_between_monster_spawns = 1;	// Originally 5, can be overridden by map at any time
 bool GameActive = TRUE;	// When this is false, the player can't lose lives
 bool GameVictory = FALSE;
 bool TrainingMap = FALSE;
@@ -1755,9 +1755,9 @@ function void Setup (void)
 		MapParTime[9]	= 12*60;
 		MapParTime[10]	= 18*60;
 		MapParTime[11]	= 18*60;
-		MapParTime[12]	= 20*60;
+		MapParTime[12]	= 21*60;
 		MapParTime[13]	= 16*60;
-		MapParTime[14]	= 22*60;
+		MapParTime[14]	= 20*60;
 		MapParTime[15]	= 25*60;
 		MapParTime[16]	= 45*60;
 		MapParTime[17]	= 24*60;
@@ -1765,7 +1765,7 @@ function void Setup (void)
 		MapParTime[19]	= 30*60;
 		MapParTime[20]	= 25*60;
 		MapParTime[21]	= 10*60;
-		MapParTime[22]	= 18*60;
+		MapParTime[22]	= 22*60;
 		MapParTime[23]	= 35*60;
 		MapParTime[24]	= 33*60;
 		MapParTime[25]	= 12*60;
@@ -3872,8 +3872,9 @@ function void clearHud (void)
 
 script S_TIMER open
 {
-	if(MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)]!=0 || GetCvar("samsarahold_hardmode"))
+	if(MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)]!=0)
 		TimeAttackMode = TRUE;
+
 
 	while( TRUE )
 	{

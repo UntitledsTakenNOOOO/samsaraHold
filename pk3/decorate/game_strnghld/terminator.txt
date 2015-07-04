@@ -232,13 +232,13 @@ actor Redstar
     States
     {
     Spawn:
-        STAX A 0 Bright A_SeekerMissile (15,45) //Welp.
+        STAX A 0 Bright A_SeekerMissile (10,30) //Welp.
 	STAX AAAA 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX B 0 Bright A_SeekerMissile (15,45) //Good luck dodging.
+        STAX B 0 Bright A_SeekerMissile (10,30) //Good luck dodging.
 	STAX BBBB 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX C 0 Bright A_SeekerMissile (15,45) //I've tested. You're gonna need it.
+        STAX C 0 Bright A_SeekerMissile (10,30) //I've tested. You're gonna need it.
 	STAX CCCC 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
-        STAX D 0 Bright A_SeekerMissile (15,45) //Grenade Trails make it harder to judge too.
+        STAX D 0 Bright A_SeekerMissile (10,30) //Grenade Trails make it harder to judge too.
 	STAX DDDD 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
         Loop
     Death:
@@ -258,7 +258,7 @@ actor Redgrenade //More like Red Missile now. Heh heh.
     DamageType "Redblast"
     OBITUARY "\c[I7]%o \c[I7]was torn apart by a blood missile."
     PROJECTILE
-    //Heh heh. Players won't know what hit them. Hopefully neither will Popsoap.
+    //Heh heh. Players won't know what hit them.
     //+DoomBounce
     //-NoGravity
     RENDERSTYLE ADD

@@ -184,7 +184,7 @@ ACTOR TerminatorBlaster2
    Height 12
    Speed 35
    FastSpeed 45
-   Damage 10
+   Damage 8
    DamageType "MarineAlly"
    SpawnID 251
    PROJECTILE
@@ -201,7 +201,7 @@ ACTOR TerminatorBlaster2
       BLST A 1 Bright 
       loop
    Death:
-      BLST B 6 Bright A_Explode(64,128,0,0,96)
+      BLST B 6 Bright A_Explode(80,192,0)
       BLST CDEFGHIJKL 3 Bright 
       stop
    }
@@ -212,7 +212,7 @@ ACTOR Redstar2 //: MageStaffFX2 //WORKS IN ZANDRONUM, HELL YES
     Height 20
     Speed 30
     FastSpeed 40
-    Damage 8
+    Damage 10
     DamageType "MarineAlly"
     Scale 0.6
     +SEEKERMISSILE
@@ -262,7 +262,7 @@ ACTOR Redstar2 //: MageStaffFX2 //WORKS IN ZANDRONUM, HELL YES
 	STAX D 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
         Loop
     Death:
-        STAX E 3 Bright A_Explode(80,160,0,0,120)
+        STAX E 3 Bright A_Explode(64,128,0,0,128)
         STAX FGHIJKLMNO 3 Bright
         Stop
     }

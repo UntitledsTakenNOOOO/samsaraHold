@@ -5,6 +5,7 @@ painchance "Stunner", 128
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
 DamageFactor "MarathonFusion", 2.0
+DamageFactor "Wraithverge", 2.0
 DamageFactor "WMCBeam", 0.75
 DamageFactor "WMCNade", 0.5625
 DamageFactor "BJSpear", 0.75
