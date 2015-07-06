@@ -25,9 +25,9 @@ ACTOR Overmind 16999
 	DamageFactor "MarathonPlasma", 0.75
 	Health 50000
 	Mass 80000
-	Radius 128
+	Radius 80
 	Height 320
-	Scale 4.0
+	Scale 3.0
 	Speed 12
 	PainChance 5
 	MaxStepHeight 32
