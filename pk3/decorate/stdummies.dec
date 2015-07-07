@@ -25,16 +25,16 @@ actor Abaddon : Cacodemon2 5015
     Speed 12
     PainChance 40
     BloodColor Red
-    Translation "170:191=[135,135,135]:[0,0,0]", "16:47=[200,200,200]:[0,0,0]", "164:167=108:108", "217:223=107:109", "112:123=160:167", "124:125=77:78", "126:127=1:2", "192:207=168:187", "240:247=188:191", "48:79=80:111", "144:151=176:191"
+    Translation "170:191=[81,81,81]:[0,0,0]", "16:47=[120,120,120]:[0,0,0]", "164:167=108:108", "217:223=107:109", "112:123=160:167", "124:125=77:78", "126:127=1:2", "192:207=168:187", "240:247=188:191", "48:79=96:111", "144:151=176:191"
     Obituary "%o was smitten by an Abaddon."
     HitObituary "%o became food for an Abaddon."
     States
     {
     Missile:
-      HED3 BC 3 A_FaceTarget
-      HED3 D 4 Bright A_BasicAttack (10, "None", "CacolanternBall", 32)
-      HED3 BC 3 A_FaceTarget
-      HED3 D 4 Bright A_BasicAttack (10, "None", "CacolanternBall", 32)
+      HEAD BC 3 A_FaceTarget
+      HEAD D 4 Bright A_BasicAttack (10, "None", "HadesBall", 32)
+      HEAD BC 3 A_FaceTarget
+      HEAD D 4 Bright A_BasicAttack (10, "None", "HadesBall", 32)
       Goto See
     }
 }
@@ -52,12 +52,12 @@ actor Belphegor : BaronOfHell2 5008
     {
     Melee:
     Missile:
-      BOS3 EF 6 A_FaceTarget
-      BOS3 G 6 A_BasicAttack(10, "baron/melee", "BaronBallFast", 32)
-      BOS3 EF 6 A_FaceTarget
-      BOS3 G 6 A_BasicAttack(10, "baron/melee", "BaronBallFast", 32)
-      BOS3 EF 6 A_FaceTarget
-      BOS3 G 6 A_BasicAttack(10, "baron/melee", "BaronBallFast", 32)
+      BOSS EF 6 A_FaceTarget
+      BOSS G 6 A_BasicAttack(10, "baron/melee", "BaronBallFast", 32)
+      BOSS EF 6 A_FaceTarget
+      BOSS G 6 A_BasicAttack(10, "baron/melee", "BaronBallFast", 32)
+      BOSS EF 6 A_FaceTarget
+      BOSS G 6 A_BasicAttack(10, "baron/melee", "BaronBallFast", 32)
       Goto See
   }
 }
@@ -89,7 +89,8 @@ actor DarkImp : DoomImp2 5003
     Obituary "%o was burned by a Dark Imp."
     HitObituary "%o was slashed by a Dark Imp."
     BloodColor Blue
-    Translation "1:1=8:8", "16:47=[0,0,255]:[0,0,0]", "48:79=[185,185,185]:[0,0,0]", "151:151=6:6", "160:167=198:204", "169:174=194:200", "175:183=197:205", "184:185=206:207", "186:191=240:245", "208:223=193:207", "232:235=201:204"//"48:79=[185,185,185]:[0,0,0]", "175:183=197:205", "169:174=194:200", "184:185=206:207", "186:191=240:245", "16:47=[0,0,255]:[0,0,0]", "232:235=201:204", "160:167=198:204", "208:223=193:207"
+    //Translation "1:1=8:8", "16:47=[0,0,255]:[0,0,0]", "48:79=[185,185,185]:[0,0,0]", "151:151=6:6", "160:167=198:204", "169:174=194:200", "175:183=197:205", "184:185=206:207", "186:191=240:245", "208:223=193:207", "232:235=201:204"//"48:79=[185,185,185]:[0,0,0]", "175:183=197:205", "169:174=194:200", "184:185=206:207", "186:191=240:245", "16:47=[0,0,255]:[0,0,0]", "232:235=201:204", "160:167=198:204", "208:223=193:207"
+    Translation "1:1=8:8", "48:79=[185,185,185]:[0,0,0]", "151:151=6:6"
     States
     {
     Melee:
@@ -138,6 +139,7 @@ DeathSound "imp/shotx"
 +THRUGHOST
 -SEEKERMISSILE
 }
+
 actor SuperShotgunGuy : ChaingunGuy2 5005
 {
     Game Doom

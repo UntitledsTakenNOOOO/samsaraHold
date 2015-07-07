@@ -282,7 +282,7 @@ ACTOR FirebombExplosion1
    ExplosionDamage 128
    ExplosionRadius 144
    DamageType Fire
-   Obituary "\c[G5]%o \c[G5]was killed by a Firebomb explosion."
+   Obituary "\c[G5]%o \c[G5]was killed by a pyroblast explosion."
    States
    {
    Spawn:

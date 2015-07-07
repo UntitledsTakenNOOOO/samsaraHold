@@ -114,7 +114,7 @@ ACTOR TerminatorWeapon : Weapon 29100
    Blaster:
       JUGS A 4
       JUGS F 0 A_GunFlash
-      JUGS F 2 Bright A_FireCustomMissile("TerminatorBlaster2",Random(25,-25)/10.0,0,15,6)
+      JUGS F 2 Bright A_FireCustomMissile("TerminatorBlaster2",Random(30,-30)/10.0,0,15,6)
       JUGS B 2
       TNT1 A 0 A_Refire
       Goto Ready
@@ -184,7 +184,7 @@ ACTOR TerminatorBlaster2
    Height 12
    Speed 35
    FastSpeed 45
-   Damage 8
+   Damage 4
    DamageType "MarineAlly"
    SpawnID 251
    PROJECTILE
@@ -211,8 +211,8 @@ ACTOR Redstar2 //: MageStaffFX2 //WORKS IN ZANDRONUM, HELL YES
     Radius 10
     Height 20
     Speed 30
-    FastSpeed 40
-    Damage 10
+    FastSpeed 45
+    Damage 8
     DamageType "MarineAlly"
     Scale 0.6
     +SEEKERMISSILE
@@ -262,7 +262,7 @@ ACTOR Redstar2 //: MageStaffFX2 //WORKS IN ZANDRONUM, HELL YES
 	STAX D 1 Bright A_SpawnItemEx("grenadetrail",0,0,0,0,0,0,0,0)
         Loop
     Death:
-        STAX E 3 Bright A_Explode(64,128,0,0,128)
+        STAX E 3 Bright A_Explode(64,128,0)
         STAX FGHIJKLMNO 3 Bright
         Stop
     }
@@ -272,10 +272,11 @@ ACTOR RedGrenade2
     Radius 8
     Height 12
     Speed 30
-    FastSpeed 45
-    Damage 8
+    FastSpeed 40
+    Damage 4
     PROJECTILE
     +ThruSpecies
+    +ExtremeDeath
     Species "Player"
     DamageType "MarineAlly"
     RENDERSTYLE ADD
@@ -316,7 +317,7 @@ ACTOR grenadeblast2
     Radius 8
     Height 12
     Speed 6
-    Damage 2
+    Damage 3
     DamageType "MarineAlly"
     PROJECTILE
     RENDERSTYLE ADD
