@@ -112,7 +112,7 @@ ACTOR Apprentice 30000
  	APDP E 0 A_ChangeFlag("NoPain", 0)
     	goto See
     Death:
-        TNT1 A 0 A_GiveToTarget("AwardItem", 10)
+        TNT1 A 0 A_GiveToTarget("AwardItem", 12)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)
         APDP E 0 A_SetTranslucent(1,0)
         APDP E 4
@@ -240,7 +240,7 @@ ACTOR MiniSpider 22290
      MNTR X 6 A_MeleeAttack
      Goto See
    Death:
-     TNT1 A 0 A_GiveToTarget("AwardItem", 1)
+     TNT1 A 0 A_GiveToTarget("AwardItem", 4)
      TNT1 A 0 A_GiveToTarget("KillCount", 1)
      MNTS F 5
      MNTS E 5 A_Scream
@@ -304,7 +304,7 @@ ACTOR LargeSpider 22291
      MNTR X 4 A_MeleeAttack
      Goto See
    Death:
-   TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+   TNT1 A 0 A_GiveToTarget("AwardItem", 6)
    TNT1 A 0 A_GiveToTarget("KillCount", 1)
      MNTS F 5
      MNTS E 5 A_Scream
@@ -367,7 +367,7 @@ states
  	CULT G 0 A_ChangeFlag("NoPain", 0)
     	goto See
    Death:
-       TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+       TNT1 A 0 A_GiveToTarget("AwardItem", 4)
        TNT1 A 0 A_GiveToTarget("KillCount", 1)
        CULT H 8
        CULT I 8 A_Scream
@@ -377,7 +377,7 @@ states
        CULT M 3000
        Stop
    XDeath:
-       TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+       TNT1 A 0 A_GiveToTarget("AwardItem", 6)
        TNT1 A 0 A_GiveToTarget("KillCount", 1)
        TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
        CULT N 5
@@ -421,7 +421,8 @@ painchance "MightyBoot", 255
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.5
 SpawnID 178
-Health 600
+Health 300
+GibHealth -150
 Radius 20
 Height 56
 Mass 500
@@ -429,8 +430,8 @@ Speed 12
 Damage 1
 MeleeDamage 8
 PainChance 32
-DropItem "HereticStuffDump" 80
-DropItem "HereticArmorDump" 20
+DropItem "HereticStuffDump" 40
+DropItem "HereticArmorDump" 10
 MONSTER
 +FloorClip
 +MissileMore
@@ -487,18 +488,27 @@ states
     	INCA L 300 A_Pain
  	INCA L 0 A_ChangeFlag("NoPain", 0)
     	goto See
-   Death:
-       TNT1 A 0 A_GiveToTarget("AwardItem", 8)
-       TNT1 A 0 A_GiveToTarget("KillCount", 1)
-       INCX A 10 BRIGHT A_PlaySound("monster/incexp")
-       INCX BC 5 BRIGHT
-       INCX D 5 BRIGHT A_NoBlocking
-       INCX D 0 BRIGHT A_SpawnItem("HS",0,32)
-       INCX EFGHIJ 5 BRIGHT
-       INCX K 3000
-       Stop
+   Death.Explosive:
+   Death.DoomPlasma:
+   Death.BFG:
+   Death.BFGSplash:
+   Death.ZorchPistol:
+   Death.Zorch:
+   Death.PhasingZorch:
+   Death.CorvusHellstaff:
+   Death.CorvusHellstaffTomed:
+   Death.FireExplosive:
+   Death.Fire:
+   Death.Wraithverge:
+   Death.BJSpear:
+   Death.DukeExplosive:
+   Death.MarathonPlasma:
+   Death.MarathonFusion:
+   Death.WMCBeam:
+   Death.WMCNade:
+   Death.NotQuadded:
    XDeath:
-       TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+       TNT1 A 0 A_GiveToTarget("AwardItem", 12)
        TNT1 A 0 A_GiveToTarget("KillCount", 1)
        INCA LM 7
        INCA N 7 A_Scream
@@ -507,6 +517,17 @@ states
        INCA Q 175
        INCA Q 3000
        Stop
+   Death:
+       TNT1 A 0 A_JumpIfInventory("Clip",4,"XDeath")
+       TNT1 A 0 A_GiveInventory("Clip",1)
+       TNT1 A 0 A_GiveToTarget("AwardItem", 4)
+       TNT1 A 0 A_GiveToTarget("KillCount", 1)
+       INCX A 10 BRIGHT A_PlaySound("monster/incexp")
+       INCX BC 5 BRIGHT
+       INCX D 5 BRIGHT A_NoBlocking
+       INCX D 0 BRIGHT A_SpawnItem("HS",0,32)
+       INCX EFGHIJ 5 BRIGHT
+       INCX K 295
    Raise:
        INCA Q 0 A_KillChildren
        INCA QPONML 5
@@ -586,7 +607,7 @@ states
        HDOG J 0 A_ChangeFlag("NoPain", 0)
        goto See
    Death:
-       TNT1 A 0 A_GiveToTarget("AwardItem", 6)
+       TNT1 A 0 A_GiveToTarget("AwardItem", 9)
        TNT1 A 0 A_GiveToTarget("KillCount", 1)
        HDOG K 8
        HDOG L 8 A_Scream
@@ -691,7 +712,7 @@ actor Vulgar : DoomImp 30127
        VULG H 0 A_ChangeFlag("NoPain", 0)
        goto See
   Death:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     VULG I 8
     VULG J 8 A_Scream
@@ -700,7 +721,7 @@ actor Vulgar : DoomImp 30127
     VULG N 3000
     stop
   XDeath:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 6)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
     VULG O 5
@@ -808,7 +829,7 @@ ACTOR ESoul 29012
        ETHS G 0 A_ChangeFlag("NoPain", 0)
        goto See
   Death:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     ETHS F 3 bright
     ETHS H 3 bright A_ScreamAndUnblock
@@ -923,7 +944,7 @@ ACTOR ChaingunCultist 29011
     Loop
   Missile:
     BCUL E 20 A_FaceTarget
-    BCUL FEFEFEFE 5 BRIGHT A_PosAttack
+    BCUL FEFEFEFE 5 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     Goto See
   Pain:
     BCUL G 3
@@ -935,7 +956,7 @@ ACTOR ChaingunCultist 29011
        BCUL G 0 A_ChangeFlag("NoPain", 0)
        goto See
   Death:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 3)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     BCUL H 5
     BCUL I 5 A_Scream
@@ -944,7 +965,7 @@ ACTOR ChaingunCultist 29011
     BCUL N 3000
     Stop
   XDeath:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
     BCUL O 5
@@ -971,7 +992,8 @@ ACTOR ShotgunCultist : ChaingunCultist 29010
   {
   Missile:
     BCUL E 20 A_FaceTarget
-    BCUL F 10 BRIGHT A_SPosAttack
+    TNT1 AAA 0 bright A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
+    BCUL F 10 BRIGHT A_FaceTarget
     BCUL E 10
     Goto See
   }
@@ -1039,7 +1061,7 @@ ACTOR FattyX 25010
     BFAT L 0 A_ChangeFlag("NoPain", 0)
     goto See
   Death:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 5)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 8)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     BFAT LM 9
     BFAT N 9 A_Scream
@@ -1163,7 +1185,7 @@ ACTOR ZombieX 31002
     BZOM H 0 A_ChangeFlag("NoPain", 0)
     goto See
   Death:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 3)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 6)
     TNT1 A 0 A_GiveToTarget("KillCount", 1)
     BZOM I 8
     BZOM J 8 A_Scream
