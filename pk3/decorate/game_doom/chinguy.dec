@@ -87,9 +87,9 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuyStun
       Missile:
         CPOS E 10 A_FaceTarget
         TNT1 A 0 A_PlaySound("chainguy/attack")
-        CPOS F 4 bright A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+        CPOS F 4 bright A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
         TNT1 A 0 A_PlaySound("chainguy/attack")
-        CPOS E 4 bright A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+        CPOS E 4 bright A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
         CPOS F 1 A_CPosRefire
         goto Missile+1
 

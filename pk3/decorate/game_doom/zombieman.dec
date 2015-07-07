@@ -104,7 +104,7 @@ actor Zombieman2 : Zombieman replaces ZombiemanStun
       Missile:
         POSS E 10 A_FaceTarget
         TNT1 A 0 A_PlaySound("grunt/attack")
-        POSS F 8 A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+        POSS F 8 A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
         POSS E 8
         Goto See
 

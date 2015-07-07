@@ -40,35 +40,35 @@ DamageFactor "MarathonPlasma", 0.5
     ZHRT E 0 A_Jump(80, 20)
     ZHRT E 0 A_Jump(80, 24)
     ZHRT E 10 A_FaceTarget
-    ZHRT F 10 A_CustomMissile("DuneWarriorGrenade", 32, 0, random(16,-16), 0)
+    ZHRT F 10 A_CustomMissile("DuneWarriorGrenade", 32, 0, frandom(16,-16), 0)
     ZHRT E 10
     Goto See
     ZHRT E 10 A_FaceTarget
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT F 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     TNT1 A 0 A_PlaySound("chainguy/attack")
-    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+    ZHRT E 4 BRIGHT A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
     Goto See
     ZHRT E 6 A_FaceTarget
-    ZHRT F 12 A_CustomMissile("DuneWarriorMissile", 32, 0, random(16,-16), 0)
+    ZHRT F 12 A_CustomMissile("DuneWarriorMissile", 32, 0, frandom(16,-16), 0)
     ZHRT E 12 A_FaceTarget
-    ZHRT F 12 A_CustomMissile("DuneWarriorMissile", 32, 0, random(16,-16), 0)
+    ZHRT F 12 A_CustomMissile("DuneWarriorMissile", 32, 0, frandom(16,-16), 0)
     Goto See
     //ZHRT A 0 A_SetInvulnerable //Yeah how about no.
     //ZHRT A 0 A_UnSetShootable //That is just dumb.
@@ -87,7 +87,7 @@ DamageFactor "MarathonPlasma", 0.5
     ZHRT D 1 A_SetTranslucent(1.0, 0)   
     //ZHRT A 0 A_UnsetInvulnerable //And excessively cheap.
     //ZHRT A 0 A_SetShootable //So yeah, nope.
-    Goto Missile+22
+    Goto See
   Pain:
     ZHRT G 1 A_SetTranslucent(0.2, 0)
     ZHRT G 1 A_SetTranslucent(0.4, 0)
@@ -98,7 +98,7 @@ DamageFactor "MarathonPlasma", 0.5
     ZHRT G 0 A_Jump(128,1)
     Goto Missile
     ZHRT G 0       
-    Goto Missile+27
+    Goto See
   Pain.Stunner:
        ZHRT G 2 A_ChangeFlag("NoPain", 1)
        ZHRT G 300 A_Pain
