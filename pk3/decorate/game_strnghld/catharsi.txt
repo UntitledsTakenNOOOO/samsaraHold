@@ -241,13 +241,13 @@ ACTOR CatharsiDetonator
 	SEESOUND "catharsi/shotsit"
 	DEATHSOUND "catharsi/shotdth"
 	+INVULNERABLE
-	+SOLID
+	-SOLID
 	+SHOOTABLE
 	+ISMONSTER
 	+FloatBob
 	+Randomize
 	+NoBlood
-	+NoGravity
+	-NoGravity
 	states
 	{
 	Spawn:
