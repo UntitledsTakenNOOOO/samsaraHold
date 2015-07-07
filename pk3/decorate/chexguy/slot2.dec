@@ -42,10 +42,10 @@ actor "Large Zorcher" : Weapon
 
       CoopFire:
         SHTC A 3
-        SHTC A 0 A_FireCustomMissile("ChexBullet",random(-100,100)/100.00,1,0,1)
-        SHTC AA 0 A_FireCustomMissile("ChexBullet",random(-200,200)/100.00,0,0,1)
-        SHTC AA 0 A_FireCustomMissile("ChexBullet",random(-300,300)/100.00,0,0,1)
-        SHTC AA 0 A_FireCustomMissile("ChexBullet",random(-400,400)/100.00,0,0,1)
+        SHTC A 0 A_FireCustomMissile("ChexBullet",frandom(-1.0,1.0),1,0,1)
+        SHTC AA 0 A_FireCustomMissile("ChexBullet",frandom(-2.0,2.0),0,0,1)
+        SHTC AA 0 A_FireCustomMissile("ChexBullet",frandom(-3.0,3.0),0,0,1)
+        SHTC AA 0 A_FireCustomMissile("ChexBullet",frandom(-4.0,4.0),0,0,1)
         SHTC A 0 A_PlayWeaponSound ("chex/shotgf")
         SHTC A 6 A_GunFlash // 7
         SHTC BC 4 // 5

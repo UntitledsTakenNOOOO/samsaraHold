@@ -165,9 +165,9 @@ actor "Explosive Shotgun" : Weapon
         Goto ShottyAnim
       CoopFire:
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        DKXS A 0 A_FireCustomMissile("DukeExplosiveShotgunBullet",random(-100,100)/100.00,1,0,1,0,random(-100,100)/100.00)
-        DKXS AA 0 A_FireCustomMissile("DukeExplosiveShotgunBullet",random(-200,200)/100.00,0,0,1,0,random(-200,200)/100.00)
-        DKXS AAAA 0 A_FireCustomMissile("DukeExplosiveShotgunBullet",random(-500,500)/100.00,0,0,1,0,random(-400,400)/100.00)
+        DKXS A 0 A_FireCustomMissile("DukeExplosiveShotgunBullet",frandom(-1.0,1.0),1,0,1,0,frandom(-1.0,1.0))
+        DKXS AA 0 A_FireCustomMissile("DukeExplosiveShotgunBullet",frandom(-2.0,2.0),0,0,1,0,frandom(-2.0,2.0))
+        DKXS AAAA 0 A_FireCustomMissile("DukeExplosiveShotgunBullet",frandom(-5.0,5.0),0,0,1,0,frandom(-4.0,4.0))
         Goto ShottyAnim
 	  SPFire:
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
