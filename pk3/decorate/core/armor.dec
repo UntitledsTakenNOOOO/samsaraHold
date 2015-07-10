@@ -794,6 +794,17 @@ actor NoArmor: BasicArmorPickup
     }
 }
 
+actor GreenArmorModeStartGiver : CustomInventory
+{
+	+INVENTORY.AUTOACTIVATE
+
+	States
+	{
+	Pickup:
+	TNT1 A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_GREEN)
+	Stop
+	}
+}
 actor YellowArmorModeShopGiver : CustomInventory
 {
 	+INVENTORY.AUTOACTIVATE

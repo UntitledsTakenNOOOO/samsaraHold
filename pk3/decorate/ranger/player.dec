@@ -30,8 +30,9 @@ actor QuakePlayer: PlayerPawn
     BounceFactor 0.35
     WallBounceFactor 0.5
     
-	Player.StartItem "LifeItem", 5   // starting lives
+	Player.StartItem "LifeItem", 9   // starting lives
 	Player.StartItem "CoinItem", 1200 // starting money
+	Player.StartItem "GreenArmorModeStartGiver", 1 //starting armor
 
 	    DamageFactor "PoisonCloud", 1.75
     //DamageFactor "Wraithverge", 0.75

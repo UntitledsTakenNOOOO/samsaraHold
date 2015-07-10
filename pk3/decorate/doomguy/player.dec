@@ -17,8 +17,9 @@ actor DoomguyPlayer : PlayerPawn
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
 	damagefactor "MarineAlly", 0
-	Player.StartItem "LifeItem", 5   // starting lives
+	Player.StartItem "LifeItem", 9   // starting lives
 	Player.StartItem "CoinItem", 1200 // starting money
+	Player.StartItem "GreenArmorModeStartGiver", 1 //starting armor
     DamageFactor "MightyBoot", 1.5
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.1
