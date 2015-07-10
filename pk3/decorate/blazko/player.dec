@@ -25,8 +25,9 @@ actor WolfenPlayer : PlayerPawn
     DamageFactor "Kamikaze", 0
     DamageFactor "ZorchKamikaze", 0
 
+	Health 170
 	Player.StartItem "LifeItem", 9   // starting lives
-	Player.StartItem "CoinItem", 1200 // starting money
+	Player.StartItem "CoinItem", 1500 // starting money
 	Player.StartItem "GreenArmorModeStartGiver", 1 //starting armor
 
     +NOSKIN
