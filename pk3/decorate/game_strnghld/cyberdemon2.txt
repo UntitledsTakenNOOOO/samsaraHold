@@ -200,11 +200,11 @@ ACTOR CyberdemonMk2 32757
 		CYBR G 10 A_Pain
 		CYBR F 0 A_UnSetInvulnerable
 		CYBR F 0 A_Jump(128,"LightningCircle")
-		CYBR F 0 A_FaceTarget
+		CYBR E 35 A_FaceTarget
 		CYBR F 35 A_CustomMissile("CyberDevastatorBall", 85,-24,0)
 		Goto See
 	LightningCircle:
-		CYBR F 0 A_FaceTarget
+		CYBR E 35 A_FaceTarget
 		CYBR F 0 A_CustomMissile("LiteShot2", 85,0,20)
 		CYBR F 0 A_CustomMissile("LiteShot2", 85,0,40)
 		CYBR F 0 A_CustomMissile("LiteShot2", 85,0,60)

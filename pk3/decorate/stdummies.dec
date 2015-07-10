@@ -47,7 +47,7 @@ actor Belphegor : BaronOfHell2 5008
     PainChance 25
     Obituary "%o was slain by a Belphegor."
     HitObituary "%o was slain by a Belphegor."
-    Translation "16:47=176:191", "48:79=80:111"
+    Translation "16:47=176:191", "48:79=[80,80,80]:[0,0,0]"
     States
     {
     Melee:
@@ -88,7 +88,6 @@ actor DarkImp : DoomImp2 5003
     Health 120
     Obituary "%o was burned by a Dark Imp."
     HitObituary "%o was slashed by a Dark Imp."
-    BloodColor Blue
     //Translation "1:1=8:8", "16:47=[0,0,255]:[0,0,0]", "48:79=[185,185,185]:[0,0,0]", "151:151=6:6", "160:167=198:204", "169:174=194:200", "175:183=197:205", "184:185=206:207", "186:191=240:245", "208:223=193:207", "232:235=201:204"//"48:79=[185,185,185]:[0,0,0]", "175:183=197:205", "169:174=194:200", "184:185=206:207", "186:191=240:245", "16:47=[0,0,255]:[0,0,0]", "232:235=201:204", "160:167=198:204", "208:223=193:207"
     Translation "1:1=8:8", "48:79=[185,185,185]:[0,0,0]", "151:151=6:6"
     States
@@ -99,26 +98,6 @@ actor DarkImp : DoomImp2 5003
         TROO EF 6 A_FaceTarget
         TROO G 5 A_CustomComboAttack("DarkImpBallFast",32,3*random(1,8),"imp/melee")//A_CustomMissile("DarkImpBall")
         Goto See
-
-    DukeGibStart:
-        TROO H 1
-        TNT1 A 0 A_UnsetSolid
-        /*TNT1 A 0 A_SpawnDebris("DukeGibs1B")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2B")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3B")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4B")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5B")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6B")*/ // Well that's an odd glitch
-        TNT1 AA 0 A_SpawnItemEx("DukeGibs1B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
-        TNT1 AA 0 A_SpawnItemEx("DukeGibs2B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
-        TNT1 AAAA 0 A_SpawnItemEx("DukeGibs3B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
-        TNT1 AA 0 A_SpawnItemEx("DukeGibs4B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
-        TNT1 AA 0 A_SpawnItemEx("DukeGibs5B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
-        TNT1 AAAAAAA 0 A_SpawnItemEx("DukeGibs6B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"XDeath")
-        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
-        goto XDeath
     }
 }
 
