@@ -161,7 +161,7 @@ str BriefBackground = "TNTA0";
 int BriefScript = 0;	// Set to script number of briefing script. See STR01 for example.
 int DamageTaken[32];
 bool PlayersAreLate = FALSE;
-int LatePlayersDelay = 35*60; // Time before late players are put into jail immediately.
+int LatePlayersDelay = 300*35; // Time before late players are put into jail immediately.
 
 int HardScalerPlayerCount = 6; //Used for player scaling. 6 on average, generally varies between 5-7, with some 8-9.
 
@@ -3094,7 +3094,7 @@ script S_ENTER ENTER
 
 			While(! Teleport_NoFog(PrisonSpot, true, 0))
 			{	delay(5);	}
-			GiveInventory("CoinItem", 1250);
+			GiveInventory("CoinItem", 750);
 			TakeInventory("LifeItem", 9);
 		}
 		else UpdateJailTrackers();
