@@ -31,7 +31,7 @@ actor QuakePlayer: PlayerPawn
     WallBounceFactor 0.5
     
 	Health 200
-	Player.StartItem "LifeItem", 9   // starting lives
+	Player.StartItem "LifeItem", 5   // starting lives
 	Player.StartItem "CoinItem", 1500 // starting money
 	Player.StartItem "GreenArmorModeStartGiver", 1 //starting armor
 

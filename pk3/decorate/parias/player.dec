@@ -18,7 +18,7 @@ damagefactor "MarineAlly", 0
     Player.ForwardMove 1.08, 1.2
     Player.SideMove 1.125, 1.475 //Originally 1.475
 	Health 190
-	Player.StartItem "LifeItem", 9   // starting lives
+	Player.StartItem "LifeItem", 5   // starting lives
 	Player.StartItem "CoinItem", 1500 // starting money
 	Player.StartItem "GreenArmorModeStartGiver", 1 //starting armor
     DamageFactor "PoisonCloud", 1.75
