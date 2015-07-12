@@ -34,7 +34,7 @@ Actor SuperSentryPlasma
 	radius 1
 	height 2
 	speed 20
-        damage 5
+        damage (18)
         scale 0.3
 	damagetype "BossFactor"
 	+DONTBLAST
@@ -69,7 +69,7 @@ Actor SuperSentry
 	DamageFactor "Animate", 10
 	radius 16
 	height 16
-	health 50000
+	health 5000
 	maxstepheight 512
 	maxdropoffheight 512
 	//+nodamage
@@ -118,7 +118,7 @@ Actor SuperSentry2
 	DamageFactor "Animate", 10
 	radius 16
 	height 16
-	health 50000
+	health 5000
 	maxstepheight 512
 	maxdropoffheight 512
 	//+nodamage

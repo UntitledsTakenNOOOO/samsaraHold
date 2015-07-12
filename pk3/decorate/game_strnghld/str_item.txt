@@ -1854,7 +1854,7 @@ actor SentryPlasma
 	radius 1
 	height 2
 	speed 20
-        damage 3
+        damage (12)
         scale 0.3
 	damagetype "BossFactor"
 	+NOEXTREMEDEATH

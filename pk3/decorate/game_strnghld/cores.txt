@@ -5167,12 +5167,12 @@ actor AlarmSounder2 replaces AlarmSounder 21235
 	}
 }
 
-actor AlarmSounding
+actor AlarmSounding //DIDN'T FUCKING WORK
 {
 	-SOLID
 	-SHOOTABLE
 	+NOBLOCKMAP
-	+CLIENTSIDEONLY
+	+CLIENTSIDEONLY //I HATE YOU ZANDRONUM
 
 	States
 	{
@@ -5183,7 +5183,7 @@ actor AlarmSounding
 		TNT1 A 1 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,13)
 		TNT1 A 1 A_PlaySoundEx("AMB16", "Auto", 0, 1)
 		Stop
-	AlrightImShuttingUp:
+	AlrightImShuttingUp: //I HATE YOU SO MUCH
 		TNT1 A 1
 		Stop
 	}
