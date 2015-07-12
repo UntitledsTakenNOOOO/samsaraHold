@@ -161,7 +161,7 @@ str BriefBackground = "TNTA0";
 int BriefScript = 0;	// Set to script number of briefing script. See STR01 for example.
 int DamageTaken[32];
 bool PlayersAreLate = FALSE;
-int LatePlayersDelay = 300*35; // Time before late players are put into jail immediately.
+int LatePlayersDelay = 600*35; // Time before late players are put into jail immediately.
 
 int HardScalerPlayerCount = 6; //Used for player scaling. 6 on average, generally varies between 5-7, with some 8-9.
 
@@ -3336,7 +3336,7 @@ script S_JAIL_GIVEUP (void)
 {
 	if(CheckInventory("JailTrackerAllPlayers")==PlayerCount())
 	{
-		Exit_Normal(ExitPos);
+		Exit_Secret(ExitPos);
 	} else {
 		Print(s:"\cGThere are still \cCplayers \cGon the battlefield!");
 		if(PrisonExitThrustAngle==-1)
@@ -3874,7 +3874,8 @@ script S_TIMER open
 {
 	if(MapScores[GetLevelInfo(LEVELINFO_LEVELNUM)]!=0)
 		TimeAttackMode = TRUE;
-
+	else if(GetCVar("samsarahold_hardmode"))
+		TimeAttackMode = TRUE;
 
 	while( TRUE )
 	{
