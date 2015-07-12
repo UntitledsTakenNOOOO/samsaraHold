@@ -165,19 +165,19 @@ actor NightmareCaco : Cacodemon2
     HEAD C 4 A_ComboAttack
     Goto See
   Death:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 1)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 5)
     Goto "Super::Death"
   Death.ZorchPistol:
   Death.Zorch:
   Death.ZorchKamikaze:
   Death.PhasingZorch:
   Death.ZorchSpectral:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 1)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 5)
     Goto "Super::Death.Zorch"
   Ice:
   Death.HexenIce:
   Death.Ice:
-    TNT1 A 0 A_GiveToTarget("AwardItem", 1)
+    TNT1 A 0 A_GiveToTarget("AwardItem", 5)
     Goto "Super::Ice"
   }
 }

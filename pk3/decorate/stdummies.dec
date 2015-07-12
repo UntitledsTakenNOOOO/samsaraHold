@@ -36,6 +36,21 @@ actor Abaddon : Cacodemon2 5015
       HEAD BC 3 A_FaceTarget
       HEAD D 4 Bright A_BasicAttack (10, "None", "HadesBall", 32)
       Goto See
+  Death:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+    Goto "Super::Death"
+  Death.ZorchPistol:
+  Death.Zorch:
+  Death.ZorchKamikaze:
+  Death.PhasingZorch:
+  Death.ZorchSpectral:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+    Goto "Super::Death.Zorch"
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 8)
+    Goto "Super::Ice"
     }
 }
 
@@ -59,6 +74,21 @@ actor Belphegor : BaronOfHell2 5008
       BOSS EF 6 A_FaceTarget
       BOSS G 6 A_BasicAttack(10, "baron/melee", "BaronBallFast", 32)
       Goto See
+  Death:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
+    Goto "Super::Death"
+  Death.ZorchPistol:
+  Death.Zorch:
+  Death.ZorchKamikaze:
+  Death.PhasingZorch:
+  Death.ZorchSpectral:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
+    Goto "Super::Death.Zorch"
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
+    Goto "Super::Ice"
   }
 }
 
@@ -78,6 +108,21 @@ actor Cacolantern : Cacodemon2 5006
       HEAD BC 5 A_FaceTarget
       HEAD D 5 Bright A_BasicAttack (8, "None", "CacolanternBall", 32)
       Goto See
+  Death:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
+    Goto "Super::Death"
+  Death.ZorchPistol:
+  Death.Zorch:
+  Death.ZorchKamikaze:
+  Death.PhasingZorch:
+  Death.ZorchSpectral:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
+    Goto "Super::Death.Zorch"
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 4)
+    Goto "Super::Ice"
     }
 }
 
@@ -98,6 +143,24 @@ actor DarkImp : DoomImp2 5003
         TROO EF 6 A_FaceTarget
         TROO G 5 A_CustomComboAttack("DarkImpBallFast",32,3*random(1,8),"imp/melee")//A_CustomMissile("DarkImpBall")
         Goto See
+  Death:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    Goto "Super::Death"
+  Death.ZorchPistol:
+  Death.Zorch:
+  Death.ZorchKamikaze:
+  Death.PhasingZorch:
+  Death.ZorchSpectral:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    Goto "Super::Death.Zorch"
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    Goto "Super::Ice"
+  XDeath:
+    TNT1 A 0 A_GiveToTarget("AwardItem", 2)
+    Goto "Super::XDeath"
     }
 }
 
