@@ -124,9 +124,7 @@ ACTOR Apprentice 30000
         APDP M 3000
         Stop
     Raise:
-        APDP ML 8
-        APDP KJI 6
-        Goto See
+        Stop
     }
 }
 
@@ -201,7 +199,7 @@ ACTOR MiniSpider 22290
    SpawnID 175
    Radius 8
    Height 16
-   Health 75
+   Health 100
    Scale 0.25
    Translation 0
    MONSTER
@@ -223,7 +221,8 @@ ACTOR MiniSpider 22290
      MNTR AB 10 A_Look
      Loop
    See:
-     MNTR A 0 A_Jump(96,"See2","See2","See2","See3","See3","See4")
+     MNTR A 0 A_Jump(256,"See1","See1","See1","See1","See2","See2","See2","See3","See3","See4")
+   See1:
      MNTR ABCD 4 A_Chase
      Loop
    See2:
@@ -261,14 +260,14 @@ ACTOR LargeSpider 22291
    SpawnID 176
    Radius 16
    Height 32
-   Health 150
+   Health 200
    Scale 0.50
    Translation 1
    MONSTER
    +FLOORCLIP
    +NOICEDEATH
-   DropItem "HereticStuffDump" 80
-   DropItem "HereticArmorDump" 20
+   DropItem "HereticStuffDump" 40
+   DropItem "HereticArmorDump" 10
    seesound "littlespider/sight"
    attacksound "littlespider/attack"
    painsound "littlespider/pain"
@@ -285,9 +284,10 @@ ACTOR LargeSpider 22291
      MNTR AB 10 A_Look
      Loop
    See:
-     MNTR A 0 A_Jump(80,"See2","See2","See2","See3")
+     MNTR A 0 A_Jump(256,"See1","See1","See1","See1","See2","See2","See3")
+   See1:
      MNTR ABCD 4 A_Chase
-     Loop
+     Goto See
    See2:
      MNTR ABCD 3 A_Chase
      Goto See
@@ -387,8 +387,7 @@ states
        CULT W 3000
        Stop
    Raise:
-       CULT MLKJHI 5
-       Goto See
+       Stop
    }
 }
 
@@ -511,24 +510,25 @@ states
    XDeath:
        TNT1 A 0 A_GiveToTarget("AwardItem", 12)
        TNT1 A 0 A_GiveToTarget("KillCount", 1)
-       INCA LM 7
-       INCA N 7 A_Scream
-       INCA O 7 A_NoBlocking
-       INCA P 7
-       INCA Q 175
-       INCA Q 3000
+       INCX A 10 BRIGHT A_PlaySound("monster/incexp")
+       INCX BC 5 BRIGHT
+       INCX D 5 BRIGHT A_NoBlocking
+       INCX D 0 BRIGHT A_SpawnItem("HS",0,32)
+       INCX EFGHIJ 5 BRIGHT
+       INCX K 3000
        Stop
    Death:
        TNT1 A 0 A_JumpIfInventory("Clip",4,"XDeath")
        TNT1 A 0 A_GiveInventory("Clip",1)
        TNT1 A 0 A_GiveToTarget("AwardItem", 4)
        TNT1 A 0 A_GiveToTarget("KillCount", 1)
-       INCX A 10 BRIGHT A_PlaySound("monster/incexp")
-       INCX BC 5 BRIGHT
-       INCX D 5 BRIGHT A_NoBlocking
-       INCX D 0 BRIGHT A_SpawnItem("HS",0,32)
-       INCX EFGHIJ 5 BRIGHT
-       INCX K 295
+       INCA LM 7
+       INCA N 7 A_Scream
+       INCA O 7 A_NoBlocking
+       INCA P 7
+       INCA Q 175
+       INCA Q 1 Thing_Raise
+       Goto Raise
    Raise:
        INCA Q 0 A_KillChildren
        INCA QPONML 5
@@ -618,8 +618,7 @@ states
        HDOG Q 3000
        Stop
    Raise:
-       HDOG QPONMLK 5
-       Goto See
+       Stop
    }
 }
 
@@ -733,9 +732,7 @@ actor Vulgar : DoomImp 30127
     VULG V 3000
     stop
   Raise:
-    VULG ML 8
-    VULG KJI 6
-    goto See
+    Stop
   }
 }
 
@@ -976,8 +973,7 @@ ACTOR ChaingunCultist 29011
     BCUL U 3000
     Stop
   Raise:
-    BCUL NMLKJIH 5
-    Goto See
+    Stop
   }
 }
 
@@ -1071,8 +1067,7 @@ ACTOR FattyX 25010
     BFAT Q 3000
     Stop
   Raise:
-    BFAT QPONML 5
-    Goto See
+    Stop
   }
 }
 
@@ -1196,8 +1191,7 @@ ACTOR ZombieX 31002
     BZOM N 3000
     Stop
   Raise:
-    BZOM NMLKJI 5
-    Goto See
+    Stop
   }
 }
 
