@@ -6,22 +6,22 @@ ACTOR Overmind 16999
 	damagefactor "railgun", 0
 	DamageFactor "CorvusCrossbow", 1.1
 	DamageFactor "DragonClaw", 1.5
-	DamageFactor "WMCBeam", 0.5
-	DamageFactor "WMCNade", 0.375
-	DamageFactor "BJSpear", 0.5
-	DamageFactor "BFG", 0.5
-	DamageFactor "BFGSplash", 0.5
-	DamageFactor "DukeExplosive", 0.625
+	DamageFactor "WMCBeam", 0.8
+	DamageFactor "WMCNade", 0.6
+	DamageFactor "BJSpear", 0.8
+	DamageFactor "BFG", 0.8
+	DamageFactor "BFGSplash", 0.8
+	DamageFactor "DukeExplosive", 0.85
 	damagefactor "CorvusHellStaffTomed", 0.1
 	DamageFactor "Kamikaze", 0 //Yeah no.
 	damagefactor "ZorchKamikaze", 0
-	DamageFactor "DoomPlasma", 0.75
-	DamageFactor "PhasingZorch", 0.625
-	DamageFactor "CorvusHellStaff", 0.75
-	DamageFactor "WolfenFlamethrower", 0.75
-	DamageFactor "DukeIce", 0.75
-	DamageFactor "QuakeFire", 0.75
-	DamageFactor "MarathonPlasma", 0.75
+	DamageFactor "DoomPlasma", 0.9
+	DamageFactor "PhasingZorch", 0.85
+	DamageFactor "CorvusHellStaff", 0.9
+	DamageFactor "WolfenFlamethrower", 0.95
+	DamageFactor "DukeIce", 0.95
+	DamageFactor "QuakeFire", 0.85
+	DamageFactor "MarathonPlasma", 0.9
 	DamageFactor "MarathonFusion", 2.0
 	Health 50000
 	Mass 80000
