@@ -9,7 +9,6 @@ ACTOR Overmind 16999
 	DamageFactor "WMCBeam", 0.5
 	DamageFactor "WMCNade", 0.375
 	DamageFactor "BJSpear", 0.5
-	DamageFactor "Wraithverge", 0.5
 	DamageFactor "BFG", 0.5
 	DamageFactor "BFGSplash", 0.5
 	DamageFactor "DukeExplosive", 0.625
@@ -23,6 +22,7 @@ ACTOR Overmind 16999
 	DamageFactor "DukeIce", 0.75
 	DamageFactor "QuakeFire", 0.75
 	DamageFactor "MarathonPlasma", 0.75
+	DamageFactor "MarathonFusion", 2.0
 	Health 50000
 	Mass 80000
 	Radius 80
@@ -99,82 +99,196 @@ ACTOR Overmind 16999
 		Loop
 	Missile:
 		OYCL E 0 A_PlaySoundEx("cycloid/attack","Auto",0,2)
-		OYCL E 0 A_Jump(64,2)
 		OYCL E 0 A_JumpIfCloser(1024,"Flame")
 		OYCL E 0 A_Jump(224,"Fireballs")
-		OYCL G 35 A_FaceTarget
+		OYCL GGGGGGG 5 A_FaceTarget
 		OYCL GGGGG 5 Bright A_FaceTarget
 		OYCL E 0 A_PlaySoundEx("weapons/hellfi","Auto",0,2)
-		CYCL H 15 Bright A_CustomMissile("OvermindPyroShot",220,0,0)
+		CYCL H 1 Bright Bright A_CustomMissile("OvermindPyroShot",220,0,0)
 		Goto See
 	Fireballs:
-	    OYCL E 4 A_FaceTarget
-		OYCL F 1 A_CustomMissile("CatharsiBallLarge", 128, 0, 0)
-		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, random(-20,20))
+		OYCL E 0 A_Jump(96,"Missile1","Missile2A","Missile2B")
 		OYCL E 4 A_FaceTarget
 		OYCL F 1 A_CustomMissile("CatharsiBallLarge", 128, 0, 0)
-		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, random(-20,20))
+		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, frandom(-20,20))
 		OYCL E 4 A_FaceTarget
 		OYCL F 1 A_CustomMissile("CatharsiBallLarge", 128, 0, 0)
-		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, random(-20,20))
+		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, frandom(-20,20))
 		OYCL E 4 A_FaceTarget
 		OYCL F 1 A_CustomMissile("CatharsiBallLarge", 128, 0, 0)
-		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, random(-20,20))
+		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, frandom(-20,20))
 		OYCL E 4 A_FaceTarget
 		OYCL F 1 A_CustomMissile("CatharsiBallLarge", 128, 0, 0)
-		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, random(-20,20))
+		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, frandom(-20,20))
 		OYCL E 4 A_FaceTarget
 		OYCL F 1 A_CustomMissile("CatharsiBallLarge", 128, 0, 0)
-		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, random(-20,20))
-		Goto See		
+		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, frandom(-20,20))
+		OYCL E 4 A_FaceTarget
+		OYCL F 1 A_CustomMissile("CatharsiBallLarge", 128, 0, 0)
+		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, frandom(-20,20))
+		Goto See
+	Missile1:
+		OYCL EEEEEEE 5 A_FaceTarget
+		OYCL EEEEE 5 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		OYCL E 4 Bright A_FaceTarget
+		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
+		Goto See
+	Missile2A:
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, 8)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, 6)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, 4)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, 2)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, 0)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, -2)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, -4)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, -6)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, -8)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, -10)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, -12)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, -14)
+		Goto See
+	Missile2B:
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, -8)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, -6)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, -4)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, -2)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, 0)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, 2)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, 4)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, 6)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, 8)
+		OYCL E 1 A_FaceTarget
+		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, 10)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, 12)
+		OYCL F 1 A_FaceTarget
+		OYCL F 1 A_CustomMissile("OvermindMissile2", 128, 0, 14)
+		Goto See
 	Flame:
-		OYCL E 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*48, 0, -3)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*43, 0, 5)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*44, 0, -7)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*46, 0, 6)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*45, 0, -1)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*43, 0, -3)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*42, 0, 4)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*46, 0, -7)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*44, 0, 8)
-		OYCL F 0 A_SpidRefire
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*44, 0, 1)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*46, 0, -3)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*43, 0, 5)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*44, 0, -7)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*46, 0, 6)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*45, 0, -1)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*43, 0, -3)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*42, 0, 4)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*46, 0, -7)
-		OYCL F 0 A_FaceTarget
-		OYCL F 1 A_CustomMissile("FlameBreathOvermind", 3*44, 0, 8)
-		OYCL F 0 A_SpidRefire
+		OYCL E 0 A_Jump(64,"Fireballs")
+		OYCL GGGGGGG 5 A_FaceTarget
+		OYCL GGGGG 5 Bright A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*48, 0, -3)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*43, 0, 5)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, -7)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, 6)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*45, 0, -1)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*43, 0, -3)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*42, 0, 4)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, -7)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, 8)
+		CYCL H 0 A_SpidRefire
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, 1)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, -3)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*43, 0, 5)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, -7)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, 6)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*45, 0, -1)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*43, 0, -3)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*42, 0, 4)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, -7)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, 8)
+		CYCL H 0 A_SpidRefire
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*48, 0, -3)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*43, 0, 5)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, -7)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, 6)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*45, 0, -1)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*43, 0, -3)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*42, 0, 4)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, -7)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, 8)
+		CYCL H 0 A_SpidRefire
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, 1)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, -3)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*43, 0, 5)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, -7)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, 6)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*45, 0, -1)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*43, 0, -3)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*42, 0, 4)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*46, 0, -7)
+		CYCL H 0 A_FaceTarget
+		CYCL H 1 Bright A_CustomMissile("FlameBreathOvermind", 3*44, 0, 8)
 		Goto See
 	Pain:
-		OYCL A 0 A_ChangeFlag("NOPAIN",1)
-		OYCL A 0 A_ChangeFlag("INVULNERABLE",1)
 		OYCL I 6
 		OYCL I 6 A_PlaySoundEx("cycloid/pain","Auto",0,2)
-		OYCL A 0 A_ChangeFlag("NOPAIN",0)
-		OYCL A 0 A_ChangeFlag("INVULNERABLE",0)
 		Goto See
 
       Death.DukeDamage:
@@ -336,8 +450,8 @@ ACTOR Overmind 16999
 
 ACTOR ZorchEffectHuger : ZorchEffectHuge
 {
-	yscale 4
-	xscale 4
+	yscale 4.0
+	xscale 4.0
 }
 
 ACTOR FlameBreathOvermind {
@@ -367,7 +481,7 @@ ACTOR FlameBreathOvermind {
 
 actor CatharsiBallLarge : CatharsiBall
 {
-  damagetype "overmindfactor"
+  Damagetype "overmindfactor"
   Scale 2.5
   Speed 40
   +NOTIMEFREEZE
@@ -381,7 +495,44 @@ actor CatharsiBallLarge : CatharsiBall
 	stop
   }
 }
-
+actor OvermindMissile1 : DukerocketEnemy
+{
+  damagetype "overmindfactor"
+  DeathSound "duke/splode"
+  Scale 1.5
+  Speed 40
+  Damage (35)
+  +FULLVOLDEATH
+  +NOTIMEFREEZE
+  +DONTREFLECT
+  States
+  {
+	Death:
+	XPLO A 0 A_Scream
+	XPLO A 0 A_Explode(70,112,1)
+	XPLO ABCDEFGHIJKLMNOPQRSTU 2 BRIGHT 
+	Stop
+  }
+}
+actor OvermindMissile2 : BruiserMissile
+{
+  damagetype "overmindfactor"
+  DeathSound "duke/splode"
+  Scale 2.0
+  Speed 40
+  Damage 8
+  +NOTIMEFREEZE
+  +DONTREFLECT
+  States
+  {
+	Death:
+	BAL3 C 0 Bright A_SetTranslucent (0.67,1)
+	BAL3 C 6 Bright A_Explode(16,64,0)
+	BAL3 D 6 Bright A_Explode(32,64,0)
+	BAL3 E 6 Bright A_Explode(16,64,0)
+	stop
+  }
+}
 actor OvermindPyroShot : PyroShot
 {
   damagetype "overmindfactor"
