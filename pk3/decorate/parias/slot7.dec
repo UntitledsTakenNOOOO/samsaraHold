@@ -302,7 +302,7 @@ actor HolyMissilePuff3
   {
   Spawn:
     SPIR Q 0
-    SPIR Q 3 A_Explode(Random(1,4)*2,0)
+    SPIR Q 3 A_Explode(Random(1,8),0)
     SPIR RSTU 3
     Stop
   }

@@ -9,7 +9,7 @@ DamageFactor "HexenIce", 2.25
 DamageFactor "DukeIce", 2.25
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
-DamageFactor "Wraithverge", 10.0
+DamageFactor "Wraithverge", 15.0
 	SpawnID 234
         Health 1500
 	Radius 24
