@@ -385,6 +385,7 @@ states
        CULT P 5 A_NoBlocking
        CULT QRSTUV 5
        CULT W 3000
+       Stop
    Raise:
        CULT MLKJHI 5
        Goto See
