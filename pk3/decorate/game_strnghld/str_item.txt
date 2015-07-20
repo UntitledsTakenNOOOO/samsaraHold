@@ -2704,7 +2704,7 @@ actor RandomWeaponItem : CustomInventory 25023
     Goto Give3to6
   NoUnique:
     TNT1 A 1 A_Jump(5,"GiveUlt")
-    Stop
+    Goto Give3to6
   GiveUnique:
     TNT1 A 1 ACS_ExecuteWithResult(231)
     TNT1 A 1 A_GiveInventory("Ammo1Small",1)

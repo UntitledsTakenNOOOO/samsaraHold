@@ -26,7 +26,7 @@ spawnid 249
 Obituary "%o felt the power of the Spider-Demolisher."
 Health 6000
 Radius 80
-Height 88
+Height 80
 Mass 1000
 Speed 16
 PainChance 20

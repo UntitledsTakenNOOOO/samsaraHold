@@ -9,7 +9,7 @@ actor SpiderMastermind2 : Spidermastermind replaces SpidermastermindStun
     DamageFactor "Wraithverge", 10.0
     painchance "Stunner", 96
     Radius 80
-    Height 88
+    Height 80
     +BOSSDEATH
     +DONTRIP
     +NOTDMATCH
