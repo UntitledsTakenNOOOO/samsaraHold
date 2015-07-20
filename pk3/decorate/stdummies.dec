@@ -24,6 +24,7 @@ actor Abaddon : Cacodemon2 5015
     SpawnID 220
     Speed 12
     PainChance 40
+    +DONTRIP
     BloodColor Red
     Translation "170:191=[81,81,81]:[0,0,0]", "16:47=[120,120,120]:[0,0,0]", "164:167=108:108", "217:223=107:109", "112:123=160:167", "124:125=77:78", "126:127=1:2", "192:207=168:187", "240:247=188:191", "48:79=96:111", "144:151=176:191"
     Obituary "%o was smitten by an Abaddon."
@@ -59,6 +60,7 @@ actor Belphegor : BaronOfHell2 5008
     Game Doom
     SpawnID 215
     Health 1500
+    +DONTRIP
     PainChance 25
     Obituary "%o was slain by a Belphegor."
     HitObituary "%o was slain by a Belphegor."
@@ -181,7 +183,7 @@ DeathSound "imp/shotx"
 +THRUGHOST
 -SEEKERMISSILE
 }
-
+/*
 actor SuperShotgunGuy : ChaingunGuy2 5005
 {
     Game Doom
@@ -195,12 +197,13 @@ actor SuperShotgunGuy : ChaingunGuy2 5005
     {
       Missile:
         CPOS E 9 A_FaceTarget
-        CPOS FFFFFF 0 A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+        CPOS FFFFFF 0 A_CustomMissile("DoomEnemyBullet",32,0,frandom(-22.5,22.5),8)
         CPOS F 6 Bright A_PlayWeaponSound("doomguy/sshotf")//A_CustomBulletAttack(8, 7, 7, 5, "BulletPuff")
         CPOS E 6
         Goto See
     }
 }
+*/
 actor SuperShotgunPickup: SamsaraSlotThreeDrop
 {
     States

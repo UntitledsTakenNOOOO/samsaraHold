@@ -15,8 +15,8 @@ ACTOR CyberdemonMk2 32757
 	DamageFactor "Wraithverge", 8.0
 	Health 50000
 	MeleeRange 160
-	Radius 50
-	Height 125
+	Radius 56
+	Height 136
 	Mass 1600
 	Speed 16
 	PainChance 1

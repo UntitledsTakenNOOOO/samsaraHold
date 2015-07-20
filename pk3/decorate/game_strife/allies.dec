@@ -82,6 +82,7 @@ actor FriendlyMarine // : DoomImp2
         PLAY F 0 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
         PLAY F 6 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
         PLAY E 6 A_FaceTarget
+        PLAY AABBCCDD 2 A_Wander
         Goto See
 
       Missile:
@@ -283,8 +284,8 @@ actor FriendlyNitrogolemGhost : FriendlyNitrogolem
 actor FriendlyNitrogolemSpawner : RandomSpawner
 {
 	+FRIENDLY
-	DropItem "FriendlyNitrogolem" 256 13
-	DropItem "FriendlyNitrogolemGhost" 256 3
+	DropItem "FriendlyNitrogolem" 256 3
+	DropItem "FriendlyNitrogolemGhost" 256 1
 }
 //=================
 // CHEX WARRIOR: Bipedal Flemoid.
@@ -552,22 +553,24 @@ ACTOR FriendlyNazi
         
       Missile:
         NGRD H 5 A_FaceTarget
+        TNT1 A 0 A_PlayWeaponSound("wolfen/pistol")
+        NGRD I 5 Bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
+        NGRD H 5 A_FaceTarget
+        NGRD H 0 A_CPosRefire
         NGRD H 5 A_FaceTarget
         TNT1 A 0 A_PlayWeaponSound("wolfen/pistol")
         NGRD I 5 Bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
         NGRD H 5 A_FaceTarget
+        NGRD H 0 A_CPosRefire
         NGRD H 5 A_FaceTarget
         TNT1 A 0 A_PlayWeaponSound("wolfen/pistol")
         NGRD I 5 Bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
         NGRD H 5 A_FaceTarget
+        NGRD H 0 A_CPosRefire
         NGRD H 5 A_FaceTarget
         TNT1 A 0 A_PlayWeaponSound("wolfen/pistol")
         NGRD I 5 Bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
         NGRD H 5 A_FaceTarget
-        NGRD H 5 A_FaceTarget
-        TNT1 A 0 A_PlayWeaponSound("wolfen/pistol")
-        NGRD I 5 Bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
-        //NGRD H 1 A_CPosRefire
         Goto See
         
       Pain:
@@ -603,8 +606,12 @@ actor FriendlyNaziBullet : WolfenBullet2
 // Squawk.
 actor FriendlyAfrit : FireDemon2
 {
-    Health 160
-
+    Health 100
+    DamageFactor "PariasResistCatharsi", 0.66
+    DamageFactor "PariasResistFusionSpiders", 0.6
+    DamageFactor "PariasResistHellions", 0.5
+    DamageFactor "PariasResistShadows", 0.75
+    RadiusDamageFactor 0.25
 	Damagefactor "EnemyInfightDamage", 0
 
 	Damagefactor "FaithInHumanity", 0
@@ -742,6 +749,7 @@ actor FriendlyAlienTrooper
   +ACTIVATEIMPACT
   +CANPUSHWALLS
   +CANUSEWALLS
+  +MISSILEMORE
   -NoBlockMonst
   -CountKill
   -ActivateMCross
@@ -940,6 +948,8 @@ ACTOR FriendlyTeleportTrooper : FriendlyAlienTrooper
 	Obituary "%o was somehow killed by a friendly Assault Captain."
         Health 120
 	GibHealth -60
+        -MISSILEMORE
+        +MISSILEEVENMORE
 	States
 	{
 	SeeInvisible:
@@ -985,8 +995,8 @@ ACTOR FriendlyTeleportTrooper : FriendlyAlienTrooper
 actor FriendlyAlienSpawner : RandomSpawner
 {
 	+FRIENDLY
-	DropItem "FriendlyAlienTrooper" 256 10
-	DropItem "FriendlyTeleportTrooper" 256 6
+	DropItem "FriendlyAlienTrooper" 256 5
+	DropItem "FriendlyTeleportTrooper" 256 3
 }
 
 //=================
@@ -1337,7 +1347,7 @@ ACTOR FriendlyEliteMarine //: BaronOfHell2
         loop
         
       See:
-        PLAY AAABBBCCCDDD 1 A_Chase
+        PLAY AAABBBCCCDDD 1 A_FastChase
         Loop
         
       Melee:
@@ -1498,7 +1508,7 @@ actor FriendlyBaronBall : BaronBall3
 
 ACTOR FriendlyIronLich : IronLich2
     {
-    Health 700
+    Health 900
     PainChance 64
     HitObituary "%o was somehow killed by a friendly Iron lich."
     Obituary "%o was somehow killed by a friendly Iron lich."
@@ -1688,13 +1698,13 @@ Stop
 // HEY LOOK THEY GET GREEN SLIME BALLS AGAIN
 actor FriendlyFlemoidusMaximus : FlemoidusMaximus
 {
-    Health 1500 //Yeah he gets it because Defense
+    Health 1250 //Yeah he gets it because Defense
     PainChance 25
     AttackSound "friendlyflemoid/attack"
     DeathSound "friendlyflemoid/death"
     
-		damagefactor "Normal", 0.75
-		RadiusDamageFactor 0.9
+		damagefactor "Normal", 0.8
+		RadiusDamageFactor 0.8
 		
 	Damagefactor "EnemyInfightDamage", 0
 
@@ -1878,7 +1888,7 @@ actor FriendlyFlemBall2 : SnotfolusBall
 // Perfect Accuracy Repeat Fire. Totally Awesome.
 ACTOR FriendlyWolfensteinSS
 {
-    Health 1300
+    Health 900
     Radius 16
     Height 50
     Speed 8
@@ -2480,7 +2490,7 @@ ACTOR HunterShot
 
 Actor FriendlyVore
 {
-  Health 800
+  Health 1000 //They only had 400 health in quake, but damage scaling is far higher here.
   Speed 4
   Radius 30
   Height 56

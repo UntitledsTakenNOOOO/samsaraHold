@@ -26,10 +26,9 @@ actor CorvusPlayer : PlayerPawn
     DamageFactor "EnemyInfightDamage", 0.0
     DamageFactor "Kamikaze", 0
     DamageFactor "ZorchKamikaze", 0
-	Health 160
+	Health 170
 	Player.StartItem "LifeItem", 5    // starting lives
 	Player.StartItem "CoinItem", 1500 // starting money
-	Player.StartItem "GreenArmorModeStartGiver", 1 //starting armor
     +NOSKIN
     +DONTBLAST
     +THRUSPECIES

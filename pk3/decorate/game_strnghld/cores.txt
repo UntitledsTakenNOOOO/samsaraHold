@@ -5051,23 +5051,23 @@ Actor OvermindCore2 replaces OvermindCore 29952
     damagefactor "Kamikaze", 0
     DamageFactor "ZorchKamikaze", 0
 
-	DamageFactor "Normal", 2
-	DamageFactor "Lightning", 2.5
-	DamageFactor "Fire", 2.5
-	DamageFactor "Normal", 2.5
-	DamageFactor "RedBlast", 2.5
-	DamageFactor "DoomTheseGuysAreTheBest", 2.5
-	DamageFactor "DoomHellNoble", 2.5
-	DamageFactor "DoomCacodemon", 2.5
-	DamageFactor "DoomSpiderPlasma", 2.5
+	DamageFactor "Normal", 4
+	DamageFactor "Lightning", 5
+	DamageFactor "Fire", 5
+	DamageFactor "Normal", 5
+	DamageFactor "RedBlast", 5
+	DamageFactor "DoomTheseGuysAreTheBest", 5
+	DamageFactor "DoomHellNoble", 5
+	DamageFactor "DoomCacodemon", 5
+	DamageFactor "DoomSpiderPlasma", 5
 
-	DamageFactor "Cyber2Factor", 4.5
+	DamageFactor "Cyber2Factor", 9
 
-  	DamageFactor "STBoss", 3
-  	DamageFactor "STBossFactor", 3.5
-  	DamageFactor "Animate", 4
+  	DamageFactor "STBoss", 6
+  	DamageFactor "STBossFactor", 7
+  	DamageFactor "Animate", 8
 
-	DamageFactor "OvermindFactor", 5
+	DamageFactor "OvermindFactor", 10
 
 	DeathSound "weapons/rocklx"
 

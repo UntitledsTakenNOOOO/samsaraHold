@@ -58,8 +58,16 @@ ACTOR Overmind 16999
         	TNT1 A 0 A_GiveInventory("DukeBossSee",1)
         	TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
       	See2:
-		OYCL A 0 A_GiveInventory("WeakenOvermind",1)
-		OYCL A 0 A_JumpIfHealthLower(35000,"See3")
+		OYCL A 0 A_JumpIfHealthLower(40000,"See3")
+		OYCL A 0 Radius_Quake(4,8,0,32,0)
+		OYCL A 0 A_Explode(16,384,0)
+		OYCL AAABBB 6 A_Chase
+		OYCL C 0 Radius_Quake(4,8,0,32,0)
+		OYCL A 0 A_Explode(16,384,0)
+		OYCL CCCDDD 6 A_Chase
+		Loop
+      	See3:
+		OYCL A 0 A_JumpIfHealthLower(30000,"See4")
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
 		OYCL A 0 A_Explode(32,384,0)
 		OYCL AAAABBBB 4 A_Chase
@@ -67,34 +75,30 @@ ACTOR Overmind 16999
 		OYCL A 0 A_Explode(32,384,0)
 		OYCL CCCCDDDD 4 A_Chase
 		Loop
-      	See3:
-		OYCL A 0 A_TakeInventory("WeakenOvermind",0x7FFFFFFF)
-		OYCL A 0 A_JumpIfHealthLower(20000,"See4")
+      	See4:
+		OYCL A 0 A_JumpIfHealthLower(20000,"See5")
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
-		OYCL A 0 A_Explode(32,384,0)
+		OYCL A 0 A_Explode(48,384,0)
 		OYCL AAAABBBB 3 A_Chase
 		OYCL C 0 Radius_Quake(4,8,0,32,0)
-		OYCL A 0 A_Explode(32,384,0)
+		OYCL A 0 A_Explode(48,384,0)
 		OYCL CCCCDDDD 3 A_Chase
 		Loop
-      	See4:
-		OYCL A 0 A_GiveInventory("ProtectOvermind",1)
-		OYCL A 0 A_JumpIfHealthLower(5000,"See5")
+      	See5:
+		OYCL A 0 A_JumpIfHealthLower(10000,"See6")
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
-		OYCL A 0 A_Explode(32,384,0)
+		OYCL A 0 A_Explode(64,384,0)
 		OYCL AAAABBBB 2 A_Chase
 		OYCL C 0 Radius_Quake(4,8,0,32,0)
-		OYCL A 0 A_Explode(32,384,0)
+		OYCL A 0 A_Explode(64,384,0)
 		OYCL CCCCDDDD 2 A_Chase
 		Loop
-      	See5:
-		OYCL A 0 A_TakeInventory("ProtectOvermind",0x7FFFFFFF)
-		OYCL A 0 A_GiveInventory("ProtectOvermindMore",1)
+      	See6:
 		OYCL A 0 Radius_Quake(4,8,0,32,0)
-		OYCL A 0 A_Explode(32,384,0)
+		OYCL A 0 A_Explode(96,384,0)
 		OYCL AAAABBBB 1 A_Chase
 		OYCL C 0 Radius_Quake(4,8,0,32,0)
-		OYCL A 0 A_Explode(32,384,0)
+		OYCL A 0 A_Explode(96,384,0)
 		OYCL CCCCDDDD 1 A_Chase
 		Loop
 	Missile:
@@ -107,7 +111,7 @@ ACTOR Overmind 16999
 		CYCL H 1 Bright Bright A_CustomMissile("OvermindPyroShot",220,0,0)
 		Goto See
 	Fireballs:
-		OYCL E 0 A_Jump(96,"Missile1","Missile2A","Missile2B")
+		OYCL E 0 A_Jump(96,"Missile1","Missile2","Missile2","Missile2","Missile2","Missile2")
 		OYCL E 4 A_FaceTarget
 		OYCL F 1 A_CustomMissile("CatharsiBallLarge", 128, 0, 0)
 		OYCL FFF 1 A_CustomMissile("CatharsiBallLarge", 128, 0, frandom(-20,20))
@@ -154,6 +158,9 @@ ACTOR Overmind 16999
 		OYCL E 4 Bright A_FaceTarget
 		OYCL FFFF 1 Bright A_CustomMissile("OvermindMissile1", 128, 0, frandom(-20,20))
 		Goto See
+	Missile2:
+		OYCL A 1 A_Jump(255,"Missile2A","Missile2B")
+		Loop
 	Missile2A:
 		OYCL E 1 A_FaceTarget
 		OYCL E 1 A_CustomMissile("OvermindMissile2", 128, 0, 8)
@@ -502,23 +509,23 @@ actor OvermindMissile1 : DukerocketEnemy
   Scale 1.5
   Speed 40
   Damage (35)
-  +FULLVOLDEATH
   +NOTIMEFREEZE
   +DONTREFLECT
   States
   {
-	Death:
-	XPLO A 0 A_Scream
-	XPLO A 0 A_Explode(70,112,1)
-	XPLO ABCDEFGHIJKLMNOPQRSTU 2 BRIGHT 
-	Stop
+    Death:
+    TNT1 A 0 A_PlaySound("duke/explosion", 6, 1.0, 0, ATTN_NONE)
+    XPLO A 0 A_Scream 
+    XPLO A 0 A_Explode(70,112,1)
+    XPLO ABCDEFGHIJKLMNOPQRSTU 2 BRIGHT 
+    Stop
   }
 }
 actor OvermindMissile2 : BruiserMissile
 {
   damagetype "overmindfactor"
   DeathSound "duke/splode"
-  Scale 2.0
+  Scale 1.75
   Speed 40
   Damage 8
   +NOTIMEFREEZE
@@ -557,18 +564,53 @@ actor IHateFOILINVUL : PowerProtection //God dammit why did I have to make this
 	DamageFactor "Wraithverge", 0
 }
 
-actor WeakenOvermind : PowerProtection //So you can shotgun him
+actor OvermindDamageFactor1 : PowerProtection //So you can shotgun him
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 2.5
+}
+actor OvermindDamageFactor2 : PowerProtection
 {
 	Powerup.Duration 0x7FFFFFFF
 	DamageFactor "Normal", 2.0
 }
-actor ProtectOvermind : PowerProtection //But plasma doesnt wreck him
+actor OvermindDamageFactor3 : PowerProtection
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 1.6
+}
+actor OvermindDamageFactor4 : PowerProtection
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 1.25
+}
+actor OvermindDamageFactor5 : PowerProtection //But plasma doesnt wreck him
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 1.0
+}
+actor OvermindDamageFactor6 : PowerProtection
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 0.8
+}
+actor OvermindDamageFactor7 : PowerProtection
 {
 	Powerup.Duration 0x7FFFFFFF
 	DamageFactor "Normal", 0.5
 }
-actor ProtectOvermindMore : PowerProtection //And neither do BFGs
+actor OvermindDamageFactor8 : PowerProtection
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 0.4
+}
+actor OvermindDamageFactor9 : PowerProtection //And neither do BFGs
 {
 	Powerup.Duration 0x7FFFFFFF
 	DamageFactor "Normal", 0.25
+}
+actor OvermindDamageFactor10 : PowerProtection
+{
+	Powerup.Duration 0x7FFFFFFF
+	DamageFactor "Normal", 0.2
 }

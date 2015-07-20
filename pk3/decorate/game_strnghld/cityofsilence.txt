@@ -527,8 +527,8 @@ states
        INCA O 7 A_NoBlocking
        INCA P 7
        INCA Q 175
-       INCA Q 1 Thing_Raise
-       Goto Raise
+       INCA Q -1 Thing_Raise(0)
+       Stop
    Raise:
        INCA Q 0 A_KillChildren
        INCA QPONML 5

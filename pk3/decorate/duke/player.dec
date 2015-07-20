@@ -13,10 +13,9 @@ actor DukePlayer : PlayerPawn
     Player.ForwardMove 0.95, 0.925
     Player.SideMove 0.95, 0.925
     Player.JumpZ 10//Default is 8
-	Health 180
+	Health 195
 	Player.StartItem "LifeItem", 5    // starting lives
 	Player.StartItem "CoinItem", 1500 // starting money
-	Player.StartItem "GreenArmorModeStartGiver", 1 //starting armor
     Scale 0.725
 	damagefactor "MarineAlly", 0
 	BloodType "SamsaraBloodyHellBlood"

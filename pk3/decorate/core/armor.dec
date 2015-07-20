@@ -794,7 +794,7 @@ actor NoArmor: BasicArmorPickup
     }
 }
 
-actor GreenArmorModeStartGiver : CustomInventory
+actor GreenArmorModeShopGiver : CustomInventory //Not used
 {
 	+INVENTORY.AUTOACTIVATE
 

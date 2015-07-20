@@ -1055,7 +1055,7 @@ script 679 (int tx, int ty, int tz) clientside
     }
 }
 
-script 321 ENTER
+script 321 ENTER //No Random Allowed
 {
 if(GetPlayerInfo(PlayerNumber(), PLAYERINFO_PLAYERCLASS)<0 && GetActorProperty(0,APROP_Health)>0)
 {
@@ -1077,17 +1077,17 @@ Delay(35);
 Restart;
 }
 
-script 324 (Void)
+script 324 (Void) //No Unique Bonus
 {
 GiveInventory("NoUniqueItem",1);
 }
 
-script 325 (Void)
+script 325 (Void) //No Ultimate Bonus
 {
 GiveInventory("NoUltItem",1);
 }
 
-script 326 (Void)
+script 326 (Void) //Duke Music
 {
 If(CheckInventory("DukeMusicItem"))
 	{
@@ -1109,4 +1109,20 @@ If(CheckInventory("DukeMusicItem"))
                 s:"\cfGrabbag\cb Remixed by \cfJonny Death"
             );
         }
+}
+
+script 328 ENTER //Starting Armor
+{
+if(CheckInventory("BasicArmor") < 50) //Less than 50 armor
+	{
+	ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_GREEN); //Restore Green Armor
+	}
+}
+
+script 329 RESPAWN //Respawning Armor
+{
+if(CheckInventory("BasicArmor") < 50) //Less than 50 armor
+	{
+	ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_GREEN); //Restore Green Armor
+	}
 }

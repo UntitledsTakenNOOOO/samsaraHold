@@ -123,8 +123,7 @@ actor ChexSoulsphere: CustomInventory
     {
       Pickup:
 	TNT1 A 1
-	TNT1 A 0 HealThing(100, 0)
-        TNT1 A 0 A_GiveInventory("Soulsphere")
+	TNT1 A 0 HealThing(210, 0)
         stop
     }
 }
