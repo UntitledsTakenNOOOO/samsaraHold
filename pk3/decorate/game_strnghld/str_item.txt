@@ -2246,8 +2246,19 @@ actor TimeFreezerPickup3 : PowerupGiver
 
 actor PowerQuadDamage : PowerDamage
 {
-damagefactor "normal", 4
-inventory.icon "DOOMA0"
+  damagefactor "Normal", 4.0
+  damagefactor "Zorch", 3.75
+  damagefactor "PhasingZorch", 3.5
+  damagefactor "DukeExplosive", 3.25
+  damagefactor "Fire", 3.0
+  damagefactor "Explosive", 3.0
+  damagefactor "FireExplosive", 3.0
+  damagefactor "WMCNade", 3.0
+  damagefactor "WMCBeam", 2.75
+  damagefactor "BJSpear", 2.5
+  damagefactor "NotQuadded", 2.25
+  damagefactor "Wraithverge", 2.0
+  inventory.icon "DOOMA0"
 }
 
 actor QuadDamageItem : PowerupGiver 12794
