@@ -594,14 +594,14 @@ actor DukeShotgunBullet : DukePistolBullet
     +THRUGHOST
     +NOTIMEFREEZE
     Obituary "$SAMSARA_DUKE_OB_SLOT2"
-    Damage (10)
+    Damage (11)
     DamageType "DukeDamage"
 }
 
 actor DukeShotgunBulletCoop : DukePistolBullet
 {
     Obituary "$SAMSARA_DUKE_OB_SLOT2"
-    Damage (10)
+    Damage (11)
     +THRUGHOST
     +THRUSPECIES
     +NOTIMEFREEZE
