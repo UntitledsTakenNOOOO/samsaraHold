@@ -65,7 +65,7 @@ actor QuadDamageItem2: CustomInventory
         stop
 
       RageUse:
-        TNT1 A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 7, 1575)
+        TNT1 A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 7, 2100)
         TNT1 A 0 A_GiveInventory("StopBreakingEverything_Quad")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"Usefail")
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"Usefail")

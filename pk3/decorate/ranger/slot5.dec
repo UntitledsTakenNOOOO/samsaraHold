@@ -361,28 +361,28 @@ actor QuakeRocketCoop: QuakeRocket
 {
     +THRUSPECIES
     Species "Player"
-        Damage (Random(30,50)) // [ijon] used to be 25, but demons were surviving with *one health*
+        Damage (Random(30,40)) // [ijon] used to be 25, but demons were surviving with *one health*
 }
 
 actor QuakeRocketCoopQuad: QuakeRocketQuad
 {
     +THRUSPECIES
     Species "Player"
-        Damage (Random(90,150))
+        Damage (Random(120,160))
 }
 
 actor QuakeRocketCoop2: QuakeRocket
 {
     +THRUSPECIES
     Species "Player"
-        Damage (Random(60,75))
+        Damage (75)
 }
 
 actor QuakeRocketCoopQuad2: QuakeRocketQuad
 {
     +THRUSPECIES
     Species "Player"
-        Damage (Random(240,300))
+        Damage (300)
 }
 
 actor QuakeClusterRocket: QuakeRocket
@@ -405,7 +405,7 @@ actor QuakeClusterRkCoop: QuakeClusterRocket
     +THRUSPECIES
     Species "Player"
     
-    Damage (Random(15,25))
+    Damage (Random(15,20))
 }
 
 actor QuadClusterRocket: QuakeClusterRocket
@@ -416,9 +416,9 @@ actor QuadClusterRocket: QuakeClusterRocket
     States
     {
       Death:
-        DMSL B 0 A_Explode(120, 92)
+        DMSL B 0 A_Explode(160, 92)
         TNT1 A 0 A_ChangeFlag("FORCERADIUSDMG",1)
-        DMSL B 0 A_Explode(120, 92)
+        DMSL B 0 A_Explode(160, 92)
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }
@@ -428,7 +428,7 @@ actor QuadClusterRkCoop: QuadClusterRocket
 {
     +THRUSPECIES
     Species "Player"
-        Damage (Random(45,75))
+        Damage (Random(60,80))
 }
 
 actor SpectralRocket: QuakeRocketCoopQuad { +FORCERADIUSDMG DamageType "SpectralNoQuad" }

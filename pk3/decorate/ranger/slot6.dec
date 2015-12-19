@@ -67,9 +67,14 @@ actor "Super Nailgun": InstantSwitchWeapon
         goto Fire0
 
       FireCoop:
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"VanillaFire")
         QSNG A 0 A_FireCustomMissile("QuakeSuperNailCoop")
         goto Fire0
-      
+
+      VanillaFire:
+        QSNG A 0 A_FireCustomMissile("QuakeSuperNailCoop2")
+        goto Fire0
+
       Fire0:
         QSNG A 0 A_JumpIfInventory("SNGFrame", 6, "Fire7")
         QSNG A 0 A_JumpIfInventory("SNGFrame", 5, "Fire6")
@@ -394,6 +399,11 @@ actor QuakeSuperNailCoop: QuakeSuperNail
     +THRUSPECIES
     Species "Player"
     Damage (20)
+}
+
+actor QuakeSuperNailCoop2 : QuakeSuperNailCoop
+{
+    Damage (24)
 }
 
 actor QuakeSLNail: QuakeLavaNail
