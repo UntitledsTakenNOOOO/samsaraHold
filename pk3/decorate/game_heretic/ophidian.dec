@@ -5,42 +5,32 @@ actor Snake2 : Snake replaces Snake
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
-    DropItem "PhoenixRodAmmo2", 84
-	
+    PainChance "Stunner", 128
+    DropItem "HereticAmmo3Small", 84
+
     States
     {
       Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        SNKE PONMLKJIHG 3
-        Goto See
-
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        SNKE A 3 A_SetTranslucent(0.2,0)
-        SNKE A 3 A_SetTranslucent(0.3,0)
-        SNKE A 3 A_SetTranslucent(0.4,0)
-        SNKE A 3 A_SetTranslucent(0.5,0)
-        SNKE A 3 A_SetTranslucent(0.6,0)
-        SNKE A 3 A_SetTranslucent(0.7,0)
-        SNKE A 3 A_SetTranslucent(0.8,0)
-        SNKE A 3 A_SetTranslucent(0.9,0)
-        SNKE A 3 A_SetTranslucent(1,0)
-        SNKE A 1 A_SetShootable
-        Goto See
+        Stop
 
       Death:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_GiveToTarget("AwardItem",7)
         TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
-        goto "Super::Death"
+        SNKE G 5
+        SNKE H 5 A_Scream
+        SNKE IJKL 5
+        SNKE M 5 A_NoBlocking
+        SNKE NO 5
+        SNKE P 3000
+        SNKE PPPPPPPPPPPP 2 A_FadeOut(0.1)
+        Stop
 
       Death.ZorchPistol:
       Death.Zorch:
       Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_GiveToTarget("AwardItem",7)
         SNKE E 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -58,19 +48,18 @@ actor Snake2 : Snake replaces Snake
         SNKE E 4 A_SetTranslucent(0.2,0)
         SNKE E 4 A_SetTranslucent(0.1,0)
         TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
         stop
 
       Ice:
       Death.HexenIce:
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_GiveToTarget("AwardItem",8)
         SNKE E 0 A_GenericFreezeDeath
         SNKE E 70 A_UnsetSolid
         SNKE E 0 A_IceGuyDie
         SNKE E 1 A_IceGuyDie
-        TNT1 A -1
+        TNT1 A 1
         stop
 
       Death.DukeExplosive:
@@ -99,6 +88,12 @@ actor Snake2 : Snake replaces Snake
         SNKE E 2 A_FaceTarget
         TNT1 A 0 A_Recoil(14)
         SNKE E 16 A_Pain
+        Goto See
+
+      Pain.Stunner:
+        TNT1 E 2 A_ChangeFlag("NOPAIN",1)
+        SNKE E 300 A_Pain
+        TNT1 E 0 A_ChangeFlag("NOPAIN",0)
         Goto See
 
       Missile:
@@ -130,9 +125,11 @@ actor Snake2 : Snake replaces Snake
 actor SnakeProjA2 : SnakeProjA replaces SnakeProjA
 {
     +ICEDAMAGE
+    Damage 2
 }
 
 actor SnakeProjB2 : SnakeProjB replaces SnakeProjB
 {
     +FIREDAMAGE
+    Damage 6
 }

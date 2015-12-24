@@ -422,7 +422,7 @@ DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.5
 SpawnID 178
 Health 300
-GibHealth -150
+GibHealth -100
 Radius 20
 Height 56
 Mass 500
