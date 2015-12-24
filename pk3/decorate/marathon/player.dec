@@ -12,7 +12,7 @@ actor MarathonPlayer : PlayerPawn
     Player.DamageScreenColor "Red"//, 0.0
     Player.Soundclass "MarathonPlayer"
 	damagefactor "MarineAlly", 0	
-	Health 180
+	Health 200
 	Player.StartItem "LifeItem", 5   // starting lives
 	Player.StartItem "CoinItem", 1500 // starting money
     +NOSKIN
