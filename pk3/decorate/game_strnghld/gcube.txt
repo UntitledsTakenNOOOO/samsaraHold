@@ -101,7 +101,7 @@ states
         TNT1 A 0 A_GiveToTarget("AwardItem", 5)
         TNT1 A 0 A_GiveToTarget("KillCount", 1)	
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
         CUBE D 4 A_SpawnItem("ZorchEffectTiny")
         CUBE DDDDDDDDDDDD 4 Bright A_Fadeout(0.1)
 	Stop

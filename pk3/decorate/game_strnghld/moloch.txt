@@ -271,6 +271,7 @@ ACTOR HellGrenadeEmber
    Alpha 0.90
    Damagetype "Fire"
    DONTHURTSHOOTER
+   -NOGRAVITY
    +THRUGHOST
    DeathSound "moloch/emberexp"
    States
