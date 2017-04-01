@@ -4,7 +4,7 @@ actor "Phoenix Rod" : Weapon
     Weapon.Kickback 150
     Weapon.YAdjust 16
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 2
+    Weapon.AmmoGive 4
     Weapon.SlotNumber 5
     //+AMMO_OPTIONAL
     +INVENTORY.UNDROPPABLE

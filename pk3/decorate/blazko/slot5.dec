@@ -4,7 +4,7 @@ actor " Rocket Launcher ": InstantSwitchWeapon
     Weapon.SlotNumber 5
     Inventory.PickUpSound "wolfen/rocketget"
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 2
+    Weapon.AmmoGive 4
     Weapon.AmmoType "RocketAmmo"
     //+AMMO_OPTIONAL
     +DONTBOB
@@ -77,7 +77,8 @@ actor WolfRocket
         Loop
 
       Death:
-        WFLB C 8 Bright A_Explode(128,32,0)
+	WFLB C 0 Bright A_Explode(random(1,8)*10,32,0)
+        WFLB C 8 Bright A_Explode(128,64,0)
         WFLB D 6 Bright
         WFLB E 4 Bright
         Stop
@@ -89,6 +90,7 @@ actor WolfRocketRJ : WolfRocket
     States
 	{
       Death:
+	WFLB C 0 Bright A_Explode(random(1,8)*10,32,0)
         WFLB C 8 Bright A_Explode(128,64)
         WFLB D 6 Bright
         WFLB E 4 Bright

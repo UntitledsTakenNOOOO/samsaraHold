@@ -7,14 +7,12 @@ painchance "DukeIce", 20
 painchance "HexenIce", 20
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
-DamageFactor "HexenIce", 2.25
-DamageFactor "DukeIce", 2.25
+DamageFactor "HexenIce", 2.0
+DamageFactor "DukeIce", 2.0
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
 DamageFactor "CorvusHellStaffTomed", 0.3
-DamageFactor "Wraithverge", 18.0
-painchance "HexenIce", 20
-painchance "DukeIce", 20
+DamageFactor "Wraithverge", 24.0
 Obituary "%o was set ablaze by a Diabloist."
 Health 1400
 Radius 20

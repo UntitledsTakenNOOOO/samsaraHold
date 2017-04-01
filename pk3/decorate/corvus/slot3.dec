@@ -3,7 +3,7 @@ actor "Ethereal Crossbow" : Weapon
     Weapon.SelectionOrder 800
     Inventory.PickUpSound "heretic/weaponget"
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 10
+    Weapon.AmmoGive 20
     Weapon.AmmoType "Shell"
     Weapon.SlotNumber 3
     Weapon.YAdjust 16

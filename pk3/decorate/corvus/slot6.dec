@@ -2,7 +2,7 @@ actor Hellstaff : Weapon
 {
     Weapon.SelectionOrder 200
     Weapon.AmmoUse1 1
-    Weapon.AmmoGive1 50
+    Weapon.AmmoGive1 100
     Weapon.YAdjust 16
     Weapon.AmmoType1 "Cell"
     Weapon.SlotNumber 6

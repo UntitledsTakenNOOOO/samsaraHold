@@ -6,12 +6,12 @@ painchance "HexenIce", 40
 painchance "DukeIce", 40
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
-DamageFactor "HexenIce", 2.75
-DamageFactor "DukeIce", 2.75
+DamageFactor "HexenIce", 2.2
+DamageFactor "DukeIce", 2.2
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
 DamageFactor "CorvusHellStaffTomed", 0.3
-DamageFactor "Wraithverge", 12.0
+DamageFactor "Wraithverge", 16.0
 spawnid 246
 Health 2500
 Radius 24 

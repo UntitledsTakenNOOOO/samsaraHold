@@ -7,8 +7,8 @@ actor Wraithverge : CWeapWraithverge
     +INVENTORY.UNDROPPABLE
     Weapon.AmmoUse1 20
     Weapon.AmmoUse2 30
-    Weapon.AmmoGive1 25
-    Weapon.AmmoGive2 25
+    Weapon.AmmoGive1 40
+    Weapon.AmmoGive2 60
     Weapon.KickBack 150
     Weapon.AmmoType1 "Clip"
     Weapon.AmmoType2 "Cell"

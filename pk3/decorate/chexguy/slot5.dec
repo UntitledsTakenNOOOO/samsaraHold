@@ -4,7 +4,7 @@ actor "Zorch Propulsor" : Weapon
     Weapon.SlotNumber 5
     Inventory.PickUpSound "chex/weaponget"
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 2
+    Weapon.AmmoGive 4
     Weapon.AmmoType "RocketAmmo"
     +WEAPON.NOAUTOFIRE
     //+AMMO_OPTIONAL

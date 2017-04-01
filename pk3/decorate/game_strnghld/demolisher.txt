@@ -7,7 +7,7 @@ DamageFactor "DragonClaw", 1.6
 DamageFactor "MarathonFusion", 2.0
 DamageFactor "WMCNade", 0.75
 DamageFactor "CorvusHellstaffTomed", 0.2
-DamageFactor "Wraithverge", 10.0
+DamageFactor "Wraithverge", 15.0
 spawnid 249
 Obituary "%o felt the power of a Spider-Demolisher."
 Health 6000

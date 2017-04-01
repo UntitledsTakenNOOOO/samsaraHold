@@ -9,7 +9,7 @@ actor Freezethrower : Weapon
     Weapon.SlotNumber 6
     Weapon.SelectionOrder 100
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 25
+    Weapon.AmmoGive 50
     Weapon.AmmoType "Cell"
     //Obituary "%k threw %o on the freezer."
     Inventory.Pickupmessage "You got the Freezethrower!"
@@ -854,7 +854,7 @@ actor FreezethrowerBolt
     Radius 13
     Height 9
     Speed 35
-    Damage (20)
+    Damage (25)
     DamageType "DukeIce"
     Projectile
     Obituary "%k \c[m1]threw\c- %o \c[m1]in the freezer.\c-"

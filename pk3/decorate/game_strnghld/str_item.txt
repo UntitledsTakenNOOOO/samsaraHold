@@ -212,7 +212,7 @@ ACTOR ScriptedMarine2 : ScriptedMarine
   radius 16
   height 56
   mass 100
-  speed 12
+  speed 16
   painchance 128
   painsound "*pain50"
   activesound "marine/active"
@@ -259,7 +259,7 @@ ACTOR ScriptedMarine2 : ScriptedMarine
   +NOBLOCKMONST
   +THRUSPECIES
   +FLOORCLIP
-  MinMissileChance 160
+  //MinMissileChance 160
   RadiusDamageFactor 0.25
   DropItem "SuperShield" 1
   DropItem "BlueArmor" 2
@@ -271,16 +271,16 @@ ACTOR ScriptedMarine2 : ScriptedMarine
   states
   {
   Spawn:
-    PLAY AABBCCDD 2 A_Look
+    PLAY ABCD 4 A_Look
     loop
   See:
     PLAY A 0 NoiseAlert (0, 0)
-    PLAY AABBCCDD 2 A_Chase
+    PLAY ABCD 3 A_Chase
     loop
   Pain:
-    PLAY GGGG 1 A_Wander
+    PLAY GG 2 A_FastChase
     PLAY G 0 A_Pain
-    PLAY GGGG 1 A_FastChase
+    PLAY GG 2 A_FastChase
     goto Spawn+1
   Missile:
     PLAY E 8 A_FaceTarget
@@ -1213,6 +1213,7 @@ ACTOR STMarineSuperSpawner : RandomSpawner
 
 ACTOR STMarineDoomSlot7 : STMarineDoomSlot2 
 {
+  Health 600
   obituary "%o failed to hide from a marine's BFG 9000."
   missiletype "FakeBFGBall"
   states
@@ -1225,12 +1226,12 @@ ACTOR STMarineDoomSlot7 : STMarineDoomSlot2
     goto see
   }
 }
-Actor FakeBFGBall
+Actor FakeBFGBall //can't use tracers because reasons
 {
   Radius 13
   Height 8
   Speed 25
-  Damage 100
+  Damage 200
   RenderStyle Add
   Alpha 0.75
   DeathSound "weapons/bfgx"
@@ -1243,17 +1244,68 @@ Actor FakeBFGBall
   States
   {
   Spawn:
+    BFS1 A 0 bright A_GiveInventory("Cell",1)
     BFS1 AB 4 bright
     Loop
   Death:
-    BFE1 A 8 bright A_Explode(240,192,0)
-    BFE1 BCDEF 8 bright
+    BFE1 A 0 bright A_JumpIfInventory("Cell",8,"Death8")
+    BFE1 A 0 bright A_JumpIfInventory("Cell",7,"Death7")
+    BFE1 A 0 bright A_JumpIfInventory("Cell",6,"Death6")
+    BFE1 A 0 bright A_JumpIfInventory("Cell",5,"Death5")
+    BFE1 A 0 bright A_JumpIfInventory("Cell",4,"Death4")
+    BFE1 A 0 bright A_JumpIfInventory("Cell",3,"Death3")
+    BFE1 A 0 bright A_JumpIfInventory("Cell",2,"Death2")
+    BFE1 A 0 bright A_JumpIfInventory("Cell",1,"Death1")
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(2048,64,0,0,32)
+    BFE1 DEF 8 bright
+    Stop
+  Death1:
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(1024,91,0,0,45)
+    BFE1 DEF 8 bright
+    Stop
+  Death2:
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(512,128,0,0,64)
+    BFE1 DEF 8 bright
+    Stop
+  Death3:
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(256,181,0,0,91)
+    BFE1 DEF 8 bright
+    Stop
+  Death4:
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(128,256,0,0,128)
+    BFE1 DEF 8 bright
+    Stop
+  Death5:
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(64,362,0,0,181)
+    BFE1 DEF 8 bright
+    Stop
+  Death6:
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(32,512,0,0,256)
+    BFE1 DEF 8 bright
+    Stop
+  Death7:
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(16,724,0,0,362)
+    BFE1 DEF 8 bright
+    Stop
+  Death8:
+    BFE1 AB 8 bright
+    BFE1 C 8 bright A_Explode(8,1024,0,0,512)
+    BFE1 DEF 8 bright
     Stop
   }
 }
 
 ACTOR STMarineChexSlot7 : STMarineChexSlot2
 {
+  Health 600
   obituary "%o was in the radius of a marine's LAZ Device."
   missiletype "MarineChexBFGBall"
   states
@@ -1277,10 +1329,10 @@ States
       Death:
         CFE1 A 4 bright
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-        TNT1 A 0 A_Explode(128,256,0)
+        TNT1 A 0 A_Explode(384,256,0)
         //TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ChexBFGExplosion2",random(-30,30),random(-30,30),random(-10,30))
         TNT1 A 0 A_SpawnItemEx("ChexBFGExplosion")
-        TNT1 A 0 A_SpawnItemEx("ChexBFGExplosionEffectFake",0,0,0,0,0,0,0,48)
+        TNT1 A 0 A_SpawnItemEx("ChexBFGExplosionEffectMarine",0,0,0,0,0,0,0,48)
         CFE1 AAAA 1 bright A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
         CFE1 BBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFF 1 bright A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
         TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
@@ -1289,44 +1341,47 @@ States
         stop
     }
 }
-actor ChexBFGExplosionEffectFake : ChexBFGExplosionEffect
+actor ChexBFGExplosionEffectMarine : ChexBFGExplosionEffect
 {
     DamageType "MarineAlly"
-    States
-    {
-    Spawn:
-        TNT1 A 0 A_SetTranslucent(0.1,1)
-        CFS3 EE 5 bright A_Explode(48,64,0)
-        TNT1 A 0 A_SetTranslucent(0.25,1)
-        CFS3 EEEE 5 bright A_Explode(48,64,0)//A_Explode(160,160,0)
-        TNT1 A 0 A_SetTranslucent(0.4,1)
-        CFS2 DDDD 5 bright A_Explode(48,64,0)//A_Explode(128,128,0)
-        TNT1 A 0 A_SetTranslucent(0.55,1)
-        CFS2 CCCC 5 bright A_Explode(48,64,0)//A_Explode(96,96,0)
-        CFS2 BBBB 5 bright A_Explode(48,64,0)//A_Explode(64,64,0)
-        CFS2 AAAA 5 bright A_Explode(48,64,0)//A_Explode(32,32,0)
-        Stop
-    }
 }
 
 ACTOR STMarineHereticSlot7 : STMarineHereticSlot2
 {
+  Health 600
   obituary "%o was overpowered by a marine's tome of power."
   states
   {
   Missile:
-    PLAY E 10 A_FaceTarget
+    PLAY E 0 A_Jump(192,"Missile2","Missile3","Missile4")
+    PLAY E 8 A_FaceTarget
     PLAY F 0 BRIGHT A_CustomMissile("CrossbowFX32",32,0,9)
     PLAY F 0 BRIGHT A_CustomMissile("CrossbowFX32",32,0,-9)
     PLAY F 0 BRIGHT A_CustomMissile("CrossbowFX22",32,0,4.5)
     PLAY F 0 BRIGHT A_CustomMissile("CrossbowFX22",32,0,-4.5)
-    PLAY F 15 BRIGHT A_CustomMissile("CrossbowFX22",32,0,0)
-    PLAY E 10 A_FaceTarget
-    PLAY E 10 A_FaceTarget
-    PLAY F 15 BRIGHT A_CustomMissile("BlasterFX1C",32,0,0)
-    PLAY E 10 A_FaceTarget
+    PLAY F 8 BRIGHT A_CustomMissile("CrossbowFX22",32,0,0)
+    PLAY E 8 A_FaceTarget
+    PLAY E 0 A_Jump(16,"See")
+    PLAY E 0 A_Jump(16,"Missile")
+    PLAY E 0 A_SpidRefire
+    Goto Missile+1
+  Missile2:
+    PLAY E 8 A_FaceTarget
+    PLAY F 8 BRIGHT A_CustomMissile("BlasterFX1C",32,0,0)
+    PLAY E 8 A_FaceTarget
+    PLAY E 0 A_Jump(32,"See")
+    PLAY E 0 A_Jump(32,"Missile")
+    PLAY E 0 A_SpidRefire
+    Goto Missile2
+  Missile3:
     PLAY E 10 A_FaceTarget
     PLAY F 15 BRIGHT A_CustomMissile("MaceFX43",32,0,0)
+    PLAY E 10 A_FaceTarget
+    PLAY E 0 A_Jump(128,"See")
+    Goto Missile
+  Missile4:
+    PLAY E 10 A_FaceTarget
+    PLAY F 15 BRIGHT A_CustomMissile("HornRodFX2A",32,0,0)
     PLAY E 10 A_FaceTarget
     PLAY E 10 A_FaceTarget
     PLAY F 15 BRIGHT A_CustomMissile("HornRodFX2A",32,0,0)
@@ -1337,6 +1392,7 @@ ACTOR STMarineHereticSlot7 : STMarineHereticSlot2
 
 ACTOR STMarineHexenSlot7 : STMarineHexenSlot2
 {
+  Health 600
   obituary "%o was reaped by a marine's wraithverge."
   missiletype "HolyMissileFake"
   states
@@ -1371,6 +1427,7 @@ actor HolyMissileFake: HolyMissile
 actor FakeSpirit: HolySpirit2
 {
     DamageType "MarineAlly"
+    Damage 3
     +FORCERADIUSDMG
 
     States
@@ -1397,6 +1454,7 @@ actor FakeSpirit: HolySpirit2
 
 ACTOR STMarineWolfSlot7 : STMarineWolfSlot2
 {
+  Health 600
   obituary "%o was speared by a marine's spear of destiny."
   missiletype "SpearBoltWeak"
   states
@@ -1419,9 +1477,9 @@ actor SpearBoltWeak: SpearBolt
       Death:
         SPX1 A 0 A_Stop
         SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMiniWeak", 0, 0, random(-180, 180), 2, random(-25, 25))
-        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini2Weak", 0, 0, random(-180, 180), 2, random(-25, 25))
+        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini2Weak", 0, 0, random(-180, 180), 2, random(-25, 25))
         SPX1 A 0 A_Scream
-        SPX1 A 4 BRIGHT A_Explode(120, 192, 0)
+        SPX1 A 4 BRIGHT A_Explode(120, 240, 0)
         SPX1 BCDEF 4 BRIGHT
         Stop
     }
@@ -1433,7 +1491,7 @@ actor SpearShotMini2Weak: SpearShotMini2
     States
     {
       Spawn:
-        SPB2 ABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0, 0, 1)
+        SPB2 ABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0, 0, 1)
         TNT1 A 0 A_Jump(96, "Spawn")
         goto Death
 
@@ -1451,13 +1509,13 @@ actor SpearShotMiniWeak: SpearShotMini
     States
     {
       Spawn:
-        SPB3 ABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0, 0, 1)
+        SPB3 ABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0, 0, 1)
         TNT1 A 0 A_Jump(96, "Spawn")
         goto Death
 
       Death:
         TNT1 A 0 A_Scream
-        SPX3 C 1 A_Explode(16, 64, 0)
+        SPX3 C 1 A_Explode(32, 64, 0)
         SPX3 C 1
         SPX3 C 4 BRIGHT
         SPX3 D 6 BRIGHT
@@ -1467,6 +1525,7 @@ actor SpearShotMiniWeak: SpearShotMini
 
 ACTOR STMarineDukeSlot7 : STMarineDukeSlot2
 {
+  Health 600
   obituary "%o was devstated by a marine's devastator."
   missiletype "MarineDevastatorRocket"
   states
@@ -1476,7 +1535,7 @@ ACTOR STMarineDukeSlot7 : STMarineDukeSlot2
     PLAY E 0 A_PlaySound("duke/freezeshot")
     PLAY E 0 A_PlaySound("duke/rocketfire")
     PLAY F 2 BRIGHT A_CustomMissile("MarineDevastatorRocket",32,0,Random(-200,200)/100.0)
-    PLAY E 2 A_FaceTarget
+    PLAY E 1 A_FaceTarget
     PLAY E 0 A_SpidRefire
     goto Missile+1
   }
@@ -1484,25 +1543,11 @@ ACTOR STMarineDukeSlot7 : STMarineDukeSlot2
 ACTOR MarineDevastatorRocket : DukeDevastatorRocketCoop
 {
     DamageType "MarineAlly"
-    -FORCERADIUSDMG
-    States
-    {
-      Spawn:
-        RPGX A 1 BRIGHT
-        loop
-
-      Death:
-        TNT1 A 0
-        TNT1 A 0 A_Explode(36, 48)
-        TNT1 A 0 A_PlaySoundEx("duke/explosion2", CHAN_WEAPON, 0, -1)
-        TNT1 A 0 A_PlaySound("duke/explosion", 5, 0.4, 0, 0)
-        TNT1 A 1 A_SpawnItemEx("DevastatorExplosion")
-        Stop
-    }
 }
 
 ACTOR STMarineMarathonSlot7 : STMarineMarathonSlot2
 {
+  Health 600
   obituary "%o was annihilated by a marine's Wave Motion Cannon."
   states
   {
@@ -1562,7 +1607,7 @@ actor WMCGrenadeMarine: WMCGrenade
     {
       Death:
         TNT1 A 0 A_NoGravity
-        TNT1 A 0 A_Explode(100+random(0,50),128)
+        TNT1 A 0 A_Explode(150+random(0,50),128)
         TNT1 AAAAAAAA 0 A_SpawnItemEx("WMCGrenadeExplosion", random(5,-5), random(5,-5), random(5,-5), 0.4*random(-5,5), 0.4*random(-5,5), 0.4*random(-5,5), random(0,360), 128, 0)
         TNT1 AAAAAAA 0 A_CustomMissile("WMCGrenadeMarine2",0,0,random(-180,180),2,random(16,65))
         TNT1 AAAAAAA 0 A_CustomMissile("WMCGrenadeMarine2",0,0,random(-180,180),2,random(16,65))
@@ -1579,7 +1624,7 @@ actor WMCGrenadeMarine2: WMCGrenade2
     {
       Death:
         TNT1 A 0 A_NoGravity
-        TNT1 A 0 A_Explode(50+random(0,20),96)
+        TNT1 A 0 A_Explode(100+random(0,20),96)
         TNT1 A 0 A_SpawnItem("WMCGrenadeExplosion2")
         TNT1 A 1 A_Scream
         Stop
@@ -1592,24 +1637,12 @@ actor WMCRailLevel1Marine : WMCRailLevel1
 actor WMCRailLevel2Marine: WMCRailLevel2
 {
     DamageType "MarineAlly"
-    States
-    {
-      Death:
-        TNT1 A 0 A_Explode(100+random(0,50),128,1)
-        TNT1 AAAAAAAA 0 A_SpawnItemEx("WMCGrenadeExplosion",random(5,-5),random(5,-5),random(5,-5),0.4*random(2,5),0.4*random(2,5),0.4*random(2,5),random(0,360),128,0)
-        WCHT ABCDEFGHIJKLLMMNNOOPPQQRR 1 BRIGHT
-        stop
-    }
 }
 actor WMCRailLevel3Marine: WMCRailLevel3
 {
     DamageType "MarineAlly"
     States
     {
-      Spawn:
-        TNT1 A 1
-        loop
-        
       Death:
         TNT1 A 0 A_Explode(200+random(0,50),160)
         TNT1 A 0 A_CustomMissile("WMCRailLevel3BabyMarine",1,0,0,6)
@@ -1645,6 +1678,22 @@ actor WMCRailLevel3Marine: WMCRailLevel3
         TNT1 A 0 A_CustomMissile("WMCBeamMissileBaby",1,0,315,6)
         TNT1 A 0 A_CustomMissile("WMCBeamMissileBaby",1,0,337,6)
         TNT1 A 1
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,0,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,22,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,45,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,67,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,90,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,112,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,135,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,157,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,180,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,202,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,225,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,247,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,270,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,292,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,315,6)
+        TNT1 A 0 A_CustomMissile("WMCBeamExplodeMarine",1,0,337,6)
         TNT1 AAAAAAAA 0 A_SpawnItemEx("WMCGrenadeExplosion", random(5,-5), random(5,-5), random(5,-5), 0.4*random(2,5), 0.4*random(2,5), 0.4*random(2,5), random(0,360), 128, 0)
         WCHT ABCDEFGHIJKLLMMNNOOPPQQRR 1 BRIGHT
         stop
@@ -1653,16 +1702,16 @@ actor WMCRailLevel3Marine: WMCRailLevel3
 actor WMCRailLevel3BabyMarine: WMCRailLevel3Baby
 {
     DamageType "MarineAlly"
-    States
-    {
-      Death:
-        TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
-        goto Spawn1
-    }
+}
+
+actor WMCBeamExplodeMarine : WMCBeamExplode
+{
+    DamageType "MarineAlly"
 }
 
 ACTOR STMarineQuakeSlot7 : STMarineQuakeSlot2
 {
+  Health 600
   obituary "%o was electrocuted by a marine's thunderbolt."
   states
   {
@@ -1672,12 +1721,12 @@ ACTOR STMarineQuakeSlot7 : STMarineQuakeSlot2
   Missile1:
     PLAY E 5 A_FaceTarget
     PLAY E 0 A_PlaySound("quakeweps/sngfire")
-    PLAY F 0 BRIGHT A_CustomBulletAttack(0, 0, 1, 25, "MarineLGPuff", 512, CBAF_NORANDOM)
-    PLAY FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 0 BRIGHT A_CustomBulletAttack(0, 0, 1, 0, "LGBeam", Random(0,128)*4)
+    PLAY F 0 BRIGHT A_CustomBulletAttack(0, 0, 1, 30, "MarineLGPuff", 768, CBAF_NORANDOM)
+    PLAY FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 0 BRIGHT A_CustomBulletAttack(0, 0, 1, 0, "LGBeam", Random(0,192)*4)
     PLAY F 1 BRIGHT A_FaceTarget
-    PLAY FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 0 BRIGHT A_CustomBulletAttack(0, 0, 1, 0, "LGBeam", Random(0,128)*4)
+    PLAY FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 0 BRIGHT A_CustomBulletAttack(0, 0, 1, 0, "LGBeam", Random(0,192)*4)
     PLAY F 1 BRIGHT A_FaceTarget
-    PLAY FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 0 BRIGHT A_CustomBulletAttack(0, 0, 1, 0, "LGBeam", Random(0,128)*4)
+    PLAY FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 0 BRIGHT A_CustomBulletAttack(0, 0, 1, 0, "LGBeam", Random(0,192)*4)
     PLAY F 1 BRIGHT A_FaceTarget
     PLAY E 0 A_SpidRefire
     goto Missile1+1
@@ -1686,6 +1735,7 @@ ACTOR STMarineQuakeSlot7 : STMarineQuakeSlot2
     PLAY E 16 A_FaceTarget
     PLAY E 0 A_PlaySound("quakeweps/rlfire")
     PLAY F 16 BRIGHT A_CustomMissile("QuakeRocketCoopQuadMarine",32,0,0)
+    PLAY E 0 A_Jump(192,"Missile")
     goto See
   Missile3:
     PLAY E 16 A_FaceTarget
@@ -1694,6 +1744,7 @@ ACTOR STMarineQuakeSlot7 : STMarineQuakeSlot2
     PLAY F 0 BRIGHT A_CustomMissile("QuakeClusterRkCoopQuadMarine",32,0,8)
     PLAY F 0 BRIGHT A_CustomMissile("QuakeClusterRkCoopQuadMarine",32,0,-4)
     PLAY F 16 BRIGHT A_CustomMissile("QuakeClusterRkCoopQuadMarine",32,0,4)
+    PLAY E 0 A_Jump(192,"Missile")
     goto See
   }
 }

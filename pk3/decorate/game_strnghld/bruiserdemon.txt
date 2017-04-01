@@ -5,11 +5,11 @@ ACTOR BruiserDemon 3333
 DamageFactor "CorvusHellStaffTomed", 0.4
 DamageFactor "CorvusCrossbow", 1.15
 DamageFactor "DragonClaw", 1.6
-DamageFactor "HexenIce", 2.25
-DamageFactor "DukeIce", 2.25
+DamageFactor "HexenIce", 2.0
+DamageFactor "DukeIce", 2.0
 DamageFactor "Kamikaze", 0.5
 damagefactor "ZorchKamikaze", 0.5
-DamageFactor "Wraithverge", 15.0
+DamageFactor "Wraithverge", 20.0
 	SpawnID 234
         Health 1500
 	Radius 24

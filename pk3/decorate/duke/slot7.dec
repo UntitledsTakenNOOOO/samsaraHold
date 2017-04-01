@@ -7,7 +7,7 @@ actor " Devastator " : Weapon
     //Weapon.BobSpeed 1.1
     Weapon.SelectionOrder 2800
     Weapon.AmmoUse 2
-    Weapon.AmmoGive 30 // Originally 15, increased because of the double ammo usage.
+    Weapon.AmmoGive 60 // Originally 15, increased because of the double ammo usage.
     Weapon.AmmoType "Cell"
     //Obituary "%k devastated %o."
 

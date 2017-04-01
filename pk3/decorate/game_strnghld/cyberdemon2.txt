@@ -12,7 +12,7 @@ ACTOR CyberdemonMk2 32757
 	damagefactor "Kamikaze", 0.01
 	damagefactor "ZorchKamikaze", 0.01
 	damagefactor "MarathonFusion", 2.0
-	DamageFactor "Wraithverge", 8.0
+	DamageFactor "Wraithverge", 10.0
 	Health 50000
 	MeleeRange 160
 	Radius 50

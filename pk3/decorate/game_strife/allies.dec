@@ -75,7 +75,25 @@ actor FriendlyMarine // : DoomImp2
         Loop
         
       Melee:
-	PLAY A 0 A_Jump(96,"Missile")
+      Missile:
+	Goto PlasmaBall
+
+      PlasmaBall:
+        PLAY E 6 A_FaceTarget
+        PLAY F 6 A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
+        PLAY E 6 A_FaceTarget
+	PLAY A 0 A_JumpIfCloser(64,"PlasmaBall")
+        Goto See
+
+      Pistol:
+        PLAY E 4 A_FaceTarget
+        PLAY F 0 A_PlayWeaponSound("weapons/pistol")
+        PLAY F 5 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
+        PLAY E 5 A_FaceTarget
+	PLAY A 0 A_JumpIfCloser(64,"Pistol")
+        Goto See
+
+      Shotgun:
         PLAY EE 6 A_FaceTarget
         PLAY F 0 A_PlayWeaponSound("weapons/shotgf")
         PLAY F 0 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
@@ -85,11 +103,13 @@ actor FriendlyMarine // : DoomImp2
         PLAY AABBCCDD 2 A_Wander
         Goto See
 
-      Missile:
-	PLAY A 0 A_Jump(72,"Melee")
-        PLAY E 6 A_FaceTarget
-        PLAY F 6 A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
-        Goto See
+      Chaingun:
+        PLAY E 12 A_FaceTarget
+        PLAY F 0 A_PlayWeaponSound("weapons/shotgf")
+        PLAY F 2 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
+        PLAY E 2 A_FaceTarget
+        PLAY A 0 A_CPosRefire
+        Goto Chaingun+1
         
       Pain:
         PLAY G 4
@@ -119,30 +139,50 @@ actor FriendlyMarine // : DoomImp2
 actor DoomBulletPainless : DoomBullet
 {
 	+PAINLESS
+	Damage (random(1,5)*3)
 }
 actor DoomPlasmaBall2Painless : DoomPlasmaBall2
 {
 	+PAINLESS
+	Damage 3
 }
 actor FriendlyMarine1 : FriendlyMarine
 {
-	Translation 0
+    Translation 0
+    States
+    {
+      Melee:
+      Missile:
+        Goto Pistol
+    }
 }
 actor FriendlyMarine2 : FriendlyMarine
 {
-	Translation 1
+    Translation 1
+    States
+    {
+      Melee:
+      Missile:
+        Goto Shotgun
+    }
 }
 actor FriendlyMarine3 : FriendlyMarine
 {
-	Translation 2
+    Translation 2
+    States
+    {
+      Melee:
+      Missile:
+        Goto Chaingun
+    }
 }
 actor FriendlyMarineSpawner : RandomSpawner
 {
 	+FRIENDLY
-	DropItem "FriendlyMarine" 256 6
-	DropItem "FriendlyMarine1" 256 3
-	DropItem "FriendlyMarine2" 256 3
-	DropItem "FriendlyMarine3" 256 4
+	DropItem "FriendlyMarine" 256 1
+	DropItem "FriendlyMarine1" 256 1
+	DropItem "FriendlyMarine2" 256 1
+	DropItem "FriendlyMarine3" 256 1
 }
 /*
 actor FriendlyDoomImpBall : DoomImpBall2
@@ -284,7 +324,7 @@ actor FriendlyNitrogolemGhost : FriendlyNitrogolem
 actor FriendlyNitrogolemSpawner : RandomSpawner
 {
 	+FRIENDLY
-	DropItem "FriendlyNitrogolem" 256 3
+	DropItem "FriendlyNitrogolem" 256 1
 	DropItem "FriendlyNitrogolemGhost" 256 1
 }
 //=================
@@ -682,6 +722,9 @@ actor FriendlyAfrit : FireDemon2
         FDMN A 0 Bright A_FireDChase
         TNT1 A 0 A_PlaySound("FireDemonAttack")
         FDMN K 5 Bright A_CustomMissile("FriendlyFireDemonMissile")
+        FDMN A 0 Bright A_FireDChase
+        TNT1 A 0 A_PlaySound("FireDemonAttack")
+        FDMN K 5 Bright A_CustomMissile("FriendlyFireDemonMissile")
         Goto Chase
 
       Raise:
@@ -953,9 +996,9 @@ ACTOR FriendlyTeleportTrooper : FriendlyAlienTrooper
 	States
 	{
 	SeeInvisible:
-		TNT1 A 1
-		TNT1 A 1 A_Chase("GoVisible","",2)
-		TNT1 A 1 A_Jump(10, "GoVisibleSee")
+		TNT1 A 0
+		TNT1 A 0 A_Chase("GoVisible","",2)
+		TNT1 A 1 A_Jump(10,"GoVisibleSee")
 		Loop
 	Missile:
 		DFOD F 0 A_Jump(90, "GoInvisible")
@@ -995,8 +1038,8 @@ ACTOR FriendlyTeleportTrooper : FriendlyAlienTrooper
 actor FriendlyAlienSpawner : RandomSpawner
 {
 	+FRIENDLY
-	DropItem "FriendlyAlienTrooper" 256 5
-	DropItem "FriendlyTeleportTrooper" 256 3
+	DropItem "FriendlyAlienTrooper" 256 1
+	DropItem "FriendlyTeleportTrooper" 256 1
 }
 
 //=================
@@ -1006,7 +1049,7 @@ ACTOR FriendlyPfhorTrooper
 {
     Obituary "%o was somehow killed by a friendly Pfhor Trooper."
     Gravity 0.15
-    Health 130
+    Health 100
     Radius 16
     Height 50
     Mass 100
@@ -1074,7 +1117,7 @@ ACTOR FriendlyPfhorTrooper
         PTRO AABBCCDD 3 A_Chase
         LOOP
 
-      Missile: // No grenade attack, because lolnope.
+      Missile: // No grenade attack, because do you seriously think I'd let you get that kind of power from a common minion
         PTRO E 2 A_FaceTarget
         TNT1 A 0 A_PlaySound("pfhor/shoot")
         PTRO F 2 Bright A_CustomMissile("PfhorTrooperBullet",32,0,random(-400,400)/100.00)
@@ -1130,7 +1173,7 @@ ACTOR FriendlyPfhorTrooper
 ACTOR PfhorTrooperBullet : MarathonARBulletCoop
 {
     +PAINLESS //This was getting really bad.
-    Damage (Random(6,9))
+    Damage (Random(6,10))
 }
 
 //=================
@@ -1204,8 +1247,8 @@ ACTOR FriendlyGrunt
         Loop
 
       See:
-        TNT1 A 0 A_Jump(8,"SightNoise") // These guys were noisy fucks.
-        TNT1 A 0 A_Jump(16,"IdleNoise")
+        TNT1 A 0 A_Jump(4,"SightNoise") // These guys were noisy fucks.
+        TNT1 A 0 A_Jump(8,"IdleNoise") //used to be 8/16, but that was annoying
 
       See2:
         RANG BBCCDDEE 3 A_Chase
@@ -1282,7 +1325,7 @@ ACTOR FriendlyEliteMarine //: BaronOfHell2
 {
     Game Doom
     SpawnID 215
-    Health 400
+    Health 400 //Yeah, you're basically getting friendly players instead
     Radius 16
     Height 56
     Mass 100
@@ -1325,7 +1368,7 @@ ACTOR FriendlyEliteMarine //: BaronOfHell2
 
     Species "Player"
 
-  MeleeRange 144
+  MeleeRange 128
 
   +MISSILEEVENMORE
   +THRUSPECIES
@@ -1349,51 +1392,51 @@ ACTOR FriendlyEliteMarine //: BaronOfHell2
       See:
         PLAY AAABBBCCCDDD 1 A_FastChase
         Loop
-        
+
       Melee:
-	PLAY A 0 A_Jump(36,"Missile1")
-	PLAY A 0 A_Jump(128,"Melee2")
-      Melee1: //Intentional Fallthrough
         PLAY EE 6 A_FaceTarget
         PLAY F 0 A_PlayWeaponSound("weapons/sshotf")
-        PLAY FFFFFFFFFFFFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
+        PLAY FFFFFFFFFFFFFFFFFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
         PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
         PLAY E 6 A_FaceTarget
         Goto See
 
-      Melee2:
+      Missile:
+	Goto ASG
+
+      ASG:
         PLAY E 6 A_FaceTarget
         PLAY F 0 A_PlaySound("Weapons/asgfir")
-        PLAY FFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
-        PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
+        PLAY FFFFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(11.25,-11.25))
+        PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(11.25,-11.25))
         PLAY A 0 A_GiveInventory("Clip",1)
 	PLAY E 6 A_FaceTarget
         PLAY F 0 A_PlaySound("weapons/asgld1")
-        PLAY A 0 A_JumpIfInventory("Clip",16,"ReloadASG")
+        PLAY A 0 A_JumpIfInventory("Clip",20,"ReloadASG")
         PLAY E 6 A_FaceTarget
         PLAY F 0 A_PlaySound("Weapons/asgfir")
-        PLAY FFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
-        PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
+        PLAY FFFFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(11.25,-11.25))
+        PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(11.25,-11.25))
         PLAY A 0 A_GiveInventory("Clip",1)
 	PLAY E 6 A_FaceTarget
         PLAY F 0 A_PlaySound("weapons/asgld1")
-        PLAY A 0 A_JumpIfInventory("Clip",16,"ReloadASG")
+        PLAY A 0 A_JumpIfInventory("Clip",20,"ReloadASG")
         PLAY E 6 A_FaceTarget
         PLAY F 0 A_PlaySound("Weapons/asgfir")
-        PLAY FFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
-        PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
+        PLAY FFFFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(11.25,-11.25))
+        PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(11.25,-11.25))
         PLAY A 0 A_GiveInventory("Clip",1)
 	PLAY E 6 A_FaceTarget
         PLAY F 0 A_PlaySound("weapons/asgld1")
-        PLAY A 0 A_JumpIfInventory("Clip",16,"ReloadASG")
+        PLAY A 0 A_JumpIfInventory("Clip",20,"ReloadASG")
         PLAY E 6 A_FaceTarget
         PLAY F 0 A_PlaySound("Weapons/asgfir")
-        PLAY FFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
-        PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(22.5,-22.5))
+        PLAY FFFFFF 0 A_CustomMissile("DoomBulletPainless",32,0,Random(11.25,-11.25))
+        PLAY F 6 BRIGHT A_CustomMissile("DoomBulletPainless",32,0,Random(11.25,-11.25))
         PLAY A 0 A_GiveInventory("Clip",1)
 	PLAY E 6 A_FaceTarget
 	PLAY F 0 A_PlaySound("weapons/asgld1")
-        PLAY A 0 A_JumpIfInventory("Clip",16,"ReloadASG")
+        PLAY A 0 A_JumpIfInventory("Clip",20,"ReloadASG")
         Goto See
 
       ReloadASG:
@@ -1404,20 +1447,33 @@ ACTOR FriendlyEliteMarine //: BaronOfHell2
 	PLAY A 0 A_PlayWeaponSound("weapons/asgld1")
     	Goto See
 
-      Missile:
-	PLAY A 0 A_Jump(96,"Melee1","Melee2","Missile2")
-      Missile1:
-        PLAY E 1 A_FaceTarget
-        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
-        PLAY E 1 A_FaceTarget
-        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
-        PLAY E 1 A_FaceTarget
-        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
+      Chaingun:
+        PLAY E 4 A_FaceTarget
+        PLAY F 0 A_PlayWeaponSound("weapons/shotgf")
+        PLAY F 2 A_CustomMissile("DoomBulletPainless",32,0,Random(5.625,-5.625))
+        PLAY E 2 A_FaceTarget
+        PLAY A 0 A_CPosRefire
+        Goto Chaingun+1
+
+      Rocket:
+        PLAY E 12 A_FaceTarget
+        PLAY F 12 BRIGHT A_CustomMissile("DoomRocket2Painless",32,0,0)
         Goto See
 
-      Missile2:
-        PLAY E 8 A_FaceTarget
-        PLAY F 10 A_CustomRailgun(50,0,"Green","White",0,1,0,"FriendlyMarineRailPuff")
+      Plasma:
+	PLAY E 10 A_FaceTarget
+        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
+        PLAY E 1 A_FaceTarget
+        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
+        PLAY E 1 A_FaceTarget
+        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
+        PLAY E 1 A_FaceTarget
+        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
+        PLAY E 1 A_FaceTarget
+        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
+        PLAY E 1 A_FaceTarget
+        PLAY F 2 BRIGHT A_CustomMissile("DoomPlasmaBall2Painless",32,0,0)
+        PLAY E 1 A_FaceTarget
         Goto See
 
       Pain:
@@ -1446,7 +1502,7 @@ ACTOR FriendlyEliteMarine //: BaronOfHell2
         stop
     }
 }
-actor FriendlyMarineRailPuff : BulletPuff
+actor DoomRocket2Painless : DoomRocket2
 {
 	+PAINLESS
 	DamageType "MarineAlly"
@@ -1456,10 +1512,8 @@ actor FriendlyEliteMarine1 : FriendlyEliteMarine
     Translation "112:127=192:207"
     States
     {
-      Missile2:
-        PLAY E 8 A_FaceTarget
-        PLAY F 10 A_CustomRailgun(50,0,"Blue","White",0,1,0,"FriendlyMarineRailPuff")
-        Goto See
+      Missile:
+        Goto Plasma
     }
 }
 actor FriendlyEliteMarine2 : FriendlyEliteMarine
@@ -1467,10 +1521,8 @@ actor FriendlyEliteMarine2 : FriendlyEliteMarine
     Translation "112:127=168:191"
     States
     {
-      Missile2:
-        PLAY E 8 A_FaceTarget
-        PLAY F 10 A_CustomRailgun(50,0,"Red","White",0,1,0,"FriendlyMarineRailPuff")
-        Goto See
+      Missile:
+        Goto Rocket
     }
 }
 actor FriendlyEliteMarine3 : FriendlyEliteMarine
@@ -1478,19 +1530,17 @@ actor FriendlyEliteMarine3 : FriendlyEliteMarine
     Translation "112:127=80:111"
     States
     {
-      Missile2:
-        PLAY E 8 A_FaceTarget
-        PLAY F 10 A_CustomRailgun(50,0,"White","White",0,1,0,"FriendlyMarineRailPuff")
-        Goto See
+      Missile:
+        Goto Chaingun
     }
 }
 actor FriendlyEliteMarineSpawner : RandomSpawner
 {
 	+FRIENDLY
-	DropItem "FriendlyEliteMarine" 256 4
-	DropItem "FriendlyEliteMarine1" 256 4
-	DropItem "FriendlyEliteMarine2" 256 4
-	DropItem "FriendlyEliteMarine3" 256 4
+	DropItem "FriendlyEliteMarine" 256 1
+	DropItem "FriendlyEliteMarine1" 256 1
+	DropItem "FriendlyEliteMarine2" 256 1
+	DropItem "FriendlyEliteMarine3" 256 1
 }
 /*
 actor FriendlyBaronBall : BaronBall3
@@ -1508,7 +1558,7 @@ actor FriendlyBaronBall : BaronBall3
 
 ACTOR FriendlyIronLich : IronLich2
     {
-    Health 900
+    Health 700
     PainChance 64
     HitObituary "%o was somehow killed by a friendly Iron lich."
     Obituary "%o was somehow killed by a friendly Iron lich."
@@ -1695,10 +1745,10 @@ Stop
 
 //=================
 // CHEX WARRIOR: Flemoidus Maximus
-// HEY LOOK THEY GET GREEN SLIME BALLS AGAIN
+// HEY LOOK THEY GET THE PROPER SLIME BALLS AGAIN
 actor FriendlyFlemoidusMaximus : FlemoidusMaximus
 {
-    Health 1250 //Yeah he gets it because Defense
+    Health 1400 //Yeah he gets it because Defense
     PainChance 25
     AttackSound "friendlyflemoid/attack"
     DeathSound "friendlyflemoid/death"
@@ -1851,9 +1901,11 @@ actor FriendlyFlemoidusMaximus : FlemoidusMaximus
       Melee:
       Missile:
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        FLMB EF 8 A_FaceTarget // Previously 6 each
+        FLMB EF 6 A_FaceTarget
         FLMB G 8 A_CustomComboAttack("FriendlyFlemBall2", 56, random[troopattack](2,16)*5, "friendlyflemoid/shotx", "flem")
-        FLMB EF 8 A_FaceTarget // Previously 6 each
+        FLMB EF 6 A_FaceTarget
+        FLMB G 8 A_CustomComboAttack("FriendlyFlemBall2", 56, random[troopattack](2,16)*5, "friendlyflemoid/shotx", "flem")
+        FLMB EF 6 A_FaceTarget
         FLMB G 8 A_CustomComboAttack("FriendlyFlemBall2", 56, random[troopattack](2,16)*5, "friendlyflemoid/shotx", "flem")
         Goto See
 
@@ -1866,7 +1918,7 @@ actor FriendlyFlemBall2 : SnotfolusBall
 {
     +PAINLESS
     +THRUSPECIES
-    Scale 2
+    Scale 1.75
     Damage 8
     Species "Player"
     SeeSound "friendlyflemoid/flem"
@@ -1888,7 +1940,7 @@ actor FriendlyFlemBall2 : SnotfolusBall
 // Perfect Accuracy Repeat Fire. Totally Awesome.
 ACTOR FriendlyWolfensteinSS
 {
-    Health 900
+    Health 700
     Radius 16
     Height 50
     Speed 8
@@ -1967,18 +2019,6 @@ ACTOR FriendlyWolfensteinSS
     ASSV G 0 Bright A_FaceTarget
     TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
     ASSV G 3 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
-    ASSV F 3 A_FaceTarget
-    ASSV G 0 Bright A_FaceTarget
-    TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
-    ASSV G 3 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
-    ASSV F 3 A_FaceTarget
-    ASSV G 0 Bright A_FaceTarget
-    TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
-    ASSV G 3 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
-    ASSV F 3 A_FaceTarget
-    ASSV G 0 Bright A_FaceTarget
-    TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
-    ASSV G 3 bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
     ASSV F 0 A_CPosRefire
     goto Missile+1
   Pain:
@@ -2052,8 +2092,8 @@ ACTOR FriendlySlaughtaur : CentaurLeader2 115
   RadiusDamageFactor 0.25 //Because Parias.
   MeleeThreshold 256 //So they charge in more.
   MeleeRange 128 //The melee is the main focus of this guy.
-  Health 1000
-  PainChance 64 //So they don't constantly shield and be immune to everything. 96 was just too damn high.
+  Health 800
+  PainChance 80 //So they don't constantly shield and be immune to everything. 96 was just too damn high.
   Speed 16
   Obituary "%o was somehow killed by a friendly Slaughtaur."
   HitObituary "%o was somehow killed by a friendly Slaughtaur."
@@ -2068,12 +2108,12 @@ ACTOR FriendlySlaughtaur : CentaurLeader2 115
   Melee:
     CENT H 4 A_FaceTarget
     CENT I 4 A_FaceTarget
-    CENT J 4 A_CustomMeleeAttack(random[CentaurAttack](10,50))
+    CENT J 4 A_CustomMeleeAttack(random[CentaurAttack](8,64))
     Goto See
   Missile:
     CENT E 1 A_SetReflectiveInvulnerable
     CENT E 0 A_FaceTarget
-    CENT EEEEEEEEEE 1 A_CentaurDefend //But go invulnerable way more often.
+    CENT EEEEEEEEEE 1 A_CentaurDefend
     CENT F 0 Bright A_CustomMissile("FriendlyCentaurFX", 45, 0, 0)
     CENT FFFFFFFF 1 Bright A_CentaurDefend
     CENT E 0 A_FaceTarget
@@ -2111,7 +2151,7 @@ ACTOR FriendlyCentaurFX : CentaurFX2
 
 ACTOR FriendlyBattleLord 
 { 
-        Health 1000
+        Health 750 //These things are extremely broken
 	Mass 2000
 	Radius 20
 	Height 72
@@ -2333,13 +2373,13 @@ Actor FriendlyMortar:Mortar {
 
 //=================
 // SECURITY OFFICER: Hunter
-// MAJOR HUNTER SPRITES HELL YES.
+// Not Major Trooper because :V
 
 ACTOR FriendlyHunter
 {
-	Health 900
-	Radius 20
-	Height 64
+	Health 777  //Only originally had 300 health, oddly.
+	Radius 20    //I raised it to 777 to fit the vile tier better.
+	Height 64     //And because seven.
 	Mass 1000
 	Speed 12
 	PainChance 255
@@ -2490,7 +2530,7 @@ ACTOR HunterShot
 
 Actor FriendlyVore
 {
-  Health 1000 //They only had 400 health in quake, but damage scaling is far higher here.
+  Health 800 //They only had 400 health in quake, but damage scaling is far higher here. It's now more vile-tier.
   Speed 4
   Radius 30
   Height 56

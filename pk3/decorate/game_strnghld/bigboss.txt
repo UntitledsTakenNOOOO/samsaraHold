@@ -17,9 +17,9 @@ ACTOR STBoss 32767
 	DamageFactor "STBoss", 0.01
 	DamageFactor "STBossFactor", 0.05
 	DamageFactor "Animate", 0.05
-	DamageFactor "HexenIce", 2.5
-	DamageFactor "DukeIce", 2.5
-	DamageFactor "Wraithverge", 12.0
+	DamageFactor "HexenIce", 2.0
+	DamageFactor "DukeIce", 2.0
+	DamageFactor "Wraithverge", 16.0
 	PainChance "MightyBoot", 256
 	//DropItem "SpiritBoss"
 	+FLOORCLIP

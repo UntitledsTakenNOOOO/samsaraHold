@@ -6,7 +6,7 @@ actor RPG : Weapon
     Weapon.SlotNumber 5
     Weapon.SelectionOrder 2500
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 5
+    Weapon.AmmoGive 10
     Weapon.AmmoType "RocketAmmo"
     //Obituary "%k sent %o home in a box."
     Inventory.Pickupmessage "You got the RPG!"

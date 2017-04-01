@@ -191,9 +191,7 @@ actor DoomBFGBall : BFGBall
     Damage 150
     DamageType "BFG"
     Decal BFGLightning
-    +BRIGHT
     +DONTREFLECT
-    +FORCERADIUSDMG
     DeathSound "doomguy/bfgx"
     Obituary "%k \cdobliterated\c- %o \cdwith the B.F.G. 9000.\c-"
     States

@@ -7,11 +7,11 @@ ACTOR InfernoDemon 12345
   damagefactor "CorvusCrossbow", 1.15
   damagefactor "DragonClaw", 1.6
   DamageFactor "CorvusHellStaffTomed", 0.1
-  damagefactor "DukeIce", 3.0
-  damagefactor "HexenIce", 3.0
+  damagefactor "DukeIce", 2.4
+  damagefactor "HexenIce", 2.4
   DamageFactor "Kamikaze", 0.05
   damagefactor "ZorchKamikaze", 0.05
-  DamageFactor "Wraithverge", 9.0
+  DamageFactor "Wraithverge", 12.0
   Health 20000
   Speed 20
   Radius 48
